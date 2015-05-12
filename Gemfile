@@ -43,3 +43,21 @@ group :development, :test do
   gem 'spring'
 end
 
+
+gem 'devise'
+gem 'devise-i18n'
+gem 'foundation-rails'
+gem 'pg'
+gem 'simple_form'
+gem 'upmin-admin'
+
+group :development do
+  gem 'rails_apps_pages'
+  gem 'rails_layout'
+end
+
+group :production do
+  gem 'puma'
+  gem 'rails_12factor'
+end
+
