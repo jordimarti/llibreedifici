@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Edifici:</strong>
+  <%= @projectistum.edifici_id %>
+</p>
+
+<p>
+  <strong>Nom projectista:</strong>
+  <%= @projectistum.nom_projectista %>
+</p>
+
+<p>
+  <strong>Titulacio projectista:</strong>
+  <%= @projectistum.titulacio_projectista %>
+</p>
+
+<p>
+  <strong>Rao social projectista:</strong>
+  <%= @projectistum.rao_social_projectista %>
+</p>
+
+<p>
+  <strong>Nif projectista:</strong>
+  <%= @projectistum.nif_projectista %>
+</p>
+
+<%= link_to 'Edit', edit_projectistum_path(@projectistum) %> |
+<%= link_to 'Back', projectista_path %>

@@ -1,0 +1,69 @@
+<%= form_for(@subministrador) do |f| %>
+  <% if @subministrador.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@subministrador.errors.count, "error") %> prohibited this subministrador from being saved:</h2>
+
+      <ul>
+      <% @subministrador.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :edifici_id %><br>
+    <%= f.number_field :edifici_id %>
+  </div>
+  <div class="field">
+    <%= f.label :nom_subministrador %><br>
+    <%= f.text_field :nom_subministrador %>
+  </div>
+  <div class="field">
+    <%= f.label :nif_subministrador %><br>
+    <%= f.text_field :nif_subministrador %>
+  </div>
+  <div class="field">
+    <%= f.label :tipus_via_subministrador %><br>
+    <%= f.text_field :tipus_via_subministrador %>
+  </div>
+  <div class="field">
+    <%= f.label :via_subministrador %><br>
+    <%= f.text_field :via_subministrador %>
+  </div>
+  <div class="field">
+    <%= f.label :numero_subministrador %><br>
+    <%= f.text_field :numero_subministrador %>
+  </div>
+  <div class="field">
+    <%= f.label :bloc_subministrador %><br>
+    <%= f.text_field :bloc_subministrador %>
+  </div>
+  <div class="field">
+    <%= f.label :escala_subministrador %><br>
+    <%= f.text_field :escala_subministrador %>
+  </div>
+  <div class="field">
+    <%= f.label :pis_subministrador %><br>
+    <%= f.text_field :pis_subministrador %>
+  </div>
+  <div class="field">
+    <%= f.label :cp_subministrador %><br>
+    <%= f.number_field :cp_subministrador %>
+  </div>
+  <div class="field">
+    <%= f.label :poblacio_subministrador %><br>
+    <%= f.text_field :poblacio_subministrador %>
+  </div>
+  <div class="field">
+    <%= f.label :provincia_subministrador %><br>
+    <%= f.text_field :provincia_subministrador %>
+  </div>
+  <div class="field">
+    <%= f.label :pais_subministrador %><br>
+    <%= f.text_field :pais_subministrador %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

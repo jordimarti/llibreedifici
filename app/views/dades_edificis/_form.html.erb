@@ -1,0 +1,23 @@
+<%= simple_form_for(@dades_edifici) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :edifici_id %>
+    <%= f.input :tipus_via_edifici %>
+    <%= f.input :via_edifici %>
+    <%= f.input :numero_edifici %>
+    <%= f.input :bloc_edifici %>
+    <%= f.input :escala_edifici %>
+    <%= f.input :cp_edifici %>
+    <%= f.input :poblacio_edifici %>
+    <%= f.input :provincia_edifici %>
+    <%= f.input :ref_cadastral %>
+    <%= f.input :us_edifici %>
+    <%= f.input :any_inici_construccio %>
+    <%= f.input :any_fi_construccio %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

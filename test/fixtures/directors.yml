@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  edifici_id: 1
+  nom_director: MyString
+  titulacio_director: MyString
+  rao_social_director: MyString
+  nif_director: MyString
+
+two:
+  edifici_id: 1
+  nom_director: MyString
+  titulacio_director: MyString
+  rao_social_director: MyString
+  nif_director: MyString

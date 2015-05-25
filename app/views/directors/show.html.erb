@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Edifici:</strong>
+  <%= @director.edifici_id %>
+</p>
+
+<p>
+  <strong>Nom director:</strong>
+  <%= @director.nom_director %>
+</p>
+
+<p>
+  <strong>Titulacio director:</strong>
+  <%= @director.titulacio_director %>
+</p>
+
+<p>
+  <strong>Rao social director:</strong>
+  <%= @director.rao_social_director %>
+</p>
+
+<p>
+  <strong>Nif director:</strong>
+  <%= @director.nif_director %>
+</p>
+
+<%= link_to 'Edit', edit_director_path(@director) %> |
+<%= link_to 'Back', directors_path %>

@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Dades Edificis</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Edifici</th>
+      <th>Tipus via edifici</th>
+      <th>Via edifici</th>
+      <th>Numero edifici</th>
+      <th>Bloc edifici</th>
+      <th>Escala edifici</th>
+      <th>Cp edifici</th>
+      <th>Poblacio edifici</th>
+      <th>Provincia edifici</th>
+      <th>Ref cadastral</th>
+      <th>Us edifici</th>
+      <th>Any inici construccio</th>
+      <th>Any fi construccio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dades_edificis.each do |dades_edifici| %>
+      <tr>
+        <td><%= dades_edifici.edifici_id %></td>
+        <td><%= dades_edifici.tipus_via_edifici %></td>
+        <td><%= dades_edifici.via_edifici %></td>
+        <td><%= dades_edifici.numero_edifici %></td>
+        <td><%= dades_edifici.bloc_edifici %></td>
+        <td><%= dades_edifici.escala_edifici %></td>
+        <td><%= dades_edifici.cp_edifici %></td>
+        <td><%= dades_edifici.poblacio_edifici %></td>
+        <td><%= dades_edifici.provincia_edifici %></td>
+        <td><%= dades_edifici.ref_cadastral %></td>
+        <td><%= dades_edifici.us_edifici %></td>
+        <td><%= dades_edifici.any_inici_construccio %></td>
+        <td><%= dades_edifici.any_fi_construccio %></td>
+        <td><%= link_to 'Show', dades_edifici %></td>
+        <td><%= link_to 'Edit', edit_dades_edifici_path(dades_edifici) %></td>
+        <td><%= link_to 'Destroy', dades_edifici, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dades edifici', new_dades_edifici_path %>

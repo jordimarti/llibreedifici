@@ -1,0 +1,37 @@
+<%= form_for(@director) do |f| %>
+  <% if @director.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@director.errors.count, "error") %> prohibited this director from being saved:</h2>
+
+      <ul>
+      <% @director.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :edifici_id %><br>
+    <%= f.number_field :edifici_id %>
+  </div>
+  <div class="field">
+    <%= f.label :nom_director %><br>
+    <%= f.text_field :nom_director %>
+  </div>
+  <div class="field">
+    <%= f.label :titulacio_director %><br>
+    <%= f.text_field :titulacio_director %>
+  </div>
+  <div class="field">
+    <%= f.label :rao_social_director %><br>
+    <%= f.text_field :rao_social_director %>
+  </div>
+  <div class="field">
+    <%= f.label :nif_director %><br>
+    <%= f.text_field :nif_director %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

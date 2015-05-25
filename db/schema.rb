@@ -1,0 +1,190 @@
+# encoding: UTF-8
+# This file is auto-generated from the current state of the database. Instead
+# of editing this file, please use the migrations feature of Active Record to
+# incrementally modify your database, and then regenerate this schema definition.
+#
+# Note that this schema.rb definition is the authoritative source for your
+# database schema. If you need to create the application database on another
+# system, you should be using db:schema:load, not running all the migrations
+# from scratch. The latter is a flawed and unsustainable approach (the more migrations
+# you'll amass, the slower it'll run and the greater likelihood for issues).
+#
+# It's strongly recommended that you check this file into your version control system.
+
+ActiveRecord::Schema.define(version: 20150525072344) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "constructors", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.string   "nom_constructor"
+    t.string   "nif_constructor"
+    t.string   "tipus_via_constructor"
+    t.string   "via_constructor"
+    t.string   "numero_constructor"
+    t.string   "bloc_constructor"
+    t.string   "escala_constructor"
+    t.string   "pis_constructor"
+    t.integer  "cp_constructor"
+    t.string   "poblacio_constructor"
+    t.string   "provincia_constructor"
+    t.string   "pais_constructor"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  create_table "dades_edificis", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.string   "tipus_via_edifici"
+    t.string   "via_edifici"
+    t.string   "numero_edifici"
+    t.string   "bloc_edifici"
+    t.string   "escala_edifici"
+    t.integer  "cp_edifici"
+    t.string   "poblacio_edifici"
+    t.string   "provincia_edifici"
+    t.string   "ref_cadastral"
+    t.string   "us_edifici"
+    t.integer  "any_inici_construccio"
+    t.integer  "any_fi_construccio"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  create_table "director_execucios", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.string   "nom_director_execucio"
+    t.string   "titulacio_director_execucio"
+    t.string   "rao_social_director_execucio"
+    t.string   "nif_director_execucio"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
+  create_table "directors", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.string   "nom_director"
+    t.string   "titulacio_director"
+    t.string   "rao_social_director"
+    t.string   "nif_director"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
+  create_table "edificis", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "nom"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "entitat_controls", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.string   "nom_entitat_control"
+    t.string   "nif_entitat_control"
+    t.string   "tipus_via_entitat_control"
+    t.string   "via_entitat_control"
+    t.string   "numero_entitat_control"
+    t.string   "bloc_entitat_control"
+    t.string   "escala_entitat_control"
+    t.string   "pis_entitat_control"
+    t.integer  "cp_entitat_control"
+    t.string   "poblacio_entitat_control"
+    t.string   "provincia_entitat_control"
+    t.string   "pais_entitat_control"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  create_table "industrials", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.string   "nom_industrial"
+    t.string   "nif_industrial"
+    t.string   "tipus_via_industrial"
+    t.string   "via_industrial"
+    t.string   "numero_industrial"
+    t.string   "bloc_industrial"
+    t.string   "escala_industrial"
+    t.string   "pis_industrial"
+    t.integer  "cp_industrial"
+    t.string   "poblacio_industrial"
+    t.string   "provincia_industrial"
+    t.string   "pais_industrial"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  create_table "laboratoris", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.string   "nom_laboratori"
+    t.string   "nif_laboratori"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "projectista", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.string   "nom_projectista"
+    t.string   "titulacio_projectista"
+    t.string   "rao_social_projectista"
+    t.string   "nif_projectista"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "promotors", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.string   "nom_promotor"
+    t.string   "nif_promotor"
+    t.string   "tipus_via_promotor"
+    t.string   "via_promotor"
+    t.string   "numero_promotor"
+    t.string   "bloc_promotor"
+    t.string   "escala_promotor"
+    t.string   "pis_promotor"
+    t.integer  "cp_promotor"
+    t.string   "poblacio_promotor"
+    t.string   "provincia_promotor"
+    t.string   "pais_promotor"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  create_table "subministradors", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.string   "nom_subministrador"
+    t.string   "nif_subministrador"
+    t.string   "tipus_via_subministrador"
+    t.string   "via_subministrador"
+    t.string   "numero_subministrador"
+    t.string   "bloc_subministrador"
+    t.string   "escala_subministrador"
+    t.string   "pis_subministrador"
+    t.integer  "cp_subministrador"
+    t.string   "poblacio_subministrador"
+    t.string   "provincia_subministrador"
+    t.string   "pais_subministrador"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+end

@@ -1,0 +1,9 @@
+es:
+  layouts:
+    navigation:
+      titol: "Libro del edificio"
+      projectes: "Proyectos"
+      register: "Registrarse"
+      sign_in: "Iniciar sesión"
+      account_configuration: "Configuración de la cuenta"
+      sign_out: "Cerrar sesión"

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Director Execucios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Edifici</th>
+      <th>Nom director execucio</th>
+      <th>Titulacio director execucio</th>
+      <th>Rao social director execucio</th>
+      <th>Nif director execucio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @director_execucios.each do |director_execucio| %>
+      <tr>
+        <td><%= director_execucio.edifici_id %></td>
+        <td><%= director_execucio.nom_director_execucio %></td>
+        <td><%= director_execucio.titulacio_director_execucio %></td>
+        <td><%= director_execucio.rao_social_director_execucio %></td>
+        <td><%= director_execucio.nif_director_execucio %></td>
+        <td><%= link_to 'Show', director_execucio %></td>
+        <td><%= link_to 'Edit', edit_director_execucio_path(director_execucio) %></td>
+        <td><%= link_to 'Destroy', director_execucio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Director execucio', new_director_execucio_path %>

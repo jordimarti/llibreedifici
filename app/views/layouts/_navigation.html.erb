@@ -1,0 +1,34 @@
+<nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+      <h1><%= link_to t('.titol'), root_path %></h1>
+    </li>
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <ul class="right">
+      <li><%= link_to t('.projectes'), edificis_path %></li>
+      <li><%= link_to t('.tutorial'), home_tutorial_path %></li>
+      <li class="has-dropdown">
+        <a href="#">Idioma</a>
+        <ul class="dropdown">
+          <li><%= link_to 'Català', url_for(params.merge({:locale => 'ca'})) %></li>
+          <li><%= link_to 'Español', url_for(params.merge({:locale => 'es'})) %></li>
+        </ul>
+      </li>
+      <% if user_signed_in? %>
+        <li class="has-dropdown">
+          <a href="#"><%= current_user.email %></a>
+          <ul class="dropdown">
+            <li><%= link_to t('.account_configuration'), edit_user_registration_path %></li>
+            <li><%= link_to t('.sign_out'), destroy_user_session_path, method: :delete %></li>
+          </ul>
+        </li>
+      <% else %>
+        <li><%= link_to t('.register'), new_user_registration_path, :class => 'sessionbar-link'  %></li>
+        <li><%= link_to t('.sign_in'), new_user_session_path, :class => 'sessionbar-link'  %></li>
+      <% end %>
+    </ul>
+  </section>
+</nav>

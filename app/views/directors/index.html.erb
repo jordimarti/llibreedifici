@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Directors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Edifici</th>
+      <th>Nom director</th>
+      <th>Titulacio director</th>
+      <th>Rao social director</th>
+      <th>Nif director</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @directors.each do |director| %>
+      <tr>
+        <td><%= director.edifici_id %></td>
+        <td><%= director.nom_director %></td>
+        <td><%= director.titulacio_director %></td>
+        <td><%= director.rao_social_director %></td>
+        <td><%= director.nif_director %></td>
+        <td><%= link_to 'Show', director %></td>
+        <td><%= link_to 'Edit', edit_director_path(director) %></td>
+        <td><%= link_to 'Destroy', director, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Director', new_director_path %>

@@ -1,0 +1,69 @@
+<%= form_for(@constructor) do |f| %>
+  <% if @constructor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@constructor.errors.count, "error") %> prohibited this constructor from being saved:</h2>
+
+      <ul>
+      <% @constructor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :edifici_id %><br>
+    <%= f.number_field :edifici_id %>
+  </div>
+  <div class="field">
+    <%= f.label :nom_constructor %><br>
+    <%= f.text_field :nom_constructor %>
+  </div>
+  <div class="field">
+    <%= f.label :nif_constructor %><br>
+    <%= f.text_field :nif_constructor %>
+  </div>
+  <div class="field">
+    <%= f.label :tipus_via_constructor %><br>
+    <%= f.text_field :tipus_via_constructor %>
+  </div>
+  <div class="field">
+    <%= f.label :via_constructor %><br>
+    <%= f.text_field :via_constructor %>
+  </div>
+  <div class="field">
+    <%= f.label :numero_constructor %><br>
+    <%= f.text_field :numero_constructor %>
+  </div>
+  <div class="field">
+    <%= f.label :bloc_constructor %><br>
+    <%= f.text_field :bloc_constructor %>
+  </div>
+  <div class="field">
+    <%= f.label :escala_constructor %><br>
+    <%= f.text_field :escala_constructor %>
+  </div>
+  <div class="field">
+    <%= f.label :pis_constructor %><br>
+    <%= f.text_field :pis_constructor %>
+  </div>
+  <div class="field">
+    <%= f.label :cp_constructor %><br>
+    <%= f.number_field :cp_constructor %>
+  </div>
+  <div class="field">
+    <%= f.label :poblacio_constructor %><br>
+    <%= f.text_field :poblacio_constructor %>
+  </div>
+  <div class="field">
+    <%= f.label :provincia_constructor %><br>
+    <%= f.text_field :provincia_constructor %>
+  </div>
+  <div class="field">
+    <%= f.label :pais_constructor %><br>
+    <%= f.text_field :pais_constructor %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

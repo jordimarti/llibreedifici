@@ -1,0 +1,37 @@
+<%= form_for(@projectistum) do |f| %>
+  <% if @projectistum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@projectistum.errors.count, "error") %> prohibited this projectistum from being saved:</h2>
+
+      <ul>
+      <% @projectistum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :edifici_id %><br>
+    <%= f.number_field :edifici_id %>
+  </div>
+  <div class="field">
+    <%= f.label :nom_projectista %><br>
+    <%= f.text_field :nom_projectista %>
+  </div>
+  <div class="field">
+    <%= f.label :titulacio_projectista %><br>
+    <%= f.text_field :titulacio_projectista %>
+  </div>
+  <div class="field">
+    <%= f.label :rao_social_projectista %><br>
+    <%= f.text_field :rao_social_projectista %>
+  </div>
+  <div class="field">
+    <%= f.label :nif_projectista %><br>
+    <%= f.text_field :nif_projectista %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

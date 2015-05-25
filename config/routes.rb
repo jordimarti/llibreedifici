@@ -1,4 +1,25 @@
 Rails.application.routes.draw do
+  resources :dades_edificis
+  resources :edificis
+  devise_for :users
+  
+  
+  resources :industrials
+  resources :subministradors
+  resources :entitat_controls
+  resources :laboratoris
+  resources :director_execucios
+  resources :directors
+  resources :constructors
+  resources :projectista
+  resources :promotors
+  get 'home/index'
+  get 'home/tutorial'
+  root :to => "home#index"
+  
+
+  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

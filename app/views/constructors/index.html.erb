@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Constructors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Edifici</th>
+      <th>Nom constructor</th>
+      <th>Nif constructor</th>
+      <th>Tipus via constructor</th>
+      <th>Via constructor</th>
+      <th>Numero constructor</th>
+      <th>Bloc constructor</th>
+      <th>Escala constructor</th>
+      <th>Pis constructor</th>
+      <th>Cp constructor</th>
+      <th>Poblacio constructor</th>
+      <th>Provincia constructor</th>
+      <th>Pais constructor</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @constructors.each do |constructor| %>
+      <tr>
+        <td><%= constructor.edifici_id %></td>
+        <td><%= constructor.nom_constructor %></td>
+        <td><%= constructor.nif_constructor %></td>
+        <td><%= constructor.tipus_via_constructor %></td>
+        <td><%= constructor.via_constructor %></td>
+        <td><%= constructor.numero_constructor %></td>
+        <td><%= constructor.bloc_constructor %></td>
+        <td><%= constructor.escala_constructor %></td>
+        <td><%= constructor.pis_constructor %></td>
+        <td><%= constructor.cp_constructor %></td>
+        <td><%= constructor.poblacio_constructor %></td>
+        <td><%= constructor.provincia_constructor %></td>
+        <td><%= constructor.pais_constructor %></td>
+        <td><%= link_to 'Show', constructor %></td>
+        <td><%= link_to 'Edit', edit_constructor_path(constructor) %></td>
+        <td><%= link_to 'Destroy', constructor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Constructor', new_constructor_path %>

@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Industrials</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Edifici</th>
+      <th>Nom industrial</th>
+      <th>Nif industrial</th>
+      <th>Tipus via industrial</th>
+      <th>Via industrial</th>
+      <th>Numero industrial</th>
+      <th>Bloc industrial</th>
+      <th>Escala industrial</th>
+      <th>Pis industrial</th>
+      <th>Cp industrial</th>
+      <th>Poblacio industrial</th>
+      <th>Provincia industrial</th>
+      <th>Pais industrial</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @industrials.each do |industrial| %>
+      <tr>
+        <td><%= industrial.edifici_id %></td>
+        <td><%= industrial.nom_industrial %></td>
+        <td><%= industrial.nif_industrial %></td>
+        <td><%= industrial.tipus_via_industrial %></td>
+        <td><%= industrial.via_industrial %></td>
+        <td><%= industrial.numero_industrial %></td>
+        <td><%= industrial.bloc_industrial %></td>
+        <td><%= industrial.escala_industrial %></td>
+        <td><%= industrial.pis_industrial %></td>
+        <td><%= industrial.cp_industrial %></td>
+        <td><%= industrial.poblacio_industrial %></td>
+        <td><%= industrial.provincia_industrial %></td>
+        <td><%= industrial.pais_industrial %></td>
+        <td><%= link_to 'Show', industrial %></td>
+        <td><%= link_to 'Edit', edit_industrial_path(industrial) %></td>
+        <td><%= link_to 'Destroy', industrial, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Industrial', new_industrial_path %>

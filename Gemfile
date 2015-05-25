@@ -50,6 +50,7 @@ gem 'foundation-rails'
 gem 'pg'
 gem 'simple_form'
 gem 'upmin-admin'
+gem 'jquery-turbolinks'
 
 group :development do
   gem 'rails_apps_pages'

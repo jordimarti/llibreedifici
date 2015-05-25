@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Promotors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Edifici</th>
+      <th>Nom promotor</th>
+      <th>Nif promotor</th>
+      <th>Tipus via promotor</th>
+      <th>Via promotor</th>
+      <th>Numero promotor</th>
+      <th>Bloc promotor</th>
+      <th>Escala promotor</th>
+      <th>Pis promotor</th>
+      <th>Cp promotor</th>
+      <th>Poblacio promotor</th>
+      <th>Provincia promotor</th>
+      <th>Pais promotor</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @promotors.each do |promotor| %>
+      <tr>
+        <td><%= promotor.edifici_id %></td>
+        <td><%= promotor.nom_promotor %></td>
+        <td><%= promotor.nif_promotor %></td>
+        <td><%= promotor.tipus_via_promotor %></td>
+        <td><%= promotor.via_promotor %></td>
+        <td><%= promotor.numero_promotor %></td>
+        <td><%= promotor.bloc_promotor %></td>
+        <td><%= promotor.escala_promotor %></td>
+        <td><%= promotor.pis_promotor %></td>
+        <td><%= promotor.cp_promotor %></td>
+        <td><%= promotor.poblacio_promotor %></td>
+        <td><%= promotor.provincia_promotor %></td>
+        <td><%= promotor.pais_promotor %></td>
+        <td><%= link_to 'Show', promotor %></td>
+        <td><%= link_to 'Edit', edit_promotor_path(promotor) %></td>
+        <td><%= link_to 'Destroy', promotor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Promotor', new_promotor_path %>
