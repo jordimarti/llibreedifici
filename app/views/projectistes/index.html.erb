@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Projectistes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Edifici</th>
+      <th>Nom projectista</th>
+      <th>Titulacio projectista</th>
+      <th>Rao social projectista</th>
+      <th>Nif projectista</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @projectistes.each do |projectista| %>
+      <tr>
+        <td><%= projectista.edifici_id %></td>
+        <td><%= projectista.nom_projectista %></td>
+        <td><%= projectista.titulacio_projectista %></td>
+        <td><%= projectista.rao_social_projectista %></td>
+        <td><%= projectista.nif_projectista %></td>
+        <td><%= link_to 'Show', projectista %></td>
+        <td><%= link_to 'Edit', edit_projectista_path(projectista) %></td>
+        <td><%= link_to 'Destroy', projectista, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Projectista', new_projectista_path %>

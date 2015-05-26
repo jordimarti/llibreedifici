@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
-  resources :dades_edificis
   resources :edificis
+  resources :checklist_edifici_nous
+  #get 'checklist_edifici_nous/quadern'
+  #get 'checklist_edifici_nous/det'
+  #get 'checklist_edifici_nous/manuals'
+  #get 'checklist_edifici_nous/arxiu'
+  resources :control_entitats
+  resources :execucio_directors
+  resources :directors_execucio
+  resources :projectistes
+  resources :dades_edificis
   devise_for :users
   
   
@@ -8,7 +17,6 @@ Rails.application.routes.draw do
   resources :subministradors
   resources :entitat_controls
   resources :laboratoris
-  resources :director_execucios
   resources :directors
   resources :constructors
   resources :projectista
@@ -17,7 +25,7 @@ Rails.application.routes.draw do
   get 'home/tutorial'
   root :to => "home#index"
   
-
+  match ':controller(/:action(/:id))', :via => [:get, :post]
   
 
   # The priority is based upon order of creation: first created -> highest priority.

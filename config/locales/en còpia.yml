@@ -1,0 +1,9 @@
+ca:
+  layouts:
+    navigation:
+      titol: "Llibre de l'edifici"
+      projectes: "Projectes"
+      register: "Registrar-se"
+      sign_in: "Iniciar sessió"
+      account_configuration: "Configuració del compte"
+      sign_out: "Tancar sessió"

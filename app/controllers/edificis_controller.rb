@@ -69,6 +69,6 @@ class EdificisController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def edifici_params
-      params.require(:edifici).permit(:user_id, :nom)
+      params.require(:edifici).permit(:user_id, :nom_edifici, :tipus_edifici)
     end
 end

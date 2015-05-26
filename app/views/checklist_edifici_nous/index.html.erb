@@ -1,0 +1,137 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Checklist Edifici Nous</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Edifici</th>
+      <th>Dades</th>
+      <th>Planol emplacament</th>
+      <th>Foto facana</th>
+      <th>Promotor</th>
+      <th>Projectista</th>
+      <th>Constructor</th>
+      <th>Director</th>
+      <th>Director execucio</th>
+      <th>Laboratori</th>
+      <th>Entitat control</th>
+      <th>Subministrador</th>
+      <th>Industrial</th>
+      <th>Llicencia</th>
+      <th>Declaracio obra nova</th>
+      <th>Regim propietat</th>
+      <th>Carregues</th>
+      <th>Entitats juridiques</th>
+      <th>Acta lliurament</th>
+      <th>Canvis titularitat</th>
+      <th>Reformes</th>
+      <th>Canvis dades inicials</th>
+      <th>Ajuts</th>
+      <th>Assegurances</th>
+      <th>Enunciats incidencies</th>
+      <th>Registre operacions manteniment</th>
+      <th>Registre operacions reparacio</th>
+      <th>Registre operacions millora</th>
+      <th>Registre actuacions arquitectoniques</th>
+      <th>Planols</th>
+      <th>Esquemes instalacions</th>
+      <th>Descripcio pes</th>
+      <th>Instruccions us manteniment</th>
+      <th>Documents substitucio</th>
+      <th>Recomanacions emergencies</th>
+      <th>Planols habitatge</th>
+      <th>Planols elements privatius</th>
+      <th>Instruccions us manteniment habitatge</th>
+      <th>Garanties manuals equips</th>
+      <th>Llicencies preceptives</th>
+      <th>Certificat final obra</th>
+      <th>Acta recepcio obra</th>
+      <th>Escriptura publica</th>
+      <th>Documents garantia</th>
+      <th>Documents garantia parts comunes</th>
+      <th>Certificacio energetica</th>
+      <th>Polissa assegurances</th>
+      <th>Escriptura propietat horitzontal</th>
+      <th>Estatus comunitat</th>
+      <th>Cedules regims juridics</th>
+      <th>Carregues reals</th>
+      <th>Documents complementaris</th>
+      <th>Documents acreditatius ajuts</th>
+      <th>Documents justificacio operacions</th>
+      <th>Certificat final obra instalacions</th>
+      <th>Declaracions ce ascensors</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @checklist_edifici_nous.each do |checklist_edifici_nou| %>
+      <tr>
+        <td><%= checklist_edifici_nou.edifici_id %></td>
+        <td><%= checklist_edifici_nou.dades %></td>
+        <td><%= checklist_edifici_nou.planol_emplacament %></td>
+        <td><%= checklist_edifici_nou.foto_facana %></td>
+        <td><%= checklist_edifici_nou.promotor %></td>
+        <td><%= checklist_edifici_nou.projectista %></td>
+        <td><%= checklist_edifici_nou.constructor %></td>
+        <td><%= checklist_edifici_nou.director %></td>
+        <td><%= checklist_edifici_nou.director_execucio %></td>
+        <td><%= checklist_edifici_nou.laboratori %></td>
+        <td><%= checklist_edifici_nou.entitat_control %></td>
+        <td><%= checklist_edifici_nou.subministrador %></td>
+        <td><%= checklist_edifici_nou.industrial %></td>
+        <td><%= checklist_edifici_nou.llicencia %></td>
+        <td><%= checklist_edifici_nou.declaracio_obra_nova %></td>
+        <td><%= checklist_edifici_nou.regim_propietat %></td>
+        <td><%= checklist_edifici_nou.carregues %></td>
+        <td><%= checklist_edifici_nou.entitats_juridiques %></td>
+        <td><%= checklist_edifici_nou.acta_lliurament %></td>
+        <td><%= checklist_edifici_nou.canvis_titularitat %></td>
+        <td><%= checklist_edifici_nou.reformes %></td>
+        <td><%= checklist_edifici_nou.canvis_dades_inicials %></td>
+        <td><%= checklist_edifici_nou.ajuts %></td>
+        <td><%= checklist_edifici_nou.assegurances %></td>
+        <td><%= checklist_edifici_nou.enunciats_incidencies %></td>
+        <td><%= checklist_edifici_nou.registre_operacions_manteniment %></td>
+        <td><%= checklist_edifici_nou.registre_operacions_reparacio %></td>
+        <td><%= checklist_edifici_nou.registre_operacions_millora %></td>
+        <td><%= checklist_edifici_nou.registre_actuacions_arquitectoniques %></td>
+        <td><%= checklist_edifici_nou.planols %></td>
+        <td><%= checklist_edifici_nou.esquemes_instalacions %></td>
+        <td><%= checklist_edifici_nou.descripcio_pes %></td>
+        <td><%= checklist_edifici_nou.instruccions_us_manteniment %></td>
+        <td><%= checklist_edifici_nou.documents_substitucio %></td>
+        <td><%= checklist_edifici_nou.recomanacions_emergencies %></td>
+        <td><%= checklist_edifici_nou.planols_habitatge %></td>
+        <td><%= checklist_edifici_nou.planols_elements_privatius %></td>
+        <td><%= checklist_edifici_nou.instruccions_us_manteniment_habitatge %></td>
+        <td><%= checklist_edifici_nou.garanties_manuals_equips %></td>
+        <td><%= checklist_edifici_nou.llicencies_preceptives %></td>
+        <td><%= checklist_edifici_nou.certificat_final_obra %></td>
+        <td><%= checklist_edifici_nou.acta_recepcio_obra %></td>
+        <td><%= checklist_edifici_nou.escriptura_publica %></td>
+        <td><%= checklist_edifici_nou.documents_garantia %></td>
+        <td><%= checklist_edifici_nou.documents_garantia_parts_comunes %></td>
+        <td><%= checklist_edifici_nou.certificacio_energetica %></td>
+        <td><%= checklist_edifici_nou.polissa_assegurances %></td>
+        <td><%= checklist_edifici_nou.escriptura_propietat_horitzontal %></td>
+        <td><%= checklist_edifici_nou.estatus_comunitat %></td>
+        <td><%= checklist_edifici_nou.cedules_regims_juridics %></td>
+        <td><%= checklist_edifici_nou.carregues_reals %></td>
+        <td><%= checklist_edifici_nou.documents_complementaris %></td>
+        <td><%= checklist_edifici_nou.documents_acreditatius_ajuts %></td>
+        <td><%= checklist_edifici_nou.documents_justificacio_operacions %></td>
+        <td><%= checklist_edifici_nou.certificat_final_obra_instalacions %></td>
+        <td><%= checklist_edifici_nou.declaracions_ce_ascensors %></td>
+        <td><%= link_to 'Show', checklist_edifici_nou %></td>
+        <td><%= link_to 'Edit', edit_checklist_edifici_nou_path(checklist_edifici_nou) %></td>
+        <td><%= link_to 'Destroy', checklist_edifici_nou, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Checklist edifici nou', new_checklist_edifici_nou_path %>

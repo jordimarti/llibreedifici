@@ -1,0 +1,15 @@
+<%= simple_form_for(@execucio_director) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :edifici_id %>
+    <%= f.input :nom_director_execucio %>
+    <%= f.input :titulacio_director_execucio %>
+    <%= f.input :rao_social_director_execucio %>
+    <%= f.input :nif_director_execucio %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,2 +1,0 @@
-module EntitatControlsHelper
-end

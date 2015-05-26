@@ -1,0 +1,2 @@
+module ChecklistEdificiNousHelper
+end

@@ -1,0 +1,15 @@
+<%= simple_form_for(@projectista) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :edifici_id %>
+    <%= f.input :nom_projectista %>
+    <%= f.input :titulacio_projectista %>
+    <%= f.input :rao_social_projectista %>
+    <%= f.input :nif_projectista %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

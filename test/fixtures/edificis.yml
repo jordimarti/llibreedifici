@@ -2,8 +2,10 @@
 
 one:
   user_id: 1
-  nom: MyString
+  nom_edifici: MyString
+  tipus_edifici: MyString
 
 two:
   user_id: 1
-  nom: MyString
+  nom_edifici: MyString
+  tipus_edifici: MyString

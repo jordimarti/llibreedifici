@@ -1,0 +1,56 @@
+<div class="content-container">
+	<div class="nom-edifici-container">
+		<%= @edifici.nom_edifici %>
+	</div>
+	<div class="left-column">
+		<div class="menu-edifici menu-actiu">
+			<%= t('.quadern') %>
+		</div>
+		<div class="menu-edifici">
+			<%= t('.det') %>
+		</div>
+		<div class="menu-edifici">
+			<%= t('.manuals') %>
+		</div>
+		<div class="menu-edifici">
+			<%= t('.arxiu') %>
+		</div>
+	</div>
+
+	<div class="right-column">
+
+		<div class="row">
+			<div class="large-12 columns">
+				<div class="items-container">
+					<div class="items-title">
+						Dades d'identificació de la construcció
+					</div>
+					
+					<div class="item">
+						<div class="switch tiny boto-item">
+						  <input id="exampleCheckboxSwitch" type="checkbox">
+						  <label for="exampleCheckboxSwitch"></label>
+						</div> 
+						<div class="text-item">
+							<%= t('.adreca') %>
+						</div>
+					</div>
+					
+					<div class="item">
+						<div class="switch tiny boto-item">
+						  <input id="example2CheckboxSwitch" type="checkbox">
+						  <label for="example2CheckboxSwitch"></label>
+						</div> 
+						<div class="text-item">
+							<%= t('.foto_facana') %>
+						</div>
+					</div>
+
+
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>

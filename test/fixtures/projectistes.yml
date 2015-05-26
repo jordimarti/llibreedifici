@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  edifici_id: 1
+  nom_projectista: MyString
+  titulacio_projectista: MyString
+  rao_social_projectista: MyString
+  nif_projectista: MyString
+
+two:
+  edifici_id: 1
+  nom_projectista: MyString
+  titulacio_projectista: MyString
+  rao_social_projectista: MyString
+  nif_projectista: MyString

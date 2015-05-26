@@ -9,7 +9,9 @@
   <section class="top-bar-section">
     <ul class="right">
       <li><%= link_to t('.projectes'), edificis_path %></li>
+      <li class="divider"></li>
       <li><%= link_to t('.tutorial'), home_tutorial_path %></li>
+      <li class="divider"></li>
       <li class="has-dropdown">
         <a href="#">Idioma</a>
         <ul class="dropdown">
@@ -17,6 +19,7 @@
           <li><%= link_to 'Español', url_for(params.merge({:locale => 'es'})) %></li>
         </ul>
       </li>
+      <li class="divider"></li>
       <% if user_signed_in? %>
         <li class="has-dropdown">
           <a href="#"><%= current_user.email %></a>
@@ -27,6 +30,7 @@
         </li>
       <% else %>
         <li><%= link_to t('.register'), new_user_registration_path, :class => 'sessionbar-link'  %></li>
+        <li class="divider"></li>
         <li><%= link_to t('.sign_in'), new_user_session_path, :class => 'sessionbar-link'  %></li>
       <% end %>
     </ul>

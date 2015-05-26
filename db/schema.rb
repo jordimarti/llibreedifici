@@ -11,10 +11,71 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150525072344) do
+ActiveRecord::Schema.define(version: 20150526071615) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "checklist_edifici_nous", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.boolean  "dades",                                 default: false
+    t.boolean  "planol_emplacament",                    default: false
+    t.boolean  "foto_facana",                           default: false
+    t.boolean  "promotor",                              default: false
+    t.boolean  "projectista",                           default: false
+    t.boolean  "constructor",                           default: false
+    t.boolean  "director",                              default: false
+    t.boolean  "director_execucio",                     default: false
+    t.boolean  "laboratori",                            default: false
+    t.boolean  "entitat_control",                       default: false
+    t.boolean  "subministrador",                        default: false
+    t.boolean  "industrial",                            default: false
+    t.boolean  "llicencia",                             default: false
+    t.boolean  "declaracio_obra_nova",                  default: false
+    t.boolean  "regim_propietat",                       default: false
+    t.boolean  "carregues",                             default: false
+    t.boolean  "entitats_juridiques",                   default: false
+    t.boolean  "acta_lliurament",                       default: false
+    t.boolean  "canvis_titularitat",                    default: false
+    t.boolean  "reformes",                              default: false
+    t.boolean  "canvis_dades_inicials",                 default: false
+    t.boolean  "ajuts",                                 default: false
+    t.boolean  "assegurances",                          default: false
+    t.boolean  "enunciats_incidencies",                 default: false
+    t.boolean  "registre_operacions_manteniment",       default: false
+    t.boolean  "registre_operacions_reparacio",         default: false
+    t.boolean  "registre_operacions_millora",           default: false
+    t.boolean  "registre_actuacions_arquitectoniques",  default: false
+    t.boolean  "planols",                               default: false
+    t.boolean  "esquemes_instalacions",                 default: false
+    t.boolean  "descripcio_pes",                        default: false
+    t.boolean  "instruccions_us_manteniment",           default: false
+    t.boolean  "documents_substitucio",                 default: false
+    t.boolean  "recomanacions_emergencies",             default: false
+    t.boolean  "planols_habitatge",                     default: false
+    t.boolean  "planols_elements_privatius",            default: false
+    t.boolean  "instruccions_us_manteniment_habitatge", default: false
+    t.boolean  "garanties_manuals_equips",              default: false
+    t.boolean  "llicencies_preceptives",                default: false
+    t.boolean  "certificat_final_obra",                 default: false
+    t.boolean  "acta_recepcio_obra",                    default: false
+    t.boolean  "escriptura_publica",                    default: false
+    t.boolean  "documents_garantia",                    default: false
+    t.boolean  "documents_garantia_parts_comunes",      default: false
+    t.boolean  "certificacio_energetica",               default: false
+    t.boolean  "polissa_assegurances",                  default: false
+    t.boolean  "escriptura_propietat_horitzontal",      default: false
+    t.boolean  "estatus_comunitat",                     default: false
+    t.boolean  "cedules_regims_juridics",               default: false
+    t.boolean  "carregues_reals",                       default: false
+    t.boolean  "documents_complementaris",              default: false
+    t.boolean  "documents_acreditatius_ajuts",          default: false
+    t.boolean  "documents_justificacio_operacions",     default: false
+    t.boolean  "certificat_final_obra_instalacions",    default: false
+    t.boolean  "declaracions_ce_ascensors",             default: false
+    t.datetime "created_at",                                            null: false
+    t.datetime "updated_at",                                            null: false
+  end
 
   create_table "constructors", force: :cascade do |t|
     t.integer  "edifici_id"
@@ -32,6 +93,24 @@ ActiveRecord::Schema.define(version: 20150525072344) do
     t.string   "pais_constructor"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+  end
+
+  create_table "control_entitats", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.string   "nom_entitat_control"
+    t.string   "nif_entitat_control"
+    t.string   "tipus_via_entitat_control"
+    t.string   "via_entitat_control"
+    t.string   "numero_entitat_control"
+    t.string   "bloc_entitat_control"
+    t.string   "escala_entitat_control"
+    t.string   "pis_entitat_control"
+    t.integer  "cp_entitat_control"
+    t.string   "poblacio_entitat_control"
+    t.string   "provincia_entitat_control"
+    t.string   "pais_entitat_control"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "dades_edificis", force: :cascade do |t|
@@ -52,16 +131,6 @@ ActiveRecord::Schema.define(version: 20150525072344) do
     t.datetime "updated_at",            null: false
   end
 
-  create_table "director_execucios", force: :cascade do |t|
-    t.integer  "edifici_id"
-    t.string   "nom_director_execucio"
-    t.string   "titulacio_director_execucio"
-    t.string   "rao_social_director_execucio"
-    t.string   "nif_director_execucio"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-  end
-
   create_table "directors", force: :cascade do |t|
     t.integer  "edifici_id"
     t.string   "nom_director"
@@ -72,11 +141,22 @@ ActiveRecord::Schema.define(version: 20150525072344) do
     t.datetime "updated_at",          null: false
   end
 
+  create_table "directors_execucio", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.string   "nom_director_execucio"
+    t.string   "titulacio_director_execucio"
+    t.string   "rao_social_director_execucio"
+    t.string   "nif_director_execucio"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
   create_table "edificis", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "nom"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "nom_edifici"
+    t.string   "tipus_edifici"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "entitat_controls", force: :cascade do |t|
@@ -95,6 +175,16 @@ ActiveRecord::Schema.define(version: 20150525072344) do
     t.string   "pais_entitat_control"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+  end
+
+  create_table "execucio_directors", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.string   "nom_director_execucio"
+    t.string   "titulacio_director_execucio"
+    t.string   "rao_social_director_execucio"
+    t.string   "nif_director_execucio"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   create_table "industrials", force: :cascade do |t|
@@ -123,7 +213,7 @@ ActiveRecord::Schema.define(version: 20150525072344) do
     t.datetime "updated_at",     null: false
   end
 
-  create_table "projectista", force: :cascade do |t|
+  create_table "projectistes", force: :cascade do |t|
     t.integer  "edifici_id"
     t.string   "nom_projectista"
     t.string   "titulacio_projectista"

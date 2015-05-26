@@ -18,7 +18,7 @@ class EdificisControllerTest < ActionController::TestCase
 
   test "should create edifici" do
     assert_difference('Edifici.count') do
-      post :create, edifici: { nom: @edifici.nom, user_id: @edifici.user_id }
+      post :create, edifici: { nom_edifici: @edifici.nom_edifici, tipus_edifici: @edifici.tipus_edifici, user_id: @edifici.user_id }
     end
 
     assert_redirected_to edifici_path(assigns(:edifici))
@@ -35,7 +35,7 @@ class EdificisControllerTest < ActionController::TestCase
   end
 
   test "should update edifici" do
-    patch :update, id: @edifici, edifici: { nom: @edifici.nom, user_id: @edifici.user_id }
+    patch :update, id: @edifici, edifici: { nom_edifici: @edifici.nom_edifici, tipus_edifici: @edifici.tipus_edifici, user_id: @edifici.user_id }
     assert_redirected_to edifici_path(assigns(:edifici))
   end
 

@@ -7,3 +7,11 @@ es:
       sign_in: "Iniciar sesión"
       account_configuration: "Configuración de la cuenta"
       sign_out: "Cerrar sesión"
+  checklist_edifici_nous:
+    quadern:
+      quadern: "Cuaderno de registro"
+      det: "Documentos de especificaciones técnicas"
+      manuals: "Manuales de las viviendas"
+      arxiu: "Archivo de documentos"
+      adreca: "Dirección"
+      foto_facana: "Fotografía de la fachada"
