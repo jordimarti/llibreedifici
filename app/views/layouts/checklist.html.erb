@@ -1,0 +1,52 @@
+<%= render 'layouts/header' %>
+    <main role="main">
+      <div class="content-container">
+        <div class="nom-edifici-container">
+          <%= @edifici.nom_edifici %>
+        </div>
+        <div class="left-column">
+          
+          <% if @menu_actiu == 'quadern' %>
+            <div class="menu-edifici menu-actiu">
+          <% else %>
+            <div class="menu-edifici">
+          <% end %>
+            <%= t('.quadern') %>
+          </div>
+
+          <% if @menu_actiu == 'det' %>
+            <div class="menu-edifici menu-actiu">
+          <% else %>
+            <div class="menu-edifici">
+          <% end %>
+            <%= t('.det') %>
+          </div>
+
+          <% if @menu_actiu == 'manuals' %>
+            <div class="menu-edifici menu-actiu">
+          <% else %>
+            <div class="menu-edifici">
+          <% end %>
+            <%= t('.manuals') %>
+          </div>
+
+          <% if @menu_actiu == 'arxiu' %>
+            <div class="menu-edifici menu-actiu">
+          <% else %>
+            <div class="menu-edifici">
+          <% end %>
+            <%= t('.arxiu') %>
+          </div>
+          
+        </div>
+
+        <div class="right-column">
+          <%= yield %>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <%= render 'layouts/footer' %>
+    </footer>
+  </body>
+</html>

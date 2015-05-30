@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150526071615) do
+ActiveRecord::Schema.define(version: 20150530141909) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "checklist_edifici_nous", force: :cascade do |t|
+  create_table "checklist_edifici_nou_plurifamiliars", force: :cascade do |t|
     t.integer  "edifici_id"
     t.boolean  "dades",                                 default: false
     t.boolean  "planol_emplacament",                    default: false
@@ -77,6 +77,8 @@ ActiveRecord::Schema.define(version: 20150526071615) do
     t.datetime "updated_at",                                            null: false
   end
 
+  add_index "checklist_edifici_nou_plurifamiliars", ["edifici_id"], name: "index_checklist_edifici_nou_plurifamiliars_on_edifici_id", using: :btree
+
   create_table "constructors", force: :cascade do |t|
     t.integer  "edifici_id"
     t.string   "nom_constructor"
@@ -113,7 +115,7 @@ ActiveRecord::Schema.define(version: 20150526071615) do
     t.datetime "updated_at",                null: false
   end
 
-  create_table "dades_edificis", force: :cascade do |t|
+  create_table "dades_edifici_nous", force: :cascade do |t|
     t.integer  "edifici_id"
     t.string   "tipus_via_edifici"
     t.string   "via_edifici"
@@ -129,6 +131,10 @@ ActiveRecord::Schema.define(version: 20150526071615) do
     t.integer  "any_fi_construccio"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+    t.string   "asset_file_name"
+    t.string   "asset_content_type"
+    t.integer  "asset_file_size"
+    t.datetime "asset_updated_at"
   end
 
   create_table "directors", force: :cascade do |t|

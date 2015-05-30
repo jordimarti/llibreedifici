@@ -24,3 +24,56 @@ body {
 	padding: 30px;
 	border-top: 1px solid #ccc;
 }
+
+.nom-edifici-container {
+	padding: 15px;
+	background-color: #008CBA;
+	color: #ffffff;
+}
+
+.left-column {
+	width: 220px;
+	
+	border-right: 1px solid #e7e7e7;
+	float: left;
+}
+
+.right-column {
+	margin-left: 220px;
+	background-color: #eaeaea;
+}
+
+.menu-edifici {
+	padding: 15px;
+	border-bottom: 1px solid #eaeaea;
+}
+
+.menu-actiu {
+	background-color: #eaeaea;
+}
+
+.checklist-container {
+	border: 1px solid #cccccc;
+	background-color: #ffffff;
+	margin-top: 30px;
+}
+
+.checklist-title {
+	background-color: #333333;
+	color: #ffffff;
+	padding: 10px 15px;
+}
+
+.checklist-item {
+	border-bottom: 1px solid #cccccc;
+	padding: 15px;
+}
+
+.checklist-switch {
+	float: left;
+	width: 80px;
+}
+
+.checklist-text {
+	margin-left: 100px;
+}

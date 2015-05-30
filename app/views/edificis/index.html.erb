@@ -1,30 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Edificis</h1>
+<div class="large-12 columns">
+  <h1><%= t('.titol') %></h1>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Nom edifici</th>
-      <th>Tipus edifici</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="large-12 columns">
+  <ul class="small-block-grid-4">
     <% @edificis.each do |edifici| %>
-      <tr>
-        <td><%= edifici.user_id %></td>
-        <td><%= edifici.nom_edifici %></td>
-        <td><%= edifici.tipus_edifici %></td>
-        <td><%= link_to 'Show', edifici %></td>
-        <td><%= link_to 'Edit', edit_edifici_path(edifici) %></td>
-        <td><%= link_to 'Destroy', edifici, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <li>
+        <div class="item-edifici">
+          <% case edifici.tipus_edifici
+            when "nou_plurifamiliar"
+              checklist_controller = "checklist_edifici_nou_plurifamiliars"
+            when "nou_unifamiliar"
+              checklist_controller = "checklist_edifici_nou_unifamiliars"
+            when "existent_plurifamiliar"
+              checklist_controller = "checklist_edifici_existent_plurifamiliars"
+            when "existent_unifamiliar"
+              checklist_controller = "checklist_edifici_existent_unifamiliars"
+          end %>
+          <%= link_to(edifici.nom_edifici, {:controller => checklist_controller, :action => 'quadern', :id => edifici.id}, :class => 'link-item-edifici') %>
+          <br/>
+          <%= edifici.tipus_edifici %>
+        </div>
+      </li>
     <% end %>
-  </tbody>
-</table>
+  </ul>
+</div>
+
 
 <br>
 

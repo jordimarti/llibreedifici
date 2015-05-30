@@ -1,10 +1,11 @@
 class EdificisController < ApplicationController
   before_action :set_edifici, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
 
   # GET /edificis
   # GET /edificis.json
   def index
-    @edificis = Edifici.all
+    @edificis = Edifici.where(user_id: current_user.id)
   end
 
   # GET /edificis/1
@@ -15,6 +16,7 @@ class EdificisController < ApplicationController
   # GET /edificis/new
   def new
     @edifici = Edifici.new
+    @current_user_id = current_user.id
   end
 
   # GET /edificis/1/edit
@@ -25,9 +27,11 @@ class EdificisController < ApplicationController
   # POST /edificis.json
   def create
     @edifici = Edifici.new(edifici_params)
-
     respond_to do |format|
       if @edifici.save
+        #Aquí creem els objectes complementaris a l'edifici (dades_edifici, checklist...)
+        create_complements(@edifici.id, @edifici.tipus_edifici)
+
         format.html { redirect_to @edifici, notice: 'Edifici was successfully created.' }
         format.json { render :show, status: :created, location: @edifici }
       else
@@ -35,6 +39,24 @@ class EdificisController < ApplicationController
         format.json { render json: @edifici.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def create_complements(edifici_id, tipus_edifici)
+    #Checklist
+    case tipus_edifici
+      when "nou_plurifamiliar"
+        @checklist = ChecklistEdificiNouPlurifamiliar.new
+    end
+    @checklist.edifici_id = edifici_id
+    @checklist.save
+
+    #Dades
+    case tipus_edifici
+      when "nou_plurifamiliar"
+        @dades = DadesEdificiNou.new
+    end
+    @dades.edifici_id = edifici_id
+    @dades.save
   end
 
   # PATCH/PUT /edificis/1

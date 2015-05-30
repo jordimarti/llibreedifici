@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  resources :checklist_edifici_nou_plurifamiliars
+  resources :dades_edifici_nous
   resources :edificis
-  resources :checklist_edifici_nous
   #get 'checklist_edifici_nous/quadern'
   #get 'checklist_edifici_nous/det'
   #get 'checklist_edifici_nous/manuals'
@@ -9,7 +10,6 @@ Rails.application.routes.draw do
   resources :execucio_directors
   resources :directors_execucio
   resources :projectistes
-  resources :dades_edificis
   devise_for :users
   
   

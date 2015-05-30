@@ -51,6 +51,7 @@ gem 'pg'
 gem 'simple_form'
 gem 'upmin-admin'
 gem 'jquery-turbolinks'
+gem "paperclip", "~> 4.2"
 
 group :development do
   gem 'rails_apps_pages'

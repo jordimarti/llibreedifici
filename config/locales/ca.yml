@@ -7,11 +7,16 @@ ca:
       sign_in: "Iniciar sessió"
       account_configuration: "Configuració del compte"
       sign_out: "Tancar sessió"
-  checklist_edifici_nous:
-    quadern:
+    checklist:
       quadern: "Quadern de registre"
       det: "Documents d'especificacions tècniques"
       manuals: "Manuals dels habitatges"
       arxiu: "Arxiu de documents"
+  checklist_edifici_nous:
+    quadern:
       adreca: "Adreça"
       foto_facana: "Fotografia de la façana"
+  edificis:
+    index:
+      titol: "Projectes"
+      eliminar: "Estàs segur que vols eliminar aquest projecte?"
