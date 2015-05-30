@@ -25,6 +25,9 @@ class ChecklistEdificiNouPlurifamiliarsController < ApplicationController
   def quadern
     @menu_actiu = 'quadern'
     @edifici = Edifici.find(params[:id])
+    if @edifici.user_id != current_user.id
+      redirect_to controller: "home", action: "permisos"
+    end
     @checklist = ChecklistEdificiNouPlurifamiliar.where(edifici_id: params[:id]).last
   end
 

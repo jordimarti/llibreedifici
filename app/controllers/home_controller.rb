@@ -4,4 +4,7 @@ class HomeController < ApplicationController
 
   def tutorial
   end
+
+  def permisos
+  end
 end

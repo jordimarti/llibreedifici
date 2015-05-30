@@ -33,14 +33,13 @@ body {
 
 .left-column {
 	width: 220px;
-	
-	border-right: 1px solid #e7e7e7;
 	float: left;
 }
 
 .right-column {
 	margin-left: 220px;
 	background-color: #eaeaea;
+	min-height: 600px;
 }
 
 .menu-edifici {
@@ -55,7 +54,7 @@ body {
 .checklist-container {
 	border: 1px solid #cccccc;
 	background-color: #ffffff;
-	margin-top: 30px;
+	margin: 20px;
 }
 
 .checklist-title {
@@ -66,14 +65,15 @@ body {
 
 .checklist-item {
 	border-bottom: 1px solid #cccccc;
-	padding: 15px;
+	padding: 10px 15px;
 }
 
 .checklist-switch {
 	float: left;
-	width: 80px;
+	width: 50px;
 }
 
 .checklist-text {
-	margin-left: 100px;
+	margin-left: 60px;
+	padding: 3px;
 }
