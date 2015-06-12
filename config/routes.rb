@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :checklist_edifici_nou_plurifamiliars
   resources :dades_edifici_nous
   resources :edificis
-  #get 'checklist_edifici_nous/quadern'
+  #get 'checklist_edifici_nou_plurifamiliars/quadern'
   #get 'checklist_edifici_nous/det'
   #get 'checklist_edifici_nous/manuals'
   #get 'checklist_edifici_nous/arxiu'

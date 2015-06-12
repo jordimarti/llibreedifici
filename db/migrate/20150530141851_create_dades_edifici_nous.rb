@@ -17,6 +17,7 @@ class CreateDadesEdificiNous < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_attachment :dades_edifici_nous, :asset
+    add_attachment :dades_edifici_nous, :planol_emplacament
+    add_attachment :dades_edifici_nous, :foto_facana
   end
 end

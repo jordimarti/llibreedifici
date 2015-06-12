@@ -1,23 +1,61 @@
-<%= simple_form_for(@dades_edifici_nou) do |f| %>
+<%= simple_form_for @dades_edifici_nou, :html => { :multipart => true } do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :edifici_id %>
-    <%= f.input :tipus_via_edifici %>
-    <%= f.input :via_edifici %>
-    <%= f.input :numero_edifici %>
-    <%= f.input :bloc_edifici %>
-    <%= f.input :escala_edifici %>
-    <%= f.input :cp_edifici %>
-    <%= f.input :poblacio_edifici %>
-    <%= f.input :provincia_edifici %>
-    <%= f.input :ref_cadastral %>
-    <%= f.input :us_edifici %>
-    <%= f.input :any_inici_construccio %>
-    <%= f.input :any_fi_construccio %>
-  </div>
+    <div class="form-inputs">
+      <div class="row">
+        <div class="medium-2 columns">
+          <%= f.input :tipus_via_edifici, collection: ['Avinguda', 'Carrer', 'Carretera', 'Passeig', 'Passatge', 'Plaça', 'Rambla', 'Ronda'] %>
+        </div>
+        <div class="medium-6 columns">
+          <%= f.input :via_edifici %>
+        </div>
+        <div class="medium-2 columns">
+          <%= f.input :numero_edifici %>
+        </div>
+        <div class="medium-2 columns">
+          <%= f.input :bloc_edifici %>
+        </div>
+      </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+      <div class="row">
+        <div class="medium-2 columns">
+          <%= f.input :cp_edifici %>
+        </div>
+        <div class="medium-6 columns">
+          <%= f.input :poblacio_edifici %>
+        </div>
+        <div class="medium-4 columns">
+          <%= f.input :provincia_edifici %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="medium-6 columns">
+          <%= f.input :ref_cadastral %>
+        </div>
+        <div class="medium-6 columns">
+          <%= f.input :us_edifici %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="medium-6 columns">
+          <%= f.input :any_inici_construccio %>
+        </div>
+        <div class="medium-6 columns">
+          <%= f.input :any_fi_construccio %>
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="row">
+      <div class="medium-12 columns">
+        <div class="form-actions right">
+          <%= f.button :submit, t('.guardar'), :class => 'button' %>
+        </div>
+      </div>
+    </div>
+
+
 <% end %>

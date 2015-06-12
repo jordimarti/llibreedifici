@@ -129,12 +129,16 @@ ActiveRecord::Schema.define(version: 20150530141909) do
     t.string   "us_edifici"
     t.integer  "any_inici_construccio"
     t.integer  "any_fi_construccio"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
-    t.string   "asset_file_name"
-    t.string   "asset_content_type"
-    t.integer  "asset_file_size"
-    t.datetime "asset_updated_at"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.string   "planol_emplacament_file_name"
+    t.string   "planol_emplacament_content_type"
+    t.integer  "planol_emplacament_file_size"
+    t.datetime "planol_emplacament_updated_at"
+    t.string   "foto_facana_file_name"
+    t.string   "foto_facana_content_type"
+    t.integer  "foto_facana_file_size"
+    t.datetime "foto_facana_updated_at"
   end
 
   create_table "directors", force: :cascade do |t|

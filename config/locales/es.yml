@@ -12,11 +12,26 @@ es:
       det: "Documentos de especificaciones técnicas"
       manuals: "Manuales de las viviendas"
       arxiu: "Archivo de documentos"
-  checklist_edifici_nous:
+  checklist_edifici_nou_plurifamiliars:
     quadern:
-      adreca: "Dirección"
-      foto_facana: "Fotografía de la fachada"
+      dades_identificacio: "Datos de identificación de la construcción"
   edificis:
     index:
       titol: "Proyectos"
       eliminar: "¿Seguro que quieres eliminar este proyecto?"
+  simple_form:
+    labels:
+      dades_edifici_nou:
+        tipus_via_edifici: "Tipo de vía"
+        via_edifici: "Nombre de la via"
+        numero_edifici: "Número"
+        bloc_edifici: "Bloque"
+        escala_edifici: "Escalera"
+        cp_edifici: "Código postal"
+        poblacio_edifici: "Población"
+        provincia_edifici: "Província"
+        ref_cadastral: "Referencia catastral"
+        us_edifici: "Tipología"
+        any_inici_construccio: "Año de inicio de la construcción"
+        any_fi_construccio: "Año de finalización de la construcción"
+        guardar: "Guardar"
