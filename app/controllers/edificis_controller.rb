@@ -1,6 +1,7 @@
 class EdificisController < ApplicationController
   before_action :set_edifici, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!
+  layout 'edifici', only: [:quadern_nou_plurifamiliar]
 
   # GET /edificis
   # GET /edificis.json
@@ -42,14 +43,6 @@ class EdificisController < ApplicationController
   end
 
   def create_complements(edifici_id, tipus_edifici)
-    #Checklist
-    case tipus_edifici
-      when "nou_plurifamiliar"
-        @checklist = ChecklistEdificiNouPlurifamiliar.new
-    end
-    @checklist.edifici_id = edifici_id
-    @checklist.save
-
     #Dades
     case tipus_edifici
       when "nou_plurifamiliar"
@@ -57,6 +50,15 @@ class EdificisController < ApplicationController
     end
     @dades.edifici_id = edifici_id
     @dades.save
+  end
+
+  def quadern_nou_plurifamiliar
+    @menu_actiu = 'quadern'
+    @edifici = Edifici.find(params[:id])
+    @dades_edifici = DadesEdificiNou.where(:edifici_id => @edifici.id).last
+    if @edifici.user_id != current_user.id
+      redirect_to controller: "home", action: "permisos"
+    end
   end
 
   # PATCH/PUT /edificis/1

@@ -1,2 +1,0 @@
-module ChecklistEdificiNouPlurifamiliarsHelper
-end

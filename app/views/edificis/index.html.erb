@@ -11,15 +11,15 @@
         <div class="item-edifici">
           <% case edifici.tipus_edifici
             when "nou_plurifamiliar"
-              checklist_controller = "checklist_edifici_nou_plurifamiliars"
+              action_tipus = "quadern_nou_plurifamiliar"
             when "nou_unifamiliar"
-              checklist_controller = "checklist_edifici_nou_unifamiliars"
+              action_tipus = "quadern_nou_unifamiliar"
             when "existent_plurifamiliar"
-              checklist_controller = "checklist_edifici_existent_plurifamiliars"
+              action_tipus = "quadern_existent_plurifamiliar"
             when "existent_unifamiliar"
-              checklist_controller = "checklist_edifici_existent_unifamiliars"
+              action_tipus = "quadern_existent_unifamiliar"
           end %>
-          <%= link_to(edifici.nom_edifici, {:controller => checklist_controller, :action => 'quadern', :id => edifici.id}, :class => 'link-item-edifici') %>
+          <%= link_to(edifici.nom_edifici, {:controller => 'edificis', :action => action_tipus, :id => edifici.id}, :class => 'link-item-edifici') %>
           <br/>
           <%= edifici.tipus_edifici %>
         </div>

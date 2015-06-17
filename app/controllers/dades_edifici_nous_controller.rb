@@ -1,5 +1,6 @@
 class DadesEdificiNousController < ApplicationController
   before_action :set_dades_edifici_nou, only: [:show, :edit, :update, :destroy]
+  layout 'edifici'
 
   # GET /dades_edifici_nous
   # GET /dades_edifici_nous.json
@@ -19,6 +20,12 @@ class DadesEdificiNousController < ApplicationController
 
   # GET /dades_edifici_nous/1/edit
   def edit
+    @menu_actiu = 'quadern'
+    @edifici = Edifici.find(params[:id])
+    @dades_edifici = DadesEdificiNou.where(:edifici_id => @edifici.id).last
+    if @edifici.user_id != current_user.id
+      redirect_to controller: "home", action: "permisos"
+    end
   end
 
   # POST /dades_edifici_nous

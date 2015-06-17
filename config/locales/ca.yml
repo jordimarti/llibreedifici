@@ -7,18 +7,17 @@ ca:
       sign_in: "Iniciar sessió"
       account_configuration: "Configuració del compte"
       sign_out: "Tancar sessió"
-    checklist:
+    edifici:
       quadern: "Quadern de registre"
       det: "Documents d'especificacions tècniques"
-      manuals: "Manuals dels habitatges"
+      manuals: "Manual de l'habitatge"
       arxiu: "Arxiu de documents"
-  checklist_edifici_nou_plurifamiliars:
-    quadern:
-      dades_identificacio: "Dades d'identificació de la construcció"
   edificis:
     index:
       titol: "Projectes"
       eliminar: "Estàs segur que vols eliminar aquest projecte?"
+    quadern_nou_plurifamiliar:
+      dades_identificacio: "Dades d'identificació de la construcció"
   simple_form:
     labels:
       dades_edifici_nou:

@@ -7,18 +7,17 @@ es:
       sign_in: "Iniciar sesión"
       account_configuration: "Configuración de la cuenta"
       sign_out: "Cerrar sesión"
-    checklist:
+    edifici:
       quadern: "Cuaderno de registro"
       det: "Documentos de especificaciones técnicas"
-      manuals: "Manuales de las viviendas"
+      manuals: "Manual de la vivienda"
       arxiu: "Archivo de documentos"
-  checklist_edifici_nou_plurifamiliars:
-    quadern:
-      dades_identificacio: "Datos de identificación de la construcción"
   edificis:
     index:
       titol: "Proyectos"
       eliminar: "¿Seguro que quieres eliminar este proyecto?"
+    quadern_nou_plurifamiliar:
+      dades_identificacio: "Datos de identificación de la construcción"
   simple_form:
     labels:
       dades_edifici_nou:
