@@ -1,5 +1,6 @@
 class PromotorsController < ApplicationController
   before_action :set_promotor, only: [:show, :edit, :update, :destroy]
+  before_action :set_edifici
 
   # GET /promotors
   # GET /promotors.json
@@ -28,7 +29,7 @@ class PromotorsController < ApplicationController
 
     respond_to do |format|
       if @promotor.save
-        format.html { redirect_to @promotor, notice: 'Promotor was successfully created.' }
+        format.html { redirect_to [@edifici, @promotor], notice: 'Promotor was successfully created.' }
         format.json { render :show, status: :created, location: @promotor }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class PromotorsController < ApplicationController
   def update
     respond_to do |format|
       if @promotor.update(promotor_params)
-        format.html { redirect_to @promotor, notice: 'Promotor was successfully updated.' }
+        format.html { redirect_to [@edifici, @promotor], notice: 'Promotor was successfully updated.' }
         format.json { render :show, status: :ok, location: @promotor }
       else
         format.html { render :edit }
@@ -56,7 +57,7 @@ class PromotorsController < ApplicationController
   def destroy
     @promotor.destroy
     respond_to do |format|
-      format.html { redirect_to promotors_url, notice: 'Promotor was successfully destroyed.' }
+      format.html { redirect_to edifici_promotors_url, notice: 'Promotor was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -65,6 +66,10 @@ class PromotorsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_promotor
       @promotor = Promotor.find(params[:id])
+    end
+
+    def set_edifici
+      @edifici = Edifici.find(params[:edifici_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

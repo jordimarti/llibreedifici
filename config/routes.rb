@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   get 'sistemes/afegir_sistema'
   resources :sistemes
   resources :dades_edifici_nous
-  resources :edificis
+  resources :edificis do
+    resources :promotors
+  end
+  
   #get 'checklist_edifici_nou_plurifamiliars/quadern'
   #get 'checklist_edifici_nous/det'
   #get 'checklist_edifici_nous/manuals'
@@ -21,7 +24,7 @@ Rails.application.routes.draw do
   resources :directors
   resources :constructors
   resources :projectista
-  resources :promotors
+  
   get 'home/index'
   get 'home/tutorial'
   root :to => "home#index"

@@ -38,9 +38,9 @@
         <td><%= promotor.poblacio_promotor %></td>
         <td><%= promotor.provincia_promotor %></td>
         <td><%= promotor.pais_promotor %></td>
-        <td><%= link_to 'Show', promotor %></td>
-        <td><%= link_to 'Edit', edit_promotor_path(promotor) %></td>
-        <td><%= link_to 'Destroy', promotor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', edifici_promotors_path %></td>
+        <td><%= link_to 'Edit', edit_edifici_promotor_path(@edifici, promotor) %></td>
+        <td><%= link_to 'Destroy', [@edifici, promotor], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -48,4 +48,4 @@
 
 <br>
 
-<%= link_to 'New Promotor', new_promotor_path %>
+<%= link_to 'New Promotor', new_edifici_promotor_path %>

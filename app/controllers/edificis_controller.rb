@@ -17,6 +17,7 @@ class EdificisController < ApplicationController
   # GET /edificis/new
   def new
     @edifici = Edifici.new
+    @promotor = Promotor.new
     @current_user_id = current_user.id
   end
 
