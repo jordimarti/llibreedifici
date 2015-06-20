@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Sistemes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Edifici</th>
+      <th>Nom sistema</th>
+      <th>Pare sistema</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sistemes.each do |sistema| %>
+      <tr>
+        <td><%= sistema.edifici_id %></td>
+        <td><%= sistema.nom_sistema %></td>
+        <td><%= sistema.pare_sistema %></td>
+        <td><%= link_to 'Show', sistema %></td>
+        <td><%= link_to 'Edit', edit_sistema_path(sistema) %></td>
+        <td><%= link_to 'Destroy', sistema, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<p>
+  <ul>
+    <li><%= link_to 'Element numero 1', sistemes_afegir_sistema_path(:nom_sistema => 'Numero 1'), remote: true %></li>
+    <li><%= link_to 'Element numero 2', sistemes_afegir_sistema_path(:nom_sistema => 'Numero 2'), remote: true %></li>
+    <li><%= link_to 'Element numero 3', sistemes_afegir_sistema_path(:nom_sistema => 'Numero 3'), remote: true %></li>
+  </ul>
+</p>
+
+<%= link_to 'Afegir un nou sistema', new_sistema_path, remote: true %>
+
+<br>
+<div id="sistema-form" style="display:none;"></div>
+
+<div id="sistemes"><%= render @sistemes %></div>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'sistemes/afegir_sistema'
+  resources :sistemes
   resources :dades_edifici_nous
   resources :edificis
   #get 'checklist_edifici_nou_plurifamiliars/quadern'
@@ -62,8 +64,7 @@ Rails.application.routes.draw do
 
   # Example resource route with more complex sub-resources:
   #   resources :products do
-  #     resources :comments
-  #     resources :sales do
+  #     #     resources :sales do
   #       get 'recent', on: :collection
   #     end
   #   end

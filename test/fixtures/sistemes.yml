@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  edifici_id: 1
+  nom_sistema: MyString
+  pare_sistema: MyString
+
+two:
+  edifici_id: 1
+  nom_sistema: MyString
+  pare_sistema: MyString

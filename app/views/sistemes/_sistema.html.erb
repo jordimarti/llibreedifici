@@ -1,0 +1,11 @@
+<li>
+	<%= sistema.nom_sistema %>
+
+<%= link_to 'Editar', edit_sistema_path(sistema), remote: true %>
+
+
+<%= link_to sistema, remote: true, method: :delete,  data: { confirm: 'Are you sure?' } do %>
+  <button>Delete!</button>
+<% end %>
+
+</li>
