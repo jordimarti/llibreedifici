@@ -1,7 +1,7 @@
 class EdificisController < ApplicationController
   before_action :set_edifici, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!
-  layout 'edifici', only: [:quadern_nou_plurifamiliar]
+  #layout 'edifici', only: [:quadern_nou_plurifamiliar]
 
   # GET /edificis
   # GET /edificis.json
@@ -17,7 +17,7 @@ class EdificisController < ApplicationController
   # GET /edificis/new
   def new
     @edifici = Edifici.new
-    @promotor = Promotor.new
+    #@promotor = Promotor.new
     @current_user_id = current_user.id
   end
 
@@ -32,7 +32,7 @@ class EdificisController < ApplicationController
     respond_to do |format|
       if @edifici.save
         #Aquí creem els objectes complementaris a l'edifici (dades_edifici, checklist...)
-        create_complements(@edifici.id, @edifici.tipus_edifici)
+        create_complements(@edifici.id)
 
         format.html { redirect_to @edifici, notice: 'Edifici was successfully created.' }
         format.json { render :show, status: :created, location: @edifici }
@@ -43,24 +43,22 @@ class EdificisController < ApplicationController
     end
   end
 
-  def create_complements(edifici_id, tipus_edifici)
-    #Dades
-    case tipus_edifici
-      when "nou_plurifamiliar"
-        @dades = DadesEdificiNou.new
-    end
-    @dades.edifici_id = edifici_id
-    @dades.save
+  def create_complements(edifici_id)
+    #Identificacio
+    @identificacio = Identificacio.new
+    @identificacio.edifici_id = edifici_id
+    @identificacio.save
+    
   end
 
-  def quadern_nou_plurifamiliar
-    @menu_actiu = 'quadern'
-    @edifici = Edifici.find(params[:id])
-    @dades_edifici = DadesEdificiNou.where(:edifici_id => @edifici.id).last
-    if @edifici.user_id != current_user.id
-      redirect_to controller: "home", action: "permisos"
-    end
-  end
+  #def quadern_nou_plurifamiliar
+   # @menu_actiu = 'quadern'
+    #@edifici = Edifici.find(params[:id])
+    #@dades_edifici = DadesEdificiNou.where(:edifici_id => @edifici.id).last
+    #if @edifici.user_id != current_user.id
+      #redirect_to controller: "home", action: "permisos"
+    #end
+  #end
 
   # PATCH/PUT /edificis/1
   # PATCH/PUT /edificis/1.json

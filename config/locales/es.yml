@@ -7,11 +7,12 @@ es:
       sign_in: "Iniciar sesión"
       account_configuration: "Configuración de la cuenta"
       sign_out: "Cerrar sesión"
-    edifici:
-      quadern: "Cuaderno de registro"
-      det: "Documentos de especificaciones técnicas"
-      manuals: "Manual de la vivienda"
-      arxiu: "Archivo de documentos"
+    subheader:
+      identificacio: "Identificación"
+      agents: "Agentes"
+      elements: "Descripción constructiva"
+      operacions: "Operaciones"
+      document: "Documento"
   edificis:
     index:
       titol: "Proyectos"
@@ -20,7 +21,7 @@ es:
       dades_identificacio: "Datos de identificación de la construcción"
   simple_form:
     labels:
-      dades_edifici_nou:
+      identificacio:
         tipus_via_edifici: "Tipo de vía"
         via_edifici: "Nombre de la via"
         numero_edifici: "Número"
@@ -28,9 +29,13 @@ es:
         escala_edifici: "Escalera"
         cp_edifici: "Código postal"
         poblacio_edifici: "Población"
-        provincia_edifici: "Província"
+        provincia_edifici: "Provincia"
         ref_cadastral: "Referencia catastral"
         us_edifici: "Tipología"
         any_inici_construccio: "Año de inicio de la construcción"
         any_fi_construccio: "Año de finalización de la construcción"
-        guardar: "Guardar"
+  identificacions:
+    edit:
+      titol_dades: "Datos de identificación de la construcción" 
+    form:
+      guardar: "Guardar"

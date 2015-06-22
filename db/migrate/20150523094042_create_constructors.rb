@@ -10,7 +10,7 @@ class CreateConstructors < ActiveRecord::Migration
       t.string :bloc_constructor
       t.string :escala_constructor
       t.string :pis_constructor
-      t.integer :cp_constructor
+      t.string :cp_constructor
       t.string :poblacio_constructor
       t.string :provincia_constructor
       t.string :pais_constructor

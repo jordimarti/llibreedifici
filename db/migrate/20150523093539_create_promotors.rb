@@ -10,7 +10,7 @@ class CreatePromotors < ActiveRecord::Migration
       t.string :bloc_promotor
       t.string :escala_promotor
       t.string :pis_promotor
-      t.integer :cp_promotor
+      t.string :cp_promotor
       t.string :poblacio_promotor
       t.string :provincia_promotor
       t.string :pais_promotor

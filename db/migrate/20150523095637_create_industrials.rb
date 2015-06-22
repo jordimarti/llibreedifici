@@ -10,7 +10,7 @@ class CreateIndustrials < ActiveRecord::Migration
       t.string :bloc_industrial
       t.string :escala_industrial
       t.string :pis_industrial
-      t.integer :cp_industrial
+      t.string :cp_industrial
       t.string :poblacio_industrial
       t.string :provincia_industrial
       t.string :pais_industrial

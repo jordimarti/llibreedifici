@@ -75,5 +75,19 @@ body {
 
 .checklist-text {
 	margin-left: 60px;
-	
+}
+
+.submenu {
+
+}
+
+ul.submenu-list {
+	list-style-type: none;
+}
+
+li.submenu-item {
+	display: inline;
+	margin-left: 20px;
+	padding-bottom: 5px;
+	border-bottom: 2px solid #ffffff;
 }

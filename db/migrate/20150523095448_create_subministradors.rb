@@ -10,7 +10,7 @@ class CreateSubministradors < ActiveRecord::Migration
       t.string :bloc_subministrador
       t.string :escala_subministrador
       t.string :pis_subministrador
-      t.integer :cp_subministrador
+      t.string :cp_subministrador
       t.string :poblacio_subministrador
       t.string :provincia_subministrador
       t.string :pais_subministrador

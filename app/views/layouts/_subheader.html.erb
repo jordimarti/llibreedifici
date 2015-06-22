@@ -1,0 +1,12 @@
+				<div class="nom-edifici-container">
+          <%= @edifici.nom_edifici %>
+          <div class="submenu right">
+          	<ul class="submenu-list">
+          		<li class="submenu-item"><%= link_to(t('.identificacio'),edit_edifici_identificacio_path(@edifici.id, @edifici.identificacio.id)) %> </li>
+          		<li class="submenu-item"><%= t('.agents') %></li>
+          		<li class="submenu-item"><%= t('.elements') %></li>
+          		<li class="submenu-item"><%= t('.operacions') %></li>
+          		<li class="submenu-item"><%= t('.document') %></li>
+          	</ul>
+          </div>
+        </div>

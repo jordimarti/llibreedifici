@@ -1,6 +1,6 @@
-class CreateDadesEdificiNous < ActiveRecord::Migration
+class CreateDadesEdificiExistents < ActiveRecord::Migration
   def change
-    create_table :dades_edifici_nous do |t|
+    create_table :dades_edifici_existents do |t|
       t.integer :edifici_id
       t.string :tipus_via_edifici
       t.string :via_edifici
@@ -12,12 +12,8 @@ class CreateDadesEdificiNous < ActiveRecord::Migration
       t.string :provincia_edifici
       t.string :ref_cadastral
       t.string :us_edifici
-      t.integer :any_inici_construccio
-      t.integer :any_fi_construccio
 
       t.timestamps null: false
     end
-    add_attachment :dades_edifici_nous, :planol_emplacament
-    add_attachment :dades_edifici_nous, :foto_facana
   end
 end

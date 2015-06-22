@@ -18,6 +18,5 @@
 ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'projectista','projectistes'
   inflect.irregular 'sistema','sistemes'
-  inflect.irregular 'nom_sistema','nom_sistemes'
-  inflect.irregular 'pare_sistema','pare_sistemes'
+  inflect.irregular 'identificacio', 'identificacions'
 end

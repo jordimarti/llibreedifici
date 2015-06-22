@@ -9,17 +9,7 @@
     <% @edificis.each do |edifici| %>
       <li>
         <div class="item-edifici">
-          <% case edifici.tipus_edifici
-            when "nou_plurifamiliar"
-              action_tipus = "quadern_nou_plurifamiliar"
-            when "nou_unifamiliar"
-              action_tipus = "quadern_nou_unifamiliar"
-            when "existent_plurifamiliar"
-              action_tipus = "quadern_existent_plurifamiliar"
-            when "existent_unifamiliar"
-              action_tipus = "quadern_existent_unifamiliar"
-          end %>
-          <%= link_to(edifici.nom_edifici, {:controller => 'edificis', :action => action_tipus, :id => edifici.id}, :class => 'link-item-edifici') %>
+          <%= link_to(edifici.nom_edifici, edit_edifici_identificacio_path(edifici.id, edifici.identificacio.id), :class => 'link-item-edifici') %>
           <br/>
           <%= edifici.tipus_edifici %>
         </div>

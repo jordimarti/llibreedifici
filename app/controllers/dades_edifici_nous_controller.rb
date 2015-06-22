@@ -1,6 +1,7 @@
 class DadesEdificiNousController < ApplicationController
   before_action :set_dades_edifici_nou, only: [:show, :edit, :update, :destroy]
-  layout 'edifici'
+  before_action :set_edifici
+  layout 'dades'
 
   # GET /dades_edifici_nous
   # GET /dades_edifici_nous.json
@@ -20,8 +21,6 @@ class DadesEdificiNousController < ApplicationController
 
   # GET /dades_edifici_nous/1/edit
   def edit
-    @menu_actiu = 'quadern'
-    @edifici = Edifici.find(params[:id])
     @dades_edifici = DadesEdificiNou.where(:edifici_id => @edifici.id).last
     if @edifici.user_id != current_user.id
       redirect_to controller: "home", action: "permisos"
@@ -49,7 +48,7 @@ class DadesEdificiNousController < ApplicationController
   def update
     respond_to do |format|
       if @dades_edifici_nou.update(dades_edifici_nou_params)
-        format.html { redirect_to @dades_edifici_nou, notice: 'Dades edifici nou was successfully updated.' }
+        format.html { redirect_to edit_edifici_dades_edifici_nou_path, notice: 'Dades edifici nou was successfully updated.' }
         format.json { render :show, status: :ok, location: @dades_edifici_nou }
       else
         format.html { render :edit }
@@ -72,6 +71,10 @@ class DadesEdificiNousController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_dades_edifici_nou
       @dades_edifici_nou = DadesEdificiNou.find(params[:id])
+    end
+
+    def set_edifici
+      @edifici = Edifici.find(params[:edifici_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

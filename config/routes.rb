@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
+  get 'agents/index'
+
+  resources :identificacions
+  resources :dades_edifici_existents
+  get 'dades/index'
+
   get 'sistemes/afegir_sistema'
   resources :sistemes
-  resources :dades_edifici_nous
   resources :edificis do
+    resources :identificacions
     resources :promotors
   end
   

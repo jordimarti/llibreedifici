@@ -1,10 +1,8 @@
 <%= render 'layouts/header' %>
-    <main role="main">
-      <div class="content-container">
-        <div class="nom-edifici-container">
-          <%= @edifici.nom_edifici %>
-        </div>
-        <div class="left-column">
+<main role="main">
+  <div class="content-container">
+    <%= render 'layouts/subheader' %>
+      <div class="left-column">
           
           <% if @menu_actiu == 'quadern' %>
             <div class="menu-edifici menu-actiu">
@@ -43,10 +41,6 @@
         <div class="right-column">
           <%= yield %>
         </div>
-      </div>
+
+         </div>
     </main>
-    <footer>
-      <%= render 'layouts/footer' %>
-    </footer>
-  </body>
-</html>

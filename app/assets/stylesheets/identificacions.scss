@@ -1,0 +1,27 @@
+// Place all the styles related to the Identificacions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.identificacio-background {
+	background-color: #eaeaea;
+}
+
+.identificacio-container {
+	border: 1px solid #cccccc;
+	margin: 20px 20px 60px 20px;
+}
+
+.identificacio-title {
+	background-color: #333333;
+	padding: 10px 20px;
+}
+
+span.title {
+	color: #ffffff;
+	font-size: 1.3em;
+}
+
+.identificacio-item {
+	padding: 30px 20px;
+	background-color: #ffffff;
+}

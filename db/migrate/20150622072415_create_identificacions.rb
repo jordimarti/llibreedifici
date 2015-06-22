@@ -1,6 +1,6 @@
-class CreateDadesEdificiNous < ActiveRecord::Migration
+class CreateIdentificacions < ActiveRecord::Migration
   def change
-    create_table :dades_edifici_nous do |t|
+    create_table :identificacions do |t|
       t.integer :edifici_id
       t.string :tipus_via_edifici
       t.string :via_edifici
@@ -17,7 +17,7 @@ class CreateDadesEdificiNous < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_attachment :dades_edifici_nous, :planol_emplacament
-    add_attachment :dades_edifici_nous, :foto_facana
+    add_attachment :identificacions, :planol_emplacament
+    add_attachment :identificacions, :foto_facana
   end
 end

@@ -10,7 +10,7 @@ class CreateEntitatControls < ActiveRecord::Migration
       t.string :bloc_entitat_control
       t.string :escala_entitat_control
       t.string :pis_entitat_control
-      t.integer :cp_entitat_control
+      t.string :cp_entitat_control
       t.string :poblacio_entitat_control
       t.string :provincia_entitat_control
       t.string :pais_entitat_control

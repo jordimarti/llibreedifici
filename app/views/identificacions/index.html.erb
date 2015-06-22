@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Identificacions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Edifici</th>
+      <th>Tipus via edifici</th>
+      <th>Via edifici</th>
+      <th>Numero edifici</th>
+      <th>Bloc edifici</th>
+      <th>Escala edifici</th>
+      <th>Cp edifici</th>
+      <th>Poblacio edifici</th>
+      <th>Provincia edifici</th>
+      <th>Ref cadastral</th>
+      <th>Us edifici</th>
+      <th>Any inici construccio</th>
+      <th>Any fi construccio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @identificacions.each do |identificacio| %>
+      <tr>
+        <td><%= identificacio.edifici_id %></td>
+        <td><%= identificacio.tipus_via_edifici %></td>
+        <td><%= identificacio.via_edifici %></td>
+        <td><%= identificacio.numero_edifici %></td>
+        <td><%= identificacio.bloc_edifici %></td>
+        <td><%= identificacio.escala_edifici %></td>
+        <td><%= identificacio.cp_edifici %></td>
+        <td><%= identificacio.poblacio_edifici %></td>
+        <td><%= identificacio.provincia_edifici %></td>
+        <td><%= identificacio.ref_cadastral %></td>
+        <td><%= identificacio.us_edifici %></td>
+        <td><%= identificacio.any_inici_construccio %></td>
+        <td><%= identificacio.any_fi_construccio %></td>
+        <td><%= link_to 'Show', identificacio %></td>
+        <td><%= link_to 'Edit', edit_identificacio_path(identificacio) %></td>
+        <td><%= link_to 'Destroy', identificacio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Identificacio', new_identificacio_path %>
