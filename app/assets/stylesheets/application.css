@@ -88,6 +88,22 @@ ul.submenu-list {
 li.submenu-item {
 	display: inline;
 	margin-left: 20px;
-	padding-bottom: 5px;
-	border-bottom: 2px solid #ffffff;
+	padding: 0px 2px 6px 5px;
+}
+
+.submenu-actiu {
+	border-bottom: 4px solid #ffffff;
+}
+
+.submenu-link {
+	color: white;
+}
+
+.submenu-link:hover {
+	color: #cccccc;
+}
+
+.suma {
+	font-size: 1.3em;
+	font-weight: bold;
 }

@@ -21,6 +21,7 @@ class IdentificacionsController < ApplicationController
 
   # GET /identificacions/1/edit
   def edit
+    @submenu_actiu = 'identificacio'
   end
 
   # POST /identificacions

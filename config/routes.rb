@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-  get 'agents/index'
 
-  resources :identificacions
-  resources :dades_edifici_existents
-  get 'dades/index'
+  get 'edificis/:edifici_id/agents', to: 'agents#index', :as => :agents
+  get 'edificis/:edifici_id/elements', to: 'elements#index'
 
   get 'sistemes/afegir_sistema'
   resources :sistemes
@@ -30,6 +28,7 @@ Rails.application.routes.draw do
   resources :directors
   resources :constructors
   resources :projectista
+  
   
   get 'home/index'
   get 'home/tutorial'

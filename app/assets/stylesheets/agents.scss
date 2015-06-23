@@ -1,3 +1,32 @@
 // Place all the styles related to the Agents controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.agents-background {
+	background-color: #eaeaea;
+}
+.agents-container {
+	border: 1px solid #cccccc;
+	background-color: #ffffff;
+	margin: 20px;
+}
+
+.agents-title {
+	background-color: #333333;
+	color: #ffffff;
+	padding: 10px 15px;
+}
+
+.agents-item {
+	border-bottom: 1px solid #cccccc;
+	padding: 10px 15px;
+}
+
+.agents-footer {
+	height: 35px;
+	background-color: #f3f3f3;
+}
+
+.agents-footer-link {
+	padding: 0px 10px 5px 10px;
+}

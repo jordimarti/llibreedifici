@@ -1,2 +1,44 @@
-<h1>Agents#index</h1>
-<p>Find me in app/views/agents/index.html.erb</p>
+<div id="modal-promotor" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <h2 id="modalTitle">Promotor</h2>
+  <div id="formulari-promotor">
+  </div>
+  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+
+<div id="modal-constructor" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <h2 id="modalTitle">Constructor</h2>
+  <p>Aquí el formulari</p>
+  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+
+<div class="agents-background">
+	<div class="row">
+		<div class="large-6 columns">
+			<div class="agents-container">
+				<div class="agents-title">
+					Promotors
+				</div>
+				<div id="promotors">
+					<%= render  :partial => '/promotors/llistat_promotors' %>
+				</div>
+				<div class="agents-footer">
+					<div class="agents-footer-link right">
+						<%= link_to (new_edifici_promotor_path), remote: true do %>
+							<span class="suma">+</span> Afegir un promotor
+						<% end %>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="large-6 columns">
+			<div class="agents-container">
+				<div class="agents-title">
+					Constructors
+				</div>
+				<div id="promotors">
+					<%= render  :partial => '/promotors/llistat_promotors' %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

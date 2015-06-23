@@ -1,0 +1,12 @@
+
+<% @promotors.each do |promotor| %>
+	<div class="agents-item">
+		<%= promotor.nom_promotor %>
+		<%= link_to edit_edifici_promotor_path(@edifici, promotor), remote: true do %>
+	    Editar
+	  <% end %>
+	  <%= link_to edifici_promotor_path(@edifici, promotor), remote: true, method: :delete,  data: { confirm: 'Segur que vols eliminar?' } do %>
+		  Eliminar!
+		<% end %>
+	</div>
+<% end %>

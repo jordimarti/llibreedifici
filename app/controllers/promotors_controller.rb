@@ -1,71 +1,49 @@
 class PromotorsController < ApplicationController
   before_action :set_promotor, only: [:show, :edit, :update, :destroy]
   before_action :set_edifici
+  before_action :all_promotors
+  respond_to :html, :js
 
-  # GET /promotors
-  # GET /promotors.json
   def index
-    @promotors = Promotor.all
+    
   end
 
-  # GET /promotors/1
-  # GET /promotors/1.json
   def show
   end
 
-  # GET /promotors/new
   def new
     @promotor = Promotor.new
   end
 
-  # GET /promotors/1/edit
   def edit
   end
 
-  # POST /promotors
-  # POST /promotors.json
   def create
-    @promotor = Promotor.new(promotor_params)
-
-    respond_to do |format|
-      if @promotor.save
-        format.html { redirect_to [@edifici, @promotor], notice: 'Promotor was successfully created.' }
-        format.json { render :show, status: :created, location: @promotor }
-      else
-        format.html { render :new }
-        format.json { render json: @promotor.errors, status: :unprocessable_entity }
-      end
-    end
+    @promotor = Promotor.create(promotor_params)
   end
 
-  # PATCH/PUT /promotors/1
-  # PATCH/PUT /promotors/1.json
   def update
-    respond_to do |format|
-      if @promotor.update(promotor_params)
-        format.html { redirect_to [@edifici, @promotor], notice: 'Promotor was successfully updated.' }
-        format.json { render :show, status: :ok, location: @promotor }
-      else
-        format.html { render :edit }
-        format.json { render json: @promotor.errors, status: :unprocessable_entity }
-      end
-    end
+    @promotor.update_attributes(promotor_params)
   end
 
-  # DELETE /promotors/1
-  # DELETE /promotors/1.json
   def destroy
     @promotor.destroy
-    respond_to do |format|
-      format.html { redirect_to edifici_promotors_url, notice: 'Promotor was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+  end
+
+  def afegir_promotor
+    @promotor = Promotor.new
+    @promotor.nom = params[:nom_promotor]
+    @promotor.save
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_promotor
       @promotor = Promotor.find(params[:id])
+    end
+
+    def all_promotors
+      @promotors = Promotor.where(:edifici_id => params[:edifici_id]).order(:created_at)
     end
 
     def set_edifici
