@@ -34,8 +34,27 @@ es:
         us_edifici: "Tipología"
         any_inici_construccio: "Año de inicio de la construcción"
         any_fi_construccio: "Año de finalización de la construcción"
+      promotor:
+        nom_promotor: "Nombre"
+        nif_promotor: "NIF/CIF"
+        adreca_promotor: "Dirección"
+        cp_promotor: "Código postal"
+        poblacio_promotor: "Población"
+        provincia_promotor: "Provincia"
+        pais_promotor: "País"
+      projectista:
+        nom_projectista: "Nombre"
+        nif_projectista: "NIF"
+        titulacio_projectista: "Titulación"
+        rao_social_projectista: "Razón social"
   identificacions:
     edit:
       titol_dades: "Datos de identificación de la construcción" 
+    form:
+      guardar: "Guardar"
+  promotors:
+    form:
+      guardar: "Guardar"
+  projectistes:
     form:
       guardar: "Guardar"

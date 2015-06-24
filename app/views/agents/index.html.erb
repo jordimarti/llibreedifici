@@ -1,13 +1,14 @@
 <div id="modal-promotor" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
   <h2 id="modalTitle">Promotor</h2>
-  <div id="formulari-promotor">
+  <div id="formulari-promotor" class="formulari-agent">
   </div>
   <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 </div>
 
-<div id="modal-constructor" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-  <h2 id="modalTitle">Constructor</h2>
-  <p>Aquí el formulari</p>
+<div id="modal-projectista" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <h2 id="modalTitle">Projectista</h2>
+  <div id="formulari-projectista" class="formulari-agent">
+  </div>
   <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 </div>
 
@@ -35,8 +36,15 @@
 				<div class="agents-title">
 					PROJECTISTA
 				</div>
-				<div id="promotors">
-					<%= render  :partial => '/promotors/llistat_promotors' %>
+				<div id="projectistes">
+					<%= render  :partial => '/projectistes/llistat_projectistes' %>
+				</div>
+				<div class="agents-footer">
+					<div class="agents-footer-link right">
+						<%= link_to (new_edifici_projectista_path), remote: true do %>
+							<span class="suma">+</span> Afegir un projectista
+						<% end %>
+					</div>
 				</div>
 			</div>
 		</div>

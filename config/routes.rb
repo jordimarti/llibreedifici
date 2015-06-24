@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :edificis do
     resources :identificacions
     resources :promotors
+    resources :projectistes
   end
   
   #get 'checklist_edifici_nou_plurifamiliars/quadern'
@@ -17,7 +18,7 @@ Rails.application.routes.draw do
   resources :control_entitats
   resources :execucio_directors
   resources :directors_execucio
-  resources :projectistes
+  
   devise_for :users
   
   

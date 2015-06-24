@@ -42,11 +42,19 @@ ca:
         poblacio_promotor: "Població"
         provincia_promotor: "Província"
         pais_promotor: "País"
+      projectista:
+        nom_projectista: "Nom"
+        nif_projectista: "NIF"
+        titulacio_projectista: "Titulació"
+        rao_social_projectista: "Raó social"
   identificacions:
     edit:
       titol_dades: "Dades d'identificació de la construcció" 
     form:
       guardar: "Guardar"
   promotors:
+    form:
+      guardar: "Guardar"
+  projectistes:
     form:
       guardar: "Guardar"

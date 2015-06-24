@@ -4,13 +4,6 @@ class PromotorsController < ApplicationController
   before_action :all_promotors
   respond_to :html, :js
 
-  def index
-    
-  end
-
-  def show
-  end
-
   def new
     @promotor = Promotor.new
   end
@@ -28,12 +21,6 @@ class PromotorsController < ApplicationController
 
   def destroy
     @promotor.destroy
-  end
-
-  def afegir_promotor
-    @promotor = Promotor.new
-    @promotor.nom = params[:nom_promotor]
-    @promotor.save
   end
 
   private
