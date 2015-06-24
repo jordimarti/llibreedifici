@@ -52,6 +52,6 @@ class PromotorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def promotor_params
-      params.require(:promotor).permit(:edifici_id, :nom_promotor, :nif_promotor, :tipus_via_promotor, :via_promotor, :numero_promotor, :bloc_promotor, :escala_promotor, :pis_promotor, :cp_promotor, :poblacio_promotor, :provincia_promotor, :pais_promotor)
+      params.require(:promotor).permit(:edifici_id, :nom_promotor, :nif_promotor, :adreca_promotor, :cp_promotor, :poblacio_promotor, :provincia_promotor, :pais_promotor)
     end
 end

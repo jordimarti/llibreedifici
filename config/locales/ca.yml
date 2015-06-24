@@ -34,8 +34,19 @@ ca:
         us_edifici: "Tipologia"
         any_inici_construccio: "Any d'inici de la construcció"
         any_fi_construccio: "Any de finalització de la construcció"
+      promotor:
+        nom_promotor: "Nom"
+        nif_promotor: "NIF/CIF"
+        adreca_promotor: "Adreça"
+        cp_promotor: "Codi postal"
+        poblacio_promotor: "Població"
+        provincia_promotor: "Província"
+        pais_promotor: "País"
   identificacions:
     edit:
       titol_dades: "Dades d'identificació de la construcció" 
+    form:
+      guardar: "Guardar"
+  promotors:
     form:
       guardar: "Guardar"

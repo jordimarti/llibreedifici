@@ -9,3 +9,9 @@ Rails.application.config.assets.version = '1.0'
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
+
+#Això per utilitzar gem icomoon
+Rails.application.config.assets.precompile += %w( icomoon-free/icomoon.eot )
+Rails.application.config.assets.precompile += %w( icomoon-free/icomoon.svg )
+Rails.application.config.assets.precompile += %w( icomoon-free/icomoon.woff )
+Rails.application.config.assets.precompile += %w( icomoon-free/icomoon.ttf )

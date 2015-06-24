@@ -12,9 +12,11 @@
 }
 
 .agents-title {
-	background-color: #333333;
+	background-color: #404040;
 	color: #ffffff;
 	padding: 10px 15px;
+	font-weight: bold;
+	font-size: 0.9em;
 }
 
 .agents-item {
@@ -22,11 +24,31 @@
 	padding: 10px 15px;
 }
 
+.agents-editar {
+	border-left: 1px solid #cccccc;
+	margin: -10px 16px;
+	padding: 10px 15px;
+}
+
+.agents-eliminar {
+	border-left: 1px solid #cccccc;
+	margin: -10px -15px;
+	padding: 10px 15px;
+}
+
+.icones-icomoon {
+	
+}
+
 .agents-footer {
 	height: 35px;
-	background-color: #f3f3f3;
 }
 
 .agents-footer-link {
 	padding: 0px 10px 5px 10px;
+}
+
+#formulari-promotor {
+	background-color: #eaeaea;
+	padding-top: 20px;
 }

@@ -13,11 +13,12 @@
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
+ *= require icomoon-free/style
 
  */
 
 body {
-	
+	background-color: #404040;
 }
 
 .footer-container {
@@ -27,8 +28,7 @@ body {
 
 .nom-edifici-container {
 	padding: 15px;
-	background-color: #008CBA;
-	color: #ffffff;
+	background-color: #ffd84a;
 }
 
 .left-column {
@@ -92,15 +92,15 @@ li.submenu-item {
 }
 
 .submenu-actiu {
-	border-bottom: 4px solid #ffffff;
+	border-bottom: 4px solid #333333;
 }
 
 .submenu-link {
-	color: white;
+	color: #333333;
 }
 
 .submenu-link:hover {
-	color: #cccccc;
+	color: #999999;
 }
 
 .suma {
