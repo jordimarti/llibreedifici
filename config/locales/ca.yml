@@ -47,6 +47,19 @@ ca:
         nif_projectista: "NIF"
         titulacio_projectista: "Titulació"
         rao_social_projectista: "Raó social"
+      constructor:
+        nom_constructor: "Nom"
+        nif_constructor: "NIF/CIF"
+        adreca_constructor: "Adreça"
+        cp_constructor: "Codi postal"
+        poblacio_constructor: "Població"
+        provincia_constructor: "Província"
+        pais_constructor: "País"
+      director:
+        nom_director: "Nom"
+        nif_director: "NIF"
+        titulacio_director: "Titulació"
+        rao_social_director: "Raó social"
   identificacions:
     edit:
       titol_dades: "Dades d'identificació de la construcció" 
@@ -56,5 +69,11 @@ ca:
     form:
       guardar: "Guardar"
   projectistes:
+    form:
+      guardar: "Guardar"
+  constructors:
+    form:
+      guardar: "Guardar"
+  directors:
     form:
       guardar: "Guardar"

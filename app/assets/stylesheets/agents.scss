@@ -4,9 +4,10 @@
 
 .agents-background {
 	background-color: #eaeaea;
+	padding-bottom: 50px;
 }
 .agents-container {
-	border: 1px solid #cccccc;
+	/*border: 1px solid #777777;*/
 	background-color: #ffffff;
 	margin: 20px;
 }
@@ -17,23 +18,21 @@
 	padding: 10px 15px;
 	font-weight: bold;
 	font-size: 0.9em;
+	border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
 }
 
 .agents-item {
-	border-bottom: 1px solid #cccccc;
+	border-bottom: 1px solid #eaeaea;
 	padding: 10px 15px;
 }
 
 .agents-editar {
-	border-left: 1px solid #cccccc;
-	margin: -10px 16px;
-	padding: 10px 15px;
+
 }
 
 .agents-eliminar {
-	border-left: 1px solid #cccccc;
-	margin: -10px -15px;
-	padding: 10px 15px;
+	
 }
 
 .icones-icomoon {
@@ -42,10 +41,22 @@
 
 .agents-footer {
 	height: 35px;
+	background-color: #eaeaea;
 }
 
 .agents-footer-link {
 	padding: 0px 10px 5px 10px;
+	background-color: #cccccc;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
+.agents-footer-link > a {
+	color: #333333;
+}
+
+.agents-footer-link > a:hover {
+	color: #666666;
 }
 
 .formulari-agent {

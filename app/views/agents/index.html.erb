@@ -12,6 +12,28 @@
   <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 </div>
 
+<div id="modal-constructor" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <h2 id="modalTitle">Constructor</h2>
+  <div id="formulari-constructor" class="formulari-agent">
+  </div>
+  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+
+<div id="modal-director" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <h2 id="modalTitle">Director d'obra</h2>
+  <div id="formulari-director" class="formulari-agent">
+  </div>
+  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+
+<div id="modal-execucio-director" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <h2 id="modalTitle">Director d'execució d'obra</h2>
+  <div id="formulari-execucio-director" class="formulari-agent">
+  </div>
+  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+
+
 <div class="agents-background">
 	<div class="row">
 		<div class="large-6 columns">
@@ -43,6 +65,80 @@
 					<div class="agents-footer-link right">
 						<%= link_to (new_edifici_projectista_path), remote: true do %>
 							<span class="suma">+</span> Afegir un projectista
+						<% end %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="large-6 columns">
+			<div class="agents-container">
+				<div class="agents-title">
+					CONSTRUCTOR
+				</div>
+				<div id="constructors">
+					<%= render  :partial => '/constructors/llistat_constructors' %>
+				</div>
+				<div class="agents-footer">
+					<div class="agents-footer-link right">
+						<%= link_to (new_edifici_constructor_path), remote: true do %>
+							<span class="suma">+</span> Afegir un constructor
+						<% end %>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="large-6 columns">
+			<div class="agents-container">
+				<div class="agents-title">
+					DIRECTOR D'OBRA
+				</div>
+				<div id="directors">
+					<%= render  :partial => '/directors/llistat_directors' %>
+				</div>
+				<div class="agents-footer">
+					<div class="agents-footer-link right">
+						<%= link_to (new_edifici_director_path), remote: true do %>
+							<span class="suma">+</span> Afegir un director d'obra
+						<% end %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+		<div class="row">
+		<div class="large-6 columns">
+			<div class="agents-container">
+				<div class="agents-title">
+					DIRECTOR D'EXECUCIÓ D'OBRA
+				</div>
+				<div id="execucio-directors">
+					<%= render  :partial => '/execucio_directors/llistat_execucio_directors' %>
+				</div>
+				<div class="agents-footer">
+					<div class="agents-footer-link right">
+						<%= link_to (new_edifici_execucio_director_path), remote: true do %>
+							<span class="suma">+</span> Afegir un director d'execució d'obra
+						<% end %>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="large-6 columns">
+			<div class="agents-container">
+				<div class="agents-title">
+					DIRECTOR D'OBRA
+				</div>
+				<div id="directors">
+					<%= render  :partial => '/directors/llistat_directors' %>
+				</div>
+				<div class="agents-footer">
+					<div class="agents-footer-link right">
+						<%= link_to (new_edifici_director_path), remote: true do %>
+							<span class="suma">+</span> Afegir un director d'obra
 						<% end %>
 					</div>
 				</div>

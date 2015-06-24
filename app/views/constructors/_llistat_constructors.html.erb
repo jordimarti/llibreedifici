@@ -1,0 +1,17 @@
+
+<% @constructors.each do |constructor| %>
+	<div class="agents-item">
+		
+		
+	  <%= link_to edifici_constructor_path(@edifici, constructor), remote: true, method: :delete,  data: { confirm: 'Segur que vols eliminar?' } do %>
+		  <div class="agents-eliminar right">
+		  	<span class="icon-cancel icones-icomoon"></span>
+		  </div>
+		<% end %>
+		<%= link_to edit_edifici_constructor_path(@edifici, constructor), remote: true do %>
+	    <div class="agents-editar">
+	    	<%= constructor.nom_constructor %>
+	    </div>
+	  <% end %>
+	</div>
+<% end %>

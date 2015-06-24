@@ -1,7 +1,7 @@
 
 <% @promotors.each do |promotor| %>
 	<div class="agents-item">
-		<%= promotor.nom_promotor %>
+		
 		
 	  <%= link_to edifici_promotor_path(@edifici, promotor), remote: true, method: :delete,  data: { confirm: 'Segur que vols eliminar?' } do %>
 		  <div class="agents-eliminar right">
@@ -9,8 +9,8 @@
 		  </div>
 		<% end %>
 		<%= link_to edit_edifici_promotor_path(@edifici, promotor), remote: true do %>
-	    <div class="agents-editar right">
-	    	<span class="icon-pencil icones-icomoon"></span>
+	    <div class="agents-editar">
+	    	<%= promotor.nom_promotor %>
 	    </div>
 	  <% end %>
 	</div>

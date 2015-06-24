@@ -1,15 +1,35 @@
-<%= simple_form_for(@execucio_director) do |f| %>
+<%= simple_form_for([@edifici, @execucio_director], remote: true) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :edifici_id %>
-    <%= f.input :nom_director_execucio %>
-    <%= f.input :titulacio_director_execucio %>
-    <%= f.input :rao_social_director_execucio %>
-    <%= f.input :nif_director_execucio %>
+    <%= f.input :edifici_id, :as => :hidden, :input_html => { :value => @edifici.id } %>
+
+    <div class="row">
+      <div class="large-8 columns">
+        <%= f.input :nom_director_execucio %>
+      </div>
+      <div class="large-4 columns">
+        <%= f.input :nif_director_execucio %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-6 columns">
+        <%= f.input :titulacio_director_execucio %>
+      </div>
+      <div class="large-6 columns">
+        <%= f.input :rao_social_director_execucio %>
+      </div>
+    </div>
+     
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <div class="row">
+      <div class="large-12 columns">
+        <%= f.button :submit, t('.guardar'), :class => 'button radius' %>
+      </div>
+    </div>
   </div>
 <% end %>
+

@@ -4,12 +4,7 @@ class CreateConstructors < ActiveRecord::Migration
       t.integer :edifici_id
       t.string :nom_constructor
       t.string :nif_constructor
-      t.string :tipus_via_constructor
-      t.string :via_constructor
-      t.string :numero_constructor
-      t.string :bloc_constructor
-      t.string :escala_constructor
-      t.string :pis_constructor
+      t.string :adreca_constructor
       t.string :cp_constructor
       t.string :poblacio_constructor
       t.string :provincia_constructor
