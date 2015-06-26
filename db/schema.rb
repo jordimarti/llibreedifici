@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150622072415) do
+ActiveRecord::Schema.define(version: 20150626075229) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,24 +27,6 @@ ActiveRecord::Schema.define(version: 20150622072415) do
     t.string   "pais_constructor"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
-  end
-
-  create_table "control_entitats", force: :cascade do |t|
-    t.integer  "edifici_id"
-    t.string   "nom_entitat_control"
-    t.string   "nif_entitat_control"
-    t.string   "tipus_via_entitat_control"
-    t.string   "via_entitat_control"
-    t.string   "numero_entitat_control"
-    t.string   "bloc_entitat_control"
-    t.string   "escala_entitat_control"
-    t.string   "pis_entitat_control"
-    t.string   "cp_entitat_control"
-    t.string   "poblacio_entitat_control"
-    t.string   "provincia_entitat_control"
-    t.string   "pais_entitat_control"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
   end
 
   create_table "dades_edifici_existents", force: :cascade do |t|
@@ -99,16 +81,6 @@ ActiveRecord::Schema.define(version: 20150622072415) do
     t.datetime "updated_at",          null: false
   end
 
-  create_table "directors_execucio", force: :cascade do |t|
-    t.integer  "edifici_id"
-    t.string   "nom_director_execucio"
-    t.string   "titulacio_director_execucio"
-    t.string   "rao_social_director_execucio"
-    t.string   "nif_director_execucio"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-  end
-
   create_table "edificis", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "nom_edifici"
@@ -121,13 +93,8 @@ ActiveRecord::Schema.define(version: 20150622072415) do
     t.integer  "edifici_id"
     t.string   "nom_entitat_control"
     t.string   "nif_entitat_control"
-    t.string   "tipus_via_entitat_control"
-    t.string   "via_entitat_control"
-    t.string   "numero_entitat_control"
-    t.string   "bloc_entitat_control"
-    t.string   "escala_entitat_control"
-    t.string   "pis_entitat_control"
-    t.string   "cp_entitat_control"
+    t.string   "adreca_entitat_control"
+    t.integer  "cp_entitat_control"
     t.string   "poblacio_entitat_control"
     t.string   "provincia_entitat_control"
     t.string   "pais_entitat_control"
@@ -143,6 +110,22 @@ ActiveRecord::Schema.define(version: 20150622072415) do
     t.string   "nif_director_execucio"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+  end
+
+  create_table "fonamentacions", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.boolean  "mur_pedra"
+    t.boolean  "mur_fabrica_mao"
+    t.boolean  "mur_fabrica_bloc"
+    t.boolean  "mur_formigo_armat"
+    t.boolean  "mur_pantalla"
+    t.boolean  "sabates_paredat"
+    t.boolean  "sabates_formigo"
+    t.boolean  "llosa"
+    t.boolean  "pilons"
+    t.boolean  "pantalles"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "identificacions", force: :cascade do |t|
@@ -197,6 +180,17 @@ ActiveRecord::Schema.define(version: 20150622072415) do
     t.datetime "updated_at",     null: false
   end
 
+  create_table "operacions", force: :cascade do |t|
+    t.text     "descripcio"
+    t.decimal  "periodicitat"
+    t.string   "document_referencia"
+    t.string   "responsable"
+    t.boolean  "obligatorietat"
+    t.boolean  "creat_usuari"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
   create_table "projectistes", force: :cascade do |t|
     t.integer  "edifici_id"
     t.string   "nom_projectista"
@@ -218,6 +212,13 @@ ActiveRecord::Schema.define(version: 20150622072415) do
     t.string   "pais_promotor"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+  end
+
+  create_table "referencies", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.integer  "operacio_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "sistemes", force: :cascade do |t|

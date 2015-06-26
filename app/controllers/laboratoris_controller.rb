@@ -1,70 +1,40 @@
 class LaboratorisController < ApplicationController
   before_action :set_laboratori, only: [:show, :edit, :update, :destroy]
+  before_action :set_edifici
+  before_action :all_laboratoris
+  respond_to :html, :js
 
-  # GET /laboratoris
-  # GET /laboratoris.json
-  def index
-    @laboratoris = Laboratori.all
-  end
-
-  # GET /laboratoris/1
-  # GET /laboratoris/1.json
-  def show
-  end
-
-  # GET /laboratoris/new
   def new
     @laboratori = Laboratori.new
   end
 
-  # GET /laboratoris/1/edit
   def edit
   end
 
-  # POST /laboratoris
-  # POST /laboratoris.json
   def create
-    @laboratori = Laboratori.new(laboratori_params)
-
-    respond_to do |format|
-      if @laboratori.save
-        format.html { redirect_to @laboratori, notice: 'Laboratori was successfully created.' }
-        format.json { render :show, status: :created, location: @laboratori }
-      else
-        format.html { render :new }
-        format.json { render json: @laboratori.errors, status: :unprocessable_entity }
-      end
-    end
+    @laboratori = Laboratori.create(laboratori_params)
   end
 
-  # PATCH/PUT /laboratoris/1
-  # PATCH/PUT /laboratoris/1.json
   def update
-    respond_to do |format|
-      if @laboratori.update(laboratori_params)
-        format.html { redirect_to @laboratori, notice: 'Laboratori was successfully updated.' }
-        format.json { render :show, status: :ok, location: @laboratori }
-      else
-        format.html { render :edit }
-        format.json { render json: @laboratori.errors, status: :unprocessable_entity }
-      end
-    end
+    @laboratori.update_attributes(laboratori_params)
   end
 
-  # DELETE /laboratoris/1
-  # DELETE /laboratoris/1.json
   def destroy
     @laboratori.destroy
-    respond_to do |format|
-      format.html { redirect_to laboratoris_url, notice: 'Laboratori was successfully destroyed.' }
-      format.json { head :no_content }
-    end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_laboratori
       @laboratori = Laboratori.find(params[:id])
+    end
+
+    def all_laboratoris
+      @laboratoris = Laboratori.where(:edifici_id => params[:edifici_id]).order(:created_at)
+    end
+
+    def set_edifici
+      @edifici = Edifici.find(params[:edifici_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

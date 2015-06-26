@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Operacions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Descripcio</th>
+      <th>Periodicitat</th>
+      <th>Document referencia</th>
+      <th>Responsable</th>
+      <th>Obligatorietat</th>
+      <th>Creat usuari</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @operacions.each do |operacio| %>
+      <tr>
+        <td><%= operacio.id %></td>
+        <td><%= operacio.descripcio %></td>
+        <td><%= operacio.periodicitat %></td>
+        <td><%= operacio.document_referencia %></td>
+        <td><%= operacio.responsable %></td>
+        <td><%= operacio.obligatorietat %></td>
+        <td><%= operacio.creat_usuari %></td>
+        <td><%= link_to 'Show', operacio %></td>
+        <td><%= link_to 'Edit', edit_operacio_path(operacio) %></td>
+        <td><%= link_to 'Destroy', operacio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Operacio', new_operacio_path %>
+

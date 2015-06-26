@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-
+  
+  
+  resources :operacions
   get 'edificis/:edifici_id/agents', to: 'agents#index', :as => :agents
-  get 'edificis/:edifici_id/elements', to: 'elements#index'
+  #get 'edificis/:edifici_id/sistemes', to: 'sistemes#index', :as => :sistemes
 
-  get 'sistemes/afegir_sistema'
+  get 'edificis/:edifici_id/sistemes/afegir_sistema', to: 'sistemes#afegir_sistema', :as => :afegir_sistema
+  get 'edificis/:edifici_id/referencies/crear_llistat', to: 'referencies#crear_llistat', :as => :crear_llistat
   resources :sistemes
   resources :edificis do
     resources :identificacions
@@ -12,13 +15,17 @@ Rails.application.routes.draw do
     resources :constructors
     resources :directors
     resources :execucio_directors
+    resources :laboratoris
+    resources :sistemes
+    resources :fonamentacions
+    resources :referencies
+    resources :entitat_controls
   end
   
   #get 'checklist_edifici_nou_plurifamiliars/quadern'
   #get 'checklist_edifici_nous/det'
   #get 'checklist_edifici_nous/manuals'
   #get 'checklist_edifici_nous/arxiu'
-  resources :control_entitats
   
   
   devise_for :users
@@ -26,11 +33,9 @@ Rails.application.routes.draw do
   
   resources :industrials
   resources :subministradors
-  resources :entitat_controls
-  resources :laboratoris
   
   
-  resources :projectista
+  
   
   
   get 'home/index'

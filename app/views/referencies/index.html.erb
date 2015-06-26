@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Referencies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Edifici</th>
+      <th>Operacio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @referencies.each do |referencia| %>
+      <tr>
+        <td><%= @operacions.find(referencia.operacio_id).descripcio %></td>
+        <td><%= @operacions.find(referencia.operacio_id).periodicitat %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<p>Número operacions: <%= @operacions.count %></p>
+<p>Número de referències: <%= @referencies.count %></p>
+<p><%= @operacions[0].descripcio %></p>
+
+<%= link_to 'New Referencia', new_edifici_referencia_path %>
+<%= link_to 'Crear llistat', crear_llistat_path %>

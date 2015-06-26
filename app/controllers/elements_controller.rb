@@ -1,9 +1,9 @@
 class ElementsController < ApplicationController
   before_action :set_edifici
-  layout 'elements'
+  
 
   def index
-  	@submenu_actiu = 'elements'
+  	
   end
 
   private

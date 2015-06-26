@@ -1,7 +1,7 @@
 class IdentificacionsController < ApplicationController
   before_action :set_identificacio, only: [:show, :edit, :update, :destroy]
   before_action :set_edifici
-  layout 'identificacio'
+  layout 'edifici'
 
   # GET /identificacions
   # GET /identificacions.json

@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  edifici_id: 1
+  mur_pedra: false
+  mur_fabrica_mao: false
+  mur_fabrica_bloc: false
+  mur_formigo_armat: false
+  mur_pantalla: false
+  sabates_paredat: false
+  sabates_formigo: false
+  llosa: false
+  pilons: false
+  pantalles: false
+
+two:
+  edifici_id: 1
+  mur_pedra: false
+  mur_fabrica_mao: false
+  mur_fabrica_bloc: false
+  mur_formigo_armat: false
+  mur_pantalla: false
+  sabates_paredat: false
+  sabates_formigo: false
+  llosa: false
+  pilons: false
+  pantalles: false

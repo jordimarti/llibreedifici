@@ -1,0 +1,57 @@
+<script>
+	
+</script>
+
+<div class="left-column">
+	<div class="item-categoria">FONAMENTACIÓ</div>
+	<div class="item-subcategoria" id="sistema-contencio">Sistemes de contenció</div>
+	<div class="item-subcategoria" id="fonamentacio-superficial">Fonamentació superficial</div>
+	<div class="item-subcategoria" id="fonamentacio-profunda">Fonamentació profunda</div>
+		
+	<div class="item-categoria">ESTRUCTURA</div>
+	<div class="item-subcategoria" id="estructura-vertical">Estructura vertical</div>
+	<div class="item-subcategoria" id="estructura-horitzontal-tipus">Estructura horitzontal: planta tipus</div>
+	<div class="item-subcategoria" id="estructura-horitzontal-terra">Estructura horitzontal: terra</div>
+	<div class="item-subcategoria" id="estructura-coberta">Estructura de coberta</div>
+	<div class="item-subcategoria" id="estructura-escala">Escala</div>
+
+	<div class="item-categoria">TANCAMENTS VERTICALS</div>
+	<div class="item-subcategoria" id="facana-principal">Façana principal</div>
+	<div class="item-subcategoria" id="altres-facanes">Altres façanes, façanes a patis i mitgeres</div>
+	<div class="item-subcategoria" id="fusteries">Fusteria i vidre en buits d'obra</div>
+
+	<div class="item-categoria">COBERTA</div>
+	<div class="item-subcategoria" id="coberta-plana">Coberta plana</div>
+	<div class="item-subcategoria" id="coberta-inclinada">Coberta inclinada</div>
+	
+	<div class="item-categoria">SANEJAMENT</div>
+	<div class="item-subcategoria" id="sanejament-tipologia">Tipologia de sistema</div>
+	<div class="item-subcategoria" id="sanejament-baixants">Baixants</div>
+	<div class="item-subcategoria" id="sanejament-colectors">Col·lectors</div>
+	<div class="item-subcategoria" id="sanejament-tipologia">Tipologia de sistema</div>
+	<div class="item-subcategoria" id="sanejament-baixants">Baixants</div>
+	<div class="item-subcategoria" id="sanejament-colectors">Col·lectors</div>
+
+
+</div>
+
+<div class="right-column">
+  <div class="middle-column" id="subsistemes" style="display:none;"></div>
+
+  <div id="llistat-sistemes">
+		<p>
+		  <%= link_to 'Element numero 1', afegir_sistema_path(:nom_sistema => 'Numero 1'), remote: true %>
+		  <%= link_to 'Element numero 2', afegir_sistema_path(:nom_sistema => 'Numero 2'), remote: true %>
+		  <%= link_to 'Element numero 3', afegir_sistema_path(:nom_sistema => 'Numero 3'), remote: true %>
+		  
+		</p>
+
+		<%= link_to 'Afegir un nou sistema', new_sistema_path, remote: true %>
+
+		<br>
+		<div id="sistema-form" style="display:none;"></div>
+
+		<div id="sistemes"><%= render @sistemes %></div>
+  </div>
+</div>
+

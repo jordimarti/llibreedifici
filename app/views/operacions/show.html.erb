@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Descripcio:</strong>
+  <%= @operacio.descripcio %>
+</p>
+
+<p>
+  <strong>Periodicitat:</strong>
+  <%= @operacio.periodicitat %>
+</p>
+
+<p>
+  <strong>Document referencia:</strong>
+  <%= @operacio.document_referencia %>
+</p>
+
+<p>
+  <strong>Responsable:</strong>
+  <%= @operacio.responsable %>
+</p>
+
+<p>
+  <strong>Obligatorietat:</strong>
+  <%= @operacio.obligatorietat %>
+</p>
+
+<p>
+  <strong>Creat usuari:</strong>
+  <%= @operacio.creat_usuari %>
+</p>
+
+<%= link_to 'Edit', edit_operacio_path(@operacio) %> |
+<%= link_to 'Back', operacions_path %>

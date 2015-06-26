@@ -10,7 +10,7 @@ ca:
     subheader:
       identificacio: "Identificació"
       agents: "Agents"
-      elements: "Descripció constructiva"
+      sistemes: "Descripció constructiva"
       operacions: "Operacions"
       document: "Document"
   edificis:
@@ -60,6 +60,33 @@ ca:
         nif_director: "NIF"
         titulacio_director: "Titulació"
         rao_social_director: "Raó social"
+      execucio_director:
+        nom_director_execucio: "Nom"
+        nif_director_execucio: "NIF"
+        titulacio_director_execucio: "Titulació"
+        rao_social_director_execucio: "Raó social"
+      laboratori:
+        nom_laboratori: "Nom"
+        nif_laboratori: "NIF/CIF"
+      entitat_control:
+        nom_entitat_control: "Nom"
+        nif_entitat_control: "NIF/CIF"
+        adreca_entitat_control: "Adreça"
+        cp_entitat_control: "Codi postal"
+        poblacio_entitat_control: "Població"
+        provincia_entitat_control: "Província"
+        pais_entitat_control: "País"
+      fonamentacio:
+        mur_pedra: "Mur de pedra"
+        mur_fabrica_mao: "Mur de fàbrica de maó"
+        mur_fabrica_bloc: "Mur de fàbrica de bloc"
+        mur_formigo_armat: "Mur de formigó armat"
+        mur_pantalla: "Mur pantalla"
+        sabates_paredat: "Sabates, rases, pous de paredat"
+        sabates_formigo: "Sabates o rases de formigó"
+        llosa: "Llosa"
+        pilons: "Pilons"
+        pantalles: "Pantalles"
   identificacions:
     edit:
       titol_dades: "Dades d'identificació de la construcció" 
@@ -75,5 +102,17 @@ ca:
     form:
       guardar: "Guardar"
   directors:
+    form:
+      guardar: "Guardar"
+  execucio_directors:
+    form:
+      guardar: "Guardar"
+  laboratoris:
+    form:
+      guardar: "Guardar"
+  entitat_controls:
+    form:
+      guardar: "Guardar"
+  fonamentacions:
     form:
       guardar: "Guardar"

@@ -4,14 +4,16 @@
           	<ul class="submenu-list">
           		<li class="submenu-item <% if @submenu_actiu == 'identificacio' %>
                     submenu-actiu
-                    <% end %>"><%= link_to(t('.identificacio'), edit_edifici_identificacio_path(@edifici.id, @edifici.identificacio.id), :class => 'submenu-link') %> </li>
+                    <% end %>"><%= link_to(t('.identificacio'), edit_edifici_identificacio_path(@edifici.id, @edifici.identificacio.id), :class => 'submenu-link') %></li>
           		<li class="submenu-item <% if @submenu_actiu == 'agents' %>
                     submenu-actiu
-                    <% end %>"><%= link_to(t('.agents'), agents_path(@edifici.id), :class => 'submenu-link') %> </li>
-          		<li class="submenu-item <% if @submenu_actiu == 'elements' %>
+                    <% end %>"><%= link_to(t('.agents'), agents_path(@edifici.id), :class => 'submenu-link') %></li>
+          		<li class="submenu-item <% if @submenu_actiu == 'sistemes' %>
                     submenu-actiu
-                    <% end %>"><%= t('.elements') %></li>
-          		<li class="submenu-item"><%= t('.operacions') %></li>
+                    <% end %>"><%= link_to(t('.sistemes'), edifici_sistemes_path(@edifici.id), :class => 'submenu-link') %></li>
+          		<li class="submenu-item <% if @submenu_actiu == 'operacions' %>
+                    submenu-actiu
+                    <% end %>"><%= link_to(t('.operacions'), edifici_referencies_path(@edifici.id), :class => 'submenu-link') %></li>
           		<li class="submenu-item"><%= t('.document') %></li>
           	</ul>
           </div>

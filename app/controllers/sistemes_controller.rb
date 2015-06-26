@@ -1,12 +1,16 @@
 class SistemesController < ApplicationController
   before_action :set_sistema, only: [:show, :edit, :update, :destroy]
   before_action :all_sistemes, only: [:index, :create, :update, :destroy, :afegir_sistema]
+  before_action :set_edifici
   respond_to :html, :js
+  layout 'edifici'
 
   # GET /sistemes
   # GET /sistemes.json
   def index
-    @sistemes = Sistema.all
+    #@sistemes = Sistema.all
+    @submenu_actiu = 'sistemes'
+    @fonamentacio = Fonamentacio.where(:edifici_id => params[:edifici_id]).last
   end
 
   # GET /sistemes/1
@@ -55,6 +59,10 @@ class SistemesController < ApplicationController
 
     def all_sistemes
       @sistemes = Sistema.all
+    end
+
+    def set_edifici
+      @edifici = Edifici.find(params[:edifici_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

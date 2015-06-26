@@ -18,7 +18,7 @@
  */
 
 body {
-	background-color: #404040;
+
 }
 
 .footer-container {
@@ -27,19 +27,8 @@ body {
 }
 
 .nom-edifici-container {
-	padding: 15px;
+	padding: 8px 15px;
 	background-color: #ffd84a;
-}
-
-.left-column {
-	width: 220px;
-	float: left;
-}
-
-.right-column {
-	margin-left: 220px;
-	background-color: #eaeaea;
-	min-height: 600px;
 }
 
 .menu-edifici {
@@ -83,12 +72,14 @@ body {
 
 ul.submenu-list {
 	list-style-type: none;
+	margin: 0px;
 }
 
 li.submenu-item {
 	display: inline;
 	margin-left: 20px;
-	padding: 0px 2px 6px 5px;
+	padding: 0px 2px 7px 2px;
+	font-size: 0.8em;
 }
 
 .submenu-actiu {
@@ -106,4 +97,8 @@ li.submenu-item {
 .suma {
 	font-size: 1.3em;
 	font-weight: bold;
+}
+
+.botodreta {
+	margin-top: 15px;
 }

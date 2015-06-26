@@ -4,12 +4,7 @@ one:
   edifici_id: 1
   nom_entitat_control: MyString
   nif_entitat_control: MyString
-  tipus_via_entitat_control: MyString
-  via_entitat_control: MyString
-  numero_entitat_control: MyString
-  bloc_entitat_control: MyString
-  escala_entitat_control: MyString
-  pis_entitat_control: MyString
+  adreca_entitat_control: MyString
   cp_entitat_control: 1
   poblacio_entitat_control: MyString
   provincia_entitat_control: MyString
@@ -19,12 +14,7 @@ two:
   edifici_id: 1
   nom_entitat_control: MyString
   nif_entitat_control: MyString
-  tipus_via_entitat_control: MyString
-  via_entitat_control: MyString
-  numero_entitat_control: MyString
-  bloc_entitat_control: MyString
-  escala_entitat_control: MyString
-  pis_entitat_control: MyString
+  adreca_entitat_control: MyString
   cp_entitat_control: 1
   poblacio_entitat_control: MyString
   provincia_entitat_control: MyString

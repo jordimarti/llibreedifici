@@ -1,6 +1,6 @@
 class AgentsController < ApplicationController
   before_action :set_edifici
-  layout 'identificacio'
+  layout 'edifici'
 
   def index
   	@submenu_actiu = 'agents'
@@ -9,6 +9,8 @@ class AgentsController < ApplicationController
     @constructors = Constructor.where(:edifici_id => params[:edifici_id])
     @directors = Director.where(:edifici_id => params[:edifici_id])
     @execucio_directors = ExecucioDirector.where(:edifici_id => params[:edifici_id])
+    @laboratoris = Laboratori.where(:edifici_id => params[:edifici_id])
+    @entitat_controls = EntitatControl.where(:edifici_id => params[:edifici_id])
   end
 
   private

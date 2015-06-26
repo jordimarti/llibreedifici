@@ -1,29 +1,25 @@
-<%= form_for(@laboratori) do |f| %>
-  <% if @laboratori.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@laboratori.errors.count, "error") %> prohibited this laboratori from being saved:</h2>
+<%= simple_form_for([@edifici, @laboratori], remote: true) do |f| %>
+  <%= f.error_notification %>
 
-      <ul>
-      <% @laboratori.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <div class="form-inputs">
+    <%= f.input :edifici_id, :as => :hidden, :input_html => { :value => @edifici.id } %>
+
+    <div class="row">
+      <div class="large-8 columns">
+        <%= f.input :nom_laboratori %>
+      </div>
+      <div class="large-4 columns">
+        <%= f.input :nif_laboratori %>
+      </div>
     </div>
-  <% end %>
+     
+  </div>
 
-  <div class="field">
-    <%= f.label :edifici_id %><br>
-    <%= f.number_field :edifici_id %>
-  </div>
-  <div class="field">
-    <%= f.label :nom_laboratori %><br>
-    <%= f.text_field :nom_laboratori %>
-  </div>
-  <div class="field">
-    <%= f.label :nif_laboratori %><br>
-    <%= f.text_field :nif_laboratori %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <div class="row">
+      <div class="large-12 columns">
+        <%= f.button :submit, t('.guardar'), :class => 'button small radius right botodreta' %>
+      </div>
+    </div>
   </div>
 <% end %>

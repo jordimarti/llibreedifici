@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  descripcio: MyText
+  periodicitat: 9.99
+  document_referencia: MyString
+  responsable: MyString
+  obligatorietat: false
+  creat_usuari: false
+
+two:
+  descripcio: MyText
+  periodicitat: 9.99
+  document_referencia: MyString
+  responsable: MyString
+  obligatorietat: false
+  creat_usuari: false

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Edifici:</strong>
+  <%= @referencia.edifici_id %>
+</p>
+
+<p>
+  <strong>Operacio:</strong>
+  <%= @referencia.operacio_id %>
+</p>
+
+<%= link_to 'Edit', edit_referencia_path(@referencia) %> |
+<%= link_to 'Back', referencies_path %>

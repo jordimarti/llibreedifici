@@ -10,7 +10,7 @@ es:
     subheader:
       identificacio: "Identificación"
       agents: "Agentes"
-      elements: "Descripción constructiva"
+      sistemes: "Descripción constructiva"
       operacions: "Operaciones"
       document: "Documento"
   edificis:

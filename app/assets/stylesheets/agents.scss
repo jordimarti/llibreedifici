@@ -4,39 +4,28 @@
 
 .agents-background {
 	background-color: #eaeaea;
-	padding-bottom: 50px;
+	padding: 20px 0px 50px 0px;
 }
 .agents-container {
-	/*border: 1px solid #777777;*/
-	background-color: #ffffff;
 	margin: 20px;
 }
 
 .agents-title {
-	background-color: #404040;
-	color: #ffffff;
+	background-color: #f6f6f6;
 	padding: 10px 15px;
 	font-weight: bold;
-	font-size: 0.9em;
+	font-size: 0.7em;
+	border: 1px solid #cccccc;
 	border-top-right-radius: 3px;
 	border-top-left-radius: 3px;
 }
 
 .agents-item {
-	border-bottom: 1px solid #eaeaea;
+	border-bottom: 1px solid #cccccc;
+	border-left:  1px solid #cccccc;
+	border-right:  1px solid #cccccc;
 	padding: 10px 15px;
-}
-
-.agents-editar {
-
-}
-
-.agents-eliminar {
-	
-}
-
-.icones-icomoon {
-	
+	background-color: #ffffff;
 }
 
 .agents-footer {
@@ -46,9 +35,12 @@
 
 .agents-footer-link {
 	padding: 0px 10px 5px 10px;
-	background-color: #cccccc;
+	margin-top: -1px;
+	background-color: #ffffff;
+	border: 1px solid #cccccc;
 	border-bottom-left-radius: 3px;
 	border-bottom-right-radius: 3px;
+	font-size: 0.8em;
 }
 
 .agents-footer-link > a {
