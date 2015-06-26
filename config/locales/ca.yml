@@ -76,6 +76,22 @@ ca:
         poblacio_entitat_control: "Població"
         provincia_entitat_control: "Província"
         pais_entitat_control: "País"
+      subministrador:
+        nom_subministrador: "Nom"
+        nif_subministrador: "NIF/CIF"
+        adreca_subministrador: "Adreça"
+        cp_subministrador: "Codi postal"
+        poblacio_subministrador: "Població"
+        provincia_subministrador: "Província"
+        pais_subministrador: "País"
+      industrial:
+        nom_industrial: "Nom"
+        nif_industrial: "NIF/CIF"
+        adreca_industrial: "Adreça"
+        cp_industrial: "Codi postal"
+        poblacio_industrial: "Població"
+        provincia_industrial: "Província"
+        pais_industrial: "País"
       fonamentacio:
         mur_pedra: "Mur de pedra"
         mur_fabrica_mao: "Mur de fàbrica de maó"
@@ -111,6 +127,12 @@ ca:
     form:
       guardar: "Guardar"
   entitat_controls:
+    form:
+      guardar: "Guardar"
+  subministradors:
+    form:
+      guardar: "Guardar"
+  industrials:
     form:
       guardar: "Guardar"
   fonamentacions:

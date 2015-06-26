@@ -4,12 +4,7 @@ one:
   edifici_id: 1
   nom_subministrador: MyString
   nif_subministrador: MyString
-  tipus_via_subministrador: MyString
-  via_subministrador: MyString
-  numero_subministrador: MyString
-  bloc_subministrador: MyString
-  escala_subministrador: MyString
-  pis_subministrador: MyString
+  adreca_subministrador: MyString
   cp_subministrador: 1
   poblacio_subministrador: MyString
   provincia_subministrador: MyString
@@ -19,12 +14,7 @@ two:
   edifici_id: 1
   nom_subministrador: MyString
   nif_subministrador: MyString
-  tipus_via_subministrador: MyString
-  via_subministrador: MyString
-  numero_subministrador: MyString
-  bloc_subministrador: MyString
-  escala_subministrador: MyString
-  pis_subministrador: MyString
+  adreca_subministrador: MyString
   cp_subministrador: 1
   poblacio_subministrador: MyString
   provincia_subministrador: MyString

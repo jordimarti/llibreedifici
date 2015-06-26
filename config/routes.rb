@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
   
+  
+  
   resources :operacions
   get 'edificis/:edifici_id/agents', to: 'agents#index', :as => :agents
   #get 'edificis/:edifici_id/sistemes', to: 'sistemes#index', :as => :sistemes
@@ -20,6 +22,8 @@ Rails.application.routes.draw do
     resources :fonamentacions
     resources :referencies
     resources :entitat_controls
+    resources :subministradors
+    resources :industrials
   end
   
   #get 'checklist_edifici_nou_plurifamiliars/quadern'
@@ -31,8 +35,6 @@ Rails.application.routes.draw do
   devise_for :users
   
   
-  resources :industrials
-  resources :subministradors
   
   
   

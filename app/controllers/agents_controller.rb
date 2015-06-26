@@ -11,6 +11,8 @@ class AgentsController < ApplicationController
     @execucio_directors = ExecucioDirector.where(:edifici_id => params[:edifici_id])
     @laboratoris = Laboratori.where(:edifici_id => params[:edifici_id])
     @entitat_controls = EntitatControl.where(:edifici_id => params[:edifici_id])
+    @subministradors = Subministrador.where(:edifici_id => params[:edifici_id])
+    @industrials = Industrial.where(:edifici_id => params[:edifici_id])
   end
 
   private

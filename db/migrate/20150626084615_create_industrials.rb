@@ -4,12 +4,7 @@ class CreateIndustrials < ActiveRecord::Migration
       t.integer :edifici_id
       t.string :nom_industrial
       t.string :nif_industrial
-      t.string :tipus_via_industrial
-      t.string :via_industrial
-      t.string :numero_industrial
-      t.string :bloc_industrial
-      t.string :escala_industrial
-      t.string :pis_industrial
+      t.string :adreca_industrial
       t.string :cp_industrial
       t.string :poblacio_industrial
       t.string :provincia_industrial

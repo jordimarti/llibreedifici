@@ -4,6 +4,12 @@
   <div class="form-inputs">
     <%= f.input :edifici_id, :as => :hidden, :input_html => { :value => @edifici.id } %>
     <div class="row">
+      <div class="medium-12 columns">
+        <div class="titol-sistema">FONAMENTACIÓ</div>
+      </div>
+    </div>
+
+    <div class="row">
       <div class="medium-4 columns">
         <div class="titol-subsistema">Sistemes de contenció</div>
         <%= f.input :mur_pedra %>
@@ -29,7 +35,7 @@
   <div class="row">
     <div class="medium-12 columns">
       <div class="form-actions">
-        <%= f.button :submit, t('.guardar'), :class => 'button radius' %>
+        <%= f.button :submit, t('.guardar'), :class => 'button small radius right botodreta' %>
       </div>
     </div>
   </div>

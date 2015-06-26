@@ -47,6 +47,20 @@
   <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 </div>
 
+<div id="modal-subministrador" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <h3 id="modalTitle">Subministrador de productes</h3>
+  <div id="formulari-subministrador" class="formulari-agent">
+  </div>
+  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+
+<div id="modal-industrial" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <h3 id="modalTitle">Industrial</h3>
+  <div id="formulari-industrial" class="formulari-agent">
+  </div>
+  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+
 
 <div class="agents-background">
 	<div class="row">
@@ -141,6 +155,11 @@
 				</div>
 			</div>
 		</div>
+	</div>
+
+	<hr>
+
+	<div class="row">
 		<div class="medium-6 columns">
 			<div class="agents-container">
 				<div class="agents-title">
@@ -158,9 +177,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
-
-	<div class="row">
 		<div class="medium-6 columns">
 			<div class="agents-container">
 				<div class="agents-title">
@@ -178,38 +194,37 @@
 				</div>
 			</div>
 		</div>
+	</div>
+	<div class="row">
 		<div class="medium-6 columns">
 			<div class="agents-container">
 				<div class="agents-title">
 					SUBMINISTRADORS DE PRODUCTES
 				</div>
-				<div id="laboratoris">
-					<%= render  :partial => '/laboratoris/llistat_laboratoris' %>
+				<div id="subministradors">
+					<%= render  :partial => '/subministradors/llistat_subministradors' %>
 				</div>
 				<div class="agents-footer">
 					<div class="agents-footer-link right">
-						<%= link_to (new_edifici_laboratori_path), remote: true do %>
-							<span class="suma">+</span> Afegir un laboratori
+						<%= link_to (new_edifici_subministrador_path), remote: true do %>
+							<span class="suma">+</span> Afegir un subministrador
 						<% end %>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-
-	<div class="row">
 		<div class="medium-6 columns">
 			<div class="agents-container">
 				<div class="agents-title">
 					INDUSTRIALS
 				</div>
-				<div id="execucio-directors">
-					<%= render  :partial => '/execucio_directors/llistat_execucio_directors' %>
+				<div id="industrials">
+					<%= render  :partial => '/industrials/llistat_industrials' %>
 				</div>
 				<div class="agents-footer">
 					<div class="agents-footer-link right">
-						<%= link_to (new_edifici_execucio_director_path), remote: true do %>
-							<span class="suma">+</span> Afegir un director d'execució d'obra
+						<%= link_to (new_edifici_industrial_path), remote: true do %>
+							<span class="suma">+</span> Afegir un industrial
 						<% end %>
 					</div>
 				</div>

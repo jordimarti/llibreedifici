@@ -1,69 +1,50 @@
-<%= form_for(@industrial) do |f| %>
-  <% if @industrial.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@industrial.errors.count, "error") %> prohibited this industrial from being saved:</h2>
+<%= simple_form_for([@edifici, @industrial], remote: true) do |f| %>
+  <%= f.error_notification %>
 
-      <ul>
-      <% @industrial.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <div class="form-inputs">
+    <%= f.input :edifici_id, :as => :hidden, :input_html => { :value => @edifici.id } %>
+    
+    <div class="row">
+      <div class="large-8 columns">
+        <%= f.input :nom_industrial %>
+      </div>
+      <div class="large-4 columns">
+        <%= f.input :nif_industrial %>
+      </div>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :edifici_id %><br>
-    <%= f.number_field :edifici_id %>
+    <div class="row">
+      <div class="large-12 columns">
+        <%= f.input :adreca_industrial %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-6 columns">
+        <%= f.input :cp_industrial %>
+      </div>
+      <div class="large-6 columns">
+        <%= f.input :poblacio_industrial %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-6 columns">
+        <%= f.input :provincia_industrial %>
+      </div>
+      <div class="large-6 columns">
+        <%= f.input :pais_industrial %>
+      </div>
+    </div>
+    
   </div>
-  <div class="field">
-    <%= f.label :nom_industrial %><br>
-    <%= f.text_field :nom_industrial %>
-  </div>
-  <div class="field">
-    <%= f.label :nif_industrial %><br>
-    <%= f.text_field :nif_industrial %>
-  </div>
-  <div class="field">
-    <%= f.label :tipus_via_industrial %><br>
-    <%= f.text_field :tipus_via_industrial %>
-  </div>
-  <div class="field">
-    <%= f.label :via_industrial %><br>
-    <%= f.text_field :via_industrial %>
-  </div>
-  <div class="field">
-    <%= f.label :numero_industrial %><br>
-    <%= f.text_field :numero_industrial %>
-  </div>
-  <div class="field">
-    <%= f.label :bloc_industrial %><br>
-    <%= f.text_field :bloc_industrial %>
-  </div>
-  <div class="field">
-    <%= f.label :escala_industrial %><br>
-    <%= f.text_field :escala_industrial %>
-  </div>
-  <div class="field">
-    <%= f.label :pis_industrial %><br>
-    <%= f.text_field :pis_industrial %>
-  </div>
-  <div class="field">
-    <%= f.label :cp_industrial %><br>
-    <%= f.number_field :cp_industrial %>
-  </div>
-  <div class="field">
-    <%= f.label :poblacio_industrial %><br>
-    <%= f.text_field :poblacio_industrial %>
-  </div>
-  <div class="field">
-    <%= f.label :provincia_industrial %><br>
-    <%= f.text_field :provincia_industrial %>
-  </div>
-  <div class="field">
-    <%= f.label :pais_industrial %><br>
-    <%= f.text_field :pais_industrial %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="form-actions">
+    <div class="row">
+      <div class="large-12 columns">
+        <%= f.button :submit, t('.guardar'), :class => 'button small radius right botodreta' %>
+      </div>
+    </div>
   </div>
 <% end %>
+

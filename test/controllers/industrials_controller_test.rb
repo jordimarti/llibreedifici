@@ -18,7 +18,7 @@ class IndustrialsControllerTest < ActionController::TestCase
 
   test "should create industrial" do
     assert_difference('Industrial.count') do
-      post :create, industrial: { bloc_industrial: @industrial.bloc_industrial, cp_industrial: @industrial.cp_industrial, edifici_id: @industrial.edifici_id, escala_industrial: @industrial.escala_industrial, nif_industrial: @industrial.nif_industrial, nom_industrial: @industrial.nom_industrial, numero_industrial: @industrial.numero_industrial, pais_industrial: @industrial.pais_industrial, pis_industrial: @industrial.pis_industrial, poblacio_industrial: @industrial.poblacio_industrial, provincia_industrial: @industrial.provincia_industrial, tipus_via_industrial: @industrial.tipus_via_industrial, via_industrial: @industrial.via_industrial }
+      post :create, industrial: { adreca_industrial: @industrial.adreca_industrial, cp_industrial: @industrial.cp_industrial, edifici_id: @industrial.edifici_id, nif_industrial: @industrial.nif_industrial, nom_industrial: @industrial.nom_industrial, pais_industrial: @industrial.pais_industrial, poblacio_industrial: @industrial.poblacio_industrial, provincia_industrial: @industrial.provincia_industrial }
     end
 
     assert_redirected_to industrial_path(assigns(:industrial))
@@ -35,7 +35,7 @@ class IndustrialsControllerTest < ActionController::TestCase
   end
 
   test "should update industrial" do
-    patch :update, id: @industrial, industrial: { bloc_industrial: @industrial.bloc_industrial, cp_industrial: @industrial.cp_industrial, edifici_id: @industrial.edifici_id, escala_industrial: @industrial.escala_industrial, nif_industrial: @industrial.nif_industrial, nom_industrial: @industrial.nom_industrial, numero_industrial: @industrial.numero_industrial, pais_industrial: @industrial.pais_industrial, pis_industrial: @industrial.pis_industrial, poblacio_industrial: @industrial.poblacio_industrial, provincia_industrial: @industrial.provincia_industrial, tipus_via_industrial: @industrial.tipus_via_industrial, via_industrial: @industrial.via_industrial }
+    patch :update, id: @industrial, industrial: { adreca_industrial: @industrial.adreca_industrial, cp_industrial: @industrial.cp_industrial, edifici_id: @industrial.edifici_id, nif_industrial: @industrial.nif_industrial, nom_industrial: @industrial.nom_industrial, pais_industrial: @industrial.pais_industrial, poblacio_industrial: @industrial.poblacio_industrial, provincia_industrial: @industrial.provincia_industrial }
     assert_redirected_to industrial_path(assigns(:industrial))
   end
 

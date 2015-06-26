@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150626075229) do
+ActiveRecord::Schema.define(version: 20150626084615) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,48 +27,6 @@ ActiveRecord::Schema.define(version: 20150626075229) do
     t.string   "pais_constructor"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
-  end
-
-  create_table "dades_edifici_existents", force: :cascade do |t|
-    t.integer  "edifici_id"
-    t.string   "tipus_via_edifici"
-    t.string   "via_edifici"
-    t.string   "numero_edifici"
-    t.string   "bloc_edifici"
-    t.string   "escala_edifici"
-    t.string   "cp_edifici"
-    t.string   "poblacio_edifici"
-    t.string   "provincia_edifici"
-    t.string   "ref_cadastral"
-    t.string   "us_edifici"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-  end
-
-  create_table "dades_edifici_nous", force: :cascade do |t|
-    t.integer  "edifici_id"
-    t.string   "tipus_via_edifici"
-    t.string   "via_edifici"
-    t.string   "numero_edifici"
-    t.string   "bloc_edifici"
-    t.string   "escala_edifici"
-    t.string   "cp_edifici"
-    t.string   "poblacio_edifici"
-    t.string   "provincia_edifici"
-    t.string   "ref_cadastral"
-    t.string   "us_edifici"
-    t.integer  "any_inici_construccio"
-    t.integer  "any_fi_construccio"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-    t.string   "planol_emplacament_file_name"
-    t.string   "planol_emplacament_content_type"
-    t.integer  "planol_emplacament_file_size"
-    t.datetime "planol_emplacament_updated_at"
-    t.string   "foto_facana_file_name"
-    t.string   "foto_facana_content_type"
-    t.integer  "foto_facana_file_size"
-    t.datetime "foto_facana_updated_at"
   end
 
   create_table "directors", force: :cascade do |t|
@@ -94,7 +52,7 @@ ActiveRecord::Schema.define(version: 20150626075229) do
     t.string   "nom_entitat_control"
     t.string   "nif_entitat_control"
     t.string   "adreca_entitat_control"
-    t.integer  "cp_entitat_control"
+    t.string   "cp_entitat_control"
     t.string   "poblacio_entitat_control"
     t.string   "provincia_entitat_control"
     t.string   "pais_entitat_control"
@@ -158,12 +116,7 @@ ActiveRecord::Schema.define(version: 20150626075229) do
     t.integer  "edifici_id"
     t.string   "nom_industrial"
     t.string   "nif_industrial"
-    t.string   "tipus_via_industrial"
-    t.string   "via_industrial"
-    t.string   "numero_industrial"
-    t.string   "bloc_industrial"
-    t.string   "escala_industrial"
-    t.string   "pis_industrial"
+    t.string   "adreca_industrial"
     t.string   "cp_industrial"
     t.string   "poblacio_industrial"
     t.string   "provincia_industrial"
@@ -233,12 +186,7 @@ ActiveRecord::Schema.define(version: 20150626075229) do
     t.integer  "edifici_id"
     t.string   "nom_subministrador"
     t.string   "nif_subministrador"
-    t.string   "tipus_via_subministrador"
-    t.string   "via_subministrador"
-    t.string   "numero_subministrador"
-    t.string   "bloc_subministrador"
-    t.string   "escala_subministrador"
-    t.string   "pis_subministrador"
+    t.string   "adreca_subministrador"
     t.string   "cp_subministrador"
     t.string   "poblacio_subministrador"
     t.string   "provincia_subministrador"

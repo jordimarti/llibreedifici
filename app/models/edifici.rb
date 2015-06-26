@@ -10,6 +10,8 @@ class Edifici < ActiveRecord::Base
 	has_many :execucio_directors
 	has_many :laboratoris
 	has_many :entitat_controls
+	has_many :subministradors
+	has_many :industrials
 
 	has_many :sistemes
 	has_one :fonamentacio

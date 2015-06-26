@@ -1,69 +1,50 @@
-<%= form_for(@subministrador) do |f| %>
-  <% if @subministrador.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@subministrador.errors.count, "error") %> prohibited this subministrador from being saved:</h2>
+<%= simple_form_for([@edifici, @subministrador], remote: true) do |f| %>
+  <%= f.error_notification %>
 
-      <ul>
-      <% @subministrador.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <div class="form-inputs">
+    <%= f.input :edifici_id, :as => :hidden, :input_html => { :value => @edifici.id } %>
+    
+    <div class="row">
+      <div class="large-8 columns">
+        <%= f.input :nom_subministrador %>
+      </div>
+      <div class="large-4 columns">
+        <%= f.input :nif_subministrador %>
+      </div>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :edifici_id %><br>
-    <%= f.number_field :edifici_id %>
+    <div class="row">
+      <div class="large-12 columns">
+        <%= f.input :adreca_subministrador %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-6 columns">
+        <%= f.input :cp_subministrador %>
+      </div>
+      <div class="large-6 columns">
+        <%= f.input :poblacio_subministrador %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-6 columns">
+        <%= f.input :provincia_subministrador %>
+      </div>
+      <div class="large-6 columns">
+        <%= f.input :pais_subministrador %>
+      </div>
+    </div>
+    
   </div>
-  <div class="field">
-    <%= f.label :nom_subministrador %><br>
-    <%= f.text_field :nom_subministrador %>
-  </div>
-  <div class="field">
-    <%= f.label :nif_subministrador %><br>
-    <%= f.text_field :nif_subministrador %>
-  </div>
-  <div class="field">
-    <%= f.label :tipus_via_subministrador %><br>
-    <%= f.text_field :tipus_via_subministrador %>
-  </div>
-  <div class="field">
-    <%= f.label :via_subministrador %><br>
-    <%= f.text_field :via_subministrador %>
-  </div>
-  <div class="field">
-    <%= f.label :numero_subministrador %><br>
-    <%= f.text_field :numero_subministrador %>
-  </div>
-  <div class="field">
-    <%= f.label :bloc_subministrador %><br>
-    <%= f.text_field :bloc_subministrador %>
-  </div>
-  <div class="field">
-    <%= f.label :escala_subministrador %><br>
-    <%= f.text_field :escala_subministrador %>
-  </div>
-  <div class="field">
-    <%= f.label :pis_subministrador %><br>
-    <%= f.text_field :pis_subministrador %>
-  </div>
-  <div class="field">
-    <%= f.label :cp_subministrador %><br>
-    <%= f.number_field :cp_subministrador %>
-  </div>
-  <div class="field">
-    <%= f.label :poblacio_subministrador %><br>
-    <%= f.text_field :poblacio_subministrador %>
-  </div>
-  <div class="field">
-    <%= f.label :provincia_subministrador %><br>
-    <%= f.text_field :provincia_subministrador %>
-  </div>
-  <div class="field">
-    <%= f.label :pais_subministrador %><br>
-    <%= f.text_field :pais_subministrador %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="form-actions">
+    <div class="row">
+      <div class="large-12 columns">
+        <%= f.button :submit, t('.guardar'), :class => 'button small radius right botodreta' %>
+      </div>
+    </div>
   </div>
 <% end %>
+

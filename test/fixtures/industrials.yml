@@ -4,13 +4,8 @@ one:
   edifici_id: 1
   nom_industrial: MyString
   nif_industrial: MyString
-  tipus_via_industrial: MyString
-  via_industrial: MyString
-  numero_industrial: MyString
-  bloc_industrial: MyString
-  escala_industrial: MyString
-  pis_industrial: MyString
-  cp_industrial: 1
+  adreca_industrial: MyString
+  cp_industrial: MyString
   poblacio_industrial: MyString
   provincia_industrial: MyString
   pais_industrial: MyString
@@ -19,13 +14,8 @@ two:
   edifici_id: 1
   nom_industrial: MyString
   nif_industrial: MyString
-  tipus_via_industrial: MyString
-  via_industrial: MyString
-  numero_industrial: MyString
-  bloc_industrial: MyString
-  escala_industrial: MyString
-  pis_industrial: MyString
-  cp_industrial: 1
+  adreca_industrial: MyString
+  cp_industrial: MyString
   poblacio_industrial: MyString
   provincia_industrial: MyString
   pais_industrial: MyString
