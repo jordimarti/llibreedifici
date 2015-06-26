@@ -21,6 +21,8 @@ class FonamentacionsController < ApplicationController
 
   # GET /fonamentacions/1/edit
   def edit
+    @submenu_actiu = 'sistemes'
+    @menu_sistemes_actiu = 'fonamentacio'
   end
 
   # POST /fonamentacions

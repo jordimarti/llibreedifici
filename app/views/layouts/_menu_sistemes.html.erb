@@ -1,11 +1,11 @@
 <div class="sistemes-container">
 	<ul class="side-nav">
-	  <li class="active">
+	  <li <% if @menu_sistemes_actiu == 'fonamentacio' %>class="active"<% end %>>
 	  	<%= link_to edit_edifici_fonamentacio_path(@edifici.id, @fonamentacio) do %>
 		    FONAMENTACIÓ
 		  <% end %>
 		</li>
-	  <li>
+	  <li <% if @menu_sistemes_actiu == 'estructura' %>class="active"<% end %>>
 	  	<%= link_to edit_edifici_estructura_path(@edifici.id, @estructura) do %>
 		    ESTRUCTURA
 		  <% end %>

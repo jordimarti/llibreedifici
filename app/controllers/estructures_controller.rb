@@ -21,6 +21,8 @@ class EstructuresController < ApplicationController
 
   # GET /estructures/1/edit
   def edit
+    @submenu_actiu = 'sistemes'
+    @menu_sistemes_actiu = 'estructura'
   end
 
   # POST /estructures
