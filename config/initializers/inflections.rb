@@ -20,6 +20,7 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'sistema','sistemes'
   inflect.irregular 'identificacio', 'identificacions'
   inflect.irregular 'fonamentacio', 'fonamentacions'
+  inflect.irregular 'estructura', 'estructures'
   inflect.irregular 'referencia', 'referencies'
   inflect.irregular 'operacio', 'operacions'
 end

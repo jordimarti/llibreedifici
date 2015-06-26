@@ -52,6 +52,10 @@ class EdificisController < ApplicationController
     @fonamentacio = Fonamentacio.new
     @fonamentacio.edifici_id = edifici_id
     @fonamentacio.save
+    #Estructura
+    @estructura = Estructura.new
+    @estructura.edifici_id = edifici_id
+    @estructura.save
     
   end
 

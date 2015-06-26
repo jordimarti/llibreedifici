@@ -3,6 +3,7 @@ class Edifici < ActiveRecord::Base
 	belongs_to :user
 	has_one :identificacio
 	has_one :checklist_edifici_nou_plurifamiliar
+	
 	has_many :promotors
 	has_many :projectistes
 	has_many :constructors
@@ -15,6 +16,7 @@ class Edifici < ActiveRecord::Base
 
 	has_many :sistemes
 	has_one :fonamentacio
+	has_one :estructura
 	has_many :referencies
 
 end

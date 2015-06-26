@@ -11,6 +11,7 @@ class SistemesController < ApplicationController
     #@sistemes = Sistema.all
     @submenu_actiu = 'sistemes'
     @fonamentacio = Fonamentacio.where(:edifici_id => params[:edifici_id]).last
+    #@estructura = Estructura.where(:edifici_id => params[:edifici_id]).last
   end
 
   # GET /sistemes/1

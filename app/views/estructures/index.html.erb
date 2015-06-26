@@ -1,0 +1,105 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Estructures</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Edifici</th>
+      <th>Parets pedra</th>
+      <th>Parets formigo armat</th>
+      <th>Parets tova</th>
+      <th>Parets tapia</th>
+      <th>Parets fabrica mao</th>
+      <th>Parets bloc ceramic</th>
+      <th>Parets bloc formigo</th>
+      <th>Parets entramat fusta</th>
+      <th>Pilars mao</th>
+      <th>Pilars ferro colat</th>
+      <th>Pilars acer</th>
+      <th>Pilars formigo armat</th>
+      <th>Bigues fusta</th>
+      <th>Bigues metaliques</th>
+      <th>Bigues formigo armat</th>
+      <th>Forjat fusta</th>
+      <th>Forjat metalic</th>
+      <th>Forjat formigo armat</th>
+      <th>Forjat ceramica armada</th>
+      <th>Entrebigat taulell</th>
+      <th>Entrebigat revolto ceramic</th>
+      <th>Entrebigat revolto formigo</th>
+      <th>Forjat reticular</th>
+      <th>Llosa formigo</th>
+      <th>Forjat sanitari</th>
+      <th>Solera</th>
+      <th>Forjat horitzontal coberta capa pendent</th>
+      <th>Forjat horitzontal coberta envanets</th>
+      <th>Forjat inclinat coberta formigo</th>
+      <th>Encavallada bigues formigo</th>
+      <th>Encavallada bigues metall</th>
+      <th>Encavallada bigues fusta</th>
+      <th>Coberta taulell ceramic</th>
+      <th>Coberta taulell fusta</th>
+      <th>Coberta sandwich</th>
+      <th>Escala fusta</th>
+      <th>Escala metall</th>
+      <th>Escala ceramica</th>
+      <th>Escala llosa armada</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @estructures.each do |estructura| %>
+      <tr>
+        <td><%= estructura.edifici_id %></td>
+        <td><%= estructura.parets_pedra %></td>
+        <td><%= estructura.parets_formigo_armat %></td>
+        <td><%= estructura.parets_tova %></td>
+        <td><%= estructura.parets_tapia %></td>
+        <td><%= estructura.parets_fabrica_mao %></td>
+        <td><%= estructura.parets_bloc_ceramic %></td>
+        <td><%= estructura.parets_bloc_formigo %></td>
+        <td><%= estructura.parets_entramat_fusta %></td>
+        <td><%= estructura.pilars_mao %></td>
+        <td><%= estructura.pilars_ferro_colat %></td>
+        <td><%= estructura.pilars_acer %></td>
+        <td><%= estructura.pilars_formigo_armat %></td>
+        <td><%= estructura.bigues_fusta %></td>
+        <td><%= estructura.bigues_metaliques %></td>
+        <td><%= estructura.bigues_formigo_armat %></td>
+        <td><%= estructura.forjat_fusta %></td>
+        <td><%= estructura.forjat_metalic %></td>
+        <td><%= estructura.forjat_formigo_armat %></td>
+        <td><%= estructura.forjat_ceramica_armada %></td>
+        <td><%= estructura.entrebigat_taulell %></td>
+        <td><%= estructura.entrebigat_revolto_ceramic %></td>
+        <td><%= estructura.entrebigat_revolto_formigo %></td>
+        <td><%= estructura.forjat_reticular %></td>
+        <td><%= estructura.llosa_formigo %></td>
+        <td><%= estructura.forjat_sanitari %></td>
+        <td><%= estructura.solera %></td>
+        <td><%= estructura.forjat_horitzontal_coberta_capa_pendent %></td>
+        <td><%= estructura.forjat_horitzontal_coberta_envanets %></td>
+        <td><%= estructura.forjat_inclinat_coberta_formigo %></td>
+        <td><%= estructura.encavallada_bigues_formigo %></td>
+        <td><%= estructura.encavallada_bigues_metall %></td>
+        <td><%= estructura.encavallada_bigues_fusta %></td>
+        <td><%= estructura.coberta_taulell_ceramic %></td>
+        <td><%= estructura.coberta_taulell_fusta %></td>
+        <td><%= estructura.coberta_sandwich %></td>
+        <td><%= estructura.escala_fusta %></td>
+        <td><%= estructura.escala_metall %></td>
+        <td><%= estructura.escala_ceramica %></td>
+        <td><%= estructura.escala_llosa_armada %></td>
+        <td><%= link_to 'Show', estructura %></td>
+        <td><%= link_to 'Edit', edit_estructura_path(estructura) %></td>
+        <td><%= link_to 'Destroy', estructura, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Estructura', new_estructura_path %>

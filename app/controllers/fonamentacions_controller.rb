@@ -1,7 +1,7 @@
 class FonamentacionsController < ApplicationController
-  before_action :set_fonamentacio, only: [:show, :edit, :update, :destroy]
+  before_action :set_sistemes, only: [:show, :edit, :update, :destroy]
   before_action :set_edifici
-  respond_to :html, :js
+  layout 'edifici'
 
   # GET /fonamentacions
   # GET /fonamentacions.json
@@ -44,7 +44,7 @@ class FonamentacionsController < ApplicationController
   def update
     respond_to do |format|
       if @fonamentacio.update(fonamentacio_params)
-        format.html { redirect_to @fonamentacio, notice: 'Fonamentacio was successfully updated.' }
+        format.html { redirect_to edit_edifici_fonamentacio_path }
         format.json { render :show, status: :ok, location: @fonamentacio }
       else
         format.html { render :edit }
@@ -65,8 +65,10 @@ class FonamentacionsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_fonamentacio
-      @fonamentacio = Fonamentacio.find(params[:id])
+    def set_sistemes
+      @edifici = Edifici.find(params[:edifici_id])
+      @fonamentacio = Fonamentacio.find(@edifici.fonamentacio.id)
+      @estructura = Estructura.find(@edifici.estructura.id)
     end
 
     def set_edifici

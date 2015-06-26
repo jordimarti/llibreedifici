@@ -138,3 +138,6 @@ ca:
   fonamentacions:
     form:
       guardar: "Guardar"
+  estructures:
+    form:
+      guardar: "Guardar"

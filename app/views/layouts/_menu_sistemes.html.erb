@@ -1,0 +1,16 @@
+<div class="sistemes-container">
+	<ul class="side-nav">
+	  <li class="active">
+	  	<%= link_to edit_edifici_fonamentacio_path(@edifici.id, @fonamentacio) do %>
+		    FONAMENTACIÓ
+		  <% end %>
+		</li>
+	  <li>
+	  	<%= link_to edit_edifici_estructura_path(@edifici.id, @estructura) do %>
+		    ESTRUCTURA
+		  <% end %>
+	  </li>
+	  <li><a href="#">TANCAMENTS VERTICALS</a></li>
+	  <li><a href="#">COBERTA</a></li>
+	</ul>
+</div>

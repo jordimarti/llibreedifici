@@ -1,0 +1,151 @@
+<%= simple_form_for([@edifici, @estructura]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :edifici_id, :as => :hidden, :input_html => { :value => @edifici.id } %>
+    <div class="row">
+      <div class="medium-12 columns">
+        <div class="titol-sistema">ESTRUCTURA</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-12 columns">
+        <div class="titol-grup-subsistema">Estructura vertical</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="medium-6 columns">
+        <div class="titol-subsistema">Parets de càrrega</div>
+        <div class="camps-subsistema">
+          <%= f.input :parets_pedra %>
+          <%= f.input :parets_formigo_armat %>
+          <%= f.input :parets_tova %>
+          <%= f.input :parets_tapia %>
+          <%= f.input :parets_fabrica_mao %>
+          <%= f.input :parets_bloc_ceramic %>
+          <%= f.input :parets_bloc_formigo %>
+          <%= f.input :parets_entramat_fusta %>
+        </div>
+      </div>
+      <div class="medium-6 columns">
+        <div class="titol-subsistema">Pilars</div>
+        <div class="camps-subsistema">
+          <%= f.input :pilars_mao %>
+          <%= f.input :pilars_ferro_colat %>
+          <%= f.input :pilars_acer %>
+          <%= f.input :pilars_formigo_armat %>
+        </div>
+      </div>
+    </div>
+
+    <hr class="form-divider">
+
+    <div class="row">
+      <div class="medium-12 columns">
+        <div class="titol-grup-subsistema">Estructura horitzontal</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="medium-6 columns">
+        <div class="titol-subsistema">Estructura principal (bigues)</div>
+        <div class="camps-subsistema">
+          <%= f.input :bigues_fusta %>
+          <%= f.input :bigues_metaliques %>
+          <%= f.input :bigues_formigo_armat %>
+        </div>
+      </div>
+      <div class="medium-6 columns">
+        <div class="titol-subsistema">Sostre (elements secundaris, biguetes)</div>
+        <div class="camps-subsistema">
+          <%= f.input :forjat_fusta %>
+          <%= f.input :forjat_metalic %>
+          <%= f.input :forjat_formigo_armat %>
+          <%= f.input :forjat_ceramica_armada %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="medium-6 columns">
+        <div class="titol-subsistema">Sostre (entrebigat)</div>
+        <div class="camps-subsistema">
+          <%= f.input :entrebigat_taulell %>
+          <%= f.input :entrebigat_revolto_ceramic %>
+          <%= f.input :entrebigat_revolto_formigo %>
+        </div>
+      </div>
+      <div class="medium-6 columns">
+        <div class="titol-subsistema">Altres</div>
+        <div class="camps-subsistema">
+          <%= f.input :forjat_reticular %>
+          <%= f.input :llosa_formigo %>
+          <%= f.input :forjat_sanitari %>
+          <%= f.input :solera %>
+        </div>
+      </div>
+    </div>
+
+    <hr class="form-divider">
+
+    <div class="row">
+      <div class="medium-12 columns">
+        <div class="titol-grup-subsistema">Estructura de coberta</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="medium-6 columns">
+        <div class="titol-subsistema">Sostre horitzontal</div>
+        <div class="camps-subsistema">
+          <%= f.input :forjat_horitzontal_coberta_capa_pendent %>
+          <%= f.input :forjat_horitzontal_coberta_envanets %> 
+        </div>
+      </div>
+      <div class="medium-6 columns">
+        <div class="titol-subsistema">Sostre inclinat</div>
+        <div class="camps-subsistema">
+          <%= f.input :forjat_inclinat_coberta_formigo %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="medium-6 columns">
+        <div class="titol-subsistema">Encavallades, pòrtics</div>
+        <div class="camps-subsistema">
+          <%= f.input :encavallada_bigues_formigo %>
+          <%= f.input :encavallada_bigues_metall %>
+          <%= f.input :encavallada_bigues_fusta %>
+        </div>
+      </div>
+      <div class="medium-6 columns">
+        <div class="titol-subsistema">Altres</div>
+        <div class="camps-subsistema">
+          <%= f.input :coberta_taulell_ceramic %>
+          <%= f.input :coberta_taulell_fusta %>
+          <%= f.input :coberta_sandwich %>
+        </div>
+      </div>
+    </div>
+
+    <hr class="form-divider">
+
+    <div class="row">
+      <div class="medium-12 columns">
+        <div class="titol-grup-subsistema">Estructura d'escala</div>
+        <div class="camps-subsistema">
+          <%= f.input :escala_fusta %>
+          <%= f.input :escala_metall %>
+          <%= f.input :escala_ceramica %>
+          <%= f.input :escala_llosa_armada %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="medium-12 columns">
+      <div class="form-actions">
+        <%= f.button :submit, t('.guardar'), :class => 'button small radius right botodreta' %>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Fonamentacions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Edifici</th>
+      <th>Mur pedra</th>
+      <th>Mur fabrica mao</th>
+      <th>Mur fabrica bloc</th>
+      <th>Mur formigo armat</th>
+      <th>Mur pantalla</th>
+      <th>Sabates paredat</th>
+      <th>Sabates formigo</th>
+      <th>Llosa</th>
+      <th>Pilons</th>
+      <th>Pantalles</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fonamentacions.each do |fonamentacio| %>
+      <tr>
+        <td><%= fonamentacio.edifici_id %></td>
+        <td><%= fonamentacio.mur_pedra %></td>
+        <td><%= fonamentacio.mur_fabrica_mao %></td>
+        <td><%= fonamentacio.mur_fabrica_bloc %></td>
+        <td><%= fonamentacio.mur_formigo_armat %></td>
+        <td><%= fonamentacio.mur_pantalla %></td>
+        <td><%= fonamentacio.sabates_paredat %></td>
+        <td><%= fonamentacio.sabates_formigo %></td>
+        <td><%= fonamentacio.llosa %></td>
+        <td><%= fonamentacio.pilons %></td>
+        <td><%= fonamentacio.pantalles %></td>
+        <td><%= link_to 'Show', fonamentacio %></td>
+        <td><%= link_to 'Edit', edit_fonamentacio_path(fonamentacio) %></td>
+        <td><%= link_to 'Destroy', fonamentacio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fonamentacio', new_fonamentacio_path %>
