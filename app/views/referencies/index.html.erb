@@ -14,8 +14,8 @@
   <tbody>
     <% @referencies.each do |referencia| %>
       <tr>
-        <td><%= @operacions.find(referencia.operacio_id).descripcio %></td>
-        <td><%= @operacions.find(referencia.operacio_id).periodicitat %></td>
+        <td><%= @operacions.find(referencia.operacio_id).descripcio_ca %></td>
+        <td><%= @operacions.find(referencia.operacio_id).periodicitat_text_ca %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,7 +24,6 @@
 <br>
 <p>Número operacions: <%= @operacions.count %></p>
 <p>Número de referències: <%= @referencies.count %></p>
-<p><%= @operacions[0].descripcio %></p>
 
 <%= link_to 'New Referencia', new_edifici_referencia_path %>
 <%= link_to 'Crear llistat', crear_llistat_path %>

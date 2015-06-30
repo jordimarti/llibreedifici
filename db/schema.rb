@@ -179,14 +179,18 @@ ActiveRecord::Schema.define(version: 20150626104710) do
   end
 
   create_table "operacions", force: :cascade do |t|
-    t.text     "descripcio"
+    t.text     "descripcio_ca"
+    t.text     "descripcio_es"
     t.decimal  "periodicitat"
+    t.string   "periodicitat_text_ca"
+    t.string   "periodicitat_text_es"
     t.string   "document_referencia"
     t.string   "responsable"
     t.boolean  "obligatorietat"
     t.boolean  "creat_usuari"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.string   "sistema"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
 
   create_table "projectistes", force: :cascade do |t|

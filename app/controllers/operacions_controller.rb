@@ -78,6 +78,6 @@ class OperacionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def operacio_params
-      params.require(:operacio).permit(:descripcio, :periodicitat, :document_referencia, :responsable, :obligatorietat, :creat_usuari)
+      params.require(:operacio).permit(:descripcio_ca, :descripcio_es, :periodicitat, :periodicitat_text_ca, :periodicitat_text_es, :document_referencia, :responsable, :obligatorietat, :creat_usuari, :sistema)
     end
 end

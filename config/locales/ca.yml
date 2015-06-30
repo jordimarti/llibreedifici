@@ -13,6 +13,11 @@ ca:
       sistemes: "Descripció constructiva"
       operacions: "Operacions"
       document: "Document"
+    footer:
+      logo_caateeb: "Col·legi d'Aparelladors, Arquitectes Tècnics i Enginyers d'Edificació de Barcelona"
+  home:
+    index:
+      logo_llibre: "El llibre de l'edifici"
   edificis:
     index:
       titol: "Projectes"
@@ -21,6 +26,14 @@ ca:
       dades_identificacio: "Dades d'identificació de la construcció"
   simple_form:
     labels:
+      user:
+        first_name: 'Nom'
+        last_name: 'Cognoms'
+        email: 'Correu electrònic'
+        password: 'Contrasenya'
+        password_confirmation: 'Confirmació de contrasenya'
+        current_password: 'Contrasenya actual'
+        remember_me: "Recorda'm"
       identificacio:
         tipus_via_edifici: "Tipus de via"
         via_edifici: "Nom de la via"
@@ -103,6 +116,10 @@ ca:
         llosa: "Llosa"
         pilons: "Pilons"
         pantalles: "Pantalles"
+  devise:
+    sessions:
+      new:
+        login: "Iniciar sessió"
   identificacions:
     edit:
       titol_dades: "Dades d'identificació de la construcció" 

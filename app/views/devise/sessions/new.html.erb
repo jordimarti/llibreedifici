@@ -1,28 +1,43 @@
-<div class="authform">
-  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form'}) do |f| %>
-    <h3>Sign in</h3>
-    <%= devise_error_messages! %>
-    <div class="form-group">
-      <%- if devise_mapping.registerable? %>
-        <%= link_to 'Sign up', new_registration_path(resource_name), class: 'right'  %>
-      <% end -%>
-      <%= f.label :email %>
-      <%= f.email_field :email, :autofocus => true, class: 'form-control' %>
+<div class="sessions-container session-background-image">
+  <div class="row">
+    <div class="medium-12 columns">
+      <h2 class="page-title"><%= t('.login') %></h2>
     </div>
-    <div class="form-group">
-      <%- if devise_mapping.recoverable? %>
-        <%= link_to "Forgot password?", new_password_path(resource_name), class: 'right' %>
-      <% end -%>
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
+  </div>
+  <div class="row">
+    <div class="medium-6 medium-offset-3 columns">
+      <div class="session-form">
+        
+        <% if flash[:alert] %>
+          <% flash.each do |name, msg| %>
+            <% if msg.is_a?(String) %>
+              <div data-alert class="alert-box <%= name.to_s == 'notice' ? 'success' : 'alert' %>">
+                <%= content_tag :div, msg %>
+                <a href="#" class="close">&times;</a>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <%= f.error_notification %>
+          <%= devise_error_messages! %>
+          <div class="form-inputs">
+            <%= f.input :email, required: true, autofocus: true, error_html: { class: 'error'} %>
+            <%= f.input :password, required: true, error_html: { class: 'error'} %>
+            <%- if devise_mapping.recoverable? %>
+              <div class="forgot-password"><%= link_to t('.forgot_password'), new_password_path(resource_name) %></div>
+            <% end -%>
+            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, t('.login') %>
+          </div>
+        <% end %>
+
+      </div>
+      <p><%= t('.if_not_registered') %> <%= link_to(t('.create_account'), new_user_registration_path) %>.</p>
     </div>
-      <%= f.submit 'Sign in', :class => 'button right' %>
-      <% if devise_mapping.rememberable? -%>
-        <div class="checkbox" style="width:150px">
-          <label>
-            <%= f.check_box :remember_me %> Remember me
-          </label>
-        </div>
-      <% end -%>
-  <% end %>
+  </div>
 </div>

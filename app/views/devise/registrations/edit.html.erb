@@ -1,37 +1,60 @@
-<div class="authform">
-  <h3>Edit <%= resource_name.to_s.humanize %></h3>
-  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :role => 'form'}) do |f| %>
-    <%= devise_error_messages! %>
-    <div class="form-group">
-      <%= f.label :email %>
-      <%= f.email_field :email, :autofocus => true, class: 'form-control' %>
-      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-      <% end %>
+<div class="sessions-container">
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <div class="row">
+    <div class="medium-12 columns">
+      <h2 class="page-title"><%= t('.account_configuration') %></h2>
+      <%= f.error_notification %>
     </div>
-    <fieldset>
-      <p>Leave these fields blank if you don't want to change your password.</p>
-      <div class="form-group">
-        <%= f.label :password %>
-        <%= f.password_field :password, :autocomplete => 'off', class: 'form-control' %>
+  </div>
+  <div class="row">
+    <div class="medium-4 columns">
+      <div class="edit-config-container">
+        <h4><%= t('.personal_data') %></h4>
+        <div class="form-inputs">
+          <%= f.input :first_name, required: true, autofocus: true, error_html: { class: 'error'} %>
+          <%= f.input :last_name, required: true, error_html: { class: 'error'} %>
+          <%= f.input :email, required: true, error_html: { class: 'error'} %>
+        </div>
       </div>
-      <div class="form-group">
-        <%= f.label :password_confirmation %>
-        <%= f.password_field :password_confirmation, class: 'form-control' %>
+    </div>
+    <div class="medium-4 columns">
+      <div class="edit-config-container">
+        <h4><%= t('.change_password') %></h4>
+        <p><%= t('.change_password_text') %></p>
+        <div class="form-inputs">
+          <%= f.input :password, autocomplete: "off", required: false, error_html: { class: 'error'} %>
+          <%= f.input :password_confirmation, required: false, error_html: { class: 'error'} %>
+        </div>
       </div>
-    </fieldset>
-    <fieldset>
-      <p>You must enter your current password to make changes.</p>
-      <div class="form-group">
-        <%= f.label :current_password %>
-        <%= f.password_field :current_password, class: 'form-control' %>
+    </div>
+    <div class="medium-4 columns">
+      <div class="edit-config-container">
+        <h4><%= t('.save_changes') %></h4>
+        <p><%= t('.save_changes_text') %></p>
+        <div class="form-inputs">
+          <%= f.input :current_password, required: true, error_html: { class: 'error'} %>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, t('.save_changes'), :class => 'button success' %>
+        </div>
       </div>
-    </fieldset>
-    <%= f.submit 'Update', :class => 'button right' %>
+    </div>
+    
   <% end %>
-</div>
-<div class="authform">
-<h3>Cancel Account</h3>
-<p>Unhappy? We'll be sad to see you go.</p>
-<%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button right' %>
+
+  <div class="row">
+    <div class="medium-12 columns">
+      <hr>
+    </div>
+  </div>
+
+  </div>
+  <div class="row">
+    <div class="medium-6 columns">
+      <h3><%= t('.cancel_account') %></h3>
+      <p><%= t('.cancel_account_text1') %></p>
+      <p><%= t('.cancel_account_text2') %></p>
+      <p><%= link_to t('.cancel_account_button'), registration_path(resource_name), data: { confirm: t('.cancel_verification') }, method: :delete, class: 'button alert' %></p>
+    </div>
+  </div>
 </div>
