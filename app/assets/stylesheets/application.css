@@ -36,6 +36,76 @@ body {
 	margin-top: 30px;
 }
 
+.sessions-container {
+	padding: 50px 0px;
+	min-height: 500px;
+}
+
+.session-background-image {
+	background-color: #eaeaea;
+}
+
+.session-form-container {
+	margin-bottom: 20px;
+}
+
+.session-title {
+	background-color: #ffd84a;
+	padding: 10px 15px;
+}
+
+.session-form {
+	background-color: #ffffff;
+	padding: 20px;
+}
+
+.session-form-button {
+	height: 60px;
+}
+
+.login-title {
+	font-size: 1.2em;
+}
+
+.projectes-background {
+	background-color: #eaeaea;
+	padding: 50px 0px;
+	min-height: 500px;
+}
+
+.projectes-container {
+	background-color: #ffffff;
+	padding: 20px;
+}
+
+.projectes-title-container {
+	background-color: #ffd84a;
+	padding: 10px 15px;
+}
+
+.projectes-title {
+	font-size: 1.2em;
+}
+
+.projectes-subtitle {
+	font-size: 1.1em;
+	margin-bottom: 20px;
+}
+
+.projectes-existents-container {
+
+}
+
+.projectes-form-container {
+	background-color: #ffffff;
+	padding: 20px;
+	margin-bottom: 20px;
+}
+
+.projectes-form-button {
+	height: 60px;
+}
+
 .nom-edifici-container {
 	padding: 8px 15px;
 	background-color: #ffd84a;

@@ -1,4 +1,24 @@
 ca:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            password_confirmation:
+              confirmation: "No coincideix amb la confirmació"
+            current_password:
+              blank: "No pot estar en blanc"
+              invalid: "La contrasenya no és vàlida"
+            password:
+              too_short: "La contrasenya ha de tenir com a mínim 8 caràcters"
+            email:
+              taken: "Aquest correu electrònic ja està registrat"
+        edifici:
+          attributes:
+            nom_edifici:
+              blank: "Cal assignar un nom a l'edifici"
+            tipus_edifici:
+              blank: "Cal definir el tipus d'edifici"
   layouts:
     navigation:
       titol: "Llibre de l'edifici"
@@ -21,7 +41,21 @@ ca:
   edificis:
     index:
       titol: "Projectes"
+      projecte_nou: "Projecte nou:"
+      projectes_existents: "Projectes existents:"
+      nou_edifici: "Crear un projecte nou"
+      no_projectes: "Encara no has creat cap projecte."
       eliminar: "Estàs segur que vols eliminar aquest projecte?"
+    new:
+      nou_edifici: "Crear un projecte nou"
+      tornar_projectes: "Tornar als projectes"
+    edit:
+      editar_edifici: "Editar el nom de l'edifici"
+      tornar_projectes: "Tornar als projectes"
+      no_editar_tipologia: "No es pot canviar la tipologia de l'edifici. Si has de fer aquest canvi caldrà eliminar aquest edifici i crear-ne un de nou."
+      guardar: "Guardar"
+    form:
+      guardar: "Guardar"
     quadern_nou_plurifamiliar:
       dades_identificacio: "Dades d'identificació de la construcció"
   simple_form:
@@ -34,6 +68,9 @@ ca:
         password_confirmation: 'Confirmació de contrasenya'
         current_password: 'Contrasenya actual'
         remember_me: "Recorda'm"
+      edifici:
+        nom_edifici: "Nom de l'edifici"
+        tipus_edifici: "Tipus d'edifici"
       identificacio:
         tipus_via_edifici: "Tipus de via"
         via_edifici: "Nom de la via"
@@ -120,9 +157,38 @@ ca:
     sessions:
       new:
         login: "Iniciar sessió"
+        forgot_password: "Has oblidat la teva contraseña?"
+        if_not_registered: "Si encara no t'has registrat, abans has de"
+        create_account: "crear un compte"
+    registrations:
+      new:
+        register_title: "Crear un compte d'usuari"
+        register_button: "Registra't"
+        registration_needed: "És necessari registrar-se per poder utilitzar l'aplicatiu Llibre de l'edifici."
+        if_registered: "Si ja t'has registrat pots"
+        login_here: "iniciar sessió aquí"
+      edit:
+        account_configuration: "Configuració del compte"
+        personal_data: "Dades personals"
+        change_password: "Canviar la contrasenya"
+        change_password_text: "Si no vols canviar la teva contrasenya deixa aquests espais en blanc."
+        save_changes: "Guardar els canvis"
+        save_changes_text: "Introdueix la teva contrasenya actual per a guardar els canvis."
+        cancel_account: "Cancel·lació del compte"
+        cancel_account_text1: "Si no estàs satisfet amb Llibre de l'edifici pots cancel·lar el teu compte d'usuari/ària."
+        cancel_account_text2: "Recorda que si cancel·les el compte no podràs accedir als teus projectes creats fins ara."
+        cancel_account_button: "Cancel·lar el meu compte"
+        cancel_verification: "Estàs segur/a que vols cancel·lar el teu compte?"
+    passwords:
+      new:
+        change_password_title: "Has oblidat la teva contrasenya?"
+        change_password_text1: "Indica'ns la teva direcció de correu electrònic i t'enviarem instruccions per restablir la teva contrasenya."
+        change_password_text2: "Si ecara no t'has registrat, pots"
+        create_account: "crear un compte aquí"
+        send_instructions: "Enviar les instruccions"
   identificacions:
     edit:
-      titol_dades: "Dades d'identificació de la construcció" 
+      titol_dades: "DADES D'IDENTIFICACIÓ DE LA CONSTRUCCIÓ" 
     form:
       guardar: "Guardar"
   promotors:

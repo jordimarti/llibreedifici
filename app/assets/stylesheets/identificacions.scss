@@ -7,21 +7,26 @@
 }
 
 .identificacio-container {
-	border: 1px solid #cccccc;
 	margin: 20px 20px 60px 20px;
 }
 
 .identificacio-title {
-	background-color: #333333;
-	padding: 10px 20px;
+	background-color: #f6f6f6;
+	padding: 10px 15px;
+	font-weight: bold;
+	font-size: 0.7em;
+	border: 1px solid #cccccc;
+	border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
 }
 
 span.title {
-	color: #ffffff;
-	font-size: 1.3em;
+	font-size: 1em;
 }
 
 .identificacio-item {
-	padding: 30px 20px;
+	border: 1px solid #cccccc;
+	padding: 30px 20px 10px 20px;
 	background-color: #ffffff;
+	margin-top: -1px;
 }

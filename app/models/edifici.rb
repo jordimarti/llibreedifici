@@ -19,4 +19,7 @@ class Edifici < ActiveRecord::Base
 	has_one :estructura
 	has_many :referencies
 
+	validates :nom_edifici, :presence => true
+	validates :tipus_edifici, :presence => true
+
 end

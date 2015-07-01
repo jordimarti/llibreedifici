@@ -9,6 +9,7 @@ class ReferenciesController < ApplicationController
   # GET /referencies.json
   def index
     @operacions = Operacio.all
+    @submenu_actiu = 'operacions'
   end
 
   #Aquest mètode consulta la definició de l'edifici i crea el llistat de referències a les operacions de manteniment

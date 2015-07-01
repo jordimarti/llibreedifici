@@ -1,13 +1,12 @@
 <%= simple_form_for(@edifici) do |f| %>
-  <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :user_id, :as => :hidden, :input_html => { :value => @current_user_id } %>
+    <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id } %>
     <%= f.input :nom_edifici %>
     <%= f.input :tipus_edifici, :collection => [['Edifici nou plurifamiliar', 'nou_plurifamiliar'],['Edifici nou unifamiliar', 'nou_unifamiliar'], ['Edifici existent plurifamiliar', 'existent_plurifamiliar'], ['Edifici existent unifamiliar', 'existent_unifamiliar']] %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-actions projectes-form-button">
+    <%= f.button :submit, t('.guardar'), :class => 'button small radius right botodreta' %>
   </div>
 <% end %>

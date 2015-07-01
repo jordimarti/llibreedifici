@@ -1,43 +1,47 @@
 <div class="sessions-container session-background-image">
-  <div class="row">
-    <div class="medium-12 columns">
-      <h2 class="page-title"><%= t('.login') %></h2>
-    </div>
-  </div>
+  
   <div class="row">
     <div class="medium-6 medium-offset-3 columns">
-      <div class="session-form">
-        
-        <% if flash[:alert] %>
-          <% flash.each do |name, msg| %>
-            <% if msg.is_a?(String) %>
-              <div data-alert class="alert-box <%= name.to_s == 'notice' ? 'success' : 'alert' %>">
-                <%= content_tag :div, msg %>
-                <a href="#" class="close">&times;</a>
-              </div>
+      <div class="session-form-container">
+        <div class="session-title">
+          <span class="login-title"><%= t('.login') %></span>
+        </div>
+
+        <div class="session-form">
+          
+          <% if flash[:alert] %>
+            <% flash.each do |name, msg| %>
+              <% if msg.is_a?(String) %>
+                <div data-alert class="alert-box <%= name.to_s == 'notice' ? 'success' : 'alert' %>">
+                  <%= content_tag :div, msg %>
+                  <a href="#" class="close">&times;</a>
+                </div>
+              <% end %>
             <% end %>
           <% end %>
-        <% end %>
 
-        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <%= f.error_notification %>
-          <%= devise_error_messages! %>
-          <div class="form-inputs">
-            <%= f.input :email, required: true, autofocus: true, error_html: { class: 'error'} %>
-            <%= f.input :password, required: true, error_html: { class: 'error'} %>
-            <%- if devise_mapping.recoverable? %>
-              <div class="forgot-password"><%= link_to t('.forgot_password'), new_password_path(resource_name) %></div>
-            <% end -%>
-            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-          </div>
+          <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <%= f.error_notification %>
+            <%= devise_error_messages! %>
+            <div class="form-inputs">
+              <%= f.input :email, required: true, autofocus: true, error_html: { class: 'error'} %>
+              <%= f.input :password, required: true, error_html: { class: 'error'} %>
+              <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+              <%- if devise_mapping.recoverable? %>
+                <div class="forgot-password"><%= link_to t('.forgot_password'), new_password_path(resource_name) %></div>
+              <% end -%>
+              
+            </div>
 
-          <div class="form-actions">
-            <%= f.button :submit, t('.login') %>
-          </div>
-        <% end %>
+            <div class="form-actions session-form-button">
+              <%= f.button :submit, t('.login'), :class => 'button small radius right botodreta' %>
+            </div>
+          <% end %>
 
+        </div>
       </div>
       <p><%= t('.if_not_registered') %> <%= link_to(t('.create_account'), new_user_registration_path) %>.</p>
+      
     </div>
   </div>
 </div>

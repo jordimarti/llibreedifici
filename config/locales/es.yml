@@ -1,4 +1,24 @@
 es:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            password_confirmation:
+              confirmation: "No coincide con la confirmación"
+            current_password:
+              blank: "No puede estar en blanco"
+              invalid: "La contraseña no es válida"
+            password:
+              too_short: "La contraseña debe tener como mínimo 8 carácteres"
+            email:
+              taken: "Este correo electrónico ya está registrado"
+        edifici:
+          attributes:
+            nom_edifici:
+              blank: "Es necesario asignar un nombre al edificio"
+            tipus_edifici:
+              blank: "Es necesario definir la tipologia de edificio"
   layouts:
     navigation:
       titol: "Libro del edificio"
@@ -21,7 +41,21 @@ es:
   edificis:
     index:
       titol: "Proyectos"
+      projecte_nou: "Proyecto nuevo:"
+      projectes_existents: "Proyectos existentes:"
+      nou_edifici: "Crear un proyecto nuevo"
+      no_projectes: "Aún no has creado ningún proyecto."
       eliminar: "¿Seguro que quieres eliminar este proyecto?"
+    new:
+      nou_edifici: "Crear un proyecto nuevo"
+      tornar_projectes: "Volver a los proyectos"
+    edit:
+      editar_edifici: "Editar el nombre del edificio"
+      tornar_projectes: "Volver a los proyectos"
+      no_editar_tipologia: "No se puede modificar la tipología del edificio. Si debes hacer este cambio es necesario eliminar este edificio y crear uno nuevo."
+      guardar: "Guardar"
+    form:
+      guardar: "Guardar"
     quadern_nou_plurifamiliar:
       dades_identificacio: "Datos de identificación de la construcción"
   simple_form:
@@ -60,9 +94,35 @@ es:
         nif_projectista: "NIF"
         titulacio_projectista: "Titulación"
         rao_social_projectista: "Razón social"
+  devise:
+    sessions:
+      new:
+        login: "Iniciar sesión"
+        forgot_password: "¿Has olvidado tu contraseña?"
+        if_not_registered: "Si aún no te has registrado, antes debes"
+        create_account: "crear una cuenta"
+    registrations:
+      new:
+        register_title: "Crear una cuenta de usuario"
+        register_button: "Regístrate"
+        registration_needed: "Es necesario registrarse para poder usar la aplicación Libro del edificio."
+        if_registered: "Si ya te has registrado puedes"
+        login_here: "iniciar sesión aquí"
+      edit:
+        account_configuration: "Configuración de la cuenta"
+        personal_data: "Datos personales"
+        change_password: "Cambiar la contraseña"
+        change_password_text: "Si no quieres cambiar tu contraseña deja estos espacios en blanco."
+        save_changes: "Guardar los cambios"
+        save_changes_text: "Introduce tu contraseña actual para guardar los cambios."
+        cancel_account: "Cancelación de la cuenta"
+        cancel_account_text1: "Si no estas satisfecho con Libro del edificio puedes cancelar tu cuenta de usuario/a."
+        cancel_account_text2: "Recuerda que si cancelas tu cuenta no podrás acceder a los proyectos creados hasta ahora."
+        cancel_account_button: "Cancelar mi cuenta"
+        cancel_verification: "¿Estás seguro/a que quieres cancelar tu cuenta?"
   identificacions:
     edit:
-      titol_dades: "Datos de identificación de la construcción" 
+      titol_dades: "DATOS DE IDENTIFICACIÓN DE LA CONSTRUCCIÓN" 
     form:
       guardar: "Guardar"
   promotors:

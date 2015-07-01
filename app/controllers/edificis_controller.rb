@@ -6,7 +6,7 @@ class EdificisController < ApplicationController
   # GET /edificis
   # GET /edificis.json
   def index
-    @edificis = Edifici.where(user_id: current_user.id)
+    @edificis = Edifici.where(user_id: current_user.id).order(created_at: :desc)
   end
 
   # GET /edificis/1
@@ -17,8 +17,6 @@ class EdificisController < ApplicationController
   # GET /edificis/new
   def new
     @edifici = Edifici.new
-    #@promotor = Promotor.new
-    @current_user_id = current_user.id
   end
 
   # GET /edificis/1/edit
@@ -34,7 +32,7 @@ class EdificisController < ApplicationController
         #Aquí creem els objectes complementaris a l'edifici (dades_edifici, checklist...)
         create_complements(@edifici.id)
 
-        format.html { redirect_to @edifici, notice: 'Edifici was successfully created.' }
+        format.html { redirect_to edificis_path }
         format.json { render :show, status: :created, location: @edifici }
       else
         format.html { render :new }
@@ -73,7 +71,7 @@ class EdificisController < ApplicationController
   def update
     respond_to do |format|
       if @edifici.update(edifici_params)
-        format.html { redirect_to @edifici, notice: 'Edifici was successfully updated.' }
+        format.html { redirect_to edificis_path }
         format.json { render :show, status: :ok, location: @edifici }
       else
         format.html { render :edit }

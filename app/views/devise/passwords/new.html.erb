@@ -1,12 +1,27 @@
-<div class="authform">
-  <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, :role => 'form'}) do |f| %>
-    <h3>Forgot your password?</h3>
-    <p>We'll send password reset instructions.</p>
-    <%= devise_error_messages! %>
-    <div class="form-group">
-      <%= f.label :email %>
-      <%= f.email_field :email, :autofocus => true, class: 'form-control' %>
+<div class="sessions-container session-background-image">
+  <div class="row">
+    <div class="medium-6 medium-offset-3 columns">
+      <div class="session-form-container">
+        <div class="session-title">
+          <span class="login-title"><%= t('.change_password_title') %></span>
+        </div>
+
+        <div class="session-form">
+          <p><%= t('.change_password_text1') %></p>
+          <p><%= t('.change_password_text2') %> <%= link_to(t('.create_account'), new_user_registration_path) %></p>
+          
+          <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+          <%= f.error_notification %>
+
+          <div class="form-inputs">
+            <%= f.input :email, required: true, autofocus: true %>
+          </div>
+
+          <div class="form-actions session-form-button">
+            <%= f.button :submit, t('.send_instructions'), :class => 'button small radius right botodreta' %>
+          </div>
+        <% end %>
+      </div>
     </div>
-     <%= f.submit 'Reset Password', :class => 'button right' %>
-  <% end %>
+  </div>
 </div>

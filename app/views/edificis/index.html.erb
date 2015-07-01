@@ -1,24 +1,80 @@
-<p id="notice"><%= notice %></p>
+<div class="projectes-background">
+  
+  <div class="row">
+    <div class="medium-12 columns">
+      <div class="projectes-title-container">
+        <span class="projectes-title"><%= t('.titol') %></span>
+      </div>
+    </div>
+  </div>
 
-<div class="large-12 columns">
-  <h1><%= t('.titol') %></h1>
-</div>
 
-<div class="large-12 columns">
-  <ul class="small-block-grid-4">
-    <% @edificis.each do |edifici| %>
-      <li>
-        <div class="item-edifici">
-          <%= link_to(edifici.nom_edifici, edit_edifici_identificacio_path(edifici.id, edifici.identificacio.id), :class => 'link-item-edifici') %>
-          <br/>
-          <%= edifici.tipus_edifici %>
+  <div class="row">
+    <div class="medium-12 columns">
+      <div class="projectes-container">
+        <div class="row">
+          <div class="medium-3 columns">
+            
+            <%= link_to new_edifici_path, :class => "button small radius" do %>
+              <%= t('.nou_edifici') %>
+            <% end %>
+
+          </div>
+          <div class="medium-9 columns">
+            <div class="projectes-existents-container">
+              
+              <% if @edificis.count == 0 %>
+                <p><%= t('.no_projectes') %></p>
+              <% else %>
+                <table class="llistat-edificis">
+                  <thead>
+                    <tr>
+                      <th>Nom de l'edifici</th>
+                      <th>Tipologia</th>
+                      <th>Data de creació</th>
+                      <th width="30"></th>
+                      <th width="30"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% @edificis.each do |edifici| %>
+                    <tr>
+                      <td><%= link_to(edifici.nom_edifici, edit_edifici_identificacio_path(edifici.id, edifici.identificacio.id), :class => 'link-item-edifici') %></td>
+                      <td> <% case edifici.tipus_edifici 
+                          when "nou_plurifamiliar" 
+                            tipus_edifici = "Edifici nou plurifamiliar"
+                          when "nou_unifamiliar"
+                            tipus_edifici = "Edifici nou unifamiliar"
+                          when "existent_plurifamiliar"
+                            tipus_edifici = "Edifici existent plurifamiliar"
+                          when "existent_unifamiliar"
+                            tipus_edifici = "Edifici existent unifamiliar"
+                          end %>
+                          <%= tipus_edifici %></td>
+                      <td><%= edifici.created_at.day.to_s %>-<%= edifici.created_at.month.to_s %>-<%= edifici.created_at.year.to_s %></td>
+                      <td>
+                        <%= link_to edit_edifici_path(edifici) do %>
+                          <div>
+                            <span class="icon-pencil icones-icomoon"></span>
+                          </div>
+                        <% end %>
+                      </td>
+                      <td>
+                        <%= link_to edifici, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                          <div>
+                            <span class="icon-cancel icones-icomoon"></span>
+                          </div>
+                        <% end %>
+                      </td>
+                    </tr>
+                    <% end %>
+                  </tbody>
+                </table>
+              <% end %>
+            </div>
+          </div>
         </div>
-      </li>
-    <% end %>
-  </ul>
+      </div>
+    </div>
+  </div>
 </div>
-
-
-<br>
-
-<%= link_to 'New Edifici', new_edifici_path %>

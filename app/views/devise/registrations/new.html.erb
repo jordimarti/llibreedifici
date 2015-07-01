@@ -1,27 +1,29 @@
 <div class="sessions-container session-background-image">
-  <div class="row">
-    <div class="medium-12 columns">
-      <h2 class="page-title"><%= t('.register_title') %></h2>
-    </div>
-  </div>
+  
   <div class="row">
     <div class="medium-6 medium-offset-3 columns">
-      <div class="session-form">
-        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-          <%= f.error_notification %>
+      <div class="session-form-container">
+        <div class="session-title">
+          <span class="login-title"><%= t('.register_title') %></span>
+        </div>
 
-          <div class="form-inputs">
-            <%= f.input :first_name, required: true, autofocus: true, error_html: { class: 'error'} %>
-            <%= f.input :last_name, required: true, error_html: { class: 'error'} %>
-            <%= f.input :email, required: true, error_html: { class: 'error'} %>
-            <%= f.input :password, required: true, error_html: { class: 'error'} %>
-            <%= f.input :password_confirmation, required: true, error_html: { class: 'error'} %>
-          </div>
+        <div class="session-form">
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= f.error_notification %>
 
-          <div class="form-actions">
-            <%= f.button :submit, t('.register_button') %>
-          </div>
-        <% end %>
+            <div class="form-inputs">
+              <%= f.input :first_name, required: true, autofocus: true, error_html: { class: 'error'} %>
+              <%= f.input :last_name, required: true, error_html: { class: 'error'} %>
+              <%= f.input :email, required: true, error_html: { class: 'error'} %>
+              <%= f.input :password, required: true, error_html: { class: 'error'} %>
+              <%= f.input :password_confirmation, required: true, error_html: { class: 'error'} %>
+            </div>
+
+            <div class="form-actions session-form-button">
+              <%= f.button :submit, t('.register_button'), :class => 'button small radius right botodreta' %>
+            </div>
+          <% end %>
+        </div>
       </div>
       <p><%= t('.registration_needed') %></p>
       <p><%= t('.if_registered') %> <%= link_to( t('.login_here'), new_user_session_path) %>.</p>
