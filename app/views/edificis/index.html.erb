@@ -26,50 +26,42 @@
               <% if @edificis.count == 0 %>
                 <p><%= t('.no_projectes') %></p>
               <% else %>
-                <table class="llistat-edificis">
-                  <thead>
-                    <tr>
-                      <th>Nom de l'edifici</th>
-                      <th>Tipologia</th>
-                      <th>Data de creació</th>
-                      <th width="30"></th>
-                      <th width="30"></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <% @edificis.each do |edifici| %>
-                    <tr>
-                      <td><%= link_to(edifici.nom_edifici, edit_edifici_identificacio_path(edifici.id, edifici.identificacio.id), :class => 'link-item-edifici') %></td>
-                      <td> <% case edifici.tipus_edifici 
-                          when "nou_plurifamiliar" 
-                            tipus_edifici = "Edifici nou plurifamiliar"
-                          when "nou_unifamiliar"
-                            tipus_edifici = "Edifici nou unifamiliar"
-                          when "existent_plurifamiliar"
-                            tipus_edifici = "Edifici existent plurifamiliar"
-                          when "existent_unifamiliar"
-                            tipus_edifici = "Edifici existent unifamiliar"
-                          end %>
-                          <%= tipus_edifici %></td>
-                      <td><%= edifici.created_at.day.to_s %>-<%= edifici.created_at.month.to_s %>-<%= edifici.created_at.year.to_s %></td>
-                      <td>
-                        <%= link_to edit_edifici_path(edifici) do %>
-                          <div>
+                <div class="llistat-edificis">
+                  <% @edificis.each do |edifici| %>
+                    <div class="item-llistat-edificis">
+                      <div class="text-item-llistat-edificis">
+                        <%= link_to(edifici.nom_edifici, edit_edifici_identificacio_path(edifici.id, edifici.identificacio.id), :class => 'link-item-edifici') %>
+                        <br>
+                        <% case edifici.tipus_edifici 
+                        when "nou_plurifamiliar" 
+                          tipus_edifici = "Edifici nou plurifamiliar"
+                        when "nou_unifamiliar"
+                          tipus_edifici = "Edifici nou unifamiliar"
+                        when "existent_plurifamiliar"
+                          tipus_edifici = "Edifici existent plurifamiliar"
+                        when "existent_unifamiliar"
+                          tipus_edifici = "Edifici existent unifamiliar"
+                        end %>
+                        <span class="tipus-llistat-edificis"><%= tipus_edifici %></span> <span class="data-llistat-edificis">(<%= edifici.created_at.day.to_s %>-<%= edifici.created_at.month.to_s %>-<%= edifici.created_at.year.to_s %>)</span>
+
+                        <div class="boto-item-llistat-edificis right">
+                          <%= link_to edifici, method: :delete, data: { confirm: t('.eliminar') } do %>
+                            <span class="icon-cancel icones-icomoon"></span>                          
+                          <% end %>
+                        </div>
+
+                        <div class="boto-item-llistat-edificis right">
+                          <%= link_to edit_edifici_path(edifici) do %>
                             <span class="icon-pencil icones-icomoon"></span>
-                          </div>
-                        <% end %>
-                      </td>
-                      <td>
-                        <%= link_to edifici, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                          <div>
-                            <span class="icon-cancel icones-icomoon"></span>
-                          </div>
-                        <% end %>
-                      </td>
-                    </tr>
-                    <% end %>
-                  </tbody>
-                </table>
+                          <% end %>
+                        </div>
+
+                      </div>
+                      
+                    </div>
+                  <% end %>
+                </div>
+
               <% end %>
             </div>
           </div>

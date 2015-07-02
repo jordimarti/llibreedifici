@@ -67,10 +67,22 @@ body {
 	font-size: 1.2em;
 }
 
+.background-seccio {
+	background-color: #eaeaea;
+	padding-bottom: 50px;
+	min-height: 600px;
+}
+
+.titol-seccio {
+	font-size: 1.2em;
+	font-weight: bold;
+	padding: 20px 0px;
+}
+
 .projectes-background {
 	background-color: #eaeaea;
 	padding: 50px 0px;
-	min-height: 500px;
+	min-height: 600px;
 }
 
 .projectes-container {

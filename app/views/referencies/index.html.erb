@@ -1,32 +1,91 @@
-<div class="operacions-background">
+<div class="background-seccio">
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="titol-seccio">
+        <%= t('.titol_operacions') %>
+      </div>
+    </div>
+  </div>
+
   <div class="row">
     <div class="medium-12 columns">
-      <div class="formulari-sistema">
-        <table>
+      <div class="container-operacions-sistema">
+        <div class="titol-seccio-sistema">
+          Fonamentació
+        </div>
+        <table class="taula-operacions">
           <thead>
             <tr>
               <th>Descripció</th>
               <th>Periodicitat</th>
               <th>Referència</th>
               <th>Responsable</th>
+              <th></th>
             </tr>
           </thead>
 
           <tbody>
             <% @referencies.each do |referencia| %>
-              <tr>
-                <td><%= @operacions.find(referencia.operacio_id).descripcio_ca %></td>
-                <td><%= @operacions.find(referencia.operacio_id).periodicitat_text_ca %></td>
-                <td><%= @operacions.find(referencia.operacio_id).document_referencia %></td>
-                <td><%= @operacions.find(referencia.operacio_id).responsable %></td>
-              </tr>
+              <% if @operacions_fonamentacio.where(:id => referencia.operacio_id).empty? == false %>
+                <tr>
+                  <td><%= @operacions_fonamentacio.find(referencia.operacio_id).descripcio_ca %></td>
+                  <td><%= @operacions_fonamentacio.find(referencia.operacio_id).periodicitat_text_ca %></td>
+                  <td><%= @operacions_fonamentacio.find(referencia.operacio_id).document_referencia %></td>
+                  <td><%= @operacions_fonamentacio.find(referencia.operacio_id).responsable %></td>
+                  <td>
+                    <%= link_to edifici_referencia_path(@edifici, referencia), method: :delete, data: { confirm: t('.eliminar') } do %>
+                      <span class="icon-cancel icones-icomoon"></span>                          
+                    <% end %>
+                  </td>
+                </tr>
+              <% end %>
             <% end %>
           </tbody>
         </table>
-
       </div>
     </div>
   </div>
+
+  <div class="row">
+    <div class="medium-12 columns">
+      <div class="container-operacions-sistema">
+        <div class="titol-seccio-sistema">
+          Estructura
+        </div>
+        <table class="taula-operacions">
+          <thead>
+            <tr>
+              <th>Descripció</th>
+              <th>Periodicitat</th>
+              <th>Referència</th>
+              <th>Responsable</th>
+              <th></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @referencies.each do |referencia| %>
+              <% if @operacions_estructura.where(:id => referencia.operacio_id).empty? == false %>
+                <tr>
+                  <td><%= @operacions_estructura.find(referencia.operacio_id).descripcio_ca %></td>
+                  <td><%= @operacions_estructura.find(referencia.operacio_id).periodicitat_text_ca %></td>
+                  <td><%= @operacions_estructura.find(referencia.operacio_id).document_referencia %></td>
+                  <td><%= @operacions_estructura.find(referencia.operacio_id).responsable %></td>
+                  <td>
+                    <%= link_to edifici_referencia_path(@edifici, referencia), method: :delete, data: { confirm: t('.eliminar') } do %>
+                      <span class="icon-cancel icones-icomoon"></span>                          
+                    <% end %>
+                  </td>
+                </tr>
+              <% end %>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
 </div>
 
 

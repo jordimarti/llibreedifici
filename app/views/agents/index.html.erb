@@ -62,174 +62,186 @@
 </div>
 
 
-<div class="agents-background">
+<div class="background-seccio">
 	<div class="row">
-		<div class="medium-6 columns">
-			<div class="agents-container">
-				<div class="agents-title">
-					PROMOTOR
-				</div>
-				<div id="promotors">
-					<%= render  :partial => '/promotors/llistat_promotors' %>
-				</div>
-				<div class="agents-footer">
-					<div class="agents-footer-link right">
-						<%= link_to (new_edifici_promotor_path), remote: true do %>
-							<span class="suma">+</span> Afegir un promotor
-						<% end %>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="medium-6 columns">
-			<div class="agents-container">
-				<div class="agents-title">
-					PROJECTISTA
-				</div>
-				<div id="projectistes">
-					<%= render  :partial => '/projectistes/llistat_projectistes' %>
-				</div>
-				<div class="agents-footer">
-					<div class="agents-footer-link right">
-						<%= link_to (new_edifici_projectista_path), remote: true do %>
-							<span class="suma">+</span> Afegir un projectista
-						<% end %>
-					</div>
-				</div>
+		<div class="large-12 columns">
+			<div class="titol-seccio">
+				<%= t('.titol_agents') %>
 			</div>
 		</div>
 	</div>
+	<div class="row">
+		<div class="large-12 columns">
+			<div class="seccio-agents-container">
+				<div class="row">
+					<div class="medium-6 columns">
+						<div class="agents-container">
+							<div class="agents-title">
+								PROMOTOR
+							</div>
+							<div id="promotors">
+								<%= render  :partial => '/promotors/llistat_promotors' %>
+							</div>
+							<div class="agents-footer">
+								<div class="agents-footer-link right">
+									<%= link_to (new_edifici_promotor_path), remote: true do %>
+										<span class="suma">+</span> Afegir un promotor
+									<% end %>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="medium-6 columns">
+						<div class="agents-container">
+							<div class="agents-title">
+								PROJECTISTA
+							</div>
+							<div id="projectistes">
+								<%= render  :partial => '/projectistes/llistat_projectistes' %>
+							</div>
+							<div class="agents-footer">
+								<div class="agents-footer-link right">
+									<%= link_to (new_edifici_projectista_path), remote: true do %>
+										<span class="suma">+</span> Afegir un projectista
+									<% end %>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
-	<div class="row">
-		<div class="medium-6 columns">
-			<div class="agents-container">
-				<div class="agents-title">
-					CONSTRUCTOR
-				</div>
-				<div id="constructors">
-					<%= render  :partial => '/constructors/llistat_constructors' %>
-				</div>
-				<div class="agents-footer">
-					<div class="agents-footer-link right">
-						<%= link_to (new_edifici_constructor_path), remote: true do %>
-							<span class="suma">+</span> Afegir un constructor
-						<% end %>
+				<div class="row">
+					<div class="medium-6 columns">
+						<div class="agents-container">
+							<div class="agents-title">
+								CONSTRUCTOR
+							</div>
+							<div id="constructors">
+								<%= render  :partial => '/constructors/llistat_constructors' %>
+							</div>
+							<div class="agents-footer">
+								<div class="agents-footer-link right">
+									<%= link_to (new_edifici_constructor_path), remote: true do %>
+										<span class="suma">+</span> Afegir un constructor
+									<% end %>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="medium-6 columns">
+						<div class="agents-container">
+							<div class="agents-title">
+								DIRECTOR D'OBRA
+							</div>
+							<div id="directors">
+								<%= render  :partial => '/directors/llistat_directors' %>
+							</div>
+							<div class="agents-footer">
+								<div class="agents-footer-link right">
+									<%= link_to (new_edifici_director_path), remote: true do %>
+										<span class="suma">+</span> Afegir un director d'obra
+									<% end %>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-		<div class="medium-6 columns">
-			<div class="agents-container">
-				<div class="agents-title">
-					DIRECTOR D'OBRA
-				</div>
-				<div id="directors">
-					<%= render  :partial => '/directors/llistat_directors' %>
-				</div>
-				<div class="agents-footer">
-					<div class="agents-footer-link right">
-						<%= link_to (new_edifici_director_path), remote: true do %>
-							<span class="suma">+</span> Afegir un director d'obra
-						<% end %>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 
-	<div class="row">
-		<div class="medium-6 columns">
-			<div class="agents-container">
-				<div class="agents-title">
-					DIRECTOR D'EXECUCIÓ D'OBRA
-				</div>
-				<div id="execucio-directors">
-					<%= render  :partial => '/execucio_directors/llistat_execucio_directors' %>
-				</div>
-				<div class="agents-footer">
-					<div class="agents-footer-link right">
-						<%= link_to (new_edifici_execucio_director_path), remote: true do %>
-							<span class="suma">+</span> Afegir un director d'execució d'obra
-						<% end %>
+				<div class="row">
+					<div class="medium-6 columns">
+						<div class="agents-container">
+							<div class="agents-title">
+								DIRECTOR D'EXECUCIÓ D'OBRA
+							</div>
+							<div id="execucio-directors">
+								<%= render  :partial => '/execucio_directors/llistat_execucio_directors' %>
+							</div>
+							<div class="agents-footer">
+								<div class="agents-footer-link right">
+									<%= link_to (new_edifici_execucio_director_path), remote: true do %>
+										<span class="suma">+</span> Afegir un director d'execució d'obra
+									<% end %>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-	</div>
 
-	<hr>
+				<hr>
 
-	<div class="row">
-		<div class="medium-6 columns">
-			<div class="agents-container">
-				<div class="agents-title">
-					LABORATORIS DE CONTROL
-				</div>
-				<div id="laboratoris">
-					<%= render  :partial => '/laboratoris/llistat_laboratoris' %>
-				</div>
-				<div class="agents-footer">
-					<div class="agents-footer-link right">
-						<%= link_to (new_edifici_laboratori_path), remote: true do %>
-							<span class="suma">+</span> Afegir un laboratori
-						<% end %>
+				<div class="row">
+					<div class="medium-6 columns">
+						<div class="agents-container">
+							<div class="agents-title">
+								LABORATORIS DE CONTROL
+							</div>
+							<div id="laboratoris">
+								<%= render  :partial => '/laboratoris/llistat_laboratoris' %>
+							</div>
+							<div class="agents-footer">
+								<div class="agents-footer-link right">
+									<%= link_to (new_edifici_laboratori_path), remote: true do %>
+										<span class="suma">+</span> Afegir un laboratori
+									<% end %>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="medium-6 columns">
+						<div class="agents-container">
+							<div class="agents-title">
+								ENTITATS DE CONTROL
+							</div>
+							<div id="entitat-controls">
+								<%= render  :partial => '/entitat_controls/llistat_entitat_controls' %>
+							</div>
+							<div class="agents-footer">
+								<div class="agents-footer-link right">
+									<%= link_to (new_edifici_entitat_control_path), remote: true do %>
+										<span class="suma">+</span> Afegir una entitat de control
+									<% end %>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-		<div class="medium-6 columns">
-			<div class="agents-container">
-				<div class="agents-title">
-					ENTITATS DE CONTROL
-				</div>
-				<div id="entitat-controls">
-					<%= render  :partial => '/entitat_controls/llistat_entitat_controls' %>
-				</div>
-				<div class="agents-footer">
-					<div class="agents-footer-link right">
-						<%= link_to (new_edifici_entitat_control_path), remote: true do %>
-							<span class="suma">+</span> Afegir una entitat de control
-						<% end %>
+				<div class="row">
+					<div class="medium-6 columns">
+						<div class="agents-container">
+							<div class="agents-title">
+								SUBMINISTRADORS DE PRODUCTES
+							</div>
+							<div id="subministradors">
+								<%= render  :partial => '/subministradors/llistat_subministradors' %>
+							</div>
+							<div class="agents-footer">
+								<div class="agents-footer-link right">
+									<%= link_to (new_edifici_subministrador_path), remote: true do %>
+										<span class="suma">+</span> Afegir un subministrador
+									<% end %>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="medium-6 columns">
+						<div class="agents-container">
+							<div class="agents-title">
+								INDUSTRIALS
+							</div>
+							<div id="industrials">
+								<%= render  :partial => '/industrials/llistat_industrials' %>
+							</div>
+							<div class="agents-footer">
+								<div class="agents-footer-link right">
+									<%= link_to (new_edifici_industrial_path), remote: true do %>
+										<span class="suma">+</span> Afegir un industrial
+									<% end %>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="row">
-		<div class="medium-6 columns">
-			<div class="agents-container">
-				<div class="agents-title">
-					SUBMINISTRADORS DE PRODUCTES
-				</div>
-				<div id="subministradors">
-					<%= render  :partial => '/subministradors/llistat_subministradors' %>
-				</div>
-				<div class="agents-footer">
-					<div class="agents-footer-link right">
-						<%= link_to (new_edifici_subministrador_path), remote: true do %>
-							<span class="suma">+</span> Afegir un subministrador
-						<% end %>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="medium-6 columns">
-			<div class="agents-container">
-				<div class="agents-title">
-					INDUSTRIALS
-				</div>
-				<div id="industrials">
-					<%= render  :partial => '/industrials/llistat_industrials' %>
-				</div>
-				<div class="agents-footer">
-					<div class="agents-footer-link right">
-						<%= link_to (new_edifici_industrial_path), remote: true do %>
-							<span class="suma">+</span> Afegir un industrial
-						<% end %>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	
 </div>

@@ -8,8 +8,11 @@ class ReferenciesController < ApplicationController
   # GET /referencies
   # GET /referencies.json
   def index
-    @operacions = Operacio.all
     @submenu_actiu = 'operacions'
+    @operacions = Operacio.all
+
+    @operacions_fonamentacio = Operacio.where(:sistema => 'fonamentacio')
+    @operacions_estructura = Operacio.where(:sistema => 'estructura')
   end
 
   #Aquest mètode consulta la definició de l'edifici i crea el llistat de referències a les operacions de manteniment
@@ -18,6 +21,7 @@ class ReferenciesController < ApplicationController
     @referencies.each do |referencia|
       referencia.destroy
     end
+
     fonamentacio = Fonamentacio.where(:edifici_id => @edifici.id).last
     if (fonamentacio.mur_pedra == true)
       crear_referencia(1)
@@ -25,6 +29,12 @@ class ReferenciesController < ApplicationController
     if (fonamentacio.mur_formigo_armat == true)
       crear_referencia(2)
     end
+
+    estructura = Estructura.where(:edifici_id => @edifici.id).last
+    if (estructura.forjat_sanitari == true)
+      crear_referencia(6)
+    end
+
     redirect_to action: "index"
   end
 
@@ -84,7 +94,7 @@ class ReferenciesController < ApplicationController
   def destroy
     @referencia.destroy
     respond_to do |format|
-      format.html { redirect_to referencies_url, notice: 'Referencia was successfully destroyed.' }
+      format.html { redirect_to edifici_referencies_path, notice: 'Referencia was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

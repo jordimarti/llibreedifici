@@ -188,9 +188,13 @@ ca:
         send_instructions: "Enviar les instruccions"
   identificacions:
     edit:
+      titol_identificacio: "Identificació"
       titol_dades: "DADES D'IDENTIFICACIÓ DE LA CONSTRUCCIÓ" 
     form:
       guardar: "Guardar"
+  agents:
+    index:
+      titol_agents: "Agents de l'edificació"
   promotors:
     form:
       guardar: "Guardar"
@@ -219,8 +223,16 @@ ca:
     form:
       guardar: "Guardar"
   fonamentacions:
+    edit:
+      titol_sistemes: "Descripció constructiva de l'edifici"
     form:
       guardar: "Guardar"
   estructures:
+    edit:
+      titol_sistemes: "Descripció constructiva de l'edifici"
     form:
       guardar: "Guardar"
+  referencies:
+    index:
+      titol_operacions: "Operacions de manteniment"
+      eliminar: "Segur que vols eliminar aquesta operació?"

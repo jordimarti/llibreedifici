@@ -2,10 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.agents-background {
-	background-color: #eaeaea;
-	padding: 20px 0px 50px 0px;
+.seccio-agents-container {
+	background-color: #ffffff;
+	border: 1px solid #cccccc;
 }
+
 .agents-container {
 	margin: 20px;
 }
@@ -30,13 +31,13 @@
 
 .agents-footer {
 	height: 35px;
-	background-color: #eaeaea;
+	
 }
 
 .agents-footer-link {
 	padding: 0px 10px 5px 10px;
 	margin-top: -1px;
-	background-color: #ffffff;
+	background-color: #f6f6f6;
 	border: 1px solid #cccccc;
 	border-bottom-left-radius: 3px;
 	border-bottom-right-radius: 3px;
