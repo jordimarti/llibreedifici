@@ -7,13 +7,19 @@ class DocumentsController < ApplicationController
   end
 
   def quadern
+    @operacions = Operacio.all
+    @text_operacions = ''
+    @operacions.each do |operacio|
+      @text_operacions = @text_operacions.to_s + operacio.descripcio_ca.to_s + "\n" 
+    end
     respond_to do |format|
       format.docx do
         # Initialize DocxReplace with your template
         doc = DocxReplace::Doc.new("#{Rails.root}/lib/docx_templates/quadern_template.docx", "#{Rails.root}/tmp")
 
         # Replace some variables. $var$ convention is used here, but not required.
-        doc.replace("$first_name$", @edifici.nom_edifici)
+        doc.replace("$nom_edifici$", @edifici.nom_edifici)
+        doc.replace("$operacions$", @text_operacions)
 
         # Write the document back to a temporary file
         tmp_file = Tempfile.new('word_tempate', "#{Rails.root}/tmp")
