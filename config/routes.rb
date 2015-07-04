@@ -5,8 +5,12 @@ Rails.application.routes.draw do
   
   
   
+  
   resources :operacions
   get 'edificis/:edifici_id/agents', to: 'agents#index', :as => :agents
+  get 'edificis/:edifici_id/documents', to: 'documents#index', :as => :documents
+  get 'edificis/:edifici_id/documents/quadern(.:format)', to: 'documents#quadern', :as => :quadern
+
   #get 'edificis/:edifici_id/sistemes', to: 'sistemes#index', :as => :sistemes
 
   get 'edificis/:edifici_id/sistemes/afegir_sistema', to: 'sistemes#afegir_sistema', :as => :afegir_sistema

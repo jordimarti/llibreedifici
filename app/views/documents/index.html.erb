@@ -1,0 +1,23 @@
+<div class="background-seccio">
+	<div class="row">
+		<div class="large-12 columns">
+			<div class="titol-seccio">
+				<%= t('.titol_documents') %>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="medium-3 columns">
+			<a href="documents/quadern.docx" class="button small radius right botodreta"><%= t('.quadern') %></a>
+		</div>
+		<div class="medium-3 columns">
+			<%= link_to t('.det'), documents_path, :class => 'button small radius right botodreta' %>
+		</div>
+		<div class="medium-3 columns">
+			<%= link_to t('.manual'), documents_path, :class => 'button small radius right botodreta' %>
+		</div>
+		<div class="medium-3 columns">
+			<%= link_to t('.arxiu'), documents_path, :class => 'button small radius right botodreta' %>
+		</div>
+	</div>
+</div>

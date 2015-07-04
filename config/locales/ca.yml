@@ -32,7 +32,7 @@ ca:
       agents: "Agents"
       sistemes: "Descripció constructiva"
       operacions: "Operacions"
-      document: "Document"
+      documents: "Documents"
     footer:
       logo_caateeb: "Col·legi d'Aparelladors, Arquitectes Tècnics i Enginyers d'Edificació de Barcelona"
   home:
@@ -236,3 +236,10 @@ ca:
     index:
       titol_operacions: "Operacions de manteniment"
       eliminar: "Segur que vols eliminar aquesta operació?"
+  documents:
+    index:
+      titol_documents: "Documents"
+      quadern: "Quadern de registre"
+      det: "Document d'especificacions tècniques"
+      manual: "Manuals dels habitatges"
+      arxiu: "Arxiu de documents"

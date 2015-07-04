@@ -14,7 +14,9 @@
           		<li class="submenu-item <% if @submenu_actiu == 'operacions' %>
                     submenu-actiu
                     <% end %>"><%= link_to(t('.operacions'), edifici_referencies_path(@edifici.id), :class => 'submenu-link') %></li>
-          		<li class="submenu-item"><%= t('.document') %></li>
+          		<li class="submenu-item <% if @submenu_actiu == 'documents' %>
+                    submenu-actiu
+                    <% end %>"><%= link_to(t('.documents'), documents_path(@edifici.id), :class => 'submenu-link') %></li>
           	</ul>
           </div>
         </div>
