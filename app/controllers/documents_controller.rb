@@ -10,7 +10,7 @@ class DocumentsController < ApplicationController
     @operacions = Operacio.all
     @text_operacions = ''
     @operacions.each do |operacio|
-      @text_operacions = @text_operacions.to_s + operacio.descripcio_ca.to_s + "\n" 
+      @text_operacions = @text_operacions.to_s + '<w:p><w:r><w:t>' + operacio.descripcio_ca.to_s + '</w:t></w:r></w:p><w:p/>' 
     end
     respond_to do |format|
       format.docx do
@@ -20,6 +20,7 @@ class DocumentsController < ApplicationController
         # Replace some variables. $var$ convention is used here, but not required.
         doc.replace("$nom_edifici$", @edifici.nom_edifici)
         doc.replace("$operacions$", @text_operacions)
+        #doc.replace("$altres_operacions$", )
 
         # Write the document back to a temporary file
         tmp_file = Tempfile.new('word_tempate', "#{Rails.root}/tmp")
