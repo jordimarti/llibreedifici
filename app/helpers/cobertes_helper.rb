@@ -1,0 +1,2 @@
+module CobertesHelper
+end

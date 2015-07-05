@@ -1,0 +1,53 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  edifici_id: 1
+  acabat_vist_paredat: false
+  acabat_vist_carreus: false
+  acabat_vist_fabrica_mao: false
+  acabat_vist_fabrica_bloc_ceramic: false
+  acabat_vist_bloc_formigo: false
+  acabat_vist_panell_formigo: false
+  acabat_vist_panell_metalic_sandwich: false
+  acabat_revestit_arrebossat_pintat: false
+  acabat_revestit_estucat: false
+  acabat_revestit_morter_monocapa: false
+  acabat_revestit_aplacat_ceramic: false
+  acabat_revestit_aplacat_pedra: false
+  acabat_revestit_xapa_metalica: false
+  cambra_aire_facana: false
+  fusteria_fusta: false
+  fusteria_acer: false
+  fusteria_alumini: false
+  fusteria_pvc: false
+  vidre_simple: false
+  vidre_doble: false
+  vidre_triple: false
+  vidre_baix_emissiu: false
+  vidre_control_solar: false
+
+two:
+  edifici_id: 1
+  acabat_vist_paredat: false
+  acabat_vist_carreus: false
+  acabat_vist_fabrica_mao: false
+  acabat_vist_fabrica_bloc_ceramic: false
+  acabat_vist_bloc_formigo: false
+  acabat_vist_panell_formigo: false
+  acabat_vist_panell_metalic_sandwich: false
+  acabat_revestit_arrebossat_pintat: false
+  acabat_revestit_estucat: false
+  acabat_revestit_morter_monocapa: false
+  acabat_revestit_aplacat_ceramic: false
+  acabat_revestit_aplacat_pedra: false
+  acabat_revestit_xapa_metalica: false
+  cambra_aire_facana: false
+  fusteria_fusta: false
+  fusteria_acer: false
+  fusteria_alumini: false
+  fusteria_pvc: false
+  vidre_simple: false
+  vidre_doble: false
+  vidre_triple: false
+  vidre_baix_emissiu: false
+  vidre_control_solar: false

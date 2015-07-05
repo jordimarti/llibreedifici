@@ -11,10 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150630074901) do
+ActiveRecord::Schema.define(version: 20150705161250) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cobertes", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.boolean  "terrat_transitable"
+    t.boolean  "terrat_no_transitable"
+    t.boolean  "terrat_aillament_termic"
+    t.boolean  "terrat_lamina_impermeabilitzant"
+    t.boolean  "coberta_teula_arab"
+    t.boolean  "coberta_teula_plana"
+    t.boolean  "coberta_teula_ciment"
+    t.boolean  "coberta_pissarra"
+    t.boolean  "coberta_fibrociment"
+    t.boolean  "coberta_asfaltica"
+    t.boolean  "coberta_xapa_acer"
+    t.boolean  "coberta_xapa_coure"
+    t.boolean  "coberta_aillament_termic"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+  end
 
   create_table "constructors", force: :cascade do |t|
     t.integer  "edifici_id"
@@ -242,6 +261,35 @@ ActiveRecord::Schema.define(version: 20150630074901) do
     t.string   "pais_subministrador"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+  end
+
+  create_table "tancaments_verticals", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.boolean  "acabat_vist_paredat"
+    t.boolean  "acabat_vist_carreus"
+    t.boolean  "acabat_vist_fabrica_mao"
+    t.boolean  "acabat_vist_fabrica_bloc_ceramic"
+    t.boolean  "acabat_vist_bloc_formigo"
+    t.boolean  "acabat_vist_panell_formigo"
+    t.boolean  "acabat_vist_panell_metalic_sandwich"
+    t.boolean  "acabat_revestit_arrebossat_pintat"
+    t.boolean  "acabat_revestit_estucat"
+    t.boolean  "acabat_revestit_morter_monocapa"
+    t.boolean  "acabat_revestit_aplacat_ceramic"
+    t.boolean  "acabat_revestit_aplacat_pedra"
+    t.boolean  "acabat_revestit_xapa_metalica"
+    t.boolean  "cambra_aire_facana"
+    t.boolean  "fusteria_fusta"
+    t.boolean  "fusteria_acer"
+    t.boolean  "fusteria_alumini"
+    t.boolean  "fusteria_pvc"
+    t.boolean  "vidre_simple"
+    t.boolean  "vidre_doble"
+    t.boolean  "vidre_triple"
+    t.boolean  "vidre_baix_emissiu"
+    t.boolean  "vidre_control_solar"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
   create_table "users", force: :cascade do |t|

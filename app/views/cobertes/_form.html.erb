@@ -1,0 +1,43 @@
+<%= simple_form_for([@edifici, @coberta]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :edifici_id, :as => :hidden, :input_html => { :value => @edifici.id } %>
+    <div class="row">
+      <div class="medium-12 columns">
+        <div class="titol-sistema">COBERTA</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-6 columns">
+        <div class="titol-subsistema">Terrat / Coberta plana</div>
+        <%= f.input :terrat_transitable %>
+        <%= f.input :terrat_no_transitable %>
+        <%= f.input :terrat_aillament_termic %>
+        <%= f.input :terrat_lamina_impermeabilitzant %>
+      </div>
+      <div class="medium-6 columns">
+        <div class="titol-subsistema">Coberta inclinada</div>
+        <%= f.input :coberta_teula_arab %>
+        <%= f.input :coberta_teula_plana %>
+        <%= f.input :coberta_teula_ciment %>
+        <%= f.input :coberta_pissarra %>
+        <%= f.input :coberta_fibrociment %>
+        <%= f.input :coberta_asfaltica %>
+        <%= f.input :coberta_xapa_acer %>
+        <%= f.input :coberta_xapa_coure %>
+        <%= f.input :coberta_aillament_termic %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="medium-12 columns">
+      <div class="form-actions">
+        <%= f.button :submit, t('.guardar'), :class => 'button small radius right botodreta' %>
+      </div>
+    </div>
+  </div>
+ 
+<% end %>

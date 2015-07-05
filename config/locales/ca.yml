@@ -232,6 +232,16 @@ ca:
       titol_sistemes: "Descripció constructiva de l'edifici"
     form:
       guardar: "Guardar"
+  tancaments_verticals:
+    edit:
+      titol_sistemes: "Descripció constructiva de l'edifici"
+    form:
+      guardar: "Guardar"
+  cobertes:
+    edit:
+      titol_sistemes: "Descripció constructiva de l'edifici"
+    form:
+      guardar: "Guardar"
   referencies:
     index:
       titol_operacions: "Operacions de manteniment"

@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Cobertes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Edifici</th>
+      <th>Terrat transitable</th>
+      <th>Terrat no transitable</th>
+      <th>Terrat aillament termic</th>
+      <th>Terrat lamina impermeabilitzant</th>
+      <th>Coberta teula arab</th>
+      <th>Coberta teula plana</th>
+      <th>Coberta teula ciment</th>
+      <th>Coberta pissarra</th>
+      <th>Coberta fibrociment</th>
+      <th>Coberta asfaltica</th>
+      <th>Coberta xapa acer</th>
+      <th>Coberta xapa coure</th>
+      <th>Coberta aillament termic</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cobertes.each do |coberta| %>
+      <tr>
+        <td><%= coberta.edifici_id %></td>
+        <td><%= coberta.terrat_transitable %></td>
+        <td><%= coberta.terrat_no_transitable %></td>
+        <td><%= coberta.terrat_aillament_termic %></td>
+        <td><%= coberta.terrat_lamina_impermeabilitzant %></td>
+        <td><%= coberta.coberta_teula_arab %></td>
+        <td><%= coberta.coberta_teula_plana %></td>
+        <td><%= coberta.coberta_teula_ciment %></td>
+        <td><%= coberta.coberta_pissarra %></td>
+        <td><%= coberta.coberta_fibrociment %></td>
+        <td><%= coberta.coberta_asfaltica %></td>
+        <td><%= coberta.coberta_xapa_acer %></td>
+        <td><%= coberta.coberta_xapa_coure %></td>
+        <td><%= coberta.coberta_aillament_termic %></td>
+        <td><%= link_to 'Show', coberta %></td>
+        <td><%= link_to 'Edit', edit_coberta_path(coberta) %></td>
+        <td><%= link_to 'Destroy', coberta, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Coberta', new_coberta_path %>

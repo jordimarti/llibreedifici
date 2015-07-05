@@ -1,0 +1,73 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Tancaments Verticals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Edifici</th>
+      <th>Acabat vist paredat</th>
+      <th>Acabat vist carreus</th>
+      <th>Acabat vist fabrica mao</th>
+      <th>Acabat vist fabrica bloc ceramic</th>
+      <th>Acabat vist bloc formigo</th>
+      <th>Acabat vist panell formigo</th>
+      <th>Acabat vist panell metalic sandwich</th>
+      <th>Acabat revestit arrebossat pintat</th>
+      <th>Acabat revestit estucat</th>
+      <th>Acabat revestit morter monocapa</th>
+      <th>Acabat revestit aplacat ceramic</th>
+      <th>Acabat revestit aplacat pedra</th>
+      <th>Acabat revestit xapa metalica</th>
+      <th>Cambra aire facana</th>
+      <th>Fusteria fusta</th>
+      <th>Fusteria acer</th>
+      <th>Fusteria alumini</th>
+      <th>Fusteria pvc</th>
+      <th>Vidre simple</th>
+      <th>Vidre doble</th>
+      <th>Vidre triple</th>
+      <th>Vidre baix emissiu</th>
+      <th>Vidre control solar</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tancaments_verticals.each do |tancaments_vertical| %>
+      <tr>
+        <td><%= tancaments_vertical.edifici_id %></td>
+        <td><%= tancaments_vertical.acabat_vist_paredat %></td>
+        <td><%= tancaments_vertical.acabat_vist_carreus %></td>
+        <td><%= tancaments_vertical.acabat_vist_fabrica_mao %></td>
+        <td><%= tancaments_vertical.acabat_vist_fabrica_bloc_ceramic %></td>
+        <td><%= tancaments_vertical.acabat_vist_bloc_formigo %></td>
+        <td><%= tancaments_vertical.acabat_vist_panell_formigo %></td>
+        <td><%= tancaments_vertical.acabat_vist_panell_metalic_sandwich %></td>
+        <td><%= tancaments_vertical.acabat_revestit_arrebossat_pintat %></td>
+        <td><%= tancaments_vertical.acabat_revestit_estucat %></td>
+        <td><%= tancaments_vertical.acabat_revestit_morter_monocapa %></td>
+        <td><%= tancaments_vertical.acabat_revestit_aplacat_ceramic %></td>
+        <td><%= tancaments_vertical.acabat_revestit_aplacat_pedra %></td>
+        <td><%= tancaments_vertical.acabat_revestit_xapa_metalica %></td>
+        <td><%= tancaments_vertical.cambra_aire_facana %></td>
+        <td><%= tancaments_vertical.fusteria_fusta %></td>
+        <td><%= tancaments_vertical.fusteria_acer %></td>
+        <td><%= tancaments_vertical.fusteria_alumini %></td>
+        <td><%= tancaments_vertical.fusteria_pvc %></td>
+        <td><%= tancaments_vertical.vidre_simple %></td>
+        <td><%= tancaments_vertical.vidre_doble %></td>
+        <td><%= tancaments_vertical.vidre_triple %></td>
+        <td><%= tancaments_vertical.vidre_baix_emissiu %></td>
+        <td><%= tancaments_vertical.vidre_control_solar %></td>
+        <td><%= link_to 'Show', tancaments_vertical %></td>
+        <td><%= link_to 'Edit', edit_tancaments_vertical_path(tancaments_vertical) %></td>
+        <td><%= link_to 'Destroy', tancaments_vertical, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tancaments vertical', new_tancaments_vertical_path %>

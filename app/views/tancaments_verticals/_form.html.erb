@@ -1,0 +1,70 @@
+<%= simple_form_for([@edifici, @tancaments_vertical]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :edifici_id, :as => :hidden, :input_html => { :value => @edifici.id } %>
+    <div class="row">
+      <div class="medium-12 columns">
+        <div class="titol-sistema">TANCAMENTS VERTICALS</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-6 columns">
+        <div class="titol-subsistema">Acabat vist</div>
+        <%= f.input :acabat_vist_paredat %>
+        <%= f.input :acabat_vist_carreus %>
+        <%= f.input :acabat_vist_fabrica_mao %>
+        <%= f.input :acabat_vist_fabrica_bloc_ceramic %>
+        <%= f.input :acabat_vist_bloc_formigo %>
+        <%= f.input :acabat_vist_panell_formigo %>
+        <%= f.input :acabat_vist_panell_metalic_sandwich %>
+      </div>
+      <div class="medium-6 columns">
+        <div class="titol-subsistema">Acabat revestit</div>  
+        <%= f.input :acabat_revestit_arrebossat_pintat %>
+        <%= f.input :acabat_revestit_estucat %>
+        <%= f.input :acabat_revestit_morter_monocapa %>
+        <%= f.input :acabat_revestit_aplacat_ceramic %>
+        <%= f.input :acabat_revestit_aplacat_pedra %>
+        <%= f.input :acabat_revestit_xapa_metalica %>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="medium-12 columns">
+        <%= f.input :cambra_aire_facana %>
+      </div>
+    </div>
+
+    <hr class="form-divider">
+
+    <div class="row">
+      <div class="medium-6 columns">
+        <div class="titol-subsistema">Fusteries</div>
+        <%= f.input :fusteria_fusta %>
+        <%= f.input :fusteria_acer %>
+        <%= f.input :fusteria_alumini %>
+        <%= f.input :fusteria_pvc %>
+      </div>
+      <div class="medium-6 columns">
+        <div class="titol-subsistema">Vidres</div>
+        <%= f.input :vidre_simple %>
+        <%= f.input :vidre_doble %>
+        <%= f.input :vidre_triple %>
+        <%= f.input :vidre_baix_emissiu %>
+        <%= f.input :vidre_control_solar %>
+      </div>
+    </div>
+  </div>
+    
+  <div class="row">
+    <div class="medium-12 columns">
+      <div class="form-actions">
+        <%= f.button :submit, t('.guardar'), :class => 'button small radius right botodreta' %>
+      </div>
+    </div>
+  </div>
+<% end %>

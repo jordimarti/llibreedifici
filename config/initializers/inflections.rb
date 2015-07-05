@@ -21,6 +21,7 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'identificacio', 'identificacions'
   inflect.irregular 'fonamentacio', 'fonamentacions'
   inflect.irregular 'estructura', 'estructures'
+  inflect.irregular 'coberta', 'cobertes'
   inflect.irregular 'referencia', 'referencies'
   inflect.irregular 'operacio', 'operacions'
 end

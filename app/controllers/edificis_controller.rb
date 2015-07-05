@@ -54,6 +54,14 @@ class EdificisController < ApplicationController
     @estructura = Estructura.new
     @estructura.edifici_id = edifici_id
     @estructura.save
+    #Tancaments verticals
+    @tancaments_vertical = TancamentsVertical.new
+    @tancaments_vertical.edifici_id = edifici_id
+    @tancaments_vertical.save
+    #Coberta
+    @coberta = Coberta.new
+    @coberta.edifici_id = edifici_id
+    @coberta.save
     
   end
 

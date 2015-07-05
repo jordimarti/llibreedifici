@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  edifici_id: 1
+  terrat_transitable: false
+  terrat_no_transitable: false
+  terrat_aillament_termic: false
+  terrat_lamina_impermeabilitzant: false
+  coberta_teula_arab: false
+  coberta_teula_plana: false
+  coberta_teula_ciment: false
+  coberta_pissarra: false
+  coberta_fibrociment: false
+  coberta_asfaltica: false
+  coberta_xapa_acer: false
+  coberta_xapa_coure: false
+  coberta_aillament_termic: false
+
+two:
+  edifici_id: 1
+  terrat_transitable: false
+  terrat_no_transitable: false
+  terrat_aillament_termic: false
+  terrat_lamina_impermeabilitzant: false
+  coberta_teula_arab: false
+  coberta_teula_plana: false
+  coberta_teula_ciment: false
+  coberta_pissarra: false
+  coberta_fibrociment: false
+  coberta_asfaltica: false
+  coberta_xapa_acer: false
+  coberta_xapa_coure: false
+  coberta_aillament_termic: false
