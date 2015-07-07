@@ -28,10 +28,17 @@
             <% @referencies.each do |referencia| %>
               <% if @operacions_fonamentacio.where(:id => referencia.operacio_id).empty? == false %>
                 <tr>
-                  <td><%= @operacions_fonamentacio.find(referencia.operacio_id).descripcio_ca %></td>
-                  <td><%= @operacions_fonamentacio.find(referencia.operacio_id).periodicitat_text_ca %></td>
-                  <td><%= @operacions_fonamentacio.find(referencia.operacio_id).document_referencia %></td>
-                  <td><%= @operacions_fonamentacio.find(referencia.operacio_id).responsable %></td>
+                  <% if params[:locale] == 'ca' %> 
+                    <td><%= @operacions_fonamentacio.find(referencia.operacio_id).descripcio_ca %></td>
+                    <td><%= @operacions_fonamentacio.find(referencia.operacio_id).periodicitat_text_ca %></td>
+                    <td><%= @operacions_fonamentacio.find(referencia.operacio_id).document_referencia %></td>
+                    <td><%= @operacions_fonamentacio.find(referencia.operacio_id).responsable_ca %></td>
+                  <% elsif params[:locale] == 'es' %>
+                    <td><%= @operacions_fonamentacio.find(referencia.operacio_id).descripcio_es %></td>
+                    <td><%= @operacions_fonamentacio.find(referencia.operacio_id).periodicitat_text_es %></td>
+                    <td><%= @operacions_fonamentacio.find(referencia.operacio_id).document_referencia %></td>
+                    <td><%= @operacions_fonamentacio.find(referencia.operacio_id).responsable_es %></td>
+                  <% end %>
                   <td>
                     <%= link_to edifici_referencia_path(@edifici, referencia), method: :delete, data: { confirm: t('.eliminar') } do %>
                       <span class="icon-cancel icones-icomoon"></span>                          
@@ -67,10 +74,17 @@
             <% @referencies.each do |referencia| %>
               <% if @operacions_estructura.where(:id => referencia.operacio_id).empty? == false %>
                 <tr>
-                  <td><%= @operacions_estructura.find(referencia.operacio_id).descripcio_ca %></td>
-                  <td><%= @operacions_estructura.find(referencia.operacio_id).periodicitat_text_ca %></td>
-                  <td><%= @operacions_estructura.find(referencia.operacio_id).document_referencia %></td>
-                  <td><%= @operacions_estructura.find(referencia.operacio_id).responsable %></td>
+                  <% if params[:locale] == 'ca' %> 
+                    <td><%= @operacions_estructura.find(referencia.operacio_id).descripcio_ca %></td>
+                    <td><%= @operacions_estructura.find(referencia.operacio_id).periodicitat_text_ca %></td>
+                    <td><%= @operacions_estructura.find(referencia.operacio_id).document_referencia %></td>
+                    <td><%= @operacions_estructura.find(referencia.operacio_id).responsable_ca %></td>
+                  <% elsif params[:locale] == 'es' %>
+                    <td><%= @operacions_estructura.find(referencia.operacio_id).descripcio_es %></td>
+                    <td><%= @operacions_estructura.find(referencia.operacio_id).periodicitat_text_es %></td>
+                    <td><%= @operacions_estructura.find(referencia.operacio_id).document_referencia %></td>
+                    <td><%= @operacions_estructura.find(referencia.operacio_id).responsable_es %></td>
+                  <% end %>
                   <td>
                     <%= link_to edifici_referencia_path(@edifici, referencia), method: :delete, data: { confirm: t('.eliminar') } do %>
                       <span class="icon-cancel icones-icomoon"></span>                          

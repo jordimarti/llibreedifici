@@ -20,7 +20,9 @@
       </div>
       <div class="medium-4 columns">
         <div class="titol-subsistema">Fonamentació superficial</div>
-        <%= f.input :sabates_paredat %>
+        <% if (@edifici.tipus_edifici == 'existent_plurifamiliar' || @edifici.tipus_edifici == 'existent_unifamiliar') %>
+          <%= f.input :sabates_paredat %>
+        <% end %>
         <%= f.input :sabates_formigo %>
         <%= f.input :llosa %>
       </div>

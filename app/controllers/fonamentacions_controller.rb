@@ -1,6 +1,6 @@
 class FonamentacionsController < ApplicationController
+  include SetSistemes
   before_action :set_sistemes, only: [:show, :edit, :update, :destroy]
-  before_action :set_edifici
   layout 'edifici'
 
   # GET /fonamentacions
@@ -67,17 +67,6 @@ class FonamentacionsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_sistemes
-      @edifici = Edifici.find(params[:edifici_id])
-      @fonamentacio = Fonamentacio.find(@edifici.fonamentacio.id)
-      @estructura = Estructura.find(@edifici.estructura.id)
-      @tancaments_vertical = TancamentsVertical.find(@edifici.tancaments_vertical.id)
-      @coberta = Coberta.find(@edifici.coberta.id)
-    end
-
-    def set_edifici
-      @edifici = Edifici.find(params[:edifici_id])
-    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def fonamentacio_params

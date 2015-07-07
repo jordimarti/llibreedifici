@@ -1,0 +1,9 @@
+<div class="documents-container">
+	<ul class="side-nav">
+	  <li <% if @menu_documents_actiu == 'quadern' %>class="active"<% end %>>
+	  	<%= link_to edit_edifici_fonamentacio_path(@edifici.id, @fonamentacio) do %>
+		    FONAMENTACIÓ
+		  <% end %>
+		</li>
+	</ul>
+</div>
