@@ -10,6 +10,21 @@
   <div class="row">
     <div class="medium-12 columns">
       <div class="container-operacions-sistema">
+        <div class="row">
+          <div class="medium-3 columns">
+            <%= link_to 'Actualitzar llistat', crear_llistat_path, :class => 'button radius small' %>
+          </div>
+          <div class="medium-9 columns">
+            <p>Actualitzeu el llistat d'operacions de manteniment cada vegada que modifiqueu la descripció constructiva de l'edifici. Cal tenir en compte que aquesta acció esborrarà totes les operacions i les crearà de nou.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="medium-12 columns">
+      <div class="container-operacions-sistema">
         <div class="titol-seccio-sistema">
           Fonamentació
         </div>
@@ -104,13 +119,3 @@
 
 
 
-
-
-<br>
-<p>Número operacions: <%= @operacions.count %></p>
-<p>Número de referències: <%= @referencies.count %></p>
-
-<%= link_to 'New Referencia', new_edifici_referencia_path %>
-<%= link_to 'Crear llistat', crear_llistat_path %>
-
-</div>

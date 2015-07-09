@@ -23,17 +23,52 @@ class ReferenciesController < ApplicationController
     end
 
     fonamentacio = Fonamentacio.where(:edifici_id => @edifici.id).last
-    if (fonamentacio.mur_pedra == true)
-      crear_referencia(1)
-    end
-    if (fonamentacio.mur_formigo_armat == true)
+    if (fonamentacio.mur_pedra == true || fonamentacio.mur_fabrica_mao == true || fonamentacio.mur_fabrica_bloc == true || fonamentacio.mur_formigo_armat || fonamentacio.mur_pantalla)
       crear_referencia(2)
+      crear_referencia(3)
+      crear_referencia(4)
+      crear_referencia(5)
+    end
+    if (fonamentacio.sabates_paredat == true || fonamentacio.sabates_formigo == true || fonamentacio.llosa == true || fonamentacio.pilons == true || fonamentacio.pantalles == true) 
+      crear_referencia(1)
     end
 
     estructura = Estructura.where(:edifici_id => @edifici.id).last
-    if (estructura.forjat_sanitari == true)
+    if (estructura.parets_pedra == true)
+      crear_referencia(7)
+    end
+    if (estructura.pilars_acer == true)
+      crear_referencia(11)
+      crear_referencia(12)
+      crear_referencia(13)
+      crear_referencia(14)
+    end
+    if (estructura.parets_formigo_armat == true || estructura.pilars_formigo_armat == true)
+      crear_referencia(15)
+      crear_referencia(16)
+    end
+    if (estructura.parets_fabrica_mao == true || estructura.parets_bloc_ceramic == true || estructura.parets_bloc_formigo == true || estructura.pilars_mao == true)
+      crear_referencia(8)
+    end
+    if (estructura.parets_entramat_fusta == true)
+      crear_referencia(17)
+    end
+    if (estructura.bigues_fusta == true || estructura.forjat_fusta == true)
+      crear_referencia(20)
+    end
+    if (estructura.bigues_metaliques == true || estructura.forjat_metalic == true)
+      crear_referencia(21)
+      crear_referencia(22)
+      crear_referencia(23)
+    end
+    if (estructura.bigues_formigo_armat == true || estructura.forjat_formigo_armat == true || estructura.forjat_reticular == true || estructura.llosa_formigo == true)
+      crear_referencia(24)
+      crear_referencia(25)
+    end
+    if (estructura.forjat_sanitari == true || estructura.solera == true)
       crear_referencia(6)
     end
+
 
     redirect_to action: "index"
   end
