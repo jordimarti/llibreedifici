@@ -1,4 +1,26 @@
 es:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            password_confirmation:
+              confirmation: "No coincide con la confirmación"
+            current_password:
+              blank: "No puede estar en blanco"
+              invalid: "La contraseña no es válida"
+            password:
+              too_short: "La contraseña debe tener como mínimo 8 carácteres"
+              blank: "No puede estar en blanco"
+            email:
+              taken: "Este correo electrónico ya está registrado"
+              invalid: "Esta dirección de correo electrónico no es válida"
+        edifici:
+          attributes:
+            nom_edifici:
+              blank: "Se debe asignar un nombre al edificio"
+            tipus_edifici:
+              blank: "Se debe definir el tipo de edificio"
   layouts:
     navigation:
       titol: "Libro del edificio"
@@ -7,31 +29,376 @@ es:
       sign_in: "Iniciar sesión"
       account_configuration: "Configuración de la cuenta"
       sign_out: "Cerrar sesión"
-    checklist:
-      quadern: "Cuaderno de registro"
-      det: "Documentos de especificaciones técnicas"
-      manuals: "Manuales de las viviendas"
-      arxiu: "Archivo de documentos"
-  checklist_edifici_nou_plurifamiliars:
-    quadern:
-      dades_identificacio: "Datos de identificación de la construcción"
+    subheader:
+      identificacio: "Identificación"
+      agents: "Agentes"
+      sistemes: "Descripción constructiva"
+      operacions: "Operaciones"
+      documents: "Documento"
+    footer:
+      logo_caateeb: "Col·legi d'Aparelladors, Arquitectes Tècnics i Enginyers d'Edificació de Barcelona"
+  home:
+    index:
+      llibre_edifici: "Libro del edificio"
+      text_hero: "Herramienta de ayuda para la redacción del libro del edificio según el Decreto 67/2015, de 5 de mayo."
+      logo_llibre: "Logo del libro del edificio"
   edificis:
     index:
       titol: "Proyectos"
-      eliminar: "¿Seguro que quieres eliminar este proyecto?"
+      projecte_nou: "Proyecto nuevo:"
+      projectes_existents: "Proyectos existentes:"
+      nou_edifici: "Crear un proyecto nuevo"
+      no_projectes: "Aún no has creado ningún proyecto."
+      eliminar: "Estás seguro de que quieres eliminar este proyecto?"
+    new:
+      nou_edifici: "Crear un proyecto nuevo"
+      tornar_projectes: "Volver a los proyectos"
+    edit:
+      editar_edifici: "Editar el nombre del edificio"
+      tornar_projectes: "Volver a los proyectos"
+      no_editar_tipologia: "No se puede cambiar la tipología del edificio. Si tienes que hacer este cambio deberás eliminar este proyecto y crear uno nuevo."
+      guardar: "Guardar"
+    form:
+      guardar: "Guardar"
+    quadern_nou_plurifamiliar:
+      dades_identificacio: "Datos de identificación de la construcción"
   simple_form:
     labels:
-      dades_edifici_nou:
+      user:
+        first_name: 'Nombre'
+        last_name: 'Apellidos'
+        email: 'Correo electrónico'
+        password: 'Contraseña'
+        password_confirmation: 'Confirmación de contraseña'
+        current_password: 'Contraseña actual'
+        remember_me: "Recuérdame"
+      edifici:
+        nom_edifici: "Nombre del edificio"
+        tipus_edifici: "Tipo de edificio"
+      identificacio:
         tipus_via_edifici: "Tipo de vía"
-        via_edifici: "Nombre de la via"
+        via_edifici: "Nombre de la vía"
         numero_edifici: "Número"
         bloc_edifici: "Bloque"
         escala_edifici: "Escalera"
         cp_edifici: "Código postal"
         poblacio_edifici: "Población"
-        provincia_edifici: "Província"
+        provincia_edifici: "Provincia"
         ref_cadastral: "Referencia catastral"
         us_edifici: "Tipología"
-        any_inici_construccio: "Año de inicio de la construcción"
-        any_fi_construccio: "Año de finalización de la construcción"
-        guardar: "Guardar"
+        any_inici_construccio: "Año inicio construcción"
+        any_fi_construccio: "Año fin construcción"
+      promotor:
+        nom_promotor: "Nombre"
+        nif_promotor: "NIF/CIF"
+        adreca_promotor: "Dirección"
+        cp_promotor: "Código postal"
+        poblacio_promotor: "Población"
+        provincia_promotor: "Provincia"
+        pais_promotor: "País"
+      projectista:
+        nom_projectista: "Nombre"
+        nif_projectista: "NIF"
+        titulacio_projectista: "Titulación"
+        rao_social_projectista: "Razón social"
+      constructor:
+        nom_constructor: "Nombre"
+        nif_constructor: "NIF/CIF"
+        adreca_constructor: "Dirección"
+        cp_constructor: "Código postal"
+        poblacio_constructor: "Población"
+        provincia_constructor: "Provincia"
+        pais_constructor: "País"
+      director:
+        nom_director: "Nombre"
+        nif_director: "NIF"
+        titulacio_director: "Titulación"
+        rao_social_director: "Razón social"
+      execucio_director:
+        nom_director_execucio: "Nombre"
+        nif_director_execucio: "NIF"
+        titulacio_director_execucio: "Titulación"
+        rao_social_director_execucio: "Razón social"
+      laboratori:
+        nom_laboratori: "Nombre"
+        nif_laboratori: "NIF/CIF"
+      entitat_control:
+        nom_entitat_control: "Nombre"
+        nif_entitat_control: "NIF/CIF"
+        adreca_entitat_control: "Dirección"
+        cp_entitat_control: "Código postal"
+        poblacio_entitat_control: "Población"
+        provincia_entitat_control: "Provincia"
+        pais_entitat_control: "País"
+      subministrador:
+        nom_subministrador: "Nombre"
+        nif_subministrador: "NIF/CIF"
+        adreca_subministrador: "Dirección"
+        cp_subministrador: "Código postal"
+        poblacio_subministrador: "Población"
+        provincia_subministrador: "Provincia"
+        pais_subministrador: "País"
+      industrial:
+        nom_industrial: "Nombre"
+        nif_industrial: "NIF/CIF"
+        adreca_industrial: "Dirección"
+        cp_industrial: "Código postal"
+        poblacio_industrial: "Población"
+        provincia_industrial: "Provincia"
+        pais_industrial: "País"
+      fonamentacio:
+        mur_pedra: "Muro de piedra"
+        mur_fabrica_mao: "Muro de fábrica de ladrillo"
+        mur_fabrica_bloc: "Muro de fábrica de bloque"
+        mur_formigo_armat: "Muro de hormigón armado"
+        mur_pantalla: "Muro pantalla"
+        sabates_paredat: "Zapatas, rasas, pozos de mampostería"
+        sabates_formigo: "Zapatas o rasas de hormigón"
+        llosa: "Losa"
+        pilons: "Pilones"
+        pantalles: "Pantallas"
+      estructura:
+        parets_pedra: "Paredes de piedra"
+        parets_formigo_armat: "Paredes de hormigón armado"
+        parets_tova: "Paredes de adobe"
+        parets_tapia: "Paredes de tapial"
+        parets_fabrica_mao: "Paredes de fábrica de ladrillo"
+        parets_bloc_ceramic: "Paredes de bloque cerámico"
+        parets_bloc_formigo: "Paredes de bloque de hormigón"
+        parets_entramat_fusta: "Paredes de entramado de madera"
+        pilars_mao: "Pilares de ladrillo"
+        pilars_ferro_colat: "Pilares de hierro colado"
+        pilars_acer: "Pilares de acero"
+        pilars_formigo_armat: "Pilares de hormigón armado"
+        bigues_fusta: "Vigas de madera"
+        bigues_metaliques: "Vigas metálicas"
+        bigues_formigo_armat: "Vigas de hormigón armado"
+        forjat_fusta: "Forjado de madera"
+        forjat_metalic: "Forjado metálico"
+        forjat_formigo_armat: "Forgado de hormigón armado"
+        forjat_ceramica_armada: "Forjado de cerámica armada"
+        entrebigat_taulell: "Entrebigado de tablero"
+        entrebigat_revolto_ceramic: "Entrebigado de bovedilla cerámica"
+        entrebigat_revolto_formigo: "Entrebigado de bovedilla de hormigón"
+        forjat_reticular: "Forjado reticular"
+        llosa_formigo: "Losa de hormigón"
+        forjat_sanitari: "Forjado sanitario"
+        solera: "Solera"
+        forjat_horitzontal_coberta_capa_pendent: "Capa de formación de pendientes"
+        forjat_horitzontal_coberta_envanets: "Tabiques y tablero"
+        forjat_inclinat_coberta_formigo: "Hormigón armado"
+        encavallada_bigues_formigo: "Vigas de hormigón armado y tablero"
+        encavallada_bigues_metall: "Vigas metálicas y tablero"
+        encavallada_bigues_fusta: "Vigas de madera i tablero"
+        coberta_taulell_ceramic: "Tablero cerámico"
+        coberta_taulell_fusta: "Tablero de madera"
+        coberta_sandwich: "Chapa/sandwich"
+        escala_fusta: "Madera"
+        escala_metall: "Metal"
+        escala_ceramica: "Bóveda cerámica"
+        escala_llosa_armada: "Escalera de losa armada"
+      tancaments_vertical:
+        acabat_vist_paredat: "Mampostería"
+        acabat_vist_carreus: "Sillares"
+        acabat_vist_fabrica_mao: "Fábrica de ladrillo"
+        acabat_vist_fabrica_bloc_ceramic: "Fábrica de bloque cerámico"
+        acabat_vist_bloc_formigo: "Bloque de hormigón"
+        acabat_vist_panell_formigo: "Panel de hormigón"
+        acabat_vist_pantell_metalic_sandwich: "Panel metálico/Sandwich"
+        acabat_revestit_arrebossat_pintat: "Rebozado y pintado"
+        acabat_revestit_estucat: "Estucado"
+        acabat_revestit_morter_monocapa: "Mortero monocapa"
+        acabat_revestit_aplacat_ceramic: "Aplacado cerámico"
+        acabat_revestit_aplacat_pedra: "Aplacado de piedra"
+        acabat_revestit_xapa_metalica: "Chapa metálica"
+        cambra_aire_facana: "Fachada con cámara de aire"
+        fusteria_fusta: "Madera"
+        fusteria_acer: "Acero"
+        fusteria_alumini: "Aluminio"
+        fusteria_pvc: "PVC"
+        vidre_simple: "Vidrio sencillo"
+        vidre_doble: "Vidrio doble"
+        vidre_triple: "Vidrio triple"
+        vidre_baix_emissiu: "Vidrio con capa bajo emisiva"
+        vidre_control_solar: "Vidrio con capa de control solar"
+      coberta:
+        terrat_transitable: "Azotea transitable"
+        terrat_no_transitable: "Azotea no transitable"
+        terrat_aillament_termic: "Dispone de aislamiento térmico"
+        terrat_lamina_impermeabilitzant: "Dispone de lámina de impermeabilización"
+        coberta_teula_arab: "Teja árabe"
+        coberta_teula_plana: "Teja plana"
+        coberta_teula_ciment: "Teja de cemento"
+        coberta_pissarra: "Pizarra"
+        coberta_fibrociment: "Fibrocemento"
+        coberta_asfaltica: "Asfáltica"
+        coberta_xapa_acer: "Chapa de acero"
+        coberta_xapa_coure: "Chapa de cobre o zinc"
+        coberta_aillament_termic: "Dispone de aislamiento térmico"
+  devise:
+    sessions:
+      new:
+        login: "Iniciar sesión"
+        forgot_password: "Has olvidado tu contraseña?"
+        if_not_registered: "Si aún no te has registrado, antes debes"
+        create_account: "crear una cuenta"
+    registrations:
+      new:
+        register_title: "Crear una cuenta de usuario"
+        register_button: "Regístrate"
+        registration_needed: "Es necesario registrarse para poder utilizar el aplicativo Libro del edificio."
+        if_registered: "Si ya te has registrado puedes"
+        login_here: "iniciar sesión aquí"
+      edit:
+        account_configuration: "Configuración de la cuenta"
+        personal_data: "Datos personales"
+        change_password: "Cambiar la contraseña"
+        change_password_text: "Si no quieres cambiar tu contraseña deja estos espacios en blanco."
+        save_changes: "Guardar los cambios"
+        save_changes_text: "Introduce tu contraseña actual para guardar los cambios."
+        cancel_account: "Cancelación de la cuenta"
+        cancel_account_text1: "Si no estás satisfecho/a con Libro del edificio puedes cancelar tu cuenta de usuario/a."
+        cancel_account_text2: "Recuerda que si cancelas la cuenta no podrás acceder a tus proyectos creados hasta ahora."
+        cancel_account_button: "Cancelar mi cuenta"
+        cancel_verification: "Estás seguro/a de que quieres cancelar tu cuenta?"
+    passwords:
+      new:
+        change_password_title: "Has olvidado tu contraseña?"
+        change_password_text1: "Indícanos tu dirección de correo electrónico y te enviaremos instrucciones para restablecer tu contraseña."
+        change_password_text2: "Si aún no te has registrado, puedes"
+        create_account: "crear una cuenta aquí"
+        send_instructions: "Enviar las instrucciones"
+  identificacions:
+    edit:
+      titol_identificacio: "Identificación"
+      titol_dades: "DATOS DE IDENTIFICACIÓN DE LA CONSTRUCCIÓN" 
+    form:
+      guardar: "Guardar"
+  agents:
+    index:
+      titol_agents: "Agentes de la edificación"
+      promotor: "Promotor"
+      projectista: "Proyectista"
+      constructor: "Constructor"
+      director_obra: "Director de obra"
+      director_execucio: "Director de ejecución de obra"
+      laboratori: "Laboratorio de control"
+      entitat: "Entidad de control"
+      subministrador: "Suministrador de productos"
+      industrial: "Industrial"
+      titol_promotor: "PROMOTOR"
+      titol_projectista: "PROYECTISTA"
+      titol_constructor: "CONSTRUCTOR"
+      titol_director_obra: "DIRECTOR DE OBRA"
+      titol_director_execucio: "DIRECTOR DE EJECUCIÓN DE OBRA"
+      titol_laboratori: "LABORATORIO DE CONTROL"
+      titol_entitat: "ENTIDAD DE CONTROL"
+      titol_subministrador: "SUMINISTRADOR DE PRODUCTOS"
+      titol_industrial: "INDUSTRIAL"
+      afegir_promotor: "Añadir un promotor"
+      afegir_projectista: "Añadir un proyectista"
+      afegir_constructor: "Añadir un constructor"
+      afegir_director_obra: "Añadri un director de obra"
+      afegir_director_execucio: "Añadir un director de ejecución de obra"
+      afegir_laboratori: "Añadir un laboratorio de control"
+      afegir_entitat: "Añadir una entidad de control"
+      afegir_subministrador: "Añadir un suministrador de productos"
+      afegir_industrial: "Añadir un industrial"
+  promotors:
+    form:
+      guardar: "Guardar"
+  projectistes:
+    form:
+      guardar: "Guardar"
+  constructors:
+    form:
+      guardar: "Guardar"
+  directors:
+    form:
+      guardar: "Guardar"
+  execucio_directors:
+    form:
+      guardar: "Guardar"
+  laboratoris:
+    form:
+      guardar: "Guardar"
+  entitat_controls:
+    form:
+      guardar: "Guardar"
+  subministradors:
+    form:
+      guardar: "Guardar"
+  industrials:
+    form:
+      guardar: "Guardar"
+  fonamentacions:
+    edit:
+      titol_sistemes: "Descripción constructiva del edificio"
+    form:
+      guardar: "Guardar"
+      titol_fonamentacio: "CIMENTACIÓN"
+      sistemes_contencio: "Sistemas de contención"
+      fonamentacio_superficial: "Cimentación superficial"
+      fonamentacio_profunda: "Cimentación profunda"
+  estructures:
+    edit:
+      titol_sistemes: "Descripción constructiva del edificio"
+    form:
+      guardar: "Guardar"
+      titol_estructura: "ESTRUCTURA"
+      estructura_vertical: "Estructura vertical"
+      parets_carrega: "Paredes de carga"
+      pilars: "Pilares"
+      estructura_horitzontal: "Estructura horizontal"
+      estructura_principal: "Estructura principal (vigas)"
+      sostre: "Forjado (elementos secundarios, viguetas)"
+      sostre_entrebigat: "Forjado (entrevigado)"
+      altres: "Otros"
+      estructura_coberta: "Estructura de cubierta"
+      sostre_horitzontal: "Forjado horizontal"
+      sostre_inclinat: "Forjado inclinado"
+      encavallades: "Cerchas, pórticos"
+      estructura_escala: "Esctructura de la escalera"
+  tancaments_verticals:
+    edit:
+      titol_sistemes: "Descripcióv constructiva del edificio"
+    form:
+      guardar: "Guardar"
+      titol_tancaments: "CERRAMIENTOS VERTICALES"
+      acabat_vist: "Acabado visto"
+      acabat_revestit: "Acabado revestido"
+      fusteries: "Carpinterías"
+      vidres: "Vidrios"
+  cobertes:
+    edit:
+      titol_sistemes: "Descripcióv constructiva del edificio"
+    form:
+      guardar: "Guardar"
+      titol_coberta: "CUBIERTA"
+      terrat: "Azotea / Cubierta plana"
+      coberta_inclinada: "Cubierta inclinada"
+  referencies:
+    index:
+      titol_operacions: "Operaciones de mantenimiento"
+      eliminar: "Seguro que quieres eliminar esta operación?"
+      actualitzar_llistat: "Actualizar listado"
+      text_actualitzar_llistat: "Actualizad el listado de operaciones de mantenimiento cada vez que modifiquéis la descripción constructiva del edificio. Hay que tener en cuenta que esta acción borrará todas las operaciones y las creará de nuevo."
+      fonamentacio: "Cimentación"
+      descripcio: "Descripción"
+      periodicitat: "Periodicidad"
+      referencia: "Referencia"
+      responsable: "Responsable"
+      estructura: "Estructura"
+      tancaments: "Cerramientos verticales"
+      coberta: "Cubierta"
+  documents:
+    index:
+      titol_documents: "Documento"
+      generar_llibre: "Generar el libro del edificio"
+      text_generar_llibre: "Si ya habéis completado toda la información de los apartados anteriores podéis pulsar el botón para generar el documento Word (formato docx) del Libro del edificio."
+      generar_manual: "Generar el Manual de la vivienda"
+      text_generar_manual: "En los edificios plurifamiliares de nueva construcción hay que crear el Manual de la vivienda. Este documento está destinado a los diferentes propietarios para que puedan conocer, de manera individualizada, los datos que corresponden a su vivienda."
+      seguents_passos: "Siguientes pasos"
+      pas1: "Colocar las imágenes de la fachada y el emplazamiento del edificio."
+      pas2: "Comprobar que el diseño del documento es correcto. Como se crea un fichero Word editable podéis modificar lo que consideréis conveniente."
+      pas3: "Actualizar el índice de contenidos del documento. Es probable que el índice del documento no refleje la numeración correcta de las páginas. Tan sólo hay que hacer clic el índice con el botón derecho y seleccionar 'Actualizar tabla de contenidos'."

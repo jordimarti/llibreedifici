@@ -11,7 +11,6 @@ class CreateIdentificacions < ActiveRecord::Migration
       t.string :poblacio_edifici
       t.string :provincia_edifici
       t.string :ref_cadastral
-      t.string :us_edifici
       t.integer :any_inici_construccio
       t.integer :any_fi_construccio
 

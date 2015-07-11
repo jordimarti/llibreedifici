@@ -5,18 +5,18 @@
     <%= f.input :edifici_id, :as => :hidden, :input_html => { :value => @edifici.id } %>
     <div class="row">
       <div class="medium-12 columns">
-        <div class="titol-sistema">ESTRUCTURA</div>
+        <div class="titol-sistema"><%= t('.titol_estructura') %></div>
       </div>
     </div>
 
     <div class="row">
       <div class="medium-12 columns">
-        <div class="titol-grup-subsistema">Estructura vertical</div>
+        <div class="titol-grup-subsistema"><%= t('.estructura_vertical') %></div>
       </div>
     </div>
     <div class="row">
       <div class="medium-6 columns">
-        <div class="titol-subsistema">Parets de càrrega</div>
+        <div class="titol-subsistema"><%= t('.parets_carrega') %></div>
         <div class="camps-subsistema">
           <%= f.input :parets_pedra %>
           <%= f.input :parets_formigo_armat %>
@@ -29,7 +29,7 @@
         </div>
       </div>
       <div class="medium-6 columns">
-        <div class="titol-subsistema">Pilars</div>
+        <div class="titol-subsistema"><%= t('.pilars') %></div>
         <div class="camps-subsistema">
           <%= f.input :pilars_mao %>
           <%= f.input :pilars_ferro_colat %>
@@ -43,12 +43,12 @@
 
     <div class="row">
       <div class="medium-12 columns">
-        <div class="titol-grup-subsistema">Estructura horitzontal</div>
+        <div class="titol-grup-subsistema"><%= t('.estructura_horitzontal') %></div>
       </div>
     </div>
     <div class="row">
       <div class="medium-6 columns">
-        <div class="titol-subsistema">Estructura principal (bigues)</div>
+        <div class="titol-subsistema"><%= t('.estructura_principal') %></div>
         <div class="camps-subsistema">
           <%= f.input :bigues_fusta %>
           <%= f.input :bigues_metaliques %>
@@ -56,7 +56,7 @@
         </div>
       </div>
       <div class="medium-6 columns">
-        <div class="titol-subsistema">Sostre (elements secundaris, biguetes)</div>
+        <div class="titol-subsistema"><%= t('.sostre') %></div>
         <div class="camps-subsistema">
           <%= f.input :forjat_fusta %>
           <%= f.input :forjat_metalic %>
@@ -67,7 +67,7 @@
     </div>
     <div class="row">
       <div class="medium-6 columns">
-        <div class="titol-subsistema">Sostre (entrebigat)</div>
+        <div class="titol-subsistema"><%= t('.sostre_entrebigat') %></div>
         <div class="camps-subsistema">
           <%= f.input :entrebigat_taulell %>
           <%= f.input :entrebigat_revolto_ceramic %>
@@ -75,7 +75,7 @@
         </div>
       </div>
       <div class="medium-6 columns">
-        <div class="titol-subsistema">Altres</div>
+        <div class="titol-subsistema"><%= t('.altres') %></div>
         <div class="camps-subsistema">
           <%= f.input :forjat_reticular %>
           <%= f.input :llosa_formigo %>
@@ -89,19 +89,19 @@
 
     <div class="row">
       <div class="medium-12 columns">
-        <div class="titol-grup-subsistema">Estructura de coberta</div>
+        <div class="titol-grup-subsistema"><%= t('.estructura_coberta') %></div>
       </div>
     </div>
     <div class="row">
       <div class="medium-6 columns">
-        <div class="titol-subsistema">Sostre horitzontal</div>
+        <div class="titol-subsistema"><%= t('.sostre_horitzontal') %></div>
         <div class="camps-subsistema">
           <%= f.input :forjat_horitzontal_coberta_capa_pendent %>
           <%= f.input :forjat_horitzontal_coberta_envanets %> 
         </div>
       </div>
       <div class="medium-6 columns">
-        <div class="titol-subsistema">Sostre inclinat</div>
+        <div class="titol-subsistema"><%= t('.sostre_inclinat') %></div>
         <div class="camps-subsistema">
           <%= f.input :forjat_inclinat_coberta_formigo %>
         </div>
@@ -109,7 +109,7 @@
     </div>
     <div class="row">
       <div class="medium-6 columns">
-        <div class="titol-subsistema">Encavallades, pòrtics</div>
+        <div class="titol-subsistema"><%= t('.encavallades') %></div>
         <div class="camps-subsistema">
           <%= f.input :encavallada_bigues_formigo %>
           <%= f.input :encavallada_bigues_metall %>
@@ -117,7 +117,7 @@
         </div>
       </div>
       <div class="medium-6 columns">
-        <div class="titol-subsistema">Altres</div>
+        <div class="titol-subsistema"><%= t('.altres') %></div>
         <div class="camps-subsistema">
           <%= f.input :coberta_taulell_ceramic %>
           <%= f.input :coberta_taulell_fusta %>
@@ -130,7 +130,7 @@
 
     <div class="row">
       <div class="medium-12 columns">
-        <div class="titol-grup-subsistema">Estructura d'escala</div>
+        <div class="titol-grup-subsistema"><%= t('.estructura_escala') %></div>
         <div class="camps-subsistema">
           <%= f.input :escala_fusta %>
           <%= f.input :escala_metall %>

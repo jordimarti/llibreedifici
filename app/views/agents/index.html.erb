@@ -1,61 +1,61 @@
 <div id="modal-promotor" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-  <h3 id="modalTitle">Promotor</h3>
+  <h3 id="modalTitle"><%= t('.promotor') %></h3>
   <div id="formulari-promotor" class="formulari-agent">
   </div>
   <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 </div>
 
 <div id="modal-projectista" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-  <h3 id="modalTitle">Projectista</h3>
+  <h3 id="modalTitle"><%= t('.projectista') %></h3>
   <div id="formulari-projectista" class="formulari-agent">
   </div>
   <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 </div>
 
 <div id="modal-constructor" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-  <h3 id="modalTitle">Constructor</h3>
+  <h3 id="modalTitle"><%= t('.constructor') %></h3>
   <div id="formulari-constructor" class="formulari-agent">
   </div>
   <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 </div>
 
 <div id="modal-director" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-  <h3 id="modalTitle">Director d'obra</h3>
+  <h3 id="modalTitle"><%= t('.director_obra') %></h3>
   <div id="formulari-director" class="formulari-agent">
   </div>
   <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 </div>
 
 <div id="modal-execucio-director" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-  <h3 id="modalTitle">Director d'execució d'obra</h3>
+  <h3 id="modalTitle"><%= t('.director_execucio') %></h3>
   <div id="formulari-execucio-director" class="formulari-agent">
   </div>
   <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 </div>
 
 <div id="modal-laboratori" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-  <h3 id="modalTitle">Laboratori de control</h3>
+  <h3 id="modalTitle"><%= t('.laboratori') %></h3>
   <div id="formulari-laboratori" class="formulari-agent">
   </div>
   <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 </div>
 
 <div id="modal-entitat-control" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-  <h3 id="modalTitle">Entitat de control</h3>
+  <h3 id="modalTitle"><%= t('.entitat') %></h3>
   <div id="formulari-entitat-control" class="formulari-agent">
   </div>
   <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 </div>
 
 <div id="modal-subministrador" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-  <h3 id="modalTitle">Subministrador de productes</h3>
+  <h3 id="modalTitle"><%= t('.subministrador') %></h3>
   <div id="formulari-subministrador" class="formulari-agent">
   </div>
   <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 </div>
 
 <div id="modal-industrial" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-  <h3 id="modalTitle">Industrial</h3>
+  <h3 id="modalTitle"><%= t('.industrial') %></h3>
   <div id="formulari-industrial" class="formulari-agent">
   </div>
   <a class="close-reveal-modal" aria-label="Close">&#215;</a>
@@ -77,7 +77,7 @@
 					<div class="medium-6 columns">
 						<div class="agents-container">
 							<div class="agents-title">
-								PROMOTOR
+								<%= t('.titol_promotor') %>
 							</div>
 							<div id="promotors">
 								<%= render  :partial => '/promotors/llistat_promotors' %>
@@ -85,7 +85,7 @@
 							<div class="agents-footer">
 								<div class="agents-footer-link right">
 									<%= link_to (new_edifici_promotor_path), remote: true do %>
-										<span class="suma">+</span> Afegir un promotor
+										<span class="suma">+</span> <%= t('.afegir_promotor') %>
 									<% end %>
 								</div>
 							</div>
@@ -94,7 +94,7 @@
 					<div class="medium-6 columns">
 						<div class="agents-container">
 							<div class="agents-title">
-								PROJECTISTA
+								<%= t('.titol_projectista') %>
 							</div>
 							<div id="projectistes">
 								<%= render  :partial => '/projectistes/llistat_projectistes' %>
@@ -102,7 +102,7 @@
 							<div class="agents-footer">
 								<div class="agents-footer-link right">
 									<%= link_to (new_edifici_projectista_path), remote: true do %>
-										<span class="suma">+</span> Afegir un projectista
+										<span class="suma">+</span> <%= t('.afegir_projectista') %>
 									<% end %>
 								</div>
 							</div>
@@ -114,7 +114,7 @@
 					<div class="medium-6 columns">
 						<div class="agents-container">
 							<div class="agents-title">
-								CONSTRUCTOR
+								<%= t('.titol_constructor') %>
 							</div>
 							<div id="constructors">
 								<%= render  :partial => '/constructors/llistat_constructors' %>
@@ -122,7 +122,7 @@
 							<div class="agents-footer">
 								<div class="agents-footer-link right">
 									<%= link_to (new_edifici_constructor_path), remote: true do %>
-										<span class="suma">+</span> Afegir un constructor
+										<span class="suma">+</span> <%= t('.afegir_constructor') %>
 									<% end %>
 								</div>
 							</div>
@@ -131,7 +131,7 @@
 					<div class="medium-6 columns">
 						<div class="agents-container">
 							<div class="agents-title">
-								DIRECTOR D'OBRA
+								<%= t('.titol_director_obra') %>
 							</div>
 							<div id="directors">
 								<%= render  :partial => '/directors/llistat_directors' %>
@@ -139,7 +139,7 @@
 							<div class="agents-footer">
 								<div class="agents-footer-link right">
 									<%= link_to (new_edifici_director_path), remote: true do %>
-										<span class="suma">+</span> Afegir un director d'obra
+										<span class="suma">+</span> <%= t('.afegir_director_obra') %>
 									<% end %>
 								</div>
 							</div>
@@ -151,7 +151,7 @@
 					<div class="medium-6 columns">
 						<div class="agents-container">
 							<div class="agents-title">
-								DIRECTOR D'EXECUCIÓ D'OBRA
+								<%= t('.titol_director_execucio') %>
 							</div>
 							<div id="execucio-directors">
 								<%= render  :partial => '/execucio_directors/llistat_execucio_directors' %>
@@ -159,7 +159,7 @@
 							<div class="agents-footer">
 								<div class="agents-footer-link right">
 									<%= link_to (new_edifici_execucio_director_path), remote: true do %>
-										<span class="suma">+</span> Afegir un director d'execució d'obra
+										<span class="suma">+</span> <%= t('.afegir_director_execucio') %>
 									<% end %>
 								</div>
 							</div>
@@ -173,7 +173,7 @@
 					<div class="medium-6 columns">
 						<div class="agents-container">
 							<div class="agents-title">
-								LABORATORIS DE CONTROL
+								<%= t('.titol_laboratori') %>
 							</div>
 							<div id="laboratoris">
 								<%= render  :partial => '/laboratoris/llistat_laboratoris' %>
@@ -181,7 +181,7 @@
 							<div class="agents-footer">
 								<div class="agents-footer-link right">
 									<%= link_to (new_edifici_laboratori_path), remote: true do %>
-										<span class="suma">+</span> Afegir un laboratori
+										<span class="suma">+</span> <%= t('.afegir_laboratori') %>
 									<% end %>
 								</div>
 							</div>
@@ -190,7 +190,7 @@
 					<div class="medium-6 columns">
 						<div class="agents-container">
 							<div class="agents-title">
-								ENTITATS DE CONTROL
+								<%= t('.titol_entitat') %>
 							</div>
 							<div id="entitat-controls">
 								<%= render  :partial => '/entitat_controls/llistat_entitat_controls' %>
@@ -198,7 +198,7 @@
 							<div class="agents-footer">
 								<div class="agents-footer-link right">
 									<%= link_to (new_edifici_entitat_control_path), remote: true do %>
-										<span class="suma">+</span> Afegir una entitat de control
+										<span class="suma">+</span> <%= t('.afegir_entitat') %>
 									<% end %>
 								</div>
 							</div>
@@ -209,7 +209,7 @@
 					<div class="medium-6 columns">
 						<div class="agents-container">
 							<div class="agents-title">
-								SUBMINISTRADORS DE PRODUCTES
+								<%= t('.titol_subministrador') %>
 							</div>
 							<div id="subministradors">
 								<%= render  :partial => '/subministradors/llistat_subministradors' %>
@@ -217,7 +217,7 @@
 							<div class="agents-footer">
 								<div class="agents-footer-link right">
 									<%= link_to (new_edifici_subministrador_path), remote: true do %>
-										<span class="suma">+</span> Afegir un subministrador
+										<span class="suma">+</span> <%= t('.afegir_subministrador') %>
 									<% end %>
 								</div>
 							</div>
@@ -226,7 +226,7 @@
 					<div class="medium-6 columns">
 						<div class="agents-container">
 							<div class="agents-title">
-								INDUSTRIALS
+								<%= t('.titol_industrial') %>
 							</div>
 							<div id="industrials">
 								<%= render  :partial => '/industrials/llistat_industrials' %>
@@ -234,7 +234,7 @@
 							<div class="agents-footer">
 								<div class="agents-footer-link right">
 									<%= link_to (new_edifici_industrial_path), remote: true do %>
-										<span class="suma">+</span> Afegir un industrial
+										<span class="suma">+</span> <%= t('.afegir_industrial') %>
 									<% end %>
 								</div>
 							</div>

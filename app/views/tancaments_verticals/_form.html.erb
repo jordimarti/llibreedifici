@@ -5,13 +5,13 @@
     <%= f.input :edifici_id, :as => :hidden, :input_html => { :value => @edifici.id } %>
     <div class="row">
       <div class="medium-12 columns">
-        <div class="titol-sistema">TANCAMENTS VERTICALS</div>
+        <div class="titol-sistema"><%= t('.titol_tancaments') %></div>
       </div>
     </div>
 
     <div class="row">
       <div class="medium-6 columns">
-        <div class="titol-subsistema">Acabat vist</div>
+        <div class="titol-subsistema"><%= t('.acabat_vist') %></div>
         <%= f.input :acabat_vist_paredat %>
         <%= f.input :acabat_vist_carreus %>
         <%= f.input :acabat_vist_fabrica_mao %>
@@ -21,7 +21,7 @@
         <%= f.input :acabat_vist_panell_metalic_sandwich %>
       </div>
       <div class="medium-6 columns">
-        <div class="titol-subsistema">Acabat revestit</div>  
+        <div class="titol-subsistema"><%= t('.acabat_revestit') %></div>  
         <%= f.input :acabat_revestit_arrebossat_pintat %>
         <%= f.input :acabat_revestit_estucat %>
         <%= f.input :acabat_revestit_morter_monocapa %>
@@ -43,14 +43,14 @@
 
     <div class="row">
       <div class="medium-6 columns">
-        <div class="titol-subsistema">Fusteries</div>
+        <div class="titol-subsistema"><%= t('.fusteries') %></div>
         <%= f.input :fusteria_fusta %>
         <%= f.input :fusteria_acer %>
         <%= f.input :fusteria_alumini %>
         <%= f.input :fusteria_pvc %>
       </div>
       <div class="medium-6 columns">
-        <div class="titol-subsistema">Vidres</div>
+        <div class="titol-subsistema"><%= t('.vidres') %></div>
         <%= f.input :vidre_simple %>
         <%= f.input :vidre_doble %>
         <%= f.input :vidre_triple %>

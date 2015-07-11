@@ -12,10 +12,10 @@
       <div class="container-operacions-sistema">
         <div class="row">
           <div class="medium-3 columns">
-            <%= link_to 'Actualitzar llistat', crear_llistat_path, :class => 'button radius small' %>
+            <%= link_to t('.actualitzar_llistat'), crear_llistat_path, :class => 'button radius small' %>
           </div>
           <div class="medium-9 columns">
-            <p>Actualitzeu el llistat d'operacions de manteniment cada vegada que modifiqueu la descripció constructiva de l'edifici. Cal tenir en compte que aquesta acció esborrarà totes les operacions i les crearà de nou.</p>
+            <p><%= t('.text_actualitzar_llistat') %></p>
           </div>
         </div>
       </div>
@@ -26,15 +26,15 @@
     <div class="medium-12 columns">
       <div class="container-operacions-sistema">
         <div class="titol-seccio-sistema">
-          Fonamentació
+          <%= t('.fonamentacio') %>
         </div>
         <table class="taula-operacions">
           <thead>
             <tr>
-              <th>Descripció</th>
-              <th>Periodicitat</th>
-              <th>Referència</th>
-              <th>Responsable</th>
+              <th><%= t('.descripcio') %></th>
+              <th><%= t('.periodicitat') %></th>
+              <th><%= t('.referencia') %></th>
+              <th><%= t('.responsable') %></th>
               <th></th>
             </tr>
           </thead>
@@ -72,15 +72,15 @@
     <div class="medium-12 columns">
       <div class="container-operacions-sistema">
         <div class="titol-seccio-sistema">
-          Estructura
+          <%= t('.estructura') %>
         </div>
         <table class="taula-operacions">
           <thead>
             <tr>
-              <th>Descripció</th>
-              <th>Periodicitat</th>
-              <th>Referència</th>
-              <th>Responsable</th>
+              <th><%= t('.descripcio') %></th>
+              <th><%= t('.periodicitat') %></th>
+              <th><%= t('.referencia') %></th>
+              <th><%= t('.responsable') %></th>
               <th></th>
             </tr>
           </thead>
@@ -117,15 +117,15 @@
     <div class="medium-12 columns">
       <div class="container-operacions-sistema">
         <div class="titol-seccio-sistema">
-          Tancaments verticals
+          <%= t('.tancaments') %>
         </div>
         <table class="taula-operacions">
           <thead>
             <tr>
-              <th>Descripció</th>
-              <th>Periodicitat</th>
-              <th>Referència</th>
-              <th>Responsable</th>
+              <th><%= t('.descripcio') %></th>
+              <th><%= t('.periodicitat') %></th>
+              <th><%= t('.referencia') %></th>
+              <th><%= t('.responsable') %></th>
               <th></th>
             </tr>
           </thead>
@@ -162,15 +162,15 @@
     <div class="medium-12 columns">
       <div class="container-operacions-sistema">
         <div class="titol-seccio-sistema">
-          Coberta
+          <%= t('.coberta') %>
         </div>
         <table class="taula-operacions">
           <thead>
             <tr>
-              <th>Descripció</th>
-              <th>Periodicitat</th>
-              <th>Referència</th>
-              <th>Responsable</th>
+              <th><%= t('.descripcio') %></th>
+              <th><%= t('.periodicitat') %></th>
+              <th><%= t('.referencia') %></th>
+              <th><%= t('.responsable') %></th>
               <th></th>
             </tr>
           </thead>

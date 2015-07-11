@@ -5,13 +5,13 @@
     <%= f.input :edifici_id, :as => :hidden, :input_html => { :value => @edifici.id } %>
     <div class="row">
       <div class="medium-12 columns">
-        <div class="titol-sistema">FONAMENTACIÓ</div>
+        <div class="titol-sistema"><%= t('.titol_fonamentacio') %></div>
       </div>
     </div>
 
     <div class="row">
       <div class="medium-4 columns">
-        <div class="titol-subsistema">Sistemes de contenció</div>
+        <div class="titol-subsistema"><%= t('.sistemes_contencio') %></div>
         <%= f.input :mur_pedra %>
         <%= f.input :mur_fabrica_mao %>
         <%= f.input :mur_fabrica_bloc %>
@@ -19,7 +19,7 @@
         <%= f.input :mur_pantalla %>
       </div>
       <div class="medium-4 columns">
-        <div class="titol-subsistema">Fonamentació superficial</div>
+        <div class="titol-subsistema"><%= t('.fonamentacio_superficial') %></div>
         <% if (@edifici.tipus_edifici == 'existent_plurifamiliar' || @edifici.tipus_edifici == 'existent_unifamiliar') %>
           <%= f.input :sabates_paredat %>
         <% end %>
@@ -27,7 +27,7 @@
         <%= f.input :llosa %>
       </div>
       <div class="medium-4 columns">
-        <div class="titol-subsistema">Fonamentació profunda</div>
+        <div class="titol-subsistema"><%= t('.fonamentacio_profunda') %></div>
         <%= f.input :pilons %>
         <%= f.input :pantalles %>
       </div>
