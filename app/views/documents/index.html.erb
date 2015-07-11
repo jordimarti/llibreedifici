@@ -7,28 +7,58 @@
 		</div>
 	</div>
 
+	<% if @edifici.tipus_edifici == 'nou_plurifamiliar' %>
 	<div class="row">
 		<div class="medium-12 columns">
 			<div class="container-document">
 				<div class="row">
-					<div class="medium-3 columns">
+					<div class="medium-6 columns">
 						<a href="documents/nou_plurifamiliar.docx" class="button small radius">Generar el Llibre de l'edifici</a>
-					</div>
-					<div class="medium-9 columns">
+						<br/>
 						<p>Si ja heu completat tota la informació dels apartats anteriors podeu clicar el botó per generar el document Word (format docx) del Llibre de l'edifici.</p>
 					</div>
-				</div>
-				<div class="row">
-					<div class="medium-3 columns">
+					<div class="medium-6 columns">
 						<a href="documents/manual_habitatge.docx" class="button small radius">Generar el Manual de l'habitatge</a>
-					</div>
-					<div class="medium-9 columns">
+						<br/>
 						<p>En els edificis plurifamiliars de nova construcció cal crear el Manual de l'habitatge. Aquest document està destinat als diferents propietaris per a que puguin conèixer, de manera individualitzada, les dades que corresponen al seu habitatge.</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<% end %>
+
+	<% if @edifici.tipus_edifici == 'nou_unifamiliar' %>
+	<div class="row">
+		<div class="medium-12 columns">
+			<div class="container-document">
+				<div class="row">
+					<div class="medium-12 columns">
+						<a href="documents/nou_unifamiliar.docx" class="button small radius">Generar el Llibre de l'edifici</a>
+						<br/>
+						<p>Si ja heu completat tota la informació dels apartats anteriors podeu clicar el botó per generar el document Word (format docx) del Llibre de l'edifici.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<% end %>
+
+	<% if @edifici.tipus_edifici == 'existent_plurifamiliar' || @edifici.tipus_edifici == 'existent_unifamiliar' %>
+	<div class="row">
+		<div class="medium-12 columns">
+			<div class="container-document">
+				<div class="row">
+					<div class="medium-12 columns">
+						<a href="documents/existent.docx" class="button small radius">Generar el Llibre de l'edifici</a>
+						<br/>
+						<p>Si ja heu completat tota la informació dels apartats anteriors podeu clicar el botó per generar el document Word (format docx) del Llibre de l'edifici.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<% end %>
 
 	<div class="row">
 		<div class="medium-12 columns">

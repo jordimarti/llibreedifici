@@ -3,6 +3,8 @@ class CreateReferencies < ActiveRecord::Migration
     create_table :referencies do |t|
       t.integer :edifici_id
       t.integer :operacio_id
+      t.string :sistema
+      t.boolean :manual_habitatge
 
       t.timestamps null: false
     end

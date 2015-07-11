@@ -207,6 +207,7 @@ ActiveRecord::Schema.define(version: 20150705161250) do
     t.string   "responsable_ca"
     t.string   "responsable_es"
     t.boolean  "obligatorietat"
+    t.boolean  "manual_habitatge"
     t.boolean  "creat_usuari"
     t.string   "sistema"
     t.datetime "created_at",           null: false
@@ -239,8 +240,10 @@ ActiveRecord::Schema.define(version: 20150705161250) do
   create_table "referencies", force: :cascade do |t|
     t.integer  "edifici_id"
     t.integer  "operacio_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "sistema"
+    t.boolean  "manual_habitatge"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "sistemes", force: :cascade do |t|

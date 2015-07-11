@@ -9,10 +9,12 @@ class ReferenciesController < ApplicationController
   # GET /referencies.json
   def index
     @submenu_actiu = 'operacions'
-    @operacions = Operacio.all
 
-    @operacions_fonamentacio = Operacio.where(:sistema => 'fonamentacio')
-    @operacions_estructura = Operacio.where(:sistema => 'estructura')
+    @referencies_fonamentacio = @referencies.where(:sistema => 'fonamentacio')
+    @referencies_estructura = @referencies.where(:sistema => 'estructura')
+    @referencies_tancaments = @referencies.where(:sistema => 'tancaments')
+    @referencies_coberta = @referencies.where(:sistema => 'cobertes')
+    
   end
 
   #Aquest mètode consulta la definició de l'edifici i crea el llistat de referències a les operacions de manteniment
@@ -69,13 +71,52 @@ class ReferenciesController < ApplicationController
       crear_referencia(6)
     end
 
+    tancament = TancamentsVertical.where(:edifici_id => @edifici.id).last
+    if (tancament.acabat_revestit_arrebossat_pintat == true || tancament.acabat_revestit_estucat == true || tancament.acabat_revestit_morter_monocapa == true || tancament.acabat_revestit_aplacat_ceramic == true || tancament.acabat_revestit_aplacat_pedra == true || tancament.acabat_revestit_xapa_metalica == true)
+      crear_referencia(26)
+      crear_referencia(27)
+    end
+    if (tancament.acabat_vist_paredat == true || tancament.acabat_vist_carreus == true || tancament.acabat_vist_fabrica_mao == true || tancament.acabat_vist_fabrica_bloc_ceramic == true || tancament.acabat_vist_bloc_formigo == true || tancament.acabat_vist_panell_formigo == true || tancament.acabat_vist_panell_metalic_sandwich == true)
+      crear_referencia(28)
+    end
+    if (tancament.fusteria_fusta == true || tancament.fusteria_acer == true || tancament.fusteria_alumini == true || tancament.fusteria_pvc == true)
+      crear_referencia(29)
+      crear_referencia(30)
+      crear_referencia(31)
+      crear_referencia(32)
+      crear_referencia(33)
+      crear_referencia(34)
+      crear_referencia(35)
+      crear_referencia(36)
+    end
+
+    coberta = Coberta.where(:edifici_id => @edifici.id).last
+    if (coberta.terrat_transitable == true)
+      crear_referencia(37)
+    end
+    if (coberta.terrat_transitable == true || coberta.terrat_no_transitable == true)     
+      crear_referencia(38)
+      crear_referencia(39)
+    end
+    if (coberta.terrat_no_transitable == true)
+      crear_referencia(40)
+      crear_referencia(41)
+    end
+    if (coberta.coberta_teula_arab == true || coberta.coberta_teula_plana == true || coberta.coberta_teula_ciment == true || coberta.coberta_pissarra == true || coberta.coberta_fibrociment == true || coberta.coberta_asfaltica == true || coberta.coberta_xapa_acer == true || coberta.coberta_xapa_coure == true)
+      crear_referencia(42)
+      crear_referencia(43)
+      crear_referencia(44)
+    end
 
     redirect_to action: "index"
   end
 
-  def crear_referencia(operacio)
+  def crear_referencia(id_operacio)
+    operacio = Operacio.find(id_operacio)
     referencia = Referencia.new
-    referencia.operacio_id = operacio
+    referencia.operacio_id = operacio.id
+    referencia.sistema = operacio.sistema
+    referencia.manual_habitatge = operacio.manual_habitatge
     referencia.edifici_id = @edifici.id
     referencia.save
   end

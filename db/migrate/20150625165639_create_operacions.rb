@@ -10,6 +10,7 @@ class CreateOperacions < ActiveRecord::Migration
       t.string :responsable_ca
       t.string :responsable_es
       t.boolean :obligatorietat
+      t.boolean :manual_habitatge
       t.boolean :creat_usuari
       t.string :sistema
 

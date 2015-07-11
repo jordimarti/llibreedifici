@@ -13,7 +13,7 @@ class DocumentsController < ApplicationController
   def nou_plurifamiliar
     respond_to do |format|
       format.docx do
-        doc = DocxReplace::Doc.new("#{Rails.root}/lib/docx_templates/nou_plurifamiliar5.docx", "#{Rails.root}/tmp")
+        doc = DocxReplace::Doc.new("#{Rails.root}/lib/docx_templates/nou_plurifamiliar6.docx", "#{Rails.root}/tmp")
         # Adreça de l'edifici
         adreca = @edifici.identificacio.tipus_via_edifici.to_s + ' ' + @edifici.identificacio.via_edifici.to_s + ' ' + @edifici.identificacio.numero_edifici.to_s + ' ' + @edifici.identificacio.bloc_edifici.to_s
         doc.replace("$adreca$", adreca)
@@ -111,52 +111,325 @@ class DocumentsController < ApplicationController
         doc.replace("$industrial$", word_industrial)
 
         # Descripció constructiva
+        def llista(element_llista)
+          return '<w:p w:rsidP="006E3F51" w:rsidR="00676FB5" w:rsidRDefault="006E3F51"><w:pPr><w:pStyle w:val="Prrafodelista"/><w:numPr><w:ilvl w:val="0"/><w:numId w:val="1"/></w:numPr></w:pPr><w:r><w:t>' + element_llista + '</w:t></w:r></w:p>'
+        end
         # Fonamentació
         word_fonamentacio = ''
         if @edifici.fonamentacio.mur_pedra == true
-          word_fonamentacio = word_fonamentacio + '<w:p w:rsidP="006E3F51" w:rsidR="00676FB5" w:rsidRDefault="006E3F51"><w:pPr><w:pStyle w:val="Prrafodelista"/><w:numPr><w:ilvl w:val="0"/><w:numId w:val="1"/></w:numPr></w:pPr><w:r><w:t>Mur de contenció de pedra</w:t></w:r></w:p>'
+          word_fonamentacio = word_fonamentacio + llista('Mur de contenció de pedra')
         end
         if @edifici.fonamentacio.mur_fabrica_mao == true
-          word_fonamentacio = word_fonamentacio + '<w:p w:rsidP="006E3F51" w:rsidR="00676FB5" w:rsidRDefault="006E3F51"><w:pPr><w:pStyle w:val="Prrafodelista"/><w:numPr><w:ilvl w:val="0"/><w:numId w:val="1"/></w:numPr></w:pPr><w:r><w:t>Mur de contenció de fàbrica de maó</w:t></w:r></w:p>'
+          word_fonamentacio = word_fonamentacio + llista('Mur de contenció de fàbrica de maó')
         end
         if @edifici.fonamentacio.mur_fabrica_bloc == true
-          word_fonamentacio = word_fonamentacio + '<w:p w:rsidP="006E3F51" w:rsidR="00676FB5" w:rsidRDefault="006E3F51"><w:pPr><w:pStyle w:val="Prrafodelista"/><w:numPr><w:ilvl w:val="0"/><w:numId w:val="1"/></w:numPr></w:pPr><w:r><w:t>Mur de contenció de fàbrica de bloc</w:t></w:r></w:p>'
+          word_fonamentacio = word_fonamentacio + llista('Mur de contenció de fàbrica de bloc')
         end
         if @edifici.fonamentacio.mur_formigo_armat == true
-          word_fonamentacio = word_fonamentacio + '<w:p w:rsidP="006E3F51" w:rsidR="00676FB5" w:rsidRDefault="006E3F51"><w:pPr><w:pStyle w:val="Prrafodelista"/><w:numPr><w:ilvl w:val="0"/><w:numId w:val="1"/></w:numPr></w:pPr><w:r><w:t>Mur de contenció de formigó armat</w:t></w:r></w:p>'
+          word_fonamentacio = word_fonamentacio + llista('Mur de contenció de formigó armat')
         end 
         if @edifici.fonamentacio.mur_pantalla == true
-          word_fonamentacio = word_fonamentacio + '<w:p w:rsidP="006E3F51" w:rsidR="00676FB5" w:rsidRDefault="006E3F51"><w:pPr><w:pStyle w:val="Prrafodelista"/><w:numPr><w:ilvl w:val="0"/><w:numId w:val="1"/></w:numPr></w:pPr><w:r><w:t>Mur de contenció de pantalla de formigó armat</w:t></w:r></w:p>'
+          word_fonamentacio = word_fonamentacio + llista('Mur pantalla')
         end 
         if @edifici.fonamentacio.sabates_paredat == true
-          word_fonamentacio = word_fonamentacio + '<w:p w:rsidP="006E3F51" w:rsidR="00676FB5" w:rsidRDefault="006E3F51"><w:pPr><w:pStyle w:val="Prrafodelista"/><w:numPr><w:ilvl w:val="0"/><w:numId w:val="1"/></w:numPr></w:pPr><w:r><w:t>Sabates de paredat</w:t></w:r></w:p>'
+          word_fonamentacio = word_fonamentacio + llista('Sabates de paredat')
         end 
         if @edifici.fonamentacio.sabates_formigo == true
-          word_fonamentacio = word_fonamentacio + '<w:p w:rsidP="006E3F51" w:rsidR="00676FB5" w:rsidRDefault="006E3F51"><w:pPr><w:pStyle w:val="Prrafodelista"/><w:numPr><w:ilvl w:val="0"/><w:numId w:val="1"/></w:numPr></w:pPr><w:r><w:t>Sabates o rases de formigó</w:t></w:r></w:p>'
+          word_fonamentacio = word_fonamentacio + llista('Sabates o rases de formigó')
         end 
         if @edifici.fonamentacio.llosa == true
-          word_fonamentacio = word_fonamentacio + '<w:p w:rsidP="006E3F51" w:rsidR="00676FB5" w:rsidRDefault="006E3F51"><w:pPr><w:pStyle w:val="Prrafodelista"/><w:numPr><w:ilvl w:val="0"/><w:numId w:val="1"/></w:numPr></w:pPr><w:r><w:t>Llosa de formigó</w:t></w:r></w:p>'
+          word_fonamentacio = word_fonamentacio + llista('Llosa de formigó')
         end 
         if @edifici.fonamentacio.pilons == true
-          word_fonamentacio = word_fonamentacio + '<w:p w:rsidP="006E3F51" w:rsidR="00676FB5" w:rsidRDefault="006E3F51"><w:pPr><w:pStyle w:val="Prrafodelista"/><w:numPr><w:ilvl w:val="0"/><w:numId w:val="1"/></w:numPr></w:pPr><w:r><w:t>Fonamentació profunda de pilons</w:t></w:r></w:p>'
+          word_fonamentacio = word_fonamentacio + llista('Fonamentació profunda de pilons')
         end 
         if @edifici.fonamentacio.pantalles == true
-          word_fonamentacio = word_fonamentacio + '<w:p w:rsidP="006E3F51" w:rsidR="00676FB5" w:rsidRDefault="006E3F51"><w:pPr><w:pStyle w:val="Prrafodelista"/><w:numPr><w:ilvl w:val="0"/><w:numId w:val="1"/></w:numPr></w:pPr><w:r><w:t>Fonamentació profunda de pantalles</w:t></w:r></w:p>'
+          word_fonamentacio = word_fonamentacio + llista('Fonamentació profunda de pantalles')
         end 
         doc.replace("$fonamentacio$", word_fonamentacio)
 
         # Estructura
         word_estructura = ''
         if @edifici.estructura.parets_pedra == true
-          word_estructura = word_estructura + '<w:p w:rsidP="006E3F51" w:rsidR="00676FB5" w:rsidRDefault="006E3F51"><w:pPr><w:pStyle w:val="Prrafodelista"/><w:numPr><w:ilvl w:val="0"/><w:numId w:val="1"/></w:numPr></w:pPr><w:r><w:t>Parets de paredat</w:t></w:r></w:p>'
+          word_estructura = word_estructura + llista('Parets de paredat')
         end
         if @edifici.estructura.parets_formigo_armat == true
-          word_estructura = word_estructura + '<w:p w:rsidP="006E3F51" w:rsidR="00676FB5" w:rsidRDefault="006E3F51"><w:pPr><w:pStyle w:val="Prrafodelista"/><w:numPr><w:ilvl w:val="0"/><w:numId w:val="1"/></w:numPr></w:pPr><w:r><w:t>Parets de formigó armat</w:t></w:r></w:p>'
+          word_estructura = word_estructura + llista('Parets de formigó armat')
+        end
+        if @edifici.estructura.parets_tova == true
+          word_estructura = word_estructura + llista('Parets de tova')
+        end
+        if @edifici.estructura.parets_tapia == true
+          word_estructura = word_estructura + llista('Parets de tàpia')
+        end
+        if @edifici.estructura.parets_fabrica_mao == true
+          word_estructura = word_estructura + llista('Parets de fàbrica de maó')
+        end
+        if @edifici.estructura.parets_bloc_ceramic == true
+          word_estructura = word_estructura + llista('Parets de bloc ceràmic')
+        end
+        if @edifici.estructura.parets_bloc_formigo == true
+          word_estructura = word_estructura + llista('Parets de bloc de formigó')
+        end
+        if @edifici.estructura.parets_entramat_fusta == true
+          word_estructura = word_estructura + llista('Parets d\'entramat de fusta')
+        end
+        if @edifici.estructura.pilars_mao == true
+          word_estructura = word_estructura + llista('Pilars de maons')
+        end
+        if @edifici.estructura.pilars_ferro_colat == true
+          word_estructura = word_estructura + llista('Pilars de ferro colat')
+        end
+        if @edifici.estructura.pilars_acer == true
+          word_estructura = word_estructura + llista('Pilars d\'acer')
+        end
+        if @edifici.estructura.pilars_formigo_armat == true
+          word_estructura = word_estructura + llista('Pilars de formigó armat')
+        end
+        if @edifici.estructura.bigues_fusta == true
+          word_estructura = word_estructura + llista('Bigues de fusta')
+        end
+        if @edifici.estructura.bigues_metaliques == true
+          word_estructura = word_estructura + llista('Bigues metàl·liques')
+        end
+        if @edifici.estructura.bigues_formigo_armat == true
+          word_estructura = word_estructura + llista('Bigues de formigó armat')
+        end
+        if @edifici.estructura.forjat_fusta == true
+          word_estructura = word_estructura + llista('Sostre de fusta')
+        end
+        if @edifici.estructura.forjat_metalic == true
+          word_estructura = word_estructura + llista('Sostre metàl·lic')
+        end
+        if @edifici.estructura.forjat_formigo_armat == true
+          word_estructura = word_estructura + llista('Sostre de formigó armat')
+        end
+        if @edifici.estructura.forjat_ceramica_armada == true
+          word_estructura = word_estructura + llista('Sostre de ceràmica armada')
+        end
+        if @edifici.estructura.entrebigat_taulell == true
+          word_estructura = word_estructura + llista('Entrebigat de taulell')
+        end
+        if @edifici.estructura.entrebigat_revolto_ceramic == true
+          word_estructura = word_estructura + llista('Entrebigat de revoltó ceràmic')
+        end
+        if @edifici.estructura.entrebigat_revolto_formigo == true
+          word_estructura = word_estructura + llista('Entrebigat de revoltó de formigó')
+        end
+        if @edifici.estructura.forjat_reticular == true
+          word_estructura = word_estructura + llista('Forjat reticular')
+        end
+        if @edifici.estructura.llosa_formigo == true
+          word_estructura = word_estructura + llista('Llosa de formigó')
+        end
+        if @edifici.estructura.forjat_sanitari == true
+          word_estructura = word_estructura + llista('Forjat sanitari')
+        end
+        if @edifici.estructura.solera == true
+          word_estructura = word_estructura + llista('Solera')
+        end
+        if @edifici.estructura.forjat_horitzontal_coberta_capa_pendent == true
+          word_estructura = word_estructura + llista('Estructura de coberta de sostre horitzontal amb capa de formació de pendents')
+        end
+        if @edifici.estructura.forjat_horitzontal_coberta_envanets == true
+          word_estructura = word_estructura + llista('Estructura de coberta de sostre horitzontal amb envanets i taulell')
+        end
+        if @edifici.estructura.forjat_inclinat_coberta_formigo == true
+          word_estructura = word_estructura + llista('Estructura de coberta de sostre inclinat de formigó armat')
+        end
+        if @edifici.estructura.encavallada_bigues_formigo == true
+          word_estructura = word_estructura + llista('Encavallada de bigues de formigó armat i taulell')
+        end
+        if @edifici.estructura.encavallada_bigues_metall == true
+          word_estructura = word_estructura + llista('Encavallada de bigues metàl·liques i taulell')
+        end
+        if @edifici.estructura.encavallada_bigues_fusta == true
+          word_estructura = word_estructura + llista('Encavallada de bigues de fusta i taulell')
+        end
+        if @edifici.estructura.coberta_taulell_ceramic == true
+          word_estructura = word_estructura + llista('Estructura de coberta de taulell ceràmic')
+        end
+        if @edifici.estructura.coberta_taulell_fusta == true
+          word_estructura = word_estructura + llista('Estructura de coberta de taulell de fusta')
+        end
+        if @edifici.estructura.coberta_sandwich == true
+          word_estructura = word_estructura + llista('Estructura de coberta de xapa o panells sandwich')
+        end
+        if @edifici.estructura.escala_fusta == true
+          word_estructura = word_estructura + llista('Escala de fusta')
+        end
+        if @edifici.estructura.escala_metall == true
+          word_estructura = word_estructura + llista('Escala metàl·lica')
+        end
+        if @edifici.estructura.escala_ceramica == true
+          word_estructura = word_estructura + llista('Escala de volta ceràmica')
+        end
+        if @edifici.estructura.escala_llosa_armada == true
+          word_estructura = word_estructura + llista('Escala de llosa armada')
         end
         doc.replace("$estructura$", word_estructura)
           
+        # Tancaments verticals
+        # Fem servir igualment el mètode llista que es fa servir en els altres casos, però si hi ha cambra d'aire l'afegim utilitzant el mètode llista tancaments
+        def llista_tancaments(element_llista)
+          if @edifici.tancaments_vertical.cambra_aire_facana == true
+            text_tancaments = element_llista + ' i cambra d\'aire'
+            llista(text_tancaments)
+          else
+            llista(element_llista)
+          end
+        end
+        word_tancaments = ''
+        if @edifici.tancaments_vertical.acabat_vist_paredat == true
+          word_tancaments = word_tancaments + llista_tancaments('Parets de paredat amb acabat vist')
+        end
+        if @edifici.tancaments_vertical.acabat_vist_carreus == true
+          word_tancaments = word_tancaments + llista_tancaments('Parets de carreus amb acabat vist')
+        end
+        if @edifici.tancaments_vertical.acabat_vist_fabrica_mao == true
+          word_tancaments = word_tancaments + llista_tancaments('Parets de fàbrica de maons amb acabat vist')
+        end
+        if @edifici.tancaments_vertical.acabat_vist_fabrica_bloc_ceramic == true
+          word_tancaments = word_tancaments + llista_tancaments('Parets de bloc ceràmic amb acabat vist')
+        end
+        if @edifici.tancaments_vertical.acabat_vist_bloc_formigo == true
+          word_tancaments = word_tancaments + llista_tancaments('Parets de bloc de formigó amb acabat vist')
+        end
+        if @edifici.tancaments_vertical.acabat_vist_panell_formigo == true
+          word_tancaments = word_tancaments + llista_tancaments('Parets de panells de formigó amb acabat vist')
+        end
+        if @edifici.tancaments_vertical.acabat_vist_panell_metalic_sandwich == true
+          word_tancaments = word_tancaments + llista_tancaments('Parets de panells metàl·lics o de tipus sandwich amb acabat vist')
+        end
+        if @edifici.tancaments_vertical.acabat_revestit_arrebossat_pintat == true
+          word_tancaments = word_tancaments + llista_tancaments('Parets amb acabat revestit arrebossat i pintat')
+        end
+        if @edifici.tancaments_vertical.acabat_revestit_estucat == true
+          word_tancaments = word_tancaments + llista_tancaments('Parets amb acabat revestit estucat')
+        end
+        if @edifici.tancaments_vertical.acabat_revestit_morter_monocapa == true
+          word_tancaments = word_tancaments + llista_tancaments('Parets amb revestiment de morter monocapa')
+        end
+        if @edifici.tancaments_vertical.acabat_revestit_aplacat_ceramic == true
+          word_tancaments = word_tancaments + llista_tancaments('Parets amb revestiment d\'aplacat ceràmic')
+        end
+        if @edifici.tancaments_vertical.acabat_revestit_aplacat_pedra == true
+          word_tancaments = word_tancaments + llista_tancaments('Parets amb revestiment d\'aplacat de pedra')
+        end
+        if @edifici.tancaments_vertical.acabat_revestit_xapa_metalica == true
+          word_tancaments = word_tancaments + llista_tancaments('Parets amb revestiment de xapa metàl·lica')
+        end
+        if @edifici.tancaments_vertical.acabat_revestit_xapa_metalica == true
+          word_tancaments = word_tancaments + llista_tancaments('Parets amb revestiment de xapa metàl·lica')
+        end
+        if @edifici.tancaments_vertical.fusteria_fusta == true
+          word_tancaments = word_tancaments + llista('Fusteries de fusta')
+        end
+        if @edifici.tancaments_vertical.fusteria_acer == true
+          word_tancaments = word_tancaments + llista('Fusteries d\'acer')
+        end
+        if @edifici.tancaments_vertical.fusteria_alumini == true
+          word_tancaments = word_tancaments + llista('Fusteries d\'alumini')
+        end
+        if @edifici.tancaments_vertical.fusteria_pvc == true
+          word_tancaments = word_tancaments + llista('Fusteries de PVC')
+        end
+        if @edifici.tancaments_vertical.vidre_simple == true
+          word_tancaments = word_tancaments + llista('Fusteries amb vidre senzill')
+        end
+        if @edifici.tancaments_vertical.vidre_doble == true
+          word_tancaments = word_tancaments + llista('Fusteries amb vidre doble')
+        end
+        if @edifici.tancaments_vertical.vidre_triple == true
+          word_tancaments = word_tancaments + llista('Fusteries amb vidre triple')
+        end
+        if @edifici.tancaments_vertical.vidre_baix_emissiu == true
+          word_tancaments = word_tancaments + llista('Vidre amb capa baix emissiva')
+        end
+        if @edifici.tancaments_vertical.vidre_control_solar == true
+          word_tancaments = word_tancaments + llista('Vidre amb capa de control solar')
+        end
+        doc.replace("$tancaments_verticals$", word_tancaments)
 
+        # Coberta
+        def llista_terrat(element_terrat)
+          if @edifici.coberta.terrat_aillament_termic == true
+            text_aillament = ' amb aïllament tèrmic'
+          else
+            text_aillament = ''
+          end
+          if @edifici.coberta.terrat_lamina_impermeabilitzant == true
+            if @edifici.coberta.terrat_aillament_termic == true
+              text_impermeabilitzacio = ' i làmina impermeabilitzant'
+            else
+              text_impermeabilitzacio = ' amb làmina impermeabilitzant'
+            end
+          else
+            text_impermeabilitzacio = ''
+          end
+          text_terrat = element_terrat + text_aillament + text_impermeabilitzacio
+          llista(text_terrat)
+        end
+        word_coberta = ''
+        if @edifici.coberta.terrat_transitable == true
+          word_coberta = word_coberta + llista_terrat('Terrat transitable')
+        end
+        if @edifici.coberta.terrat_no_transitable == true
+          word_coberta = word_coberta + llista_terrat('Terrat no transitable')
+        end
+        if @edifici.coberta.coberta_teula_arab == true
+          word_coberta = word_coberta + llista_terrat('Coberta de teula àrab')
+        end
+        if @edifici.coberta.coberta_teula_plana == true
+          word_coberta = word_coberta + llista_terrat('Coberta de teula plana')
+        end
+        if @edifici.coberta.coberta_teula_ciment == true
+          word_coberta = word_coberta + llista_terrat('Coberta de teula de ciment')
+        end
+        if @edifici.coberta.coberta_pissarra == true
+          word_coberta = word_coberta + llista_terrat('Coberta de pissarra')
+        end
+        if @edifici.coberta.coberta_fibrociment == true
+          word_coberta = word_coberta + llista_terrat('Coberta de fibrociment')
+        end
+        if @edifici.coberta.coberta_asfaltica == true
+          word_coberta = word_coberta + llista_terrat('Coberta de làmina asfàltica')
+        end
+        if @edifici.coberta.coberta_xapa_acer == true
+          word_coberta = word_coberta + llista_terrat('Coberta de xapa d\'acer')
+        end
+        if @edifici.coberta.coberta_xapa_coure == true
+          word_coberta = word_coberta + llista_terrat('Coberta de xapa de coure')
+        end
+        if @edifici.coberta.coberta_aillament_termic == true
+          word_coberta = word_coberta + llista_terrat('Coberta amb aïllament tèrmic')
+        end
+        doc.replace("$coberta$", word_coberta)
 
+        # Operacions
+        @referencies = Referencia.where(:edifici_id => @edifici.id)
+        
+        def taula_operacio(text_operacio, periodicitat, responsable)
+          return '<w:tbl><w:tblPr><w:tblStyle w:val="TableGrid"/><w:tblW w:w="0" w:type="auto"/><w:tblBorders><w:top w:val="none" w:sz="0" w:space="0" w:color="auto"/><w:left w:val="none" w:sz="0" w:space="0" w:color="auto"/><w:right w:val="none" w:sz="0" w:space="0" w:color="auto"/><w:insideH w:val="none" w:sz="0" w:space="0" w:color="auto"/><w:insideV w:val="none" w:sz="0" w:space="0" w:color="auto"/></w:tblBorders><w:tblLook w:val="04A0" w:firstRow="1" w:lastRow="0" w:firstColumn="1" w:lastColumn="0" w:noHBand="0" w:noVBand="1"/></w:tblPr><w:tblGrid><w:gridCol w:w="4505"/><w:gridCol w:w="4505"/></w:tblGrid><w:tr w:rsidR="007A1BE6" w:rsidRPr="007A1BE6" w14:paraId="2F242C4A" w14:textId="77777777" w:rsidTr="007760AC"><w:tc><w:tcPr><w:tcW w:w="9010" w:type="dxa"/><w:gridSpan w:val="2"/></w:tcPr><w:p w14:paraId="3A216B75" w14:textId="77777777" w:rsidR="007A1BE6" w:rsidRPr="007A1BE6" w:rsidRDefault="007A1BE6" w:rsidP="007760AC"><w:pPr><w:pStyle w:val="normaltaula"/><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/></w:rPr></w:pPr><w:r w:rsidRPr="007A1BE6"><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/></w:rPr><w:t>' + text_operacio + '</w:t></w:r></w:p></w:tc></w:tr><w:tr w:rsidR="007A1BE6" w:rsidRPr="007A1BE6" w14:paraId="6B79A2E9" w14:textId="77777777" w:rsidTr="007760AC"><w:tc><w:tcPr><w:tcW w:w="4505" w:type="dxa"/></w:tcPr><w:p w14:paraId="19C3E2FC" w14:textId="77777777" w:rsidR="007A1BE6" w:rsidRPr="007A1BE6" w:rsidRDefault="007A1BE6" w:rsidP="007760AC"><w:pPr><w:pStyle w:val="titoltaula"/><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/></w:rPr></w:pPr><w:r w:rsidRPr="007A1BE6"><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/></w:rPr><w:t>Periodicitat:</w:t></w:r></w:p><w:p w14:paraId="1C7E4A46" w14:textId="77777777" w:rsidR="007A1BE6" w:rsidRDefault="007A1BE6" w:rsidP="007760AC"><w:pPr><w:pStyle w:val="normaltaula"/><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/></w:rPr></w:pPr><w:r w:rsidRPr="007A1BE6"><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/></w:rPr><w:t>' + periodicitat + '</w:t></w:r></w:p><w:p w14:paraId="0AE797B2" w14:textId="77777777" w:rsidR="00B2670D" w:rsidRPr="007A1BE6" w:rsidRDefault="00B2670D" w:rsidP="007760AC"><w:pPr><w:pStyle w:val="normaltaula"/><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/></w:rPr></w:pPr><w:bookmarkStart w:id="0" w:name="_GoBack"/><w:bookmarkEnd w:id="0"/></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4505" w:type="dxa"/></w:tcPr><w:p w14:paraId="71B33957" w14:textId="77777777" w:rsidR="007A1BE6" w:rsidRPr="007A1BE6" w:rsidRDefault="007A1BE6" w:rsidP="007760AC"><w:pPr><w:pStyle w:val="titoltaula"/><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/></w:rPr></w:pPr><w:r w:rsidRPr="007A1BE6"><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/></w:rPr><w:t>Responsable:</w:t></w:r></w:p><w:p w14:paraId="03ABA8DC" w14:textId="77777777" w:rsidR="007A1BE6" w:rsidRPr="007A1BE6" w:rsidRDefault="007A1BE6" w:rsidP="007760AC"><w:pPr><w:pStyle w:val="normaltaula"/><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/></w:rPr></w:pPr><w:r w:rsidRPr="007A1BE6"><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/></w:rPr><w:t>' + responsable + '</w:t></w:r></w:p></w:tc></w:tr></w:tbl><w:p w14:paraId="164C8435" w14:textId="77777777" w:rsidR="00BA0778" w:rsidRDefault="00BA0778"><w:pPr><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/></w:rPr></w:pPr></w:p><w:p w14:paraId="519C4981" w14:textId="77777777" w:rsidR="00372FF1" w:rsidRPr="007A1BE6" w:rsidRDefault="00372FF1"><w:pPr><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/></w:rPr></w:pPr></w:p><w:sectPr w:rsidR="00372FF1" w:rsidRPr="007A1BE6" w:rsidSect="00017EF3"><w:pgSz w:w="11900" w:h="16840"/><w:pgMar w:top="1440" w:right="1440" w:bottom="1440" w:left="1440" w:header="708" w:footer="708" w:gutter="0"/><w:cols w:space="708"/><w:docGrid w:linePitch="360"/></w:sectPr>'
+        end
+
+        # Fonamentació
+        referencies_fonamentacio = @referencies.where(:sistema => 'fonamentacio').pluck(:operacio_id)
+        operacions_fonamentacio = Operacio.find(referencies_fonamentacio)
+        word_operacions_fonamentacio = ''
+        operacions_fonamentacio.each do |operacio|
+          word_operacions_fonamentacio = word_operacions_fonamentacio + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
+        end
+        doc.replace("$operacions_fonaments$", word_operacions_fonamentacio)
+
+        # Estructura
+        referencies_estructura = @referencies.where(:sistema => 'estructura').pluck(:operacio_id)
+        operacions_estructura = Operacio.find(referencies_estructura)
+        word_operacions_estructura = ''
+        operacions_estructura.each do |operacio|
+          word_operacions_estructura = word_operacions_estructura + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
+        end
+        doc.replace("$operacions_estructura$", word_operacions_estructura)
 
         tmp_file = Tempfile.new('word_tempate', "#{Rails.root}/tmp")
         doc.commit(tmp_file.path)
@@ -188,6 +461,59 @@ class DocumentsController < ApplicationController
 
         # Respond to the request by sending the temp file
         send_file tmp_file.path, filename: "edifici_#{@edifici.nom_edifici}_quadern.docx", disposition: 'attachment'
+      end
+    end
+  end
+
+  def manual_habitatge
+    respond_to do |format|
+      format.docx do
+        doc = DocxReplace::Doc.new("#{Rails.root}/lib/docx_templates/manual.docx", "#{Rails.root}/tmp")
+        # Adreça de l'edifici
+        adreca = @edifici.identificacio.tipus_via_edifici.to_s + ' ' + @edifici.identificacio.via_edifici.to_s + ' ' + @edifici.identificacio.numero_edifici.to_s + ' ' + @edifici.identificacio.bloc_edifici.to_s
+        doc.replace("$adreca$", adreca)
+        doc.replace("$codi_postal$", @edifici.identificacio.cp_edifici)
+        doc.replace("$poblacio$", @edifici.identificacio.poblacio_edifici)
+        doc.replace("$provincia$", @edifici.identificacio.provincia_edifici)
+
+        # Operacions
+        @referencies_manual = Referencia.where(:edifici_id => @edifici.id)
+        
+        def taula_operacio(text_operacio, periodicitat, responsable)
+          return '<w:tbl><w:tblPr><w:tblStyle w:val="TableGrid"/><w:tblW w:w="0" w:type="auto"/><w:tblBorders><w:top w:val="none" w:sz="0" w:space="0" w:color="auto"/><w:left w:val="none" w:sz="0" w:space="0" w:color="auto"/><w:right w:val="none" w:sz="0" w:space="0" w:color="auto"/><w:insideH w:val="none" w:sz="0" w:space="0" w:color="auto"/><w:insideV w:val="none" w:sz="0" w:space="0" w:color="auto"/></w:tblBorders><w:tblLook w:val="04A0" w:firstRow="1" w:lastRow="0" w:firstColumn="1" w:lastColumn="0" w:noHBand="0" w:noVBand="1"/></w:tblPr><w:tblGrid><w:gridCol w:w="4505"/><w:gridCol w:w="4505"/></w:tblGrid><w:tr w:rsidR="007A1BE6" w:rsidRPr="007A1BE6" w14:paraId="2F242C4A" w14:textId="77777777" w:rsidTr="007760AC"><w:tc><w:tcPr><w:tcW w:w="9010" w:type="dxa"/><w:gridSpan w:val="2"/></w:tcPr><w:p w14:paraId="3A216B75" w14:textId="77777777" w:rsidR="007A1BE6" w:rsidRPr="007A1BE6" w:rsidRDefault="007A1BE6" w:rsidP="007760AC"><w:pPr><w:pStyle w:val="normaltaula"/><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/></w:rPr></w:pPr><w:r w:rsidRPr="007A1BE6"><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/></w:rPr><w:t>' + text_operacio + '</w:t></w:r></w:p></w:tc></w:tr><w:tr w:rsidR="007A1BE6" w:rsidRPr="007A1BE6" w14:paraId="6B79A2E9" w14:textId="77777777" w:rsidTr="007760AC"><w:tc><w:tcPr><w:tcW w:w="4505" w:type="dxa"/></w:tcPr><w:p w14:paraId="19C3E2FC" w14:textId="77777777" w:rsidR="007A1BE6" w:rsidRPr="007A1BE6" w:rsidRDefault="007A1BE6" w:rsidP="007760AC"><w:pPr><w:pStyle w:val="titoltaula"/><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/></w:rPr></w:pPr><w:r w:rsidRPr="007A1BE6"><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/></w:rPr><w:t>Periodicitat:</w:t></w:r></w:p><w:p w14:paraId="1C7E4A46" w14:textId="77777777" w:rsidR="007A1BE6" w:rsidRDefault="007A1BE6" w:rsidP="007760AC"><w:pPr><w:pStyle w:val="normaltaula"/><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/></w:rPr></w:pPr><w:r w:rsidRPr="007A1BE6"><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/></w:rPr><w:t>' + periodicitat + '</w:t></w:r></w:p><w:p w14:paraId="0AE797B2" w14:textId="77777777" w:rsidR="00B2670D" w:rsidRPr="007A1BE6" w:rsidRDefault="00B2670D" w:rsidP="007760AC"><w:pPr><w:pStyle w:val="normaltaula"/><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/></w:rPr></w:pPr><w:bookmarkStart w:id="0" w:name="_GoBack"/><w:bookmarkEnd w:id="0"/></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4505" w:type="dxa"/></w:tcPr><w:p w14:paraId="71B33957" w14:textId="77777777" w:rsidR="007A1BE6" w:rsidRPr="007A1BE6" w:rsidRDefault="007A1BE6" w:rsidP="007760AC"><w:pPr><w:pStyle w:val="titoltaula"/><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/></w:rPr></w:pPr><w:r w:rsidRPr="007A1BE6"><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/></w:rPr><w:t>Responsable:</w:t></w:r></w:p><w:p w14:paraId="03ABA8DC" w14:textId="77777777" w:rsidR="007A1BE6" w:rsidRPr="007A1BE6" w:rsidRDefault="007A1BE6" w:rsidP="007760AC"><w:pPr><w:pStyle w:val="normaltaula"/><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/></w:rPr></w:pPr><w:r w:rsidRPr="007A1BE6"><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/></w:rPr><w:t>' + responsable + '</w:t></w:r></w:p></w:tc></w:tr></w:tbl><w:p w14:paraId="164C8435" w14:textId="77777777" w:rsidR="00BA0778" w:rsidRDefault="00BA0778"><w:pPr><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/></w:rPr></w:pPr></w:p><w:p w14:paraId="519C4981" w14:textId="77777777" w:rsidR="00372FF1" w:rsidRPr="007A1BE6" w:rsidRDefault="00372FF1"><w:pPr><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/></w:rPr></w:pPr></w:p><w:sectPr w:rsidR="00372FF1" w:rsidRPr="007A1BE6" w:rsidSect="00017EF3"><w:pgSz w:w="11900" w:h="16840"/><w:pgMar w:top="1440" w:right="1440" w:bottom="1440" w:left="1440" w:header="708" w:footer="708" w:gutter="0"/><w:cols w:space="708"/><w:docGrid w:linePitch="360"/></w:sectPr>'
+        end
+
+        # Estructura
+        referencies_estructura = @referencies_manual.where(:sistema => 'estructura', :manual_habitatge => true).pluck(:operacio_id)
+        operacions_estructura = Operacio.find(referencies_estructura)
+        word_operacions_estructura = ''
+        operacions_estructura.each do |operacio|
+          word_operacions_estructura = word_operacions_estructura + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
+        end
+        doc.replace("$operacions_estructura$", word_operacions_estructura)
+
+        # Tancaments
+        referencies_tancaments = @referencies_manual.where(:sistema => 'tancaments', :manual_habitatge => true).pluck(:operacio_id)
+        operacions_tancaments = Operacio.find(referencies_tancaments)
+        word_operacions_tancaments = ''
+        operacions_tancaments.each do |operacio|
+          word_operacions_tancaments = word_operacions_tancaments + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
+        end
+        doc.replace("$operacions_tancaments$", word_operacions_tancaments)
+
+        # Terrats
+        referencies_terrats = @referencies_manual.where(:sistema => 'cobertes', :manual_habitatge => true).pluck(:operacio_id)
+        operacions_terrats = Operacio.find(referencies_terrats)
+        word_operacions_terrats = ''
+        operacions_terrats.each do |operacio|
+          word_operacions_terrats = word_operacions_terrats + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
+        end
+        doc.replace("$operacions_terrats$", word_operacions_terrats)
+
+        tmp_file = Tempfile.new('word_tempate', "#{Rails.root}/tmp")
+        doc.commit(tmp_file.path)
+
+        send_file tmp_file.path, filename: "Manual habitatge #{@edifici.nom_edifici}.docx", disposition: 'attachment'
       end
     end
   end
