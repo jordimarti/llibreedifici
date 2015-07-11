@@ -35,20 +35,18 @@
           <%= f.input :ref_cadastral %>
         </div>
         <div class="medium-6 columns">
-          <%= f.input :us_edifici %>
+          <% if (@edifici.tipus_edifici == 'nou_plurifamiliar' || @edifici.tipus_edifici == 'nou_unifamiliar') %>
+            <div class="row">
+              <div class="medium-6 columns">
+                <%= f.input :any_inici_construccio %>
+              </div>
+              <div class="medium-6 columns end">
+                <%= f.input :any_fi_construccio %>
+              </div>
+            </div>
+          <% end %>
         </div>
-      </div>
-      <% if (@edifici.tipus_edifici == 'nou_plurifamiliar' || @edifici.tipus_edifici == 'nou_unifamiliar') %>
-        <div class="row">
-          <div class="medium-2 columns">
-            <%= f.input :any_inici_construccio %>
-          </div>
-          <div class="medium-2 columns end">
-            <%= f.input :any_fi_construccio %>
-          </div>
-        </div>
-      <% end %>
-      
+      </div> 
     </div>
 
     <div class="row">

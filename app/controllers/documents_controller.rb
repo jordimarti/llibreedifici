@@ -13,7 +13,7 @@ class DocumentsController < ApplicationController
   def nou_plurifamiliar
     respond_to do |format|
       format.docx do
-        doc = DocxReplace::Doc.new("#{Rails.root}/lib/docx_templates/nou_plurifamiliar6.docx", "#{Rails.root}/tmp")
+        doc = DocxReplace::Doc.new("#{Rails.root}/lib/docx_templates/nou.docx", "#{Rails.root}/tmp")
         # Adreça de l'edifici
         adreca = @edifici.identificacio.tipus_via_edifici.to_s + ' ' + @edifici.identificacio.via_edifici.to_s + ' ' + @edifici.identificacio.numero_edifici.to_s + ' ' + @edifici.identificacio.bloc_edifici.to_s
         doc.replace("$adreca$", adreca)
@@ -514,6 +514,58 @@ class DocumentsController < ApplicationController
         doc.commit(tmp_file.path)
 
         send_file tmp_file.path, filename: "Manual habitatge #{@edifici.nom_edifici}.docx", disposition: 'attachment'
+      end
+    end
+  end
+
+  def existents
+    respond_to do |format|
+      format.docx do
+        doc = DocxReplace::Doc.new("#{Rails.root}/lib/docx_templates/existents.docx", "#{Rails.root}/tmp")
+        # Adreça de l'edifici
+        adreca = @edifici.identificacio.tipus_via_edifici.to_s + ' ' + @edifici.identificacio.via_edifici.to_s + ' ' + @edifici.identificacio.numero_edifici.to_s + ' ' + @edifici.identificacio.bloc_edifici.to_s
+        doc.replace("$adreca$", adreca)
+        doc.replace("$adreca_edifici$", adreca)
+        doc.replace("$codi_postal$", @edifici.identificacio.cp_edifici)
+        doc.replace("$codi_postal_edifici$", @edifici.identificacio.cp_edifici)
+        doc.replace("$poblacio$", @edifici.identificacio.poblacio_edifici)
+        doc.replace("$poblacio_edifici$", @edifici.identificacio.poblacio_edifici)
+        doc.replace("$provincia$", @edifici.identificacio.provincia_edifici)
+        doc.replace("$provincia_edifici$", @edifici.identificacio.provincia_edifici)
+        doc.replace("$referencia_cadastral$", @edifici.identificacio.ref_cadastral)
+        doc.replace("$us_edifici$", @edifici.identificacio.us_edifici)
+        doc.replace("$any_inici_construccio$", @edifici.identificacio.any_inici_construccio)
+        doc.replace("$any_fi_construccio$", @edifici.identificacio.any_fi_construccio)
+        
+    # Operacions
+        @referencies = Referencia.where(:edifici_id => @edifici.id)
+        
+        def taula_operacio(text_operacio, periodicitat, responsable)
+          return '<w:tbl><w:tblPr><w:tblStyle w:val="TableGrid"/><w:tblW w:w="0" w:type="auto"/><w:tblBorders><w:top w:val="none" w:sz="0" w:space="0" w:color="auto"/><w:left w:val="none" w:sz="0" w:space="0" w:color="auto"/><w:right w:val="none" w:sz="0" w:space="0" w:color="auto"/><w:insideH w:val="none" w:sz="0" w:space="0" w:color="auto"/><w:insideV w:val="none" w:sz="0" w:space="0" w:color="auto"/></w:tblBorders><w:tblLook w:val="04A0" w:firstRow="1" w:lastRow="0" w:firstColumn="1" w:lastColumn="0" w:noHBand="0" w:noVBand="1"/></w:tblPr><w:tblGrid><w:gridCol w:w="4505"/><w:gridCol w:w="4505"/></w:tblGrid><w:tr w:rsidR="007A1BE6" w:rsidRPr="007A1BE6" w14:paraId="2F242C4A" w14:textId="77777777" w:rsidTr="007760AC"><w:tc><w:tcPr><w:tcW w:w="9010" w:type="dxa"/><w:gridSpan w:val="2"/></w:tcPr><w:p w14:paraId="3A216B75" w14:textId="77777777" w:rsidR="007A1BE6" w:rsidRPr="007A1BE6" w:rsidRDefault="007A1BE6" w:rsidP="007760AC"><w:pPr><w:pStyle w:val="normaltaula"/><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/></w:rPr></w:pPr><w:r w:rsidRPr="007A1BE6"><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/></w:rPr><w:t>' + text_operacio + '</w:t></w:r></w:p></w:tc></w:tr><w:tr w:rsidR="007A1BE6" w:rsidRPr="007A1BE6" w14:paraId="6B79A2E9" w14:textId="77777777" w:rsidTr="007760AC"><w:tc><w:tcPr><w:tcW w:w="4505" w:type="dxa"/></w:tcPr><w:p w14:paraId="19C3E2FC" w14:textId="77777777" w:rsidR="007A1BE6" w:rsidRPr="007A1BE6" w:rsidRDefault="007A1BE6" w:rsidP="007760AC"><w:pPr><w:pStyle w:val="titoltaula"/><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/></w:rPr></w:pPr><w:r w:rsidRPr="007A1BE6"><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/></w:rPr><w:t>Periodicitat:</w:t></w:r></w:p><w:p w14:paraId="1C7E4A46" w14:textId="77777777" w:rsidR="007A1BE6" w:rsidRDefault="007A1BE6" w:rsidP="007760AC"><w:pPr><w:pStyle w:val="normaltaula"/><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/></w:rPr></w:pPr><w:r w:rsidRPr="007A1BE6"><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/></w:rPr><w:t>' + periodicitat + '</w:t></w:r></w:p><w:p w14:paraId="0AE797B2" w14:textId="77777777" w:rsidR="00B2670D" w:rsidRPr="007A1BE6" w:rsidRDefault="00B2670D" w:rsidP="007760AC"><w:pPr><w:pStyle w:val="normaltaula"/><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/></w:rPr></w:pPr><w:bookmarkStart w:id="0" w:name="_GoBack"/><w:bookmarkEnd w:id="0"/></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4505" w:type="dxa"/></w:tcPr><w:p w14:paraId="71B33957" w14:textId="77777777" w:rsidR="007A1BE6" w:rsidRPr="007A1BE6" w:rsidRDefault="007A1BE6" w:rsidP="007760AC"><w:pPr><w:pStyle w:val="titoltaula"/><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/></w:rPr></w:pPr><w:r w:rsidRPr="007A1BE6"><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/></w:rPr><w:t>Responsable:</w:t></w:r></w:p><w:p w14:paraId="03ABA8DC" w14:textId="77777777" w:rsidR="007A1BE6" w:rsidRPr="007A1BE6" w:rsidRDefault="007A1BE6" w:rsidP="007760AC"><w:pPr><w:pStyle w:val="normaltaula"/><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/></w:rPr></w:pPr><w:r w:rsidRPr="007A1BE6"><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/></w:rPr><w:t>' + responsable + '</w:t></w:r></w:p></w:tc></w:tr></w:tbl><w:p w14:paraId="164C8435" w14:textId="77777777" w:rsidR="00BA0778" w:rsidRDefault="00BA0778"><w:pPr><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/></w:rPr></w:pPr></w:p><w:p w14:paraId="519C4981" w14:textId="77777777" w:rsidR="00372FF1" w:rsidRPr="007A1BE6" w:rsidRDefault="00372FF1"><w:pPr><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/></w:rPr></w:pPr></w:p><w:sectPr w:rsidR="00372FF1" w:rsidRPr="007A1BE6" w:rsidSect="00017EF3"><w:pgSz w:w="11900" w:h="16840"/><w:pgMar w:top="1440" w:right="1440" w:bottom="1440" w:left="1440" w:header="708" w:footer="708" w:gutter="0"/><w:cols w:space="708"/><w:docGrid w:linePitch="360"/></w:sectPr>'
+        end
+
+        # Fonamentació
+        referencies_fonamentacio = @referencies.where(:sistema => 'fonamentacio').pluck(:operacio_id)
+        operacions_fonamentacio = Operacio.find(referencies_fonamentacio)
+        word_operacions_fonamentacio = ''
+        operacions_fonamentacio.each do |operacio|
+          word_operacions_fonamentacio = word_operacions_fonamentacio + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
+        end
+        doc.replace("$operacions_fonaments$", word_operacions_fonamentacio)
+
+        # Estructura
+        referencies_estructura = @referencies.where(:sistema => 'estructura').pluck(:operacio_id)
+        operacions_estructura = Operacio.find(referencies_estructura)
+        word_operacions_estructura = ''
+        operacions_estructura.each do |operacio|
+          word_operacions_estructura = word_operacions_estructura + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
+        end
+        doc.replace("$operacions_estructura$", word_operacions_estructura)
+
+        tmp_file = Tempfile.new('word_tempate', "#{Rails.root}/tmp")
+        doc.commit(tmp_file.path)
+
+        send_file tmp_file.path, filename: "#{@edifici.nom_edifici}.docx", disposition: 'attachment'
       end
     end
   end
