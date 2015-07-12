@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  no_sistema_evacuacio: false
+  si_sistema_evacuacio: false
+  fosa_septica: false
+  colectors_vistos: false
+  bomba_elevacio: false
+  separador_greixos: false
+  baixants_vistos: false
+  baixants_encastats: false
+  baixants_ceramics: false
+  baixants_pvc: false
+  baixants_fibrociment: false
+  baixants_coure: false
+  baixants_alumini: false
+  baixants_polipropile: false
+  baixants_zinc: false
+  colectors_formigo: false
+  colectors_ceramic: false
+  colectors_fibrociment: false
+  colectors_pvc: false
+
+two:
+  no_sistema_evacuacio: false
+  si_sistema_evacuacio: false
+  fosa_septica: false
+  colectors_vistos: false
+  bomba_elevacio: false
+  separador_greixos: false
+  baixants_vistos: false
+  baixants_encastats: false
+  baixants_ceramics: false
+  baixants_pvc: false
+  baixants_fibrociment: false
+  baixants_coure: false
+  baixants_alumini: false
+  baixants_polipropile: false
+  baixants_zinc: false
+  colectors_formigo: false
+  colectors_ceramic: false
+  colectors_fibrociment: false
+  colectors_pvc: false

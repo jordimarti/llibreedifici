@@ -19,6 +19,7 @@ class Edifici < ActiveRecord::Base
 	has_one :estructura
 	has_one :tancaments_vertical
 	has_one :coberta
+	has_one :sanejament
 	has_many :referencies
 
 	validates :nom_edifici, :presence => true

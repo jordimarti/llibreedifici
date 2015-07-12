@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   
   
   
+  
   resources :operacions
   get 'edificis/:edifici_id/agents', to: 'agents#index', :as => :agents
   get 'edificis/:edifici_id/documents', to: 'documents#index', :as => :documents
@@ -37,6 +38,7 @@ Rails.application.routes.draw do
     resources :estructures
     resources :tancaments_verticals
     resources :cobertes
+    resources :sanejaments
   end
   
   #get 'checklist_edifici_nou_plurifamiliars/quadern'

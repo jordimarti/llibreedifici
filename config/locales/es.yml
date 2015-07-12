@@ -25,6 +25,7 @@ es:
     navigation:
       titol: "Libro del edificio"
       projectes: "Proyectos"
+      tutorial: "Tutorial"
       register: "Registrarse"
       sign_in: "Iniciar sesión"
       account_configuration: "Configuración de la cuenta"
@@ -235,6 +236,28 @@ es:
         coberta_xapa_acer: "Chapa de acero"
         coberta_xapa_coure: "Chapa de cobre o zinc"
         coberta_aillament_termic: "Dispone de aislamiento térmico"
+      sanejament:
+        no_sistema_evacuacio: "No dispone de sistema de evacuación"
+        si_sistema_evacuacio: "Dispone de sistema de evacuación"
+        fosa_septica: "Dispone de sistema de evacuación propio (fosa séptica, etc.)"
+        colectors_vistos: "Los colectors son vistos"
+        bomba_elevacio: "Dispone de bomba de elevación"
+        separador_greixos: "Dispone de separador de grasas y barros"
+        baixants_vistos: "Bajantes vistos"
+        baixants_encastats: "Bajantes encastados"
+        baixants_ceramics: "Bajantes cerámicos"
+        baixants_pvc: "Bajantes de PVC"
+        baixants_fibrociment: "Bajantes de fibrocemento"
+        baixants_coure: "Bajantes de cobre"
+        baixants_alumini: "Bajantes de aluminio"
+        baixants_polipropile: "Bajantes de polipropileno"
+        baixants_zinc: "Bajantes de zinc"
+        colectors_vistos: "Colectores vistos"
+        colectors_soterrats: "Colectores enterrados"
+        colectors_formigo: "Colectores de hormigón"
+        colectors_ceramic: "Colectores cerámicos"
+        colectors_fibrociment: "Colectores de fibrocemento"
+        colectors_pvc: "Colectores de PVC"
   devise:
     sessions:
       new:
@@ -371,12 +394,21 @@ es:
       vidres: "Vidrios"
   cobertes:
     edit:
-      titol_sistemes: "Descripcióv constructiva del edificio"
+      titol_sistemes: "Descripción constructiva del edificio"
     form:
       guardar: "Guardar"
       titol_coberta: "CUBIERTA"
       terrat: "Azotea / Cubierta plana"
       coberta_inclinada: "Cubierta inclinada"
+  sanejaments:
+    edit:
+      titol_sistemes: "Descripción constructiva del edificio"
+    form:
+      guardar: "Guardar"
+      titol_sanejament: "SANEMIENTO"
+      caracteristiques_generals: "Características generales"
+      baixants: "Bajantes"
+      colectors: "Colectores"
   referencies:
     index:
       titol_operacions: "Operaciones de mantenimiento"
@@ -391,6 +423,7 @@ es:
       estructura: "Estructura"
       tancaments: "Cerramientos verticales"
       coberta: "Cubierta"
+      sanejament: "Sanejament"
   documents:
     index:
       titol_documents: "Documento"

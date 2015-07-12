@@ -1,0 +1,63 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Sanejaments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>No sistema evacuacio</th>
+      <th>Si sistema evacuacio</th>
+      <th>Fosa septica</th>
+      <th>Colectors vistos</th>
+      <th>Bomba elevacio</th>
+      <th>Separador greixos</th>
+      <th>Baixants vistos</th>
+      <th>Baixants encastats</th>
+      <th>Baixants ceramics</th>
+      <th>Baixants pvc</th>
+      <th>Baixants fibrociment</th>
+      <th>Baixants coure</th>
+      <th>Baixants alumini</th>
+      <th>Baixants polipropile</th>
+      <th>Baixants zinc</th>
+      <th>Colectors formigo</th>
+      <th>Colectors ceramic</th>
+      <th>Colectors fibrociment</th>
+      <th>Colectors pvc</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sanejaments.each do |sanejament| %>
+      <tr>
+        <td><%= sanejament.no_sistema_evacuacio %></td>
+        <td><%= sanejament.si_sistema_evacuacio %></td>
+        <td><%= sanejament.fosa_septica %></td>
+        <td><%= sanejament.colectors_vistos %></td>
+        <td><%= sanejament.bomba_elevacio %></td>
+        <td><%= sanejament.separador_greixos %></td>
+        <td><%= sanejament.baixants_vistos %></td>
+        <td><%= sanejament.baixants_encastats %></td>
+        <td><%= sanejament.baixants_ceramics %></td>
+        <td><%= sanejament.baixants_pvc %></td>
+        <td><%= sanejament.baixants_fibrociment %></td>
+        <td><%= sanejament.baixants_coure %></td>
+        <td><%= sanejament.baixants_alumini %></td>
+        <td><%= sanejament.baixants_polipropile %></td>
+        <td><%= sanejament.baixants_zinc %></td>
+        <td><%= sanejament.colectors_formigo %></td>
+        <td><%= sanejament.colectors_ceramic %></td>
+        <td><%= sanejament.colectors_fibrociment %></td>
+        <td><%= sanejament.colectors_pvc %></td>
+        <td><%= link_to 'Show', sanejament %></td>
+        <td><%= link_to 'Edit', edit_sanejament_path(sanejament) %></td>
+        <td><%= link_to 'Destroy', sanejament, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sanejament', new_sanejament_path %>

@@ -20,7 +20,11 @@
 		    COBERTA
 		  <% end %>
 	  </li>
-	  <li><a href="#">SANEJAMENT</a></li>
+	  <li <% if @menu_sistemes_actiu == 'sanejament' %>class="active"<% end %>>
+	  	<%= link_to edit_edifici_sanejament_path(@edifici.id, @sanejament) do %>
+		    SANEJAMENT
+		  <% end %>
+	  </li>
 	  <li><a href="#">SUBMINISTRAMENT D'AIGUA</a></li>
 	  <li><a href="#">INSTAL·LACIÓ ELÈCTRICA</a></li>
 	  <li><a href="#">CALEFACCIÓ</a></li>

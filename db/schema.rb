@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150705161250) do
+ActiveRecord::Schema.define(version: 20150712081354) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -243,6 +243,32 @@ ActiveRecord::Schema.define(version: 20150705161250) do
     t.boolean  "manual_habitatge"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+  end
+
+  create_table "sanejaments", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.boolean  "no_sistema_evacuacio"
+    t.boolean  "si_sistema_evacuacio"
+    t.boolean  "fosa_septica"
+    t.boolean  "bomba_elevacio"
+    t.boolean  "separador_greixos"
+    t.boolean  "baixants_vistos"
+    t.boolean  "baixants_encastats"
+    t.boolean  "baixants_ceramics"
+    t.boolean  "baixants_pvc"
+    t.boolean  "baixants_fibrociment"
+    t.boolean  "baixants_coure"
+    t.boolean  "baixants_alumini"
+    t.boolean  "baixants_polipropile"
+    t.boolean  "baixants_zinc"
+    t.boolean  "colectors_vistos"
+    t.boolean  "colectors_soterrats"
+    t.boolean  "colectors_formigo"
+    t.boolean  "colectors_ceramic"
+    t.boolean  "colectors_fibrociment"
+    t.boolean  "colectors_pvc"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   create_table "sistemes", force: :cascade do |t|

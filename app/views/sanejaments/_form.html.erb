@@ -1,0 +1,59 @@
+<%= simple_form_for([@edifici, @sanejament]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :edifici_id, :as => :hidden, :input_html => { :value => @edifici.id } %>
+    <div class="row">
+      <div class="medium-12 columns">
+        <div class="titol-sistema"><%= t('.titol_sanejament') %></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-12 columns">
+        <div class="titol-subsistema"><%= t('.caracteristiques_generals') %></div>
+        <%= f.input :no_sistema_evacuacio %>
+        <%= f.input :si_sistema_evacuacio %>
+        <%= f.input :fosa_septica %>
+        <%= f.input :bomba_elevacio %>
+        <%= f.input :separador_greixos %>
+      </div>
+    </div>
+
+    <hr class="form-divider">
+
+    <div class="row">
+      <div class="medium-6 columns">
+        <div class="titol-subsistema"><%= t('.baixants') %></div>
+        <%= f.input :baixants_vistos %>
+        <%= f.input :baixants_encastats %>
+        <hr>
+        <%= f.input :baixants_ceramics %>
+        <%= f.input :baixants_pvc %>
+        <%= f.input :baixants_fibrociment %>
+        <%= f.input :baixants_coure %>
+        <%= f.input :baixants_alumini %>
+        <%= f.input :baixants_polipropile %>
+        <%= f.input :baixants_zinc %>
+      </div>
+      <div class="medium-6 columns">
+        <div class="titol-subsistema"><%= t('.colectors') %></div>
+        <%= f.input :colectors_vistos %>
+        <%= f.input :colectors_soterrats %>
+        <hr>
+        <%= f.input :colectors_formigo %>
+        <%= f.input :colectors_ceramic %>
+        <%= f.input :colectors_fibrociment %>
+        <%= f.input :colectors_pvc %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="medium-12 columns">
+      <div class="form-actions">
+        <%= f.button :submit, t('.guardar'), :class => 'button small radius right botodreta' %>
+      </div>
+    </div>
+  </div>
+<% end %>

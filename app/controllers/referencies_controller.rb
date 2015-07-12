@@ -14,6 +14,7 @@ class ReferenciesController < ApplicationController
     @referencies_estructura = @referencies.where(:sistema => 'estructura')
     @referencies_tancaments = @referencies.where(:sistema => 'tancaments')
     @referencies_coberta = @referencies.where(:sistema => 'cobertes')
+    @referencies_sanejament = @referencies.where(:sistema => 'sanejament')
     
   end
 
@@ -106,6 +107,32 @@ class ReferenciesController < ApplicationController
       crear_referencia(42)
       crear_referencia(43)
       crear_referencia(44)
+    end
+
+    sanejament = Sanejament.where(:edifici_id => @edifici.id).last
+    if (sanejament.si_sistema_evacuacio == true)
+      if (coberta.terrat_transitable == true)
+        crear_referencia(45)
+      else
+        crear_referencia(46)
+      end
+      crear_referencia(47)
+      crear_referencia(48)
+      crear_referencia(49)
+      crear_referencia(52)
+      if (sanejament.colectors_vistos == true)
+        crear_referencia(50)
+        crear_referencia(54)
+      end
+      if (sanejament.bomba_elevacio == true)
+        crear_referencia(51)
+      end
+      if (sanejament.separador_greixos == true)
+        crear_referencia(53)
+      end
+      if (sanejament.fosa_septica == true)
+        crear_referencia(55)
+      end
     end
 
     redirect_to action: "index"

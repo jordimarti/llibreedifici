@@ -25,6 +25,7 @@ ca:
     navigation:
       titol: "Llibre de l'edifici"
       projectes: "Projectes"
+      tutorial: "Tutorial"
       register: "Registrar-se"
       sign_in: "Iniciar sessió"
       account_configuration: "Configuració del compte"
@@ -235,6 +236,28 @@ ca:
         coberta_xapa_acer: "Xapa d'acer"
         coberta_xapa_coure: "Xapa de coure o zinc"
         coberta_aillament_termic: "Disposa d'aïllament tèrmic"
+      sanejament:
+        no_sistema_evacuacio: "No disposa de sistema d'evacuació"
+        si_sistema_evacuacio: "Disposa de sistema d'evacuació"
+        fosa_septica: "Disposa de sistema d'evacuació propi (fossa sèptica, etc.)"
+        colectors_vistos: "Els col·lectors són vistos"
+        bomba_elevacio: "Disposa de bomba d'elevació"
+        separador_greixos: "Disposa de separador de greixos i fangs"
+        baixants_vistos: "Baixants vistos"
+        baixants_encastats: "Baixants encastats"
+        baixants_ceramics: "Baixants ceràmics"
+        baixants_pvc: "Baixants de PVC"
+        baixants_fibrociment: "Baixants de fibrociment"
+        baixants_coure: "Baixants de coure"
+        baixants_alumini: "Baixants d'alumini"
+        baixants_polipropile: "Baixants de polipropilè"
+        baixants_zinc: "Baixants de zinc"
+        colectors_vistos: "Col·lectors vistos"
+        colectors_soterrats: "Col·lectors soterrats"
+        colectors_formigo: "Col·lectors de formigó"
+        colectors_ceramic: "Col·lectors ceràmics"
+        colectors_fibrociment: "Col·lectors de fibrociment"
+        colectors_pvc: "Col·lectors de PVC"
   devise:
     sessions:
       new:
@@ -377,6 +400,15 @@ ca:
       titol_coberta: "COBERTA"
       terrat: "Terrat / Coberta plana"
       coberta_inclinada: "Coberta inclinada"
+  sanejaments:
+    edit:
+      titol_sistemes: "Descripció constructiva de l'edifici"
+    form:
+      guardar: "Guardar"
+      titol_sanejament: "SANEJAMENT"
+      caracteristiques_generals: "Característiques generals"
+      baixants: "Baixants"
+      colectors: "Col·lectors"
   referencies:
     index:
       titol_operacions: "Operacions de manteniment"
@@ -391,6 +423,7 @@ ca:
       estructura: "Estructura"
       tancaments: "Tancaments verticals"
       coberta: "Coberta"
+      sanejament: "Sanejament"
   documents:
     index:
       titol_documents: "Document"
