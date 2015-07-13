@@ -10,7 +10,7 @@ class DocumentsController < ApplicationController
     @menu_documents_actiu = 'quadern'
   end
 
-  def nou_plurifamiliar
+  def nou
     respond_to do |format|
       format.docx do
         doc = DocxReplace::Doc.new("#{Rails.root}/lib/docx_templates/nou.docx", "#{Rails.root}/tmp")
@@ -25,7 +25,6 @@ class DocumentsController < ApplicationController
         doc.replace("$provincia$", @edifici.identificacio.provincia_edifici)
         doc.replace("$provincia_edifici$", @edifici.identificacio.provincia_edifici)
         doc.replace("$referencia_cadastral$", @edifici.identificacio.ref_cadastral)
-        doc.replace("$us_edifici$", @edifici.identificacio.us_edifici)
         doc.replace("$any_inici_construccio$", @edifici.identificacio.any_inici_construccio)
         doc.replace("$any_fi_construccio$", @edifici.identificacio.any_fi_construccio)
         
