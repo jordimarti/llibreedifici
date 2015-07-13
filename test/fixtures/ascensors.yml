@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  edifici_id: 1
+  habitatge_unifamiliar: false
+  edifici_comunitari: false
+  mes_20_plantes: false
+  altres: false
+
+two:
+  edifici_id: 1
+  habitatge_unifamiliar: false
+  edifici_comunitari: false
+  mes_20_plantes: false
+  altres: false

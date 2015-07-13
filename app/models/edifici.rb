@@ -20,6 +20,13 @@ class Edifici < ActiveRecord::Base
 	has_one :tancaments_vertical
 	has_one :coberta
 	has_one :sanejament
+	has_one :aigua
+	has_one :electricitat
+	has_one :climatitzacio
+	has_one :ga
+	has_one :ventilacio
+	has_one :incendi
+	has_one :ascensor
 	has_many :referencies
 
 	validates :nom_edifici, :presence => true

@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Edifici:</strong>
+  <%= @incendi.edifici_id %>
+</p>
+
+<p>
+  <strong>Alarma automatica:</strong>
+  <%= @incendi.alarma_automatica %>
+</p>
+
+<p>
+  <strong>Alarma manual:</strong>
+  <%= @incendi.alarma_manual %>
+</p>
+
+<p>
+  <strong>Extintors:</strong>
+  <%= @incendi.extintors %>
+</p>
+
+<p>
+  <strong>Abastiment aigua:</strong>
+  <%= @incendi.abastiment_aigua %>
+</p>
+
+<p>
+  <strong>Bie:</strong>
+  <%= @incendi.bie %>
+</p>
+
+<p>
+  <strong>Hidrants:</strong>
+  <%= @incendi.hidrants %>
+</p>
+
+<p>
+  <strong>Ruixadors:</strong>
+  <%= @incendi.ruixadors %>
+</p>
+
+<p>
+  <strong>Columnes seques:</strong>
+  <%= @incendi.columnes_seques %>
+</p>
+
+<p>
+  <strong>Parallamps:</strong>
+  <%= @incendi.parallamps %>
+</p>
+
+<%= link_to 'Edit', edit_incendi_path(@incendi) %> |
+<%= link_to 'Back', incendis_path %>

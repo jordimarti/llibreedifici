@@ -22,6 +22,9 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'fonamentacio', 'fonamentacions'
   inflect.irregular 'estructura', 'estructures'
   inflect.irregular 'coberta', 'cobertes'
+  inflect.irregular 'aigua', 'aigues'
+  inflect.irregular 'climatitzacio', 'climatitzacions'
+  inflect.irregular 'ventilacio', 'ventilacions'
   inflect.irregular 'referencia', 'referencies'
   inflect.irregular 'operacio', 'operacions'
 end

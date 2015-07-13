@@ -11,10 +11,61 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150712081354) do
+ActiveRecord::Schema.define(version: 20150712223734) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "aigues", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.boolean  "connexio_directa"
+    t.boolean  "connexio_aforament"
+    t.boolean  "captacio_propia"
+    t.boolean  "comptador_unic"
+    t.boolean  "comptadors_individuals_habitatge"
+    t.boolean  "comptadors_individuals_centralitzats"
+    t.boolean  "grup_pressio"
+    t.boolean  "muntants_plom"
+    t.boolean  "muntants_ferro"
+    t.boolean  "muntants_coure"
+    t.boolean  "muntants_plastic"
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+  end
+
+  create_table "ascensors", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.boolean  "habitatge_unifamiliar"
+    t.boolean  "edifici_comunitari"
+    t.boolean  "mes_20_plantes"
+    t.boolean  "altres"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  create_table "climatitzacions", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.boolean  "escalfador_pn_menor_24"
+    t.boolean  "escalfador_pn_24_70"
+    t.boolean  "escalfador_pn_major_70"
+    t.boolean  "caldera_gas_pn_menor_70"
+    t.boolean  "caldera_gas_pn_major_70"
+    t.boolean  "caldera_biomassa"
+    t.boolean  "caldera_solar_termica"
+    t.boolean  "altres_pn_menor_70"
+    t.boolean  "altres_pn_major_70"
+    t.boolean  "clima_pn_menor_12_autonoms"
+    t.boolean  "clima_pn_menor_12_torres"
+    t.boolean  "clima_pn_menor_12_recuperador"
+    t.boolean  "clima_pn_12_70_autonoms"
+    t.boolean  "clima_pn_12_70_torres"
+    t.boolean  "clima_pn_12_70_recuperador"
+    t.boolean  "clima_pn_major_70_autonoms"
+    t.boolean  "clima_pn_major_70_torres"
+    t.boolean  "clima_pn_major_70_recuperador"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
 
   create_table "cobertes", force: :cascade do |t|
     t.integer  "edifici_id"
@@ -64,6 +115,20 @@ ActiveRecord::Schema.define(version: 20150712081354) do
     t.string   "tipus_edifici"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "electricitats", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.boolean  "enllumenat_comunitari"
+    t.boolean  "mes_100k"
+    t.boolean  "connexio_terra"
+    t.boolean  "centre_transformacio"
+    t.boolean  "fotovoltaica"
+    t.boolean  "comptador_unic"
+    t.boolean  "comptadors_individuals_habitatge"
+    t.boolean  "comptadors_centralitzats"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
   end
 
   create_table "entitat_controls", force: :cascade do |t|
@@ -150,6 +215,14 @@ ActiveRecord::Schema.define(version: 20150712081354) do
     t.datetime "updated_at",        null: false
   end
 
+  create_table "gas", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.boolean  "diposit_aire_lliure"
+    t.boolean  "diposit_enterrat"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
   create_table "identificacions", force: :cascade do |t|
     t.integer  "edifici_id"
     t.string   "tipus_via_edifici"
@@ -173,6 +246,21 @@ ActiveRecord::Schema.define(version: 20150712081354) do
     t.string   "foto_facana_content_type"
     t.integer  "foto_facana_file_size"
     t.datetime "foto_facana_updated_at"
+  end
+
+  create_table "incendis", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.boolean  "alarma_automatica"
+    t.boolean  "alarma_manual"
+    t.boolean  "extintors"
+    t.boolean  "abastiment_aigua"
+    t.boolean  "bie"
+    t.boolean  "hidrants"
+    t.boolean  "ruixadors"
+    t.boolean  "columnes_seques"
+    t.boolean  "parallamps"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "industrials", force: :cascade do |t|
@@ -340,5 +428,31 @@ ActiveRecord::Schema.define(version: 20150712081354) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "ventilacions", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.boolean  "habitatge_natural_conductes"
+    t.boolean  "habitatge_natural_obertures"
+    t.boolean  "habitatge_mecanica_conductes"
+    t.boolean  "habitatge_mecanica_obertures"
+    t.boolean  "habitatge_mecanica_control"
+    t.boolean  "traster_natural_conductes"
+    t.boolean  "traster_natural_obertures"
+    t.boolean  "traster_mecanica_conductes"
+    t.boolean  "traster_mecanica_obertures"
+    t.boolean  "traster_mecanica_control"
+    t.boolean  "magatzem_natural_conductes"
+    t.boolean  "magatzem_natural_obertures"
+    t.boolean  "magatzem_mecanica_conductes"
+    t.boolean  "magatzem_mecanica_obertures"
+    t.boolean  "magatzem_mecanica_control"
+    t.boolean  "garatge_natural_conductes"
+    t.boolean  "garatge_natural_obertures"
+    t.boolean  "garatge_mecanica_conductes"
+    t.boolean  "garatge_mecanica_obertures"
+    t.boolean  "garatge_mecanica_control"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
 
 end

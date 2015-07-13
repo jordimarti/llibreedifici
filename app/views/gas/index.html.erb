@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Gas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Edifici</th>
+      <th>Diposit aire lliure</th>
+      <th>Diposit enterrat</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gas.each do |ga| %>
+      <tr>
+        <td><%= ga.edifici_id %></td>
+        <td><%= ga.diposit_aire_lliure %></td>
+        <td><%= ga.diposit_enterrat %></td>
+        <td><%= link_to 'Show', ga %></td>
+        <td><%= link_to 'Edit', edit_ga_path(ga) %></td>
+        <td><%= link_to 'Destroy', ga, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ga', new_ga_path %>

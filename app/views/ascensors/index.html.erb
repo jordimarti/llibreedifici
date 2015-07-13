@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Ascensors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Edifici</th>
+      <th>Habitatge unifamiliar</th>
+      <th>Edifici comunitari</th>
+      <th>Mes 20 plantes</th>
+      <th>Altres</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ascensors.each do |ascensor| %>
+      <tr>
+        <td><%= ascensor.edifici_id %></td>
+        <td><%= ascensor.habitatge_unifamiliar %></td>
+        <td><%= ascensor.edifici_comunitari %></td>
+        <td><%= ascensor.mes_20_plantes %></td>
+        <td><%= ascensor.altres %></td>
+        <td><%= link_to 'Show', ascensor %></td>
+        <td><%= link_to 'Edit', edit_ascensor_path(ascensor) %></td>
+        <td><%= link_to 'Destroy', ascensor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ascensor', new_ascensor_path %>

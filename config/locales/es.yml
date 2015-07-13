@@ -38,6 +38,19 @@ es:
       documents: "Documento"
     footer:
       logo_caateeb: "Col·legi d'Aparelladors, Arquitectes Tècnics i Enginyers d'Edificació de Barcelona"
+    menu_sistemes:
+      fonamentacio: "CIMENTACIÓN"
+      estructura: "ESTRUCTURA"
+      tancaments_verticals: "CERRAMIENTOS VERTICALES"
+      coberta: "CUBIERTA"
+      sanejament: "SANEAMIENTO"
+      aigua: "SUMINISTRO DE AGUA"
+      electricitat: "INSTALACIÓN ELÉCTRICA"
+      climatitzacio: "ACS, CALEFACCIÓ I REFRIGERACIÓ"
+      gas: "INSTALACIÓN DE GAS"
+      ventilacio: "VENTILACIÓN"
+      incendi: "PROTECCIÓN CONTRA INCENDIOS"
+      ascensor: "ASCENSORES"
   home:
     index:
       llibre_edifici: "Libro del edificio"
@@ -258,6 +271,46 @@ es:
         colectors_ceramic: "Colectores cerámicos"
         colectors_fibrociment: "Colectores de fibrocemento"
         colectors_pvc: "Colectores de PVC"
+      aigua:
+        connexio_directa: "Dispone de conexión directa a red pública de suministro de agua"
+        connexio_aforament: "Dispone de conexión por aforo a red pública de suministro de agua"
+        captacio_propia: "Dispone de captación propia (pozo, bomba, etc.)"
+        grup_pressio: "Dispone de grupo de presión"
+        comptador_unic: "Contador único para todo el edificio"
+        comptadors_individuals_habitatge: "Contadores individuales por vivienda/local"
+        comptadors_individuals_centralitzats: "Contadores individuales centralizados"
+        muntants_plom: "Plomo"
+        muntants_ferro: "Hierro"
+        muntants_coure: "Cobre"
+        muntants_plastic: "Plástico"
+      electricitat:
+        enllumenat_comunitari: "Dispone de alumbrado comunitario"
+        mes_100k: "Potencia total instalada superior a los 100 kW"
+        connexio_terra: "Dispone de conexión a tierra"
+        centre_transformacio: "Hay un centro de transformación en el edificio"
+        fotovoltaica: "Dispone de instalación solar fotovoltaica"
+        comptador_unic: "Contador único para todo el edificio"
+        comptadors_individuals_habitatge: "Contadores individuales por vivienda/local"
+        comptadors_individuals_centralitzats: "Contadores individuales centralizados"
+      climatitzacio:
+        escalfador_pn_menor_24: "Pn ≤ 24,4 kW"
+        escalfador_pn_24_70: "24,4 kW < Pn ≤ 70 kW"
+        escalfador_pn_major_70: "Pn > 70 kW"
+        caldera_gas_pn_menor_70: "Caldera a gas Pn ≤ 70 kW"
+        caldera_gas_pn_major_70: "Caldera a gas Pn > 70 kW"
+        caldera_biomassa: "Caldera a biomasa"
+        caldera_solar_termica: "Caldera o calentador con instalación de energía solar térmica"
+        altres_pn_menor_70: "Pn ≤ 70 kW"
+        altres_pn_major_70: "Pn > 70 kW"
+        clima_pn_menor_12_autonoms: "Equipos autónomos"
+        clima_pn_menor_12_torres: "Torres de refrigeración"
+        clima_pn_menor_12_recuperador: "Recuperador de calor"
+        clima_pn_12_70_autonoms: "Equipos autónomos"
+        clima_pn_12_70_torres: "Torres de refrigeración"
+        clima_pn_12_70_recuperador: "Recuperador de calor"
+        clima_pn_major_70_autonoms: "Equipos autónomos"
+        clima_pn_major_70_torres: "Torres de refrigeración"
+        clima_pn_major_70_recuperador: "Recuperador de calor"
   devise:
     sessions:
       new:
@@ -409,6 +462,36 @@ es:
       caracteristiques_generals: "Características generales"
       baixants: "Bajantes"
       colectors: "Colectores"
+  aigues:
+    edit:
+      titol_sistemes: "Descripción constructiva del edificio"
+    form:
+      guardar: "Guardar"
+      titol_aigua: "SUMINISTRO DE AGUA"
+      caracteristiques_generals: "Características generales"
+      comptadors: "Contadores"
+      muntants: "Material de los montantes"
+  electricitats:
+    edit:
+      titol_sistemes: "Descripción constructiva del edificio"
+    form:
+      guardar: "Guardar"
+      titol_electricitat: "INSTALACIÓN ELÉCTRICA"
+      caracteristiques_generals: "Características generales"
+      comptadors: "Contadores"
+  climatitzacions:
+    edit:
+      titol_sistemes: "Descripción constructiva del edificio"
+    form:
+      guardar: "Guardar"
+      titol_climatitzacio: "ACS, CALEFACCIÓN Y REFRIGERACIÓN"
+      escalfadors: "Calentador de ACS a gas"
+      calderes: "Calderas"
+      altres_calefaccio: "Otras instalaciones de calefacción"
+      climatitzacio: "Sistema de climatización"
+      pn_menor_12: "Pn ≤ 12 kW"
+      pn_12_70: "12 kW < Pn ≤ 70 kW"
+      pn_major_70: "Pn > 70 kW"
   referencies:
     index:
       titol_operacions: "Operaciones de mantenimiento"

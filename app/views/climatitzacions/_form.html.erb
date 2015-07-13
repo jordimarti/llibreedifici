@@ -1,0 +1,70 @@
+<%= simple_form_for([@edifici, @climatitzacio]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :edifici_id, :as => :hidden, :input_html => { :value => @edifici.id } %>
+    <div class="row">
+      <div class="medium-12 columns">
+        <div class="titol-sistema"><%= t('.titol_climatitzacio') %></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-4 columns">
+        <div class="titol-subsistema"><%= t('.escalfadors') %></div>
+        <%= f.input :escalfador_pn_menor_24 %>
+        <%= f.input :escalfador_pn_24_70 %>
+        <%= f.input :escalfador_pn_major_70 %>
+      </div>
+      <div class="medium-4 columns">
+        <div class="titol-subsistema"><%= t('.calderes') %></div>
+        <%= f.input :caldera_gas_pn_menor_70 %>
+        <%= f.input :caldera_gas_pn_major_70 %>
+        <%= f.input :caldera_biomassa %>
+        <%= f.input :caldera_solar_termica %>  
+      </div>
+      <div class="medium-4 columns">
+        <div class="titol-subsistema"><%= t('.altres_calefaccio') %></div>
+        <%= f.input :altres_pn_menor_70 %>
+        <%= f.input :altres_pn_major_70 %>
+      </div>
+    </div>
+
+    <hr class="form-divider">
+
+    <div class="row">
+      <div class="medium-12 columns">
+        <div class="titol-subsistema"><%= t('.climatitzacio') %></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-4 columns">
+        <div class="titol-subsistema"><%= t('.pn_menor_12') %></div>
+        <%= f.input :clima_pn_menor_12_autonoms %>
+        <%= f.input :clima_pn_menor_12_torres %>
+        <%= f.input :clima_pn_menor_12_recuperador %>
+      </div>
+      <div class="medium-4 columns">
+        <div class="titol-subsistema"><%= t('.pn_12_70') %></div>
+        <%= f.input :clima_pn_12_70_autonoms %>
+        <%= f.input :clima_pn_12_70_torres %>
+        <%= f.input :clima_pn_12_70_recuperador %>
+      </div>
+      <div class="medium-4 columns">
+        <div class="titol-subsistema"><%= t('.pn_major_70') %></div>
+        <%= f.input :clima_pn_major_70_autonoms %>
+        <%= f.input :clima_pn_major_70_torres %>
+        <%= f.input :clima_pn_major_70_recuperador %>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="medium-12 columns">
+      <div class="form-actions">
+        <%= f.button :submit, t('.guardar'), :class => 'button small radius right botodreta' %>
+      </div>
+    </div>
+  </div>
+<% end %>

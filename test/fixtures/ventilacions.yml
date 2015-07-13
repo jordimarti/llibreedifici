@@ -1,0 +1,47 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  edifici_id: 1
+  habitatge_natural_conductes: false
+  habitatge_natural_obertures: false
+  habitatge_mecanica_conductes: false
+  habitatge_mecanica_obertures: false
+  habitatge_mecanica_control: false
+  traster_natural_conductes: false
+  traster_natural_obertures: false
+  traster_mecanica_conductes: false
+  traster_mecanica_obertures: false
+  traster_mecanica_control: false
+  magatzem_natural_conductes: false
+  magatzem_natural_obertures: false
+  magatzem_mecanica_conductes: false
+  magatzem_mecanica_obertures: false
+  magatzem_mecanica_control: false
+  garatge_natural_conductes: false
+  garatge_natural_obertures: false
+  garatge_mecanica_conductes: false
+  garatge_mecanica_obertures: false
+  garatge_mecanica_control: false
+
+two:
+  edifici_id: 1
+  habitatge_natural_conductes: false
+  habitatge_natural_obertures: false
+  habitatge_mecanica_conductes: false
+  habitatge_mecanica_obertures: false
+  habitatge_mecanica_control: false
+  traster_natural_conductes: false
+  traster_natural_obertures: false
+  traster_mecanica_conductes: false
+  traster_mecanica_obertures: false
+  traster_mecanica_control: false
+  magatzem_natural_conductes: false
+  magatzem_natural_obertures: false
+  magatzem_mecanica_conductes: false
+  magatzem_mecanica_obertures: false
+  magatzem_mecanica_control: false
+  garatge_natural_conductes: false
+  garatge_natural_obertures: false
+  garatge_mecanica_conductes: false
+  garatge_mecanica_obertures: false
+  garatge_mecanica_control: false

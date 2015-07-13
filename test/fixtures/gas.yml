@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  edifici_id: 1
+  diposit_aire_lliure: false
+  diposit_enterrat: false
+
+two:
+  edifici_id: 1
+  diposit_aire_lliure: false
+  diposit_enterrat: false

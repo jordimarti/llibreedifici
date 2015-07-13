@@ -248,6 +248,95 @@
     </div>
   </div>
 
+  <div class="row">
+    <div class="medium-12 columns">
+      <div class="container-operacions-sistema">
+        <div class="titol-seccio-sistema">
+          <%= t('.aigua') %>
+        </div>
+        <table class="taula-operacions">
+          <thead>
+            <tr>
+              <th><%= t('.descripcio') %></th>
+              <th><%= t('.periodicitat') %></th>
+              <th><%= t('.referencia') %></th>
+              <th><%= t('.responsable') %></th>
+              <th></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @referencies_aigua.each do |referencia| %> 
+              <% operacio = Operacio.find(referencia.operacio_id) %>
+              <tr>
+                <% if params[:locale] == 'ca' %> 
+                  <td><%= operacio.descripcio_ca %></td>
+                  <td><%= operacio.periodicitat_text_ca %></td>
+                  <td><%= operacio.document_referencia %></td>
+                  <td><%= operacio.responsable_ca %></td>
+                <% elsif params[:locale] == 'es' %>
+                  <td><%= operacio.descripcio_es %></td>
+                  <td><%= operacio.periodicitat_text_es %></td>
+                  <td><%= operacio.document_referencia %></td>
+                  <td><%= operacio.responsable_es %></td>
+                <% end %>
+                <td>
+                  <%= link_to edifici_referencia_path(@edifici, referencia), method: :delete, data: { confirm: t('.eliminar') } do %>
+                    <span class="icon-cancel icones-icomoon"></span>                          
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="medium-12 columns">
+      <div class="container-operacions-sistema">
+        <div class="titol-seccio-sistema">
+          <%= t('.electricitat') %>
+        </div>
+        <table class="taula-operacions">
+          <thead>
+            <tr>
+              <th><%= t('.descripcio') %></th>
+              <th><%= t('.periodicitat') %></th>
+              <th><%= t('.referencia') %></th>
+              <th><%= t('.responsable') %></th>
+              <th></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @referencies_electricitat.each do |referencia| %> 
+              <% operacio = Operacio.find(referencia.operacio_id) %>
+              <tr>
+                <% if params[:locale] == 'ca' %> 
+                  <td><%= operacio.descripcio_ca %></td>
+                  <td><%= operacio.periodicitat_text_ca %></td>
+                  <td><%= operacio.document_referencia %></td>
+                  <td><%= operacio.responsable_ca %></td>
+                <% elsif params[:locale] == 'es' %>
+                  <td><%= operacio.descripcio_es %></td>
+                  <td><%= operacio.periodicitat_text_es %></td>
+                  <td><%= operacio.document_referencia %></td>
+                  <td><%= operacio.responsable_es %></td>
+                <% end %>
+                <td>
+                  <%= link_to edifici_referencia_path(@edifici, referencia), method: :delete, data: { confirm: t('.eliminar') } do %>
+                    <span class="icon-cancel icones-icomoon"></span>                          
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 
 </div>
 

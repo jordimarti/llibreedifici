@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  edifici_id: 1
+  escalfador_pn_menor_24: false
+  escalfador_pn_24_70: false
+  escalfador_pn_major_70: false
+  caldera_biomassa: false
+  caldera_solar_termica: false
+  altres_pn_menor_70: false
+  altres_pn_major_70: false
+  clima_pn_menor_12_autonoms: false
+  clima_pn_menor_12_torres: false
+  clima_pn_menor_12_recuperador: false
+  clima_pn_12_70_autonoms: false
+  clima_pn_12_70_torres: false
+  clima_pn_12_70_recuperador: false
+  clima_pn_major_70_autonoms: false
+  clima_pn_major_70_torres: false
+  clima_pn_major_70_recuperador: false
+
+two:
+  edifici_id: 1
+  escalfador_pn_menor_24: false
+  escalfador_pn_24_70: false
+  escalfador_pn_major_70: false
+  caldera_biomassa: false
+  caldera_solar_termica: false
+  altres_pn_menor_70: false
+  altres_pn_major_70: false
+  clima_pn_menor_12_autonoms: false
+  clima_pn_menor_12_torres: false
+  clima_pn_menor_12_recuperador: false
+  clima_pn_12_70_autonoms: false
+  clima_pn_12_70_torres: false
+  clima_pn_12_70_recuperador: false
+  clima_pn_major_70_autonoms: false
+  clima_pn_major_70_torres: false
+  clima_pn_major_70_recuperador: false

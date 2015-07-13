@@ -1,0 +1,2 @@
+module VentilacionsHelper
+end

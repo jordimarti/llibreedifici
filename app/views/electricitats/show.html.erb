@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Edifici:</strong>
+  <%= @electricitat.edifici_id %>
+</p>
+
+<p>
+  <strong>Enllumenat comunitari:</strong>
+  <%= @electricitat.enllumenat_comunitari %>
+</p>
+
+<p>
+  <strong>Mes 100k:</strong>
+  <%= @electricitat.mes_100k %>
+</p>
+
+<p>
+  <strong>Connexio terra:</strong>
+  <%= @electricitat.connexio_terra %>
+</p>
+
+<p>
+  <strong>Centre transformacio:</strong>
+  <%= @electricitat.centre_transformacio %>
+</p>
+
+<p>
+  <strong>Fotovoltaica:</strong>
+  <%= @electricitat.fotovoltaica %>
+</p>
+
+<p>
+  <strong>Comptador unic:</strong>
+  <%= @electricitat.comptador_unic %>
+</p>
+
+<p>
+  <strong>Comptadors individuals habitatge:</strong>
+  <%= @electricitat.comptadors_individuals_habitatge %>
+</p>
+
+<p>
+  <strong>Comptadors centralitzats:</strong>
+  <%= @electricitat.comptadors_centralitzats %>
+</p>
+
+<%= link_to 'Edit', edit_electricitat_path(@electricitat) %> |
+<%= link_to 'Back', electricitats_path %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Edifici:</strong>
+  <%= @ga.edifici_id %>
+</p>
+
+<p>
+  <strong>Diposit aire lliure:</strong>
+  <%= @ga.diposit_aire_lliure %>
+</p>
+
+<p>
+  <strong>Diposit enterrat:</strong>
+  <%= @ga.diposit_enterrat %>
+</p>
+
+<%= link_to 'Edit', edit_ga_path(@ga) %> |
+<%= link_to 'Back', gas_path %>

@@ -66,7 +66,34 @@ class EdificisController < ApplicationController
     @sanejament = Sanejament.new
     @sanejament.edifici_id = edifici_id
     @sanejament.save
-    
+    #Subministrament aigua
+    @aigua = Aigua.new
+    @aigua.edifici_id = edifici_id
+    @aigua.save
+    #Instal·lació elèctrica
+    @electricitat = Electricitat.new
+    @electricitat.edifici_id = edifici_id
+    @electricitat.save
+    #Climatització
+    @climatitzacio = Climatitzacio.new
+    @climatitzacio.edifici_id = edifici_id
+    @climatitzacio.save
+    #Gas
+    @ga = Ga.new
+    @ga.edifici_id = edifici_id
+    @ga.save
+    #Ventilacio
+    @ventilacio = Ventilacio.new
+    @ventilacio.edifici_id = edifici_id
+    @ventilacio.save
+    #Incendis
+    @incendi = Incendi.new
+    @incendi.edifici_id = edifici_id
+    @incendi.save
+    #Ascensor
+    @ascensor = Ascensor.new
+    @ascensor.edifici_id = edifici_id
+    @ascensor.save
   end
 
   #def quadern_nou_plurifamiliar

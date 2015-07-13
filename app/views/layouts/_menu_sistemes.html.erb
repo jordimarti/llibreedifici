@@ -2,39 +2,64 @@
 	<ul class="side-nav">
 	  <li <% if @menu_sistemes_actiu == 'fonamentacio' %>class="active"<% end %>>
 	  	<%= link_to edit_edifici_fonamentacio_path(@edifici.id, @fonamentacio) do %>
-		    FONAMENTACIÓ
+		    <%= t('.fonamentacio') %>
 		  <% end %>
 		</li>
 	  <li <% if @menu_sistemes_actiu == 'estructura' %>class="active"<% end %>>
 	  	<%= link_to edit_edifici_estructura_path(@edifici.id, @estructura) do %>
-		    ESTRUCTURA
+		    <%= t('.estructura') %>
 		  <% end %>
 	  </li>
 	  <li <% if @menu_sistemes_actiu == 'tancaments_verticals' %>class="active"<% end %>>
 	  	<%= link_to edit_edifici_tancaments_vertical_path(@edifici.id, @tancaments_vertical) do %>
-		    TANCAMENTS VERTICALS
+		    <%= t('.tancaments_verticals') %>
 		  <% end %>
 	  </li>
 	  <li <% if @menu_sistemes_actiu == 'coberta' %>class="active"<% end %>>
 	  	<%= link_to edit_edifici_coberta_path(@edifici.id, @coberta) do %>
-		    COBERTA
+		    <%= t('.coberta') %>
 		  <% end %>
 	  </li>
 	  <li <% if @menu_sistemes_actiu == 'sanejament' %>class="active"<% end %>>
 	  	<%= link_to edit_edifici_sanejament_path(@edifici.id, @sanejament) do %>
-		    SANEJAMENT
+		    <%= t('.sanejament') %>
 		  <% end %>
 	  </li>
-	  <li><a href="#">SUBMINISTRAMENT D'AIGUA</a></li>
-	  <li><a href="#">INSTAL·LACIÓ ELÈCTRICA</a></li>
-	  <li><a href="#">CALEFACCIÓ</a></li>
-	  <li><a href="#">AIGUA CALENTA SANITÀRIA</a></li>
-	  <li><a href="#">INSTAL·LACIÓ DE GAS</a></li>
-	  <li><a href="#">REFRIGERACIÓ</a></li>
-	  <li><a href="#">VENTILACIÓ</a></li>
-	  <li><a href="#">PROTECCIÓ CONTRA INCENDIS</a></li>
-	  <li><a href="#">PROTECCIÓ CONTRA LLAMPS</a></li>
-	  <li><a href="#">INSTAL·LACIÓ DE COMUNICACIONS ICT</a></li>
-	  <li><a href="#">ASCENSOR</a></li>
+	  <li <% if @menu_sistemes_actiu == 'aigua' %>class="active"<% end %>>
+	  	<%= link_to edit_edifici_aigua_path(@edifici.id, @aigua) do %>
+		    <%= t('.aigua') %>
+		  <% end %>
+	  </li>
+	  <li <% if @menu_sistemes_actiu == 'electricitat' %>class="active"<% end %>>
+	  	<%= link_to edit_edifici_electricitat_path(@edifici.id, @electricitat) do %>
+		    <%= t('.electricitat') %>
+		  <% end %>
+	  </li>
+	  <li <% if @menu_sistemes_actiu == 'gas' %>class="active"<% end %>>
+	  	<%= link_to edit_edifici_ga_path(@edifici.id, @ga) do %>
+		    <%= t('.gas') %>
+		  <% end %>
+	  </li>
+	  <li <% if @menu_sistemes_actiu == 'climatitzacio' %>class="active"<% end %>>
+	  	<%= link_to edit_edifici_climatitzacio_path(@edifici.id, @climatitzacio) do %>
+		    <%= t('.climatitzacio') %>
+		  <% end %>
+	  </li>
+	  <li <% if @menu_sistemes_actiu == 'ventilacio' %>class="active"<% end %>>
+	  	<%= link_to edit_edifici_ventilacio_path(@edifici.id, @ventilacio) do %>
+		    <%= t('.ventilacio') %>
+		  <% end %>
+	  </li>
+	  <li <% if @menu_sistemes_actiu == 'incendi' %>class="active"<% end %>>
+	  	<%= link_to edit_edifici_incendi_path(@edifici.id, @incendi) do %>
+		    <%= t('.incendi') %>
+		  <% end %>
+	  </li>
+	  <li <% if @menu_sistemes_actiu == 'ascensor' %>class="active"<% end %>>
+	  	<%= link_to edit_edifici_ascensor_path(@edifici.id, @ascensor) do %>
+		    <%= t('.ascensor') %>
+		  <% end %>
+	  </li>
+	  
 	</ul>
 </div>

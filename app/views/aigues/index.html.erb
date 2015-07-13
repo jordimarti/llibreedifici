@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Aigues</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Edifici</th>
+      <th>Connexio directa</th>
+      <th>Connexio aforament</th>
+      <th>Captacio propia</th>
+      <th>Comptador unic</th>
+      <th>Comptadors individuals habitatge</th>
+      <th>Comptadors individuals centralitzats</th>
+      <th>Grup pressio</th>
+      <th>Muntants plom</th>
+      <th>Muntants ferro</th>
+      <th>Muntants coure</th>
+      <th>Muntants plastic</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @aigues.each do |aigua| %>
+      <tr>
+        <td><%= aigua.edifici_id %></td>
+        <td><%= aigua.connexio_directa %></td>
+        <td><%= aigua.connexio_aforament %></td>
+        <td><%= aigua.captacio_propia %></td>
+        <td><%= aigua.comptador_unic %></td>
+        <td><%= aigua.comptadors_individuals_habitatge %></td>
+        <td><%= aigua.comptadors_individuals_centralitzats %></td>
+        <td><%= aigua.grup_pressio %></td>
+        <td><%= aigua.muntants_plom %></td>
+        <td><%= aigua.muntants_ferro %></td>
+        <td><%= aigua.muntants_coure %></td>
+        <td><%= aigua.muntants_plastic %></td>
+        <td><%= link_to 'Show', aigua %></td>
+        <td><%= link_to 'Edit', edit_aigua_path(aigua) %></td>
+        <td><%= link_to 'Destroy', aigua, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Aigua', new_aigua_path %>

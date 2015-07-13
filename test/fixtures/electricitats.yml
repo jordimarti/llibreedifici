@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  edifici_id: 1
+  enllumenat_comunitari: false
+  mes_100k: false
+  connexio_terra: false
+  centre_transformacio: false
+  fotovoltaica: false
+  comptador_unic: false
+  comptadors_individuals_habitatge: false
+  comptadors_centralitzats: false
+
+two:
+  edifici_id: 1
+  enllumenat_comunitari: false
+  mes_100k: false
+  connexio_terra: false
+  centre_transformacio: false
+  fotovoltaica: false
+  comptador_unic: false
+  comptadors_individuals_habitatge: false
+  comptadors_centralitzats: false

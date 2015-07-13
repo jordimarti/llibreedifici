@@ -15,6 +15,13 @@ class ReferenciesController < ApplicationController
     @referencies_tancaments = @referencies.where(:sistema => 'tancaments')
     @referencies_coberta = @referencies.where(:sistema => 'cobertes')
     @referencies_sanejament = @referencies.where(:sistema => 'sanejament')
+    @referencies_aigua = @referencies.where(:sistema => 'aigua')
+    @referencies_electricitat = @referencies.where(:sistema => 'electricitat')
+    @referencies_gas = @referencies.where(:sistema => 'gas')
+    @referencies_climatitzacio = @referencies.where(:sistema => 'climatitzacio')
+    @referencies_ventilacio = @referencies.where(:sistema => 'ventilacio')
+    @referencies_incendis = @referencies.where(:sistema => 'incendis')
+    @referencies_ascensors = @referencies.where(:sistema => 'ascensors')
     
   end
 
@@ -133,6 +140,38 @@ class ReferenciesController < ApplicationController
       if (sanejament.fosa_septica == true)
         crear_referencia(55)
       end
+    end
+
+    aigua = Aigua.where(:edifici_id => @edifici.id).last
+    if (aigua.grup_pressio == true)
+      crear_referencia(56)
+    end
+
+    electricitat = Electricitat.where(:edifici_id => @edifici.id).last
+    if (electricitat.enllumenat_comunitari == true)
+      crear_referencia(61)
+      crear_referencia(62)
+    end
+    if (electricitat.mes_100k == true)
+      crear_referencia(57)
+    end
+    if (electricitat.connexio_terra == true)
+      crear_referencia(59)
+      crear_referencia(60)
+    end
+    if (electricitat.centre_transformacio == true)
+      crear_referencia(63)
+    end
+    if (electricitat.fotovoltaica == true)
+      crear_referencia(64)
+      crear_referencia(65)
+      crear_referencia(66)
+      crear_referencia(67)
+      crear_referencia(68)
+      crear_referencia(69)
+    end
+    if (electricitat.comptador_unic == true || electricitat.comptadors_individuals_habitatge == true || electricitat.comptadors_centralitzats == true)
+      crear_referencia(58)
     end
 
     redirect_to action: "index"

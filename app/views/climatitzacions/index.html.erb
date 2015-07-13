@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Climatitzacions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Edifici</th>
+      <th>Escalfador pn menor 24</th>
+      <th>Escalfador pn 24 70</th>
+      <th>Escalfador pn major 70</th>
+      <th>Caldera biomassa</th>
+      <th>Caldera solar termica</th>
+      <th>Altres pn menor 70</th>
+      <th>Altres pn major 70</th>
+      <th>Clima pn menor 12 autonoms</th>
+      <th>Clima pn menor 12 torres</th>
+      <th>Clima pn menor 12 recuperador</th>
+      <th>Clima pn 12 70 autonoms</th>
+      <th>Clima pn 12 70 torres</th>
+      <th>Clima pn 12 70 recuperador</th>
+      <th>Clima pn major 70 autonoms</th>
+      <th>Clima pn major 70 torres</th>
+      <th>Clima pn major 70 recuperador</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @climatitzacions.each do |climatitzacio| %>
+      <tr>
+        <td><%= climatitzacio.edifici_id %></td>
+        <td><%= climatitzacio.escalfador_pn_menor_24 %></td>
+        <td><%= climatitzacio.escalfador_pn_24_70 %></td>
+        <td><%= climatitzacio.escalfador_pn_major_70 %></td>
+        <td><%= climatitzacio.caldera_biomassa %></td>
+        <td><%= climatitzacio.caldera_solar_termica %></td>
+        <td><%= climatitzacio.altres_pn_menor_70 %></td>
+        <td><%= climatitzacio.altres_pn_major_70 %></td>
+        <td><%= climatitzacio.clima_pn_menor_12_autonoms %></td>
+        <td><%= climatitzacio.clima_pn_menor_12_torres %></td>
+        <td><%= climatitzacio.clima_pn_menor_12_recuperador %></td>
+        <td><%= climatitzacio.clima_pn_12_70_autonoms %></td>
+        <td><%= climatitzacio.clima_pn_12_70_torres %></td>
+        <td><%= climatitzacio.clima_pn_12_70_recuperador %></td>
+        <td><%= climatitzacio.clima_pn_major_70_autonoms %></td>
+        <td><%= climatitzacio.clima_pn_major_70_torres %></td>
+        <td><%= climatitzacio.clima_pn_major_70_recuperador %></td>
+        <td><%= link_to 'Show', climatitzacio %></td>
+        <td><%= link_to 'Edit', edit_climatitzacio_path(climatitzacio) %></td>
+        <td><%= link_to 'Destroy', climatitzacio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Climatitzacio', new_climatitzacio_path %>

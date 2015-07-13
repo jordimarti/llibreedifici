@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Electricitats</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Edifici</th>
+      <th>Enllumenat comunitari</th>
+      <th>Mes 100k</th>
+      <th>Connexio terra</th>
+      <th>Centre transformacio</th>
+      <th>Fotovoltaica</th>
+      <th>Comptador unic</th>
+      <th>Comptadors individuals habitatge</th>
+      <th>Comptadors centralitzats</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @electricitats.each do |electricitat| %>
+      <tr>
+        <td><%= electricitat.edifici_id %></td>
+        <td><%= electricitat.enllumenat_comunitari %></td>
+        <td><%= electricitat.mes_100k %></td>
+        <td><%= electricitat.connexio_terra %></td>
+        <td><%= electricitat.centre_transformacio %></td>
+        <td><%= electricitat.fotovoltaica %></td>
+        <td><%= electricitat.comptador_unic %></td>
+        <td><%= electricitat.comptadors_individuals_habitatge %></td>
+        <td><%= electricitat.comptadors_centralitzats %></td>
+        <td><%= link_to 'Show', electricitat %></td>
+        <td><%= link_to 'Edit', edit_electricitat_path(electricitat) %></td>
+        <td><%= link_to 'Destroy', electricitat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Electricitat', new_electricitat_path %>

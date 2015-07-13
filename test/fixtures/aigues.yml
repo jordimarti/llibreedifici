@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  edifici_id: 1
+  connexio_directa: false
+  connexio_aforament: false
+  captacio_propia: false
+  comptador_unic: false
+  comptadors_individuals_habitatge: false
+  comptadors_individuals_centralitzats: false
+  grup_pressio: false
+  muntants_plom: false
+  muntants_ferro: false
+  muntants_coure: false
+  muntants_plastic: false
+
+two:
+  edifici_id: 1
+  connexio_directa: false
+  connexio_aforament: false
+  captacio_propia: false
+  comptador_unic: false
+  comptadors_individuals_habitatge: false
+  comptadors_individuals_centralitzats: false
+  grup_pressio: false
+  muntants_plom: false
+  muntants_ferro: false
+  muntants_coure: false
+  muntants_plastic: false

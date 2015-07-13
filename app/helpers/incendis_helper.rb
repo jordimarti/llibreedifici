@@ -1,0 +1,2 @@
+module IncendisHelper
+end

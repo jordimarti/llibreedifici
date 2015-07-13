@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Incendis</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Edifici</th>
+      <th>Alarma automatica</th>
+      <th>Alarma manual</th>
+      <th>Extintors</th>
+      <th>Abastiment aigua</th>
+      <th>Bie</th>
+      <th>Hidrants</th>
+      <th>Ruixadors</th>
+      <th>Columnes seques</th>
+      <th>Parallamps</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @incendis.each do |incendi| %>
+      <tr>
+        <td><%= incendi.edifici_id %></td>
+        <td><%= incendi.alarma_automatica %></td>
+        <td><%= incendi.alarma_manual %></td>
+        <td><%= incendi.extintors %></td>
+        <td><%= incendi.abastiment_aigua %></td>
+        <td><%= incendi.bie %></td>
+        <td><%= incendi.hidrants %></td>
+        <td><%= incendi.ruixadors %></td>
+        <td><%= incendi.columnes_seques %></td>
+        <td><%= incendi.parallamps %></td>
+        <td><%= link_to 'Show', incendi %></td>
+        <td><%= link_to 'Edit', edit_incendi_path(incendi) %></td>
+        <td><%= link_to 'Destroy', incendi, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Incendi', new_incendi_path %>

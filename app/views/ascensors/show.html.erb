@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Edifici:</strong>
+  <%= @ascensor.edifici_id %>
+</p>
+
+<p>
+  <strong>Habitatge unifamiliar:</strong>
+  <%= @ascensor.habitatge_unifamiliar %>
+</p>
+
+<p>
+  <strong>Edifici comunitari:</strong>
+  <%= @ascensor.edifici_comunitari %>
+</p>
+
+<p>
+  <strong>Mes 20 plantes:</strong>
+  <%= @ascensor.mes_20_plantes %>
+</p>
+
+<p>
+  <strong>Altres:</strong>
+  <%= @ascensor.altres %>
+</p>
+
+<%= link_to 'Edit', edit_ascensor_path(@ascensor) %> |
+<%= link_to 'Back', ascensors_path %>
