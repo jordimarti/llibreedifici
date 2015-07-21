@@ -46,7 +46,7 @@ es:
       sanejament: "SANEAMIENTO"
       aigua: "SUMINISTRO DE AGUA"
       electricitat: "INSTALACIÓN ELÉCTRICA"
-      climatitzacio: "ACS, CALEFACCIÓ I REFRIGERACIÓ"
+      climatitzacio: "ACS, CALEFACCIÓN Y REFRIGERACIÓN"
       gas: "INSTALACIÓN DE GAS"
       ventilacio: "VENTILACIÓN"
       incendi: "PROTECCIÓN CONTRA INCENDIOS"
@@ -311,6 +311,45 @@ es:
         clima_pn_major_70_autonoms: "Equipos autónomos"
         clima_pn_major_70_torres: "Torres de refrigeración"
         clima_pn_major_70_recuperador: "Recuperador de calor"
+      ga:
+        diposit_aire_lliure: "Dipósito de gas propano al aire libre"
+        diposit_enterrat: "Dipósito de gas propano enterrado"
+      ventilacio:
+        habitatge_natural_conductes: "Natural por conductos"
+        habitatge_natural_obertures: "Natural por aperturas"
+        habitatge_mecanica_conductes: "Mecánica por conductos"
+        habitatge_mecanica_obertures: "Mecánica por aperturas"
+        habitatge_mecanica_control: "Mecánica con sistema de control"
+        traster_natural_conductes: "Natural por conductos"
+        traster_natural_obertures: "Natural por aperturas"
+        traster_mecanica_conductes: "Mecánica por conductos"
+        traster_mecanica_obertures: "Mecánica por aperturas"
+        traster_mecanica_control: "Mecánica con sistema de control"
+        magatzem_natural_conductes: "Natural por conductos"
+        magatzem_natural_obertures: "Natural por aperturas"
+        magatzem_mecanica_conductes: "Mecánica por conductos"
+        magatzem_mecanica_obertures: "Mecánica por aperturas"
+        magatzem_mecanica_control: "Mecánica con sistema de control"
+        garatge_natural_conductes: "Natural por conductos"
+        garatge_natural_obertures: "Natural por aperturas"
+        garatge_mecanica_conductes: "Mecánica por conductos"
+        garatge_mecanica_obertures: "Mecánica por aperturas"
+        garatge_mecanica_control: "Mecánica con sistema de control"
+      incendi:
+        alarma_automatica: "Sistema automático de detección y alarma de incendios"
+        alarma_manual: "Sistema manual de alarma de incendios"
+        extintors: "Extintores de incendios"
+        abastiment_aigua: "Sistema de suministro de agua contra incendios"
+        bie: "Boca de incendios equipada (BIE)"
+        hidrants: "Hidrantes"
+        ruixadors: "Sistema fijo de extinción (rociadores)"
+        columnes_seques: "Columnas secas"
+        parallamps: "Pararayos"
+      ascensor:
+        habitatge_unifamiliar: "Ascensor en vivienda unifamiliar o velocidad no superior a 0,15 m/s"
+        edifici_comunitari: "Ascensor en edificio comunitario de uso residencial de hasta seis paradas, con antigüedad menor de 20 años"
+        mes_20_plantes: "Ascensores instalados en edificios de más de 20 viviendas, o con más de 4 plantas servidas"
+        altres: "Otros ascensores"
   devise:
     sessions:
       new:
@@ -492,6 +531,37 @@ es:
       pn_menor_12: "Pn ≤ 12 kW"
       pn_12_70: "12 kW < Pn ≤ 70 kW"
       pn_major_70: "Pn > 70 kW"
+  gas:
+    edit:
+      titol_sistemes: "Descripción constructiva del edificio"
+    form:
+      guardar: "Guardar"
+      titol_gas: "INSTALACIÓN DE GAS"
+      caracteristiques_generals: "Características generales"
+  ventilacions:
+    edit:
+      titol_sistemes: "Descripción constructiva del edificio"
+    form:
+      guardar: "Guardar"
+      titol_ventilacions: "VENTILACIÓN"
+      habitatge: "Vivienda"
+      traster: "Trastero"
+      magatzem: "Almacén"
+      garatge: "Garage"
+  incendis:
+    edit:
+      titol_sistemes: "Descripción constructiva del edificio"
+    form:
+      guardar: "Guardar"
+      titol_incendis: "PROTECCIÓN CONTRA INCENDIOS"
+      caracteristiques_generals: "Características generales"
+  ascensors:
+    edit:
+      titol_sistemes: "Descripción constructiva del edificio"
+    form:
+      guardar: "Guardar"
+      titol_ascensors: "ASCENSORES"
+      caracteristiques_generals: "Características generales"
   referencies:
     index:
       titol_operacions: "Operaciones de mantenimiento"
@@ -506,7 +576,15 @@ es:
       estructura: "Estructura"
       tancaments: "Cerramientos verticales"
       coberta: "Cubierta"
-      sanejament: "Sanejament"
+      sanejament: "Saneamiento"
+      aigua: "Suministro de agua"
+      electricitat: "Instalación eléctrica"
+      gas: "Instalación de gas"
+      clima: "ACS, calefacción y refrigeración"
+      ventilacio: "Ventilación"
+      incendis: "Protección contra incendios"
+      ascensors: "Ascensores"
+      ict: "Instalación de comunicaciones ICT"
   documents:
     index:
       titol_documents: "Documento"

@@ -311,6 +311,45 @@ ca:
         clima_pn_major_70_autonoms: "Equips autònoms"
         clima_pn_major_70_torres: "Torres de refrigeració"
         clima_pn_major_70_recuperador: "Recuperador de calor"
+      ga:
+        diposit_aire_lliure: "Dipòsit de gas propà a l'aire lliure"
+        diposit_enterrat: "Dipòsit de gas propà enterrat"
+      ventilacio:
+        habitatge_natural_conductes: "Natural per conductes"
+        habitatge_natural_obertures: "Natural per obertures"
+        habitatge_mecanica_conductes: "Mecànica per conductes"
+        habitatge_mecanica_obertures: "Mecànica per obertures"
+        habitatge_mecanica_control: "Mecànica amb sistema de control"
+        traster_natural_conductes: "Natural per conductes"
+        traster_natural_obertures: "Natural per obertures"
+        traster_mecanica_conductes: "Mecànica per conductes"
+        traster_mecanica_obertures: "Mecànica per obertures"
+        traster_mecanica_control: "Mecànica amb sistema de control"
+        magatzem_natural_conductes: "Natural per conductes"
+        magatzem_natural_obertures: "Natural per obertures"
+        magatzem_mecanica_conductes: "Mecànica per conductes"
+        magatzem_mecanica_obertures: "Mecànica per obertures"
+        magatzem_mecanica_control: "Mecànica amb sistema de control"
+        garatge_natural_conductes: "Natural per conductes"
+        garatge_natural_obertures: "Natural per obertures"
+        garatge_mecanica_conductes: "Mecànica per conductes"
+        garatge_mecanica_obertures: "Mecànica per obertures"
+        garatge_mecanica_control: "Mecànica amb sistema de control"
+      incendi:
+        alarma_automatica: "Sistema automàtic de detecció i alarma d’incendis"
+        alarma_manual: "Sistema manual d’alarma d’incendis"
+        extintors: "Extintors d’incendis"
+        abastiment_aigua: "Sistema d’abastiment d’aigua contra incendis"
+        bie: "Boca d’incendis equipada (BIE)"
+        hidrants: "Hidrants"
+        ruixadors: "Sistemes fixes d’extinció (ruixadors)"
+        columnes_seques: "Columnes seques"
+        parallamps: "Parallamps"
+      ascensor:
+        habitatge_unifamiliar: "Ascensor en habitatge unifamiliar o velocitat no superior a 0,15 m/s"
+        edifici_comunitari: "Ascensor en edifici comunitari d’ús residencial de fins a sis parades, amb antiguitat menor de 20 anys"
+        mes_20_plantes: "Ascensors instal·lats en edificis de més de 20 habitatges, o amb més de 4 plantes servides"
+        altres: "Altres ascensors"
   devise:
     sessions:
       new:
@@ -498,24 +537,31 @@ ca:
     form:
       guardar: "Guardar"
       titol_gas: "INSTAL·LACIÓ DE GAS"
+      caracteristiques_generals: "Característiques generals"
   ventilacions:
     edit:
       titol_sistemes: "Descripció constructiva de l'edifici"
     form:
       guardar: "Guardar"
       titol_ventilacions: "VENTILACIÓ"
+      habitatge: "Habitatge"
+      traster: "Traster"
+      magatzem: "Magatzem"
+      garatge: "Garatge"
   incendis:
     edit:
       titol_sistemes: "Descripció constructiva de l'edifici"
     form:
       guardar: "Guardar"
       titol_incendis: "PROTECCIÓ CONTRA INCENDIS"
+      caracteristiques_generals: "Característiques generals"
   ascensors:
     edit:
       titol_sistemes: "Descripció constructiva de l'edifici"
     form:
       guardar: "Guardar"
       titol_ascensors: "ASCENSORS"
+      caracteristiques_generals: "Característiques generals"
   referencies:
     index:
       titol_operacions: "Operacions de manteniment"
@@ -531,6 +577,14 @@ ca:
       tancaments: "Tancaments verticals"
       coberta: "Coberta"
       sanejament: "Sanejament"
+      aigua: "Subministrament d'aigua"
+      electricitat: "Instal·lació elèctrica"
+      gas: "Instal·lació de gas"
+      clima: "ACS, calefacció i refrigeració"
+      ventilacio: "Ventilació"
+      incendis: "Protecció contra incendis"
+      ascensors: "Ascensors"
+      ict: "Instal·lació de comunicacions ICT"
   documents:
     index:
       titol_documents: "Document"

@@ -12,17 +12,30 @@
     <div class="row">
       <div class="medium-12 columns">
         <div class="titol-subsistema"><%= t('.caracteristiques_generals') %></div>
-        <%= f.input :alarma_automatica %>
-        <%= f.input :alarma_manual %>
-        <%= f.input :extintors %>
-        <%= f.input :abastiment_aigua %>
-        <%= f.input :bie %>
-        <%= f.input :hidrants %>
-        <%= f.input :ruixadors %>
-        <%= f.input :columnes_seques %>
-        <%= f.input :parallamps %>
+        <div class="row">
+          <div class="medium-6 columns">
+            <%= f.input :alarma_automatica %>
+            <%= f.input :alarma_manual %>
+            <%= f.input :extintors %>
+            <%= f.input :abastiment_aigua %>
+          </div>
+          <div class="medium-6 columns">
+            <%= f.input :bie %>
+            <%= f.input :hidrants %>
+            <%= f.input :ruixadors %>
+            <%= f.input :columnes_seques %>
+          </div>
+        </div>
       </div>
     </div>   
+
+    <div class="row">
+      <div class="medium-12 columns">
+        <hr>
+        <%= f.input :parallamps %>
+      </div>
+    </div>
+
   </div>
 
   <div class="row">

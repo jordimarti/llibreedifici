@@ -11,27 +11,69 @@
 
     <div class="row">
       <div class="medium-12 columns">
-        <div class="titol-subsistema"><%= t('.caracteristiques_generals') %></div>
-        <%= f.input :habitatge_natural_conductes %>
-        <%= f.input :habitatge_natural_obertures %>
-        <%= f.input :habitatge_mecanica_conductes %>
-        <%= f.input :habitatge_mecanica_obertures %>
-        <%= f.input :habitatge_mecanica_control %>
-        <%= f.input :traster_natural_conductes %>
-        <%= f.input :traster_natural_obertures %>
-        <%= f.input :traster_mecanica_conductes %>
-        <%= f.input :traster_mecanica_obertures %>
-        <%= f.input :traster_mecanica_control %>
-        <%= f.input :magatzem_natural_conductes %>
-        <%= f.input :magatzem_natural_obertures %>
-        <%= f.input :magatzem_mecanica_conductes %>
-        <%= f.input :magatzem_mecanica_obertures %>
-        <%= f.input :magatzem_mecanica_control %>
-        <%= f.input :garatge_natural_conductes %>
-        <%= f.input :garatge_natural_obertures %>
-        <%= f.input :garatge_mecanica_conductes %>
-        <%= f.input :garatge_mecanica_obertures %>
-        <%= f.input :garatge_mecanica_control %>
+        <div class="titol-subsistema"><%= t('.habitatge') %></div>
+        <div class="row">
+          <div class="medium-6 columns">
+            <%= f.input :habitatge_natural_conductes %>
+            <%= f.input :habitatge_natural_obertures %>
+          </div>
+          <div class="medium-6 columns">
+            <%= f.input :habitatge_mecanica_conductes %>
+            <%= f.input :habitatge_mecanica_obertures %>
+            <%= f.input :habitatge_mecanica_control %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-12 columns">
+        <div class="titol-subsistema"><%= t('.traster') %></div>
+        <div class="row">
+          <div class="medium-6 columns">
+            <%= f.input :traster_natural_conductes %>
+            <%= f.input :traster_natural_obertures %>
+          </div>
+          <div class="medium-6 columns">      
+            <%= f.input :traster_mecanica_conductes %>
+            <%= f.input :traster_mecanica_obertures %>
+            <%= f.input :traster_mecanica_control %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-12 columns">
+        <div class="titol-subsistema"><%= t('.magatzem') %></div>
+        <div class="row">
+          <div class="medium-6 columns">
+            <%= f.input :magatzem_natural_conductes %>
+            <%= f.input :magatzem_natural_obertures %>
+          </div>
+          <div class="medium-6 columns">
+            <%= f.input :magatzem_mecanica_conductes %>
+            <%= f.input :magatzem_mecanica_obertures %>
+            <%= f.input :magatzem_mecanica_control %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-12 columns">
+        <div class="titol-subsistema"><%= t('.garatge') %></div>
+        <div class="row">
+          <div class="medium-6 columns">
+            <%= f.input :garatge_natural_conductes %>
+            <%= f.input :garatge_natural_obertures %>
+          </div>
+          <div class="medium-6 columns">
+            <%= f.input :garatge_mecanica_conductes %>
+            <%= f.input :garatge_mecanica_obertures %>
+            <%= f.input :garatge_mecanica_control %>
+          </div>
+        </div>
       </div>
     </div>
   </div>

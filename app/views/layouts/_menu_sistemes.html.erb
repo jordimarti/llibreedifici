@@ -50,12 +50,12 @@
 		    <%= t('.ventilacio') %>
 		  <% end %>
 	  </li>
-	  <li <% if @menu_sistemes_actiu == 'incendi' %>class="active"<% end %>>
+	  <li <% if @menu_sistemes_actiu == 'incendis' %>class="active"<% end %>>
 	  	<%= link_to edit_edifici_incendi_path(@edifici.id, @incendi) do %>
 		    <%= t('.incendi') %>
 		  <% end %>
 	  </li>
-	  <li <% if @menu_sistemes_actiu == 'ascensor' %>class="active"<% end %>>
+	  <li <% if @menu_sistemes_actiu == 'ascensors' %>class="active"<% end %>>
 	  	<%= link_to edit_edifici_ascensor_path(@edifici.id, @ascensor) do %>
 		    <%= t('.ascensor') %>
 		  <% end %>

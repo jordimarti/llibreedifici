@@ -12,10 +12,16 @@
     <div class="row">
       <div class="medium-12 columns">
         <div class="titol-subsistema"><%= t('.caracteristiques_generals') %></div>
-        <%= f.input :habitatge_unifamiliar %>
-        <%= f.input :edifici_comunitari %>
-        <%= f.input :mes_20_plantes %>
-        <%= f.input :altres %>
+        <div class="row">
+          <div class="medium-6 columns">
+            <%= f.input :habitatge_unifamiliar %>
+            <%= f.input :edifici_comunitari %>
+          </div>
+          <div class="medium-6 columns">
+            <%= f.input :mes_20_plantes %>
+            <%= f.input :altres %>
+          </div>
+        </div>
       </div>
     </div>
   </div>

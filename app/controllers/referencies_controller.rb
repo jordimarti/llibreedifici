@@ -18,10 +18,11 @@ class ReferenciesController < ApplicationController
     @referencies_aigua = @referencies.where(:sistema => 'aigua')
     @referencies_electricitat = @referencies.where(:sistema => 'electricitat')
     @referencies_gas = @referencies.where(:sistema => 'gas')
-    @referencies_climatitzacio = @referencies.where(:sistema => 'climatitzacio')
+    @referencies_clima = @referencies.where(:sistema => 'climatitzacio')
     @referencies_ventilacio = @referencies.where(:sistema => 'ventilacio')
     @referencies_incendis = @referencies.where(:sistema => 'incendis')
     @referencies_ascensors = @referencies.where(:sistema => 'ascensors')
+    @referencies_ict = @referencies.where(:sistema => 'ict')
     
   end
 
