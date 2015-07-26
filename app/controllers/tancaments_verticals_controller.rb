@@ -23,6 +23,7 @@ class TancamentsVerticalsController < ApplicationController
   def edit
     @submenu_actiu = 'sistemes'
     @menu_sistemes_actiu = 'tancaments_verticals'
+    @elements = Element.where(:edifici_id => @edifici.id, :sistema_element => 'tancaments')
   end
 
   # POST /tancaments_verticals

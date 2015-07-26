@@ -2,15 +2,37 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :descripcio %>
-    <%= f.input :periodicitat %>
-    <%= f.input :document_referencia %>
-    <%= f.input :responsable %>
-    <%= f.input :obligatorietat %>
-    <%= f.input :creat_usuari %>
+    <%= f.input :sistema, :as => :hidden, :input_html => { :value => params[:sistema] } %>
+    <%= f.input :edifici_id, :as => :hidden, :input_html => { :value => params[:edifici_id] } %>
+    <%= f.input :creat_usuari, :as => :hidden, :input_html => { :value => true } %>
+
+    <div class="row">
+      <% if params[:locale] == 'ca' %>
+        <div class="medium-6 columns">
+          <%= f.input :descripcio_ca, input_html: { rows: "11" } %>
+        </div>
+        <div class="medium-6 columns">
+          <%= f.input :periodicitat_text_ca %>
+          <%= f.input :responsable_ca %>
+          <%= f.input :document_referencia %>
+        </div>
+      <% end %>
+      <% if params[:locale] == 'es' %>
+        <div class="medium-6 columns">
+          <%= f.input :descripcio_es, input_html: { rows: "11" } %>
+          <%= f.input :periodicitat_text_es %>
+          <%= f.input :responsable_es %>
+          <%= f.input :document_referencia %>
+        </div>
+      <% end %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="row">
+    <div class="medium-12 columns">
+      <div class="form-actions right">
+        <%= f.button :submit, t('.guardar'), :class => 'button small radius right botodreta' %>
+      </div>
+    </div>
   </div>
 <% end %>

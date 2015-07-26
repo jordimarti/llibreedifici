@@ -23,6 +23,7 @@ class CobertesController < ApplicationController
   def edit
     @submenu_actiu = 'sistemes'
     @menu_sistemes_actiu = 'coberta'
+    @elements = Element.where(:edifici_id => @edifici.id, :sistema_element => 'coberta')
   end
 
   # POST /cobertes

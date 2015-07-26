@@ -30,10 +30,20 @@ class OperacionsController < ApplicationController
   # POST /operacions.json
   def create
     @operacio = Operacio.new(operacio_params)
+    last_operacio = Operacio.last
+    @operacio.id = last_operacio.id + 1
 
     respond_to do |format|
       if @operacio.save
-        format.html { redirect_to @operacio, notice: 'Operacio was successfully created.' }
+        #Després de crear una operació hem de crear la referència per a que li aparegui a l'usuari en l'edifici que toqui
+        referencia = Referencia.new
+        referencia.edifici_id = referencia_params[:edifici_id]
+        referencia.operacio_id = @operacio.id
+        referencia.sistema = @operacio.sistema
+        referencia.creat_usuari = true
+        referencia.save
+
+        format.html { redirect_to edifici_referencies_path(:edifici_id => referencia_params[:edifici_id]) }
         format.json { render :show, status: :created, location: @operacio }
       else
         format.html { render :new }
@@ -79,5 +89,9 @@ class OperacionsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def operacio_params
       params.require(:operacio).permit(:descripcio_ca, :descripcio_es, :periodicitat, :periodicitat_text_ca, :periodicitat_text_es, :document_referencia, :responsable_ca, :responsable_es, :obligatorietat, :creat_usuari, :sistema)
+    end
+
+    def referencia_params
+      params.require(:operacio).permit(:edifici_id)
     end
 end

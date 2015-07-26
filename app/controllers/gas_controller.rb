@@ -23,6 +23,7 @@ class GasController < ApplicationController
   def edit
     @submenu_actiu = 'sistemes'
     @menu_sistemes_actiu = 'gas'
+    @elements = Element.where(:edifici_id => @edifici.id, :sistema_element => 'gas')
   end
 
   # POST /gas

@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
  
   
+  
+  
+  
+  
   resources :operacions
   get 'edificis/:edifici_id/agents', to: 'agents#index', :as => :agents
   get 'edificis/:edifici_id/documents', to: 'documents#index', :as => :documents
@@ -38,12 +42,11 @@ Rails.application.routes.draw do
     resources :ventilacions
     resources :incendis
     resources :ascensors
+    resources :especials
+    resources :telecomunicacions
+    resources :elements
+    resources :checklist_nou_plurifamiliars
   end
-  
-  #get 'checklist_edifici_nou_plurifamiliars/quadern'
-  #get 'checklist_edifici_nous/det'
-  #get 'checklist_edifici_nous/manuals'
-  #get 'checklist_edifici_nous/arxiu'
   
   
   devise_for :users

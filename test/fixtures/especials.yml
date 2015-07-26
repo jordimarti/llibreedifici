@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  edifici_id: 1
+  piscina_estructura_obra: false
+  piscina_estructura_composite: false
+  piscina_estructura_acer: false
+  piscina_vores_formigo: false
+  piscina_vores_pedra: false
+  piscina_ceramica: false
+  piscina_porcellana: false
+  piscina_climatitzacio: false
+  piscina_iluminacio: false
+  piscina_purificador: false
+
+two:
+  edifici_id: 1
+  piscina_estructura_obra: false
+  piscina_estructura_composite: false
+  piscina_estructura_acer: false
+  piscina_vores_formigo: false
+  piscina_vores_pedra: false
+  piscina_ceramica: false
+  piscina_porcellana: false
+  piscina_climatitzacio: false
+  piscina_iluminacio: false
+  piscina_purificador: false

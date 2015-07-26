@@ -2,7 +2,6 @@ class Edifici < ActiveRecord::Base
 
 	belongs_to :user
 	has_one :identificacio
-	has_one :checklist_edifici_nou_plurifamiliar
 	
 	has_many :promotors
 	has_many :projectistes
@@ -27,7 +26,11 @@ class Edifici < ActiveRecord::Base
 	has_one :ventilacio
 	has_one :incendi
 	has_one :ascensor
+	has_one :telecomunicacio
+	has_one :especial
+	has_many :elements
 	has_many :referencies
+	has_one :checklist_nou_plurifamiliar
 
 	validates :nom_edifici, :presence => true
 	validates :tipus_edifici, :presence => true

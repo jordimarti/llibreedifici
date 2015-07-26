@@ -23,6 +23,7 @@ class EstructuresController < ApplicationController
   def edit
     @submenu_actiu = 'sistemes'
     @menu_sistemes_actiu = 'estructura'
+    @elements = Element.where(:edifici_id => @edifici.id, :sistema_element => 'estructura')
   end
 
   # POST /estructures

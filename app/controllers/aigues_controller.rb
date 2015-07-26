@@ -23,6 +23,7 @@ class AiguesController < ApplicationController
   def edit
     @submenu_actiu = 'sistemes'
     @menu_sistemes_actiu = 'aigua'
+    @elements = Element.where(:edifici_id => @edifici.id, :sistema_element => 'aigua')
   end
 
   # POST /aigues

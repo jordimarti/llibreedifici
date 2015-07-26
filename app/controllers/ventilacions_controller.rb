@@ -23,6 +23,7 @@ class VentilacionsController < ApplicationController
   def edit
     @submenu_actiu = 'sistemes'
     @menu_sistemes_actiu = 'ventilacio'
+    @elements = Element.where(:edifici_id => @edifici.id, :sistema_element => 'ventilacio')
   end
 
   # POST /ventilacions

@@ -10,27 +10,16 @@ class ReferenciesController < ApplicationController
   def index
     @submenu_actiu = 'operacions'
 
-    @referencies_fonamentacio = @referencies.where(:sistema => 'fonamentacio')
-    @referencies_estructura = @referencies.where(:sistema => 'estructura')
-    @referencies_tancaments = @referencies.where(:sistema => 'tancaments')
-    @referencies_coberta = @referencies.where(:sistema => 'cobertes')
-    @referencies_sanejament = @referencies.where(:sistema => 'sanejament')
-    @referencies_aigua = @referencies.where(:sistema => 'aigua')
-    @referencies_electricitat = @referencies.where(:sistema => 'electricitat')
-    @referencies_gas = @referencies.where(:sistema => 'gas')
-    @referencies_clima = @referencies.where(:sistema => 'climatitzacio')
-    @referencies_ventilacio = @referencies.where(:sistema => 'ventilacio')
-    @referencies_incendis = @referencies.where(:sistema => 'incendis')
-    @referencies_ascensors = @referencies.where(:sistema => 'ascensors')
-    @referencies_ict = @referencies.where(:sistema => 'ict')
-    
+    @sistemes = [{name: 'fonamentacio'}, {name: 'estructura'}, {name: 'tancaments'}, {name: 'coberta'}, {name: 'sanejament'}, {name: 'aigua'}, {name: 'electricitat'}, {name: 'gas'}, {name: 'climatitzacio'}, {name: 'ventilacio'}, {name: 'incendis'}, {name: 'ascensors'}, {name: 'telecomunicacions'}, {name: 'especials'}]
   end
 
   #Aquest mètode consulta la definició de l'edifici i crea el llistat de referències a les operacions de manteniment
   def crear_llistat
     #Primer eliminem totes les referències abans de crear-les de nou, en cas que aquell edifici ja en tingui
     @referencies.each do |referencia|
-      referencia.destroy
+      if referencia.creat_usuari == false
+        referencia.destroy
+      end
     end
 
     fonamentacio = Fonamentacio.where(:edifici_id => @edifici.id).last
@@ -185,6 +174,7 @@ class ReferenciesController < ApplicationController
     referencia.sistema = operacio.sistema
     referencia.manual_habitatge = operacio.manual_habitatge
     referencia.edifici_id = @edifici.id
+    referencia.creat_usuari = false
     referencia.save
   end
 
@@ -258,6 +248,6 @@ class ReferenciesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def referencia_params
-      params.require(:referencia).permit(:edifici_id, :operacio_id)
+      params.require(:referencia).permit(:edifici_id, :operacio_id, :sistema, :creat_usuari)
     end
 end

@@ -23,6 +23,7 @@ class FonamentacionsController < ApplicationController
   def edit
     @submenu_actiu = 'sistemes'
     @menu_sistemes_actiu = 'fonamentacio'
+    @elements = Element.where(:edifici_id => @edifici.id, :sistema_element => 'fonamentacio')
   end
 
   # POST /fonamentacions

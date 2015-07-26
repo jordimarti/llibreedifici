@@ -13,5 +13,7 @@ module SetSistemes
 	  @ventilacio = Ventilacio.find(@edifici.ventilacio.id)
 	  @incendi = Incendi.find(@edifici.incendi.id)
 	  @ascensor = Ascensor.find(@edifici.ascensor.id)
+	  @telecomunicacio = Telecomunicacio.find(@edifici.telecomunicacio.id)
+	  @especial = Especial.find(@edifici.especial.id)
 	end
 end

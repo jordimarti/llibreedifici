@@ -51,6 +51,8 @@ ca:
       ventilacio: "VENTILACIÓ"
       incendi: "PROTECCIÓ CONTRA INCENDIS"
       ascensor: "ASCENSORS"
+      telecomunicacio: "INSTAL·LACIÓ DE TELECOMUNICACIONS"
+      especial: "INSTAL·LACIONS ESPECIALS"
   home:
     index:
       llibre_edifici: "Llibre de l'edifici"
@@ -350,6 +352,59 @@ ca:
         edifici_comunitari: "Ascensor en edifici comunitari d’ús residencial de fins a sis parades, amb antiguitat menor de 20 anys"
         mes_20_plantes: "Ascensors instal·lats en edificis de més de 20 habitatges, o amb més de 4 plantes servides"
         altres: "Altres ascensors"
+      telecomunicacio:
+        porter_audio: "Porter electrònic amb sistema d'àudio"
+        porter_video: "Porter electrònic amb sistema d'àudio i vídeo"
+        antena_individual: "Antena individual i xarxa coaxial"
+        antena_colectiva: "Antena col·lectiva i xarxa coaxial"
+        parabolica_individual: "Antena parabòlica individual"
+        parabolica_colectiva: "Antena parabòlica col·lectiva"
+        telefonia: "Instal·lació de telefonia"
+        riti: "RITI (Recinte d’instal·lacions de telecomunicacions inferior)"
+        rits: "RITS (Recinte d’instal·lacions de telecomunicacions superior)"
+        ritu: "RITU (Recinte d’instal·lacions de telecomunicacions únic)"
+        ritm: "RITM (Recinte d’instal·lacions de telecomunicacions únic modular prefabricat)"
+      especial:
+        piscina_estructura_obra: "Estructura d'obra"
+        piscina_estructura_composite: "Estructura de materials composites"
+        piscina_estructura_acer: "Estructura d'acer"
+        piscina_vores_formigo: "Vores prefabricades de formigó"
+        piscina_vores_pedra: "Vores de pedra natural"
+        piscina_ceramica: "Revestiment de peces ceràmiques"
+        piscina_resines: "Revestiment de resines sintètiques"
+        piscina_porcellana: "Revestiment de porcellana"
+        piscina_climatitzacio: "Disposa d'instal·lació de climatització"
+        piscina_iluminacio: "Disposa d'instal·lació d'il·luminació submergida"
+        piscina_purificador: "Disposa d'instal·lació de purificació d'aigües"
+      element:
+        nom_element: "Nom o descripció de l'element"
+      operacio:
+        descripcio_ca: "Descripció"
+        descripcio_es: "Descripció"
+        periodicitat: "Periodicitat"
+        periodicitat_text_ca: "Periodicitat"
+        periodicitat_text_es: "Periodicitat"
+        responsable_ca: "Responsable"
+        responsable_es: "Responsable"
+        document_referencia: "Document de referència"
+      checklist_nou_plurifamiliar:
+        llicencies_preceptives: "Llicències preceptives"
+        certificat_final_obra: "Certificat de final d'obra"
+        acta_recepcio_obra: "Acta de recepció definitiva de l'obra"
+        escriptura_publica: "Escriptura pública de declaració d'obra nova"
+        documents_garantia: "Documents acreditatius de garantia"
+        documents_garantia_parts_comunes: "Documents de garantia d'instal·lacions de parts comunes"
+        certificacio_energetica: "Certificació energètica"
+        polissa_assegurances: "Pòlisses d'assegurances"
+        escriptura_propietat_horitzontal: "Escriptura de divisió en règim de propietat horitzontal"
+        estatus_comunitat: "Estatuts de la comunitat de propietaris"
+        cedules_regims_juridics: "Cèdules de declaració de règims jurídics especials o qualificacions d'habitatges protegits"
+        carregues_reals: "Càrregues reals existents"
+        documents_complementaris: "Documents complementaris"
+        documents_acreditatius_ajuts: "Documents acreditatius dels ajuts i beneficis atorgats a l'edifici"
+        documents_justificacio_operacions: "Documents de justificació de la realització d'operacions de reparació, manteniment i rehabilitació"
+        certificat_final_obra_instalacions: "Certificats de final d’obra de les instal·lacions comunes de baixa tensió, gasos combustibles, productes petrolífers o instal·lacions tèrmiques"
+        declaracions_ce_ascensors: "Declaracions CE que reconeixen la conformitat dels ascensors instal·lats"
   devise:
     sessions:
       new:
@@ -449,6 +504,9 @@ ca:
   fonamentacions:
     edit:
       titol_sistemes: "Descripció constructiva de l'edifici"
+      altres_elements: "Altres elements"
+      afegir_element: "Afegir un nou element"
+      nou_element: "Element definit per l'usuari"
     form:
       guardar: "Guardar"
       titol_fonamentacio: "FONAMENTACIÓ"
@@ -562,17 +620,29 @@ ca:
       guardar: "Guardar"
       titol_ascensors: "ASCENSORS"
       caracteristiques_generals: "Característiques generals"
-  referencies:
-    index:
-      titol_operacions: "Operacions de manteniment"
-      eliminar: "Segur que vols eliminar aquesta operació?"
-      actualitzar_llistat: "Actualitzar llistat"
-      text_actualitzar_llistat: "Actualitzeu el llistat d'operacions de manteniment cada vegada que modifiqueu la descripció constructiva de l'edifici. Cal tenir en compte que aquesta acció esborrarà totes les operacions i les crearà de nou."
+  telecomunicacions:
+    edit:
+      titol_sistemes: "Descripció constructiva de l'edifici"
+    form:
+      guardar: "Guardar"
+      titol_telecomunicacions: "INSTAL·LACIÓ DE TELECOMUNICACIONS"
+      caracteristiques_generals: "Característiques generals"
+  especials:
+    edit:
+      titol_sistemes: "Descripció constructiva de l'edifici"
+    form:
+      guardar: "Guardar"
+      titol_especials: "INSTAL·LACIONS ESPECIALS"
+      piscina: "Piscina"
+  elements:
+    llistat_elements:
+      pregunta_eliminar: "Segur que vols eliminar?"
+      descripcio_altres_elements: "Si voleu afegir un producte, equip o sistema que no apareix al formulari superior el podeu afegir aquí:"
+    form:
+      guardar: "Guardar"
+  operacions:
+    sistema:
       fonamentacio: "Fonamentació"
-      descripcio: "Descripció"
-      periodicitat: "Periodicitat"
-      referencia: "Referència"
-      responsable: "Responsable"
       estructura: "Estructura"
       tancaments: "Tancaments verticals"
       coberta: "Coberta"
@@ -580,17 +650,42 @@ ca:
       aigua: "Subministrament d'aigua"
       electricitat: "Instal·lació elèctrica"
       gas: "Instal·lació de gas"
-      clima: "ACS, calefacció i refrigeració"
+      climatitzacio: "ACS, calefacció i refrigeració"
       ventilacio: "Ventilació"
       incendis: "Protecció contra incendis"
       ascensors: "Ascensors"
-      ict: "Instal·lació de comunicacions ICT"
+      telecomunicacions: "Instal·lació de telecomunicacions"
+      especials: "Instal·lacions especials"
+      eliminar: "Segur que vols eliminar aquesta operació?"
+      no_operacions: "No hi ha operacions de manteniment"
+      afegir_operacio: "Afegir operació"
+      descripcio: "Descripció"
+      periodicitat: "Periodicitat"
+      referencia: "Referència"
+      responsable: "Responsable"
+    new:
+      titol_nova_operacio: "Nova operació de manteniment"
+    form:
+      guardar: "Guardar"
+  referencies:
+    index:
+      titol_operacions: "Operacions de manteniment"
+      eliminar: "Segur que vols eliminar aquesta operació?"
+      actualitzar_llistat: "Actualitzar llistat"
+      text_actualitzar_llistat: "Actualitzeu el llistat d'operacions de manteniment cada vegada que modifiqueu la descripció constructiva de l'edifici. Aquesta acció actualitza totes les operacions creades automàticament, però no afecta a les operacions creades manualment."
+  checklist_nou_plurifamiliars:
+    edit:
+      titol_configuracio_document: "Configuració del document"
+    form:
+      text_arxiu: "Selecciona els apartats que han d'aparèixer a l'Arxiu de documents"
+      guardar: "Guardar"
   documents:
     index:
       titol_documents: "Document"
-      generar_llibre: "Generar el Llibre de l'edifici"
+      tornar_apartats: "1. Configurar el document"
+      generar_llibre: "2. Generar el Llibre de l'edifici"
       text_generar_llibre: "Si ja heu completat tota la informació dels apartats anteriors podeu clicar el botó per generar el document Word (format docx) del Llibre de l'edifici."
-      generar_manual: "Generar el Manual de l'habitatge"
+      generar_manual: "3. Generar el Manual de l'habitatge"
       text_generar_manual: "En els edificis plurifamiliars de nova construcció cal crear el Manual de l'habitatge. Aquest document està destinat als diferents propietaris per a que puguin conèixer, de manera individualitzada, les dades que corresponen al seu habitatge."
       seguents_passos: "Següents passos"
       pas1: "Col·locar les imatges de la façana i l'emplaçament de l'edifici."

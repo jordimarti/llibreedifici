@@ -1,0 +1,43 @@
+<%= simple_form_for([@edifici, @especial]) do |f| %>
+  <%= f.error_notification %>
+  
+  <div class="form-inputs">
+    <%= f.input :edifici_id, :as => :hidden, :input_html => { :value => @edifici.id } %>
+    <div class="row">
+      <div class="medium-12 columns">
+        <div class="titol-sistema"><%= t('.titol_especials') %></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-12 columns">
+        <div class="titol-subsistema"><%= t('.piscina') %></div>
+        <div class="row">
+          <div class="medium-6 columns">
+            <%= f.input :piscina_estructura_obra %>
+            <%= f.input :piscina_estructura_composite %>
+            <%= f.input :piscina_estructura_acer %>
+            <%= f.input :piscina_vores_formigo %>
+            <%= f.input :piscina_vores_pedra %>
+            <%= f.input :piscina_ceramica %>
+            <%= f.input :piscina_resines %>
+            <%= f.input :piscina_porcellana %>
+          </div>
+          <div class="medium-6 columns">
+            <%= f.input :piscina_climatitzacio %>
+            <%= f.input :piscina_iluminacio %>
+            <%= f.input :piscina_purificador %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="medium-12 columns">
+      <div class="form-actions">
+        <%= f.button :submit, t('.guardar'), :class => 'button small radius right botodreta' %>
+      </div>
+    </div>
+  </div>
+<% end %>

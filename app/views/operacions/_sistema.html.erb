@@ -1,0 +1,92 @@
+<div class="row">
+  <div class="medium-12 columns">
+    <div class="container-operacions-sistema">
+      <div class="titol-seccio-sistema">
+        <% case sistema[:name] %>
+          <% when 'fonamentacio' %>
+          <%= t('.fonamentacio') %>
+          <% when 'estructura' %>
+          <%= t('.estructura') %>
+          <% when 'tancaments' %>
+          <%= t('.tancaments') %>
+          <% when 'coberta' %>
+          <%= t('.coberta') %>
+          <% when 'sanejament' %>
+          <%= t('.sanejament') %>
+          <% when 'aigua' %>
+          <%= t('.aigua') %>
+          <% when 'electricitat' %>
+          <%= t('.electricitat') %>
+          <% when 'gas' %>
+          <%= t('.gas') %>
+          <% when 'climatitzacio' %>
+          <%= t('.climatitzacio') %>
+          <% when 'ventilacio' %>
+          <%= t('.ventilacio') %>
+          <% when 'incendis' %>
+          <%= t('.incendis') %>
+          <% when 'ascensors' %>
+          <%= t('.ascensors') %>
+          <% when 'telecomunicacions' %>
+          <%= t('.telecomunicacions') %>
+          <% when 'especials' %>
+          <%= t('.especials') %>
+        <% end %>
+
+      </div>
+      
+      <% referencies_sistema = @referencies.where(:sistema => sistema[:name]) %>
+      <% if referencies_sistema.count > 0 %>
+        <table class="taula-operacions">
+          <thead>
+            <tr>
+              <th><%= t('.descripcio') %></th>
+              <th><%= t('.periodicitat') %></th>
+              <th><%= t('.referencia') %></th>
+              <th><%= t('.responsable') %></th>
+              <th></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% referencies_sistema.each do |referencia| %> 
+              <% operacio = Operacio.find(referencia.operacio_id) %>
+              <tr>
+                <% if params[:locale] == 'ca' %> 
+                  <td><%= operacio.descripcio_ca %></td>
+                  <td><%= operacio.periodicitat_text_ca %></td>
+                  <td><%= operacio.document_referencia %></td>
+                  <td><%= operacio.responsable_ca %></td>
+                <% elsif params[:locale] == 'es' %>
+                  <td><%= operacio.descripcio_es %></td>
+                  <td><%= operacio.periodicitat_text_es %></td>
+                  <td><%= operacio.document_referencia %></td>
+                  <td><%= operacio.responsable_es %></td>
+                <% end %>
+                <td>
+                  <%= link_to edifici_referencia_path(@edifici, referencia), method: :delete, data: { confirm: t('.eliminar') } do %>
+                    <span class="icon-cancel icones-icomoon"></span>                          
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+
+        </table>
+      <% else %>
+        <p class="no-operacions"><%= t('.no_operacions') %></p>
+      <% end %>
+
+      <div class="operacions-usuari">
+        <div class="crear-operacions">
+          <%= link_to (new_operacio_path(:edifici_id => @edifici.id, :sistema => sistema[:name])) do %>
+            <div class="afegir-operacio right"><span class="suma">+</span> <%= t('.afegir_operacio') %></div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

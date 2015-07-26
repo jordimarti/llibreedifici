@@ -4,6 +4,7 @@
 			<div class="titol-seccio">
 				<%= t('.titol_documents') %>
 			</div>
+
 		</div>
 	</div>
 
@@ -12,15 +13,17 @@
 		<div class="medium-12 columns">
 			<div class="container-document">
 				<div class="row">
-					<div class="medium-6 columns">
-						<a href="documents/nou.docx" class="button small radius"><%= t('.generar_llibre') %></a>
-						<br/>
+					<div class="medium-7 columns">
 						<p><%= t('.text_generar_llibre') %></p>
-					</div>
-					<div class="medium-6 columns">
-						<a href="documents/manual_habitatge.docx" class="button small radius"><%= t('.generar_manual') %></a>
 						<br/>
 						<p><%= t('.text_generar_manual') %></p>
+					</div>
+					<div class="medium-4 medium-offset-1 columns">
+						<%= link_to t('.tornar_apartats'), edit_edifici_checklist_nou_plurifamiliar_path(@edifici.id, @edifici.checklist_nou_plurifamiliar.id), :class=> "button small radius" %>
+						<br/>
+						<a href="documents/nou.docx" class="button small radius"><%= t('.generar_llibre') %></a>
+						<br/>
+						<a href="documents/manual_habitatge.docx" class="button small radius"><%= t('.generar_manual') %></a>
 					</div>
 				</div>
 			</div>

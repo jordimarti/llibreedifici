@@ -5,6 +5,7 @@ class CreateReferencies < ActiveRecord::Migration
       t.integer :operacio_id
       t.string :sistema
       t.boolean :manual_habitatge
+      t.boolean :creat_usuari
 
       t.timestamps null: false
     end

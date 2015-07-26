@@ -23,6 +23,7 @@ class ElectricitatsController < ApplicationController
   def edit
     @submenu_actiu = 'sistemes'
     @menu_sistemes_actiu = 'electricitat'
+    @elements = Element.where(:edifici_id => @edifici.id, :sistema_element => 'electricitat')
   end
 
   # POST /electricitats

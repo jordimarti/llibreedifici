@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150712223734) do
+ActiveRecord::Schema.define(version: 20150723154627) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,52 @@ ActiveRecord::Schema.define(version: 20150712223734) do
     t.boolean  "altres"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+  end
+
+  create_table "checklist_edifici_nou_plurifamiliars", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.boolean  "llicencies_preceptives"
+    t.boolean  "certificat_final_obra"
+    t.boolean  "acta_recepcio_obra"
+    t.boolean  "escriptura_publica"
+    t.boolean  "documents_garantia"
+    t.boolean  "documents_garantia_parts_comunes"
+    t.boolean  "certificacio_energetica"
+    t.boolean  "polissa_assegurances"
+    t.boolean  "escriptura_propietat_horitzontal"
+    t.boolean  "estatus_comunitat"
+    t.boolean  "cedules_regims_juridics"
+    t.boolean  "carregues_reals"
+    t.boolean  "documents_complementaris"
+    t.boolean  "documents_acreditatius_ajuts"
+    t.boolean  "documents_justificacio_operacions"
+    t.boolean  "certificat_final_obra_instalacions"
+    t.boolean  "declaracions_ce_ascensors"
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+  end
+
+  create_table "checklist_nou_plurifamiliars", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.boolean  "llicencies_preceptives",             default: true
+    t.boolean  "certificat_final_obra",              default: true
+    t.boolean  "acta_recepcio_obra",                 default: true
+    t.boolean  "escriptura_publica",                 default: true
+    t.boolean  "documents_garantia",                 default: true
+    t.boolean  "documents_garantia_parts_comunes",   default: true
+    t.boolean  "certificacio_energetica",            default: true
+    t.boolean  "polissa_assegurances",               default: true
+    t.boolean  "escriptura_propietat_horitzontal",   default: true
+    t.boolean  "estatus_comunitat",                  default: true
+    t.boolean  "cedules_regims_juridics",            default: true
+    t.boolean  "carregues_reals",                    default: true
+    t.boolean  "documents_complementaris",           default: true
+    t.boolean  "documents_acreditatius_ajuts",       default: true
+    t.boolean  "documents_justificacio_operacions",  default: true
+    t.boolean  "certificat_final_obra_instalacions", default: true
+    t.boolean  "declaracions_ce_ascensors",          default: true
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
   end
 
   create_table "climatitzacions", force: :cascade do |t|
@@ -131,6 +177,14 @@ ActiveRecord::Schema.define(version: 20150712223734) do
     t.datetime "updated_at",                       null: false
   end
 
+  create_table "elements", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.string   "nom_element"
+    t.string   "sistema_element"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
   create_table "entitat_controls", force: :cascade do |t|
     t.integer  "edifici_id"
     t.string   "nom_entitat_control"
@@ -142,6 +196,23 @@ ActiveRecord::Schema.define(version: 20150712223734) do
     t.string   "pais_entitat_control"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+  end
+
+  create_table "especials", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.boolean  "piscina_estructura_obra"
+    t.boolean  "piscina_estructura_composite"
+    t.boolean  "piscina_estructura_acer"
+    t.boolean  "piscina_vores_formigo"
+    t.boolean  "piscina_vores_pedra"
+    t.boolean  "piscina_ceramica"
+    t.boolean  "piscina_resines"
+    t.boolean  "piscina_porcellana"
+    t.boolean  "piscina_climatitzacio"
+    t.boolean  "piscina_iluminacio"
+    t.boolean  "piscina_purificador"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   create_table "estructures", force: :cascade do |t|
@@ -329,6 +400,7 @@ ActiveRecord::Schema.define(version: 20150712223734) do
     t.integer  "operacio_id"
     t.string   "sistema"
     t.boolean  "manual_habitatge"
+    t.boolean  "creat_usuari"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end
@@ -407,6 +479,23 @@ ActiveRecord::Schema.define(version: 20150712223734) do
     t.boolean  "vidre_control_solar"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+  end
+
+  create_table "telecomunicacions", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.boolean  "porter_audio"
+    t.boolean  "porter_video"
+    t.boolean  "antena_individual"
+    t.boolean  "antena_colectiva"
+    t.boolean  "parabolica_individual"
+    t.boolean  "parabolica_colectiva"
+    t.boolean  "telefonia"
+    t.boolean  "riti"
+    t.boolean  "rits"
+    t.boolean  "ritu"
+    t.boolean  "ritm"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   create_table "users", force: :cascade do |t|

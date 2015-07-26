@@ -1,0 +1,1 @@
+json.extract! @telecomunicacio, :id, :edifici_id, :porter_audio, :porter_video, :antena_individual, :antena_colectiva, :parabolica_individual, :parabolica_colectiva, :telefonia, :riti, :rits, :ritu, :ritm, :created_at, :updated_at

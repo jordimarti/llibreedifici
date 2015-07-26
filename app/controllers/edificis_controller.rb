@@ -94,16 +94,19 @@ class EdificisController < ApplicationController
     @ascensor = Ascensor.new
     @ascensor.edifici_id = edifici_id
     @ascensor.save
+    #Telecomunicacio
+    @telecomunicacio = Telecomunicacio.new
+    @telecomunicacio.edifici_id = edifici_id
+    @telecomunicacio.save
+    #Especial
+    @especial = Especial.new
+    @especial.edifici_id = edifici_id
+    @especial.save
+    #Checklist nou plurifamiliar
+    @checklist_nou_plurifamiliar = ChecklistNouPlurifamiliar.new
+    @checklist_nou_plurifamiliar.edifici_id = edifici_id
+    @checklist_nou_plurifamiliar.save
   end
-
-  #def quadern_nou_plurifamiliar
-   # @menu_actiu = 'quadern'
-    #@edifici = Edifici.find(params[:id])
-    #@dades_edifici = DadesEdificiNou.where(:edifici_id => @edifici.id).last
-    #if @edifici.user_id != current_user.id
-      #redirect_to controller: "home", action: "permisos"
-    #end
-  #end
 
   # PATCH/PUT /edificis/1
   # PATCH/PUT /edificis/1.json

@@ -2,3 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.elements-usuari {
+	margin-bottom: 40px;
+}
+
+.elements-item {
+	border-bottom: 1px solid #eaeaea;
+	padding: 10px 15px 10px 0px;
+	background-color: #ffffff;
+}
+
+.nom-element-manual {
+	font-size: 0.8em;
+}
+
+.afegir-element {
+	padding-top: 10px;
+}
+
+.formulari-element {
+	background-color: #eaeaea;
+	padding: 30px 20px 10px 20px;
+}

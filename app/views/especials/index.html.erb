@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Especials</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Edifici</th>
+      <th>Piscina estructura obra</th>
+      <th>Piscina estructura composite</th>
+      <th>Piscina estructura acer</th>
+      <th>Piscina vores formigo</th>
+      <th>Piscina vores pedra</th>
+      <th>Piscina ceramica</th>
+      <th>Piscina porcellana</th>
+      <th>Piscina climatitzacio</th>
+      <th>Piscina iluminacio</th>
+      <th>Piscina purificador</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @especials.each do |especial| %>
+      <tr>
+        <td><%= especial.edifici_id %></td>
+        <td><%= especial.piscina_estructura_obra %></td>
+        <td><%= especial.piscina_estructura_composite %></td>
+        <td><%= especial.piscina_estructura_acer %></td>
+        <td><%= especial.piscina_vores_formigo %></td>
+        <td><%= especial.piscina_vores_pedra %></td>
+        <td><%= especial.piscina_ceramica %></td>
+        <td><%= especial.piscina_porcellana %></td>
+        <td><%= especial.piscina_climatitzacio %></td>
+        <td><%= especial.piscina_iluminacio %></td>
+        <td><%= especial.piscina_purificador %></td>
+        <td><%= link_to 'Show', especial %></td>
+        <td><%= link_to 'Edit', edit_especial_path(especial) %></td>
+        <td><%= link_to 'Destroy', especial, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Especial', new_especial_path %>

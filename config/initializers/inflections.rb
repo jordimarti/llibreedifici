@@ -27,4 +27,5 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'ventilacio', 'ventilacions'
   inflect.irregular 'referencia', 'referencies'
   inflect.irregular 'operacio', 'operacions'
+  inflect.irregular 'telecomunicacio', 'telecomunicacions'
 end

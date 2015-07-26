@@ -1,0 +1,20 @@
+<% if @elements.count > 0 %>
+	
+	<% @elements.each do |element| %>
+		<div class="elements-item">
+			
+			
+		  <%= link_to edifici_element_path(@edifici, element), remote: true, method: :delete, data: { confirm: t('.pregunta_eliminar') } do %>
+			  <div class="agents-eliminar right">
+			  	<span class="icon-cancel icones-icomoon"></span>
+			  </div>
+			<% end %>
+			<div class="nom-element-manual">
+				<%= element.nom_element %>
+			</div>
+		</div>
+	<% end %>
+
+<% else %>
+	<p><%= t('.descripcio_altres_elements') %></p>
+<% end %>

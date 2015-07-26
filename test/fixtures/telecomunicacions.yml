@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  edifici_id: 1
+  porter_audio: false
+  porter_video: false
+  antena_individual: false
+  antena_colectiva: false
+  parabolica_individual: false
+  parabolica_colectiva: false
+  telefonia: false
+  riti: false
+  rits: false
+  ritu: false
+  ritm: false
+
+two:
+  edifici_id: 1
+  porter_audio: false
+  porter_video: false
+  antena_individual: false
+  antena_colectiva: false
+  parabolica_individual: false
+  parabolica_colectiva: false
+  telefonia: false
+  riti: false
+  rits: false
+  ritu: false
+  ritm: false

@@ -1,0 +1,43 @@
+<%= simple_form_for([@edifici, @telecomunicacio]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :edifici_id, :as => :hidden, :input_html => { :value => @edifici.id } %>
+    <div class="row">
+      <div class="medium-12 columns">
+        <div class="titol-sistema"><%= t('.titol_telecomunicacions') %></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-12 columns">
+        <div class="titol-subsistema"><%= t('.caracteristiques_generals') %></div>
+        <div class="row">
+          <div class="medium-6 columns">
+            <%= f.input :porter_audio %>
+            <%= f.input :porter_video %>
+            <%= f.input :antena_individual %>
+            <%= f.input :antena_colectiva %>
+            <%= f.input :parabolica_individual %>
+            <%= f.input :parabolica_colectiva %>
+            <%= f.input :telefonia %>
+          </div>
+          <div class="medium-6 columns">
+            <%= f.input :riti %>
+            <%= f.input :rits %>
+            <%= f.input :ritu %>
+            <%= f.input :ritm %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="medium-12 columns">
+      <div class="form-actions">
+        <%= f.button :submit, t('.guardar'), :class => 'button small radius right botodreta' %>
+      </div>
+    </div>
+  </div>
+<% end %>

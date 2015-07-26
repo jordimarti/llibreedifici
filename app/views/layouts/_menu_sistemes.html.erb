@@ -60,6 +60,16 @@
 		    <%= t('.ascensor') %>
 		  <% end %>
 	  </li>
+	  <li <% if @menu_sistemes_actiu == 'telecomunicacions' %>class="active"<% end %>>
+	  	<%= link_to edit_edifici_telecomunicacio_path(@edifici.id, @telecomunicacio) do %>
+		    <%= t('.telecomunicacio') %>
+		  <% end %>
+	  </li>
+	  <li <% if @menu_sistemes_actiu == 'especials' %>class="active"<% end %>>
+	  	<%= link_to edit_edifici_especial_path(@edifici.id, @especial) do %>
+		    <%= t('.especial') %>
+		  <% end %>
+	  </li>
 	  
 	</ul>
 </div>
