@@ -314,6 +314,7 @@ ca:
         clima_pn_major_70_torres: "Torres de refrigeració"
         clima_pn_major_70_recuperador: "Recuperador de calor"
       ga:
+        instalacio_gas: "Escomesa a xarxa de distribució canalitzada de gas per a ús domèstic"
         diposit_aire_lliure: "Dipòsit de gas propà a l'aire lliure"
         diposit_enterrat: "Dipòsit de gas propà enterrat"
       ventilacio:

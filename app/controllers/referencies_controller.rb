@@ -164,6 +164,18 @@ class ReferenciesController < ApplicationController
       crear_referencia(58)
     end
 
+    gas = Ga.where(:edifici_id => @edifici.id).last
+    if (gas.instalacio_gas == true)
+      crear_referencia(70)
+    end
+    if (gas.diposit_aire_lliure == true || gas.diposit_enterrat == true)
+      crear_referencia(71)
+      crear_referencia(72)
+    end
+    if (gas.diposit_enterrat == true)
+      crear_referencia(73)
+    end
+
     redirect_to action: "index"
   end
 

@@ -314,6 +314,7 @@ es:
         clima_pn_major_70_torres: "Torres de refrigeración"
         clima_pn_major_70_recuperador: "Recuperador de calor"
       ga:
+        instalacio_gas: "Acometida a red de distribución canalizada de gas para uso doméstico"
         diposit_aire_lliure: "Dipósito de gas propano al aire libre"
         diposit_enterrat: "Dipósito de gas propano enterrado"
       ventilacio:

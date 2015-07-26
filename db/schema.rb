@@ -288,6 +288,7 @@ ActiveRecord::Schema.define(version: 20150723154627) do
 
   create_table "gas", force: :cascade do |t|
     t.integer  "edifici_id"
+    t.boolean  "instalacio_gas"
     t.boolean  "diposit_aire_lliure"
     t.boolean  "diposit_enterrat"
     t.datetime "created_at",          null: false

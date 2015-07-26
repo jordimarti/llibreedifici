@@ -74,6 +74,6 @@ class GasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ga_params
-      params.require(:ga).permit(:edifici_id, :diposit_aire_lliure, :diposit_enterrat)
+      params.require(:ga).permit(:edifici_id, :instalacio_gas, :diposit_aire_lliure, :diposit_enterrat)
     end
 end
