@@ -176,6 +176,23 @@ class ReferenciesController < ApplicationController
       crear_referencia(73)
     end
 
+    climatitzacio = Climatitzacio.where(:edifici_id => @edifici.id).last
+    if (climatitzacio.escalfador_pn_menor_24 == true)
+      crear_referencia(74)
+      crear_referencia(75)
+      crear_referencia(76)
+    end
+    if (climatitzacio.escalfador_pn_24_70 == true)
+      crear_referencia(77)
+      crear_referencia(78)
+      crear_referencia(79)
+    end
+    if (climatitzacio.escalfador_pn_major_70 == true)
+      crear_referencia(80)
+      crear_referencia(81)
+      crear_referencia(82)
+    end
+
     redirect_to action: "index"
   end
 
