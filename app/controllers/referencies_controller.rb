@@ -560,7 +560,7 @@ class ReferenciesController < ApplicationController
       crear_referencia(328)
     end
 
-    especials = Especials.where(:edifici_id => @edifici.id).last
+    especials = Especial.where(:edifici_id => @edifici.id).last
     if (especials.piscina_estructura_obra == true || especials.piscina_estructura_composite == true || especials.piscina_estructura_acer == true)
       crear_referencia(329)
     end
