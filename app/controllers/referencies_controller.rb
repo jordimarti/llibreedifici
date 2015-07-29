@@ -355,6 +355,227 @@ class ReferenciesController < ApplicationController
     if (ventilacio.habitatge_mecanica_control == true)
       crear_referencia(205)
     end
+    if (ventilacio.traster_natural_conductes == true)
+      crear_referencia(206)
+      crear_referencia(207)
+    end
+    if (ventilacio.traster_natural_obertures == true)
+      crear_referencia(208)
+    end
+    if (ventilacio.traster_mecanica_conductes == true)
+      crear_referencia(209)
+      crear_referencia(210)
+      crear_referencia(211)
+      crear_referencia(212)
+      crear_referencia(213)
+      crear_referencia(214)
+    end
+    if (ventilacio.traster_mecanica_obertures == true)
+      crear_referencia(215)
+      crear_referencia(216)
+      crear_referencia(217)
+    end
+    if (ventilacio.traster_mecanica_control == true)
+      crear_referencia(218)
+    end
+    if (ventilacio.magatzem_natural_conductes == true)
+      crear_referencia(219)
+      crear_referencia(220)
+    end
+    if (ventilacio.magatzem_natural_obertures == true)
+      crear_referencia(221)
+    end
+    if (ventilacio.magatzem_mecanica_conductes == true)
+      crear_referencia(222)
+      crear_referencia(223)
+      crear_referencia(224)
+      crear_referencia(225)
+      crear_referencia(226)
+      crear_referencia(227)
+    end
+    if (ventilacio.magatzem_mecanica_obertures == true)
+      crear_referencia(228)
+      crear_referencia(229)
+      crear_referencia(230)
+    end
+    if (ventilacio.magatzem_mecanica_control == true)
+      crear_referencia(231)
+    end
+    if (ventilacio.garatge_natural_conductes == true)
+      crear_referencia(232)
+      crear_referencia(233)
+    end
+    if (ventilacio.garatge_natural_obertures == true)
+      crear_referencia(234)
+    end
+    if (ventilacio.garatge_mecanica_conductes == true)
+      crear_referencia(235)
+      crear_referencia(236)
+      crear_referencia(237)
+      crear_referencia(238)
+      crear_referencia(239)
+      crear_referencia(240)
+    end
+    if (ventilacio.garatge_mecanica_obertures == true)
+      crear_referencia(241)
+      crear_referencia(242)
+      crear_referencia(243)
+    end
+    if (ventilacio.garatge_mecanica_control == true)
+      crear_referencia(244)
+    end
+
+    incendis = Incendi.where(:edifici_id => @edifici.id).last
+    if (incendis.alarma_automatica == true)
+      crear_referencia(245)
+      crear_referencia(246)
+      crear_referencia(247)
+      crear_referencia(248)
+      crear_referencia(249)
+      crear_referencia(250)
+      crear_referencia(251)
+      crear_referencia(252)
+      crear_referencia(253)
+      crear_referencia(254)
+    end
+    if (incendis.alarma_manual == true)
+      crear_referencia(255)
+      crear_referencia(256)
+      crear_referencia(257)
+      crear_referencia(258)
+      crear_referencia(259)
+      crear_referencia(260)
+    end
+    if (incendis.extintors == true)
+      crear_referencia(261)
+      crear_referencia(262)
+      crear_referencia(263)
+      crear_referencia(264)
+      crear_referencia(265)
+      crear_referencia(266)
+    end
+    if (incendis.abastiment_aigua == true)
+      crear_referencia(267)
+      crear_referencia(268)
+      crear_referencia(269)
+      crear_referencia(270)
+      crear_referencia(271)
+      crear_referencia(272)
+      crear_referencia(273)
+      crear_referencia(274)
+      crear_referencia(275)
+      crear_referencia(276)
+      crear_referencia(277)
+      crear_referencia(278)
+      crear_referencia(279)
+    end
+    if (incendis.bie == true)
+      crear_referencia(280)
+      crear_referencia(281)
+      crear_referencia(282)
+      crear_referencia(283)
+      crear_referencia(284)
+      crear_referencia(285)
+      crear_referencia(286)
+      crear_referencia(287)
+      crear_referencia(288)
+    end
+    if (incendis.hidrants == true)
+      crear_referencia(289)
+      crear_referencia(290)
+      crear_referencia(291)
+      crear_referencia(292)
+      crear_referencia(293)
+    end
+    if (incendis.ruixadors == true)
+      crear_referencia(294)
+      crear_referencia(295)
+      crear_referencia(296)
+      crear_referencia(297)
+      crear_referencia(298)
+      crear_referencia(299)
+    end
+    if (incendis.columnes_seques == true)
+      crear_referencia(300)
+      crear_referencia(301)
+      crear_referencia(302)
+      crear_referencia(303)
+      crear_referencia(304)
+      crear_referencia(305)
+    end
+    if (incendis.parallamps == true)
+      crear_referencia(306)
+    end
+
+    ascensor = Ascensor.where(:edifici_id => @edifici.id).last
+    if (ascensor.habitatge_unifamiliar == true)
+      crear_referencia(307)
+    end
+    if (ascensor.edifici_comunitari == true)
+      crear_referencia(308)
+    end
+    if (ascensor.mes_20_plantes == true)
+      crear_referencia(309)
+    end
+    if (ascensor.altres == true)
+      crear_referencia(310)
+    end
+
+    telecomunicacions = Telecomunicacio.where(:edifici_id => @edifici.id).last
+    if (telecomunicacions.porter_audio == true)
+      crear_referencia(314)
+    end
+    if (telecomunicacions.porter_video == true)
+      crear_referencia(315)
+    end
+    if (telecomunicacions.antena_individual == true)
+      crear_referencia(316)
+    end
+    if (telecomunicacions.antena_colectiva == true)
+      crear_referencia(317)
+    end
+    if (telecomunicacions.parabolica_individual == true)
+      crear_referencia(318)
+    end
+    if (telecomunicacions.parabolica_colectiva == true)
+      crear_referencia(319)
+    end
+    if (telecomunicacions.telefonia == true)
+      crear_referencia(320)
+    end
+    if (telecomunicacions.riti == true)
+      crear_referencia(321)
+      crear_referencia(322)
+    end
+    if (telecomunicacions.rits == true)
+      crear_referencia(323)
+      crear_referencia(324)
+    end
+    if (telecomunicacions.ritu == true)
+      crear_referencia(325)
+      crear_referencia(326)
+    end
+    if (telecomunicacions.ritm == true)
+      crear_referencia(327)
+      crear_referencia(328)
+    end
+
+    especials = Especials.where(:edifici_id => @edifici.id).last
+    if (especials.piscina_estructura_obra == true || especials.piscina_estructura_composite == true || especials.piscina_estructura_acer == true)
+      crear_referencia(329)
+    end
+    if (especials.piscina_vores_formigo == true || especials.piscina_vores_pedra == true || especials.piscina_ceramica == true || especials.piscina_resines == true || especials.piscina_porcellana == true)
+      crear_referencia(332)
+    end
+    if (especials.piscina_climatitzacio == true)
+      crear_referencia(337)
+    end
+    if (especials.piscina_iluminacio == true)
+      crear_referencia(338)
+    end
+    if (especials.piscina_purificador == true)
+      crear_referencia(339)
+    end
     
 
     redirect_to action: "index"
