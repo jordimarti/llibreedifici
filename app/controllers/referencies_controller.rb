@@ -10,7 +10,7 @@ class ReferenciesController < ApplicationController
   def index
     @submenu_actiu = 'operacions'
 
-    @sistemes = [{name: 'fonamentacio'}, {name: 'estructura'}, {name: 'tancaments'}, {name: 'coberta'}, {name: 'sanejament'}, {name: 'aigua'}, {name: 'electricitat'}, {name: 'gas'}, {name: 'climatitzacio'}, {name: 'ventilacio'}, {name: 'incendis'}, {name: 'ascensors'}, {name: 'telecomunicacions'}, {name: 'especials'}]
+    @sistemes = [{name: 'fonamentacio'}, {name: 'estructura'}, {name: 'tancaments'}, {name: 'cobertes'}, {name: 'sanejament'}, {name: 'aigua'}, {name: 'electricitat'}, {name: 'gas'}, {name: 'climatitzacio'}, {name: 'ventilacio'}, {name: 'incendis'}, {name: 'ascensor'}, {name: 'telecomunicacions'}, {name: 'especials'}]
   end
 
   #Aquest mètode consulta la definició de l'edifici i crea el llistat de referències a les operacions de manteniment
