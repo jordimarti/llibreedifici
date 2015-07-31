@@ -684,7 +684,9 @@ es:
     index:
       titol_documents: "Documento"
       tornar_apartats: "1. Configurar el documento"
-      generar_llibre: "2. Generar el libro del edificio"
+      generar_llibre: "2. Generar el Libro del edificio"
+      generar_llibre_unifamiliar: "Generar el Libro del edificio"
+      generar_llibre_existent: "Generar el Libro del edificio"
       text_generar_llibre: "Si ya habéis completado toda la información de los apartados anteriores podéis pulsar el botón para generar el documento Word (formato docx) del Libro del edificio."
       generar_manual: "3. Generar el Manual de la vivienda"
       text_generar_manual: "En los edificios plurifamiliares de nueva construcción hay que crear el Manual de la vivienda. Este documento está destinado a los diferentes propietarios para que puedan conocer, de manera individualizada, los datos que corresponden a su vivienda."

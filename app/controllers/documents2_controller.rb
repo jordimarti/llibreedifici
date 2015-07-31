@@ -825,7 +825,7 @@ class DocumentsController < ApplicationController
         doc.replace("$operacions_estructura$", word_operacions_estructura)
 
         # Tancaments verticals
-        referencies_tancaments_verticals = @referencies.where(:sistema => 'tancaments').pluck(:operacio_id)
+        referencies_tancaments_verticals = @referencies.where(:sistema => 'tancaments_verticals').pluck(:operacio_id)
         operacions_tancaments_verticals = Operacio.find(referencies_tancaments_verticals)
         word_operacions_tancaments_verticals = ''
         operacions_tancaments_verticals.each do |operacio|
@@ -834,13 +834,22 @@ class DocumentsController < ApplicationController
         doc.replace("$operacions_tancaments_verticals$", word_operacions_tancaments_verticals)
 
         # Coberta
-        referencies_coberta = @referencies.where(:sistema => 'cobertes').pluck(:operacio_id)
+        referencies_coberta = @referencies.where(:sistema => 'coberta').pluck(:operacio_id)
         operacions_coberta = Operacio.find(referencies_coberta)
         word_operacions_coberta = ''
         operacions_coberta.each do |operacio|
           word_operacions_coberta = word_operacions_coberta + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
         end
         doc.replace("$operacions_cobertes$", word_operacions_coberta)
+
+        # Sanejament
+        referencies_sanejament = @referencies.where(:sistema => 'sanejament').pluck(:operacio_id)
+        operacions_sanejament = Operacio.find(referencies_sanejament)
+        word_operacions_sanejament = ''
+        operacions_sanejament.each do |operacio|
+          word_operacions_sanejament = word_operacions_sanejament + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
+        end
+        doc.replace("$operacions_sanejament$", word_operacions_sanejament)
 
         # Subministrament d'aigua
         referencies_aigua = @referencies.where(:sistema => 'aigua').pluck(:operacio_id)
@@ -859,7 +868,6 @@ class DocumentsController < ApplicationController
           word_operacions_electricitat = word_operacions_electricitat + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
         end
         doc.replace("$operacions_electricitat$", word_operacions_electricitat)
-        
 
         # Instal·lació de gas
         referencies_gas = @referencies.where(:sistema => 'gas').pluck(:operacio_id)
@@ -898,7 +906,7 @@ class DocumentsController < ApplicationController
         doc.replace("$operacions_incendis$", word_operacions_incendis)
 
         # Ascensors
-        referencies_ascensors = @referencies.where(:sistema => 'ascensor').pluck(:operacio_id)
+        referencies_ascensors = @referencies.where(:sistema => 'ascensors').pluck(:operacio_id)
         operacions_ascensors = Operacio.find(referencies_ascensors)
         word_operacions_ascensors = ''
         operacions_ascensors.each do |operacio|
@@ -922,66 +930,7 @@ class DocumentsController < ApplicationController
         operacions_especials.each do |operacio|
           word_operacions_especials = word_operacions_especials + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
         end
-        doc.replace("$operacions_especials$", word_operacions_especials)  
-
-        # Arxiu de documents
-        arxiu = ChecklistNouPlurifamiliar.where(:edifici_id => @edifici.id).last
-        
-        word_titols_arxiu = ''
-
-        def titol_apartat_arxiu(text_titol)
-          return '<w:p w14:paraId="3E0880B3" w14:textId="77777777" w:rsidP="004F63F9" w:rsidR="004F63F9" w:rsidRDefault="004F63F9"><w:pPr><w:pStyle w:val="Heading1"/></w:pPr><w:bookmarkStart w:id="0" w:name="_Toc297976137"/><w:bookmarkStart w:id="1" w:name="_Toc424303768"/><w:bookmarkStart w:id="2" w:name="_Toc424303850"/><w:r><w:t>' + text_titol + '</w:t></w:r><w:bookmarkEnd w:id="0"/><w:bookmarkEnd w:id="1"/><w:bookmarkEnd w:id="2"/></w:p><w:p w14:paraId="673E3807" w14:textId="77777777" w:rsidR="004F63F9" w:rsidRDefault="004F63F9"><w:r><w:br w:type="page"/></w:r></w:p>'
-        end
-
-        if arxiu.llicencies_preceptives == true
-          word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Llicències preceptives")
-        end
-        if arxiu.certificat_final_obra == true
-          word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Certificat final d'obra")
-        end
-        if arxiu.acta_recepcio_obra == true
-          word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Acta de recepció definitiva de l'obra")
-        end
-        if arxiu.escriptura_publica == true
-          word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Escriptura pública de declaració d'obra nova")
-        end
-        if arxiu.documents_garantia == true
-          word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Documents acreditatius de garantia")
-        end
-        if arxiu.documents_garantia_parts_comunes == true
-          word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Documents de garantia d'instal·lacions de parts comunes")
-        end
-        if arxiu.certificacio_energetica == true
-          word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Certificació energètica")
-        end
-        if arxiu.polissa_assegurances == true
-          word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Pòlisses d'assegurances")
-        end
-        if arxiu.escriptura_propietat_horitzontal == true
-          word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Escriptura de divisió en règim de propietat horitzontal")
-        end
-        if arxiu.estatus_comunitat == true
-          word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Estatuts de la comunitat de propietaris")
-        end
-        if arxiu.cedules_regims_juridics == true
-          word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Cèdules de declaració de règims jurídics especials o qualificacions d'habitatges protegits")
-        end
-        if arxiu.carregues_reals == true
-          word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Càrregues reals existents")
-        end
-        if arxiu.documents_acreditatius_ajuts == true
-          word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Documents acreditatius dels ajuts i beneficis atorgats a l'edifici")
-        end
-        if arxiu.documents_justificacio_operacions == true
-          word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Documents de justificació de la realització d'operacions de reparació, manteniment i rehabilitació")
-        end
-        if arxiu.certificat_final_obra_instalacions == true
-          word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Certificats final d’obra de les instal·lacions comunes de baixa tensió, gasos combustibles, productes petrolífers o instal·lacions tèrmiques")
-        end
-        if arxiu.declaracions_ce_ascensors == true
-          word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Declaracions CE que reconeixen la conformitat dels ascensors instal·lats")
-        end
-        doc.replace("$titol_apartat_arxiu$", word_titols_arxiu)      
+        doc.replace("$operacions_especials$", word_operacions_especials)
 
         tmp_file = Tempfile.new('word_tempate', "#{Rails.root}/tmp")
         doc.commit(tmp_file.path)
@@ -1062,61 +1011,6 @@ class DocumentsController < ApplicationController
         end
         doc.replace("$operacions_terrats$", word_operacions_terrats)
 
-        # Sanejament
-        referencies_sanejament = @referencies_manual.where(:sistema => 'sanejament', :manual_habitatge => true).pluck(:operacio_id)
-        operacions_sanejament = Operacio.find(referencies_sanejament)
-        word_operacions_sanejament = ''
-        operacions_sanejament.each do |operacio|
-          word_operacions_sanejament = word_operacions_sanejament + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
-        end
-        doc.replace("$operacions_sanejament$", word_operacions_sanejament)
-
-        # Aigua
-        referencies_aigua = @referencies_manual.where(:sistema => 'aigua', :manual_habitatge => true).pluck(:operacio_id)
-        operacions_aigua = Operacio.find(referencies_aigua)
-        word_operacions_aigua = ''
-        operacions_aigua.each do |operacio|
-          word_operacions_aigua = word_operacions_aigua + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
-        end
-        doc.replace("$operacions_aigua$", word_operacions_aigua)
-
-        # Electricitat
-        referencies_electricitat = @referencies_manual.where(:sistema => 'electricitat', :manual_habitatge => true).pluck(:operacio_id)
-        operacions_electricitat = Operacio.find(referencies_electricitat)
-        word_operacions_electricitat = ''
-        operacions_electricitat.each do |operacio|
-          word_operacions_electricitat = word_operacions_electricitat + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
-        end
-        doc.replace("$operacions_electricitat$", word_operacions_electricitat)
-
-        # Gas
-        referencies_gas = @referencies_manual.where(:sistema => 'gas', :manual_habitatge => true).pluck(:operacio_id)
-        operacions_gas = Operacio.find(referencies_gas)
-        word_operacions_gas = ''
-        operacions_gas.each do |operacio|
-          word_operacions_gas = word_operacions_gas + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
-        end
-        doc.replace("$operacions_gas$", word_operacions_gas)
-
-        # Climatitzacio
-        referencies_climatitzacio = @referencies_manual.where(:sistema => 'climatitzacio', :manual_habitatge => true).pluck(:operacio_id)
-        operacions_climatitzacio = Operacio.find(referencies_climatitzacio)
-        word_operacions_climatitzacio = ''
-        operacions_climatitzacio.each do |operacio|
-          word_operacions_climatitzacio = word_operacions_climatitzacio + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
-        end
-        doc.replace("$operacions_climatitzacio$", word_operacions_climatitzacio)
-
-        # Ventilacio
-        referencies_ventilacio = @referencies_manual.where(:sistema => 'ventilacio', :manual_habitatge => true).pluck(:operacio_id)
-        operacions_ventilacio = Operacio.find(referencies_ventilacio)
-        word_operacions_ventilacio = ''
-        operacions_ventilacio.each do |operacio|
-          word_operacions_ventilacio = word_operacions_ventilacio + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
-        end
-        doc.replace("$operacions_ventilacio$", word_operacions_ventilacio)
-
-
         tmp_file = Tempfile.new('word_tempate', "#{Rails.root}/tmp")
         doc.commit(tmp_file.path)
 
@@ -1140,10 +1034,11 @@ class DocumentsController < ApplicationController
         doc.replace("$provincia$", @edifici.identificacio.provincia_edifici)
         doc.replace("$provincia_edifici$", @edifici.identificacio.provincia_edifici)
         doc.replace("$referencia_cadastral$", @edifici.identificacio.ref_cadastral)
+        doc.replace("$us_edifici$", @edifici.identificacio.us_edifici)
         doc.replace("$any_inici_construccio$", @edifici.identificacio.any_inici_construccio)
         doc.replace("$any_fi_construccio$", @edifici.identificacio.any_fi_construccio)
         
-        # Operacions
+    # Operacions
         @referencies = Referencia.where(:edifici_id => @edifici.id)
         
         def taula_operacio(text_operacio, periodicitat, responsable)
@@ -1167,106 +1062,6 @@ class DocumentsController < ApplicationController
           word_operacions_estructura = word_operacions_estructura + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
         end
         doc.replace("$operacions_estructura$", word_operacions_estructura)
-
-        # Tancaments verticals
-        referencies_tancaments_verticals = @referencies.where(:sistema => 'tancaments').pluck(:operacio_id)
-        operacions_tancaments_verticals = Operacio.find(referencies_tancaments_verticals)
-        word_operacions_tancaments_verticals = ''
-        operacions_tancaments_verticals.each do |operacio|
-          word_operacions_tancaments_verticals = word_operacions_tancaments_verticals + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
-        end
-        doc.replace("$operacions_tancaments_verticals$", word_operacions_tancaments_verticals)
-
-        # Coberta
-        referencies_coberta = @referencies.where(:sistema => 'cobertes').pluck(:operacio_id)
-        operacions_coberta = Operacio.find(referencies_coberta)
-        word_operacions_coberta = ''
-        operacions_coberta.each do |operacio|
-          word_operacions_coberta = word_operacions_coberta + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
-        end
-        doc.replace("$operacions_cobertes$", word_operacions_coberta)
-
-        # Subministrament d'aigua
-        referencies_aigua = @referencies.where(:sistema => 'aigua').pluck(:operacio_id)
-        operacions_aigua = Operacio.find(referencies_aigua)
-        word_operacions_aigua = ''
-        operacions_aigua.each do |operacio|
-          word_operacions_aigua = word_operacions_aigua + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
-        end
-        doc.replace("$operacions_aigua$", word_operacions_aigua)
-
-        # Instal·lació elèctrica
-        referencies_electricitat = @referencies.where(:sistema => 'electricitat').pluck(:operacio_id)
-        operacions_electricitat = Operacio.find(referencies_electricitat)
-        word_operacions_electricitat = ''
-        operacions_electricitat.each do |operacio|
-          word_operacions_electricitat = word_operacions_electricitat + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
-        end
-        doc.replace("$operacions_electricitat$", word_operacions_electricitat)
-        
-
-        # Instal·lació de gas
-        referencies_gas = @referencies.where(:sistema => 'gas').pluck(:operacio_id)
-        operacions_gas = Operacio.find(referencies_gas)
-        word_operacions_gas = ''
-        operacions_gas.each do |operacio|
-          word_operacions_gas = word_operacions_gas + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
-        end
-        doc.replace("$operacions_gas$", word_operacions_gas)
-
-        # Climatitzacio
-        referencies_climatitzacio = @referencies.where(:sistema => 'climatitzacio').pluck(:operacio_id)
-        operacions_climatitzacio = Operacio.find(referencies_climatitzacio)
-        word_operacions_climatitzacio = ''
-        operacions_climatitzacio.each do |operacio|
-          word_operacions_climatitzacio = word_operacions_climatitzacio + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
-        end
-        doc.replace("$operacions_climatitzacio$", word_operacions_climatitzacio)
-
-        # Ventilacio
-        referencies_ventilacio = @referencies.where(:sistema => 'ventilacio').pluck(:operacio_id)
-        operacions_ventilacio = Operacio.find(referencies_ventilacio)
-        word_operacions_ventilacio = ''
-        operacions_ventilacio.each do |operacio|
-          word_operacions_ventilacio = word_operacions_ventilacio + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
-        end
-        doc.replace("$operacions_ventilacio$", word_operacions_ventilacio)
-
-        # Incendis
-        referencies_incendis = @referencies.where(:sistema => 'incendis').pluck(:operacio_id)
-        operacions_incendis = Operacio.find(referencies_incendis)
-        word_operacions_incendis = ''
-        operacions_incendis.each do |operacio|
-          word_operacions_incendis = word_operacions_incendis + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
-        end
-        doc.replace("$operacions_incendis$", word_operacions_incendis)
-
-        # Ascensors
-        referencies_ascensors = @referencies.where(:sistema => 'ascensor').pluck(:operacio_id)
-        operacions_ascensors = Operacio.find(referencies_ascensors)
-        word_operacions_ascensors = ''
-        operacions_ascensors.each do |operacio|
-          word_operacions_ascensors = word_operacions_ascensors + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
-        end
-        doc.replace("$operacions_ascensors$", word_operacions_ascensors)
-
-        # Telecomunicacions
-        referencies_telecomunicacions = @referencies.where(:sistema => 'telecomunicacions').pluck(:operacio_id)
-        operacions_telecomunicacions = Operacio.find(referencies_telecomunicacions)
-        word_operacions_telecomunicacions = ''
-        operacions_telecomunicacions.each do |operacio|
-          word_operacions_telecomunicacions = word_operacions_telecomunicacions + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
-        end
-        doc.replace("$operacions_telecomunicacions$", word_operacions_telecomunicacions)
-
-        # Especials
-        referencies_especials = @referencies.where(:sistema => 'especials').pluck(:operacio_id)
-        operacions_especials = Operacio.find(referencies_especials)
-        word_operacions_especials = ''
-        operacions_especials.each do |operacio|
-          word_operacions_especials = word_operacions_especials + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
-        end
-        doc.replace("$operacions_especials$", word_operacions_especials)  
 
         tmp_file = Tempfile.new('word_tempate', "#{Rails.root}/tmp")
         doc.commit(tmp_file.path)

@@ -685,6 +685,8 @@ ca:
       titol_documents: "Document"
       tornar_apartats: "1. Configurar el document"
       generar_llibre: "2. Generar el Llibre de l'edifici"
+      generar_llibre_unifamiliar: "Generar el Llibre de l'edifici"
+      generar_llibre_existent: "Generar el Llibre de l'edifici"
       text_generar_llibre: "Si ja heu completat tota la informació dels apartats anteriors podeu clicar el botó per generar el document Word (format docx) del Llibre de l'edifici."
       generar_manual: "3. Generar el Manual de l'habitatge"
       text_generar_manual: "En els edificis plurifamiliars de nova construcció cal crear el Manual de l'habitatge. Aquest document està destinat als diferents propietaris per a que puguin conèixer, de manera individualitzada, les dades que corresponen al seu habitatge."
