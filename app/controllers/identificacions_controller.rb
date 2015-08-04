@@ -1,4 +1,5 @@
 class IdentificacionsController < ApplicationController
+  include CheckUser
   before_action :set_identificacio, only: [:show, :edit, :update, :destroy]
   before_action :set_edifici
   layout 'edifici'
@@ -21,6 +22,10 @@ class IdentificacionsController < ApplicationController
 
   # GET /identificacions/1/edit
   def edit
+    check_user_edifici
+    if @edifici.identificacio.id != @identificacio.id
+      redirect_to root_path
+    end
     @submenu_actiu = 'identificacio'
   end
 

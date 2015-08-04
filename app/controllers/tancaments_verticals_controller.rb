@@ -1,4 +1,5 @@
 class TancamentsVerticalsController < ApplicationController
+  include CheckUser
   include SetSistemes
   before_action :set_sistemes, only: [:show, :edit, :update, :destroy]
   layout 'edifici'
@@ -21,6 +22,13 @@ class TancamentsVerticalsController < ApplicationController
 
   # GET /tancaments_verticals/1/edit
   def edit
+    # Comprovació edifici pertany a usuari
+    check_user_edifici
+    # Comprovació pàgina correspon a edifici
+    if @edifici.tancaments_vertical.id != params[:id].to_i
+      redirect_to home_permisos_path
+    end
+
     @submenu_actiu = 'sistemes'
     @menu_sistemes_actiu = 'tancaments_verticals'
     @elements = Element.where(:edifici_id => @edifici.id, :sistema_element => 'tancaments')

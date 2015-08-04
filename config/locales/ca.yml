@@ -58,6 +58,9 @@ ca:
       llibre_edifici: "Llibre de l'edifici"
       text_hero: "Eina de suport per a la redacció del llibre de l'edifici segons el Decret 67/2015, de 5 de maig."
       logo_llibre: "Logo del llibre de l'edifici"
+    permisos:
+      titol_permisos: "Accés denegat"
+      text_permisos: "No teniu els permisos necessaris per accedir a aquesta pàgina"
   edificis:
     index:
       titol: "Projectes"

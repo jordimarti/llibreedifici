@@ -1,4 +1,5 @@
 class IncendisController < ApplicationController
+  include CheckUser
   include SetSistemes
   before_action :set_sistemes, only: [:show, :edit, :update, :destroy]
   layout 'edifici'
@@ -21,6 +22,13 @@ class IncendisController < ApplicationController
 
   # GET /incendis/1/edit
   def edit
+    # Comprovació edifici pertany a usuari
+    check_user_edifici
+    # Comprovació pàgina correspon a edifici
+    if @edifici.incendi.id != params[:id].to_i
+      redirect_to home_permisos_path
+    end
+
     @submenu_actiu = 'sistemes'
     @menu_sistemes_actiu = 'incendis'
     @elements = Element.where(:edifici_id => @edifici.id, :sistema_element => 'incendis')

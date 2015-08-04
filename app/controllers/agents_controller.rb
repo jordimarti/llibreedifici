@@ -1,8 +1,10 @@
 class AgentsController < ApplicationController
+  include CheckUser
   before_action :set_edifici
   layout 'edifici'
 
   def index
+    check_user_edifici
   	@submenu_actiu = 'agents'
   	@promotors = Promotor.where(:edifici_id => params[:edifici_id])
     @projectistes = Projectista.where(:edifici_id => params[:edifici_id])
