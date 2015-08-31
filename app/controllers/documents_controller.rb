@@ -6,10 +6,6 @@ class DocumentsController < ApplicationController
     @submenu_actiu = 'documents'
   end
 
-  def quadern
-    @menu_documents_actiu = 'quadern'
-  end
-
   def nou
     respond_to do |format|
       format.docx do
@@ -113,158 +109,234 @@ class DocumentsController < ApplicationController
         def llista(element_llista)
           return '<w:p w:rsidP="006E3F51" w:rsidR="00676FB5" w:rsidRDefault="006E3F51"><w:pPr><w:pStyle w:val="Prrafodelista"/><w:numPr><w:ilvl w:val="0"/><w:numId w:val="1"/></w:numPr></w:pPr><w:r><w:t>' + element_llista + '</w:t></w:r></w:p>'
         end
+        # Mètode per comprovar si hi ha elements definits per l'usuari
+        def elements_extres(sistema)
+          nous_elements = Element.where(:edifici_id => @edifici.id, :sistema_element => sistema)
+          llistat_nous_elements = ''
+          nous_elements.each do |e| 
+            llistat_nous_elements = llistat_nous_elements + llista(e.nom_element)
+          end
+          if nous_elements.count > 0
+            return llistat_nous_elements
+          else
+            return ''
+          end
+        end
         # Fonamentació
-        word_fonamentacio = ''
+        elements_fonamentacio = ''
+        existeix_fonamentacio = false
         if @edifici.fonamentacio.mur_pedra == true
-          word_fonamentacio = word_fonamentacio + llista('Mur de contenció de pedra')
+          elements_fonamentacio = elements_fonamentacio + llista('Mur de contenció de pedra')
+          existeix_fonamentacio = true
         end
         if @edifici.fonamentacio.mur_fabrica_mao == true
-          word_fonamentacio = word_fonamentacio + llista('Mur de contenció de fàbrica de maó')
+          elements_fonamentacio = elements_fonamentacio + llista('Mur de contenció de fàbrica de maó')
+          existeix_fonamentacio = true
         end
         if @edifici.fonamentacio.mur_fabrica_bloc == true
-          word_fonamentacio = word_fonamentacio + llista('Mur de contenció de fàbrica de bloc')
+          elements_fonamentacio = elements_fonamentacio + llista('Mur de contenció de fàbrica de bloc')
+          existeix_fonamentacio = true
         end
         if @edifici.fonamentacio.mur_formigo_armat == true
-          word_fonamentacio = word_fonamentacio + llista('Mur de contenció de formigó armat')
+          elements_fonamentacio = elements_fonamentacio + llista('Mur de contenció de formigó armat')
+          existeix_fonamentacio = true
         end 
         if @edifici.fonamentacio.mur_pantalla == true
-          word_fonamentacio = word_fonamentacio + llista('Mur pantalla')
+          elements_fonamentacio = elements_fonamentacio + llista('Mur pantalla')
+          existeix_fonamentacio = true
         end 
         if @edifici.fonamentacio.sabates_paredat == true
-          word_fonamentacio = word_fonamentacio + llista('Sabates de paredat')
+          elements_fonamentacio = elements_fonamentacio + llista('Sabates de paredat')
+          existeix_fonamentacio = true
         end 
         if @edifici.fonamentacio.sabates_formigo == true
-          word_fonamentacio = word_fonamentacio + llista('Sabates o rases de formigó')
+          elements_fonamentacio = elements_fonamentacio + llista('Sabates o rases de formigó')
+          existeix_fonamentacio = true
         end 
         if @edifici.fonamentacio.llosa == true
-          word_fonamentacio = word_fonamentacio + llista('Llosa de formigó')
+          elements_fonamentacio = elements_fonamentacio + llista('Llosa de formigó')
+          existeix_fonamentacio = true
         end 
         if @edifici.fonamentacio.pilons == true
-          word_fonamentacio = word_fonamentacio + llista('Fonamentació profunda de pilons')
+          elements_fonamentacio = elements_fonamentacio + llista('Fonamentació profunda de pilons')
+          existeix_fonamentacio = true
         end 
         if @edifici.fonamentacio.pantalles == true
-          word_fonamentacio = word_fonamentacio + llista('Fonamentació profunda de pantalles')
+          elements_fonamentacio = elements_fonamentacio + llista('Fonamentació profunda de pantalles')
+          existeix_fonamentacio = true
         end 
+          
+        if existeix_fonamentacio == true || elements_extres('fonamentacio') != ''
+          word_fonamentacio = '<w:p w14:paraId="2EF68265" w14:textId="77777777" w:rsidR="00500DE7" w:rsidRDefault="00BB14EB"><w:pPr><w:rPr><w:b/><w:lang w:val="es-ES"/></w:rPr></w:pPr><w:r><w:rPr><w:b/><w:lang w:val="es-ES"/></w:rPr><w:t>Fonaments</w:t></w:r></w:p>' + elements_fonamentacio + elements_extres('fonamentacio')
+        else
+          word_fonamentacio = ''
+        end
         doc.replace("$fonamentacio$", word_fonamentacio)
 
+
         # Estructura
-        word_estructura = ''
+        elements_estructura = ''
+        existeix_estructura = false
         if @edifici.estructura.parets_pedra == true
-          word_estructura = word_estructura + llista('Parets de paredat')
+          elements_estructura = elements_estructura + llista('Parets de paredat')
+          existeix_estructura = true
         end
         if @edifici.estructura.parets_formigo_armat == true
-          word_estructura = word_estructura + llista('Parets de formigó armat')
+          elements_estructura = elements_estructura + llista('Parets de formigó armat')
+          existeix_estructura = true
         end
         if @edifici.estructura.parets_tova == true
-          word_estructura = word_estructura + llista('Parets de tova')
+          elements_estructura = elements_estructura + llista('Parets de tova')
+          existeix_estructura = true
         end
         if @edifici.estructura.parets_tapia == true
-          word_estructura = word_estructura + llista('Parets de tàpia')
+          elements_estructura = elements_estructura + llista('Parets de tàpia')
+          existeix_estructura = true
         end
         if @edifici.estructura.parets_fabrica_mao == true
-          word_estructura = word_estructura + llista('Parets de fàbrica de maó')
+          elements_estructura = elements_estructura + llista('Parets de fàbrica de maó')
+          existeix_estructura = true
         end
         if @edifici.estructura.parets_bloc_ceramic == true
-          word_estructura = word_estructura + llista('Parets de bloc ceràmic')
+          elements_estructura = elements_estructura + llista('Parets de bloc ceràmic')
+          existeix_estructura = true
         end
         if @edifici.estructura.parets_bloc_formigo == true
-          word_estructura = word_estructura + llista('Parets de bloc de formigó')
+          elements_estructura = elements_estructura + llista('Parets de bloc de formigó')
+          existeix_estructura = true
         end
         if @edifici.estructura.parets_entramat_fusta == true
-          word_estructura = word_estructura + llista('Parets d\'entramat de fusta')
+          elements_estructura = elements_estructura + llista('Parets d\'entramat de fusta')
+          existeix_estructura = true
         end
         if @edifici.estructura.pilars_mao == true
-          word_estructura = word_estructura + llista('Pilars de maons')
+          elements_estructura = elements_estructura + llista('Pilars de maons')
+          existeix_estructura = true
         end
         if @edifici.estructura.pilars_ferro_colat == true
-          word_estructura = word_estructura + llista('Pilars de ferro colat')
+          elements_estructura = elements_estructura + llista('Pilars de ferro colat')
+          existeix_estructura = true
         end
         if @edifici.estructura.pilars_acer == true
-          word_estructura = word_estructura + llista('Pilars d\'acer')
+          elements_estructura = elements_estructura + llista('Pilars d\'acer')
+          existeix_estructura = true
         end
         if @edifici.estructura.pilars_formigo_armat == true
-          word_estructura = word_estructura + llista('Pilars de formigó armat')
+          elements_estructura = elements_estructura + llista('Pilars de formigó armat')
+          existeix_estructura = true
         end
         if @edifici.estructura.bigues_fusta == true
-          word_estructura = word_estructura + llista('Bigues de fusta')
+          elements_estructura = elements_estructura + llista('Bigues de fusta')
+          existeix_estructura = true
         end
         if @edifici.estructura.bigues_metaliques == true
-          word_estructura = word_estructura + llista('Bigues metàl·liques')
+          elements_estructura = elements_estructura + llista('Bigues metàl·liques')
+          existeix_estructura = true
         end
         if @edifici.estructura.bigues_formigo_armat == true
-          word_estructura = word_estructura + llista('Bigues de formigó armat')
+          elements_estructura = elements_estructura + llista('Bigues de formigó armat')
+          existeix_estructura = true
         end
         if @edifici.estructura.forjat_fusta == true
-          word_estructura = word_estructura + llista('Sostre de fusta')
+          elements_estructura = elements_estructura + llista('Sostre de fusta')
+          existeix_estructura = true
         end
         if @edifici.estructura.forjat_metalic == true
-          word_estructura = word_estructura + llista('Sostre metàl·lic')
+          elements_estructura = elements_estructura + llista('Sostre metàl·lic')
+          existeix_estructura = true
         end
         if @edifici.estructura.forjat_formigo_armat == true
-          word_estructura = word_estructura + llista('Sostre de formigó armat')
+          elements_estructura = elements_estructura + llista('Sostre de formigó armat')
+          existeix_estructura = true
         end
         if @edifici.estructura.forjat_ceramica_armada == true
-          word_estructura = word_estructura + llista('Sostre de ceràmica armada')
+          elements_estructura = elements_estructura + llista('Sostre de ceràmica armada')
+          existeix_estructura = true
         end
         if @edifici.estructura.entrebigat_taulell == true
-          word_estructura = word_estructura + llista('Entrebigat de taulell')
+          elements_estructura = elements_estructura + llista('Entrebigat de taulell')
+          existeix_estructura = true
         end
         if @edifici.estructura.entrebigat_revolto_ceramic == true
-          word_estructura = word_estructura + llista('Entrebigat de revoltó ceràmic')
+          elements_estructura = elements_estructura + llista('Entrebigat de revoltó ceràmic')
+          existeix_estructura = true
         end
         if @edifici.estructura.entrebigat_revolto_formigo == true
-          word_estructura = word_estructura + llista('Entrebigat de revoltó de formigó')
+          elements_estructura = elements_estructura + llista('Entrebigat de revoltó de formigó')
+          existeix_estructura = true
         end
         if @edifici.estructura.forjat_reticular == true
-          word_estructura = word_estructura + llista('Forjat reticular')
+          elements_estructura = elements_estructura + llista('Forjat reticular')
+          existeix_estructura = true
         end
         if @edifici.estructura.llosa_formigo == true
-          word_estructura = word_estructura + llista('Llosa de formigó')
+          elements_estructura = elements_estructura + llista('Llosa de formigó')
+          existeix_estructura = true
         end
         if @edifici.estructura.forjat_sanitari == true
-          word_estructura = word_estructura + llista('Forjat sanitari')
+          elements_estructura = elements_estructura + llista('Forjat sanitari')
+          existeix_estructura = true
         end
         if @edifici.estructura.solera == true
-          word_estructura = word_estructura + llista('Solera')
+          elements_estructura = elements_estructura + llista('Solera')
+          existeix_estructura = true
         end
         if @edifici.estructura.forjat_horitzontal_coberta_capa_pendent == true
-          word_estructura = word_estructura + llista('Estructura de coberta de sostre horitzontal amb capa de formació de pendents')
+          elements_estructura = elements_estructura + llista('Estructura de coberta de sostre horitzontal amb capa de formació de pendents')
+          existeix_estructura = true
         end
         if @edifici.estructura.forjat_horitzontal_coberta_envanets == true
-          word_estructura = word_estructura + llista('Estructura de coberta de sostre horitzontal amb envanets i taulell')
+          elements_estructura = elements_estructura + llista('Estructura de coberta de sostre horitzontal amb envanets i taulell')
+          existeix_estructura = true
         end
         if @edifici.estructura.forjat_inclinat_coberta_formigo == true
-          word_estructura = word_estructura + llista('Estructura de coberta de sostre inclinat de formigó armat')
+          elements_estructura = elements_estructura + llista('Estructura de coberta de sostre inclinat de formigó armat')
+          existeix_estructura = true
         end
         if @edifici.estructura.encavallada_bigues_formigo == true
-          word_estructura = word_estructura + llista('Encavallada de bigues de formigó armat i taulell')
+          elements_estructura = elements_estructura + llista('Encavallada de bigues de formigó armat i taulell')
+          existeix_estructura = true
         end
         if @edifici.estructura.encavallada_bigues_metall == true
-          word_estructura = word_estructura + llista('Encavallada de bigues metàl·liques i taulell')
+          elements_estructura = elements_estructura + llista('Encavallada de bigues metàl·liques i taulell')
+          existeix_estructura = true
         end
         if @edifici.estructura.encavallada_bigues_fusta == true
-          word_estructura = word_estructura + llista('Encavallada de bigues de fusta i taulell')
+          elements_estructura = elements_estructura + llista('Encavallada de bigues de fusta i taulell')
+          existeix_estructura = true
         end
         if @edifici.estructura.coberta_taulell_ceramic == true
-          word_estructura = word_estructura + llista('Estructura de coberta de taulell ceràmic')
+          elements_estructura = elements_estructura + llista('Estructura de coberta de taulell ceràmic')
+          existeix_estructura = true
         end
         if @edifici.estructura.coberta_taulell_fusta == true
-          word_estructura = word_estructura + llista('Estructura de coberta de taulell de fusta')
+          elements_estructura = elements_estructura + llista('Estructura de coberta de taulell de fusta')
+          existeix_estructura = true
         end
         if @edifici.estructura.coberta_sandwich == true
-          word_estructura = word_estructura + llista('Estructura de coberta de xapa o panells sandwich')
+          elements_estructura = elements_estructura + llista('Estructura de coberta de xapa o panells sandwich')
+          existeix_estructura = true
         end
         if @edifici.estructura.escala_fusta == true
-          word_estructura = word_estructura + llista('Escala de fusta')
+          elements_estructura = elements_estructura + llista('Escala de fusta')
+          existeix_estructura = true
         end
         if @edifici.estructura.escala_metall == true
-          word_estructura = word_estructura + llista('Escala metàl·lica')
+          elements_estructura = elements_estructura + llista('Escala metàl·lica')
+          existeix_estructura = true
         end
         if @edifici.estructura.escala_ceramica == true
-          word_estructura = word_estructura + llista('Escala de volta ceràmica')
+          elements_estructura = elements_estructura + llista('Escala de volta ceràmica')
+          existeix_estructura = true
         end
         if @edifici.estructura.escala_llosa_armada == true
-          word_estructura = word_estructura + llista('Escala de llosa armada')
+          elements_estructura = elements_estructura + llista('Escala de llosa armada')
+          existeix_estructura = true
+        end
+        if existeix_estructura == true || elements_extres('estructura') != ''
+          word_estructura = '<w:p w14:paraId="2EF68265" w14:textId="77777777" w:rsidR="00500DE7" w:rsidRDefault="00BB14EB"><w:pPr><w:rPr><w:b/><w:lang w:val="es-ES"/></w:rPr></w:pPr><w:r><w:rPr><w:b/><w:lang w:val="es-ES"/></w:rPr><w:t>Estructura</w:t></w:r></w:p>' + elements_estructura + elements_extres('estructura')
+        else
+          word_estructura = ''
         end
         doc.replace("$estructura$", word_estructura)
           
@@ -278,75 +350,105 @@ class DocumentsController < ApplicationController
             llista(element_llista)
           end
         end
-        word_tancaments = ''
+        elements_tancaments = ''
+        existeix_tancaments = false
         if @edifici.tancaments_vertical.acabat_vist_paredat == true
-          word_tancaments = word_tancaments + llista_tancaments('Parets de paredat amb acabat vist')
+          elements_tancaments = elements_tancaments + llista_tancaments('Parets de paredat amb acabat vist')
+          existeix_tancaments = true
         end
         if @edifici.tancaments_vertical.acabat_vist_carreus == true
-          word_tancaments = word_tancaments + llista_tancaments('Parets de carreus amb acabat vist')
+          elements_tancaments = elements_tancaments + llista_tancaments('Parets de carreus amb acabat vist')
+          existeix_tancaments = true
         end
         if @edifici.tancaments_vertical.acabat_vist_fabrica_mao == true
-          word_tancaments = word_tancaments + llista_tancaments('Parets de fàbrica de maons amb acabat vist')
+          elements_tancaments = elements_tancaments + llista_tancaments('Parets de fàbrica de maons amb acabat vist')
+          existeix_tancaments = true
         end
         if @edifici.tancaments_vertical.acabat_vist_fabrica_bloc_ceramic == true
-          word_tancaments = word_tancaments + llista_tancaments('Parets de bloc ceràmic amb acabat vist')
+          elements_tancaments = elements_tancaments + llista_tancaments('Parets de bloc ceràmic amb acabat vist')
+          existeix_tancaments = true
         end
         if @edifici.tancaments_vertical.acabat_vist_bloc_formigo == true
-          word_tancaments = word_tancaments + llista_tancaments('Parets de bloc de formigó amb acabat vist')
+          elements_tancaments = elements_tancaments + llista_tancaments('Parets de bloc de formigó amb acabat vist')
+          existeix_tancaments = true
         end
         if @edifici.tancaments_vertical.acabat_vist_panell_formigo == true
-          word_tancaments = word_tancaments + llista_tancaments('Parets de panells de formigó amb acabat vist')
+          elements_tancaments = elements_tancaments + llista_tancaments('Parets de panells de formigó amb acabat vist')
+          existeix_tancaments = true
         end
         if @edifici.tancaments_vertical.acabat_vist_panell_metalic_sandwich == true
-          word_tancaments = word_tancaments + llista_tancaments('Parets de panells metàl·lics o de tipus sandwich amb acabat vist')
+          elements_tancaments = elements_tancaments + llista_tancaments('Parets de panells metàl·lics o de tipus sandwich amb acabat vist')
+          existeix_tancaments = true
         end
         if @edifici.tancaments_vertical.acabat_revestit_arrebossat_pintat == true
-          word_tancaments = word_tancaments + llista_tancaments('Parets amb acabat revestit arrebossat i pintat')
+          elements_tancaments = elements_tancaments + llista_tancaments('Parets amb acabat revestit arrebossat i pintat')
+          existeix_tancaments = true
         end
         if @edifici.tancaments_vertical.acabat_revestit_estucat == true
-          word_tancaments = word_tancaments + llista_tancaments('Parets amb acabat revestit estucat')
+          elements_tancaments = elements_tancaments + llista_tancaments('Parets amb acabat revestit estucat')
+          existeix_tancaments = true
         end
         if @edifici.tancaments_vertical.acabat_revestit_morter_monocapa == true
-          word_tancaments = word_tancaments + llista_tancaments('Parets amb revestiment de morter monocapa')
+          elements_tancaments = elements_tancaments + llista_tancaments('Parets amb revestiment de morter monocapa')
+          existeix_tancaments = true
         end
         if @edifici.tancaments_vertical.acabat_revestit_aplacat_ceramic == true
-          word_tancaments = word_tancaments + llista_tancaments('Parets amb revestiment d\'aplacat ceràmic')
+          elements_tancaments = elements_tancaments + llista_tancaments('Parets amb revestiment d\'aplacat ceràmic')
+          existeix_tancaments = true
         end
         if @edifici.tancaments_vertical.acabat_revestit_aplacat_pedra == true
-          word_tancaments = word_tancaments + llista_tancaments('Parets amb revestiment d\'aplacat de pedra')
+          elements_tancaments = elements_tancaments + llista_tancaments('Parets amb revestiment d\'aplacat de pedra')
+          existeix_tancaments = true
         end
         if @edifici.tancaments_vertical.acabat_revestit_xapa_metalica == true
-          word_tancaments = word_tancaments + llista_tancaments('Parets amb revestiment de xapa metàl·lica')
+          elements_tancaments = elements_tancaments + llista_tancaments('Parets amb revestiment de xapa metàl·lica')
+          existeix_tancaments = true
         end
         if @edifici.tancaments_vertical.acabat_revestit_xapa_metalica == true
-          word_tancaments = word_tancaments + llista_tancaments('Parets amb revestiment de xapa metàl·lica')
+          elements_tancaments = elements_tancaments + llista_tancaments('Parets amb revestiment de xapa metàl·lica')
+          existeix_tancaments = true
         end
         if @edifici.tancaments_vertical.fusteria_fusta == true
-          word_tancaments = word_tancaments + llista('Fusteries de fusta')
+          elements_tancaments = elements_tancaments + llista('Fusteries de fusta')
+          existeix_tancaments = true
         end
         if @edifici.tancaments_vertical.fusteria_acer == true
-          word_tancaments = word_tancaments + llista('Fusteries d\'acer')
+          elements_tancaments = elements_tancaments + llista('Fusteries d\'acer')
+          existeix_tancaments = true
         end
         if @edifici.tancaments_vertical.fusteria_alumini == true
-          word_tancaments = word_tancaments + llista('Fusteries d\'alumini')
+          elements_tancaments = elements_tancaments + llista('Fusteries d\'alumini')
+          existeix_tancaments = true
         end
         if @edifici.tancaments_vertical.fusteria_pvc == true
-          word_tancaments = word_tancaments + llista('Fusteries de PVC')
+          elements_tancaments = elements_tancaments + llista('Fusteries de PVC')
+          existeix_tancaments = true
         end
         if @edifici.tancaments_vertical.vidre_simple == true
-          word_tancaments = word_tancaments + llista('Fusteries amb vidre senzill')
+          elements_tancaments = elements_tancaments + llista('Fusteries amb vidre senzill')
+          existeix_tancaments = true
         end
         if @edifici.tancaments_vertical.vidre_doble == true
-          word_tancaments = word_tancaments + llista('Fusteries amb vidre doble')
+          elements_tancaments = elements_tancaments + llista('Fusteries amb vidre doble')
+          existeix_tancaments = true
         end
         if @edifici.tancaments_vertical.vidre_triple == true
-          word_tancaments = word_tancaments + llista('Fusteries amb vidre triple')
+          elements_tancaments = elements_tancaments + llista('Fusteries amb vidre triple')
+          existeix_tancaments = true
         end
         if @edifici.tancaments_vertical.vidre_baix_emissiu == true
-          word_tancaments = word_tancaments + llista('Vidre amb capa baix emissiva')
+          elements_tancaments = elements_tancaments + llista('Vidre amb capa baix emissiva')
+          existeix_tancaments = true
         end
         if @edifici.tancaments_vertical.vidre_control_solar == true
-          word_tancaments = word_tancaments + llista('Vidre amb capa de control solar')
+          elements_tancaments = elements_tancaments + llista('Vidre amb capa de control solar')
+          existeix_tancaments = true
+        end
+
+        if existeix_tancaments == true || elements_extres('tancaments') != ''
+          word_tancaments = '<w:p w14:paraId="2EF68265" w14:textId="77777777" w:rsidR="00500DE7" w:rsidRDefault="00BB14EB"><w:pPr><w:rPr><w:b/><w:lang w:val="es-ES"/></w:rPr></w:pPr><w:r><w:rPr><w:b/><w:lang w:val="es-ES"/></w:rPr><w:t>Tancaments verticals</w:t></w:r></w:p>' + elements_tancaments + elements_extres('tancaments')
+        else
+          word_tancaments = ''
         end
         doc.replace("$tancaments_verticals$", word_tancaments)
 
@@ -369,401 +471,590 @@ class DocumentsController < ApplicationController
           text_terrat = element_terrat + text_aillament + text_impermeabilitzacio
           llista(text_terrat)
         end
-        word_coberta = ''
+        elements_coberta = ''
+        existeix_coberta = false
         if @edifici.coberta.terrat_transitable == true
-          word_coberta = word_coberta + llista_terrat('Terrat transitable')
+          elements_coberta = elements_coberta + llista_terrat('Terrat transitable')
+          existeix_coberta = true
         end
         if @edifici.coberta.terrat_no_transitable == true
-          word_coberta = word_coberta + llista_terrat('Terrat no transitable')
+          elements_coberta = elements_coberta + llista_terrat('Terrat no transitable')
+          existeix_coberta = true
         end
         if @edifici.coberta.coberta_teula_arab == true
-          word_coberta = word_coberta + llista_terrat('Coberta de teula àrab')
+          elements_coberta = elements_coberta + llista_terrat('Coberta de teula àrab')
+          existeix_coberta = true
         end
         if @edifici.coberta.coberta_teula_plana == true
-          word_coberta = word_coberta + llista_terrat('Coberta de teula plana')
+          elements_coberta = elements_coberta + llista_terrat('Coberta de teula plana')
+          existeix_coberta = true
         end
         if @edifici.coberta.coberta_teula_ciment == true
-          word_coberta = word_coberta + llista_terrat('Coberta de teula de ciment')
+          elements_coberta = elements_coberta + llista_terrat('Coberta de teula de ciment')
+          existeix_coberta = true
         end
         if @edifici.coberta.coberta_pissarra == true
-          word_coberta = word_coberta + llista_terrat('Coberta de pissarra')
+          elements_coberta = elements_coberta + llista_terrat('Coberta de pissarra')
+          existeix_coberta = true
         end
         if @edifici.coberta.coberta_fibrociment == true
-          word_coberta = word_coberta + llista_terrat('Coberta de fibrociment')
+          elements_coberta = elements_coberta + llista_terrat('Coberta de fibrociment')
+          existeix_coberta = true
         end
         if @edifici.coberta.coberta_asfaltica == true
-          word_coberta = word_coberta + llista_terrat('Coberta de làmina asfàltica')
+          elements_coberta = elements_coberta + llista_terrat('Coberta de làmina asfàltica')
+          existeix_coberta = true
         end
         if @edifici.coberta.coberta_xapa_acer == true
-          word_coberta = word_coberta + llista_terrat('Coberta de xapa d\'acer')
+          elements_coberta = elements_coberta + llista_terrat('Coberta de xapa d\'acer')
+          existeix_coberta = true
         end
         if @edifici.coberta.coberta_xapa_coure == true
-          word_coberta = word_coberta + llista_terrat('Coberta de xapa de coure')
+          elements_coberta = elements_coberta + llista_terrat('Coberta de xapa de coure')
+          existeix_coberta = true
         end
         if @edifici.coberta.coberta_aillament_termic == true
-          word_coberta = word_coberta + llista_terrat('Coberta amb aïllament tèrmic')
+          elements_coberta = elements_coberta + llista_terrat('Coberta amb aïllament tèrmic')
+          existeix_coberta = true
+        end
+
+        if existeix_coberta == true || elements_extres('coberta') != ''
+          word_coberta = '<w:p w14:paraId="2EF68265" w14:textId="77777777" w:rsidR="00500DE7" w:rsidRDefault="00BB14EB"><w:pPr><w:rPr><w:b/><w:lang w:val="es-ES"/></w:rPr></w:pPr><w:r><w:rPr><w:b/><w:lang w:val="es-ES"/></w:rPr><w:t>Coberta</w:t></w:r></w:p>' + elements_coberta + elements_extres('coberta')
+        else
+          word_coberta = ''
         end
         doc.replace("$coberta$", word_coberta)
 
         # Sanejament
-        word_sanejament = ''
+        elements_sanejament = ''
+        existeix_sanejament = false
         if @edifici.sanejament.no_sistema_evacuacio == true
-          word_sanejament = word_sanejament + llista('No disposa de sistema d\'evacuació')
+          elements_sanejament = elements_sanejament + llista('No disposa de sistema d\'evacuació')
+          existeix_sanejament = true
         end
         if @edifici.sanejament.si_sistema_evacuacio == true && @edifici.sanejament.fosa_septica == false
-          word_sanejament = word_sanejament + llista('Disposa de sistema d\'evacuació')
+          elements_sanejament = elements_sanejament + llista('Disposa de sistema d\'evacuació')
+          existeix_sanejament = true
         end
         if @edifici.sanejament.fosa_septica == true
-          word_sanejament = word_sanejament + llista('Sistema d\'evacuació propi (fossa sèptica, etc.)')
+          elements_sanejament = elements_sanejament + llista('Sistema d\'evacuació propi (fossa sèptica, etc.)')
+          existeix_sanejament = true
         end
         if @edifici.sanejament.bomba_elevacio == true
-          word_sanejament = word_sanejament + llista('Bomba d\'elevació')
+          elements_sanejament = elements_sanejament + llista('Bomba d\'elevació')
+          existeix_sanejament = true
         end
         if @edifici.sanejament.separador_greixos == true
-          word_sanejament = word_sanejament + llista('Separador de greixos i fangs')
+          elements_sanejament = elements_sanejament + llista('Separador de greixos i fangs')
+          existeix_sanejament = true
         end
         if @edifici.sanejament.baixants_vistos == true && @edifici.sanejament.baixants_ceramics == true
-          word_sanejament = word_sanejament + llista('Baixants vistos ceràmics')
+          elements_sanejament = elements_sanejament + llista('Baixants vistos ceràmics')
+          existeix_sanejament = true
         end
         if @edifici.sanejament.baixants_vistos == true && @edifici.sanejament.baixants_pvc == true
-          word_sanejament = word_sanejament + llista('Baixants vistos de PVC')
+          elements_sanejament = elements_sanejament + llista('Baixants vistos de PVC')
+          existeix_sanejament = true
         end
         if @edifici.sanejament.baixants_vistos == true && @edifici.sanejament.baixants_fibrociment == true
-          word_sanejament = word_sanejament + llista('Baixants vistos de fibrociment')
+          elements_sanejament = elements_sanejament + llista('Baixants vistos de fibrociment')
+          existeix_sanejament = true
         end
         if @edifici.sanejament.baixants_vistos == true && @edifici.sanejament.baixants_coure == true
-          word_sanejament = word_sanejament + llista('Baixants vistos de coure')
+          elements_sanejament = elements_sanejament + llista('Baixants vistos de coure')
+          existeix_sanejament = true
         end
         if @edifici.sanejament.baixants_vistos == true && @edifici.sanejament.baixants_alumini == true
-          word_sanejament = word_sanejament + llista('Baixants vistos d\'alumini')
+          elements_sanejament = elements_sanejament + llista('Baixants vistos d\'alumini')
+          existeix_sanejament = true
         end
         if @edifici.sanejament.baixants_vistos == true && @edifici.sanejament.baixants_polipropile == true
-          word_sanejament = word_sanejament + llista('Baixants vistos de polipropilè')
+          elements_sanejament = elements_sanejament + llista('Baixants vistos de polipropilè')
+          existeix_sanejament = true
         end
         if @edifici.sanejament.baixants_vistos == true && @edifici.sanejament.baixants_zinc == true
-          word_sanejament = word_sanejament + llista('Baixants vistos de zinc')
+          elements_sanejament = elements_sanejament + llista('Baixants vistos de zinc')
+          existeix_sanejament = true
         end
         if @edifici.sanejament.baixants_encastats == true && @edifici.sanejament.baixants_ceramics == true
-          word_sanejament = word_sanejament + llista('Baixants encastats ceràmics')
+          elements_sanejament = elements_sanejament + llista('Baixants encastats ceràmics')
+          existeix_sanejament = true
         end
         if @edifici.sanejament.baixants_encastats == true && @edifici.sanejament.baixants_pvc == true
-          word_sanejament = word_sanejament + llista('Baixants encastats de PVC')
+          elements_sanejament = elements_sanejament + llista('Baixants encastats de PVC')
+          existeix_sanejament = true
         end
         if @edifici.sanejament.baixants_encastats == true && @edifici.sanejament.baixants_fibrociment == true
-          word_sanejament = word_sanejament + llista('Baixants encastats de fibrociment')
+          elements_sanejament = elements_sanejament + llista('Baixants encastats de fibrociment')
+          existeix_sanejament = true
         end
         if @edifici.sanejament.baixants_encastats == true && @edifici.sanejament.baixants_coure == true
-          word_sanejament = word_sanejament + llista('Baixants encastats de coure')
+          elements_sanejament = elements_sanejament + llista('Baixants encastats de coure')
+          existeix_sanejament = true
         end
         if @edifici.sanejament.baixants_encastats == true && @edifici.sanejament.baixants_alumini == true
-          word_sanejament = word_sanejament + llista('Baixants encastats d\'alumini')
+          elements_sanejament = elements_sanejament + llista('Baixants encastats d\'alumini')
+          existeix_sanejament = true
         end
         if @edifici.sanejament.baixants_encastats == true && @edifici.sanejament.baixants_polipropile == true
-          word_sanejament = word_sanejament + llista('Baixants encastats de polipropilè')
+          elements_sanejament = elements_sanejament + llista('Baixants encastats de polipropilè')
+          existeix_sanejament = true
         end
         if @edifici.sanejament.baixants_encastats == true && @edifici.sanejament.baixants_zinc == true
-          word_sanejament = word_sanejament + llista('Baixants encastats de zinc')
+          elements_sanejament = elements_sanejament + llista('Baixants encastats de zinc')
+          existeix_sanejament = true
         end
         if @edifici.sanejament.colectors_vistos == true && @edifici.sanejament.colectors_formigo == true
-          word_sanejament = word_sanejament + llista('Col·lectors vistos de formigó')
+          elements_sanejament = elements_sanejament + llista('Col·lectors vistos de formigó')
+          existeix_sanejament = true
         end
         if @edifici.sanejament.colectors_vistos == true && @edifici.sanejament.colectors_ceramic == true
-          word_sanejament = word_sanejament + llista('Col·lectors vistos ceràmics')
+          elements_sanejament = elements_sanejament + llista('Col·lectors vistos ceràmics')
+          existeix_sanejament = true
         end
         if @edifici.sanejament.colectors_vistos == true && @edifici.sanejament.colectors_fibrociment == true
-          word_sanejament = word_sanejament + llista('Col·lectors vistos de fibrociment')
+          elements_sanejament = elements_sanejament + llista('Col·lectors vistos de fibrociment')
+          existeix_sanejament = true
         end
         if @edifici.sanejament.colectors_vistos == true && @edifici.sanejament.colectors_pvc == true
-          word_sanejament = word_sanejament + llista('Col·lectors vistos de PVC')
+          elements_sanejament = elements_sanejament + llista('Col·lectors vistos de PVC')
+          existeix_sanejament = true
         end
         if @edifici.sanejament.colectors_soterrats == true && @edifici.sanejament.colectors_formigo == true
-          word_sanejament = word_sanejament + llista('Col·lectors soterrats de formigó')
+          elements_sanejament = elements_sanejament + llista('Col·lectors soterrats de formigó')
+          existeix_sanejament = true
         end
         if @edifici.sanejament.colectors_soterrats == true && @edifici.sanejament.colectors_ceramic == true
-          word_sanejament = word_sanejament + llista('Col·lectors soterrats ceràmics')
+          elements_sanejament = elements_sanejament + llista('Col·lectors soterrats ceràmics')
+          existeix_sanejament = true
         end
         if @edifici.sanejament.colectors_soterrats == true && @edifici.sanejament.colectors_fibrociment == true
-          word_sanejament = word_sanejament + llista('Col·lectors soterrats de fibrociment')
+          elements_sanejament = elements_sanejament + llista('Col·lectors soterrats de fibrociment')
+          existeix_sanejament = true
         end
         if @edifici.sanejament.colectors_soterrats == true && @edifici.sanejament.colectors_pvc == true
-          word_sanejament = word_sanejament + llista('Col·lectors soterrats de PVC')
+          elements_sanejament = elements_sanejament + llista('Col·lectors soterrats de PVC')
+          existeix_sanejament = true
+        end
+        
+        if existeix_sanejament == true || elements_extres('sanejament') != ''
+          word_sanejament = '<w:p w14:paraId="2EF68265" w14:textId="77777777" w:rsidR="00500DE7" w:rsidRDefault="00BB14EB"><w:pPr><w:rPr><w:b/><w:lang w:val="es-ES"/></w:rPr></w:pPr><w:r><w:rPr><w:b/><w:lang w:val="es-ES"/></w:rPr><w:t>Sanejament</w:t></w:r></w:p>' + elements_sanejament + elements_extres('sanejament')
+        else
+          word_sanejament = ''
         end
         doc.replace("$sanejament$", word_sanejament)
 
         # Aigua
-        word_aigua = ''
+        elements_aigua = ''
+        existeix_aigua = false
         if @edifici.aigua.connexio_directa == true
-          word_aigua = word_aigua + llista('Disposa de connexió directa a xarxa pública de subministrament d\'aigua')
+          elements_aigua = elements_aigua + llista('Disposa de connexió directa a xarxa pública de subministrament d\'aigua')
+          existeix_aigua = true
         end
         if @edifici.aigua.connexio_aforament == true
-          word_aigua = word_aigua + llista('Disposa de connexió per aforament a xarxa pública de subministrament d\'aigua')
+          elements_aigua = elements_aigua + llista('Disposa de connexió per aforament a xarxa pública de subministrament d\'aigua')
+          existeix_aigua = true
         end
         if @edifici.aigua.captacio_propia == true
-          word_aigua = word_aigua + llista('Disposa de captació pròpia (pou, bomba, etc.)')
+          elements_aigua = elements_aigua + llista('Disposa de captació pròpia (pou, bomba, etc.)')
+          existeix_aigua = true
         end
         if @edifici.aigua.grup_pressio == true
-          word_aigua = word_aigua + llista('Disposa de grup de pressió')
+          elements_aigua = elements_aigua + llista('Disposa de grup de pressió')
+          existeix_aigua = true
         end
         if @edifici.aigua.comptador_unic == true
-          word_aigua = word_aigua + llista('Comptador únic per tot l\'edifici')
+          elements_aigua = elements_aigua + llista('Comptador únic per tot l\'edifici')
+          existeix_aigua = true
         end
         if @edifici.aigua.comptadors_individuals_habitatge == true
-          word_aigua = word_aigua + llista('Comptadors individuals per habitatge/local')
+          elements_aigua = elements_aigua + llista('Comptadors individuals per habitatge/local')
+          existeix_aigua = true
         end
         if @edifici.aigua.comptadors_individuals_centralitzats == true
-          word_aigua = word_aigua + llista('Comptadors individuals centralitzats')
+          elements_aigua = elements_aigua + llista('Comptadors individuals centralitzats')
+          existeix_aigua = true
         end
         if @edifici.aigua.muntants_plom == true
-          word_aigua = word_aigua + llista('Muntants de plom')
+          elements_aigua = elements_aigua + llista('Muntants de plom')
+          existeix_aigua = true
         end
         if @edifici.aigua.muntants_ferro == true
-          word_aigua = word_aigua + llista('Muntants de ferro')
+          elements_aigua = elements_aigua + llista('Muntants de ferro')
+          existeix_aigua = true
         end
         if @edifici.aigua.muntants_coure == true
-          word_aigua = word_aigua + llista('Muntants de coure')
+          elements_aigua = elements_aigua + llista('Muntants de coure')
+          existeix_aigua = true
         end
         if @edifici.aigua.muntants_plastic == true
-          word_aigua = word_aigua + llista('Muntants de plàstic')
+          elements_aigua = elements_aigua + llista('Muntants de plàstic')
+          existeix_aigua = true
+        end
+        
+        if existeix_aigua == true || elements_extres('aigua') != ''
+          word_aigua = '<w:p w14:paraId="2EF68265" w14:textId="77777777" w:rsidR="00500DE7" w:rsidRDefault="00BB14EB"><w:pPr><w:rPr><w:b/><w:lang w:val="es-ES"/></w:rPr></w:pPr><w:r><w:rPr><w:b/><w:lang w:val="es-ES"/></w:rPr><w:t>Subministrament d\'aigua</w:t></w:r></w:p>' + elements_aigua + elements_extres('aigua')
+        else
+          word_aigua = ''
         end
         doc.replace("$subministrament_aigua$", word_aigua)
 
         # Electricitat
-        word_electricitat = ''
+        elements_electricitat = ''
+        existeix_electricitat = false
         if @edifici.electricitat.enllumenat_comunitari == true
-          word_electricitat = word_electricitat + llista('Disposa d\'enllumenat comunitari')
+          elements_electricitat = elements_electricitat + llista('Disposa d\'enllumenat comunitari')
+          existeix_electricitat = true
         end
         if @edifici.electricitat.connexio_terra == true
-          word_electricitat = word_electricitat + llista('Disposa de connexió a terra')
+          elements_electricitat = elements_electricitat + llista('Disposa de connexió a terra')
+          existeix_electricitat = true
         end
         if @edifici.electricitat.centre_transformacio == true
-          word_electricitat = word_electricitat + llista('Hi ha un centre de transformació a l\'edifici')
+          elements_electricitat = elements_electricitat + llista('Hi ha un centre de transformació a l\'edifici')
+          existeix_electricitat = true
         end
         if @edifici.electricitat.fotovoltaica == true
-          word_electricitat = word_electricitat + llista('Disposa d\'instal·lació solar fotovoltaica')
+          elements_electricitat = elements_electricitat + llista('Disposa d\'instal·lació solar fotovoltaica')
+          existeix_electricitat = true
         end
         if @edifici.electricitat.comptador_unic == true
-          word_electricitat = word_electricitat + llista('Comptador únic per tot l\'edifici')
+          elements_electricitat = elements_electricitat + llista('Comptador únic per tot l\'edifici')
+          existeix_electricitat = true
         end
         if @edifici.electricitat.comptadors_individuals_habitatge == true
-          word_electricitat = word_electricitat + llista('Comptadors individuals per habitatge/local')
+          elements_electricitat = elements_electricitat + llista('Comptadors individuals per habitatge/local')
+          existeix_electricitat = true
         end
         if @edifici.electricitat.comptadors_centralitzats == true
-          word_electricitat = word_electricitat + llista('Comptadors centralitzats')
+          elements_electricitat = elements_electricitat + llista('Comptadors centralitzats')
+          existeix_electricitat = true
+        end
+
+        if existeix_electricitat == true || elements_extres('electricitat') != ''
+          word_electricitat = '<w:p w14:paraId="2EF68265" w14:textId="77777777" w:rsidR="00500DE7" w:rsidRDefault="00BB14EB"><w:pPr><w:rPr><w:b/><w:lang w:val="es-ES"/></w:rPr></w:pPr><w:r><w:rPr><w:b/><w:lang w:val="es-ES"/></w:rPr><w:t>Instal·lació elèctrica</w:t></w:r></w:p>' + elements_electricitat + elements_extres('electricitat')
+        else
+          word_electricitat = ''
         end
         doc.replace("$instalacio_electrica$", word_electricitat)
 
         # Gas
-        word_gas = ''
+        elements_gas = ''
+        existeix_gas = false
         if @edifici.ga.instalacio_gas == true
-          word_gas = word_gas + llista('Escomesa a xarxa de distribució canalitzada de gas per a ús domèstic')
+          elements_gas = elements_gas + llista('Escomesa a xarxa de distribució canalitzada de gas per a ús domèstic')
+          existeix_gas = true
         end
         if @edifici.ga.diposit_aire_lliure == true
-          word_gas = word_gas + llista('Dipòsit de gas propà a l\'aire lliure')
+          elements_gas = elements_gas + llista('Dipòsit de gas propà a l\'aire lliure')
+          existeix_gas = true
         end
         if @edifici.ga.diposit_enterrat == true
-          word_gas = word_gas + llista('Dipòsit de gas propà enterrat')
+          elements_gas = elements_gas + llista('Dipòsit de gas propà enterrat')
+          existeix_gas = true
+        end
+
+        if existeix_gas == true || elements_extres('gas') != ''
+          word_gas = '<w:p w14:paraId="2EF68265" w14:textId="77777777" w:rsidR="00500DE7" w:rsidRDefault="00BB14EB"><w:pPr><w:rPr><w:b/><w:lang w:val="es-ES"/></w:rPr></w:pPr><w:r><w:rPr><w:b/><w:lang w:val="es-ES"/></w:rPr><w:t>Instal·lació de gas</w:t></w:r></w:p>' + elements_gas + elements_extres('gas')
+        else
+          word_gas = ''
         end
         doc.replace("$instalacio_gas$", word_gas)
 
         # Climatitzacio
-        word_climatitzacio = ''
+        elements_climatitzacio = ''
+        existex_climatitzacio = false
         if @edifici.climatitzacio.escalfador_pn_menor_24 == true
-          word_climatitzacio = word_climatitzacio + llista('Escalfador d\'aigua calenta sanitària (Pn ≤ 24,4 kW)')
+          elements_climatitzacio = elements_climatitzacio + llista('Escalfador d\'aigua calenta sanitària (Pn ≤ 24,4 kW)')
+          existeix_climatitzacio = true
         end
         if @edifici.climatitzacio.escalfador_pn_24_70 == true
-          word_climatitzacio = word_climatitzacio + llista('Escalfador d\'aigua calenta sanitària (24,4 kW < Pn ≤ 70 kW)')
+          elements_climatitzacio = elements_climatitzacio + llista('Escalfador d\'aigua calenta sanitària (24,4 kW < Pn ≤ 70 kW)')
+          existeix_climatitzacio = true
         end
         if @edifici.climatitzacio.escalfador_pn_major_70 == true
-          word_climatitzacio = word_climatitzacio + llista('Escalfador d\'aigua calenta sanitària (Pn > 70 kW)')
+          elements_climatitzacio = elements_climatitzacio + llista('Escalfador d\'aigua calenta sanitària (Pn > 70 kW)')
+          existeix_climatitzacio = true
         end
         if @edifici.climatitzacio.caldera_gas_pn_menor_70 == true
-          word_climatitzacio = word_climatitzacio + llista('Caldera a gas (Pn ≤ 70 kW)')
+          elements_climatitzacio = elements_climatitzacio + llista('Caldera a gas (Pn ≤ 70 kW)')
+          existeix_climatitzacio = true
         end
         if @edifici.climatitzacio.caldera_gas_pn_major_70 == true
-          word_climatitzacio = word_climatitzacio + llista('Caldera a gas (Pn > 70 kW)')
+          elements_climatitzacio = elements_climatitzacio + llista('Caldera a gas (Pn > 70 kW)')
+          existeix_climatitzacio = true
         end
         if @edifici.climatitzacio.caldera_biomassa == true
-          word_climatitzacio = word_climatitzacio + llista('Caldera a biomassa')
+          elements_climatitzacio = elements_climatitzacio + llista('Caldera a biomassa')
+          existeix_climatitzacio = true
         end
         if @edifici.climatitzacio.caldera_solar_termica == true
-          word_climatitzacio = word_climatitzacio + llista('Caldera amb instal·lació d’energia solar tèrmica')
+          elements_climatitzacio = elements_climatitzacio + llista('Caldera amb instal·lació d’energia solar tèrmica')
+          existeix_climatitzacio = true
         end
         if @edifici.climatitzacio.altres_pn_menor_70 == true
-          word_climatitzacio = word_climatitzacio + llista('Caldera (Pn ≤ 70 kW)')
+          elements_climatitzacio = elements_climatitzacio + llista('Caldera (Pn ≤ 70 kW)')
+          existeix_climatitzacio = true
         end
         if @edifici.climatitzacio.altres_pn_major_70 == true
-          word_climatitzacio = word_climatitzacio + llista('Caldera (Pn > 70 kW)')
+          elements_climatitzacio = elements_climatitzacio + llista('Caldera (Pn > 70 kW)')
+          existeix_climatitzacio = true
         end
         if @edifici.climatitzacio.clima_pn_menor_12_autonoms == true
-          word_climatitzacio = word_climatitzacio + llista('Sistema de climatització amb equips autònoms (Pn ≤ 12 kW)')
+          elements_climatitzacio = elements_climatitzacio + llista('Sistema de climatització amb equips autònoms (Pn ≤ 12 kW)')
+          existeix_climatitzacio = true
         end
         if @edifici.climatitzacio.clima_pn_menor_12_torres == true
-          word_climatitzacio = word_climatitzacio + llista('Sistema de climatització amb torre de refrigeració (Pn ≤ 12 kW)')
+          elements_climatitzacio = elements_climatitzacio + llista('Sistema de climatització amb torre de refrigeració (Pn ≤ 12 kW)')
+          existeix_climatitzacio = true
         end
         if @edifici.climatitzacio.clima_pn_menor_12_recuperador == true
-          word_climatitzacio = word_climatitzacio + llista('Sistema de climatització amb recuperador de calor (Pn ≤ 12 kW)')
+          elements_climatitzacio = elements_climatitzacio + llista('Sistema de climatització amb recuperador de calor (Pn ≤ 12 kW)')
+          existeix_climatitzacio = true
         end
         if @edifici.climatitzacio.clima_pn_12_70_autonoms == true
-          word_climatitzacio = word_climatitzacio + llista('Sistema de climatització amb equips autònoms (12 kW < Pn ≤ 70 kW)')
+          elements_climatitzacio = elements_climatitzacio + llista('Sistema de climatització amb equips autònoms (12 kW < Pn ≤ 70 kW)')
+          existeix_climatitzacio = true
         end
         if @edifici.climatitzacio.clima_pn_12_70_torres == true
-          word_climatitzacio = word_climatitzacio + llista('Sistema de climatització amb torre de refrigeració (12 kW < Pn ≤ 70 kW)')
+          elements_climatitzacio = elements_climatitzacio + llista('Sistema de climatització amb torre de refrigeració (12 kW < Pn ≤ 70 kW)')
+          existeix_climatitzacio = true
         end
         if @edifici.climatitzacio.clima_pn_12_70_recuperador == true
-          word_climatitzacio = word_climatitzacio + llista('Sistema de climatització amb recuperador de calor (12 kW < Pn ≤ 70 kW)')
+          elements_climatitzacio = elements_climatitzacio + llista('Sistema de climatització amb recuperador de calor (12 kW < Pn ≤ 70 kW)')
+          existeix_climatitzacio = true
         end
         if @edifici.climatitzacio.clima_pn_major_70_autonoms == true
-          word_climatitzacio = word_climatitzacio + llista('Sistema de climatització amb equips autònoms (Pn > 70 kW)')
+          elements_climatitzacio = elements_climatitzacio + llista('Sistema de climatització amb equips autònoms (Pn > 70 kW)')
+          existeix_climatitzacio = true
         end
         if @edifici.climatitzacio.clima_pn_major_70_torres == true
-          word_climatitzacio = word_climatitzacio + llista('Sistema de climatització amb torre de refrigeració (Pn > 70 kW)')
+          elements_climatitzacio = elements_climatitzacio + llista('Sistema de climatització amb torre de refrigeració (Pn > 70 kW)')
+          existeix_climatitzacio = true
         end
         if @edifici.climatitzacio.clima_pn_major_70_recuperador == true
-          word_climatitzacio = word_climatitzacio + llista('Sistema de climatització amb recuperador de calor (Pn > 70 kW)')
+          elements_climatitzacio = elements_climatitzacio + llista('Sistema de climatització amb recuperador de calor (Pn > 70 kW)')
+          existeix_climatitzacio = true
+        end
+
+        if existeix_climatitzacio == true || elements_extres('climatitzacio') != ''
+          word_climatitzacio = '<w:p w14:paraId="2EF68265" w14:textId="77777777" w:rsidR="00500DE7" w:rsidRDefault="00BB14EB"><w:pPr><w:rPr><w:b/><w:lang w:val="es-ES"/></w:rPr></w:pPr><w:r><w:rPr><w:b/><w:lang w:val="es-ES"/></w:rPr><w:t>ACS, calefacció i refrigeració</w:t></w:r></w:p>' + elements_climatitzacio + elements_extres('climatitzacio')
+        else
+          word_climatitzacio = ''
         end
         doc.replace("$climatitzacio$", word_climatitzacio)
 
         # Ventilació
-        word_ventilacio = ''
+        elements_ventilacio = ''
+        existeix_ventilacio = false
         if @edifici.ventilacio.habitatge_natural_conductes == true
-          word_ventilacio = word_ventilacio + llista('Natural per conductes en habitatge')
+          elements_ventilacio = elements_ventilacio + llista('Natural per conductes en habitatge')
+          existeix_ventilacio = true
         end
         if @edifici.ventilacio.habitatge_natural_obertures == true
-          word_ventilacio = word_ventilacio + llista('Natural per obertures en habitatge')
+          elements_ventilacio = elements_ventilacio + llista('Natural per obertures en habitatge')
+          existeix_ventilacio = true
         end
         if @edifici.ventilacio.habitatge_mecanica_conductes == true
-          word_ventilacio = word_ventilacio + llista('Mecànica per conductes en habitatge')
+          elements_ventilacio = elements_ventilacio + llista('Mecànica per conductes en habitatge')
+          existeix_ventilacio = true
         end
         if @edifici.ventilacio.habitatge_mecanica_obertures == true
-          word_ventilacio = word_ventilacio + llista('Mecànica per obertures en habitatge')
+          elements_ventilacio = elements_ventilacio + llista('Mecànica per obertures en habitatge')
+          existeix_ventilacio = true
         end
         if @edifici.ventilacio.habitatge_mecanica_control == true
-          word_ventilacio = word_ventilacio + llista('Sistema de control de la ventilació en habitatge')
+          elements_ventilacio = elements_ventilacio + llista('Sistema de control de la ventilació en habitatge')
+          existeix_ventilacio = true
         end
         if @edifici.ventilacio.traster_natural_conductes == true
-          word_ventilacio = word_ventilacio + llista('Natural per conductes en traster')
+          elements_ventilacio = elements_ventilacio + llista('Natural per conductes en traster')
+          existeix_ventilacio = true
         end
         if @edifici.ventilacio.traster_natural_obertures == true
-          word_ventilacio = word_ventilacio + llista('Natural per obertures en traster')
+          elements_ventilacio = elements_ventilacio + llista('Natural per obertures en traster')
+          existeix_ventilacio = true
         end
         if @edifici.ventilacio.traster_mecanica_conductes == true
-          word_ventilacio = word_ventilacio + llista('Mecànica per conductes en traster')
+          elements_ventilacio = elements_ventilacio + llista('Mecànica per conductes en traster')
+          existeix_ventilacio = true
         end
         if @edifici.ventilacio.traster_mecanica_obertures == true
-          word_ventilacio = word_ventilacio + llista('Mecànica per obertures en traster')
+          elements_ventilacio = elements_ventilacio + llista('Mecànica per obertures en traster')
+          existeix_ventilacio = true
         end
         if @edifici.ventilacio.traster_mecanica_control == true
-          word_ventilacio = word_ventilacio + llista('Sistema de control de la ventilació en traster')
+          elements_ventilacio = elements_ventilacio + llista('Sistema de control de la ventilació en traster')
+          existeix_ventilacio = true
         end
         if @edifici.ventilacio.magatzem_natural_conductes == true
-          word_ventilacio = word_ventilacio + llista('Natural per conductes en magatzem')
+          elements_ventilacio = elements_ventilacio + llista('Natural per conductes en magatzem')
+          existeix_ventilacio = true
         end
         if @edifici.ventilacio.magatzem_natural_obertures == true
-          word_ventilacio = word_ventilacio + llista('Natural per obertures en magatzem')
+          elements_ventilacio = elements_ventilacio + llista('Natural per obertures en magatzem')
+          existeix_ventilacio = true
         end
         if @edifici.ventilacio.magatzem_mecanica_conductes == true
-          word_ventilacio = word_ventilacio + llista('Mecànica per conductes en magatzem')
+          elements_ventilacio = elements_ventilacio + llista('Mecànica per conductes en magatzem')
+          existeix_ventilacio = true
         end
         if @edifici.ventilacio.magatzem_mecanica_obertures == true
-          word_ventilacio = word_ventilacio + llista('Mecànica per obertures en magatzem')
+          elements_ventilacio = elements_ventilacio + llista('Mecànica per obertures en magatzem')
+          existeix_ventilacio = true
         end
         if @edifici.ventilacio.magatzem_mecanica_control == true
-          word_ventilacio = word_ventilacio + llista('Sistema de control de la ventilació en magatzem')
+          elements_ventilacio = elements_ventilacio + llista('Sistema de control de la ventilació en magatzem')
+          existeix_ventilacio = true
         end
         if @edifici.ventilacio.garatge_natural_conductes == true
-          word_ventilacio = word_ventilacio + llista('Natural per conductes en garatge')
+          elements_ventilacio = elements_ventilacio + llista('Natural per conductes en garatge')
+          existeix_ventilacio = true
         end
         if @edifici.ventilacio.garatge_natural_obertures == true
-          word_ventilacio = word_ventilacio + llista('Natural per obertures en garatge')
+          elements_ventilacio = elements_ventilacio + llista('Natural per obertures en garatge')
+          existeix_ventilacio = true
         end
         if @edifici.ventilacio.garatge_mecanica_conductes == true
-          word_ventilacio = word_ventilacio + llista('Mecànica per conductes en garatge')
+          elements_ventilacio = elements_ventilacio + llista('Mecànica per conductes en garatge')
+          existeix_ventilacio = true
         end
         if @edifici.ventilacio.garatge_mecanica_obertures == true
-          word_ventilacio = word_ventilacio + llista('Mecànica per obertures en garatge')
+          elements_ventilacio = elements_ventilacio + llista('Mecànica per obertures en garatge')
+          existeix_ventilacio = true
         end
         if @edifici.ventilacio.garatge_mecanica_control == true
-          word_ventilacio = word_ventilacio + llista('Sistema de control de la ventilació en garatge')
+          elements_ventilacio = elements_ventilacio + llista('Sistema de control de la ventilació en garatge')
+          existeix_ventilacio = true
+        end
+
+        if existeix_ventilacio == true || elements_extres('ventilacio') != ''
+          word_ventilacio = '<w:p w14:paraId="2EF68265" w14:textId="77777777" w:rsidR="00500DE7" w:rsidRDefault="00BB14EB"><w:pPr><w:rPr><w:b/><w:lang w:val="es-ES"/></w:rPr></w:pPr><w:r><w:rPr><w:b/><w:lang w:val="es-ES"/></w:rPr><w:t>Ventilació</w:t></w:r></w:p>' + elements_ventilacio + elements_extres('ventilacio')
+        else
+          word_ventilacio = ''
         end
         doc.replace("$ventilacio$", word_ventilacio)
 
         # Protecció contra incendis
-        word_incendis = ''
+        elements_incendis = ''
+        existeix_incendis = false
         if @edifici.incendi.alarma_automatica == true
-          word_incendis = word_incendis + llista('Sistema automàtic de detecció i alarma d\'incendis')
+          elements_incendis = elements_incendis + llista('Sistema automàtic de detecció i alarma d\'incendis')
+          existeix_incendis = true
         end
         if @edifici.incendi.alarma_manual == true
-          word_incendis = word_incendis + llista('Sistema manual d\'alarma d\'incendis')
+          elements_incendis = elements_incendis + llista('Sistema manual d\'alarma d\'incendis')
+          existeix_incendis = true
         end
         if @edifici.incendi.extintors == true
-          word_incendis = word_incendis + llista('Extintors d\'incendis')
+          elements_incendis = elements_incendis + llista('Extintors d\'incendis')
+          existeix_incendis = true
         end
         if @edifici.incendi.abastiment_aigua == true
-          word_incendis = word_incendis + llista('Sistema d\'abastiment d\'aigua contra incendis')
+          elements_incendis = elements_incendis + llista('Sistema d\'abastiment d\'aigua contra incendis')
+          existeix_incendis = true
         end
         if @edifici.incendi.bie == true
-          word_incendis = word_incendis + llista('Boca d\'incendis equipada (BIE)')
+          elements_incendis = elements_incendis + llista('Boca d\'incendis equipada (BIE)')
+          existeix_incendis = true
         end
         if @edifici.incendi.hidrants == true
-          word_incendis = word_incendis + llista('Hidrants')
+          elements_incendis = elements_incendis + llista('Hidrants')
+          existeix_incendis = true
         end
         if @edifici.incendi.ruixadors == true
-          word_incendis = word_incendis + llista('Sistemes fixes d’extinció (ruixadors)')
+          elements_incendis = elements_incendis + llista('Sistemes fixes d’extinció (ruixadors)')
+          existeix_incendis = true
         end
         if @edifici.incendi.columnes_seques == true
-          word_incendis = word_incendis + llista('Columnes seques')
+          elements_incendis = elements_incendis + llista('Columnes seques')
+          existeix_incendis = true
         end
         if @edifici.incendi.parallamps == true
-          word_incendis = word_incendis + llista('Parallamps')
+          elements_incendis = elements_incendis + llista('Parallamps')
+          existeix_incendis = true
+        end
+        
+        if existeix_incendis == true || elements_extres('incendis') != ''
+          word_incendis = '<w:p w14:paraId="2EF68265" w14:textId="77777777" w:rsidR="00500DE7" w:rsidRDefault="00BB14EB"><w:pPr><w:rPr><w:b/><w:lang w:val="es-ES"/></w:rPr></w:pPr><w:r><w:rPr><w:b/><w:lang w:val="es-ES"/></w:rPr><w:t>Protecció contra incendis</w:t></w:r></w:p>' + elements_incendis + elements_extres('incendis')
+        else
+          word_incendis = ''
         end
         doc.replace("$incendis$", word_incendis)
 
         # Ascensor
-        word_ascensor = ''
+        elements_ascensor = ''
+        existeix_ascensor = false
         if @edifici.ascensor.habitatge_unifamiliar == true || @edifici.ascensor.edifici_comunitari == true || @edifici.ascensor.mes_20_plantes == true || @edifici.ascensor.altres == true
-          word_ascensor = word_ascensor + llista('L\'edifici disposa d\'ascensor')
+          elements_ascensor = elements_ascensor + llista('L\'edifici disposa d\'ascensor')
+          existeix_ascensor = true
+        end
+        
+        if existeix_ascensor == true || elements_extres('ascensor') != ''
+          word_ascensor = '<w:p w14:paraId="2EF68265" w14:textId="77777777" w:rsidR="00500DE7" w:rsidRDefault="00BB14EB"><w:pPr><w:rPr><w:b/><w:lang w:val="es-ES"/></w:rPr></w:pPr><w:r><w:rPr><w:b/><w:lang w:val="es-ES"/></w:rPr><w:t>Ascensor</w:t></w:r></w:p>' + elements_ascensor + elements_extres('ascensor')
+        else
+          word_ascensor = ''
         end
         doc.replace("$ascensors$", word_ascensor)
 
         # Telecomunicacions
-        word_telecomunicacions = ''
+        elements_telecomunicacions = ''
+        existeix_telecomunicacions = false
         if @edifici.telecomunicacio.porter_audio == true
-          word_telecomunicacions = word_telecomunicacions + llista('Porter electrònic amb sistema d\'àudio')
+          elements_telecomunicacions = elements_telecomunicacions + llista('Porter electrònic amb sistema d\'àudio')
+          existeix_telecomunicacions = true
         end
         if @edifici.telecomunicacio.porter_video == true
-          word_telecomunicacions = word_telecomunicacions + llista('Porter electrònic amb sistema d\'àudio i vídeo')
+          elements_telecomunicacions = elements_telecomunicacions + llista('Porter electrònic amb sistema d\'àudio i vídeo')
+          existeix_telecomunicacions = true
         end
         if @edifici.telecomunicacio.antena_individual == true
-          word_telecomunicacions = word_telecomunicacions + llista('Antena individual i xarxa coaxial')
+          elements_telecomunicacions = elements_telecomunicacions + llista('Antena individual i xarxa coaxial')
+          existeix_telecomunicacions = true
         end
         if @edifici.telecomunicacio.antena_colectiva == true
-          word_telecomunicacions = word_telecomunicacions + llista('Antena col·lectiva i xarxa coaxial')
+          elements_telecomunicacions = elements_telecomunicacions + llista('Antena col·lectiva i xarxa coaxial')
+          existeix_telecomunicacions = true
         end
         if @edifici.telecomunicacio.parabolica_individual == true
-          word_telecomunicacions = word_telecomunicacions + llista('Antena parabòlica individual')
+          elements_telecomunicacions = elements_telecomunicacions + llista('Antena parabòlica individual')
+          existeix_telecomunicacions = true
         end
         if @edifici.telecomunicacio.parabolica_colectiva == true
-          word_telecomunicacions = word_telecomunicacions + llista('Antena parabòlica col·lectiva')
+          elements_telecomunicacions = elements_telecomunicacions + llista('Antena parabòlica col·lectiva')
+          existeix_telecomunicacions = true
         end
         if @edifici.telecomunicacio.telefonia == true
-          word_telecomunicacions = word_telecomunicacions + llista('Instal·lació de telefonia')
+          elements_telecomunicacions = elements_telecomunicacions + llista('Instal·lació de telefonia')
+          existeix_telecomunicacions = true
         end
         if @edifici.telecomunicacio.riti == true
-          word_telecomunicacions = word_telecomunicacions + llista('RITI (Recinte d’instal·lacions de telecomunicacions inferior)')
+          elements_telecomunicacions = elements_telecomunicacions + llista('RITI (Recinte d’instal·lacions de telecomunicacions inferior)')
+          existeix_telecomunicacions = true
         end
         if @edifici.telecomunicacio.rits == true
-          word_telecomunicacions = word_telecomunicacions + llista('RITS (Recinte d’instal·lacions de telecomunicacions superior)')
+          elements_telecomunicacions = elements_telecomunicacions + llista('RITS (Recinte d’instal·lacions de telecomunicacions superior)')
+          existeix_telecomunicacions = true
         end
         if @edifici.telecomunicacio.ritu == true
-          word_telecomunicacions = word_telecomunicacions + llista('RITU (Recinte d’instal·lacions de telecomunicacions únic)')
+          elements_telecomunicacions = elements_telecomunicacions + llista('RITU (Recinte d’instal·lacions de telecomunicacions únic)')
+          existeix_telecomunicacions = true
         end
         if @edifici.telecomunicacio.ritm == true
-          word_telecomunicacions = word_telecomunicacions + llista('RITM (Recinte d’instal·lacions de telecomunicacions únic modular prefabricat)')
+          elements_telecomunicacions = elements_telecomunicacions + llista('RITM (Recinte d’instal·lacions de telecomunicacions únic modular prefabricat)')
+          existeix_telecomunicacions = true
+        end
+
+        if existeix_telecomunicacions == true || elements_extres('telecomunicacions') != ''
+          word_telecomunicacions = '<w:p w14:paraId="2EF68265" w14:textId="77777777" w:rsidR="00500DE7" w:rsidRDefault="00BB14EB"><w:pPr><w:rPr><w:b/><w:lang w:val="es-ES"/></w:rPr></w:pPr><w:r><w:rPr><w:b/><w:lang w:val="es-ES"/></w:rPr><w:t>Instal·lació de telecomunicacions</w:t></w:r></w:p>' + elements_telecomunicacions + elements_extres('telecomunicacions')
+        else
+          word_telecomunicacions = ''
         end
         doc.replace("$telecomunicacions$", word_telecomunicacions)
 
         # Especials
-        word_especials = ''
+        elements_especials = ''
+        existeix_especials = false
         if @edifici.especial.piscina_estructura_obra == true || @edifici.especial.piscina_estructura_composite == true || @edifici.especial.piscina_estructura_acer == true
           if @edifici.especial.piscina_estructura_obra == true
             text_piscina_estructura = 'amb estructura d\'obra'
@@ -786,17 +1077,27 @@ class DocumentsController < ApplicationController
           end
 
           text_piscina = 'Piscina ' + text_piscina_estructura + text_piscina_revestiment + text_piscina_vores
-          word_especials = word_especials + llista(text_piscina)
+          elements_especials = elements_especials + llista(text_piscina)
+          existeix_especials = true
         end
         if @edifici.especial.piscina_climatitzacio == true 
-          word_especials = word_especials + llista('La piscina disposa d\'instal·lació de climatització')
+          elements_especials = elements_especials + llista('La piscina disposa d\'instal·lació de climatització')
+          existeix_especials = true
         end
         if @edifici.especial.piscina_iluminacio == true 
-          word_especials = word_especials + llista('La piscina disposa d\'instal·lació d\'il·luminació submergida')
+          elements_especials = elements_especials + llista('La piscina disposa d\'instal·lació d\'il·luminació submergida')
+          existeix_especials = true
         end
         if @edifici.especial.piscina_purificador == true 
-          word_especials = word_especials + llista('La piscina disposa d\'instal·lació de purificació d\'aigües')
+          elements_especials = elements_especials + llista('La piscina disposa d\'instal·lació de purificació d\'aigües')
+          existeix_especials = true
         end 
+        
+        if existeix_especials == true || elements_extres('especials') != ''
+          word_especials = '<w:p w14:paraId="2EF68265" w14:textId="77777777" w:rsidR="00500DE7" w:rsidRDefault="00BB14EB"><w:pPr><w:rPr><w:b/><w:lang w:val="es-ES"/></w:rPr></w:pPr><w:r><w:rPr><w:b/><w:lang w:val="es-ES"/></w:rPr><w:t>Elements especials</w:t></w:r></w:p>' + elements_especials + elements_extres('especials')
+        else
+          word_especials = ''
+        end
         doc.replace("$instalacions_especials$", word_especials)
 
         # Operacions
@@ -868,6 +1169,11 @@ class DocumentsController < ApplicationController
         operacions_gas.each do |operacio|
           word_operacions_gas = word_operacions_gas + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
         end
+        text_gas = ''
+        if operacions_gas.count > 0
+          text_gas = '<w:p w14:paraId="723E6F3D" w14:textId="77777777" w:rsidR="00025D1E" w:rsidRDefault="00025D1E" w:rsidP="00025D1E"><w:pPr><w:pStyle w:val="Heading2"/></w:pPr><w:r><w:t>Instal·lació de gas</w:t></w:r></w:p><w:p w14:paraId="603E71F7" w14:textId="77777777" w:rsidR="00025D1E" w:rsidRDefault="00025D1E" w:rsidP="00025D1E"/><w:p w14:paraId="56A705D8" w14:textId="77777777" w:rsidR="00025D1E" w:rsidRDefault="00025D1E" w:rsidP="00025D1E"><w:pPr><w:rPr><w:b/></w:rPr></w:pPr><w:r><w:rPr><w:b/></w:rPr><w:t>Instruccions d\'ús:</w:t></w:r></w:p><w:p w14:paraId="609805A2" w14:textId="77777777" w:rsidR="00025D1E" w:rsidRDefault="00025D1E" w:rsidP="00025D1E"><w:r><w:t>Precaucions</w:t></w:r></w:p><w:p w14:paraId="431D13B5" w14:textId="77777777" w:rsidR="00025D1E" w:rsidRDefault="00025D1E" w:rsidP="00025D1E"><w:r><w:t>Les canonades de gas no s’han d’utilitzar com a preses de terra d’aparells elèctrics ni tampoc per penjar objectes.</w:t></w:r></w:p><w:p w14:paraId="4D89EA42" w14:textId="77777777" w:rsidR="00025D1E" w:rsidRDefault="00025D1E" w:rsidP="00025D1E"><w:r><w:t xml:space="preserve">Es recomana que en absències prolongades es tanqui la clau de </w:t></w:r><w:proofErr w:type="gramStart"/><w:r><w:t>pas</w:t></w:r><w:proofErr w:type="gramEnd"/><w:r><w:t xml:space="preserve"> general de la instal·lació de gas de l’habitatge o local. També és convenient tancar-la durant la nit.</w:t></w:r></w:p><w:p w14:paraId="3EECC835" w14:textId="77777777" w:rsidR="00025D1E" w:rsidRDefault="00025D1E" w:rsidP="00025D1E"><w:r><w:t>Els tubs flexibles de connexió del gas als aparells no hauran de tenir una longitud superior a 1,50 metres i han de portar imprès el període de vigència, que no ha d’haver caducat. És important assegurar-se que el tub flexible i les connexions de l’aparell estiguin acoblades directament i no ballin. Han de subjectar-se els extrems mitjançant unes abraçadores. No ha d’estar en contacte amb cap superfície calenta, com per exemple a prop del forn.</w:t></w:r></w:p><w:p w14:paraId="1CC9781E" w14:textId="77777777" w:rsidR="00025D1E" w:rsidRDefault="00025D1E" w:rsidP="00025D1E"><w:r><w:t>En cas de fuita</w:t></w:r></w:p><w:p w14:paraId="7811C8B9" w14:textId="77777777" w:rsidR="00025D1E" w:rsidRDefault="00025D1E" w:rsidP="00025D1E"><w:r><w:t xml:space="preserve">Si es detecta una fuita de gas, s’haurà de tancar la clau de </w:t></w:r><w:proofErr w:type="gramStart"/><w:r><w:t>pas</w:t></w:r><w:proofErr w:type="gramEnd"/><w:r><w:t xml:space="preserve"> general de la instal·lació del pis o local, ventilar l’espai, no encendre llumins, no prémer timbres ni commutadors elèctrics i evitar les espurnes.</w:t></w:r></w:p><w:p w14:paraId="5D4E5964" w14:textId="77777777" w:rsidR="00025D1E" w:rsidRDefault="00025D1E" w:rsidP="00025D1E"><w:r><w:t>Haurà d’avisar immediatament a una empresa instal·ladora de gas autoritzada o al servei d’urgències de la companyia. Sobretot, no s’han d’obrir o tancar els interruptors de llum ja que produeixen espurnes.</w:t></w:r></w:p><w:p w14:paraId="21C838A8" w14:textId="77777777" w:rsidR="00025D1E" w:rsidRDefault="00025D1E" w:rsidP="00025D1E"><w:r><w:t>Responsabilitats</w:t></w:r></w:p><w:p w14:paraId="19324B04" w14:textId="77777777" w:rsidR="00025D1E" w:rsidRDefault="00025D1E" w:rsidP="00025D1E"><w:r><w:t>El manteniment de les instal·lacions situades entre la clau d’entrada de l’immoble i el comptador correspon al propietari de l’immoble o a la Comunitat de Propietaris.</w:t></w:r></w:p><w:p w14:paraId="3974A4F5" w14:textId="77777777" w:rsidR="00025D1E" w:rsidRDefault="00025D1E" w:rsidP="00025D1E"><w:r><w:t>La cambra de comptadors serà accessible només per al porter o vigilant, i el personal de la companyia subministradora o de manteniment. S’ha de vigilar que les reixes de ventilació no estiguin obstruïdes, així com també l’accés a la cambra.</w:t></w:r></w:p><w:p w14:paraId="4AE90FF0" w14:textId="77777777" w:rsidR="00025D1E" w:rsidRDefault="00025D1E" w:rsidP="00025D1E"><w:r><w:t>Si es desitja donar subministrament a altres aparells diferents dels instal·lats, s’ha de demanar permís a la propietat de l’immoble o a la Comunitat de Propietaris. La instal·lació de nous aparells l’ha de fer una empresa instal·ladora de gas autoritzada.</w:t></w:r></w:p><w:p w14:paraId="6A154838" w14:textId="77777777" w:rsidR="00025D1E" w:rsidRDefault="00025D1E" w:rsidP="00025D1E"><w:r><w:t>S’han de llegir atentament les instruccions dels aparells de gas, proporcionades pels seus fabricants, abans d’utilitzar-los per primera vegada.</w:t></w:r></w:p><w:p w14:paraId="4D808AF9" w14:textId="77777777" w:rsidR="00025D1E" w:rsidRDefault="00025D1E" w:rsidP="00025D1E"><w:r><w:t>El grau de perillositat d’aquesta instal·lació és superior a les altres, per la qual cosa s’extremaran les mesures de seguretat.</w:t></w:r></w:p><w:p w14:paraId="57604B3F" w14:textId="77777777" w:rsidR="00025D1E" w:rsidRDefault="00025D1E" w:rsidP="00025D1E"><w:r><w:lastRenderedPageBreak/><w:t xml:space="preserve">Els titulars de les instal·lacions receptores han de poder provocar el bon estat d\'ús i conservació de les instal·lacions mitjançant l\'obtenció del certificat de la revisió corresponent, que hauran de presentar a requeriment de l\'administració o de la persona que realitzi la revisió periòdica següent. </w:t></w:r></w:p><w:p w14:paraId="24339318" w14:textId="77777777" w:rsidR="00025D1E" w:rsidRPr="004A22F5" w:rsidRDefault="00025D1E" w:rsidP="00025D1E"><w:r><w:t xml:space="preserve">El gas natural és menys pesat que l’aire i, per tant, en cas de fuita es concentra a les parts altes. Són necessàries les dues escletxes de ventilació, a la part inferior i superior de la paret que doni a l’exterior d’aquella habitació on es trobi la instal·lació, per tal de crear circulació de l’aire i, per tant, no es poden tapar. </w:t></w:r></w:p><w:p w14:paraId="699EC613" w14:textId="77777777" w:rsidR="00025D1E" w:rsidRDefault="00025D1E" w:rsidP="00025D1E"><w:pPr><w:rPr><w:b/></w:rPr></w:pPr></w:p><w:p w14:paraId="0B21B640" w14:textId="77777777" w:rsidR="00025D1E" w:rsidRDefault="00025D1E" w:rsidP="00025D1E"><w:pPr><w:rPr><w:b/></w:rPr></w:pPr><w:r><w:rPr><w:b/></w:rPr><w:t>Instruccions de manteniment:</w:t></w:r></w:p>'
+        end
+        doc.replace("$text_gas$", text_gas)
         doc.replace("$operacions_gas$", word_operacions_gas)
 
         # Climatitzacio
@@ -886,6 +1192,11 @@ class DocumentsController < ApplicationController
         operacions_ventilacio.each do |operacio|
           word_operacions_ventilacio = word_operacions_ventilacio + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
         end
+        text_ventilacio = ''
+        if operacions_ventilacio.count > 0
+          text_ventilacio = '<w:p w14:paraId="7D59F865" w14:textId="77777777" w:rsidR="00916AE4" w:rsidRDefault="00916AE4" w:rsidP="00916AE4"><w:pPr><w:pStyle w:val="Heading2"/></w:pPr><w:r><w:t>Ventilació</w:t></w:r></w:p><w:p w14:paraId="7F9B43BB" w14:textId="77777777" w:rsidR="00916AE4" w:rsidRDefault="00916AE4" w:rsidP="00916AE4"/><w:p w14:paraId="028265AF" w14:textId="77777777" w:rsidR="00916AE4" w:rsidRDefault="00916AE4" w:rsidP="00916AE4"><w:pPr><w:rPr><w:b/></w:rPr></w:pPr><w:r><w:rPr><w:b/></w:rPr><w:t>Instruccions d\'ús:</w:t></w:r></w:p><w:p w14:paraId="5F838AB8" w14:textId="77777777" w:rsidR="00916AE4" w:rsidRPr="00B04FDC" w:rsidRDefault="00916AE4" w:rsidP="00916AE4"><w:r w:rsidRPr="00B04FDC"><w:t>Una bona ventilació és necessària a tots els edificis. Els espais interiors dels habitatges han de ventilar-se periòdicament per tal d’evitar humitats de condensació. La ventilació s’ha de fer preferentment a hores de sol, durant 20 o 30 minuts. És millor ventilar els dormitoris a primera hora del matí. Hi ha estances que per les seves característiques necessiten més ventilació que altres, com és el cas de les cuines i els banys. Per aquest motiu, en ocasions la ventilació es fa per mitjà de conductes, i en ocasions s’utilitz</w:t></w:r><w:r><w:t xml:space="preserve">en extractors per millorar-la. </w:t></w:r></w:p><w:p w14:paraId="546D8BC3" w14:textId="77777777" w:rsidR="00916AE4" w:rsidRDefault="00916AE4" w:rsidP="00916AE4"><w:pPr><w:rPr><w:b/></w:rPr></w:pPr></w:p><w:p w14:paraId="09979D4C" w14:textId="77777777" w:rsidR="00916AE4" w:rsidRDefault="00916AE4" w:rsidP="00916AE4"><w:pPr><w:rPr><w:b/></w:rPr></w:pPr><w:r><w:rPr><w:b/></w:rPr><w:t>Instruccions de manteniment:</w:t></w:r></w:p>'
+        end
+        doc.replace("$text_ventilacio$", text_ventilacio)
         doc.replace("$operacions_ventilacio$", word_operacions_ventilacio)
 
         # Incendis
@@ -895,6 +1206,11 @@ class DocumentsController < ApplicationController
         operacions_incendis.each do |operacio|
           word_operacions_incendis = word_operacions_incendis + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
         end
+        text_incendis = ''
+        if operacions_incendis.count > 0
+          text_incendis = '<w:p w14:paraId="5A54A62E" w14:textId="77777777" w:rsidR="004A040F" w:rsidRDefault="004A040F" w:rsidP="004A040F"><w:pPr><w:pStyle w:val="Heading2"/></w:pPr><w:r><w:t>Protecció contra incendis</w:t></w:r></w:p><w:p w14:paraId="7C780DBF" w14:textId="77777777" w:rsidR="004A040F" w:rsidRDefault="004A040F" w:rsidP="004A040F"/><w:p w14:paraId="24B44CD4" w14:textId="77777777" w:rsidR="004A040F" w:rsidRDefault="004A040F" w:rsidP="004A040F"><w:pPr><w:rPr><w:b/></w:rPr></w:pPr><w:r><w:rPr><w:b/></w:rPr><w:t>Instruccions d\'ús:</w:t></w:r></w:p><w:p w14:paraId="33F41EFB" w14:textId="77777777" w:rsidR="004A040F" w:rsidRDefault="004A040F" w:rsidP="004A040F"><w:r><w:t>Aquestes instal·lacions són de prevenció i no s’utilitzen durant la vida normal de l’edifici, però la seva manca d’ús pot afavorir les avaries, per tant és necessari seguir les instruccions de manteniment periòdic correctament.</w:t></w:r></w:p><w:p w14:paraId="37556557" w14:textId="77777777" w:rsidR="004A040F" w:rsidRDefault="004A040F" w:rsidP="004A040F"><w:r><w:t>En cas de dur a terme proves de funcionament o simulacres d’emergència, s’haurà de comunicar amb l’antelació necessària als usuaris de l’edifici per tal d’evitar situacions de pànic.</w:t></w:r></w:p><w:p w14:paraId="621D927F" w14:textId="77777777" w:rsidR="004A040F" w:rsidRPr="00B04FDC" w:rsidRDefault="004A040F" w:rsidP="004A040F"><w:r><w:t xml:space="preserve">Segons el tipus d’edifici, és necessari disposar d’un pla d’emergència, que ha d’estar aprovat per les autoritats competents. És recomanable que tots els usuaris de l’edifici coneguin l’existència dels elements de protecció de què es disposa i les instruccions per al seu ús correcte. </w:t></w:r></w:p><w:p w14:paraId="2389EE73" w14:textId="77777777" w:rsidR="004A040F" w:rsidRDefault="004A040F" w:rsidP="004A040F"><w:pPr><w:rPr><w:b/></w:rPr></w:pPr></w:p><w:p w14:paraId="7D8D8339" w14:textId="77777777" w:rsidR="004A040F" w:rsidRDefault="004A040F" w:rsidP="004A040F"><w:pPr><w:rPr><w:b/></w:rPr></w:pPr><w:r><w:rPr><w:b/></w:rPr><w:t>Instruccions de manteniment:</w:t></w:r></w:p>'
+        end
+        doc.replace("$text_incendis$", text_incendis)
         doc.replace("$operacions_incendis$", word_operacions_incendis)
 
         # Ascensors
@@ -904,6 +1220,11 @@ class DocumentsController < ApplicationController
         operacions_ascensors.each do |operacio|
           word_operacions_ascensors = word_operacions_ascensors + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
         end
+        text_ascensors = ''
+        if operacions_ascensors.count > 0
+          text_ascensors = '<w:p w14:paraId="130A5642" w14:textId="77777777" w:rsidR="00CC29D5" w:rsidRDefault="00CC29D5" w:rsidP="00CC29D5"><w:pPr><w:pStyle w:val="Heading2"/></w:pPr><w:r><w:t>Ascensors</w:t></w:r></w:p><w:p w14:paraId="0E9BF05B" w14:textId="77777777" w:rsidR="00CC29D5" w:rsidRDefault="00CC29D5" w:rsidP="00CC29D5"/><w:p w14:paraId="0F608663" w14:textId="77777777" w:rsidR="00CC29D5" w:rsidRDefault="00CC29D5" w:rsidP="00CC29D5"><w:pPr><w:rPr><w:b/></w:rPr></w:pPr><w:r><w:rPr><w:b/></w:rPr><w:t>Instruccions d\'ús:</w:t></w:r></w:p><w:p w14:paraId="051047B4" w14:textId="77777777" w:rsidR="00CC29D5" w:rsidRDefault="00CC29D5" w:rsidP="00CC29D5"><w:r><w:t>Algú s’ha de fer responsable del funcionament de la instal·lació. Normalment és el president de la Comunitat de Propietaris o el conserge.</w:t></w:r></w:p><w:p w14:paraId="5C9B7FA8" w14:textId="77777777" w:rsidR="00CC29D5" w:rsidRDefault="00CC29D5" w:rsidP="00CC29D5"><w:r><w:t>El manteniment de la instal·lació d’ascensors s’ha d’encarregar a una empresa especialitzada, mitjançant un contracte. Aquesta empresa enregistrarà les dates de visita, el resultat de les inspeccions i les incidències en un Llibre de Registre de Revisions, el qual romandrà en poder del responsable de la instal·lació.</w:t></w:r></w:p><w:p w14:paraId="547D43DF" w14:textId="77777777" w:rsidR="00CC29D5" w:rsidRDefault="00CC29D5" w:rsidP="00CC29D5"><w:r><w:t>La cambra de màquines serà accessible només per al porter o vigilant, i el personal de manteniment. S’ha de vigilar que les reixes de ventilació no estiguin obstruïdes, així com tampoc l’accés a la cambra.</w:t></w:r></w:p><w:p w14:paraId="64A194CE" w14:textId="77777777" w:rsidR="00CC29D5" w:rsidRDefault="00CC29D5" w:rsidP="00CC29D5"><w:r><w:t>Precaucions</w:t></w:r></w:p><w:p w14:paraId="25D69807" w14:textId="77777777" w:rsidR="00CC29D5" w:rsidRDefault="00CC29D5" w:rsidP="00CC29D5"><w:r><w:t>Els ascensors no poden ser utilitzats per nens que no vagin acompanyats de persones adultes.</w:t></w:r></w:p><w:p w14:paraId="3492FB51" w14:textId="77777777" w:rsidR="00CC29D5" w:rsidRDefault="00CC29D5" w:rsidP="00CC29D5"><w:r><w:t>L’ascensor pot suportar un pes limitat i un nombre màxim de persones (indicats a la cabina i a l’apartat anterior). Aquesta limitació s’ha de respectar per tal d’evitar accidents. Els ascensors no es poden utilitzar com a muntacàrregues.</w:t></w:r></w:p><w:p w14:paraId="05C023CD" w14:textId="77777777" w:rsidR="00CC29D5" w:rsidRDefault="00CC29D5" w:rsidP="00CC29D5"><w:r><w:t>Si s’observa qualsevol anomalia (les portes s’obren en mig del recorregut, l’ascensor s’atura quedant desnivellat respecte al replà, hi ha interruptors que no funcionen, etc.) s’haurà d’aturar el servei i avisar a l’empresa de manteniment.</w:t></w:r></w:p><w:p w14:paraId="372A2CFD" w14:textId="77777777" w:rsidR="00CC29D5" w:rsidRPr="00B04FDC" w:rsidRDefault="00CC29D5" w:rsidP="00CC29D5"><w:r><w:t xml:space="preserve">Si l’ascensor es queda sense electricitat, no s’ha d’intentar sortir de la cabina. S’ha d’esperar que es restableixi el subministrament d’electricitat o que la cabina es remunti manualment fins un replà. </w:t></w:r></w:p><w:p w14:paraId="680CC49E" w14:textId="77777777" w:rsidR="00CC29D5" w:rsidRDefault="00CC29D5" w:rsidP="00CC29D5"><w:pPr><w:rPr><w:b/></w:rPr></w:pPr></w:p><w:p w14:paraId="4CDFD204" w14:textId="77777777" w:rsidR="00CC29D5" w:rsidRDefault="00CC29D5" w:rsidP="00CC29D5"><w:pPr><w:rPr><w:b/></w:rPr></w:pPr><w:r><w:rPr><w:b/></w:rPr><w:t>Instruccions de manteniment:</w:t></w:r></w:p>'
+        end
+        doc.replace("$text_ascensors$", text_ascensors)
         doc.replace("$operacions_ascensors$", word_operacions_ascensors)
 
         # Telecomunicacions
@@ -913,6 +1234,11 @@ class DocumentsController < ApplicationController
         operacions_telecomunicacions.each do |operacio|
           word_operacions_telecomunicacions = word_operacions_telecomunicacions + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
         end
+        text_telecomunicacions = ''
+        if operacions_telecomunicacions.count > 0
+          text_telecomunicacions = '<w:p w14:paraId="504A99AA" w14:textId="77777777" w:rsidR="00A77128" w:rsidRDefault="00A77128" w:rsidP="00A77128"><w:pPr><w:pStyle w:val="Heading2"/></w:pPr><w:r><w:t>Instal·lació de telecomunicacions</w:t></w:r></w:p><w:p w14:paraId="58F5E00E" w14:textId="77777777" w:rsidR="00A77128" w:rsidRDefault="00A77128" w:rsidP="00A77128"/><w:p w14:paraId="6BA155FF" w14:textId="77777777" w:rsidR="00A77128" w:rsidRDefault="00A77128" w:rsidP="00A77128"><w:pPr><w:rPr><w:b/></w:rPr></w:pPr><w:r><w:rPr><w:b/></w:rPr><w:t>Instruccions d\'ús:</w:t></w:r></w:p><w:p w14:paraId="276CFA78" w14:textId="77777777" w:rsidR="00A77128" w:rsidRDefault="00A77128" w:rsidP="00A77128"><w:r><w:t>El propietari de l\'immoble o la Comunitat de Propietaris són els responsables del manteniment de la part de la infraestructura comuna, entesa com a canalitzacions, compresa entre el punt d\'entrada general de la xarxa o l\'immoble i el registre d\'accés d\'usuari, així com adoptar les mesures necessàries per evitar l\'accés no autoritzat i la manipulació incorrecta de la infrastructura.</w:t></w:r></w:p><w:p w14:paraId="1AD1978D" w14:textId="77777777" w:rsidR="00A77128" w:rsidRPr="00EA5AF2" w:rsidRDefault="00A77128" w:rsidP="00A77128"><w:r><w:t xml:space="preserve">Així mateix, el propietari de l\'immoble o la Comunitat de Propietaris i l\'instal·lador responsable de les actuacions sobre l\'equipament d\'accés al servei de telecomunicacions per cable han de facilitar a la Direcció General de Radiodifusió i Televisió la realització de les instal·lacions que aquesta efectuï i, amb aquesta finalitat permetran l\'accés a les instal·lacions i a la documentació que els sigui requerida. </w:t></w:r></w:p><w:p w14:paraId="75AFBA69" w14:textId="77777777" w:rsidR="00A77128" w:rsidRDefault="00A77128" w:rsidP="00A77128"><w:pPr><w:rPr><w:b/></w:rPr></w:pPr></w:p><w:p w14:paraId="718F4534" w14:textId="77777777" w:rsidR="00A77128" w:rsidRDefault="00A77128" w:rsidP="00A77128"><w:pPr><w:rPr><w:b/></w:rPr></w:pPr><w:r><w:rPr><w:b/></w:rPr><w:t>Instruccions de manteniment:</w:t></w:r></w:p>'
+        end
+        doc.replace("$text_telecomunicacions$", text_telecomunicacions)
         doc.replace("$operacions_telecomunicacions$", word_operacions_telecomunicacions)
 
         # Especials
@@ -922,6 +1248,11 @@ class DocumentsController < ApplicationController
         operacions_especials.each do |operacio|
           word_operacions_especials = word_operacions_especials + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
         end
+        text_especials = ''
+        if operacions_especials.count > 0
+          text_especials = '<w:p w14:paraId="0D5F0AFE" w14:textId="77777777" w:rsidR="00456DDD" w:rsidRDefault="00456DDD" w:rsidP="00456DDD"><w:pPr><w:pStyle w:val="Heading2"/></w:pPr><w:r><w:t>Instal·lacions especials</w:t></w:r></w:p><w:p w14:paraId="12357257" w14:textId="77777777" w:rsidR="00456DDD" w:rsidRDefault="00456DDD" w:rsidP="00456DDD"/><w:p w14:paraId="277032B2" w14:textId="77777777" w:rsidR="00456DDD" w:rsidRDefault="00456DDD" w:rsidP="00456DDD"><w:pPr><w:rPr><w:b/></w:rPr></w:pPr><w:r><w:rPr><w:b/></w:rPr><w:t>Instruccions d\'ús:</w:t></w:r></w:p><w:p w14:paraId="1655AE42" w14:textId="77777777" w:rsidR="00456DDD" w:rsidRDefault="00456DDD" w:rsidP="00456DDD"><w:r><w:t>Piscines:</w:t></w:r></w:p><w:p w14:paraId="700ADA6A" w14:textId="77777777" w:rsidR="00456DDD" w:rsidRDefault="00456DDD" w:rsidP="00456DDD"><w:r><w:t>Tant a l’hivern com a l’estiu, és necessari dedicar alguna atenció als equips, accessoris, aigua i voltants de la piscina. S’ha d’evitar, en la mesura del possible, que a l’entorn de la piscina s’acumulin fulles o pols que la puguin embrutar.</w:t></w:r></w:p><w:p w14:paraId="6B69F670" w14:textId="77777777" w:rsidR="00456DDD" w:rsidRDefault="00456DDD" w:rsidP="00456DDD"><w:r><w:t>El manteniment de l’aigua en bones condicions exigeix un tractament que controli la seva qualitat. Diàriament s’ha de comprovar el clor residual i el pH de l’aigua. Per altra banda, cal una desinfecció periòdica dels serveis de la piscina, com ara els banys, les dutxes, els sanitaris, etc. Els elements mínims necessaris per a un bon manteniment són: raspalls, recollidor de fulles, netejafons i equips d’assaigs d’aigua.</w:t></w:r></w:p><w:p w14:paraId="5B20101C" w14:textId="77777777" w:rsidR="00456DDD" w:rsidRPr="00EA5AF2" w:rsidRDefault="00456DDD" w:rsidP="00456DDD"><w:r><w:t xml:space="preserve">Si es disposa d’equips de purificació i climatització, s’hauran de seguir les instruccions del fabricant per al seu correcte funcionament. </w:t></w:r></w:p><w:p w14:paraId="7816F1E3" w14:textId="77777777" w:rsidR="00456DDD" w:rsidRDefault="00456DDD" w:rsidP="00456DDD"><w:pPr><w:rPr><w:b/></w:rPr></w:pPr></w:p><w:p w14:paraId="234A8B00" w14:textId="77777777" w:rsidR="00500DE7" w:rsidRDefault="00456DDD" w:rsidP="00456DDD"><w:r><w:rPr><w:b/></w:rPr><w:t>Instruccions de manteniment:</w:t></w:r><w:bookmarkStart w:id="0" w:name="_GoBack"/><w:bookmarkEnd w:id="0"/></w:p>'
+        end
+        doc.replace("$text_especials$", text_especials)
         doc.replace("$operacions_especials$", word_operacions_especials)  
 
         # Arxiu de documents
@@ -991,32 +1322,6 @@ class DocumentsController < ApplicationController
     end
   end
 
-  def document_quadern
-    @operacions = Operacio.all
-    @text_operacions = ''
-    @operacions.each do |operacio|
-      @text_operacions = @text_operacions.to_s + '<w:p><w:r><w:t>' + operacio.descripcio_ca.to_s + '</w:t></w:r></w:p><w:p/>' 
-    end
-    respond_to do |format|
-      format.docx do
-        # Initialize DocxReplace with your template
-        doc = DocxReplace::Doc.new("#{Rails.root}/lib/docx_templates/quadern_template.docx", "#{Rails.root}/tmp")
-
-        # Replace some variables. $var$ convention is used here, but not required.
-        doc.replace("$nom_edifici$", @edifici.nom_edifici)
-        doc.replace("$operacions$", @text_operacions)
-        #doc.replace("$altres_operacions$", )
-
-        # Write the document back to a temporary file
-        tmp_file = Tempfile.new('word_tempate', "#{Rails.root}/tmp")
-        doc.commit(tmp_file.path)
-
-        # Respond to the request by sending the temp file
-        send_file tmp_file.path, filename: "edifici_#{@edifici.nom_edifici}_quadern.docx", disposition: 'attachment'
-      end
-    end
-  end
-
   def manual_habitatge
     respond_to do |format|
       format.docx do
@@ -1042,6 +1347,9 @@ class DocumentsController < ApplicationController
         operacions_estructura.each do |operacio|
           word_operacions_estructura = word_operacions_estructura + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
         end
+        if operacions_estructura.count == 0
+          word_operacions_estructura = 'No hi ha operacions de manteniment previstes.'
+        end
         doc.replace("$operacions_estructura$", word_operacions_estructura)
 
         # Tancaments
@@ -1050,6 +1358,9 @@ class DocumentsController < ApplicationController
         word_operacions_tancaments = ''
         operacions_tancaments.each do |operacio|
           word_operacions_tancaments = word_operacions_tancaments + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
+        end
+        if operacions_tancaments.count == 0
+          word_operacions_tancaments = 'No hi ha operacions de manteniment previstes.'
         end
         doc.replace("$operacions_tancaments$", word_operacions_tancaments)
 
@@ -1060,6 +1371,9 @@ class DocumentsController < ApplicationController
         operacions_terrats.each do |operacio|
           word_operacions_terrats = word_operacions_terrats + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
         end
+        if operacions_terrats.count == 0
+          word_operacions_terrats = 'No hi ha operacions de manteniment previstes.'
+        end
         doc.replace("$operacions_terrats$", word_operacions_terrats)
 
         # Sanejament
@@ -1068,6 +1382,9 @@ class DocumentsController < ApplicationController
         word_operacions_sanejament = ''
         operacions_sanejament.each do |operacio|
           word_operacions_sanejament = word_operacions_sanejament + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
+        end
+        if operacions_sanejament.count == 0
+          word_operacions_sanejament = 'No hi ha operacions de manteniment previstes.'
         end
         doc.replace("$operacions_sanejament$", word_operacions_sanejament)
 
@@ -1078,6 +1395,9 @@ class DocumentsController < ApplicationController
         operacions_aigua.each do |operacio|
           word_operacions_aigua = word_operacions_aigua + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
         end
+        if operacions_aigua.count == 0
+          word_operacions_aigua = 'No hi ha operacions de manteniment previstes.'
+        end
         doc.replace("$operacions_aigua$", word_operacions_aigua)
 
         # Electricitat
@@ -1086,6 +1406,9 @@ class DocumentsController < ApplicationController
         word_operacions_electricitat = ''
         operacions_electricitat.each do |operacio|
           word_operacions_electricitat = word_operacions_electricitat + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
+        end
+        if operacions_electricitat.count == 0
+          word_operacions_electricitat = 'No hi ha operacions de manteniment previstes.'
         end
         doc.replace("$operacions_electricitat$", word_operacions_electricitat)
 
@@ -1096,6 +1419,9 @@ class DocumentsController < ApplicationController
         operacions_gas.each do |operacio|
           word_operacions_gas = word_operacions_gas + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
         end
+        if operacions_gas.count == 0
+          word_operacions_gas = 'No hi ha operacions de manteniment previstes.'
+        end
         doc.replace("$operacions_gas$", word_operacions_gas)
 
         # Climatitzacio
@@ -1105,6 +1431,9 @@ class DocumentsController < ApplicationController
         operacions_climatitzacio.each do |operacio|
           word_operacions_climatitzacio = word_operacions_climatitzacio + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
         end
+        if operacions_climatitzacio.count == 0
+          word_operacions_climatitzacio = 'No hi ha operacions de manteniment previstes.'
+        end
         doc.replace("$operacions_climatitzacio$", word_operacions_climatitzacio)
 
         # Ventilacio
@@ -1113,6 +1442,9 @@ class DocumentsController < ApplicationController
         word_operacions_ventilacio = ''
         operacions_ventilacio.each do |operacio|
           word_operacions_ventilacio = word_operacions_ventilacio + taula_operacio(operacio.descripcio_ca, operacio.periodicitat_text_ca, operacio.responsable_ca)
+        end
+        if operacions_ventilacio.count == 0
+          word_operacions_ventilacio = 'No hi ha operacions de manteniment previstes.'
         end
         doc.replace("$operacions_ventilacio$", word_operacions_ventilacio)
 

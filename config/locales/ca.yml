@@ -38,6 +38,8 @@ ca:
       documents: "Document"
     footer:
       logo_caateeb: "Col·legi d'Aparelladors, Arquitectes Tècnics i Enginyers d'Edificació de Barcelona"
+      avis_legal: "Avís legal"
+      contacta: "Contacta"
     menu_sistemes:
       fonamentacio: "FONAMENTACIÓ"
       estructura: "ESTRUCTURA"
@@ -58,9 +60,34 @@ ca:
       llibre_edifici: "Llibre de l'edifici"
       text_hero: "Eina de suport per a la redacció del llibre de l'edifici segons el Decret 67/2015, de 5 de maig."
       logo_llibre: "Logo del llibre de l'edifici"
+      documents_llibre: "Documents del llibre de l'edifici"
+      titol_esquema_documents: "El llibre de l'edifici és l'instrument d'informació de la vida de l'edifici"
+      text_esquema_documents: "El llibre s'estructura en diferents apartats oberts en els que s'ha d'arxivar tota la documentació gràfica i escrita de l'edifici, durant tota la seva vida útil."
+      titol_nous: "Edificis d’habitatges de nova construcció o provinents d’una gran rehabilitació"
+      text_nous: "El llibre de l’edifici s’ha de formalitzar abans de la primera venda o transmissió dels habitatges d’un edifici de nova construcció o provinent d’una gran rehabilitació."
+      imatge_edificis_nous: "Edificis nous"
+      titol_existents: "Edificis d’habitatges existents"
+      text_existents: "El llibre de l’edifici es constitueix a partir de la data de recepció de l’informe de la inspecció tècnica de l’edifici que preveu el Decret 67/2015, de 5 de maig."
+      imatge_edificis_existents: "Edificis existents"
+      document_word: "Generació de document word"
+      titol_word: "Creació de documents en format Word amb tots els apartats del Llibre de l’edifici"
+      text_word1: "El Llibre de l’edifici dels edificis d’habitatges conté desenes d’apartats diferents, tal i com s’especifica al Decret 67/2015, de 5 de maig i la Llei 18/2007, de 28 de desembre. A més el contingut del Llibre de l’edifici varia si es tracta d’un edifici nou o un edifici existent."
+      text_word2: "Utilitzant l’aplicatiu del Llibre de l’edifici us resultarà més senzill redactar correctament el document sense oblidar cap informació important."
+      titol_manteniment: "Generació automàtica de les instruccions d’ús i manteniment de l'edifici"
+      text_manteniment1: "El manual d’ús i manteniment és un dels apartats més rellevants del Llibre de l'edifici. S'hi descriuen les instruccions d’ús dels diferents sistemes de l’edifici i les operacions de manteniment que cal realitzar per allargar la vida de l’edifici. Per redactar correctament aquest manual cal fer referència a un gran ventall de documents normatius com el CTE, el RITE o el REBT entre altres."
+      text_manteniment2: "L’aplicatiu del Llibre de l’edifici us permetrà agilitzar la redacció del manual d’ús i manteniment de l’edifici al crear automàticament les operacions de manteniment en funció de la descripció constructiva de l’edifici."
+      imatge_manteniment: "Operacions de manteniment"
+      registrat: "Registra't"
+      inicia_sessio: "Inicia sessió"
+      inici_aplicatiu: "Registra't o inicia sessió per començar a utilitzar l'aplicatiu del Llibre de l'edifici."
     permisos:
       titol_permisos: "Accés denegat"
       text_permisos: "No teniu els permisos necessaris per accedir a aquesta pàgina"
+    contacta:
+      titol_contacta: "Contacta"
+      text_contacta: "Si teniu algun dubte o problema podeu posar-vos en contacte amb nosaltres a:"
+    avis:
+      titol_avis: "Avís legal"
   edificis:
     index:
       titol: "Projectes"

@@ -12,6 +12,82 @@
 			</div>
 		</div>
 	</div>
+</div>
 
-	
+<div class="home-container1">
+	<div class="row">
+		<div class="medium-6 columns">
+			<%= image_tag('documents_llibre.png', :alt => t('.documents_llibre'), :class => 'imatge-edificis-nous') %>
+		</div>
+		<div class="medium-6 columns">
+			<h3 class="titol-esquema-documents"><%= t('.titol_esquema_documents') %></h2>
+			<p><%= t('.text_esquema_documents') %></p> 
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="medium-12 columns">
+		<hr>
+	</div>
+</div>
+
+<div class="home-container2">
+	<div class="row">
+		<div class="medium-7 columns">
+			<h3 class="titol-esquema-documents"><%= t('.titol_nous') %></h3>
+			<p><%= t('.text_nous') %></p>
+			<%= image_tag('edificis_nous.png', :alt => t('.imatge_edificis_nous'), :class => 'imatge-edificis-nous') %>
+		</div>
+		<div class="medium-5 columns">
+			<h3 class="titol-esquema-documents"><%= t('.titol_existents') %></h3>
+			<p><%= t('.text_existents') %></p>
+			<%= image_tag('edificis_existents.png', :alt => t('.imatge_edificis_existents'), :class => 'imatge-edificis-existents') %>
+		</div>
+	</div>
+</div>
+
+<div class="home-container3">
+	<div class="row">
+		<div class="medium-4 columns">
+			<div class="container2-image">
+				<%= image_tag('index2.png', :alt => t('.document_word'), :class => 'logo-llibre-edifici') %>
+			</div>
+		</div>
+		<div class="medium-8 columns">
+			<div class="container3-text">
+				<h2 class="titol-apartat-index"><%= t('.titol_word') %></h2>
+				<p><%= t('.text_word1') %></p>
+				<p><%= t('.text_word2') %></p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="home-container4">
+	<div class="row">
+		<div class="medium-7 columns">
+			<div class="container4-text">
+				<h2 class="titol-apartat-index"><%= t('.titol_manteniment') %></h2>
+				<p><%= t('.text_manteniment1') %></p>
+				<p><%= t('.text_manteniment2') %></p>
+			</div>
+		</div>
+		<div class="medium-4 offset-medium-1 columns">
+			<%= image_tag('manteniment2.png', :alt => t('.imatge_manteniment'), :class => 'logo-llibre-edifici') %>
+		</div>
+	</div>
+</div>
+
+<div class="home-container5">
+	<div class="row">
+		<div class="medium-8 medium-offset-2 columns">
+			<div class="inicia-aplicacio-text">
+				<%= t('.inici_aplicatiu') %>
+			</div>
+			<div class="inicia-aplicacio-botons">
+				<%= link_to t('.registrat'), new_user_registration_path, :class => 'button small radius inici-esquerra' %> <%= link_to t('.inicia_sessio'), new_user_session_path, :class => 'button small radius' %> 
+			</div>
+		</div>
+	</div>
 </div>

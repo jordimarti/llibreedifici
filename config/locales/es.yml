@@ -38,6 +38,8 @@ es:
       documents: "Documento"
     footer:
       logo_caateeb: "Col·legi d'Aparelladors, Arquitectes Tècnics i Enginyers d'Edificació de Barcelona"
+      avis_legal: "Aviso legal"
+      contacta: "Contacta"
     menu_sistemes:
       fonamentacio: "CIMENTACIÓN"
       estructura: "ESTRUCTURA"
@@ -58,9 +60,34 @@ es:
       llibre_edifici: "Libro del edificio"
       text_hero: "Herramienta de ayuda para la redacción del libro del edificio según el Decreto 67/2015, de 5 de mayo."
       logo_llibre: "Logo del libro del edificio"
+      documents_llibre: "Documentos del llibro del edificio"
+      titol_esquema_documents: "El libro del edificio es el instrumento de información de la vida del edificio"
+      text_esquema_documents: "El libro se estructura en diferentes apartados abiertos en los que se debe archivar toda la documentación gráfica y escrita del edificio, durante toda su vida útil."
+      titol_nous: "Edificios de viviendas de nueva construcción o provenientes de una gran rehabilitación"
+      text_nous: "El libro del edificio se formalizará antes de la primera venta o transmisión de las viviendas de un edificio de nueva construcción o proveniente de una gran rehabilitación."
+      imatge_edificis_nous: "Edificios nuevos"
+      titol_existents: "Edificios de viviendas existentes"
+      text_existents: "El libro del edificio se constituye a partir de la fecha de recepción del informe de la inspección técnica del edificio previsto en el Decreto 67/2015, de 5 de mayo."
+      imatge_edificis_existents: "Edificios existentes"
+      document_word: "Generación de documento word"
+      titol_word: "Creación de documentos en formato Word con todos los apartados del Libro del edificio"
+      text_word1: "El Libro del edificio de los edificios de viviendas contiene decenas de apartados diferentes, tal y como se especifica en el Decreto 67/2015, de 5 de mayo y la Ley 18/2007, de 28 de diciembre. Además el contenido del Libro del edificio varía si se trata de un edificio nuevo o un edificio existente."
+      text_word2: "Utilizando la aplicación del Libro del edificio le resultará más sencillo redactar correctamente el documento sin olvidar ninguna información importante."
+      titol_manteniment: "Generación automática de las instrucciones de uso y mantenimiento del edificio"
+      text_manteniment1: "El manual de uso y mantenimiento es uno de los apartados más relevantes del Libro del edificio. Se describen las instrucciones de uso de los diferentes sistemas del edificio y las operaciones de mantenimiento que hay que realizar para alargar la vida del edificio. Para redactar correctamente este manual hay que hacer referencia a un gran abanico de documentos normativos como el CTE, el RITE o el REBT entre otros."
+      text_manteniment2: "El aplicativo del Libro del edificio le permitirá agilizar la redacción del manual de uso y mantenimiento del edificio al crear automáticamente las operaciones de mantenimiento en función de la descripción constructiva del edificio."
+      imatge_manteniment: "Operaciones de mantenimento"
+      registrat: "Regístrate"
+      inicia_sessio: "Inicia sesión"
+      inici_aplicatiu: "Regístrate o inicia sesión para empezar a utilizar el aplicativo del Libro del edificio."
     permisos:
       titol_permisos: "Acceso denegado"
       text_permisos: "No tenéis los permisos necesarios para acceder a esta página"
+    contacta:
+      titol_contacta: "Contacta"
+      text_contacta: "Si tenéis alguna duda o problema podéis poneros en contacto con nosotros en:"
+    avis:
+      titol_avis: "Aviso legal"
   edificis:
     index:
       titol: "Proyectos"

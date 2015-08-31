@@ -60,6 +60,8 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'home/tutorial'
   get 'home/permisos'
+  get 'home/contacta'
+  get 'home/avis'
   root :to => "home#index"
   
   match ':controller(/:action(/:id))', :via => [:get, :post]

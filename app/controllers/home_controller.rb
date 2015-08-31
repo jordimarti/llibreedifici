@@ -7,4 +7,10 @@ class HomeController < ApplicationController
 
   def permisos
   end
+
+  def contacta
+  end
+
+  def avis
+  end
 end
