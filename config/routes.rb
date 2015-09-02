@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   
   
   
+  get 'dades/index'
+
   resources :entitats
   resources :carregues
   resources :regim_especials
