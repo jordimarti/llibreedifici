@@ -28,4 +28,7 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'referencia', 'referencies'
   inflect.irregular 'operacio', 'operacions'
   inflect.irregular 'telecomunicacio', 'telecomunicacions'
+  inflect.irregular 'llicencia', 'llicencies'
+  inflect.irregular 'declaracio', 'declaracions'
+  inflect.irregular 'carrega', 'carregues'
 end
