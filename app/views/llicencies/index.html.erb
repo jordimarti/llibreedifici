@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Llicencies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Edifici</th>
+      <th>Classe</th>
+      <th>Data llicencia</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @llicencies.each do |llicencia| %>
+      <tr>
+        <td><%= llicencia.edifici_id %></td>
+        <td><%= llicencia.classe %></td>
+        <td><%= llicencia.data_llicencia %></td>
+        <td><%= link_to 'Show', llicencia %></td>
+        <td><%= link_to 'Edit', edit_llicencia_path(llicencia) %></td>
+        <td><%= link_to 'Destroy', llicencia, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Llicencia', new_llicencia_path %>

@@ -1,0 +1,2 @@
+module CarreguesHelper
+end

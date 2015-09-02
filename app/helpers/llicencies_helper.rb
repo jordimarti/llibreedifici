@@ -1,0 +1,2 @@
+module LlicenciesHelper
+end

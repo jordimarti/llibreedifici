@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Edifici:</strong>
+  <%= @entitat.edifici_id %>
+</p>
+
+<p>
+  <strong>Nom entitat:</strong>
+  <%= @entitat.nom_entitat %>
+</p>
+
+<p>
+  <strong>Superficie:</strong>
+  <%= @entitat.superficie %>
+</p>
+
+<p>
+  <strong>Destinacio:</strong>
+  <%= @entitat.destinacio %>
+</p>
+
+<p>
+  <strong>Quota:</strong>
+  <%= @entitat.quota %>
+</p>
+
+<%= link_to 'Edit', edit_entitat_path(@entitat) %> |
+<%= link_to 'Back', entitats_path %>

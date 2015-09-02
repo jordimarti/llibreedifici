@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Edifici:</strong>
+  <%= @carrega.edifici_id %>
+</p>
+
+<p>
+  <strong>Tipus carrega:</strong>
+  <%= @carrega.tipus_carrega %>
+</p>
+
+<p>
+  <strong>Document carrega:</strong>
+  <%= @carrega.document_carrega %>
+</p>
+
+<%= link_to 'Edit', edit_carrega_path(@carrega) %> |
+<%= link_to 'Back', carregues_path %>

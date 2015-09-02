@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Edifici:</strong>
+  <%= @regim_propietat.edifici_id %>
+</p>
+
+<p>
+  <strong>Tipus regim propietat:</strong>
+  <%= @regim_propietat.tipus_regim_propietat %>
+</p>
+
+<p>
+  <strong>Document escriptura:</strong>
+  <%= @regim_propietat.document_escriptura %>
+</p>
+
+<%= link_to 'Edit', edit_regim_propietat_path(@regim_propietat) %> |
+<%= link_to 'Back', regim_propietats_path %>

@@ -1,0 +1,13 @@
+<%= simple_form_for(@carrega) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :edifici_id %>
+    <%= f.input :tipus_carrega %>
+    <%= f.input :document_carrega %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

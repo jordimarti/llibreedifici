@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Carregues</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Edifici</th>
+      <th>Tipus carrega</th>
+      <th>Document carrega</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @carregues.each do |carrega| %>
+      <tr>
+        <td><%= carrega.edifici_id %></td>
+        <td><%= carrega.tipus_carrega %></td>
+        <td><%= carrega.document_carrega %></td>
+        <td><%= link_to 'Show', carrega %></td>
+        <td><%= link_to 'Edit', edit_carrega_path(carrega) %></td>
+        <td><%= link_to 'Destroy', carrega, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Carrega', new_carrega_path %>

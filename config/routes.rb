@@ -5,6 +5,12 @@ Rails.application.routes.draw do
   
   
   
+  resources :entitats
+  resources :carregues
+  resources :regim_especials
+  resources :regim_propietats
+  resources :declaracions
+  resources :llicencies
   resources :operacions
   get 'edificis/:edifici_id/agents', to: 'agents#index', :as => :agents
   get 'edificis/:edifici_id/documents', to: 'documents#index', :as => :documents

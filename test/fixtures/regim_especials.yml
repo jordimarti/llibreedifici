@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  edifici_id: 1
+  tipus_regim_especial: MyString
+  referencia_document: MyString
+
+two:
+  edifici_id: 1
+  tipus_regim_especial: MyString
+  referencia_document: MyString

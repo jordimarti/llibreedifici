@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Entitats</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Edifici</th>
+      <th>Nom entitat</th>
+      <th>Superficie</th>
+      <th>Destinacio</th>
+      <th>Quota</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @entitats.each do |entitat| %>
+      <tr>
+        <td><%= entitat.edifici_id %></td>
+        <td><%= entitat.nom_entitat %></td>
+        <td><%= entitat.superficie %></td>
+        <td><%= entitat.destinacio %></td>
+        <td><%= entitat.quota %></td>
+        <td><%= link_to 'Show', entitat %></td>
+        <td><%= link_to 'Edit', edit_entitat_path(entitat) %></td>
+        <td><%= link_to 'Destroy', entitat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Entitat', new_entitat_path %>
