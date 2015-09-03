@@ -1,0 +1,16 @@
+<% @carregues.each do |carrega| %>
+	<div class="dades-item">
+		
+		
+	  <%= link_to edifici_carrega_path(@edifici, carrega), remote: true, method: :delete,  data: { confirm: 'Segur que vols eliminar?' } do %>
+		  <div class="dades-eliminar right">
+		  	<span class="icon-cancel icones-icomoon"></span>
+		  </div>
+		<% end %>
+		<%= link_to edit_edifici_carrega_path(@edifici, carrega), remote: true do %>
+	    <div class="dades-editar">
+	    	<%= carrega.tipus_carrega %>
+	    </div>
+	  <% end %>
+	</div>
+<% end %>

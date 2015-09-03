@@ -10,6 +10,8 @@ class DadesController < ApplicationController
     @declaracions = Declaracio.where(:edifici_id => params[:edifici_id])
     @regim_propietats = RegimPropietat.where(:edifici_id => params[:edifici_id])
     @regim_especials = RegimEspecial.where(:edifici_id => params[:edifici_id])
+    @carregues = Carrega.where(:edifici_id => params[:edifici_id])
+    @entitats = Entitat.where(:edifici_id => params[:edifici_id])
   end
 
   private

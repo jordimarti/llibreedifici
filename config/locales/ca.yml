@@ -206,6 +206,14 @@ ca:
       regim_especial:
         tipus_regim_especial: "Tipus"
         referencia_document: "Referència del document acreditatiu"
+      carrega:
+        tipus_carrega: "Tipus"
+        document_carrega: "Referència del document acreditatiu"
+      entitat:
+        nom_entitat: "Nom"
+        superficie: "Superfície"
+        destinacio: "Destinació"
+        quota: "Quota (%)"
       fonamentacio:
         mur_pedra: "Mur de pedra"
         mur_fabrica_mao: "Mur de fàbrica de maó"
@@ -561,6 +569,12 @@ ca:
       titol_regim_especial: "RÈGIM ESPECIAL"
       afegir_regim_especial: "Afegir règim especial"
       regim_especial: "Règim especial"
+      titol_carrega: "CÀRREGUES REALS"
+      afegir_carrega: "Afegir càrrega real"
+      carrega: "Càrrega real"
+      titol_entitat: "ENTITATS JURÍDIQUES"
+      afegir_entitat: "Afegir entitat jurídica"
+      entitat: "Entitat jurídica"
   llicencies:
     form:
       guardar: "Guardar"
@@ -573,6 +587,12 @@ ca:
     form:
       guardar: "Guardar"
   regim_especials:
+    form:
+      guardar: "Guardar"
+  carregues:
+    form:
+      guardar: "Guardar"
+  entitats:
     form:
       guardar: "Guardar"
   fonamentacions:

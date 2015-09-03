@@ -1,13 +1,26 @@
-<%= simple_form_for(@carrega) do |f| %>
+<%= simple_form_for([@edifici, @carrega], remote: true) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :edifici_id %>
-    <%= f.input :tipus_carrega %>
-    <%= f.input :document_carrega %>
+    <%= f.input :edifici_id, :as => :hidden, :input_html => { :value => @edifici.id } %>
+    
+    <div class="row">
+      <div class="large-6 columns">
+        <%= f.input :tipus_carrega %>
+      </div>
+      <div class="large-6 columns">
+      	<%= f.input :document_carrega %>
+      </div>
+    </div>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <div class="row">
+      <div class="large-12 columns">
+        <%= f.button :submit, t('.guardar'), :class => 'button small radius right botodreta' %>
+      </div>
+    </div>
   </div>
+
 <% end %>
+
