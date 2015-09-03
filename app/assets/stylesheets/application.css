@@ -69,7 +69,8 @@ body {
 }
 
 .background-seccio {
-	background-color: #f7eccb;
+	/*background-color: #f7eccb;*/
+	background-color: #f6f6f6;
 	padding-bottom: 50px;
 	min-height: 600px;
 }
@@ -124,7 +125,7 @@ body {
 }
 
 .nom-edifici-container {
-	padding: 8px 15px;
+	padding: 8px 15px 12px 15px;
 	background-color: #ffd84a;
 	border-bottom: 1px solid #cccccc;
 }
@@ -165,7 +166,7 @@ body {
 }
 
 .submenu {
-
+	margin-top: 4px;
 }
 
 ul.submenu-list {
@@ -175,17 +176,32 @@ ul.submenu-list {
 
 li.submenu-item {
 	display: inline;
-	margin-left: 20px;
-	padding: 0px 2px 7px 2px;
+	padding: 5px 10px;
 	font-size: 0.8em;
 }
 
+li.submenu-item:first-child {
+	padding-left: 0px;
+	border-right: 1px solid #333333;
+	margin-right: 6px;
+}
+
+li.nom-edifici {
+	font-size: 0.9em;
+	font-weight: bold;
+}
+
 .submenu-actiu {
-	border-bottom: 4px solid #333333;
+	background-color: #f6f6f6;
+	border-radius: 3px;
 }
 
 .submenu-link {
 	color: #333333;
+}
+
+.submenu-actiu > .submenu-link {
+	
 }
 
 .submenu-link:hover {

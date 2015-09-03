@@ -1,7 +1,8 @@
 				<div class="nom-edifici-container">
-          <%= @edifici.nom_edifici %>
-          <div class="submenu right">
+          
+          <div class="submenu">
           	<ul class="submenu-list">
+              <li class="submenu-item nom-edifici"><%= @edifici.nom_edifici %></li>
           		<li class="submenu-item <% if @submenu_actiu == 'identificacio' %>
                     submenu-actiu
                     <% end %>"><%= link_to(t('.identificacio'), edit_edifici_identificacio_path(@edifici.id, @edifici.identificacio.id), :class => 'submenu-link') %></li>
