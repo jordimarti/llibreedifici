@@ -193,6 +193,19 @@ es:
         poblacio_industrial: "Población"
         provincia_industrial: "Provincia"
         pais_industrial: "País"
+      llicencia:
+        classe: "Clase"
+        data_llicencia: "Fecha"
+      declaracio:
+        notari: "Notario"
+        n_protocol: "N. protocolo"
+        data_declaracio: "Fecha"
+      regim_propietat:
+        tipus_regim_propietat: "Tipo"
+        document_escriptura: "Escritura de división y estatutos"
+      regim_especial:
+        tipus_regim_especial: "Tipo"
+        referencia_document: "Referencia del documento acreditativo"
       fonamentacio:
         mur_pedra: "Muro de piedra"
         mur_fabrica_mao: "Muro de fábrica de ladrillo"
@@ -541,6 +554,13 @@ es:
       afegir_llicencia: "Añadir licencia"
       titol_declaracio: "DECLARACIÓN DE OBRA NUEVA"
       afegir_declaracio: "Añadir declaración"
+      declaracio: "Declaración de obra nueva"
+      titol_regim_propietat: "RÉGIMEN DE PROPIEDAD"
+      afegir_regim_propietat: "Añadir régimen de propiedad"
+      regim_propietat: "Régimen de propiedad"
+      titol_regim_especial: "RÉGIMEN ESPECIAL"
+      afegir_regim_especial: "Añadir régimen especial"
+      regim_especial: "Régimen especial"
   llicencies:
     form:
       guardar: "Guardar"
@@ -549,6 +569,12 @@ es:
       guardar: "Guardar"
     llistat_declaracions:
       declaracio_obra_nova: "Declaración de obra nueva"
+  regim_propietats:
+    form:
+      guardar: "Guardar"
+  regim_especials:
+    form:
+      guardar: "Guardar"
   fonamentacions:
     edit:
       titol_sistemes: "Descripción constructiva del edificio"

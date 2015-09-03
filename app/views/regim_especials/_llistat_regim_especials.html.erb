@@ -1,0 +1,15 @@
+<% @regim_especials.each do |regim_especial| %>
+	<div class="dades-item">
+		
+	  <%= link_to edifici_regim_especial_path(@edifici, regim_especial), remote: true, method: :delete,  data: { confirm: 'Segur que vols eliminar?' } do %>
+		  <div class="dades-eliminar right">
+		  	<span class="icon-cancel icones-icomoon"></span>
+		  </div>
+		<% end %>
+		<%= link_to edit_edifici_regim_especial_path(@edifici, regim_especial), remote: true do %>
+	    <div class="dades-editar">
+	    	<%= regim_especial.tipus_regim_especial %>
+	    </div>
+	  <% end %>
+	</div>
+<% end %>

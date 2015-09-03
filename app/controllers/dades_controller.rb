@@ -8,6 +8,8 @@ class DadesController < ApplicationController
   	@submenu_actiu = 'dades'
   	@llicencies = Llicencia.where(:edifici_id => params[:edifici_id])
     @declaracions = Declaracio.where(:edifici_id => params[:edifici_id])
+    @regim_propietats = RegimPropietat.where(:edifici_id => params[:edifici_id])
+    @regim_especials = RegimEspecial.where(:edifici_id => params[:edifici_id])
   end
 
   private

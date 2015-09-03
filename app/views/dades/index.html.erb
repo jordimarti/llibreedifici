@@ -12,6 +12,20 @@
   <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 </div>
 
+<div id="modal-regim-propietat" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <h3 id="modalTitle"><%= t('.regim_propietat') %></h3>
+  <div id="formulari-regim-propietat" class="formulari-dades">
+  </div>
+  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+
+<div id="modal-regim-especial" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <h3 id="modalTitle"><%= t('.regim_especial') %></h3>
+  <div id="formulari-regim-especial" class="formulari-dades">
+  </div>
+  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+
 
 <div class="background-seccio">
 	<div class="row">
@@ -50,10 +64,54 @@
 							<div id="declaracions">
 								<%= render  :partial => '/declaracions/llistat_declaracions' %>
 							</div>
+							<div id="footer-declaracions">
+								<% if @declaracions.count == 0 %>
+									<div class="dades-footer">
+										<div class="dades-footer-link right">
+											<%= link_to (new_edifici_declaracio_path), remote: true do %>
+												<span class="suma">+</span> <%= t('.afegir_declaracio') %>
+											<% end %>
+										</div>
+									</div>
+								<% end %>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="medium-6 columns">
+						<div class="dades-container">
+							<div class="dades-title">
+								<%= t('.titol_regim_propietat') %>
+							</div>
+							<div id="regim-propietats">
+								<%= render  :partial => '/regim_propietats/llistat_regim_propietats' %>
+							</div>
+							<div id="footer-regim-propietats">
+								<% if @regim_propietats.count == 0 %>
+									<div class="dades-footer">
+										<div class="dades-footer-link right">
+											<%= link_to (new_edifici_regim_propietat_path), remote: true do %>
+												<span class="suma">+</span> <%= t('.afegir_regim_propietat') %>
+											<% end %>
+										</div>
+									</div>
+								<% end %>
+							</div>
+						</div>
+					</div>
+					<div class="medium-6 columns">
+						<div class="dades-container">
+							<div class="dades-title">
+								<%= t('.titol_regim_especial') %>
+							</div>
+							<div id="regim-especials">
+								<%= render  :partial => '/regim_especials/llistat_regim_especials' %>
+							</div>
 							<div class="dades-footer">
 								<div class="dades-footer-link right">
-									<%= link_to (new_edifici_declaracio_path), remote: true do %>
-										<span class="suma">+</span> <%= t('.afegir_declaracio') %>
+									<%= link_to (new_edifici_regim_especial_path), remote: true do %>
+										<span class="suma">+</span> <%= t('.afegir_regim_especial') %>
 									<% end %>
 								</div>
 							</div>

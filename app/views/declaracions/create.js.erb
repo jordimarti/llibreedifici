@@ -1,2 +1,11 @@
 $('#declaracions').html("<%= escape_javascript(render 'llistat_declaracions') %>");
+$('#footer-declaracions').html("<% if @declaracions.count == 0 %>
+									<div class=""dades-footer"">
+										<div class=""dades-footer-link right"">
+											<%= link_to (new_edifici_declaracio_path), remote: true do %>
+												<span class=""suma"">+</span> <%= t('.afegir_declaracio') %>
+											<% end %>
+										</div>
+									</div>
+								<% end %>");
 $('#modal-declaracio').foundation('reveal', 'close');

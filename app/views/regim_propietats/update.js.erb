@@ -1,0 +1,11 @@
+$('#regim-propietats').html("<%= escape_javascript(render 'llistat_regim_propietats') %>");
+$('#footer-regim-propietats').html("<% if @regim_propietats.count == 0 %>
+									<div class=""dades-footer"">
+										<div class=""dades-footer-link right"">
+											<%= link_to (new_edifici_regim_propietat_path), remote: true do %>
+												<span class=""suma"">+</span> <%= t('.afegir_regim_propietat') %>
+											<% end %>
+										</div>
+									</div>
+								<% end %>");
+$('#modal-regim-propietat').foundation('reveal', 'close');

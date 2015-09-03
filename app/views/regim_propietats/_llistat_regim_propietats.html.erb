@@ -1,0 +1,12 @@
+<% @regim_propietats.each do |regim_propietat| %>
+	<div class="dades-item">
+		
+		
+	  
+		<%= link_to edit_edifici_regim_propietat_path(@edifici, regim_propietat), remote: true do %>
+	    <div class="dades-editar">
+	    	<%= regim_propietat.tipus_regim_propietat.capitalize %>
+	    </div>
+	  <% end %>
+	</div>
+<% end %>
