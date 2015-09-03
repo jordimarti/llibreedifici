@@ -3,7 +3,7 @@ class CreateLlicencies < ActiveRecord::Migration
     create_table :llicencies do |t|
       t.integer :edifici_id
       t.string :classe
-      t.date :data_llicencia
+      t.string :data_llicencia
 
       t.timestamps null: false
     end

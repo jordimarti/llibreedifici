@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150723154627) do
+ActiveRecord::Schema.define(version: 20150902094025) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,14 @@ ActiveRecord::Schema.define(version: 20150723154627) do
     t.boolean  "altres"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+  end
+
+  create_table "carregues", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.string   "tipus_carrega"
+    t.string   "document_carrega"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "checklist_edifici_nou_plurifamiliars", force: :cascade do |t|
@@ -145,6 +153,15 @@ ActiveRecord::Schema.define(version: 20150723154627) do
     t.datetime "updated_at",            null: false
   end
 
+  create_table "declaracions", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.string   "notari"
+    t.string   "n_protocol"
+    t.string   "data_declaracio"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
   create_table "directors", force: :cascade do |t|
     t.integer  "edifici_id"
     t.string   "nom_director"
@@ -196,6 +213,16 @@ ActiveRecord::Schema.define(version: 20150723154627) do
     t.string   "pais_entitat_control"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+  end
+
+  create_table "entitats", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.string   "nom_entitat"
+    t.decimal  "superficie"
+    t.string   "destinacio"
+    t.decimal  "quota"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "especials", force: :cascade do |t|
@@ -356,6 +383,14 @@ ActiveRecord::Schema.define(version: 20150723154627) do
     t.datetime "updated_at",     null: false
   end
 
+  create_table "llicencies", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.string   "classe"
+    t.string   "data_llicencia"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
   create_table "operacions", force: :cascade do |t|
     t.text     "descripcio_ca"
     t.text     "descripcio_es"
@@ -404,6 +439,22 @@ ActiveRecord::Schema.define(version: 20150723154627) do
     t.boolean  "creat_usuari"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+  end
+
+  create_table "regim_especials", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.string   "tipus_regim_especial"
+    t.string   "referencia_document"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  create_table "regim_propietats", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.string   "tipus_regim_propietat"
+    t.string   "document_escriptura"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   create_table "sanejaments", force: :cascade do |t|

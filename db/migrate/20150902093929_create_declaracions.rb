@@ -4,7 +4,7 @@ class CreateDeclaracions < ActiveRecord::Migration
       t.integer :edifici_id
       t.string :notari
       t.string :n_protocol
-      t.date :data_declaracio
+      t.string :data_declaracio
 
       t.timestamps null: false
     end

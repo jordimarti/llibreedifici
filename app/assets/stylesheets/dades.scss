@@ -1,3 +1,45 @@
 // Place all the styles related to the Dades controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.seccio-dades-container {
+	background-color: #ffffff;
+	border: 1px solid #cccccc;
+}
+
+.dades-container {
+	margin: 20px;
+}
+
+.dades-title {
+	background-color: #f6f6f6;
+	padding: 10px 15px;
+	font-weight: bold;
+	font-size: 0.7em;
+	border: 1px solid #cccccc;
+	border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
+}
+
+.dades-item {
+	border-bottom: 1px solid #cccccc;
+	border-left:  1px solid #cccccc;
+	border-right:  1px solid #cccccc;
+	padding: 10px 15px;
+	background-color: #ffffff;
+}
+
+.dades-footer {
+	height: 35px;
+	
+}
+
+.dades-footer-link {
+	padding: 0px 10px 5px 10px;
+	margin-top: -1px;
+	background-color: #f6f6f6;
+	border: 1px solid #cccccc;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	font-size: 0.8em;
+}

@@ -1,2 +1,66 @@
-<h1>Dades#index</h1>
-<p>Find me in app/views/dades/index.html.erb</p>
+<div id="modal-llicencia" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <h3 id="modalTitle"><%= t('.llicencia') %></h3>
+  <div id="formulari-llicencia" class="formulari-dades">
+  </div>
+  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+
+<div id="modal-declaracio" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <h3 id="modalTitle"><%= t('.declaracio') %></h3>
+  <div id="formulari-declaracio" class="formulari-dades">
+  </div>
+  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+
+
+<div class="background-seccio">
+	<div class="row">
+		<div class="large-12 columns">
+			<div class="titol-seccio">
+				<%= t('.titol_dades') %>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-12 columns">
+			<div class="seccio-dades-container">
+				<div class="row">
+					<div class="medium-6 columns">
+						<div class="dades-container">
+							<div class="dades-title">
+								<%= t('.titol_llicencia') %>
+							</div>
+							<div id="llicencies">
+								<%= render  :partial => '/llicencies/llistat_llicencies' %>
+							</div>
+							<div class="dades-footer">
+								<div class="dades-footer-link right">
+									<%= link_to (new_edifici_llicencia_path), remote: true do %>
+										<span class="suma">+</span> <%= t('.afegir_llicencia') %>
+									<% end %>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="medium-6 columns">
+						<div class="dades-container">
+							<div class="dades-title">
+								<%= t('.titol_declaracio') %>
+							</div>
+							<div id="declaracions">
+								<%= render  :partial => '/declaracions/llistat_declaracions' %>
+							</div>
+							<div class="dades-footer">
+								<div class="dades-footer-link right">
+									<%= link_to (new_edifici_declaracio_path), remote: true do %>
+										<span class="suma">+</span> <%= t('.afegir_declaracio') %>
+									<% end %>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -5,16 +5,11 @@ Rails.application.routes.draw do
   
   
   
-  get 'dades/index'
+  
 
-  resources :entitats
-  resources :carregues
-  resources :regim_especials
-  resources :regim_propietats
-  resources :declaracions
-  resources :llicencies
-  resources :operacions
+  
   get 'edificis/:edifici_id/agents', to: 'agents#index', :as => :agents
+  get 'edificis/:edifici_id/dades', to: 'dades#index', :as => :dades
   get 'edificis/:edifici_id/documents', to: 'documents#index', :as => :documents
   get 'edificis/:edifici_id/documents/quadern(.:format)', to: 'documents#quadern', :as => :quadern
   get 'edificis/:edifici_id/documents/nou(.:format)', to: 'documents#nou', :as => :nou
@@ -54,6 +49,13 @@ Rails.application.routes.draw do
     resources :telecomunicacions
     resources :elements
     resources :checklist_nou_plurifamiliars
+    resources :entitats
+    resources :carregues
+    resources :regim_especials
+    resources :regim_propietats
+    resources :declaracions
+    resources :llicencies
+    resources :operacions
   end
   
   

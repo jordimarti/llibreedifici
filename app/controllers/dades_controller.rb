@@ -6,7 +6,8 @@ class DadesController < ApplicationController
   def index
     check_user_edifici
   	@submenu_actiu = 'dades'
-  	
+  	@llicencies = Llicencia.where(:edifici_id => params[:edifici_id])
+    @declaracions = Declaracio.where(:edifici_id => params[:edifici_id])
   end
 
   private

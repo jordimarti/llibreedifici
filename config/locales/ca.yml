@@ -33,6 +33,7 @@ ca:
     subheader:
       identificacio: "Identificació"
       agents: "Agents"
+      dades: "Altres dades"
       sistemes: "Descripció constructiva"
       operacions: "Operacions"
       documents: "Document"
@@ -532,6 +533,22 @@ ca:
   industrials:
     form:
       guardar: "Guardar"
+  dades:
+    index:
+      titol_dades: "Dades administratives i jurídiques"
+      llicencia: "Llicència"
+      titol_llicencia: "LLICÈNCIES"
+      afegir_llicencia: "Afegir llicència"
+      titol_declaracio: "DECLARACIÓ D'OBRA NOVA"
+      afegir_declaracio: "Afegir declaració"
+  llicencies:
+    form:
+      guardar: "Guardar"
+  declaracions:
+    form:
+      guardar: "Guardar"
+    llistat_declaracions:
+      declaracio_obra_nova: "Declaració d'obra nova"
   fonamentacions:
     edit:
       titol_sistemes: "Descripció constructiva de l'edifici"

@@ -1,14 +1,30 @@
-<%= simple_form_for(@declaracio) do |f| %>
+<%= simple_form_for([@edifici, @declaracio], remote: true) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :edifici_id %>
-    <%= f.input :notari %>
-    <%= f.input :n_protocol %>
-    <%= f.input :data_declaracio %>
+    <%= f.input :edifici_id, :as => :hidden, :input_html => { :value => @edifici.id } %>
+    
+    <div class="row">
+      <div class="large-12 columns">
+        <%= f.input :notari %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-6 columns">
+        <%= f.input :n_protocol %>
+      </div>
+      <div class="large-6 columns">
+        <%= f.input :data_declaracio %>
+      </div>
+    </div>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <div class="row">
+      <div class="large-12 columns">
+        <%= f.button :submit, t('.guardar'), :class => 'button small radius right botodreta' %>
+      </div>
+    </div>
   </div>
+
 <% end %>
