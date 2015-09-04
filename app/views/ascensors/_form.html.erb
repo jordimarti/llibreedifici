@@ -13,13 +13,13 @@
       <div class="medium-12 columns">
         <div class="titol-subsistema"><%= t('.caracteristiques_generals') %></div>
         <div class="row">
-          <div class="medium-6 columns">
+          <div class="medium-12 columns">
             <%= f.input :habitatge_unifamiliar %>
-            <%= f.input :edifici_comunitari %>
-          </div>
-          <div class="medium-6 columns">
-            <%= f.input :mes_20_plantes %>
-            <%= f.input :altres %>
+            <% if @edifici.tipus_edifici == 'nou_plurifamiliar' || @edifici.tipus_edifici == 'existent_plurifamiliar' %>
+              <%= f.input :edifici_comunitari %>
+              <%= f.input :mes_20_plantes %>
+              <%= f.input :altres %>
+            <% end %>
           </div>
         </div>
       </div>

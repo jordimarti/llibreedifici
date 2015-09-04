@@ -40,21 +40,22 @@
 
     <div class="row">
       <div class="medium-4 columns">
-        <div class="titol-subsistema"><%= t('.pn_menor_12') %></div>
+        <div class="titol-subsistema"><%= t('.equips_autonoms') %></div>
         <%= f.input :clima_pn_menor_12_autonoms %>
-        <%= f.input :clima_pn_menor_12_torres %>
-        <%= f.input :clima_pn_menor_12_recuperador %>
-      </div>
-      <div class="medium-4 columns">
-        <div class="titol-subsistema"><%= t('.pn_12_70') %></div>
         <%= f.input :clima_pn_12_70_autonoms %>
-        <%= f.input :clima_pn_12_70_torres %>
-        <%= f.input :clima_pn_12_70_recuperador %>
+        <%= f.input :clima_pn_major_70_autonoms %> 
       </div>
       <div class="medium-4 columns">
-        <div class="titol-subsistema"><%= t('.pn_major_70') %></div>
-        <%= f.input :clima_pn_major_70_autonoms %>
+        <div class="titol-subsistema"><%= t('.torres_refrigeracio') %></div>
+        <%= f.input :clima_pn_menor_12_torres %>
+        <%= f.input :clima_pn_12_70_torres %>
         <%= f.input :clima_pn_major_70_torres %>
+        
+      </div>
+      <div class="medium-4 columns">
+        <div class="titol-subsistema"><%= t('.recuperadors_calor') %></div>
+        <%= f.input :clima_pn_menor_12_recuperador %>
+        <%= f.input :clima_pn_12_70_recuperador %>
         <%= f.input :clima_pn_major_70_recuperador %>
       </div>
     </div>
