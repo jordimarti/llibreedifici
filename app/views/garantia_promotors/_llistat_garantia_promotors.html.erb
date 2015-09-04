@@ -1,0 +1,16 @@
+<% @garantia_promotors.each do |garantia_promotor| %>
+	<div class="dades-item">
+		
+		
+	  <%= link_to edifici_garantia_promotor_path(@edifici, garantia_promotor), remote: true, method: :delete,  data: { confirm: 'Segur que vols eliminar?' } do %>
+		  <div class="dades-eliminar right">
+		  	<span class="icon-cancel icones-icomoon"></span>
+		  </div>
+		<% end %>
+		<%= link_to edit_edifici_garantia_promotor_path(@edifici, garantia_promotor), remote: true do %>
+	    <div class="dades-editar">
+	    	<%= garantia_promotor.tipus %>
+	    </div>
+	  <% end %>
+	</div>
+<% end %>

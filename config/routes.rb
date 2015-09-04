@@ -1,12 +1,6 @@
 Rails.application.routes.draw do
- 
-  
-  
-  
-  
-  
-  
 
+  
   resources :operacions
   get 'edificis/:edifici_id/agents', to: 'agents#index', :as => :agents
   get 'edificis/:edifici_id/dades', to: 'dades#index', :as => :dades
@@ -55,7 +49,8 @@ Rails.application.routes.draw do
     resources :regim_propietats
     resources :declaracions
     resources :llicencies
-    
+    resources :garantia_instalacions
+    resources :garantia_promotors
   end
   
   

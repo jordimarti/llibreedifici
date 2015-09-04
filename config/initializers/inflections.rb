@@ -31,4 +31,5 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'llicencia', 'llicencies'
   inflect.irregular 'declaracio', 'declaracions'
   inflect.irregular 'carrega', 'carregues'
+  inflect.irregular 'instalacio', 'instalacions'
 end

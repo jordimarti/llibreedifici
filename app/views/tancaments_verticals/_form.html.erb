@@ -31,13 +31,14 @@
       </div>
     </div>
 
-    <hr>
-
-    <div class="row">
-      <div class="medium-12 columns">
-        <%= f.input :cambra_aire_facana %>
+    <% if @edifici.tipus_edifici == 'existent_plurifamiliar' || @edifici.tipus_edifici == 'existent_unifamiliar' %>
+      <hr>
+      <div class="row">
+        <div class="medium-12 columns">
+          <%= f.input :cambra_aire_facana %>
+        </div>
       </div>
-    </div>
+    <% end %>
 
     <hr class="form-divider">
 

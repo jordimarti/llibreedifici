@@ -1,0 +1,16 @@
+<% @garantia_instalacions.each do |garantia_instalacio| %>
+	<div class="dades-item">
+		
+		
+	  <%= link_to edifici_garantia_instalacio_path(@edifici, garantia_instalacio), remote: true, method: :delete,  data: { confirm: 'Segur que vols eliminar?' } do %>
+		  <div class="dades-eliminar right">
+		  	<span class="icon-cancel icones-icomoon"></span>
+		  </div>
+		<% end %>
+		<%= link_to edit_edifici_garantia_instalacio_path(@edifici, garantia_instalacio), remote: true do %>
+	    <div class="dades-editar">
+	    	<%= garantia_instalacio.tipus %>
+	    </div>
+	  <% end %>
+	</div>
+<% end %>

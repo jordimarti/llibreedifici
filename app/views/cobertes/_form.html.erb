@@ -14,8 +14,10 @@
         <div class="titol-subsistema"><%= t('.terrat') %></div>
         <%= f.input :terrat_transitable %>
         <%= f.input :terrat_no_transitable %>
-        <%= f.input :terrat_aillament_termic %>
-        <%= f.input :terrat_lamina_impermeabilitzant %>
+        <% if @edifici.tipus_edifici == 'existent_plurifamiliar' || @edifici.tipus_edifici == 'existent_unifamiliar' %>
+          <%= f.input :terrat_aillament_termic %>
+          <%= f.input :terrat_lamina_impermeabilitzant %>
+        <% end %>
       </div>
       <div class="medium-6 columns">
         <div class="titol-subsistema"><%= t('.coberta_inclinada') %></div>
@@ -27,7 +29,9 @@
         <%= f.input :coberta_asfaltica %>
         <%= f.input :coberta_xapa_acer %>
         <%= f.input :coberta_xapa_coure %>
-        <%= f.input :coberta_aillament_termic %>
+        <% if @edifici.tipus_edifici == 'existent_plurifamiliar' || @edifici.tipus_edifici == 'existent_unifamiliar' %>
+          <%= f.input :coberta_aillament_termic %>
+        <% end %>
       </div>
     </div>
   </div>

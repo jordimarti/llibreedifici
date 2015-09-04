@@ -214,6 +214,15 @@ ca:
         superficie: "Superfície"
         destinacio: "Destinació"
         quota: "Quota (%)"
+      garantia_promotor:
+        venciment: "Data de venciment de la garantia"
+        tipus: "Tipus de garantia"
+        referencia: "Referència de la pòlissa o altre document acreditatiu de l’atorgament de la garantia"
+      garantia_instalacio:
+        venciment: "Data de venciment de la garantia"
+        tipus: "Tipus de garantia"
+        instalacio: "Instal·lació"
+        empresa: "Nom de l'empresa garant"
       fonamentacio:
         mur_pedra: "Mur de pedra"
         mur_fabrica_mao: "Mur de fàbrica de maó"
@@ -575,6 +584,12 @@ ca:
       titol_entitat: "ENTITATS JURÍDIQUES"
       afegir_entitat: "Afegir entitat jurídica"
       entitat: "Entitat jurídica"
+      titol_garantia_promotor: "GARANTIES DEL PROMOTOR"
+      afegir_garantia_promotor: "Afegir garantia del promotor"
+      garantia_promotor: "Garantia del promotor"
+      titol_garantia_instalacio: "GARANTIES DE LES INSTAL·LACIONS"
+      afegir_garantia_instalacio: "Afegir garantia d'instal·lació"
+      garantia_instalacio: "Garantia de la instal·lació"
   llicencies:
     form:
       guardar: "Guardar"
@@ -593,6 +608,12 @@ ca:
     form:
       guardar: "Guardar"
   entitats:
+    form:
+      guardar: "Guardar"
+  garantia_promotors:
+    form:
+      guardar: "Guardar"
+  garantia_instalacions:
     form:
       guardar: "Guardar"
   fonamentacions:

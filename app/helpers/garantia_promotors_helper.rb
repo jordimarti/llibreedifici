@@ -1,0 +1,2 @@
+module GarantiaPromotorsHelper
+end
