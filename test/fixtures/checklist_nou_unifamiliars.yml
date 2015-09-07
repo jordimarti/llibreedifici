@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  edifici_id: 1
+  llicencies_preceptives: false
+  certificat_final_obra: false
+  acta_recepcio_obra: false
+  escriptura_publica: false
+  documents_garantia: false
+  certificacio_energetica: false
+  polissa_assegurances: false
+  cedules_regims_juridics: false
+  carregues_reals: false
+  documents_complementaris: false
+  documents_acreditatius_ajuts: false
+  documents_justificacio_operacions: false
+  declaracions_ce_ascensors: false
+
+two:
+  edifici_id: 1
+  llicencies_preceptives: false
+  certificat_final_obra: false
+  acta_recepcio_obra: false
+  escriptura_publica: false
+  documents_garantia: false
+  certificacio_energetica: false
+  polissa_assegurances: false
+  cedules_regims_juridics: false
+  carregues_reals: false
+  documents_complementaris: false
+  documents_acreditatius_ajuts: false
+  documents_justificacio_operacions: false
+  declaracions_ce_ascensors: false

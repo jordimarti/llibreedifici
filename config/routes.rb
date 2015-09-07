@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   
+  
   resources :operacions
   get 'edificis/:edifici_id/agents', to: 'agents#index', :as => :agents
   get 'edificis/:edifici_id/dades', to: 'dades#index', :as => :dades
@@ -43,6 +44,7 @@ Rails.application.routes.draw do
     resources :telecomunicacions
     resources :elements
     resources :checklist_nou_plurifamiliars
+    resources :checklist_nou_unifamiliars
     resources :entitats
     resources :carregues
     resources :regim_especials

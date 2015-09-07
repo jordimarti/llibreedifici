@@ -31,6 +31,7 @@ class Edifici < ActiveRecord::Base
 	has_many :elements
 	has_many :referencies
 	has_one :checklist_nou_plurifamiliar
+	has_one :checklist_nou_unifamiliar
 
 	validates :nom_edifici, :presence => true
 	validates :tipus_edifici, :presence => true

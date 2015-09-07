@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Checklist Nou Unifamiliars</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Edifici</th>
+      <th>Llicencies preceptives</th>
+      <th>Certificat final obra</th>
+      <th>Acta recepcio obra</th>
+      <th>Escriptura publica</th>
+      <th>Documents garantia</th>
+      <th>Certificacio energetica</th>
+      <th>Polissa assegurances</th>
+      <th>Cedules regims juridics</th>
+      <th>Carregues reals</th>
+      <th>Documents complementaris</th>
+      <th>Documents acreditatius ajuts</th>
+      <th>Documents justificacio operacions</th>
+      <th>Declaracions ce ascensors</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @checklist_nou_unifamiliars.each do |checklist_nou_unifamiliar| %>
+      <tr>
+        <td><%= checklist_nou_unifamiliar.edifici_id %></td>
+        <td><%= checklist_nou_unifamiliar.llicencies_preceptives %></td>
+        <td><%= checklist_nou_unifamiliar.certificat_final_obra %></td>
+        <td><%= checklist_nou_unifamiliar.acta_recepcio_obra %></td>
+        <td><%= checklist_nou_unifamiliar.escriptura_publica %></td>
+        <td><%= checklist_nou_unifamiliar.documents_garantia %></td>
+        <td><%= checklist_nou_unifamiliar.certificacio_energetica %></td>
+        <td><%= checklist_nou_unifamiliar.polissa_assegurances %></td>
+        <td><%= checklist_nou_unifamiliar.cedules_regims_juridics %></td>
+        <td><%= checklist_nou_unifamiliar.carregues_reals %></td>
+        <td><%= checklist_nou_unifamiliar.documents_complementaris %></td>
+        <td><%= checklist_nou_unifamiliar.documents_acreditatius_ajuts %></td>
+        <td><%= checklist_nou_unifamiliar.documents_justificacio_operacions %></td>
+        <td><%= checklist_nou_unifamiliar.declaracions_ce_ascensors %></td>
+        <td><%= link_to 'Show', checklist_nou_unifamiliar %></td>
+        <td><%= link_to 'Edit', edit_checklist_nou_unifamiliar_path(checklist_nou_unifamiliar) %></td>
+        <td><%= link_to 'Destroy', checklist_nou_unifamiliar, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Checklist nou unifamiliar', new_checklist_nou_unifamiliar_path %>

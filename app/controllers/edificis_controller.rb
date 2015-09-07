@@ -106,6 +106,10 @@ class EdificisController < ApplicationController
     @checklist_nou_plurifamiliar = ChecklistNouPlurifamiliar.new
     @checklist_nou_plurifamiliar.edifici_id = edifici_id
     @checklist_nou_plurifamiliar.save
+    #Checklist nou unifamiliar
+    @checklist_nou_unifamiliar = ChecklistNouUnifamiliar.new
+    @checklist_nou_unifamiliar.edifici_id = edifici_id
+    @checklist_nou_unifamiliar.save
   end
 
   # PATCH/PUT /edificis/1

@@ -467,6 +467,20 @@ es:
         documents_justificacio_operacions: "Documentos de justificación de la realización de operaciones de reparación, mantenimiento y rehabilitación"
         certificat_final_obra_instalacions: "Certificados de final de obra de las instalaciones comunes de baja tensión, gases combustibles, productos petrolíferos o instalaciones térmicas"
         declaracions_ce_ascensors: "Declaraciones CE que reconocen la conformidad de los ascensores instalados"
+      checklist_nou_unifamiliar:
+        llicencies_preceptives: "Licencias preceptivas"
+        certificat_final_obra: "Certificado de final de obra"
+        acta_recepcio_obra: "Acta de recepción definitiva de la obra"
+        escriptura_publica: "Escritura pública de declaración de obra nueva"
+        documents_garantia: "Documentos acreditativos de garantía"
+        certificacio_energetica: "Certificación energética"
+        polissa_assegurances: "Pólizas de seguros"
+        cedules_regims_juridics: "Cédulas de declaración de regímenes jurídicos especiales o calificaciones de viviendas protegidas"
+        carregues_reals: "Cargas reales existentes"
+        documents_complementaris: "Documentos complementarios"
+        documents_acreditatius_ajuts: "Documentos acreditativos de las ayudas y beneficios otorgados en el edificio"
+        documents_justificacio_operacions: "Documentos de justificación de la realización de operaciones de reparación, mantenimiento y rehabilitación"
+        declaracions_ce_ascensors: "Declaraciones CE que reconocen la conformidad de los ascensores instalados"
   devise:
     sessions:
       new:
@@ -789,6 +803,12 @@ es:
       actualitzar_llistat: "Actualizar listado"
       text_actualitzar_llistat: "Actualizad el listado de operaciones de mantenimiento cada vez que modifiquéis la descripción constructiva del edificio. Esta acción actualiza todas las operaciones creadas automáticamente, pero no afecta a las operaciones creadas manualmente."
   checklist_nou_plurifamiliars:
+    edit:
+      titol_configuracio_document: "Configuración del documento"
+    form:
+      text_arxiu: "Selecciona los apartados que deben aparecer en el Archivo de documentos"
+      guardar: "Guardar"
+  checklist_nou_unifamiliars:
     edit:
       titol_configuracio_document: "Configuración del documento"
     form:
