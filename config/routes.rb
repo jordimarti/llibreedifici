@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   
   
   resources :operacions
+  resources :sistemes
+  get 'edificis/:id/duplicate', to: 'edificis#duplicate', :as => :duplicate
   get 'edificis/:edifici_id/agents', to: 'agents#index', :as => :agents
   get 'edificis/:edifici_id/dades', to: 'dades#index', :as => :dades
   get 'edificis/:edifici_id/documents', to: 'documents#index', :as => :documents
@@ -10,11 +12,10 @@ Rails.application.routes.draw do
   get 'edificis/:edifici_id/documents/nou(.:format)', to: 'documents#nou', :as => :nou
   get 'edificis/:edifici_id/documents/manual_habitatge(.:format)', to: 'documents#manual_habitatge', :as => :manual_habitatge
   get 'edificis/:edifici_id/documents/existents(.:format)', to: 'documents#existents', :as => :existents
-  #get 'edificis/:edifici_id/sistemes', to: 'sistemes#index', :as => :sistemes
 
   get 'edificis/:edifici_id/sistemes/afegir_sistema', to: 'sistemes#afegir_sistema', :as => :afegir_sistema
   get 'edificis/:edifici_id/referencies/crear_llistat', to: 'referencies#crear_llistat', :as => :crear_llistat
-  resources :sistemes
+  
   resources :edificis do
     resources :identificacions
     resources :promotors

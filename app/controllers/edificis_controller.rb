@@ -136,6 +136,173 @@ class EdificisController < ApplicationController
     end
   end
 
+  def duplicate
+    @edifici = Edifici.find(params[:id])
+    nou_edifici = @edifici.dup
+    nou_edifici.nom_edifici = @edifici.nom_edifici + ' copia'
+    nou_edifici.save
+    duplicate_complements(@edifici.id, nou_edifici.id)
+    redirect_to edificis_url
+  end
+
+  def duplicate_complements(id_edifici, id_nou_edifici)
+    #Identificacio
+    @identificacio = Identificacio.where(:edifici_id => id_edifici).last
+    nova_identificacio = @identificacio.dup
+    nova_identificacio.edifici_id = id_nou_edifici
+    nova_identificacio.save
+    #Fonamentacio
+    @fonamentacio = Fonamentacio.where(:edifici_id => id_edifici).last
+    nova_fonamentacio = @fonamentacio.dup
+    nova_fonamentacio.edifici_id = id_nou_edifici
+    nova_fonamentacio.save
+    #Estructura
+    @estructura = Estructura.where(:edifici_id => id_edifici).last
+    nova_estructura = @estructura.dup
+    nova_estructura.edifici_id = id_nou_edifici
+    nova_estructura.save
+    #Tancaments verticals
+    @tancaments_vertical = TancamentsVertical.where(:edifici_id => id_edifici).last
+    nova_tancaments_vertical = @tancaments_vertical.dup
+    nova_tancaments_vertical.edifici_id = id_nou_edifici
+    nova_tancaments_vertical.save
+    #Coberta
+    @coberta = Coberta.where(:edifici_id => id_edifici).last
+    nova_coberta = @coberta.dup
+    nova_coberta.edifici_id = id_nou_edifici
+    nova_coberta.save
+    #Sanejament
+    @sanejament = Sanejament.where(:edifici_id => id_edifici).last
+    nova_sanejament = @sanejament.dup
+    nova_sanejament.edifici_id = id_nou_edifici
+    nova_sanejament.save
+    #Subministrament d'aigua
+    @aigua = Aigua.where(:edifici_id => id_edifici).last
+    nova_aigua = @aigua.dup
+    nova_aigua.edifici_id = id_nou_edifici
+    nova_aigua.save
+    #Instal·lació elèctrica
+    @electricitat = Electricitat.where(:edifici_id => id_edifici).last
+    nova_electricitat = @electricitat.dup
+    nova_electricitat.edifici_id = id_nou_edifici
+    nova_electricitat.save
+    #Climatitzacio
+    @climatitzacio = Climatitzacio.where(:edifici_id => id_edifici).last
+    nova_climatitzacio = @climatitzacio.dup
+    nova_climatitzacio.edifici_id = id_nou_edifici
+    nova_climatitzacio.save
+    #Gas
+    @ga = Ga.where(:edifici_id => id_edifici).last
+    nova_ga = @ga.dup
+    nova_ga.edifici_id = id_nou_edifici
+    nova_ga.save
+    #Ventilacio
+    @ventilacio = Ventilacio.where(:edifici_id => id_edifici).last
+    nova_ventilacio = @ventilacio.dup
+    nova_ventilacio.edifici_id = id_nou_edifici
+    nova_ventilacio.save
+    #Incendis
+    @incendi = Incendi.where(:edifici_id => id_edifici).last
+    nova_incendi = @incendi.dup
+    nova_incendi.edifici_id = id_nou_edifici
+    nova_incendi.save
+    #Ascensors
+    @ascensor = Ascensor.where(:edifici_id => id_edifici).last
+    nova_ascensor = @ascensor.dup
+    nova_ascensor.edifici_id = id_nou_edifici
+    nova_ascensor.save
+    #Telecomunicacions
+    @telecomunicacio = Telecomunicacio.where(:edifici_id => id_edifici).last
+    nova_telecomunicacio = @telecomunicacio.dup
+    nova_telecomunicacio.edifici_id = id_nou_edifici
+    nova_telecomunicacio.save
+    #Especials
+    @especial = Especial.where(:edifici_id => id_edifici).last
+    nova_especial = @especial.dup
+    nova_especial.edifici_id = id_nou_edifici
+    nova_especial.save
+    #Checklist nou plurifamiliar
+    @checklist_nou_plurifamiliar = ChecklistNouPlurifamiliar.where(:edifici_id => id_edifici).last
+    nova_checklist_nou_plurifamiliar = @checklist_nou_plurifamiliar.dup
+    nova_checklist_nou_plurifamiliar.edifici_id = id_nou_edifici
+    nova_checklist_nou_plurifamiliar.save
+    #Checklist nou unifamiliar
+    @checklist_nou_unifamiliar = ChecklistNouUnifamiliar.where(:edifici_id => id_edifici).last
+    nova_checklist_nou_unifamiliar = @checklist_nou_unifamiliar.dup
+    nova_checklist_nou_unifamiliar.edifici_id = id_nou_edifici
+    nova_checklist_nou_unifamiliar.save
+    #Promotors
+    promotors = Promotor.where(:edifici_id => id_edifici)
+    promotors.each do |promotor|
+      nou_promotor = promotor.dup
+      nou_promotor.edifici_id = id_nou_edifici
+      nou_promotor.save
+    end
+    #Projectistes
+    projectistes = Projectista.where(:edifici_id => id_edifici)
+    projectistes.each do |projectista|
+      nou_projectista = projectista.dup
+      nou_projectista.edifici_id = id_nou_edifici
+      nou_projectista.save
+    end
+    #Constructors
+    constructors = Constructor.where(:edifici_id => id_edifici)
+    constructors.each do |constructor|
+      nou_constructor = constructor.dup
+      nou_constructor.edifici_id = id_nou_edifici
+      nou_constructor.save
+    end
+    #Directors d'obra
+    directors = Director.where(:edifici_id => id_edifici)
+    directors.each do |director|
+      nou_director = director.dup
+      nou_director.edifici_id = id_nou_edifici
+      nou_director.save
+    end
+    #Directors d'execució d'obra
+    execucio_directors = ExecucioDirector.where(:edifici_id => id_edifici)
+    execucio_directors.each do |execucio_director|
+      nou_execucio_director = execucio_director.dup
+      nou_execucio_director.edifici_id = id_nou_edifici
+      nou_execucio_director.save
+    end
+    #Laboratoris de control
+    laboratoris = Laboratori.where(:edifici_id => id_edifici)
+    laboratoris.each do |laboratori|
+      nou_laboratori = laboratori.dup
+      nou_laboratori.edifici_id = id_nou_edifici
+      nou_laboratori.save
+    end
+    #Entitats de control
+    entitats = EntitatControl.where(:edifici_id => id_edifici)
+    entitats.each do |entitat|
+      nou_entitat = entitat.dup
+      nou_entitat.edifici_id = id_nou_edifici
+      nou_entitat.save
+    end
+    #Subministradors de productes
+    subministradors = Subministrador.where(:edifici_id => id_edifici)
+    subministradors.each do |subministrador|
+      nou_subministrador = subministrador.dup
+      nou_subministrador.edifici_id = id_nou_edifici
+      nou_subministrador.save
+    end
+    #Industrials
+    industrials = Industrial.where(:edifici_id => id_edifici)
+    industrials.each do |industrial|
+      nou_industrial = industrial.dup
+      nou_industrial.edifici_id = id_nou_edifici
+      nou_industrial.save
+    end
+    #Referencies
+    referencies = Referencia.where(:edifici_id => id_edifici)
+    referencies.each do |referencia|
+      nova_referencia = referencia.dup
+      nova_referencia.edifici_id = id_nou_edifici
+      nova_referencia.save
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_edifici
