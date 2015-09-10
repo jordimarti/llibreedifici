@@ -294,6 +294,62 @@ class EdificisController < ApplicationController
       nou_industrial.edifici_id = id_nou_edifici
       nou_industrial.save
     end
+    #Llicencies
+    llicencies = Llicencia.where(:edifici_id => id_edifici)
+    llicencies.each do |llicencia|
+      nou_llicencia = llicencia.dup
+      nou_llicencia.edifici_id = id_nou_edifici
+      nou_llicencia.save
+    end
+    #Declaració d'obra nova
+    declaracions = Declaracio.where(:edifici_id => id_edifici)
+    declaracions.each do |declaracio|
+      nou_declaracio = declaracio.dup
+      nou_declaracio.edifici_id = id_nou_edifici
+      nou_declaracio.save
+    end
+    #Règim de propietat
+    regim_propietats = RegimPropietat.where(:edifici_id => id_edifici)
+    regim_propietats.each do |regim_propietat|
+      nou_regim_propietat = regim_propietat.dup
+      nou_regim_propietat.edifici_id = id_nou_edifici
+      nou_regim_propietat.save
+    end
+    #Règims especials
+    regim_especials = RegimEspecial.where(:edifici_id => id_edifici)
+    regim_especials.each do |regim_especial|
+      nou_regim_especial = regim_especial.dup
+      nou_regim_especial.edifici_id = id_nou_edifici
+      nou_regim_especial.save
+    end
+    #Càrregues reals
+    carregues = Carrega.where(:edifici_id => id_edifici)
+    carregues.each do |carrega|
+      nou_carrega = carrega.dup
+      nou_carrega.edifici_id = id_nou_edifici
+      nou_carrega.save
+    end
+    #Entitats jurídiques
+    entitats = Entitat.where(:edifici_id => id_edifici)
+    entitats.each do |entitat|
+      nou_entitat = entitat.dup
+      nou_entitat.edifici_id = id_nou_edifici
+      nou_entitat.save
+    end
+    #Garanties dels promotors
+    garantia_promotors = GarantiaPromotor.where(:edifici_id => id_edifici)
+    garantia_promotors.each do |garantia_promotor|
+      nou_garantia_promotor = garantia_promotor.dup
+      nou_garantia_promotor.edifici_id = id_nou_edifici
+      nou_garantia_promotor.save
+    end
+    #Garanties de les instal·lacions
+    garantia_instalacions = GarantiaInstalacio.where(:edifici_id => id_edifici)
+    garantia_instalacions.each do |garantia_instalacio|
+      nou_garantia_instalacio = garantia_instalacio.dup
+      nou_garantia_instalacio.edifici_id = id_nou_edifici
+      nou_garantia_instalacio.save
+    end
     #Referencies
     referencies = Referencia.where(:edifici_id => id_edifici)
     referencies.each do |referencia|
