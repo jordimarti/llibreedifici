@@ -13,6 +13,7 @@ class CreateIdentificacions < ActiveRecord::Migration
       t.string :ref_cadastral
       t.integer :any_inici_construccio
       t.integer :any_fi_construccio
+      t.string :origen_any_construccio
 
       t.timestamps null: false
     end

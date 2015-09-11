@@ -373,6 +373,7 @@ ActiveRecord::Schema.define(version: 20150907084702) do
     t.string   "ref_cadastral"
     t.integer  "any_inici_construccio"
     t.integer  "any_fi_construccio"
+    t.string   "origen_any_construccio"
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.string   "planol_emplacament_file_name"

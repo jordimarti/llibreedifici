@@ -44,6 +44,15 @@
                 <%= f.input :any_fi_construccio %>
               </div>
             </div>
+          <% else %>
+            <div class="row">
+              <div class="medium-6 columns">
+                <%= f.input :any_fi_construccio %>
+              </div>
+              <div class="medium-6 columns end">
+                <%= f.input :origen_any_construccio, collection: ['Cadastre', 'Arxiu administratiu', 'Documentació propietat'] %>
+              </div>
+            </div>
           <% end %>
         </div>
       </div> 

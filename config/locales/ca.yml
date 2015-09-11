@@ -135,6 +135,7 @@ ca:
         us_edifici: "Tipologia"
         any_inici_construccio: "Any inici construcció"
         any_fi_construccio: "Any fi construcció"
+        origen_any_construccio: "Font any construcció"
       promotor:
         nom_promotor: "Nom"
         nif_promotor: "NIF/CIF"

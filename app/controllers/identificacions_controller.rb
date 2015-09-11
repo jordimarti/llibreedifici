@@ -81,6 +81,6 @@ class IdentificacionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def identificacio_params
-      params.require(:identificacio).permit(:edifici_id, :tipus_via_edifici, :via_edifici, :numero_edifici, :bloc_edifici, :escala_edifici, :cp_edifici, :poblacio_edifici, :provincia_edifici, :ref_cadastral, :us_edifici, :any_inici_construccio, :any_fi_construccio)
+      params.require(:identificacio).permit(:edifici_id, :tipus_via_edifici, :via_edifici, :numero_edifici, :bloc_edifici, :escala_edifici, :cp_edifici, :poblacio_edifici, :provincia_edifici, :ref_cadastral, :us_edifici, :any_inici_construccio, :any_fi_construccio, :origen_any_construccio)
     end
 end
