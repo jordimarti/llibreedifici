@@ -6,14 +6,12 @@
           		<li class="submenu-item <% if @submenu_actiu == 'identificacio' %>
                     submenu-actiu
                     <% end %>"><%= link_to(t('.identificacio'), edit_edifici_identificacio_path(@edifici.id, @edifici.identificacio.id), :class => 'submenu-link') %></li>
-          		<% if @edifici.tipus_edifici == "nou_plurifamiliar" || @edifici.tipus_edifici == "nou_unifamiliar" %>
-                <li class="submenu-item <% if @submenu_actiu == 'agents' %>
-                    submenu-actiu
-                    <% end %>"><%= link_to(t('.agents'), agents_path(@edifici.id), :class => 'submenu-link') %></li>
-                <li class="submenu-item <% if @submenu_actiu == 'dades' %>
-                    submenu-actiu
-                    <% end %>"><%= link_to(t('.dades'), dades_path(@edifici.id), :class => 'submenu-link') %></li>
-              <% end %>
+              <li class="submenu-item <% if @submenu_actiu == 'agents' %>
+                  submenu-actiu
+                  <% end %>"><%= link_to(t('.agents'), agents_path(@edifici.id), :class => 'submenu-link') %></li>
+              <li class="submenu-item <% if @submenu_actiu == 'dades' %>
+                  submenu-actiu
+                  <% end %>"><%= link_to(t('.dades'), dades_path(@edifici.id), :class => 'submenu-link') %></li>
           		<li class="submenu-item <% if @submenu_actiu == 'sistemes' %>
                     submenu-actiu
                     <% end %>"><%= link_to(t('.sistemes'), edit_edifici_fonamentacio_path(@edifici.id, @edifici.fonamentacio.id), :class => 'submenu-link') %></li>
