@@ -50,19 +50,19 @@
 
                               <div class="boto-item-llistat-edificis right">
                                 <%= link_to edifici, method: :delete, data: { confirm: t('.eliminar') } do %>
-                                  <span class="icon-cancel icones-icomoon"></span>                          
+                                  <span class="icon-cancel icones-icomoon" title="Eliminar"></span>                     
                                 <% end %>
                               </div>
 
                               <div class="boto-item-llistat-edificis right">
                                 <%= link_to duplicate_path(edifici.id) do %>
-                                  <span class="icon-copy icones-icomoon"></span>
+                                  <span class="icon-copy icones-icomoon" title="Duplicar"></span>
                                 <% end %>
                               </div>
 
                               <div class="boto-item-llistat-edificis right">
                                 <%= link_to edit_edifici_path(edifici) do %>
-                                  <span class="icon-pencil icones-icomoon"></span>
+                                  <span class="icon-pencil icones-icomoon" title="Editar"></span>
                                 <% end %>
                               </div>
 
