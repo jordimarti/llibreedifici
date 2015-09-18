@@ -39,6 +39,6 @@ class EntitatControlsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def entitat_control_params
-      params.require(:entitat_control).permit(:edifici_id, :nom_entitat_control, :nif_entitat_control, :adreca_entitat_control, :cp_entitat_control, :poblacio_entitat_control, :provincia_entitat_control, :pais_entitat_control)
+      params.require(:entitat_control).permit(:edifici_id, :nom_entitat_control, :nif_entitat_control, :adreca_entitat_control, :cp_entitat_control, :poblacio_entitat_control, :provincia_entitat_control, :pais_entitat_control, :telefon, :email, :web)
     end
 end

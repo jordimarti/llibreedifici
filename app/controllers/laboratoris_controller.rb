@@ -39,6 +39,6 @@ class LaboratorisController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def laboratori_params
-      params.require(:laboratori).permit(:edifici_id, :nom_laboratori, :nif_laboratori)
+      params.require(:laboratori).permit(:edifici_id, :nom_laboratori, :nif_laboratori, :telefon, :email, :web)
     end
 end

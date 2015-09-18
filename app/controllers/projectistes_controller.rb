@@ -39,6 +39,6 @@ class ProjectistesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def projectista_params
-      params.require(:projectista).permit(:edifici_id, :nom_projectista, :titulacio_projectista, :rao_social_projectista, :nif_projectista)
+      params.require(:projectista).permit(:edifici_id, :nom_projectista, :titulacio_projectista, :rao_social_projectista, :nif_projectista, :telefon, :email, :web)
     end
 end

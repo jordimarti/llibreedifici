@@ -9,6 +9,9 @@ class CreatePromotors < ActiveRecord::Migration
       t.string :poblacio_promotor
       t.string :provincia_promotor
       t.string :pais_promotor
+      t.string :telefon
+      t.string :email
+      t.string :web
 
       t.timestamps null: false
     end

@@ -9,6 +9,9 @@ class CreateConstructors < ActiveRecord::Migration
       t.string :poblacio_constructor
       t.string :provincia_constructor
       t.string :pais_constructor
+      t.string :telefon
+      t.string :email
+      t.string :web
 
       t.timestamps null: false
     end

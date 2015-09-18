@@ -61,6 +61,20 @@
   <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 </div>
 
+<div id="modal-colaborador" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <h3 id="modalTitle"><%= t('.colaborador') %></h3>
+  <div id="formulari-colaborador" class="formulari-agent">
+  </div>
+  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+
+<div id="modal-coordinador" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <h3 id="modalTitle"><%= t('.coordinador') %></h3>
+  <div id="formulari-coordinador" class="formulari-agent">
+  </div>
+  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+
 
 <div class="background-seccio">
 	<div class="row">
@@ -114,6 +128,23 @@
 					<div class="medium-6 columns">
 						<div class="agents-container">
 							<div class="agents-title">
+								<%= t('.titol_colaborador') %>
+							</div>
+							<div id="colaboradors">
+								<%= render  :partial => '/colaboradors/llistat_colaboradors' %>
+							</div>
+							<div class="agents-footer">
+								<div class="agents-footer-link right">
+									<%= link_to (new_edifici_colaborador_path), remote: true do %>
+										<span class="suma">+</span> <%= t('.afegir_colaborador') %>
+									<% end %>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="medium-6 columns">
+						<div class="agents-container">
+							<div class="agents-title">
 								<%= t('.titol_constructor') %>
 							</div>
 							<div id="constructors">
@@ -128,6 +159,9 @@
 							</div>
 						</div>
 					</div>
+				</div>
+
+				<div class="row">
 					<div class="medium-6 columns">
 						<div class="agents-container">
 							<div class="agents-title">
@@ -145,9 +179,6 @@
 							</div>
 						</div>
 					</div>
-				</div>
-
-				<div class="row">
 					<div class="medium-6 columns">
 						<div class="agents-container">
 							<div class="agents-title">
@@ -160,6 +191,26 @@
 								<div class="agents-footer-link right">
 									<%= link_to (new_edifici_execucio_director_path), remote: true do %>
 										<span class="suma">+</span> <%= t('.afegir_director_execucio') %>
+									<% end %>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="medium-6 columns">
+						<div class="agents-container">
+							<div class="agents-title">
+								<%= t('.titol_coordinador') %>
+							</div>
+							<div id="coordinadors">
+								<%= render  :partial => '/coordinadors/llistat_coordinadors' %>
+							</div>
+							<div class="agents-footer">
+								<div class="agents-footer-link right">
+									<%= link_to (new_edifici_coordinador_path), remote: true do %>
+										<span class="suma">+</span> <%= t('.afegir_coordinador') %>
 									<% end %>
 								</div>
 							</div>

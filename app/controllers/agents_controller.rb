@@ -15,6 +15,8 @@ class AgentsController < ApplicationController
     @entitat_controls = EntitatControl.where(:edifici_id => params[:edifici_id])
     @subministradors = Subministrador.where(:edifici_id => params[:edifici_id])
     @industrials = Industrial.where(:edifici_id => params[:edifici_id])
+    @colaboradors = Colaborador.where(:edifici_id => params[:edifici_id])
+    @coordinadors = Coordinador.where(:edifici_id => params[:edifici_id])
   end
 
   private

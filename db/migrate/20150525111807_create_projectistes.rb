@@ -6,6 +6,9 @@ class CreateProjectistes < ActiveRecord::Migration
       t.string :titulacio_projectista
       t.string :rao_social_projectista
       t.string :nif_projectista
+      t.string :telefon
+      t.string :email
+      t.string :web
 
       t.timestamps null: false
     end

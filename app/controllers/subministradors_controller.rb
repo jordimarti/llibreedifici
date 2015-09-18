@@ -39,6 +39,6 @@ class SubministradorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def subministrador_params
-      params.require(:subministrador).permit(:edifici_id, :nom_subministrador, :nif_subministrador, :adreca_subministrador, :cp_subministrador, :poblacio_subministrador, :provincia_subministrador, :pais_subministrador)
+      params.require(:subministrador).permit(:edifici_id, :nom_subministrador, :nif_subministrador, :adreca_subministrador, :cp_subministrador, :poblacio_subministrador, :provincia_subministrador, :pais_subministrador, :telefon, :email, :web)
     end
 end

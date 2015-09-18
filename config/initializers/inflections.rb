@@ -32,4 +32,5 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'declaracio', 'declaracions'
   inflect.irregular 'carrega', 'carregues'
   inflect.irregular 'instalacio', 'instalacions'
+  inflect.irregular 'observacio', 'observacions'
 end

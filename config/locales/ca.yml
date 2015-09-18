@@ -136,6 +136,7 @@ ca:
         any_inici_construccio: "Any inici construcció"
         any_fi_construccio: "Any fi construcció"
         origen_any_construccio: "Font any construcció"
+        observacions: "Observacions"
       promotor:
         nom_promotor: "Nom"
         nif_promotor: "NIF/CIF"
@@ -144,11 +145,17 @@ ca:
         poblacio_promotor: "Població"
         provincia_promotor: "Província"
         pais_promotor: "País"
+        telefon: "Telèfon"
+        email: "Correu electrònic"
+        web: "Web"
       projectista:
         nom_projectista: "Nom"
         nif_projectista: "NIF"
         titulacio_projectista: "Titulació"
         rao_social_projectista: "Raó social"
+        telefon: "Telèfon"
+        email: "Correu electrònic"
+        web: "Web"
       constructor:
         nom_constructor: "Nom"
         nif_constructor: "NIF/CIF"
@@ -157,19 +164,31 @@ ca:
         poblacio_constructor: "Població"
         provincia_constructor: "Província"
         pais_constructor: "País"
+        telefon: "Telèfon"
+        email: "Correu electrònic"
+        web: "Web"
       director:
         nom_director: "Nom"
         nif_director: "NIF"
         titulacio_director: "Titulació"
         rao_social_director: "Raó social"
+        telefon: "Telèfon"
+        email: "Correu electrònic"
+        web: "Web"
       execucio_director:
         nom_director_execucio: "Nom"
         nif_director_execucio: "NIF"
         titulacio_director_execucio: "Titulació"
         rao_social_director_execucio: "Raó social"
+        telefon: "Telèfon"
+        email: "Correu electrònic"
+        web: "Web"
       laboratori:
         nom_laboratori: "Nom"
         nif_laboratori: "NIF/CIF"
+        telefon: "Telèfon"
+        email: "Correu electrònic"
+        web: "Web"
       entitat_control:
         nom_entitat_control: "Nom"
         nif_entitat_control: "NIF/CIF"
@@ -178,6 +197,9 @@ ca:
         poblacio_entitat_control: "Població"
         provincia_entitat_control: "Província"
         pais_entitat_control: "País"
+        telefon: "Telèfon"
+        email: "Correu electrònic"
+        web: "Web"
       subministrador:
         nom_subministrador: "Nom"
         nif_subministrador: "NIF/CIF"
@@ -186,6 +208,9 @@ ca:
         poblacio_subministrador: "Població"
         provincia_subministrador: "Província"
         pais_subministrador: "País"
+        telefon: "Telèfon"
+        email: "Correu electrònic"
+        web: "Web"
       industrial:
         nom_industrial: "Nom"
         nif_industrial: "NIF/CIF"
@@ -194,6 +219,27 @@ ca:
         poblacio_industrial: "Població"
         provincia_industrial: "Província"
         pais_industrial: "País"
+        servei_obra: "Servei a l'obra"
+        telefon: "Telèfon"
+        email: "Correu electrònic"
+        web: "Web"
+      colaborador:
+        nom_colaborador: "Nom"
+        titulacio_colaborador: "Titulació"
+        rao_social_colaborador: "Raó social"
+        nif_colaborador: "NIF/CIF"
+        ambit_colaboracio: "Àmbit de la col·laboració"
+        telefon: "Telèfon"
+        email: "Correu electrònic"
+        web: "Web"
+      coordinador:
+        nom_coordinador: "Nom"
+        titulacio_coordinador: "Titulació"
+        rao_social_coordinador: "Raó social"
+        nif_coordinador: "NIF/CIF"
+        telefon: "Telèfon"
+        email: "Correu electrònic"
+        web: "Web"
       llicencia:
         classe: "Classe"
         data_llicencia: "Data"
@@ -531,7 +577,7 @@ ca:
       laboratori: "Laboratori de control"
       entitat: "Entitat de control"
       subministrador: "Subministrador de productes"
-      industrial: "Industrial"
+      industrial: "Subcontractista principal"
       titol_promotor: "PROMOTOR"
       titol_projectista: "PROJECTISTA"
       titol_constructor: "CONSTRUCTOR"
@@ -540,7 +586,9 @@ ca:
       titol_laboratori: "LABORATORI DE CONTROL"
       titol_entitat: "ENTITAT DE CONTROL"
       titol_subministrador: "SUBMINISTRADOR DE PRODUCTES"
-      titol_industrial: "INDUSTRIAL"
+      titol_industrial: "SUBCONTRACTISTA PRINCIPAL"
+      titol_colaborador: "COL·LABORADOR AL PROJECTISTA"
+      titol_coordinador: "COORDINADOR DE SEGURETAT"
       afegir_promotor: "Afegir un promotor"
       afegir_projectista: "Afegir un projectista"
       afegir_constructor: "Afegir un constructor"
@@ -549,7 +597,9 @@ ca:
       afegir_laboratori: "Afegir un laboratori de control"
       afegir_entitat: "Afegir una entitat de control"
       afegir_subministrador: "Afegir un subministrador de productes"
-      afegir_industrial: "Afegir un industrial"
+      afegir_industrial: "Afegir un subcontractista"
+      afegir_colaborador: "Afegir un col·laborador"
+      afegir_coordinador: "Afegir un coordinador de seguretat"
   promotors:
     form:
       guardar: "Guardar"
@@ -575,6 +625,12 @@ ca:
     form:
       guardar: "Guardar"
   industrials:
+    form:
+      guardar: "Guardar"
+  colaboradors:
+    form:
+      guardar: "Guardar"
+  coordinadors:
     form:
       guardar: "Guardar"
   dades:

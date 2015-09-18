@@ -9,6 +9,9 @@ class CreateEntitatControls < ActiveRecord::Migration
       t.string :poblacio_entitat_control
       t.string :provincia_entitat_control
       t.string :pais_entitat_control
+      t.string :telefon
+      t.string :email
+      t.string :web
 
       t.timestamps null: false
     end

@@ -6,6 +6,9 @@ class CreateExecucioDirectors < ActiveRecord::Migration
       t.string :titulacio_director_execucio
       t.string :rao_social_director_execucio
       t.string :nif_director_execucio
+      t.string :telefon
+      t.string :email
+      t.string :web
 
       t.timestamps null: false
     end

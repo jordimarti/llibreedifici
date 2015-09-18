@@ -9,6 +9,9 @@ class CreateSubministradors < ActiveRecord::Migration
       t.string :poblacio_subministrador
       t.string :provincia_subministrador
       t.string :pais_subministrador
+      t.string :telefon
+      t.string :email
+      t.string :web
 
       t.timestamps null: false
     end

@@ -39,6 +39,6 @@ class IndustrialsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def industrial_params
-      params.require(:industrial).permit(:edifici_id, :nom_industrial, :nif_industrial, :adreca_industrial, :cp_industrial, :poblacio_industrial, :provincia_industrial, :pais_industrial)
+      params.require(:industrial).permit(:edifici_id, :nom_industrial, :nif_industrial, :adreca_industrial, :cp_industrial, :poblacio_industrial, :provincia_industrial, :pais_industrial, :servei_obra, :telefon, :email, :web)
     end
 end

@@ -1,0 +1,16 @@
+
+<% @colaboradors.each do |colaborador| %>
+	<div class="agents-item">		
+		
+	  <%= link_to edifici_colaborador_path(@edifici, colaborador), remote: true, method: :delete,  data: { confirm: 'Segur que vols eliminar?' } do %>
+		  <div class="agents-eliminar right">
+		  	<span class="icon-cancel icones-icomoon"></span>
+		  </div>
+		<% end %>
+		<%= link_to edit_edifici_colaborador_path(@edifici, colaborador), remote: true do %>
+	    <div class="agents-editar">
+	    	<%= colaborador.nom_colaborador %>
+	    </div>
+	  <% end %>
+	</div>
+<% end %>

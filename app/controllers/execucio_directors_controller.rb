@@ -39,6 +39,6 @@ class ExecucioDirectorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def execucio_director_params
-      params.require(:execucio_director).permit(:edifici_id, :nom_director_execucio, :titulacio_director_execucio, :rao_social_director_execucio, :nif_director_execucio)
+      params.require(:execucio_director).permit(:edifici_id, :nom_director_execucio, :titulacio_director_execucio, :rao_social_director_execucio, :nif_director_execucio, :telefon, :email, :web)
     end
 end

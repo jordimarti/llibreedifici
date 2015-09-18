@@ -14,6 +14,7 @@ class CreateIdentificacions < ActiveRecord::Migration
       t.integer :any_inici_construccio
       t.integer :any_fi_construccio
       t.string :origen_any_construccio
+      t.text :observacions
 
       t.timestamps null: false
     end

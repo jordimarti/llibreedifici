@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150907084702) do
+ActiveRecord::Schema.define(version: 20150918094304) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -159,6 +159,20 @@ ActiveRecord::Schema.define(version: 20150907084702) do
     t.datetime "updated_at",                      null: false
   end
 
+  create_table "colaboradors", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.string   "nom_colaborador"
+    t.string   "titulacio_colaborador"
+    t.string   "rao_social_colaborador"
+    t.string   "nif_colaborador"
+    t.string   "ambit_colaboracio"
+    t.string   "telefon"
+    t.string   "email"
+    t.string   "web"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
   create_table "constructors", force: :cascade do |t|
     t.integer  "edifici_id"
     t.string   "nom_constructor"
@@ -168,8 +182,24 @@ ActiveRecord::Schema.define(version: 20150907084702) do
     t.string   "poblacio_constructor"
     t.string   "provincia_constructor"
     t.string   "pais_constructor"
+    t.string   "telefon"
+    t.string   "email"
+    t.string   "web"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+  end
+
+  create_table "coordinadors", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.string   "nom_coordinador"
+    t.string   "titulacio_coordinador"
+    t.string   "rao_social_coordinador"
+    t.string   "nif_coordinador"
+    t.string   "telefon"
+    t.string   "email"
+    t.string   "web"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "declaracions", force: :cascade do |t|
@@ -187,6 +217,9 @@ ActiveRecord::Schema.define(version: 20150907084702) do
     t.string   "titulacio_director"
     t.string   "rao_social_director"
     t.string   "nif_director"
+    t.string   "telefon"
+    t.string   "email"
+    t.string   "web"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
   end
@@ -230,6 +263,9 @@ ActiveRecord::Schema.define(version: 20150907084702) do
     t.string   "poblacio_entitat_control"
     t.string   "provincia_entitat_control"
     t.string   "pais_entitat_control"
+    t.string   "telefon"
+    t.string   "email"
+    t.string   "web"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
@@ -312,6 +348,9 @@ ActiveRecord::Schema.define(version: 20150907084702) do
     t.string   "titulacio_director_execucio"
     t.string   "rao_social_director_execucio"
     t.string   "nif_director_execucio"
+    t.string   "telefon"
+    t.string   "email"
+    t.string   "web"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
   end
@@ -374,6 +413,7 @@ ActiveRecord::Schema.define(version: 20150907084702) do
     t.integer  "any_inici_construccio"
     t.integer  "any_fi_construccio"
     t.string   "origen_any_construccio"
+    t.text     "observacions"
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.string   "planol_emplacament_file_name"
@@ -410,6 +450,10 @@ ActiveRecord::Schema.define(version: 20150907084702) do
     t.string   "poblacio_industrial"
     t.string   "provincia_industrial"
     t.string   "pais_industrial"
+    t.string   "servei_obra"
+    t.string   "telefon"
+    t.string   "email"
+    t.string   "web"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
   end
@@ -418,6 +462,9 @@ ActiveRecord::Schema.define(version: 20150907084702) do
     t.integer  "edifici_id"
     t.string   "nom_laboratori"
     t.string   "nif_laboratori"
+    t.string   "telefon"
+    t.string   "email"
+    t.string   "web"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
@@ -453,6 +500,9 @@ ActiveRecord::Schema.define(version: 20150907084702) do
     t.string   "titulacio_projectista"
     t.string   "rao_social_projectista"
     t.string   "nif_projectista"
+    t.string   "telefon"
+    t.string   "email"
+    t.string   "web"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
@@ -466,6 +516,9 @@ ActiveRecord::Schema.define(version: 20150907084702) do
     t.string   "poblacio_promotor"
     t.string   "provincia_promotor"
     t.string   "pais_promotor"
+    t.string   "telefon"
+    t.string   "email"
+    t.string   "web"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end
@@ -539,6 +592,9 @@ ActiveRecord::Schema.define(version: 20150907084702) do
     t.string   "poblacio_subministrador"
     t.string   "provincia_subministrador"
     t.string   "pais_subministrador"
+    t.string   "telefon"
+    t.string   "email"
+    t.string   "web"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end

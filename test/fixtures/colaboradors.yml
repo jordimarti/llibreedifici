@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  edifici_id: 1
+  nom_colaborador: MyString
+  titulacio_colaborador: MyString
+  rao_social_colaborador: MyString
+  nif_colaborador: MyString
+  ambit_colaboracio: MyString
+  telefon: MyString
+  email: MyString
+  web: MyString
+
+two:
+  edifici_id: 1
+  nom_colaborador: MyString
+  titulacio_colaborador: MyString
+  rao_social_colaborador: MyString
+  nif_colaborador: MyString
+  ambit_colaboracio: MyString
+  telefon: MyString
+  email: MyString
+  web: MyString

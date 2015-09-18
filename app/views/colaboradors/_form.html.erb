@@ -1,0 +1,54 @@
+<%= simple_form_for([@edifici, @colaborador], remote: true) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :edifici_id, :as => :hidden, :input_html => { :value => @edifici.id } %>
+    
+    <div class="row">
+      <div class="large-6 columns">
+        <%= f.input :nom_colaborador %>
+      </div>
+      <div class="large-6 columns">
+        <%= f.input :titulacio_colaborador %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-6 columns">
+        <%= f.input :rao_social_colaborador %>
+      </div>
+      <div class="large-6 columns">
+        <%= f.input :nif_colaborador %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-6 columns end">
+        <%= f.input :ambit_colaboracio %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-4 columns">
+        <%= f.input :telefon %>
+      </div>
+      <div class="large-4 columns">
+        <%= f.input :email %>
+      </div>
+      <div class="large-4 columns">
+        <%= f.input :web %>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="form-actions">
+    <div class="row">
+      <div class="large-12 columns">
+        <%= f.button :submit, t('.guardar'), :class => 'button small radius right botodreta' %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+

@@ -9,6 +9,10 @@ class CreateIndustrials < ActiveRecord::Migration
       t.string :poblacio_industrial
       t.string :provincia_industrial
       t.string :pais_industrial
+      t.string :servei_obra
+      t.string :telefon
+      t.string :email
+      t.string :web
 
       t.timestamps null: false
     end

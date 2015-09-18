@@ -6,6 +6,9 @@ class CreateDirectors < ActiveRecord::Migration
       t.string :titulacio_director
       t.string :rao_social_director
       t.string :nif_director
+      t.string :telefon
+      t.string :email
+      t.string :web
 
       t.timestamps null: false
     end

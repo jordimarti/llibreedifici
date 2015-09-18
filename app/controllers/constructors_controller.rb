@@ -40,6 +40,6 @@ class ConstructorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def constructor_params
-      params.require(:constructor).permit(:edifici_id, :nom_constructor, :nif_constructor, :adreca_constructor, :cp_constructor, :poblacio_constructor, :provincia_constructor, :pais_constructor)
+      params.require(:constructor).permit(:edifici_id, :nom_constructor, :nif_constructor, :adreca_constructor, :cp_constructor, :poblacio_constructor, :provincia_constructor, :pais_constructor, :telefon, :email, :web)
     end
 end
