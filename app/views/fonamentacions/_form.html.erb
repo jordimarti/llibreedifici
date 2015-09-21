@@ -17,20 +17,30 @@
         <%= f.input :mur_fabrica_bloc %>
         <%= f.input :mur_formigo_armat %>
         <%= f.input :mur_pantalla %>
+        <hr>
+        <%= f.input :drenatge_perimetral %>
       </div>
       <div class="medium-4 columns">
         <div class="titol-subsistema"><%= t('.fonamentacio_superficial') %></div>
+        <%= f.input :sabates_aillades %>
+        <%= f.input :sabates_continues %>
+        <%= f.input :llosa %>
+        <hr>
         <% if (@edifici.tipus_edifici == 'existent_plurifamiliar' || @edifici.tipus_edifici == 'existent_unifamiliar') %>
           <%= f.input :sabates_paredat %>
         <% end %>
-        <%= f.input :sabates_formigo %>
-        <%= f.input :llosa %>
+        <%= f.input :formigo %>
+        <%= f.input :formigo_armat %>
       </div>
       <div class="medium-4 columns">
         <div class="titol-subsistema"><%= t('.fonamentacio_profunda') %></div>
         <%= f.input :pilons %>
         <%= f.input :pantalles %>
       </div>
+    </div>
+
+    <div class="row">
+
     </div>
   </div>
 

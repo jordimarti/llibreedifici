@@ -7,9 +7,13 @@ class CreateFonamentacions < ActiveRecord::Migration
       t.boolean :mur_fabrica_bloc
       t.boolean :mur_formigo_armat
       t.boolean :mur_pantalla
+      t.boolean :drenatge_perimetral
       t.boolean :sabates_paredat
-      t.boolean :sabates_formigo
+      t.boolean :sabates_aillades
+      t.boolean :sabates_continues
       t.boolean :llosa
+      t.boolean :formigo
+      t.boolean :formigo_armat
       t.boolean :pilons
       t.boolean :pantalles
 

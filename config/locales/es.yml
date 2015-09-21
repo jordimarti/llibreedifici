@@ -280,9 +280,13 @@ es:
         mur_fabrica_bloc: "Muro de fábrica de bloque"
         mur_formigo_armat: "Muro de hormigón armado"
         mur_pantalla: "Muro pantalla"
-        sabates_paredat: "Zapatas, rasas, pozos de mampostería"
-        sabates_formigo: "Zapatas o rasas de hormigón"
+        drenatge_perimetral: "Drenaje perimetral"
+        sabates_paredat: "Mampostería"
+        sabates_aillades: "Zapatas aisladas"
+        sabates_continues: "Zapatas contínuas"
         llosa: "Losa"
+        formigo: "Hormigón"
+        formigo_armat: "Hormigón armado"
         pilons: "Pilones"
         pantalles: "Pantallas"
       estructura:
@@ -339,7 +343,15 @@ es:
         acabat_revestit_aplacat_ceramic: "Aplacado cerámico"
         acabat_revestit_aplacat_pedra: "Aplacado de piedra"
         acabat_revestit_xapa_metalica: "Chapa metálica"
-        cambra_aire_facana: "Fachada con cámara de aire"
+        cambra_aire_facana: "Cámara de aire"
+        aillament_termic: "Aislamiento térmico"
+        parets_mitgeres: "Paredes medianeras"
+        balcons: "Balcones"
+        ampits: "Alféizares"
+        llindes: "Dinteles"
+        baranes: "Barandillas"
+        reixes: "Rejas"
+        persianes: "Persianas"
         fusteria_fusta: "Madera"
         fusteria_acer: "Acero"
         fusteria_alumini: "Aluminio"
@@ -694,6 +706,9 @@ es:
   garantia_instalacions:
     form:
       guardar: "Guardar"
+  garantia_constructors:
+    form:
+      guardar: "Guardar"
   fonamentacions:
     edit:
       titol_sistemes: "Descripción constructiva del edificio"
@@ -733,6 +748,7 @@ es:
       titol_tancaments: "CERRAMIENTOS VERTICALES"
       acabat_vist: "Acabado visto"
       acabat_revestit: "Acabado revestido"
+      altres_tancaments: "Información adicional"
       fusteries: "Carpinterías"
       vidres: "Vidrios"
   cobertes:

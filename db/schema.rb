@@ -362,13 +362,17 @@ ActiveRecord::Schema.define(version: 20150918164631) do
     t.boolean  "mur_fabrica_bloc"
     t.boolean  "mur_formigo_armat"
     t.boolean  "mur_pantalla"
+    t.boolean  "drenatge_perimetral"
     t.boolean  "sabates_paredat"
-    t.boolean  "sabates_formigo"
+    t.boolean  "sabates_aillades"
+    t.boolean  "sabates_continues"
     t.boolean  "llosa"
+    t.boolean  "formigo"
+    t.boolean  "formigo_armat"
     t.boolean  "pilons"
     t.boolean  "pantalles"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
   create_table "garantia_constructors", force: :cascade do |t|
@@ -624,6 +628,14 @@ ActiveRecord::Schema.define(version: 20150918164631) do
     t.boolean  "acabat_revestit_aplacat_pedra"
     t.boolean  "acabat_revestit_xapa_metalica"
     t.boolean  "cambra_aire_facana"
+    t.boolean  "aillament_termic"
+    t.boolean  "parets_mitgeres"
+    t.boolean  "balcons"
+    t.boolean  "ampits"
+    t.boolean  "llindes"
+    t.boolean  "baranes"
+    t.boolean  "reixes"
+    t.boolean  "persianes"
     t.boolean  "fusteria_fusta"
     t.boolean  "fusteria_acer"
     t.boolean  "fusteria_alumini"

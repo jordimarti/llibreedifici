@@ -12,51 +12,77 @@
     <div class="row">
       <div class="medium-6 columns">
         <div class="titol-subsistema"><%= t('.acabat_vist') %></div>
-        <%= f.input :acabat_vist_paredat %>
-        <%= f.input :acabat_vist_carreus %>
-        <%= f.input :acabat_vist_fabrica_mao %>
-        <%= f.input :acabat_vist_fabrica_bloc_ceramic %>
-        <%= f.input :acabat_vist_bloc_formigo %>
-        <%= f.input :acabat_vist_panell_formigo %>
-        <%= f.input :acabat_vist_panell_metalic_sandwich %>
+        <div class="camps-subsistema">
+          <%= f.input :acabat_vist_paredat %>
+          <%= f.input :acabat_vist_carreus %>
+          <%= f.input :acabat_vist_fabrica_mao %>
+          <%= f.input :acabat_vist_fabrica_bloc_ceramic %>
+          <%= f.input :acabat_vist_bloc_formigo %>
+          <%= f.input :acabat_vist_panell_formigo %>
+          <%= f.input :acabat_vist_panell_metalic_sandwich %>
+        </div>
       </div>
       <div class="medium-6 columns">
         <div class="titol-subsistema"><%= t('.acabat_revestit') %></div>  
-        <%= f.input :acabat_revestit_arrebossat_pintat %>
-        <%= f.input :acabat_revestit_estucat %>
-        <%= f.input :acabat_revestit_morter_monocapa %>
-        <%= f.input :acabat_revestit_aplacat_ceramic %>
-        <%= f.input :acabat_revestit_aplacat_pedra %>
-        <%= f.input :acabat_revestit_xapa_metalica %>
+        <div class="camps-subsistema">
+          <%= f.input :acabat_revestit_arrebossat_pintat %>
+          <%= f.input :acabat_revestit_estucat %>
+          <%= f.input :acabat_revestit_morter_monocapa %>
+          <%= f.input :acabat_revestit_aplacat_ceramic %>
+          <%= f.input :acabat_revestit_aplacat_pedra %>
+          <%= f.input :acabat_revestit_xapa_metalica %>
+        </div>
       </div>
     </div>
 
-    <% if @edifici.tipus_edifici == 'existent_plurifamiliar' || @edifici.tipus_edifici == 'existent_unifamiliar' %>
-      <hr>
-      <div class="row">
-        <div class="medium-12 columns">
-          <%= f.input :cambra_aire_facana %>
+    
+    <div class="row">
+      <div class="medium-12 columns">
+        <div class="titol-subsistema"><%= t('.altres_tancaments') %></div>
+        <div class="camps-subsistema">
+          <div class="row">
+            <div class="medium-6 columns">
+              <%= f.input :parets_mitgeres %>
+              <%= f.input :balcons %>
+              <%= f.input :ampits %>
+              <%= f.input :llindes %>
+              <%= f.input :baranes %>
+            </div>
+            <div class="medium-6 columns">
+              <%= f.input :reixes %>
+              <%= f.input :persianes %>
+              <% if @edifici.tipus_edifici == 'existent_plurifamiliar' || @edifici.tipus_edifici == 'existent_unifamiliar' %>
+                <%= f.input :cambra_aire_facana %>
+                <%= f.input :aillament_termic %>
+              <% end %>
+            </div>
+          </div>
         </div>
       </div>
-    <% end %>
+    </div>
+    
 
     <hr class="form-divider">
 
     <div class="row">
       <div class="medium-6 columns">
         <div class="titol-subsistema"><%= t('.fusteries') %></div>
-        <%= f.input :fusteria_fusta %>
-        <%= f.input :fusteria_acer %>
-        <%= f.input :fusteria_alumini %>
-        <%= f.input :fusteria_pvc %>
+        <div class="camps-subsistema">
+          <%= f.input :fusteria_fusta %>
+          <%= f.input :fusteria_acer %>
+          <%= f.input :fusteria_alumini %>
+          <%= f.input :fusteria_pvc %>
+        </div>
       </div>
       <div class="medium-6 columns">
         <div class="titol-subsistema"><%= t('.vidres') %></div>
-        <%= f.input :vidre_simple %>
-        <%= f.input :vidre_doble %>
-        <%= f.input :vidre_triple %>
-        <%= f.input :vidre_baix_emissiu %>
-        <%= f.input :vidre_control_solar %>
+        <div class="camps-subsistema">
+          <%= f.input :vidre_simple %>
+          <%= f.input :vidre_doble %>
+          <%= f.input :vidre_triple %>
+          <%= f.input :vidre_baix_emissiu %>
+          <%= f.input :vidre_control_solar %>
+        </div>
       </div>
     </div>
   </div>
