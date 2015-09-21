@@ -2,8 +2,7 @@ Rails.application.routes.draw do
 
   
   
-  resources :coordinadors
-  resources :colaboradors
+  
   resources :operacions
   resources :sistemes
   get 'edificis/:id/duplicate', to: 'edificis#duplicate', :as => :duplicate
@@ -58,6 +57,7 @@ Rails.application.routes.draw do
     resources :garantia_promotors
     resources :coordinadors
     resources :colaboradors
+    resources :garantia_constructors
   end
   
   

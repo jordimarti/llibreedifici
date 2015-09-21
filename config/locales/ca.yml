@@ -270,6 +270,10 @@ ca:
         tipus: "Tipus de garantia"
         instalacio: "Instal·lació"
         empresa: "Nom de l'empresa garant"
+      garantia_constructor:
+        venciment: "Data de venciment de la garantia"
+        tipus: "Tipus de garantia"
+        referencia: "Referència de la pòlissa o altre document acreditatiu de l’atorgament de la garantia"
       fonamentacio:
         mur_pedra: "Mur de pedra"
         mur_fabrica_mao: "Mur de fàbrica de maó"
@@ -660,6 +664,9 @@ ca:
       titol_garantia_instalacio: "GARANTIES DE LES INSTAL·LACIONS"
       afegir_garantia_instalacio: "Afegir garantia d'instal·lació"
       garantia_instalacio: "Garantia de la instal·lació"
+      titol_garantia_constructor: "GARANTIES DEL CONSTRUCTOR"
+      afegir_garantia_constructor: "Afegir garantia del constructor"
+      garantia_constructor: "Garantia del constructor"
   llicencies:
     form:
       guardar: "Guardar"
@@ -684,6 +691,9 @@ ca:
     form:
       guardar: "Guardar"
   garantia_instalacions:
+    form:
+      guardar: "Guardar"
+  garantia_constructors:
     form:
       guardar: "Guardar"
   fonamentacions:

@@ -270,6 +270,10 @@ es:
         tipus: "Tipo de garantía"
         instalacio: "Instalación"
         empresa: "Nombre de la empresa garante"
+      garantia_constructor:
+        venciment: "Fecha de vencimiento de la garantía"
+        tipus: "Tipo de garantía"
+        referencia: "Referencia de la póliza u otro documento acreditativo del otorgamiento de la garantía"
       fonamentacio:
         mur_pedra: "Muro de piedra"
         mur_fabrica_mao: "Muro de fábrica de ladrillo"
@@ -661,6 +665,9 @@ es:
       titol_garantia_instalacio: "GARANTÍAS DE LAS INSTALACIONES"
       afegir_garantia_instalacio: "Añadir garantia de la instalación"
       garantia_instalacio: "Garantía de la instalación"
+      titol_garantia_constructor: "GARANTÍAS DEL CONSTRUCTOR"
+      afegir_garantia_constructor: "Añadir garantía del constructor"
+      garantia_constructor: "Garantía del constructor"
   llicencies:
     form:
       guardar: "Guardar"

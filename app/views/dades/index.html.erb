@@ -54,6 +54,14 @@
   <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 </div>
 
+<div id="modal-garantia-constructor" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <h3 id="modalTitle"><%= t('.garantia_constructor') %></h3>
+  <div id="formulari-garantia-constructor" class="formulari-dades">
+  </div>
+  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+
+
 
 <div class="background-seccio">
 	<div class="row">
@@ -212,6 +220,25 @@
 								<div class="dades-footer-link right">
 									<%= link_to (new_edifici_garantia_instalacio_path), remote: true do %>
 										<span class="suma">+</span> <%= t('.afegir_garantia_instalacio') %>
+									<% end %>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="medium-6 columns end">
+						<div class="dades-container">
+							<div class="dades-title">
+								<%= t('.titol_garantia_constructor') %>
+							</div>
+							<div id="garantia-constructors">
+								<%= render  :partial => '/garantia_constructors/llistat_garantia_constructors' %>
+							</div>
+							<div class="dades-footer">
+								<div class="dades-footer-link right">
+									<%= link_to (new_edifici_garantia_constructor_path), remote: true do %>
+										<span class="suma">+</span> <%= t('.afegir_garantia_constructor') %>
 									<% end %>
 								</div>
 							</div>
