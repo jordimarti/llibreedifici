@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   
   
   
+  
   resources :operacions
   resources :sistemes
   get 'edificis/:id/duplicate', to: 'edificis#duplicate', :as => :duplicate
@@ -34,6 +35,7 @@ Rails.application.routes.draw do
     resources :estructures
     resources :tancaments_verticals
     resources :cobertes
+    resources :particions
     resources :sanejaments
     resources :aigues
     resources :climatitzacions

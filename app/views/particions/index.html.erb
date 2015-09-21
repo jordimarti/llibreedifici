@@ -1,0 +1,187 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Particions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Edifici</th>
+      <th>Envans ceramica</th>
+      <th>Envans cartro guix</th>
+      <th>Envans bloc formigo</th>
+      <th>Envans paves</th>
+      <th>Envans fusta</th>
+      <th>Envans plaques alveolades</th>
+      <th>Celras fibres vegetals</th>
+      <th>Celras fibres minerals</th>
+      <th>Celras plaques guix</th>
+      <th>Celras metalic</th>
+      <th>Celras fusta</th>
+      <th>Aillament sota sostre</th>
+      <th>Aillament sobre sostre</th>
+      <th>Aillament plaques</th>
+      <th>Aillament mantes</th>
+      <th>Aillament amorf</th>
+      <th>Aillament fibra vidre</th>
+      <th>Aillament polietile reticulat</th>
+      <th>Aillament llana roca</th>
+      <th>Aillament escuma fenolica</th>
+      <th>Aillament escuma poliureta</th>
+      <th>Aillament polietile expandit</th>
+      <th>Aillament fibres textils</th>
+      <th>Aillament argila expandida</th>
+      <th>Aillament escuma melamina</th>
+      <th>Aillament poliestire extrudit</th>
+      <th>Aillament celulosa</th>
+      <th>Aillament perlita expandida</th>
+      <th>Aillament suro aglomerat</th>
+      <th>Revestiment vertical enguixat</th>
+      <th>Revestiment vertical arrebossat</th>
+      <th>Revestiment horitzontal enguixat</th>
+      <th>Revestiment horitzontal arrebossat</th>
+      <th>Acabat pintat</th>
+      <th>Acabat aplacat ceramica</th>
+      <th>Acabat empaperat</th>
+      <th>Acabat taulell fusta</th>
+      <th>Acabat sintetic</th>
+      <th>Acabat textil</th>
+      <th>Acabat estuc</th>
+      <th>Acabat aplacat pedra</th>
+      <th>Acabat fusta</th>
+      <th>Acabat suro</th>
+      <th>Paviment formigo</th>
+      <th>Paviment pedra natural</th>
+      <th>Paviment terratzo</th>
+      <th>Paviment mosaic hidraulic</th>
+      <th>Paviment suro</th>
+      <th>Paviment ceramica natural</th>
+      <th>Paviment ceramica esmaltada</th>
+      <th>Paviment gres natural</th>
+      <th>Paviment goma</th>
+      <th>Paviment parquet encolat</th>
+      <th>Paviment parquet flotant</th>
+      <th>Paviment parquet llates</th>
+      <th>Paviment pvc</th>
+      <th>Paviment moqueta</th>
+      <th>Paviment linoleum</th>
+      <th>Porta bastiment fusta</th>
+      <th>Porta bastiment metalic</th>
+      <th>Porta fulla massissa fusta</th>
+      <th>Porta fulla aplacat fusta</th>
+      <th>Porta fulla vidre</th>
+      <th>Porta fulla alumini</th>
+      <th>Porta fulla ferro</th>
+      <th>Porta acabat pintat</th>
+      <th>Porta acabat lacat</th>
+      <th>Porta acabat envernissat</th>
+      <th>Porta ferratge llauto</th>
+      <th>Porta ferratge acer llautonat</th>
+      <th>Porta ferratge acer niquelat</th>
+      <th>Porta ferratge acer inoxidable</th>
+      <th>Porta ferratge alumini</th>
+      <th>Barana ferro forjat</th>
+      <th>Barana perfils acer</th>
+      <th>Barana perfils alumini</th>
+      <th>Barana fusta</th>
+      <th>Barana pvc</th>
+      <th>Barana vidre laminat</th>
+      <th>Barana metacrilat</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @particions.each do |particio| %>
+      <tr>
+        <td><%= particio.edifici_id %></td>
+        <td><%= particio.envans_ceramica %></td>
+        <td><%= particio.envans_cartro_guix %></td>
+        <td><%= particio.envans_bloc_formigo %></td>
+        <td><%= particio.envans_paves %></td>
+        <td><%= particio.envans_fusta %></td>
+        <td><%= particio.envans_plaques_alveolades %></td>
+        <td><%= particio.celras_fibres_vegetals %></td>
+        <td><%= particio.celras_fibres_minerals %></td>
+        <td><%= particio.celras_plaques_guix %></td>
+        <td><%= particio.celras_metalic %></td>
+        <td><%= particio.celras_fusta %></td>
+        <td><%= particio.aillament_sota_sostre %></td>
+        <td><%= particio.aillament_sobre_sostre %></td>
+        <td><%= particio.aillament_plaques %></td>
+        <td><%= particio.aillament_mantes %></td>
+        <td><%= particio.aillament_amorf %></td>
+        <td><%= particio.aillament_fibra_vidre %></td>
+        <td><%= particio.aillament_polietile_reticulat %></td>
+        <td><%= particio.aillament_llana_roca %></td>
+        <td><%= particio.aillament_escuma_fenolica %></td>
+        <td><%= particio.aillament_escuma_poliureta %></td>
+        <td><%= particio.aillament_polietile_expandit %></td>
+        <td><%= particio.aillament_fibres_textils %></td>
+        <td><%= particio.aillament_argila_expandida %></td>
+        <td><%= particio.aillament_escuma_melamina %></td>
+        <td><%= particio.aillament_poliestire_extrudit %></td>
+        <td><%= particio.aillament_celulosa %></td>
+        <td><%= particio.aillament_perlita_expandida %></td>
+        <td><%= particio.aillament_suro_aglomerat %></td>
+        <td><%= particio.revestiment_vertical_enguixat %></td>
+        <td><%= particio.revestiment_vertical_arrebossat %></td>
+        <td><%= particio.revestiment_horitzontal_enguixat %></td>
+        <td><%= particio.revestiment_horitzontal_arrebossat %></td>
+        <td><%= particio.acabat_pintat %></td>
+        <td><%= particio.acabat_aplacat_ceramica %></td>
+        <td><%= particio.acabat_empaperat %></td>
+        <td><%= particio.acabat_taulell_fusta %></td>
+        <td><%= particio.acabat_sintetic %></td>
+        <td><%= particio.acabat_textil %></td>
+        <td><%= particio.acabat_estuc %></td>
+        <td><%= particio.acabat_aplacat_pedra %></td>
+        <td><%= particio.acabat_fusta %></td>
+        <td><%= particio.acabat_suro %></td>
+        <td><%= particio.paviment_formigo %></td>
+        <td><%= particio.paviment_pedra_natural %></td>
+        <td><%= particio.paviment_terratzo %></td>
+        <td><%= particio.paviment_mosaic_hidraulic %></td>
+        <td><%= particio.paviment_suro %></td>
+        <td><%= particio.paviment_ceramica_natural %></td>
+        <td><%= particio.paviment_ceramica_esmaltada %></td>
+        <td><%= particio.paviment_gres_natural %></td>
+        <td><%= particio.paviment_goma %></td>
+        <td><%= particio.paviment_parquet_encolat %></td>
+        <td><%= particio.paviment_parquet_flotant %></td>
+        <td><%= particio.paviment_parquet_llates %></td>
+        <td><%= particio.paviment_pvc %></td>
+        <td><%= particio.paviment_moqueta %></td>
+        <td><%= particio.paviment_linoleum %></td>
+        <td><%= particio.porta_bastiment_fusta %></td>
+        <td><%= particio.porta_bastiment_metalic %></td>
+        <td><%= particio.porta_fulla_massissa_fusta %></td>
+        <td><%= particio.porta_fulla_aplacat_fusta %></td>
+        <td><%= particio.porta_fulla_vidre %></td>
+        <td><%= particio.porta_fulla_alumini %></td>
+        <td><%= particio.porta_fulla_ferro %></td>
+        <td><%= particio.porta_acabat_pintat %></td>
+        <td><%= particio.porta_acabat_lacat %></td>
+        <td><%= particio.porta_acabat_envernissat %></td>
+        <td><%= particio.porta_ferratge_llauto %></td>
+        <td><%= particio.porta_ferratge_acer_llautonat %></td>
+        <td><%= particio.porta_ferratge_acer_niquelat %></td>
+        <td><%= particio.porta_ferratge_acer_inoxidable %></td>
+        <td><%= particio.porta_ferratge_alumini %></td>
+        <td><%= particio.barana_ferro_forjat %></td>
+        <td><%= particio.barana_perfils_acer %></td>
+        <td><%= particio.barana_perfils_alumini %></td>
+        <td><%= particio.barana_fusta %></td>
+        <td><%= particio.barana_pvc %></td>
+        <td><%= particio.barana_vidre_laminat %></td>
+        <td><%= particio.barana_metacrilat %></td>
+        <td><%= link_to 'Show', particio %></td>
+        <td><%= link_to 'Edit', edit_particio_path(particio) %></td>
+        <td><%= link_to 'Destroy', particio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Particio', new_particio_path %>

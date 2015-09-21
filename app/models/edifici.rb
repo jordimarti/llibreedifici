@@ -20,6 +20,7 @@ class Edifici < ActiveRecord::Base
 	has_one :estructura
 	has_one :tancaments_vertical
 	has_one :coberta
+	has_one :particio
 	has_one :sanejament
 	has_one :aigua
 	has_one :electricitat

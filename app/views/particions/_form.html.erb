@@ -1,0 +1,170 @@
+<%= simple_form_for([@edifici, @particio]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :edifici_id, :as => :hidden, :input_html => { :value => @edifici.id } %>
+    <div class="row">
+      <div class="medium-12 columns">
+        <div class="titol-sistema"><%= t('.titol_particions') %></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-6 columns">
+        <div class="titol-subsistema"><%= t('.envans') %></div>
+        <div class="camps-subsistema">
+          <%= f.input :envans_ceramica %>
+          <%= f.input :envans_cartro_guix %>
+          <%= f.input :envans_bloc_formigo %>
+          <%= f.input :envans_paves %>
+          <%= f.input :envans_fusta %>
+          <%= f.input :envans_plaques_alveolades %>
+        </div>
+      </div>
+      <div class="medium-6 columns">
+        <div class="titol-subsistema"><%= t('.cel_rasos') %></div>
+        <div class="camps-subsistema">
+          <%= f.input :celras_fibres_vegetals %>
+          <%= f.input :celras_fibres_minerals %>
+          <%= f.input :celras_plaques_guix %>
+          <%= f.input :celras_metalic %>
+          <%= f.input :celras_fusta %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-6 columns">
+        <div class="titol-subsistema"><%= t('.aillament_tipologia') %></div>
+        <div class="camps-subsistema">
+          <%= f.input :aillament_sota_sostre %>
+          <%= f.input :aillament_sobre_sostre %>
+          <%= f.input :aillament_plaques %>
+          <%= f.input :aillament_mantes %>
+          <%= f.input :aillament_amorf %>
+        </div>
+      </div>
+      <div class="medium-6 columns">
+        <div class="titol-subsistema"><%= t('.aillament_material') %></div>
+        <div class="camps-subsistema">
+          <%= f.input :aillament_fibra_vidre %>
+          <%= f.input :aillament_polietile_reticulat %>
+          <%= f.input :aillament_llana_roca %>
+          <%= f.input :aillament_escuma_fenolica %>
+          <%= f.input :aillament_escuma_poliureta %>
+          <%= f.input :aillament_polietile_expandit %>
+          <%= f.input :aillament_fibres_textils %>
+          <%= f.input :aillament_argila_expandida %>
+          <%= f.input :aillament_escuma_melamina %>
+          <%= f.input :aillament_poliestire_extrudit %>
+          <%= f.input :aillament_celulosa %>
+          <%= f.input :aillament_perlita_expandida %>
+          <%= f.input :aillament_suro_aglomerat %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-6 columns">
+        <div class="titol-subsistema"><%= t('.suport_revestiments') %></div>
+        <div class="camps-subsistema">
+          <%= f.input :revestiment_vertical_enguixat %>
+          <%= f.input :revestiment_vertical_arrebossat %>
+          <%= f.input :revestiment_horitzontal_enguixat %>
+          <%= f.input :revestiment_horitzontal_arrebossat %>
+        </div>
+      </div>
+      <div class="medium-6 columns">
+        <div class="titol-subsistema"><%= t('.acabat_revestiments') %></div>
+        <div class="camps-subsistema">
+          <%= f.input :acabat_pintat %>
+          <%= f.input :acabat_aplacat_ceramica %>
+          <%= f.input :acabat_empaperat %>
+          <%= f.input :acabat_taulell_fusta %>
+          <%= f.input :acabat_sintetic %>
+          <%= f.input :acabat_textil %>
+          <%= f.input :acabat_estuc %>
+          <%= f.input :acabat_aplacat_pedra %>
+          <%= f.input :acabat_fusta %>
+          <%= f.input :acabat_suro %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-12 columns">
+        <div class="titol-subsistema"><%= t('.paviments') %></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-6 columns">
+        <div class="camps-subsistema">
+          <%= f.input :paviment_formigo %>
+          <%= f.input :paviment_pedra_natural %>
+          <%= f.input :paviment_terratzo %>
+          <%= f.input :paviment_mosaic_hidraulic %>
+          <%= f.input :paviment_suro %>
+          <%= f.input :paviment_ceramica_natural %>
+          <%= f.input :paviment_ceramica_esmaltada %>
+          <%= f.input :paviment_gres_natural %>
+        </div>
+      </div>
+      <div class="medium-6 columns">
+        <div class="camps-subsistema">
+          <%= f.input :paviment_goma %>
+          <%= f.input :paviment_parquet_encolat %>
+          <%= f.input :paviment_parquet_flotant %>
+          <%= f.input :paviment_parquet_llates %>
+          <%= f.input :paviment_pvc %>
+          <%= f.input :paviment_moqueta %>
+          <%= f.input :paviment_linoleum %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-6 columns">
+        <div class="titol-subsistema"><%= t('.portes') %></div>
+        <div class="camps-subsistema">
+          <%= f.input :porta_bastiment_fusta %>
+          <%= f.input :porta_bastiment_metalic %>
+          <%= f.input :porta_fulla_massissa_fusta %>
+          <%= f.input :porta_fulla_aplacat_fusta %>
+          <%= f.input :porta_fulla_vidre %>
+          <%= f.input :porta_fulla_alumini %>
+          <%= f.input :porta_fulla_ferro %>
+          <%= f.input :porta_acabat_pintat %>
+          <%= f.input :porta_acabat_lacat %>
+          <%= f.input :porta_acabat_envernissat %>
+          <%= f.input :porta_ferratge_llauto %>
+          <%= f.input :porta_ferratge_acer_llautonat %>
+          <%= f.input :porta_ferratge_acer_niquelat %>
+          <%= f.input :porta_ferratge_acer_inoxidable %>
+          <%= f.input :porta_ferratge_alumini %>
+        </div>
+      </div>
+      <div class="medium-6 columns">
+        <div class="titol-subsistema"><%= t('.baranes') %></div>
+        <div class="camps-subsistema">
+          <%= f.input :barana_ferro_forjat %>
+          <%= f.input :barana_perfils_acer %>
+          <%= f.input :barana_perfils_alumini %>
+          <%= f.input :barana_fusta %>
+          <%= f.input :barana_pvc %>
+          <%= f.input :barana_vidre_laminat %>
+          <%= f.input :barana_metacrilat %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="medium-12 columns">
+      <div class="form-actions">
+        <%= f.button :submit, t('.guardar'), :class => 'button small radius right botodreta' %>
+      </div>
+    </div>
+  </div>
+<% end %>
+

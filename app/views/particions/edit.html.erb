@@ -1,0 +1,41 @@
+<div id="modal-elements" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <h3 id="modalTitle"><%= t('.nou_element') %></h3>
+  <div id="formulari-element" class="formulari-element">
+  </div>
+  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+
+<div class="background-seccio">
+	<div class="row">
+		<div class="large-12 columns">
+			<div class="titol-seccio">
+				<%= t('.titol_sistemes') %>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="medium-3 columns">
+			<%= render 'layouts/menu_sistemes' %>
+		</div>
+		<div class="medium-9 columns">
+			<div class="formulari-sistema">
+				<%= render 'form' %>
+				<div class="titol-subsistema"><%= t('.altres_elements') %></div>
+				
+				<div id="elements">
+					<%= render  :partial => '/elements/llistat_elements' %>
+				</div>
+				<div class="row">
+					<div class="medium-12 columns">
+						<div class="elements-usuari">
+							<%= link_to (new_edifici_element_path(:sistema => 'particions')), remote: true do %>
+								<div class="afegir-element right"><span class="suma">+</span> <%= t('.afegir_element') %></div>
+							<% end %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

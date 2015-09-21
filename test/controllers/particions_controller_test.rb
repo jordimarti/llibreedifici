@@ -1,0 +1,49 @@
+require 'test_helper'
+
+class ParticionsControllerTest < ActionController::TestCase
+  setup do
+    @particio = particions(:one)
+  end
+
+  test "should get index" do
+    get :index
+    assert_response :success
+    assert_not_nil assigns(:particions)
+  end
+
+  test "should get new" do
+    get :new
+    assert_response :success
+  end
+
+  test "should create particio" do
+    assert_difference('Particio.count') do
+      post :create, particio: { acabat_aplacat_ceramica: @particio.acabat_aplacat_ceramica, acabat_aplacat_pedra: @particio.acabat_aplacat_pedra, acabat_empaperat: @particio.acabat_empaperat, acabat_estuc: @particio.acabat_estuc, acabat_fusta: @particio.acabat_fusta, acabat_pintat: @particio.acabat_pintat, acabat_sintetic: @particio.acabat_sintetic, acabat_suro: @particio.acabat_suro, acabat_taulell_fusta: @particio.acabat_taulell_fusta, acabat_textil: @particio.acabat_textil, aillament_amorf: @particio.aillament_amorf, aillament_argila_expandida: @particio.aillament_argila_expandida, aillament_celulosa: @particio.aillament_celulosa, aillament_escuma_fenolica: @particio.aillament_escuma_fenolica, aillament_escuma_melamina: @particio.aillament_escuma_melamina, aillament_escuma_poliureta: @particio.aillament_escuma_poliureta, aillament_fibra_vidre: @particio.aillament_fibra_vidre, aillament_fibres_textils: @particio.aillament_fibres_textils, aillament_llana_roca: @particio.aillament_llana_roca, aillament_mantes: @particio.aillament_mantes, aillament_perlita_expandida: @particio.aillament_perlita_expandida, aillament_plaques: @particio.aillament_plaques, aillament_poliestire_extrudit: @particio.aillament_poliestire_extrudit, aillament_polietile_expandit: @particio.aillament_polietile_expandit, aillament_polietile_reticulat: @particio.aillament_polietile_reticulat, aillament_sobre_sostre: @particio.aillament_sobre_sostre, aillament_sota_sostre: @particio.aillament_sota_sostre, aillament_suro_aglomerat: @particio.aillament_suro_aglomerat, barana_ferro_forjat: @particio.barana_ferro_forjat, barana_fusta: @particio.barana_fusta, barana_metacrilat: @particio.barana_metacrilat, barana_perfils_acer: @particio.barana_perfils_acer, barana_perfils_alumini: @particio.barana_perfils_alumini, barana_pvc: @particio.barana_pvc, barana_vidre_laminat: @particio.barana_vidre_laminat, celras_fibres_minerals: @particio.celras_fibres_minerals, celras_fibres_vegetals: @particio.celras_fibres_vegetals, celras_fusta: @particio.celras_fusta, celras_metalic: @particio.celras_metalic, celras_plaques_guix: @particio.celras_plaques_guix, edifici_id: @particio.edifici_id, envans_bloc_formigo: @particio.envans_bloc_formigo, envans_cartro_guix: @particio.envans_cartro_guix, envans_ceramica: @particio.envans_ceramica, envans_fusta: @particio.envans_fusta, envans_paves: @particio.envans_paves, envans_plaques_alveolades: @particio.envans_plaques_alveolades, paviment_ceramica_esmaltada: @particio.paviment_ceramica_esmaltada, paviment_ceramica_natural: @particio.paviment_ceramica_natural, paviment_formigo: @particio.paviment_formigo, paviment_goma: @particio.paviment_goma, paviment_gres_natural: @particio.paviment_gres_natural, paviment_linoleum: @particio.paviment_linoleum, paviment_moqueta: @particio.paviment_moqueta, paviment_mosaic_hidraulic: @particio.paviment_mosaic_hidraulic, paviment_parquet_encolat: @particio.paviment_parquet_encolat, paviment_parquet_flotant: @particio.paviment_parquet_flotant, paviment_parquet_llates: @particio.paviment_parquet_llates, paviment_pedra_natural: @particio.paviment_pedra_natural, paviment_pvc: @particio.paviment_pvc, paviment_suro: @particio.paviment_suro, paviment_terratzo: @particio.paviment_terratzo, porta_acabat_envernissat: @particio.porta_acabat_envernissat, porta_acabat_lacat: @particio.porta_acabat_lacat, porta_acabat_pintat: @particio.porta_acabat_pintat, porta_bastiment_fusta: @particio.porta_bastiment_fusta, porta_bastiment_metalic: @particio.porta_bastiment_metalic, porta_ferratge_acer_inoxidable: @particio.porta_ferratge_acer_inoxidable, porta_ferratge_acer_llautonat: @particio.porta_ferratge_acer_llautonat, porta_ferratge_acer_niquelat: @particio.porta_ferratge_acer_niquelat, porta_ferratge_alumini: @particio.porta_ferratge_alumini, porta_ferratge_llauto: @particio.porta_ferratge_llauto, porta_fulla_alumini: @particio.porta_fulla_alumini, porta_fulla_aplacat_fusta: @particio.porta_fulla_aplacat_fusta, porta_fulla_ferro: @particio.porta_fulla_ferro, porta_fulla_massissa_fusta: @particio.porta_fulla_massissa_fusta, porta_fulla_vidre: @particio.porta_fulla_vidre, revestiment_horitzontal_arrebossat: @particio.revestiment_horitzontal_arrebossat, revestiment_horitzontal_enguixat: @particio.revestiment_horitzontal_enguixat, revestiment_vertical_arrebossat: @particio.revestiment_vertical_arrebossat, revestiment_vertical_enguixat: @particio.revestiment_vertical_enguixat }
+    end
+
+    assert_redirected_to particio_path(assigns(:particio))
+  end
+
+  test "should show particio" do
+    get :show, id: @particio
+    assert_response :success
+  end
+
+  test "should get edit" do
+    get :edit, id: @particio
+    assert_response :success
+  end
+
+  test "should update particio" do
+    patch :update, id: @particio, particio: { acabat_aplacat_ceramica: @particio.acabat_aplacat_ceramica, acabat_aplacat_pedra: @particio.acabat_aplacat_pedra, acabat_empaperat: @particio.acabat_empaperat, acabat_estuc: @particio.acabat_estuc, acabat_fusta: @particio.acabat_fusta, acabat_pintat: @particio.acabat_pintat, acabat_sintetic: @particio.acabat_sintetic, acabat_suro: @particio.acabat_suro, acabat_taulell_fusta: @particio.acabat_taulell_fusta, acabat_textil: @particio.acabat_textil, aillament_amorf: @particio.aillament_amorf, aillament_argila_expandida: @particio.aillament_argila_expandida, aillament_celulosa: @particio.aillament_celulosa, aillament_escuma_fenolica: @particio.aillament_escuma_fenolica, aillament_escuma_melamina: @particio.aillament_escuma_melamina, aillament_escuma_poliureta: @particio.aillament_escuma_poliureta, aillament_fibra_vidre: @particio.aillament_fibra_vidre, aillament_fibres_textils: @particio.aillament_fibres_textils, aillament_llana_roca: @particio.aillament_llana_roca, aillament_mantes: @particio.aillament_mantes, aillament_perlita_expandida: @particio.aillament_perlita_expandida, aillament_plaques: @particio.aillament_plaques, aillament_poliestire_extrudit: @particio.aillament_poliestire_extrudit, aillament_polietile_expandit: @particio.aillament_polietile_expandit, aillament_polietile_reticulat: @particio.aillament_polietile_reticulat, aillament_sobre_sostre: @particio.aillament_sobre_sostre, aillament_sota_sostre: @particio.aillament_sota_sostre, aillament_suro_aglomerat: @particio.aillament_suro_aglomerat, barana_ferro_forjat: @particio.barana_ferro_forjat, barana_fusta: @particio.barana_fusta, barana_metacrilat: @particio.barana_metacrilat, barana_perfils_acer: @particio.barana_perfils_acer, barana_perfils_alumini: @particio.barana_perfils_alumini, barana_pvc: @particio.barana_pvc, barana_vidre_laminat: @particio.barana_vidre_laminat, celras_fibres_minerals: @particio.celras_fibres_minerals, celras_fibres_vegetals: @particio.celras_fibres_vegetals, celras_fusta: @particio.celras_fusta, celras_metalic: @particio.celras_metalic, celras_plaques_guix: @particio.celras_plaques_guix, edifici_id: @particio.edifici_id, envans_bloc_formigo: @particio.envans_bloc_formigo, envans_cartro_guix: @particio.envans_cartro_guix, envans_ceramica: @particio.envans_ceramica, envans_fusta: @particio.envans_fusta, envans_paves: @particio.envans_paves, envans_plaques_alveolades: @particio.envans_plaques_alveolades, paviment_ceramica_esmaltada: @particio.paviment_ceramica_esmaltada, paviment_ceramica_natural: @particio.paviment_ceramica_natural, paviment_formigo: @particio.paviment_formigo, paviment_goma: @particio.paviment_goma, paviment_gres_natural: @particio.paviment_gres_natural, paviment_linoleum: @particio.paviment_linoleum, paviment_moqueta: @particio.paviment_moqueta, paviment_mosaic_hidraulic: @particio.paviment_mosaic_hidraulic, paviment_parquet_encolat: @particio.paviment_parquet_encolat, paviment_parquet_flotant: @particio.paviment_parquet_flotant, paviment_parquet_llates: @particio.paviment_parquet_llates, paviment_pedra_natural: @particio.paviment_pedra_natural, paviment_pvc: @particio.paviment_pvc, paviment_suro: @particio.paviment_suro, paviment_terratzo: @particio.paviment_terratzo, porta_acabat_envernissat: @particio.porta_acabat_envernissat, porta_acabat_lacat: @particio.porta_acabat_lacat, porta_acabat_pintat: @particio.porta_acabat_pintat, porta_bastiment_fusta: @particio.porta_bastiment_fusta, porta_bastiment_metalic: @particio.porta_bastiment_metalic, porta_ferratge_acer_inoxidable: @particio.porta_ferratge_acer_inoxidable, porta_ferratge_acer_llautonat: @particio.porta_ferratge_acer_llautonat, porta_ferratge_acer_niquelat: @particio.porta_ferratge_acer_niquelat, porta_ferratge_alumini: @particio.porta_ferratge_alumini, porta_ferratge_llauto: @particio.porta_ferratge_llauto, porta_fulla_alumini: @particio.porta_fulla_alumini, porta_fulla_aplacat_fusta: @particio.porta_fulla_aplacat_fusta, porta_fulla_ferro: @particio.porta_fulla_ferro, porta_fulla_massissa_fusta: @particio.porta_fulla_massissa_fusta, porta_fulla_vidre: @particio.porta_fulla_vidre, revestiment_horitzontal_arrebossat: @particio.revestiment_horitzontal_arrebossat, revestiment_horitzontal_enguixat: @particio.revestiment_horitzontal_enguixat, revestiment_vertical_arrebossat: @particio.revestiment_vertical_arrebossat, revestiment_vertical_enguixat: @particio.revestiment_vertical_enguixat }
+    assert_redirected_to particio_path(assigns(:particio))
+  end
+
+  test "should destroy particio" do
+    assert_difference('Particio.count', -1) do
+      delete :destroy, id: @particio
+    end
+
+    assert_redirected_to particions_path
+  end
+end

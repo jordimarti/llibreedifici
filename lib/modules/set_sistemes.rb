@@ -5,6 +5,7 @@ module SetSistemes
 	  @estructura = Estructura.find(@edifici.estructura.id)
 	  @tancaments_vertical = TancamentsVertical.find(@edifici.tancaments_vertical.id)
 	  @coberta = Coberta.find(@edifici.coberta.id)
+	  @particio = Particio.find(@edifici.particio.id)
 	  @sanejament = Sanejament.find(@edifici.sanejament.id)
 	  @aigua = Aigua.find(@edifici.aigua.id)
 	  @electricitat = Electricitat.find(@edifici.electricitat.id)

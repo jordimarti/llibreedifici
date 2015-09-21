@@ -20,6 +20,11 @@
 		    <%= t('.coberta') %>
 		  <% end %>
 	  </li>
+	  <li <% if @menu_sistemes_actiu == 'particions' %>class="active"<% end %>>
+	  	<%= link_to edit_edifici_particio_path(@edifici.id, @particio) do %>
+		    <%= t('.particions') %>
+		  <% end %>
+	  </li>
 	  <li <% if @menu_sistemes_actiu == 'sanejament' %>class="active"<% end %>>
 	  	<%= link_to edit_edifici_sanejament_path(@edifici.id, @sanejament) do %>
 		    <%= t('.sanejament') %>

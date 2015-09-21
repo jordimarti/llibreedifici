@@ -62,6 +62,10 @@ class EdificisController < ApplicationController
     @coberta = Coberta.new
     @coberta.edifici_id = edifici_id
     @coberta.save
+    #Particions
+    @particio = Particio.new
+    @particio.edifici_id = edifici_id
+    @particio.save
     #Sanejament
     @sanejament = Sanejament.new
     @sanejament.edifici_id = edifici_id
