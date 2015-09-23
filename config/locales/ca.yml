@@ -781,6 +781,7 @@ ca:
       titol_coberta: "COBERTA"
       terrat: "Terrat / Coberta plana"
       coberta_inclinada: "Coberta inclinada"
+      sobrecarregues_coberta: "Sobrecàrregues admissibles (kg/m2)"
   particions:
     edit:
       titol_sistemes: "Descripció constructiva de l'edifici"

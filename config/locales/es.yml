@@ -781,6 +781,7 @@ es:
       titol_coberta: "CUBIERTA"
       terrat: "Azotea / Cubierta plana"
       coberta_inclinada: "Cubierta inclinada"
+      sobrecarregues_coberta: "Sobrecargas admisibles (kg/m2)"
   particions:
     edit:
       titol_sistemes: "Descripción constructiva del edificio"

@@ -155,8 +155,10 @@ ActiveRecord::Schema.define(version: 20150922154827) do
     t.boolean  "coberta_xapa_acer"
     t.boolean  "coberta_xapa_coure"
     t.boolean  "coberta_aillament_termic"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.integer  "sobrecarregues_coberta_inclinada"
+    t.integer  "sobrecarregues_coberta_plana"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
   end
 
   create_table "colaboradors", force: :cascade do |t|
