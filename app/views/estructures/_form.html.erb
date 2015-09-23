@@ -50,9 +50,11 @@
       <div class="medium-6 columns">
         <div class="titol-subsistema"><%= t('.estructura_principal') %></div>
         <div class="camps-subsistema">
-          <%= f.input :bigues_fusta %>
-          <%= f.input :bigues_metaliques %>
-          <%= f.input :bigues_formigo_armat %>
+          <%= f.input :jasseres_fusta %>
+          <%= f.input :jasseres_fusta_laminada %>
+          <%= f.input :jasseres_acer %>
+          <%= f.input :jasseres_formigo_armat %>
+          <%= f.input :jasseres_acer_formigo %>
         </div>
       </div>
       <div class="medium-6 columns">
@@ -133,9 +135,26 @@
         <div class="titol-grup-subsistema"><%= t('.estructura_escala') %></div>
         <div class="camps-subsistema">
           <%= f.input :escala_fusta %>
-          <%= f.input :escala_metall %>
+          <%= f.input :escala_acer %>
           <%= f.input :escala_ceramica %>
           <%= f.input :escala_llosa_armada %>
+          <%= f.input :escala_biguetes_formigo_armat %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="form-divider">
+
+    <div class="row">
+      <div class="medium-12 columns">
+        <div class="titol-grup-subsistema"><%= t('.sobrecarregues') %></div>
+        <div class="camps-subsistema">
+          <%= f.input :sobrecarregues_habitatges %>
+          <%= f.input :sobrecarregues_zones_comuns %>
+          <%= f.input :sobrecarregues_locals %>
+          <%= f.input :sobrecarregues_garatges %>
+          <%= f.input :sobrecarregues_trasters %>
         </div>
       </div>
     </div>

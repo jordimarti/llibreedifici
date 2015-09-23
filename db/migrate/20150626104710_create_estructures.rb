@@ -14,9 +14,11 @@ class CreateEstructures < ActiveRecord::Migration
       t.boolean :pilars_ferro_colat
       t.boolean :pilars_acer
       t.boolean :pilars_formigo_armat
-      t.boolean :bigues_fusta
-      t.boolean :bigues_metaliques
-      t.boolean :bigues_formigo_armat
+      t.boolean :jasseres_fusta
+      t.boolean :jasseres_acer
+      t.boolean :jasseres_formigo_armat
+      t.boolean :jasseres_fusta_laminada
+      t.boolean :jasseres_acer_formigo
       t.boolean :forjat_fusta
       t.boolean :forjat_metalic
       t.boolean :forjat_formigo_armat
@@ -38,9 +40,15 @@ class CreateEstructures < ActiveRecord::Migration
       t.boolean :coberta_taulell_fusta
       t.boolean :coberta_sandwich
       t.boolean :escala_fusta
-      t.boolean :escala_metall
+      t.boolean :escala_acer
       t.boolean :escala_ceramica
       t.boolean :escala_llosa_armada
+      t.boolean :escala_biguetes_formigo_armat
+      t.integer :sobrecarregues_habitatges
+      t.integer :sobrecarregues_zones_comuns
+      t.integer :sobrecarregues_locals
+      t.integer :sobrecarregues_garatges
+      t.integer :sobrecarregues_trasters
 
       t.timestamps null: false
     end

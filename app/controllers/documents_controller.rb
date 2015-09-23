@@ -225,16 +225,24 @@ class DocumentsController < ApplicationController
           elements_estructura = elements_estructura + llista('Pilars de formigó armat')
           existeix_estructura = true
         end
-        if @edifici.estructura.bigues_fusta == true
-          elements_estructura = elements_estructura + llista('Bigues de fusta')
+        if @edifici.estructura.jasseres_fusta == true
+          elements_estructura = elements_estructura + llista('Jàsseres de fusta')
           existeix_estructura = true
         end
-        if @edifici.estructura.bigues_metaliques == true
-          elements_estructura = elements_estructura + llista('Bigues metàl·liques')
+        if @edifici.estructura.jasseres_fusta_laminada == true
+          elements_estructura = elements_estructura + llista('Jàsseres de fusta laminada')
           existeix_estructura = true
         end
-        if @edifici.estructura.bigues_formigo_armat == true
-          elements_estructura = elements_estructura + llista('Bigues de formigó armat')
+        if @edifici.estructura.jasseres_acer == true
+          elements_estructura = elements_estructura + llista('Jàsseres d\'acer')
+          existeix_estructura = true
+        end
+        if @edifici.estructura.jasseres_formigo_armat == true
+          elements_estructura = elements_estructura + llista('Jàsseres de formigó armat')
+          existeix_estructura = true
+        end
+        if @edifici.estructura.jasseres_acer_formigo == true
+          elements_estructura = elements_estructura + llista('Jàsseres mixtes d\'acer-formigó')
           existeix_estructura = true
         end
         if @edifici.estructura.forjat_fusta == true
@@ -321,8 +329,8 @@ class DocumentsController < ApplicationController
           elements_estructura = elements_estructura + llista('Escala de fusta')
           existeix_estructura = true
         end
-        if @edifici.estructura.escala_metall == true
-          elements_estructura = elements_estructura + llista('Escala metàl·lica')
+        if @edifici.estructura.escala_acer == true
+          elements_estructura = elements_estructura + llista('Escala d\'acer')
           existeix_estructura = true
         end
         if @edifici.estructura.escala_ceramica == true
@@ -331,6 +339,10 @@ class DocumentsController < ApplicationController
         end
         if @edifici.estructura.escala_llosa_armada == true
           elements_estructura = elements_estructura + llista('Escala de llosa armada')
+          existeix_estructura = true
+        end
+        if @edifici.estructura.escala_biguetes_formigo_armat == true
+          elements_estructura = elements_estructura + llista('Escala de biguetes de formigó armat')
           existeix_estructura = true
         end
         if existeix_estructura == true || elements_extres('estructura') != ''
