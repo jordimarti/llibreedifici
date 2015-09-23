@@ -761,6 +761,7 @@ ca:
       sostre_inclinat: "Sostre inclinat"
       encavallades: "Encavallades, pòrtics"
       estructura_escala: "Esctructura d'escala"
+      sobrecarregues: "Sobrecàrregues admissibles (kg/m2)"
   tancaments_verticals:
     edit:
       titol_sistemes: "Descripció constructiva de l'edifici"

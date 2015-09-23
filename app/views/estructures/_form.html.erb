@@ -142,17 +142,25 @@
         </div>
       </div>
     </div>
-  </div>
+  
 
-  <hr class="form-divider">
+    <hr class="form-divider">
 
     <div class="row">
       <div class="medium-12 columns">
         <div class="titol-grup-subsistema"><%= t('.sobrecarregues') %></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="medium-6 columns">
         <div class="camps-subsistema">
           <%= f.input :sobrecarregues_habitatges %>
           <%= f.input :sobrecarregues_zones_comuns %>
           <%= f.input :sobrecarregues_locals %>
+        </div>
+      </div>
+      <div class="medium-6 columns">
+        <div class="camps-subsistema">
           <%= f.input :sobrecarregues_garatges %>
           <%= f.input :sobrecarregues_trasters %>
         </div>

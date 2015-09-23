@@ -760,7 +760,8 @@ es:
       sostre_horitzontal: "Forjado horizontal"
       sostre_inclinat: "Forjado inclinado"
       encavallades: "Cerchas, pórticos"
-      estructura_escala: "Esctructura de la escalera"
+      estructura_escala: "Estructura de la escalera"
+      sobrecarregues: "Sobrecargas admisibles (kg/m2)"
   tancaments_verticals:
     edit:
       titol_sistemes: "Descripcióv constructiva del edificio"
