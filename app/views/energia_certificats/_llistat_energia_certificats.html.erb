@@ -1,0 +1,16 @@
+<% @energia_certificats.each do |energia_certificat| %>
+	<div class="dades-item">
+		
+		
+	  <%= link_to edifici_energia_certificat_path(@edifici, energia_certificat), remote: true, method: :delete,  data: { confirm: 'Segur que vols eliminar?' } do %>
+		  <div class="dades-eliminar right">
+		  	<span class="icon-cancel icones-icomoon"></span>
+		  </div>
+		<% end %>
+		<%= link_to edit_edifici_energia_certificat_path(@edifici, energia_certificat), remote: true do %>
+	    <div class="dades-editar">
+	    	<%= energia_certificat.numero_registre %>
+	    </div>
+	  <% end %>
+	</div>
+<% end %>

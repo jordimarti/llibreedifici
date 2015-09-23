@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150921103943) do
+ActiveRecord::Schema.define(version: 20150922154827) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -252,6 +252,17 @@ ActiveRecord::Schema.define(version: 20150921103943) do
     t.string   "sistema_element"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+  end
+
+  create_table "energia_certificats", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.string   "numero_registre"
+    t.string   "vigencia"
+    t.string   "qualificacio_energetica"
+    t.decimal  "consum_energia_primaria"
+    t.decimal  "emissions_co2"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "entitat_controls", force: :cascade do |t|

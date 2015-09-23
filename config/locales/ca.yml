@@ -46,6 +46,7 @@ ca:
       estructura: "ESTRUCTURA"
       tancaments_verticals: "TANCAMENTS VERTICALS"
       coberta: "COBERTA"
+      particions: "PARTICIONS I ACABATS"
       sanejament: "SANEJAMENT"
       aigua: "SUBMINISTRAMENT D'AIGUA"
       electricitat: "INSTAL·LACIÓ ELÈCTRICA"
@@ -274,6 +275,12 @@ ca:
         venciment: "Data de venciment de la garantia"
         tipus: "Tipus de garantia"
         referencia: "Referència de la pòlissa o altre document acreditatiu de l’atorgament de la garantia"
+      energia_certificat:
+        numero_registre: "Número de registre"
+        vigencia: "Data de finalització de la vigència"
+        qualificacio_energetica: "Qualificació energètica"
+        consum_energia_primaria: "Consum d'energia primària (kWh/a)"
+        emissions_co2: "Emissions de CO2 (kg/m2a)"
       fonamentacio:
         mur_pedra: "Mur de pedra"
         mur_fabrica_mao: "Mur de fàbrica de maó"
@@ -680,6 +687,9 @@ ca:
       titol_garantia_constructor: "GARANTIES DEL CONSTRUCTOR"
       afegir_garantia_constructor: "Afegir garantia del constructor"
       garantia_constructor: "Garantia del constructor"
+      titol_energia_certificat: "CERTIFICACIÓ ENERGÈTICA"
+      afegir_energia_certificat: "Afegir certificació energètica"
+      energia_certificat: "Certificació energètica"
   llicencies:
     form:
       guardar: "Guardar"
@@ -707,6 +717,9 @@ ca:
     form:
       guardar: "Guardar"
   garantia_constructors:
+    form:
+      guardar: "Guardar"
+  energia_certificats:
     form:
       guardar: "Guardar"
   fonamentacions:
@@ -759,6 +772,21 @@ ca:
       titol_coberta: "COBERTA"
       terrat: "Terrat / Coberta plana"
       coberta_inclinada: "Coberta inclinada"
+  particions:
+    edit:
+      titol_sistemes: "Descripció constructiva de l'edifici"
+    form:
+      guardar: "Guardar"
+      titol_particions: "PARTICIONS I ACABATS"
+      envans: "Envans"
+      cel_rasos: "Cel rasos"
+      aillament_tipologia: "Tipologia d'aïllaments"
+      aillament_material: "Material dels aïllaments"
+      suport_revestiments: "Suport dels revestiments"
+      acabat_revestiments: "Acabat dels revestiments"
+      paviments: "Paviments"
+      portes: "Portes"
+      baranes: "Baranes"
   sanejaments:
     edit:
       titol_sistemes: "Descripció constructiva de l'edifici"

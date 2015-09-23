@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  edifici_id: 1
+  numero_registre: MyString
+  vigencia: MyString
+  qualificacio_energetica: MyString
+  consum_energia_primaria: 9.99
+  emissions_co2: 9.99
+
+two:
+  edifici_id: 1
+  numero_registre: MyString
+  vigencia: MyString
+  qualificacio_energetica: MyString
+  consum_energia_primaria: 9.99
+  emissions_co2: 9.99

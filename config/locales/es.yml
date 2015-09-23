@@ -46,6 +46,7 @@ es:
       estructura: "ESTRUCTURA"
       tancaments_verticals: "CERRAMIENTOS VERTICALES"
       coberta: "CUBIERTA"
+      particions: "PARTICIONES Y ACABADOS"
       sanejament: "SANEAMIENTO"
       aigua: "SUMINISTRO DE AGUA"
       electricitat: "INSTALACIÓN ELÉCTRICA"
@@ -274,6 +275,12 @@ es:
         venciment: "Fecha de vencimiento de la garantía"
         tipus: "Tipo de garantía"
         referencia: "Referencia de la póliza u otro documento acreditativo del otorgamiento de la garantía"
+      energia_certificat:
+        numero_registre: "Número de registro"
+        vigencia: "Fecha de finalización de la vigencia"
+        qualificacio_energetica: "Calificación energética"
+        consum_energia_primaria: "Consumo de energía primaria (kWh/a)"
+        emissions_co2: "Emisiones de CO2 (kg/m2a)"
       fonamentacio:
         mur_pedra: "Muro de piedra"
         mur_fabrica_mao: "Muro de fábrica de ladrillo"
@@ -680,6 +687,9 @@ es:
       titol_garantia_constructor: "GARANTÍAS DEL CONSTRUCTOR"
       afegir_garantia_constructor: "Añadir garantía del constructor"
       garantia_constructor: "Garantía del constructor"
+      titol_energia_certificat: "CERTIFICACIÓN ENERGÉTICA"
+      afegir_energia_certificat: "Añadir certificación energética"
+      energia_certificat: "Certificación energética"
   llicencies:
     form:
       guardar: "Guardar"
@@ -707,6 +717,9 @@ es:
     form:
       guardar: "Guardar"
   garantia_constructors:
+    form:
+      guardar: "Guardar"
+  energia_certificats:
     form:
       guardar: "Guardar"
   fonamentacions:
@@ -759,6 +772,21 @@ es:
       titol_coberta: "CUBIERTA"
       terrat: "Azotea / Cubierta plana"
       coberta_inclinada: "Cubierta inclinada"
+  particions:
+    edit:
+      titol_sistemes: "Descripción constructiva del edificio"
+    form:
+      guardar: "Guardar"
+      titol_particions: "PARTICIONES Y ACABADOS"
+      envans: "Tabiques"
+      cel_rasos: "Falsos techos"
+      aillament_tipologia: "Tipología de aislantes"
+      aillament_material: "Material de los aislantes"
+      suport_revestiments: "Soporte de los revestimientos"
+      acabat_revestiments: "Acabado de los revestimientos"
+      paviments: "Pavimentos"
+      portes: "Puertas"
+      baranes: "Barandillas"
   sanejaments:
     edit:
       titol_sistemes: "Descripción constructiva del edificio"

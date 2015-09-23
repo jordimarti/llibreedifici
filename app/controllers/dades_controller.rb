@@ -15,6 +15,7 @@ class DadesController < ApplicationController
     @garantia_promotors = GarantiaPromotor.where(:edifici_id => params[:edifici_id])
     @garantia_instalacions = GarantiaInstalacio.where(:edifici_id => params[:edifici_id])
     @garantia_constructors = GarantiaConstructor.where(:edifici_id => params[:edifici_id])
+    @energia_certificats = EnergiaCertificat.where(:edifici_id => params[:edifici_id])
   end
 
   private
