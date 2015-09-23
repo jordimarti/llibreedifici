@@ -79,6 +79,6 @@ class CobertesController < ApplicationController
     
     # Never trust parameters from the scary internet, only allow the white list through.
     def coberta_params
-      params.require(:coberta).permit(:edifici_id, :terrat_transitable, :terrat_no_transitable, :terrat_aillament_termic, :terrat_lamina_impermeabilitzant, :coberta_teula_arab, :coberta_teula_plana, :coberta_teula_ciment, :coberta_pissarra, :coberta_fibrociment, :coberta_asfaltica, :coberta_xapa_acer, :coberta_xapa_coure, :coberta_aillament_termic, :sobrecarregues_coberta_inclinada, :sobrecarregues_coberta_plana)
+      params.require(:coberta).permit(:edifici_id, :terrat_transitable, :terrat_no_transitable, :terrat_aillament_termic, :terrat_lamina_impermeabilitzant, :coberta_teula_arab, :coberta_teula_plana, :coberta_teula_ciment, :coberta_pissarra, :coberta_fibrociment, :coberta_asfaltica, :coberta_xapa_acer, :coberta_xapa_coure, :coberta_aillament_termic)
     end
 end

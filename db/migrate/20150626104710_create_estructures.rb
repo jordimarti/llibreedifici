@@ -46,6 +46,8 @@ class CreateEstructures < ActiveRecord::Migration
       t.boolean :escala_biguetes_formigo_armat
       t.integer :sobrecarregues_habitatges
       t.integer :sobrecarregues_zones_comuns
+      t.integer :sobrecarregues_coberta_inclinada
+      t.integer :sobrecarregues_coberta_plana
       t.integer :sobrecarregues_locals
       t.integer :sobrecarregues_garatges
       t.integer :sobrecarregues_trasters

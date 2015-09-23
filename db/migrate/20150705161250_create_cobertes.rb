@@ -15,8 +15,6 @@ class CreateCobertes < ActiveRecord::Migration
       t.boolean :coberta_xapa_acer
       t.boolean :coberta_xapa_coure
       t.boolean :coberta_aillament_termic
-      t.integer :sobrecarregues_coberta_inclinada
-      t.integer :sobrecarregues_coberta_plana
 
       t.timestamps null: false
     end

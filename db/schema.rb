@@ -155,10 +155,8 @@ ActiveRecord::Schema.define(version: 20150922154827) do
     t.boolean  "coberta_xapa_acer"
     t.boolean  "coberta_xapa_coure"
     t.boolean  "coberta_aillament_termic"
-    t.integer  "sobrecarregues_coberta_inclinada"
-    t.integer  "sobrecarregues_coberta_plana"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   create_table "colaboradors", force: :cascade do |t|
@@ -356,6 +354,8 @@ ActiveRecord::Schema.define(version: 20150922154827) do
     t.boolean  "escala_biguetes_formigo_armat"
     t.integer  "sobrecarregues_habitatges"
     t.integer  "sobrecarregues_zones_comuns"
+    t.integer  "sobrecarregues_coberta_inclinada"
+    t.integer  "sobrecarregues_coberta_plana"
     t.integer  "sobrecarregues_locals"
     t.integer  "sobrecarregues_garatges"
     t.integer  "sobrecarregues_trasters"
