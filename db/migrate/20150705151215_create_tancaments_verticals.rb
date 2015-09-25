@@ -2,28 +2,72 @@ class CreateTancamentsVerticals < ActiveRecord::Migration
   def change
     create_table :tancaments_verticals do |t|
       t.integer :edifici_id
-      t.boolean :acabat_vist_paredat
-      t.boolean :acabat_vist_carreus
-      t.boolean :acabat_vist_fabrica_mao
-      t.boolean :acabat_vist_fabrica_bloc_ceramic
-      t.boolean :acabat_vist_bloc_formigo
-      t.boolean :acabat_vist_panell_formigo
-      t.boolean :acabat_vist_panell_metalic_sandwich
-      t.boolean :acabat_revestit_arrebossat_pintat
-      t.boolean :acabat_revestit_estucat
-      t.boolean :acabat_revestit_morter_monocapa
-      t.boolean :acabat_revestit_aplacat_ceramic
-      t.boolean :acabat_revestit_aplacat_pedra
-      t.boolean :acabat_revestit_xapa_metalica
+      t.boolean :paret_pedra
+      t.boolean :paret_mao_massis
+      t.boolean :paret_mao_perforat
+      t.boolean :paret_bloc_morter
+      t.boolean :paret_bloc_formigo_lleuger
+      t.boolean :plafons_formigo_massis
+      t.boolean :plafons_formigo_alveolat
+      t.boolean :plafons_formigo_aillant
+      t.boolean :mur_cortina
+      t.boolean :acabat_obra_vista
+      t.boolean :acabat_revestiment_arrebossat
+      t.boolean :acabat_pintura_plastica
+      t.boolean :acabat_pintura_silicat
+      t.boolean :acabat_revestiment_resines
+      t.boolean :acabat_pintura_cals
+      t.boolean :acabat_esgrafiat
+      t.boolean :acabat_estuc_cals
+      t.boolean :acabat_morter_monocapa
+      t.boolean :acabat_aplacat_pedra
+      t.boolean :acabat_aplacat_enrajolat
+      t.boolean :acabat_aplacat_plafons
+      t.boolean :acabat_aplacat_fixacio_morter
+      t.boolean :acabat_aplacat_fixacio_acer_galvanitzat
+      t.boolean :acabat_aplacat_fixacio_acer_inoxidable
+      t.boolean :acabat_aplacat_fixacio_alumini
       t.boolean :cambra_aire_facana
       t.boolean :aillament_termic
-      t.boolean :parets_mitgeres
-      t.boolean :balcons
-      t.boolean :ampits
-      t.boolean :llindes
-      t.boolean :baranes
-      t.boolean :reixes
-      t.boolean :persianes
+      t.boolean :parets_mitgeres_enva_ceramica
+      t.boolean :parets_mitgeres_xapa_acer
+      t.boolean :parets_mitgeres_arrebossat
+      t.boolean :parets_mitgeres_pintura_silicat
+      t.boolean :parets_mitgeres_plaques_fibrociment
+      t.boolean :parets_mitgeres_pintura_plastica
+      t.boolean :parets_mitgeres_pintura_cals
+      t.boolean :balcons_llosana_pedra
+      t.boolean :balcons_solera_ancorada
+      t.boolean :balcons_formigo_armat
+      t.boolean :balcons_acer
+      t.boolean :ampits_xapa_metalica
+      t.boolean :ampits_ceramica
+      t.boolean :ampits_prefabricat_formigo
+      t.boolean :llindes_formigo_armat
+      t.boolean :llindes_ceramics
+      t.boolean :llindes_acer
+      t.boolean :baranes_pedra_natural
+      t.boolean :baranes_pedra_artificial
+      t.boolean :baranes_obra
+      t.boolean :baranes_ferro_forjat
+      t.boolean :baranes_perfils_acer
+      t.boolean :baranes_fusta
+      t.boolean :baranes_malla_metalica
+      t.boolean :baranes_vidre_laminat
+      t.boolean :baranes_perfils_alumini
+      t.boolean :reixes_ferro_forjat
+      t.boolean :reixes_alumini
+      t.boolean :persianes_enrotllables_pvc
+      t.boolean :persianes_enrotllables_alumini
+      t.boolean :persianes_enrotllables_fusta
+      t.boolean :persianes_llibret_pvc
+      t.boolean :persianes_llibret_alumini
+      t.boolean :persianes_llibret_acer
+      t.boolean :persianes_llibret_fusta
+      t.boolean :gelosies_prefabricat_formigo
+      t.boolean :gelosies_lameles_metaliques
+      t.boolean :gelosies_lameles_plastic
+      t.boolean :gelosies_ceramica
       t.boolean :fusteria_fusta
       t.boolean :fusteria_acer
       t.boolean :fusteria_alumini
@@ -33,6 +77,8 @@ class CreateTancamentsVerticals < ActiveRecord::Migration
       t.boolean :vidre_triple
       t.boolean :vidre_baix_emissiu
       t.boolean :vidre_control_solar
+      t.integer :sobrecarrega_repartida_balco
+      t.integer :sobrecarrega_linial_vora_balco
 
       t.timestamps null: false
     end

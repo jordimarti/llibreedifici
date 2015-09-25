@@ -11,56 +11,171 @@
 
     <div class="row">
       <div class="medium-6 columns">
-        <div class="titol-subsistema"><%= t('.acabat_vist') %></div>
+        <div class="titol-subsistema"><%= t('.tancaments_facana') %></div>
         <div class="camps-subsistema">
-          <%= f.input :acabat_vist_paredat %>
-          <%= f.input :acabat_vist_carreus %>
-          <%= f.input :acabat_vist_fabrica_mao %>
-          <%= f.input :acabat_vist_fabrica_bloc_ceramic %>
-          <%= f.input :acabat_vist_bloc_formigo %>
-          <%= f.input :acabat_vist_panell_formigo %>
-          <%= f.input :acabat_vist_panell_metalic_sandwich %>
+          <%= f.input :paret_pedra %>
+          <%= f.input :paret_mao_massis %>
+          <%= f.input :paret_mao_perforat %>
+          <%= f.input :paret_bloc_morter %>
+          <%= f.input :paret_bloc_formigo_lleuger %>
+          <%= f.input :plafons_formigo_massis %>
+          <%= f.input :plafons_formigo_alveolat %>
+          <%= f.input :plafons_formigo_aillant %>
+          <%= f.input :mur_cortina %>
         </div>
       </div>
       <div class="medium-6 columns">
-        <div class="titol-subsistema"><%= t('.acabat_revestit') %></div>  
+        <div class="titol-subsistema"><%= t('.acabats_facana') %></div>  
         <div class="camps-subsistema">
-          <%= f.input :acabat_revestit_arrebossat_pintat %>
-          <%= f.input :acabat_revestit_estucat %>
-          <%= f.input :acabat_revestit_morter_monocapa %>
-          <%= f.input :acabat_revestit_aplacat_ceramic %>
-          <%= f.input :acabat_revestit_aplacat_pedra %>
-          <%= f.input :acabat_revestit_xapa_metalica %>
+          <%= f.input :acabat_obra_vista %>
+          <%= f.input :acabat_revestiment_arrebossat %>
+          <%= f.input :acabat_pintura_plastica %>
+          <%= f.input :acabat_pintura_silicat %>
+          <%= f.input :acabat_revestiment_resines %>
+          <%= f.input :acabat_pintura_cals %>
+          <%= f.input :acabat_esgrafiat %>
+          <%= f.input :acabat_estuc_cals %>
+          <%= f.input :acabat_morter_monocapa %>
+          <%= f.input :acabat_aplacat_pedra %>
+          <%= f.input :acabat_aplacat_enrajolat %>
+          <%= f.input :acabat_aplacat_plafons %>
+          <%= f.input :acabat_aplacat_fixacio_morter %>
+          <%= f.input :acabat_aplacat_fixacio_acer_galvanitzat %>
+          <%= f.input :acabat_aplacat_fixacio_acer_inoxidable %>
+          <%= f.input :acabat_aplacat_fixacio_alumini %>
         </div>
       </div>
     </div>
 
-    
+    <% if @edifici.tipus_edifici == 'existent_plurifamiliar' || @edifici.tipus_edifici == 'existent_unifamiliar' %>
     <div class="row">
       <div class="medium-12 columns">
-        <div class="titol-subsistema"><%= t('.altres_tancaments') %></div>
+        <div class="titol-subsistema"><%= t('.altres_caracteristiques_facanes') %></div>
         <div class="camps-subsistema">
           <div class="row">
             <div class="medium-6 columns">
-              <%= f.input :parets_mitgeres %>
-              <%= f.input :balcons %>
-              <%= f.input :ampits %>
-              <%= f.input :llindes %>
-              <%= f.input :baranes %>
+              <%= f.input :cambra_aire_facana %>
             </div>
             <div class="medium-6 columns">
-              <%= f.input :reixes %>
-              <%= f.input :persianes %>
-              <% if @edifici.tipus_edifici == 'existent_plurifamiliar' || @edifici.tipus_edifici == 'existent_unifamiliar' %>
-                <%= f.input :cambra_aire_facana %>
-                <%= f.input :aillament_termic %>
-              <% end %>
+              <%= f.input :aillament_termic %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    
+    <div class="row">
+      <div class="medium-12 columns">
+        <div class="titol-subsistema"><%= t('.parets_mitgeres') %></div>
+        <div class="camps-subsistema">
+          <div class="row">
+            <div class="medium-6 columns">
+              <%= f.input :parets_mitgeres_enva_ceramica %>
+              <%= f.input :parets_mitgeres_xapa_acer %>
+              <%= f.input :parets_mitgeres_arrebossat %>
+              <%= f.input :parets_mitgeres_pintura_silicat %>
+            </div>
+            <div class="medium-6 columns">
+              <%= f.input :parets_mitgeres_pintura_plastica %>
+              <%= f.input :parets_mitgeres_pintura_cals %>
+              <%= f.input :parets_mitgeres_plaques_fibrociment %>
             </div>
           </div>
         </div>
       </div>
     </div>
     
+    <hr class="form-divider">
+
+    <div class="row">
+      <div class="medium-6 columns">
+        <div class="titol-subsistema"><%= t('.balcons') %></div>
+        <div class="camps-subsistema">
+          <%= f.input :balcons_llosana_pedra %>
+          <%= f.input :balcons_solera_ancorada %>
+          <%= f.input :balcons_formigo_armat %>
+          <%= f.input :balcons_acer %>
+          <%= f.input :sobrecarrega_repartida_balco %>
+          <%= f.input :sobrecarrega_linial_vora_balco %>
+        </div>
+      </div>
+      <div class="medium-6 columns">
+        <div class="titol-subsistema"><%= t('.baranes') %></div>
+        <div class="camps-subsistema">
+          <%= f.input :baranes_pedra_natural %>
+          <%= f.input :baranes_pedra_artificial %>
+          <%= f.input :baranes_obra %>
+          <%= f.input :baranes_ferro_forjat %>
+          <%= f.input :baranes_perfils_acer %>
+          <%= f.input :baranes_fusta %>
+          <%= f.input :baranes_malla_metalica %>
+          <%= f.input :baranes_vidre_laminat %>
+          <%= f.input :baranes_perfils_alumini %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-6 columns">
+        <div class="titol-subsistema"><%= t('.llindes') %></div>
+        <div class="camps-subsistema">
+          <%= f.input :llindes_formigo_armat %>
+          <%= f.input :llindes_ceramics %>
+          <%= f.input :llindes_acer %>
+        </div>
+      </div>
+      <div class="medium-6 columns">
+        <div class="titol-subsistema"><%= t('.ampits') %></div>
+        <div class="camps-subsistema">
+          <%= f.input :ampits_xapa_metalica %>
+          <%= f.input :ampits_ceramica %>
+          <%= f.input :ampits_prefabricat_formigo %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-6 columns">
+        <div class="titol-subsistema"><%= t('.gelosies') %></div>
+        <div class="camps-subsistema">
+          <%= f.input :gelosies_prefabricat_formigo %>
+          <%= f.input :gelosies_lameles_metaliques %>
+          <%= f.input :gelosies_lameles_plastic %>
+          <%= f.input :gelosies_ceramica %>
+        </div>
+      </div>
+      <div class="medium-6 columns">
+        <div class="titol-subsistema"><%= t('.reixes') %></div>
+        <div class="camps-subsistema">
+          <%= f.input :reixes_ferro_forjat %>
+          <%= f.input :reixes_alumini %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-12 columns">
+        <div class="titol-subsistema"><%= t('.persianes') %></div>
+        <div class="row">
+          <div class="medium-6 columns">
+            <div class="camps-subsistema">
+              <%= f.input :persianes_enrotllables_pvc %>
+              <%= f.input :persianes_enrotllables_alumini %>
+              <%= f.input :persianes_enrotllables_fusta %>
+            </div>
+          </div>
+          <div class="medium-6 columns">
+            <div class="camps-subsistema">
+              <%= f.input :persianes_llibret_pvc %>
+              <%= f.input :persianes_llibret_alumini %>
+              <%= f.input :persianes_llibret_acer %>
+              <%= f.input :persianes_llibret_fusta %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <hr class="form-divider">
 
