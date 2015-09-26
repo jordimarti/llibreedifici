@@ -138,6 +138,8 @@ ca:
         any_fi_construccio: "Any fi construcció"
         origen_any_construccio: "Font any construcció"
         observacions: "Observacions"
+        foto_facana: "Foto de la façana"
+        planol_emplacament: "Plànol d'emplaçament"
       promotor:
         nom_promotor: "Nom"
         nif_promotor: "NIF/CIF"

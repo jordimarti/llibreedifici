@@ -138,6 +138,8 @@ es:
         any_fi_construccio: "Año fin construcción"
         origen_any_construccio: "Fuente año construcción"
         observacions: "Observaciones"
+        foto_facana: "Foto de la fachada"
+        planol_emplacament: "Plano de emplazamiento"
       promotor:
         nom_promotor: "Nombre"
         nif_promotor: "NIF/CIF"
