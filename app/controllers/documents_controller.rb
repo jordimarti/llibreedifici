@@ -7,6 +7,12 @@ class DocumentsController < ApplicationController
   end
 
   def docmosis
+    imatge_facana = @edifici.identificacio.foto_facana.url(:medium)
+    dimensions_facana = Paperclip::Geometry.from_file(imatge_facana)
+
+    imatge_emplacament = @edifici.identificacio.planol_emplacament.url(:medium)
+    dimensions_emplacament = Paperclip::Geometry.from_file(imatge_emplacament)
+
     # RESTFul service URL
     $DWS_RENDER_URL = "https://dws2.docmosis.com/services/rs/render"
     # Your account key
@@ -37,7 +43,7 @@ class DocumentsController < ApplicationController
         'data' => {
                     'date' => Date.today,
                     'title' => 'Welcome to Jordi Cloud',
-                    "imatge_html" => "<h1>Hola Jordi</h1><p>Aquí estem posant imatges per html</p><img src='https://s3-eu-west-1.amazonaws.com/edificapro/profiles/avatars/000/000/002/medium/foto_jordi2.jpg' style='width:400px; height:400px;'/>",
+                    "imatge_html" => "<h1>Hola Jordi</h1><p>Aquí estem posant imatges per html</p><img src='#{imatge_facana}' style='width:#{dimensions_facana.width}; height:#{dimensions_facana.height}'/>",
                     'messages' => [
                                     msg('This cloud experience is better than I thought.'),
                                     msg('The sun is shining'),
