@@ -21,6 +21,8 @@
 					<div class="medium-4 medium-offset-1 columns">
 						<%= link_to t('.tornar_apartats'), edit_edifici_checklist_nou_plurifamiliar_path(@edifici.id, @edifici.checklist_nou_plurifamiliar.id), :class=> "button small radius" %>
 						<br/>
+						<%= link_to "prova docmosis", docmosis_path(@edifici.id), :class=> "button small radius" %>
+						<br/>
 						<a href="documents/nou.docx" class="button small radius"><%= t('.generar_llibre') %></a>
 						<br/>
 						<a href="documents/manual_habitatge.docx" class="button small radius"><%= t('.generar_manual') %></a>

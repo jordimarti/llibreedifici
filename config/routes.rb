@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   get 'edificis/:edifici_id/agents', to: 'agents#index', :as => :agents
   get 'edificis/:edifici_id/dades', to: 'dades#index', :as => :dades
   get 'edificis/:edifici_id/documents', to: 'documents#index', :as => :documents
-  get 'edificis/:edifici_id/documents/quadern(.:format)', to: 'documents#quadern', :as => :quadern
+  get 'edificis/:edifici_id/documents/prova_zip', to: 'documents#prova_zip', :as => :prova_zip
+  get 'edificis/:edifici_id/documents/docmosis', to: 'documents#docmosis', :as => :docmosis
   get 'edificis/:edifici_id/documents/nou(.:format)', to: 'documents#nou', :as => :nou
   get 'edificis/:edifici_id/documents/manual_habitatge(.:format)', to: 'documents#manual_habitatge', :as => :manual_habitatge
   get 'edificis/:edifici_id/documents/existents(.:format)', to: 'documents#existents', :as => :existents

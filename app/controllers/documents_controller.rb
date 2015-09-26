@@ -6,6 +6,62 @@ class DocumentsController < ApplicationController
     @submenu_actiu = 'documents'
   end
 
+  def docmosis
+    # RESTFul service URL
+    $DWS_RENDER_URL = "https://dws2.docmosis.com/services/rs/render"
+    # Your account key
+    $ACCESS_KEY = "NWFkOTkyMGQtMmRmYy00MDJlLWE5NWYtYTYzNDMwMDE5YTI1OjI3MzM3MjI"
+
+    # The template to use
+    # NOTE that it has to be defined in your account with the same name specified here
+    $TEMPLATE = "llibreedifici/Prova2Docmosis.docx" # Change with your actual template name
+
+    # The output file name
+    $OUTPUT='LlibreEdifici.docx';
+
+    def msg (message)
+        {'msg'=>"#{message}"}
+    end
+
+
+    # Set the web proxy to use from the environment variable.
+    # The settings for proxy are site-dependent so you may need to
+    # adjust this
+    RestClient.proxy = ENV['http_proxy'];
+
+    RestClient.post($DWS_RENDER_URL,
+    {
+        'accessKey' => $ACCESS_KEY,
+        'templateName' => $TEMPLATE,
+        'outputName' => $OUTPUT,
+        'data' => {
+                    'date' => Date.today,
+                    'title' => 'Welcome to Jordi Cloud',
+                    "imatge_html" => "<h1>Hola Jordi</h1><p>Aquí estem posant imatges per html</p><img src='https://s3-eu-west-1.amazonaws.com/edificapro/profiles/avatars/000/000/002/medium/foto_jordi2.jpg' style='width:400px; height:400px;'/>",
+                    'messages' => [
+                                    msg('This cloud experience is better than I thought.'),
+                                    msg('The sun is shining'),
+                                    msg('Right, now back to work.')
+                                  ]
+                  }
+    }.to_json, :content_type => :json) {|response, request, result, &block|
+        case response.code
+        when 200
+            File.open($OUTPUT,"wb"){|f|f.syswrite(response.body)}
+            #puts "\"#{$OUTPUT}\" created"
+            send_file $OUTPUT, filename: "#{@edifici.nom_edifici}.docx", disposition: 'attachment'
+        else
+            # 4XX errors - client errors - something needs to be corrected in the request
+            # 5XX errors - server side errors - possibly worth a retry
+
+            # show error response (details)
+            puts "Error response:\n\n#{response.code} #{response}\n\n"
+            response.return!(request, result, &block)
+        end
+    }
+ 
+  end
+
   def nou
     respond_to do |format|
       format.docx do
