@@ -602,6 +602,8 @@ es:
       titol_dades: "DATOS DE IDENTIFICACIÓN DE LA CONSTRUCCIÓN" 
     form:
       guardar: "Guardar"
+    update:
+      guardat_ok: "Los datos se han guardado correctamente"
   agents:
     index:
       titol_agents: "Agentes de la edificación"
@@ -740,6 +742,8 @@ es:
       altres_elements: "Otros elementos"
       afegir_element: "Añadir un nuevo elemento"
       nou_element: "Elemento definido por el usuario"
+    update:
+      guardat_ok: "Los datos se han guardado correctamente"
     form:
       guardar: "Guardar"
       titol_fonamentacio: "CIMENTACIÓN"

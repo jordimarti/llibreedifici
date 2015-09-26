@@ -50,7 +50,7 @@ class IdentificacionsController < ApplicationController
   def update
     respond_to do |format|
       if @identificacio.update(identificacio_params)
-        format.html { redirect_to edit_edifici_identificacio_path, notice: 'Identificacio was successfully updated.' }
+        format.html { redirect_to edit_edifici_identificacio_path, notice: t('.guardat_ok') }
         format.json { render :show, status: :ok, location: @identificacio }
       else
         format.html { render :edit }
