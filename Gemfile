@@ -44,6 +44,7 @@ gem 'icomoon-rails'
 gem 'docx_replace'
 gem 'rubyzip', '~> 1.1.7'
 gem 'rest-client', '~> 1.8.0'
+gem 'aws-sdk', '~> 2.1.23'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

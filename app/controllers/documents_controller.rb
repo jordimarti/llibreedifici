@@ -10,7 +10,7 @@ class DocumentsController < ApplicationController
     # RESTFul service URL
     $DWS_RENDER_URL = "https://dws2.docmosis.com/services/rs/render"
     # Your account key
-    $ACCESS_KEY = "NWFkOTkyMGQtMmRmYy00MDJlLWE5NWYtYTYzNDMwMDE5YTI1OjI3MzM3MjI"
+    $ACCESS_KEY = ENV['DOCMOSIS_ACCESS_KEY']
 
     # The template to use
     # NOTE that it has to be defined in your account with the same name specified here

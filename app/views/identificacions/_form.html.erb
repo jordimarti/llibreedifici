@@ -62,6 +62,18 @@
           <%= f.input :observacions %>
         </div>
       </div>
+
+      <div class="row">
+        <div class="medium-6 columns">
+          <%= f.input :foto_facana, as: :file %>
+          <%= image_tag @edifici.identificacio.foto_facana.url(:medium) %>
+        </div>
+        <div class="medium-6 columns">
+          <%= f.input :planol_emplacament, as: :file %>
+          <%= image_tag @edifici.identificacio.planol_emplacament.url(:medium) %>
+        </div>
+      </div>
+
     </div>
 
     <div class="row">
