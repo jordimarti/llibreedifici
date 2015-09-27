@@ -753,6 +753,8 @@ es:
   estructures:
     edit:
       titol_sistemes: "Descripción constructiva del edificio"
+    update:
+      guardat_ok: "Los datos se han guardado correctamente"
     form:
       guardar: "Guardar"
       titol_estructura: "ESTRUCTURA"
@@ -773,6 +775,8 @@ es:
   tancaments_verticals:
     edit:
       titol_sistemes: "Descripcióv constructiva del edificio"
+    update:
+      guardat_ok: "Los datos se han guardado correctamente"
     form:
       guardar: "Guardar"
       titol_tancaments: "CERRAMIENTOS VERTICALES"
@@ -784,6 +788,8 @@ es:
   cobertes:
     edit:
       titol_sistemes: "Descripción constructiva del edificio"
+    update:
+      guardat_ok: "Los datos se han guardado correctamente"
     form:
       guardar: "Guardar"
       titol_coberta: "CUBIERTA"
@@ -792,6 +798,8 @@ es:
   particions:
     edit:
       titol_sistemes: "Descripción constructiva del edificio"
+    update:
+      guardat_ok: "Los datos se han guardado correctamente"
     form:
       guardar: "Guardar"
       titol_particions: "PARTICIONES Y ACABADOS"
@@ -807,6 +815,8 @@ es:
   sanejaments:
     edit:
       titol_sistemes: "Descripción constructiva del edificio"
+    update:
+      guardat_ok: "Los datos se han guardado correctamente"
     form:
       guardar: "Guardar"
       titol_sanejament: "SANEMIENTO"
@@ -816,6 +826,8 @@ es:
   aigues:
     edit:
       titol_sistemes: "Descripción constructiva del edificio"
+    update:
+      guardat_ok: "Los datos se han guardado correctamente"
     form:
       guardar: "Guardar"
       titol_aigua: "SUMINISTRO DE AGUA"
@@ -825,6 +837,8 @@ es:
   electricitats:
     edit:
       titol_sistemes: "Descripción constructiva del edificio"
+    update:
+      guardat_ok: "Los datos se han guardado correctamente"
     form:
       guardar: "Guardar"
       titol_electricitat: "INSTALACIÓN ELÉCTRICA"
@@ -833,6 +847,8 @@ es:
   climatitzacions:
     edit:
       titol_sistemes: "Descripción constructiva del edificio"
+    update:
+      guardat_ok: "Los datos se han guardado correctamente"
     form:
       guardar: "Guardar"
       titol_climatitzacio: "ACS, CALEFACCIÓN Y REFRIGERACIÓN"
@@ -846,6 +862,8 @@ es:
   gas:
     edit:
       titol_sistemes: "Descripción constructiva del edificio"
+    update:
+      guardat_ok: "Los datos se han guardado correctamente"
     form:
       guardar: "Guardar"
       titol_gas: "INSTALACIÓN DE GAS"
@@ -853,6 +871,8 @@ es:
   ventilacions:
     edit:
       titol_sistemes: "Descripción constructiva del edificio"
+    update:
+      guardat_ok: "Los datos se han guardado correctamente"
     form:
       guardar: "Guardar"
       titol_ventilacions: "VENTILACIÓN"
@@ -863,6 +883,8 @@ es:
   incendis:
     edit:
       titol_sistemes: "Descripción constructiva del edificio"
+    update:
+      guardat_ok: "Los datos se han guardado correctamente"
     form:
       guardar: "Guardar"
       titol_incendis: "PROTECCIÓN CONTRA INCENDIOS"
@@ -870,6 +892,8 @@ es:
   ascensors:
     edit:
       titol_sistemes: "Descripción constructiva del edificio"
+    update:
+      guardat_ok: "Los datos se han guardado correctamente"
     form:
       guardar: "Guardar"
       titol_ascensors: "ASCENSORES"
@@ -877,6 +901,8 @@ es:
   telecomunicacions:
     edit:
       titol_sistemes: "Descripción constructiva del edificio"
+    update:
+      guardat_ok: "Los datos se han guardado correctamente"
     form:
       guardar: "Guardar"
       titol_telecomunicacions: "INSTALACIÓN DE TELECOMUNICACIONES"
@@ -884,6 +910,8 @@ es:
   especials:
     edit:
       titol_sistemes: "Descripción constructiva del edificio"
+    update:
+      guardat_ok: "Los datos se han guardado correctamente"
     form:
       guardar: "Guardar"
       titol_especials: "INSTALACIONES ESPECIALES"

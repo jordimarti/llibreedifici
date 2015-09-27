@@ -55,7 +55,7 @@ class VentilacionsController < ApplicationController
   def update
     respond_to do |format|
       if @ventilacio.update(ventilacio_params)
-        format.html { redirect_to edit_edifici_ventilacio_path  }
+        format.html { redirect_to edit_edifici_ventilacio_path, notice: t('.guardat_ok')  }
         format.json { render :show, status: :ok, location: @ventilacio }
       else
         format.html { render :edit }

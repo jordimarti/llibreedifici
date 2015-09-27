@@ -55,7 +55,7 @@ class CobertesController < ApplicationController
   def update
     respond_to do |format|
       if @coberta.update(coberta_params)
-        format.html { redirect_to edit_edifici_coberta_path }
+        format.html { redirect_to edit_edifici_coberta_path, notice: t('.guardat_ok') }
         format.json { render :show, status: :ok, location: @coberta }
       else
         format.html { render :edit }

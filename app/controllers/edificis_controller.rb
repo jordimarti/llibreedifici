@@ -135,7 +135,7 @@ class EdificisController < ApplicationController
   def destroy
     @edifici.destroy
     respond_to do |format|
-      format.html { redirect_to edificis_url, notice: 'Edifici was successfully destroyed.' }
+      format.html { redirect_to edificis_url }
       format.json { head :no_content }
     end
   end

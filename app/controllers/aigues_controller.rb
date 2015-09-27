@@ -55,7 +55,7 @@ class AiguesController < ApplicationController
   def update
     respond_to do |format|
       if @aigua.update(aigua_params)
-        format.html { redirect_to edit_edifici_aigua_path }
+        format.html { redirect_to edit_edifici_aigua_path, notice: t('.guardat_ok') }
         format.json { render :show, status: :ok, location: @aigua }
       else
         format.html { render :edit }

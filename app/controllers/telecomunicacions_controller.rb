@@ -55,7 +55,7 @@ class TelecomunicacionsController < ApplicationController
   def update
     respond_to do |format|
       if @telecomunicacio.update(telecomunicacio_params)
-        format.html { redirect_to edit_edifici_telecomunicacio_path }
+        format.html { redirect_to edit_edifici_telecomunicacio_path, notice: t('.guardat_ok') }
         format.json { render :show, status: :ok, location: @telecomunicacio }
       else
         format.html { render :edit }

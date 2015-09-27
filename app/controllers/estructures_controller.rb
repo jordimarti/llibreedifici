@@ -55,7 +55,7 @@ class EstructuresController < ApplicationController
   def update
     respond_to do |format|
       if @estructura.update(estructura_params)
-        format.html { redirect_to edit_edifici_estructura_path }
+        format.html { redirect_to edit_edifici_estructura_path, notice: t('.guardat_ok') }
         format.json { render :show, status: :ok, location: @estructura }
       else
         format.html { render :edit }

@@ -55,7 +55,7 @@ class ClimatitzacionsController < ApplicationController
   def update
     respond_to do |format|
       if @climatitzacio.update(climatitzacio_params)
-        format.html { redirect_to edit_edifici_climatitzacio_path }
+        format.html { redirect_to edit_edifici_climatitzacio_path, notice: t('.guardat_ok') }
         format.json { render :show, status: :ok, location: @climatitzacio }
       else
         format.html { render :edit }

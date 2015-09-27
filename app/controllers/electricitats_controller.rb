@@ -55,7 +55,7 @@ class ElectricitatsController < ApplicationController
   def update
     respond_to do |format|
       if @electricitat.update(electricitat_params)
-        format.html { redirect_to edit_edifici_electricitat_path }
+        format.html { redirect_to edit_edifici_electricitat_path, notice: t('.guardat_ok') }
         format.json { render :show, status: :ok, location: @electricitat }
       else
         format.html { render :edit }

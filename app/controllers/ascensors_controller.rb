@@ -55,7 +55,7 @@ class AscensorsController < ApplicationController
   def update
     respond_to do |format|
       if @ascensor.update(ascensor_params)
-        format.html { redirect_to edit_edifici_ascensor_path }
+        format.html { redirect_to edit_edifici_ascensor_path, notice: t('.guardat_ok') }
         format.json { render :show, status: :ok, location: @ascensor }
       else
         format.html { render :edit }

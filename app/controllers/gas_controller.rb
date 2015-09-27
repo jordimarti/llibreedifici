@@ -55,7 +55,7 @@ class GasController < ApplicationController
   def update
     respond_to do |format|
       if @ga.update(ga_params)
-        format.html { redirect_to edit_edifici_ga_path }
+        format.html { redirect_to edit_edifici_ga_path, notice: t('.guardat_ok') }
         format.json { render :show, status: :ok, location: @ga }
       else
         format.html { render :edit }

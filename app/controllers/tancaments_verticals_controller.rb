@@ -55,7 +55,7 @@ class TancamentsVerticalsController < ApplicationController
   def update
     respond_to do |format|
       if @tancaments_vertical.update(tancaments_vertical_params)
-        format.html { redirect_to edit_edifici_tancaments_vertical_path }
+        format.html { redirect_to edit_edifici_tancaments_vertical_path, notice: t('.guardat_ok') }
         format.json { render :show, status: :ok, location: @tancaments_vertical }
       else
         format.html { render :edit }
