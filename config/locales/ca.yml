@@ -932,6 +932,7 @@ ca:
       estructura: "Estructura"
       tancaments: "Tancaments verticals"
       coberta: "Coberta"
+      particions: "Particions"
       sanejament: "Sanejament"
       aigua: "Subministrament d'aigua"
       electricitat: "Instal·lació elèctrica"

@@ -32,6 +32,27 @@ class OperacionsController < ApplicationController
     @operacio = Operacio.new(operacio_params)
     last_operacio = Operacio.last
     @operacio.id = last_operacio.id + 1
+    
+    # Copiem la descripció del català al castellà o a la inversa, per tal que aparegui descripció encara que es canviï d'idioma
+    if @operacio.descripcio_ca.blank?
+      @operacio.descripcio_ca = @operacio.descripcio_es
+    end
+    if @operacio.periodicitat_text_ca.blank?
+      @operacio.periodicitat_text_ca = @operacio.periodicitat_text_es
+    end
+    if @operacio.responsable_ca.blank?
+      @operacio.responsable_ca = @operacio.responsable_es
+    end
+
+    if @operacio.descripcio_es.blank?
+      @operacio.descripcio_es = @operacio.descripcio_ca
+    end
+    if @operacio.periodicitat_text_es.blank?
+      @operacio.periodicitat_text_es = @operacio.periodicitat_text_ca
+    end
+    if @operacio.responsable_es.blank?
+      @operacio.responsable_es = @operacio.responsable_ca
+    end
 
     respond_to do |format|
       if @operacio.save

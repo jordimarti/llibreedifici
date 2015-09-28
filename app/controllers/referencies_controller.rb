@@ -10,7 +10,7 @@ class ReferenciesController < ApplicationController
   def index
     @submenu_actiu = 'operacions'
 
-    @sistemes = [{name: 'fonamentacio'}, {name: 'estructura'}, {name: 'tancaments'}, {name: 'cobertes'}, {name: 'sanejament'}, {name: 'aigua'}, {name: 'electricitat'}, {name: 'gas'}, {name: 'climatitzacio'}, {name: 'ventilacio'}, {name: 'incendis'}, {name: 'ascensor'}, {name: 'telecomunicacions'}, {name: 'especials'}]
+    @sistemes = [{name: 'fonamentacio'}, {name: 'estructura'}, {name: 'tancaments'}, {name: 'cobertes'}, {name: 'particions'}, {name: 'sanejament'}, {name: 'aigua'}, {name: 'electricitat'}, {name: 'gas'}, {name: 'climatitzacio'}, {name: 'ventilacio'}, {name: 'incendis'}, {name: 'ascensor'}, {name: 'telecomunicacions'}, {name: 'especials'}]
   end
 
   #Aquest mètode consulta la definició de l'edifici i crea el llistat de referències a les operacions de manteniment
@@ -29,64 +29,64 @@ class ReferenciesController < ApplicationController
       crear_referencia(4)
       crear_referencia(5)
     end
-    if (fonamentacio.sabates_paredat == true || fonamentacio.sabates_formigo == true || fonamentacio.llosa == true || fonamentacio.pilons == true || fonamentacio.pantalles == true) 
+    if (fonamentacio.sabates_paredat == true || fonamentacio.sabates_aillades == true || fonamentacio.sabates_continues == true || fonamentacio.llosa == true || fonamentacio.formigo == true || fonamentacio.formigo_armat == true || fonamentacio.pilons == true || fonamentacio.pantalles == true) 
       crear_referencia(1)
     end
 
-    estructura = Estructura.where(:edifici_id => @edifici.id).last
-    if (estructura.parets_pedra == true)
-      crear_referencia(7)
-    end
-    if (estructura.pilars_acer == true)
-      crear_referencia(11)
-      crear_referencia(12)
-      crear_referencia(13)
-      crear_referencia(14)
-    end
-    if (estructura.parets_formigo_armat == true || estructura.pilars_formigo_armat == true)
-      crear_referencia(15)
-      crear_referencia(16)
-    end
-    if (estructura.parets_fabrica_mao == true || estructura.parets_bloc_ceramic == true || estructura.parets_bloc_formigo == true || estructura.pilars_mao == true)
-      crear_referencia(8)
-    end
-    if (estructura.parets_entramat_fusta == true)
-      crear_referencia(17)
-    end
-    if (estructura.bigues_fusta == true || estructura.forjat_fusta == true)
-      crear_referencia(20)
-    end
-    if (estructura.bigues_metaliques == true || estructura.forjat_metalic == true)
-      crear_referencia(21)
-      crear_referencia(22)
-      crear_referencia(23)
-    end
-    if (estructura.bigues_formigo_armat == true || estructura.forjat_formigo_armat == true || estructura.forjat_reticular == true || estructura.llosa_formigo == true)
-      crear_referencia(24)
-      crear_referencia(25)
-    end
-    if (estructura.forjat_sanitari == true || estructura.solera == true)
-      crear_referencia(6)
-    end
+    #estructura = Estructura.where(:edifici_id => @edifici.id).last
+    #if (estructura.parets_pedra == true)
+    #  crear_referencia(7)
+    #end
+    #if (estructura.pilars_acer == true)
+    #  crear_referencia(11)
+    #  crear_referencia(12)
+    #  crear_referencia(13)
+    #  crear_referencia(14)
+    #end
+    #if (estructura.parets_formigo_armat == true || estructura.pilars_formigo_armat == true)
+    #  crear_referencia(15)
+    #  crear_referencia(16)
+    #end
+    #if (estructura.parets_fabrica_mao == true || estructura.parets_bloc_ceramic == true || estructura.parets_bloc_formigo == true || estructura.pilars_mao == true)
+    #  crear_referencia(8)
+    #end
+    #if (estructura.parets_entramat_fusta == true)
+    #  crear_referencia(17)
+    #end
+    #if (estructura.bigues_fusta == true || estructura.forjat_fusta == true)
+    #  crear_referencia(20)
+    #end
+    #if (estructura.bigues_metaliques == true || estructura.forjat_metalic == true)
+    #  crear_referencia(21)
+    #  crear_referencia(22)
+    #  crear_referencia(23)
+    #end
+    #if (estructura.bigues_formigo_armat == true || estructura.forjat_formigo_armat == true || estructura.forjat_reticular == true || estructura.llosa_formigo == true)
+    #  crear_referencia(24)
+    #  crear_referencia(25)
+    #end
+    #if (estructura.forjat_sanitari == true || estructura.solera == true)
+    #  crear_referencia(6)
+    #end
 
-    tancament = TancamentsVertical.where(:edifici_id => @edifici.id).last
-    if (tancament.acabat_revestit_arrebossat_pintat == true || tancament.acabat_revestit_estucat == true || tancament.acabat_revestit_morter_monocapa == true || tancament.acabat_revestit_aplacat_ceramic == true || tancament.acabat_revestit_aplacat_pedra == true || tancament.acabat_revestit_xapa_metalica == true)
-      crear_referencia(26)
-      crear_referencia(27)
-    end
-    if (tancament.acabat_vist_paredat == true || tancament.acabat_vist_carreus == true || tancament.acabat_vist_fabrica_mao == true || tancament.acabat_vist_fabrica_bloc_ceramic == true || tancament.acabat_vist_bloc_formigo == true || tancament.acabat_vist_panell_formigo == true || tancament.acabat_vist_panell_metalic_sandwich == true)
-      crear_referencia(28)
-    end
-    if (tancament.fusteria_fusta == true || tancament.fusteria_acer == true || tancament.fusteria_alumini == true || tancament.fusteria_pvc == true)
-      crear_referencia(29)
-      crear_referencia(30)
-      crear_referencia(31)
-      crear_referencia(32)
-      crear_referencia(33)
-      crear_referencia(34)
-      crear_referencia(35)
-      crear_referencia(36)
-    end
+    #tancament = TancamentsVertical.where(:edifici_id => @edifici.id).last
+    #if (tancament.acabat_revestit_arrebossat_pintat == true || tancament.acabat_revestit_estucat == true || tancament.acabat_revestit_morter_monocapa == true || tancament.acabat_revestit_aplacat_ceramic == true || tancament.acabat_revestit_aplacat_pedra == true || tancament.acabat_revestit_xapa_metalica == true)
+    #  crear_referencia(26)
+    #  crear_referencia(27)
+    #end
+    #if (tancament.acabat_vist_paredat == true || tancament.acabat_vist_carreus == true || tancament.acabat_vist_fabrica_mao == true || tancament.acabat_vist_fabrica_bloc_ceramic == true || tancament.acabat_vist_bloc_formigo == true || tancament.acabat_vist_panell_formigo == true || tancament.acabat_vist_panell_metalic_sandwich == true)
+    #  crear_referencia(28)
+    #end
+    #if (tancament.fusteria_fusta == true || tancament.fusteria_acer == true || tancament.fusteria_alumini == true || tancament.fusteria_pvc == true)
+    #  crear_referencia(29)
+    #  crear_referencia(30)
+    #  crear_referencia(31)
+    #  crear_referencia(32)
+    #  crear_referencia(33)
+    #  crear_referencia(34)
+    #  crear_referencia(35)
+    #  crear_referencia(36)
+    #end
 
     coberta = Coberta.where(:edifici_id => @edifici.id).last
     if (coberta.terrat_transitable == true)
@@ -576,7 +576,6 @@ class ReferenciesController < ApplicationController
     if (especials.piscina_purificador == true)
       crear_referencia(339)
     end
-    
 
     redirect_to action: "index"
   end
