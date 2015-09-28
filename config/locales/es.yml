@@ -21,6 +21,10 @@ es:
               blank: "Se debe asignar un nombre al edificio"
             tipus_edifici:
               blank: "Se debe definir el tipo de edificio"
+        identificacio:
+          attributes:
+            foto_facana_content_type:
+              invalid: "El tipo de archivo no es válido. Utilizad imágenes en format JPG o PNG."
   layouts:
     navigation:
       titol: "Libro del edificio"

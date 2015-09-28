@@ -21,6 +21,10 @@ ca:
               blank: "Cal assignar un nom a l'edifici"
             tipus_edifici:
               blank: "Cal definir el tipus d'edifici"
+        identificacio:
+          attributes:
+            foto_facana_content_type:
+              invalid: "El tipus d'arxiu no és vàlid. Utilitzeu imatges en format JPG o PNG."
   layouts:
     navigation:
       titol: "Llibre de l'edifici"
