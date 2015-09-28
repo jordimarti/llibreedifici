@@ -143,7 +143,11 @@ class EdificisController < ApplicationController
   def duplicate
     @edifici = Edifici.find(params[:id])
     nou_edifici = @edifici.dup
-    nou_edifici.nom_edifici = @edifici.nom_edifici + ' copia'
+    if params[:locale] == 'es'
+      nou_edifici.nom_edifici = @edifici.nom_edifici + ' copia'
+    else
+      nou_edifici.nom_edifici = @edifici.nom_edifici + ' còpia'
+    end
     nou_edifici.save
     duplicate_complements(@edifici.id, nou_edifici.id)
     redirect_to edificis_url
@@ -154,6 +158,8 @@ class EdificisController < ApplicationController
     @identificacio = Identificacio.where(:edifici_id => id_edifici).last
     nova_identificacio = @identificacio.dup
     nova_identificacio.edifici_id = id_nou_edifici
+    nova_identificacio.foto_facana = @identificacio.foto_facana
+    nova_identificacio.planol_emplacament = @identificacio.planol_emplacament
     nova_identificacio.save
     #Fonamentacio
     @fonamentacio = Fonamentacio.where(:edifici_id => id_edifici).last
@@ -175,6 +181,11 @@ class EdificisController < ApplicationController
     nova_coberta = @coberta.dup
     nova_coberta.edifici_id = id_nou_edifici
     nova_coberta.save
+    #Particions
+    @particio = Particio.where(:edifici_id => id_edifici).last
+    nova_particio = @particio.dup
+    nova_particio.edifici_id = id_nou_edifici
+    nova_particio.save
     #Sanejament
     @sanejament = Sanejament.where(:edifici_id => id_edifici).last
     nova_sanejament = @sanejament.dup

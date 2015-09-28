@@ -44,6 +44,10 @@
                       <div class="llistat-edificis">
                         <% @edificis.each do |edifici| %>
                           <div class="item-llistat-edificis">
+                            <div class="imatge-item-llistat-edificis">
+                              <%= link_to image_tag(edifici.identificacio.foto_facana.url(:thumb)), edit_edifici_identificacio_path(edifici.id, edifici.identificacio.id) %>
+                                
+                            </div>
                             <div class="text-item-llistat-edificis">
                               <%= link_to(edifici.nom_edifici, edit_edifici_identificacio_path(edifici.id, edifici.identificacio.id), :class => 'link-item-edifici') %>
                               <br>
