@@ -21,8 +21,14 @@
     <% end %>
 
     <div class="row">
+      <div class="medium-12 columns">
+        <div class="titol-grup-subsistema"><%= t('.envans_cel_rasos') %></div>
+      </div>
+    </div>
+
+    <div class="row">
       <div class="medium-6 columns">
-        <div class="titol-subsistema"><%= t('.envans') %></div>
+        <div class="titol-subsistema"><%= t('.material_envans') %></div>
         <div class="camps-subsistema">
           <%= f.input :envans_ceramica %>
           <%= f.input :envans_cartro_guix %>
@@ -33,7 +39,7 @@
         </div>
       </div>
       <div class="medium-6 columns">
-        <div class="titol-subsistema"><%= t('.cel_rasos') %></div>
+        <div class="titol-subsistema"><%= t('.material_cel_rasos') %></div>
         <div class="camps-subsistema">
           <%= f.input :celras_fibres_vegetals %>
           <%= f.input :celras_fibres_minerals %>
@@ -45,18 +51,35 @@
     </div>
 
     <div class="row">
-      <div class="medium-6 columns">
+      <div class="medium-12 columns">
         <div class="titol-subsistema"><%= t('.aillament_tipologia') %></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-6 columns">
         <div class="camps-subsistema">
-          <%= f.input :aillament_sota_sostre %>
-          <%= f.input :aillament_sobre_sostre %>
           <%= f.input :aillament_plaques %>
           <%= f.input :aillament_mantes %>
           <%= f.input :aillament_amorf %>
         </div>
       </div>
       <div class="medium-6 columns">
+        <div class="camps-subsistema">
+          <%= f.input :aillament_sota_sostre %>
+          <%= f.input :aillament_sobre_sostre %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-12 columns">
         <div class="titol-subsistema"><%= t('.aillament_material') %></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-6 columns">
         <div class="camps-subsistema">
           <%= f.input :aillament_fibra_vidre %>
           <%= f.input :aillament_polietile_reticulat %>
@@ -65,6 +88,10 @@
           <%= f.input :aillament_escuma_poliureta %>
           <%= f.input :aillament_polietile_expandit %>
           <%= f.input :aillament_fibres_textils %>
+        </div>
+      </div>
+      <div class="medium-6 columns">
+        <div class="camps-subsistema">
           <%= f.input :aillament_argila_expandida %>
           <%= f.input :aillament_escuma_melamina %>
           <%= f.input :aillament_poliestire_extrudit %>
@@ -72,6 +99,14 @@
           <%= f.input :aillament_perlita_expandida %>
           <%= f.input :aillament_suro_aglomerat %>
         </div>
+      </div>
+    </div>
+
+    <hr class="form-divider">
+
+    <div class="row">
+      <div class="medium-12 columns">
+        <div class="titol-grup-subsistema"><%= t('.revestiments') %></div>
       </div>
     </div>
 
@@ -102,9 +137,17 @@
       </div>
     </div>
 
+    <hr class="form-divider">
+
     <div class="row">
       <div class="medium-12 columns">
-        <div class="titol-subsistema"><%= t('.paviments') %></div>
+        <div class="titol-grup-subsistema"><%= t('.paviments') %></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-12 columns">
+        <div class="titol-subsistema"><%= t('.material_paviments') %></div>
       </div>
     </div>
 
@@ -134,20 +177,46 @@
       </div>
     </div>
 
+    <hr class="form-divider">
+
+    <div class="row">
+      <div class="medium-12 columns">
+        <div class="titol-grup-subsistema"><%= t('.portes') %></div>
+      </div>
+    </div>
+
     <div class="row">
       <div class="medium-6 columns">
-        <div class="titol-subsistema"><%= t('.portes') %></div>
+        <div class="titol-subsistema"><%= t('.bastiments') %></div>
         <div class="camps-subsistema">
           <%= f.input :porta_bastiment_fusta %>
           <%= f.input :porta_bastiment_metalic %>
+        </div>
+      </div>
+      <div class="medium-6 columns">
+        <div class="titol-subsistema"><%= t('.fulles') %></div>
+        <div class="camps-subsistema">
           <%= f.input :porta_fulla_massissa_fusta %>
           <%= f.input :porta_fulla_aplacat_fusta %>
           <%= f.input :porta_fulla_vidre %>
           <%= f.input :porta_fulla_alumini %>
           <%= f.input :porta_fulla_ferro %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-6 columns">
+        <div class="titol-subsistema"><%= t('.acabat') %></div>
+        <div class="camps-subsistema">
           <%= f.input :porta_acabat_pintat %>
           <%= f.input :porta_acabat_lacat %>
           <%= f.input :porta_acabat_envernissat %>
+        </div>
+      </div>
+      <div class="medium-6 columns">
+        <div class="titol-subsistema"><%= t('.ferratges') %></div>
+        <div class="camps-subsistema">
           <%= f.input :porta_ferratge_llauto %>
           <%= f.input :porta_ferratge_acer_llautonat %>
           <%= f.input :porta_ferratge_acer_niquelat %>
@@ -155,13 +224,33 @@
           <%= f.input :porta_ferratge_alumini %>
         </div>
       </div>
+    </div>
+
+    <hr class="form-divider">
+
+    <div class="row">
+      <div class="medium-12 columns">
+        <div class="titol-grup-subsistema"><%= t('.baranes') %></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-12 columns">
+        <div class="titol-subsistema"><%= t('.tipus_baranes') %></div>
+      </div>
+    </div>
+
+    <div class="row">
       <div class="medium-6 columns">
-        <div class="titol-subsistema"><%= t('.baranes') %></div>
         <div class="camps-subsistema">
           <%= f.input :barana_ferro_forjat %>
           <%= f.input :barana_perfils_acer %>
           <%= f.input :barana_perfils_alumini %>
           <%= f.input :barana_fusta %>
+        </div>
+      </div>
+      <div class="medium-6 columns">
+        <div class="camps-subsistema">
           <%= f.input :barana_pvc %>
           <%= f.input :barana_vidre_laminat %>
           <%= f.input :barana_metacrilat %>

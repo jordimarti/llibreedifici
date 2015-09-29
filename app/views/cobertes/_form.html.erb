@@ -21,28 +21,210 @@
     <% end %>
 
     <div class="row">
+      <div class="medium-12 columns">
+        <div class="titol-grup-subsistema"><%= t('.terrat') %></div>
+      </div>
+    </div>
+
+    <div class="row">
       <div class="medium-6 columns">
-        <div class="titol-subsistema"><%= t('.terrat') %></div>
-        <%= f.input :terrat_transitable %>
-        <%= f.input :terrat_no_transitable %>
-        <% if @edifici.tipus_edifici == 'existent_plurifamiliar' || @edifici.tipus_edifici == 'existent_unifamiliar' %>
-          <%= f.input :terrat_aillament_termic %>
-          <%= f.input :terrat_lamina_impermeabilitzant %>
-        <% end %>
+        <div class="titol-subsistema"><%= t('.terrat_tipologia') %></div>
+        <div class="camps-subsistema">
+          <%= f.input :terrat_transitable %>
+          <%= f.input :terrat_no_transitable %>
+          <%= f.input :terrat_tradicional %>
+          <%= f.input :terrat_invertida %>
+        </div>
       </div>
       <div class="medium-6 columns">
-        <div class="titol-subsistema"><%= t('.coberta_inclinada') %></div>
-        <%= f.input :coberta_teula_arab %>
-        <%= f.input :coberta_teula_plana %>
-        <%= f.input :coberta_teula_ciment %>
-        <%= f.input :coberta_pissarra %>
-        <%= f.input :coberta_fibrociment %>
-        <%= f.input :coberta_asfaltica %>
-        <%= f.input :coberta_xapa_acer %>
-        <%= f.input :coberta_xapa_coure %>
-        <% if @edifici.tipus_edifici == 'existent_plurifamiliar' || @edifici.tipus_edifici == 'existent_unifamiliar' %>
-          <%= f.input :coberta_aillament_termic %>
-        <% end %>
+        <div class="titol-subsistema"><%= t('.terrat_impermeabilitzacio') %></div>
+        <div class="camps-subsistema">
+          <%= f.input :terrat_lamina_bituminosa_oxiasfalt %>
+          <%= f.input :terrat_lamina_bituminosa_betum %>
+          <%= f.input :terrat_lamina_pvc_resistent %>
+          <%= f.input :terrat_lamina_pvc_no_resistent %>
+          <%= f.input :terrat_lamina_epdm %>
+          <%= f.input :terrat_lamina_cautxu %>
+          <%= f.input :terrat_lamina_polietile %>
+          <%= f.input :terrat_lamina_plaques_bituminoses %>
+          <%= f.input :terrat_lamina_cautxu_sintetic %>
+          <%= f.input :terrat_lamina_pastes_bituminoses %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-6 columns">
+        <div class="titol-subsistema"><%= t('.terrat_juntes') %></div>
+        <div class="camps-subsistema">
+          <%= f.input :terrat_junta_dilatacio_cautxu_butil %>
+          <%= f.input :terrat_junta_dilatacio_cautxu_sintetic %>
+          <%= f.input :terrat_junta_dilatacio_emulsions_bituminoses %>
+          <%= f.input :terrat_junta_dilatacio_silicona %>
+        </div>
+      </div>
+      <div class="medium-6 columns">
+        <div class="titol-subsistema"><%= t('.terrat_acabats') %></div>
+        <div class="camps-subsistema">  
+          <%= f.input :terrat_acabat_enrajolat %>
+          <%= f.input :terrat_acabat_lloses_flotants %>
+          <%= f.input :terrat_acabat_graveta %>
+          <%= f.input :terrat_acabat_lamina_autoprotegida %>
+        </div>
+      </div>
+    </div>
+
+    <hr class="form-divider">
+
+    <div class="row">
+      <div class="medium-12 columns">
+        <div class="titol-grup-subsistema"><%= t('.coberta_inclinada') %></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-12 columns">
+        <div class="titol-subsistema"><%= t('.material_acabat') %></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-6 columns">
+        <div class="camps-subsistema">
+          <%= f.input :coberta_teula_arab %>
+          <%= f.input :coberta_teula_plana %>
+          <%= f.input :coberta_teula_ciment %>
+          <%= f.input :coberta_pissarra %>
+        </div>
+      </div>
+      <div class="medium-6 columns">
+        <div class="camps-subsistema">
+          <%= f.input :coberta_fibrociment %>
+          <%= f.input :coberta_asfaltica %>
+          <%= f.input :coberta_xapa_acer %>
+          <%= f.input :coberta_xapa_coure %>
+        </div>
+      </div>
+    </div>
+
+    <hr class="form-divider">
+
+    <div class="row">
+      <div class="medium-12 columns">
+        <div class="titol-grup-subsistema"><%= t('.lluernes_claraboies') %></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-6 columns">
+        <div class="titol-subsistema"><%= t('.tipus_lluernes') %></div>
+        <div class="camps-subsistema">
+          <%= f.input :lluernes_fixes %>
+          <%= f.input :lluernes_practicables %>
+        </div>
+      </div>
+      <div class="medium-6 columns">
+        <div class="titol-subsistema"><%= t('.estructura_lluernes') %></div>
+        <div class="camps-subsistema">
+          <%= f.input :lluernes_entramat_formigo %>
+          <%= f.input :lluernes_perfils_alumini %>
+          <%= f.input :lluernes_entramat_acer %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-12 columns">
+        <div class="titol-subsistema"><%= t('.cobertura_lluernes') %></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-6 columns">
+        <div class="camps-subsistema">
+          <%= f.input :lluernes_emmotllats_vidre %>
+          <%= f.input :lluernes_vidre_armat %>
+          <%= f.input :lluernes_vidre_laminat %>
+        </div>
+      </div>
+      <div class="medium-6 columns">
+        <div class="camps-subsistema">
+          <%= f.input :lluernes_poliester %>
+          <%= f.input :lluernes_policarbonat %>
+        </div>
+      </div>
+    </div>
+
+    <hr class="form-divider">
+
+    <div class="row">
+      <div class="medium-12 columns">
+        <div class="titol-grup-subsistema"><%= t('.aillament') %></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-6 columns">
+        <div class="titol-subsistema"><%= t('.tipologia_aillament') %></div>
+        <div class="camps-subsistema">
+          <%= f.input :aillament_cambra_ventilada %>
+          <%= f.input :aillament_material_adossat %>
+          <%= f.input :aillament_formigo_alleugerit_aire %>
+          <%= f.input :aillament_formigo_alleugerit_arids %>
+        </div>
+      </div>
+      <div class="medium-6 columns">
+        <div class="titol-subsistema"><%= t('.forma_aillament') %></div>
+        <div class="camps-subsistema">
+          <%= f.input :aillament_lamines %>
+          <%= f.input :aillament_amorf %>
+          <%= f.input :aillament_mantes %>
+          <%= f.input :aillament_plaques %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-12 columns">
+        <div class="titol-subsistema"><%= t('.material_aillament') %></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-6 columns">
+        <div class="camps-subsistema">
+          <%= f.input :aillament_poliestire_expandit %>
+          <%= f.input :aillament_poliestire_estrudit %>
+          <%= f.input :aillament_polietile_expandit %>
+          <%= f.input :aillament_polietile_reticulat %>
+          <%= f.input :aillament_fibra_vidre %>
+          <%= f.input :aillament_llana_roca %>
+          <%= f.input :aillament_fibres_textils %>
+        </div>
+      </div>
+      <div class="medium-6 columns">
+        <div class="camps-subsistema">
+          <%= f.input :aillament_fibres_celulosa %>
+          <%= f.input :aillament_escuma_poliureta %>
+          <%= f.input :aillament_escuma_fenolica %>
+          <%= f.input :aillament_escuma_resina_melamina %>
+          <%= f.input :aillament_argila_expandida %>
+          <%= f.input :aillament_perlita_expandida %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-12 columns">
+        <div class="titol-subsistema"><%= t('.gruix_aillament') %></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-3 columns">
+        <div class="camps-subsistema">
+          <%= f.input :aillament_gruix %>
+        </div>
       </div>
     </div>
 
