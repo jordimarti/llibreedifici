@@ -23,6 +23,8 @@
 						<br/>
 						<%= link_to "prova docmosis", docmosis_path(@edifici.id), :class=> "button small radius" %>
 						<br/>
+						<%= link_to "Docmosis edifici nou", docmosis_edifici_nou_path(@edifici.id), :class=> "button small radius" %>
+						<br/>
 						<a href="documents/nou.docx" class="button small radius"><%= t('.generar_llibre') %></a>
 						<br/>
 						<a href="documents/manual_habitatge.docx" class="button small radius"><%= t('.generar_manual') %></a>

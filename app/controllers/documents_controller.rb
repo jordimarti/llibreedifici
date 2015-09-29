@@ -1,12 +1,18 @@
 class DocumentsController < ApplicationController
   before_action :set_edifici
+  include Docmosis
   layout 'edifici'
 
   def index
     @submenu_actiu = 'documents'
   end
 
-  def docmosis
+  def docmosis_edifici_nou
+    # Mètode dins del mòdul Docmosis
+    edifici_nou
+  end
+
+  def docmosis_old
     imatge_facana = @edifici.identificacio.foto_facana.url(:medium)
     dimensions_facana = Paperclip::Geometry.from_file(imatge_facana)
 
