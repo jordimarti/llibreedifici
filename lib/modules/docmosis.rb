@@ -228,6 +228,59 @@ module Docmosis
     return llistat_operacions
   end
 
+  def comprovacio_coberta_plana
+    coberta = Coberta.where(:edifici_id => @edifici.id).last
+    if (coberta.terrat_transitable == true || coberta.terrat_no_transitable == true || coberta.terrat_tradicional == true || coberta.terrat_invertida == true)
+      return true
+    else
+      return false
+    end
+  end
+
+  def comprovacio_coberta_inclinada
+    coberta = Coberta.where(:edifici_id => @edifici.id).last
+    if (coberta.coberta_teula_arab == true || coberta.coberta_teula_plana == true || coberta.coberta_teula_ciment == true || coberta.coberta_pissarra == true || coberta.coberta_fibrociment == true || coberta.coberta_asfaltica == true || coberta.coberta_xapa_acer == true || coberta.coberta_xapa_coure == true)
+      return true
+    else
+      return false
+    end
+  end
+
+  def comprovacio_lluernes
+    coberta = Coberta.where(:edifici_id => @edifici.id).last
+    if (coberta.lluernes_fixes == true) || coberta.lluernes_practicables == true
+      return true
+    else
+      return false
+    end
+  end
+
+  def items_arxiu
+    checklist = ChecklistNouPlurifamiliar.where(:edifici_id => @edifici.id).last
+    llistat_apartats = Array.new
+    llistat_apartats << {
+      "llicencies_preceptives"=>checklist.llicencies_preceptives,
+      "certificat_final_obra"=>checklist.certificat_final_obra,
+      "acta_recepcio_obra"=>checklist.acta_recepcio_obra,
+      "escriptura_publica"=>checklist.escriptura_publica,
+      "documents_garantia"=>checklist.documents_garantia,
+      "documents_garantia_parts_comunes"=>checklist.documents_garantia_parts_comunes,
+      "certificacio_energetica"=>checklist.certificacio_energetica,
+      "polissa_assegurances"=>checklist.polissa_assegurances,
+      "escriptura_propietat_horitzontal"=>checklist.escriptura_propietat_horitzontal,
+      "estatus_comunitat"=>checklist.estatus_comunitat,
+      "cedules_regims_juridics"=>checklist.cedules_regims_juridics,
+      "carregues_reals"=>checklist.carregues_reals,
+      "documents_complementaris"=>checklist.documents_complementaris,
+      "documents_acreditatius_ajuts"=>checklist.documents_acreditatius_ajuts,
+      "documents_justificacio_operacions"=>checklist.documents_justificacio_operacions,
+      "certificat_final_obra_instalacions"=>checklist.certificat_final_obra_instalacions,
+      "declaracions_ce_ascensors"=>checklist.declaracions_ce_ascensors
+    }
+    llistat_apartats.to_json
+    return llistat_apartats
+  end
+
 
 
   def edifici_nou
@@ -304,7 +357,11 @@ module Docmosis
         'sistema_tancaments' => comprovacio_sistema('tancaments'),
         'llistat_tancaments' => items_sistemes('tancaments'),
         'sistema_coberta' => comprovacio_sistema('cobertes'),
-        'llistat_coberta' => items_sistemes('cobertes')
+        'llistat_coberta' => items_sistemes('cobertes'),
+        'comprovacio_coberta_plana' => comprovacio_coberta_plana,
+        'comprovacio_coberta_inclinada' => comprovacio_coberta_inclinada,
+        'comprovacio_lluernes' => comprovacio_lluernes,
+        'arxiu_documents' => items_arxiu
       }
     }.to_json, :content_type => :json) {|response, request, result, &block|
       case response.code
