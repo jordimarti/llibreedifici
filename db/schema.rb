@@ -434,6 +434,9 @@ ActiveRecord::Schema.define(version: 20150922154827) do
     t.boolean  "mur_formigo_armat"
     t.boolean  "mur_pantalla"
     t.boolean  "drenatge_perimetral"
+    t.boolean  "camera_aire"
+    t.boolean  "impermeabilitzacio_exterior"
+    t.boolean  "impermeabilitzacio_interior"
     t.boolean  "sabates_paredat"
     t.boolean  "sabates_aillades"
     t.boolean  "sabates_continues"
@@ -442,8 +445,8 @@ ActiveRecord::Schema.define(version: 20150922154827) do
     t.boolean  "formigo_armat"
     t.boolean  "pilons"
     t.boolean  "pantalles"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "garantia_constructors", force: :cascade do |t|

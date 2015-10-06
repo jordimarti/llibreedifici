@@ -8,6 +8,9 @@ class CreateFonamentacions < ActiveRecord::Migration
       t.boolean :mur_formigo_armat
       t.boolean :mur_pantalla
       t.boolean :drenatge_perimetral
+      t.boolean :camera_aire
+      t.boolean :impermeabilitzacio_exterior
+      t.boolean :impermeabilitzacio_interior
       t.boolean :sabates_paredat
       t.boolean :sabates_aillades
       t.boolean :sabates_continues

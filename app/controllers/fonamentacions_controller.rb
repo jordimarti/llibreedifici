@@ -79,6 +79,6 @@ class FonamentacionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def fonamentacio_params
-      params.require(:fonamentacio).permit(:edifici_id, :mur_pedra, :mur_fabrica_mao, :mur_fabrica_bloc, :mur_formigo_armat, :mur_pantalla, :drenatge_perimetral, :sabates_paredat, :sabates_continues, :sabates_aillades, :llosa, :formigo, :formigo_armat, :pilons, :pantalles)
+      params.require(:fonamentacio).permit(:edifici_id, :mur_pedra, :mur_fabrica_mao, :mur_fabrica_bloc, :mur_formigo_armat, :mur_pantalla, :drenatge_perimetral, :camera_aire, :impermeabilitzacio_exterior, :impermeabilitzacio_interior, :sabates_paredat, :sabates_continues, :sabates_aillades, :llosa, :formigo, :formigo_armat, :pilons, :pantalles)
     end
 end

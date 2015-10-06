@@ -24,10 +24,17 @@ class ReferenciesController < ApplicationController
 
     fonamentacio = Fonamentacio.where(:edifici_id => @edifici.id).last
     if (fonamentacio.mur_pedra == true || fonamentacio.mur_fabrica_mao == true || fonamentacio.mur_fabrica_bloc == true || fonamentacio.mur_formigo_armat || fonamentacio.mur_pantalla)
-      crear_referencia(2)
-      crear_referencia(3)
-      crear_referencia(4)
-      crear_referencia(5)
+      if (fonamentacio.drenatge_perimetral == true)
+        crear_referencia(4)
+      else
+        crear_referencia(3)
+      end
+      if (fonamentacio.camera_aire == true)
+        crear_referencia(5)
+      end
+      if (fonamentacio.impermeabilitzacio_interior == true)
+        crear_referencia(6)
+      end
     end
     if (fonamentacio.sabates_paredat == true || fonamentacio.sabates_aillades == true || fonamentacio.sabates_continues == true || fonamentacio.llosa == true || fonamentacio.formigo == true || fonamentacio.formigo_armat == true || fonamentacio.pilons == true || fonamentacio.pantalles == true) 
       crear_referencia(1)
