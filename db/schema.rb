@@ -365,6 +365,7 @@ ActiveRecord::Schema.define(version: 20150922154827) do
     t.boolean  "parets_tova"
     t.boolean  "parets_tapia"
     t.boolean  "parets_fabrica_mao"
+    t.boolean  "parets_fabrica_mao_armada"
     t.boolean  "parets_bloc_ceramic"
     t.boolean  "parets_bloc_formigo"
     t.boolean  "parets_entramat_fusta"
