@@ -27,6 +27,7 @@ class CreateEstructures < ActiveRecord::Migration
       t.boolean :entrebigat_taulell
       t.boolean :entrebigat_revolto_ceramic
       t.boolean :entrebigat_revolto_formigo
+      t.boolean :volta_mao
       t.boolean :forjat_reticular
       t.boolean :llosa_formigo
       t.boolean :forjat_sanitari

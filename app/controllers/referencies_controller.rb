@@ -70,19 +70,24 @@ class ReferenciesController < ApplicationController
     end
     if (estructura.parets_entramat_fusta == true || estructura.jasseres_fusta == true || estructura.jasseres_fusta_laminada == true || estructura.forjat_fusta == true || estructura.entrebigat_taulell == true || estructura.encavallada_bigues_fusta == true)
       crear_referencia(19)
-    end
-    if (estructura.jasseres_acer == true || estructura.jasseres_acer_formigo == true)
       crear_referencia(20)
       crear_referencia(21)
     end
-    if (estructura.jasseres_acer == true || estructura.forjat_metalic == true || estructura.encavallada_bigues_metall == true)
+    if (estructura.jasseres_acer == true || estructura.jasseres_acer_formigo == true)
       crear_referencia(22)
       crear_referencia(23)
-      crear_referencia(24)
     end
-    if (estructura.jasseres_formigo_armat == true || estructura.forjat_formigo_armat == true || estructura.forjat_reticular == true || estructura.llosa_formigo == true || estructura.forjat_inclinat_coberta_formigo == true || estructura.encavallada_bigues_formigo == true)
+    if (estructura.jasseres_acer == true || estructura.forjat_metalic == true || estructura.encavallada_bigues_metall == true)
+      crear_referencia(24)
       crear_referencia(25)
       crear_referencia(26)
+    end
+    if (estructura.jasseres_formigo_armat == true || estructura.forjat_formigo_armat == true || estructura.forjat_reticular == true || estructura.llosa_formigo == true || estructura.forjat_inclinat_coberta_formigo == true || estructura.encavallada_bigues_formigo == true)
+      crear_referencia(27)
+      crear_referencia(28)
+    end
+    if (estructura.volta_mao == true)
+      crear_referencia(29)
     end
     
 
