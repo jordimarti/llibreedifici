@@ -808,6 +808,9 @@ es:
   estructures:
     edit:
       titol_sistemes: "Descripción constructiva del edificio"
+      altres_elements: "Otros elementos"
+      afegir_element: "Añadir un nuevo elemento"
+      nou_element: "Elemento definido por el usuario"
     update:
       guardat_ok: "Los datos se han guardado correctamente"
     form:
@@ -830,15 +833,18 @@ es:
   tancaments_verticals:
     edit:
       titol_sistemes: "Descripcióv constructiva del edificio"
+      altres_elements: "Otros elementos"
+      afegir_element: "Añadir un nuevo elemento"
+      nou_element: "Elemento definido por el usuario"
     update:
       guardat_ok: "Los datos se han guardado correctamente"
     form:
       guardar: "Guardar"
       titol_tancaments: "CERRAMIENTOS VERTICALES"
-      tancaments_facana: "Cerramientos de fachada"
+      tancaments_facana: "Parte maciza de fachada"
       acabats_facana: "Acabados de fachada"
-      altres_caracteristiques_facana: "Otras características de la fachada"
-      parets_mitgeres: "Paredes medianeras"
+      altres_caracteristiques_facanes: "Otras características de la fachada"
+      parets_mitgeres: "Paredes medianeras: tabique pluvial"
       balcons: "Balcones"
       baranes: "Barandillas"
       llindes: "Dinteles"
@@ -851,6 +857,9 @@ es:
   cobertes:
     edit:
       titol_sistemes: "Descripción constructiva del edificio"
+      altres_elements: "Otros elementos"
+      afegir_element: "Añadir un nuevo elemento"
+      nou_element: "Elemento definido por el usuario"
     update:
       guardat_ok: "Los datos se han guardado correctamente"
     form:
@@ -875,6 +884,9 @@ es:
   particions:
     edit:
       titol_sistemes: "Descripción constructiva del edificio"
+      altres_elements: "Otros elementos"
+      afegir_element: "Añadir un nuevo elemento"
+      nou_element: "Elemento definido por el usuario"
     update:
       guardat_ok: "Los datos se han guardado correctamente"
     form:
@@ -900,6 +912,9 @@ es:
   sanejaments:
     edit:
       titol_sistemes: "Descripción constructiva del edificio"
+      altres_elements: "Otros elementos"
+      afegir_element: "Añadir un nuevo elemento"
+      nou_element: "Elemento definido por el usuario"
     update:
       guardat_ok: "Los datos se han guardado correctamente"
     form:
@@ -911,6 +926,9 @@ es:
   aigues:
     edit:
       titol_sistemes: "Descripción constructiva del edificio"
+      altres_elements: "Otros elementos"
+      afegir_element: "Añadir un nuevo elemento"
+      nou_element: "Elemento definido por el usuario"
     update:
       guardat_ok: "Los datos se han guardado correctamente"
     form:
@@ -922,6 +940,9 @@ es:
   electricitats:
     edit:
       titol_sistemes: "Descripción constructiva del edificio"
+      altres_elements: "Otros elementos"
+      afegir_element: "Añadir un nuevo elemento"
+      nou_element: "Elemento definido por el usuario"
     update:
       guardat_ok: "Los datos se han guardado correctamente"
     form:
@@ -932,6 +953,9 @@ es:
   climatitzacions:
     edit:
       titol_sistemes: "Descripción constructiva del edificio"
+      altres_elements: "Otros elementos"
+      afegir_element: "Añadir un nuevo elemento"
+      nou_element: "Elemento definido por el usuario"
     update:
       guardat_ok: "Los datos se han guardado correctamente"
     form:
@@ -947,6 +971,9 @@ es:
   gas:
     edit:
       titol_sistemes: "Descripción constructiva del edificio"
+      altres_elements: "Otros elementos"
+      afegir_element: "Añadir un nuevo elemento"
+      nou_element: "Elemento definido por el usuario"
     update:
       guardat_ok: "Los datos se han guardado correctamente"
     form:
@@ -956,6 +983,9 @@ es:
   ventilacions:
     edit:
       titol_sistemes: "Descripción constructiva del edificio"
+      altres_elements: "Otros elementos"
+      afegir_element: "Añadir un nuevo elemento"
+      nou_element: "Elemento definido por el usuario"
     update:
       guardat_ok: "Los datos se han guardado correctamente"
     form:
@@ -968,6 +998,9 @@ es:
   incendis:
     edit:
       titol_sistemes: "Descripción constructiva del edificio"
+      altres_elements: "Otros elementos"
+      afegir_element: "Añadir un nuevo elemento"
+      nou_element: "Elemento definido por el usuario"
     update:
       guardat_ok: "Los datos se han guardado correctamente"
     form:
@@ -977,6 +1010,9 @@ es:
   ascensors:
     edit:
       titol_sistemes: "Descripción constructiva del edificio"
+      altres_elements: "Otros elementos"
+      afegir_element: "Añadir un nuevo elemento"
+      nou_element: "Elemento definido por el usuario"
     update:
       guardat_ok: "Los datos se han guardado correctamente"
     form:
@@ -986,6 +1022,9 @@ es:
   telecomunicacions:
     edit:
       titol_sistemes: "Descripción constructiva del edificio"
+      altres_elements: "Otros elementos"
+      afegir_element: "Añadir un nuevo elemento"
+      nou_element: "Elemento definido por el usuario"
     update:
       guardat_ok: "Los datos se han guardado correctamente"
     form:
@@ -995,6 +1034,9 @@ es:
   especials:
     edit:
       titol_sistemes: "Descripción constructiva del edificio"
+      altres_elements: "Otros elementos"
+      afegir_element: "Añadir un nuevo elemento"
+      nou_element: "Elemento definido por el usuario"
     update:
       guardat_ok: "Los datos se han guardado correctamente"
     form:

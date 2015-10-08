@@ -91,24 +91,93 @@ class ReferenciesController < ApplicationController
     end
     
 
-    #tancament = TancamentsVertical.where(:edifici_id => @edifici.id).last
-    #if (tancament.acabat_revestit_arrebossat_pintat == true || tancament.acabat_revestit_estucat == true || tancament.acabat_revestit_morter_monocapa == true || tancament.acabat_revestit_aplacat_ceramic == true || tancament.acabat_revestit_aplacat_pedra == true || tancament.acabat_revestit_xapa_metalica == true)
-    #  crear_referencia(26)
-    #  crear_referencia(27)
-    #end
-    #if (tancament.acabat_vist_paredat == true || tancament.acabat_vist_carreus == true || tancament.acabat_vist_fabrica_mao == true || tancament.acabat_vist_fabrica_bloc_ceramic == true || tancament.acabat_vist_bloc_formigo == true || tancament.acabat_vist_panell_formigo == true || tancament.acabat_vist_panell_metalic_sandwich == true)
-    #  crear_referencia(28)
-    #end
-    #if (tancament.fusteria_fusta == true || tancament.fusteria_acer == true || tancament.fusteria_alumini == true || tancament.fusteria_pvc == true)
-    #  crear_referencia(29)
-    #  crear_referencia(30)
-    #  crear_referencia(31)
-    #  crear_referencia(32)
-    #  crear_referencia(33)
-    #  crear_referencia(34)
-    #  crear_referencia(35)
-    #  crear_referencia(36)
-    #end
+    tancament = TancamentsVertical.where(:edifici_id => @edifici.id).last
+    if (tancament.acabat_revestiment_arrebossat == true || tancament.acabat_pintura_plastica == true || tancament.acabat_pintura_silicat == true || tancament.acabat_revestiment_resines == true || tancament.acabat_pintura_cals == true || tancament.acabat_esgrafiat == true || tancament.acabat_estuc_cals == true || tancament.acabat_morter_monocapa == true || tancament.acabat_aplacat_pedra == true || tancament.acabat_aplacat_enrajolat == true || tancament.acabat_aplacat_plafons == true)
+      crear_referencia(30)
+      crear_referencia(31)
+    end
+    if (tancament.paret_pedra == true || tancament.paret_mao_massis == true || tancament.paret_mao_perforat == true || tancament.paret_bloc_morter == true || tancament.paret_bloc_formigo_lleuger == true || tancament.plafons_formigo_massis == true || tancament.plafons_formigo_alveolat == true || tancament.plafons_formigo_aillant == true || tancament.mur_cortina == true)
+      crear_referencia(32)
+    end
+    if (tancament.acabat_revestiment_arrebossat == true)
+      crear_referencia(33)
+    end
+    if (tancament.acabat_pintura_cals == true)
+      crear_referencia(34)
+    end
+    if (tancament.acabat_pintura_plastica == true)
+      crear_referencia(35)
+    end
+    if (tancament.acabat_pintura_silicat == true)
+      crear_referencia(36)
+    end
+    if (tancament.acabat_estuc_cals == true)
+      crear_referencia(37)
+    end
+    if (tancament.acabat_esgrafiat == true)
+      crear_referencia(38)
+    end
+    if (tancament.acabat_revestiment_resines == true)
+      crear_referencia(39)
+    end
+    if (tancament.acabat_aplacat_pedra == true)
+      crear_referencia(40)
+    end
+    if (tancament.acabat_aplacat_enrajolat == true)
+      crear_referencia(41)
+    end
+    if (tancament.acabat_obra_vista == true)
+      crear_referencia(42)
+    end
+    if (tancament.acabat_aplacat_plafons == true)
+      crear_referencia(43)
+    end
+    if (tancament.acabat_aplacat_fixacio_morter == true)
+      crear_referencia(44)
+    end
+    if (tancament.acabat_aplacat_fixacio_acer_galvanitzat == true || tancament.acabat_aplacat_fixacio_acer_inoxidable == true || tancament.acabat_aplacat_fixacio_alumini == true)
+      crear_referencia(45)
+    end
+    if (tancament.parets_mitgeres_enva_ceramica == true || tancament.parets_mitgeres_xapa_acer == true || tancament.parets_mitgeres_arrebossat == true || tancament.parets_mitgeres_pintura_silicat == true || tancament.parets_mitgeres_plaques_fibrociment == true || tancament.parets_mitgeres_pintura_plastica == true || tancament.parets_mitgeres_pintura_cals == true)
+      crear_referencia(46)
+    end
+    if (tancament.parets_mitgeres_enva_ceramica == true)
+      crear_referencia(47)
+    end
+    if (tancament.parets_mitgeres_plaques_fibrociment == true)
+      crear_referencia(48)
+    end
+    if (tancament.parets_mitgeres_arrebossat == true || tancament.parets_mitgeres_pintura_silicat == true || tancament.parets_mitgeres_pintura_plastica == true || tancament.parets_mitgeres_pintura_cals == true)
+      crear_referencia(49)
+    end
+    if (tancament.parets_mitgeres_arrebossat == true)
+      crear_referencia(50)
+    end
+    if (tancament.parets_mitgeres_pintura_cals == true)
+      crear_referencia(51)
+    end
+    if (tancament.parets_mitgeres_pintura_plastica == true)
+      crear_referencia(52)
+    end
+    if (tancament.parets_mitgeres_pintura_silicat == true)
+      crear_referencia(53)
+    end
+    if (tancament.fusteria_fusta == true || tancament.fusteria_acer == true || tancament.fusteria_alumini == true || tancament.fusteria_pvc == true)
+      crear_referencia(54)
+      crear_referencia(55)
+      crear_referencia(56)
+      crear_referencia(57)
+      crear_referencia(58)
+    end
+    if (tancament.baranes_ferro_forjat == true)
+      crear_referencia(59)
+    end
+    if (tancament.baranes_perfils_acer == true || tancament.baranes_perfils_alumini == true || tancament.baranes_fusta == true || tancament.baranes_malla_metalica == true || tancament.baranes_vidre_laminat == true)
+      crear_referencia(60)
+    end
+    if (tancament.baranes_perfils_acer == true || tancament.baranes_perfils_alumini == true || tancament.baranes_fusta == true || tancament.baranes_obra == true)
+      crear_referencia(61)
+    end
 
     coberta = Coberta.where(:edifici_id => @edifici.id).last
     if (coberta.terrat_transitable == true)
