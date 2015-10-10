@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nom element:</strong>
+  <%= @element_predefinit.nom_element %>
+</p>
+
+<p>
+  <strong>Sistema element:</strong>
+  <%= @element_predefinit.sistema_element %>
+</p>
+
+<p>
+  <strong>Descripcio ca:</strong>
+  <%= @element_predefinit.descripcio_ca %>
+</p>
+
+<p>
+  <strong>Descripcio es:</strong>
+  <%= @element_predefinit.descripcio_es %>
+</p>
+
+<%= link_to 'Edit', edit_element_predefinit_path(@element_predefinit) %> |
+<%= link_to 'Back', element_predefinits_path %>

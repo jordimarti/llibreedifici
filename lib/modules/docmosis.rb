@@ -255,6 +255,27 @@ module Docmosis
     end
   end
 
+  # Descripció constructiva
+
+  def descripcio_constructiva(sistema)
+    sistema_seleccionat = sistema.where(:edifici_id => @edifici.id).last
+    llistat_elements = Array.new
+    sistema_seleccionat.attributes.each_pair do |name, value|
+      if (value == true)
+        element = ElementPredefinit.where(:nom_element => name).last
+        llistat_elements << {
+          "descripcio"=>"#{element.descripcio_ca}"
+        }
+      end
+    end
+    llistat_elements.to_json
+    return llistat_elements
+  end
+
+
+
+  # Arxiu de documents
+
   def items_arxiu
     checklist = ChecklistNouPlurifamiliar.where(:edifici_id => @edifici.id).last
     llistat_apartats = Array.new
@@ -351,12 +372,16 @@ module Docmosis
         'llistat_subministradors' => items_subministrador,
         'llistat_subcontractistes' => items_subcontractista,
         'sistema_fonamentacio' => comprovacio_sistema('fonamentacio'),
+        'elements_fonamentacio' => descripcio_constructiva(Fonamentacio),
         'llistat_fonamentacio' => items_sistemes('fonamentacio'),
         'sistema_estructura' => comprovacio_sistema('estructura'),
+        'elements_estructura' => descripcio_constructiva(Estructura),
         'llistat_estructura' => items_sistemes('estructura'),
         'sistema_tancaments' => comprovacio_sistema('tancaments'),
+        'elements_tancaments' => descripcio_constructiva(TancamentsVertical),
         'llistat_tancaments' => items_sistemes('tancaments'),
         'sistema_coberta' => comprovacio_sistema('cobertes'),
+        'elements_tancaments' => descripcio_constructiva(Coberta),
         'llistat_coberta' => items_sistemes('cobertes'),
         'comprovacio_coberta_plana' => comprovacio_coberta_plana,
         'comprovacio_coberta_inclinada' => comprovacio_coberta_inclinada,

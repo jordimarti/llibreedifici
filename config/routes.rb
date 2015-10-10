@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   
   
   
+  resources :element_predefinits
   resources :operacions
   resources :sistemes
   get 'edificis/:id/duplicate', to: 'edificis#duplicate', :as => :duplicate

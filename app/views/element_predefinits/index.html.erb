@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Element Predefinits</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nom element</th>
+      <th>Sistema element</th>
+      <th>Descripcio ca</th>
+      <th>Descripcio es</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @element_predefinits.each do |element_predefinit| %>
+      <tr>
+        <td><%= element_predefinit.nom_element %></td>
+        <td><%= element_predefinit.sistema_element %></td>
+        <td><%= element_predefinit.descripcio_ca %></td>
+        <td><%= element_predefinit.descripcio_es %></td>
+        <td><%= link_to 'Show', element_predefinit %></td>
+        <td><%= link_to 'Edit', edit_element_predefinit_path(element_predefinit) %></td>
+        <td><%= link_to 'Destroy', element_predefinit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Element predefinit', new_element_predefinit_path %>
