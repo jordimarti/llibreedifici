@@ -386,6 +386,9 @@ module Docmosis
         'comprovacio_coberta_plana' => comprovacio_coberta_plana,
         'comprovacio_coberta_inclinada' => comprovacio_coberta_inclinada,
         'comprovacio_lluernes' => comprovacio_lluernes,
+        'sistema_particions' => comprovacio_sistema('particions'),
+        'elements_particions' => descripcio_constructiva(Particio),
+        'llistat_particions' => items_sistemes('particions'),
         'arxiu_documents' => items_arxiu
       }
     }.to_json, :content_type => :json) {|response, request, result, &block|
