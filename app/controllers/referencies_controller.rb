@@ -181,20 +181,166 @@ class ReferenciesController < ApplicationController
 
     coberta = Coberta.where(:edifici_id => @edifici.id).last
     if (coberta.terrat_transitable == true)
-      crear_referencia(37)
+      crear_referencia(62)
     end
     if (coberta.terrat_transitable == true || coberta.terrat_no_transitable == true)     
-      crear_referencia(38)
-      crear_referencia(39)
+      crear_referencia(63)
+      crear_referencia(64)
     end
     if (coberta.terrat_no_transitable == true)
-      crear_referencia(40)
-      crear_referencia(41)
+      crear_referencia(65)
+    end
+    if (coberta.terrat_acabat_graveta == true)
+      crear_referencia(66)
     end
     if (coberta.coberta_teula_arab == true || coberta.coberta_teula_plana == true || coberta.coberta_teula_ciment == true || coberta.coberta_pissarra == true || coberta.coberta_fibrociment == true || coberta.coberta_asfaltica == true || coberta.coberta_xapa_acer == true || coberta.coberta_xapa_coure == true)
-      crear_referencia(42)
-      crear_referencia(43)
-      crear_referencia(44)
+      crear_referencia(67)
+      crear_referencia(68)
+      crear_referencia(69)
+      crear_referencia(70)
+      crear_referencia(71)
+    end
+    if (coberta.coberta_pissarra == true)
+      crear_referencia(72)
+    end
+    if (coberta.coberta_xapa_acer == true || coberta.coberta_xapa_coure == true)
+      crear_referencia(73)
+    end
+    if (coberta.terrat_lamina_bituminosa_oxiasfalt == true)
+      crear_referencia(74)
+    end
+    if (coberta.terrat_lamina_bituminosa_betum == true)
+      crear_referencia(75)
+    end
+    if (coberta.terrat_lamina_pvc_resistent == true || coberta.terrat_lamina_pvc_no_resistent == true)
+      crear_referencia(76)
+    end
+    if (coberta.terrat_lamina_cautxu == true)
+      crear_referencia(77)
+    end
+    if (coberta.terrat_lamina_epdm == true)
+      crear_referencia(78)
+    end
+    if (coberta.terrat_lamina_cautxu_sintetic == true)
+      crear_referencia(79)
+    end
+    if (coberta.terrat_lamina_polietile == true)
+      crear_referencia(80)
+    end
+    if (coberta.terrat_lamina_plaques_bituminoses == true)
+      crear_referencia(81)
+    end
+    if (coberta.terrat_lamina_pastes_bituminoses == true)
+      crear_referencia(82)
+    end
+    if (coberta.terrat_junta_dilatacio_cautxu_butil == true || coberta.terrat_junta_dilatacio_cautxu_sintetic == true || coberta.terrat_junta_dilatacio_emulsions_bituminoses == true || coberta.terrat_junta_dilatacio_silicona == true)
+      crear_referencia(83)
+      crear_referencia(84)
+    end
+    if (coberta.terrat_acabat_enrajolat == true)
+      crear_referencia(85)
+      crear_referencia(86)
+    end
+    if (coberta.terrat_acabat_lloses_flotants == true)
+      crear_referencia(87)
+    end
+    if (coberta.lluernes_practicables == true)
+      crear_referencia(88)
+    end
+    if (coberta.lluernes_fixes == true || coberta.lluernes_practicables == true)
+      crear_referencia(89)
+      crear_referencia(90)
+      crear_referencia(91)
+    end
+    if (coberta.lluernes_entramat_acer == true)
+      crear_referencia(92)
+    end
+
+    particions = Particio.where(:edifici_id => @edifici.id).last
+    if (particions.envans_ceramica == true || particions.envans_cartro_guix == true || particions.envans_bloc_formigo == true || particions.envans_paves == true || particions.envans_fusta == true || particions.envans_plaques_alveolades == true)
+      crear_referencia(93)
+    end
+    if (particions.celras_fibres_vegetals == true || particions.celras_fibres_minerals == true || particions.celras_plaques_guix == true || particions.celras_metalic == true || particions.celras_fusta == true)
+      crear_referencia(94)
+    end
+    if (particions.acabat_textil == true)
+      crear_referencia(95)
+    end
+    if (particions.acabat_pintat == true)
+      crear_referencia(96)
+    end
+    if (particions.acabat_estuc == true)
+      crear_referencia(97)
+    end
+    if (particions.acabat_aplacat_ceramica == true)
+      crear_referencia(98)
+    end
+    if (particions.acabat_aplacat_pedra == true)
+      crear_referencia(99)
+    end
+    if (particions.acabat_empaperat == true)
+      crear_referencia(100)
+    end
+    if (particions.acabat_fusta == true)
+      crear_referencia(101)
+    end
+    if (particions.acabat_taulell_fusta == true)
+      crear_referencia(102)
+      crear_referencia(103)
+    end
+    if (particions.acabat_suro == true)
+      crear_referencia(104)
+    end
+    if (particions.acabat_sintetic == true)
+      crear_referencia(105)
+    end
+    if (particions.paviment_terratzo == true)
+      crear_referencia(106)
+    end
+    if (particions.paviment_mosaic_hidraulic == true)
+      crear_referencia(107)
+    end
+    if (particions.paviment_ceramica_natural == true)
+      crear_referencia(108)
+    end
+    if (particions.paviment_suro == true)
+      crear_referencia(109)
+    end
+    if (particions.paviment_parquet_encolat == true || particions.paviment_parquet_flotant == true || particions.paviment_parquet_llates == true)
+      crear_referencia(110)
+    end
+    if (particions.paviment_moqueta == true)
+      crear_referencia(111)
+      crear_referencia(112)
+    end
+    if (particions.porta_fulla_massissa_fusta == true || particions.porta_fulla_aplacat_fusta == true || particions.porta_fulla_vidre == true || particions.porta_fulla_alumini == true || particions.porta_fulla_ferro == true)
+      crear_referencia(113)
+      crear_referencia(114)
+    end
+    if (particions.porta_acabat_pintat == true)
+      crear_referencia(115)
+    end
+    if (particions.porta_acabat_lacat == true)
+      crear_referencia(116)
+    end
+    if (particions.porta_acabat_envernissat == true)
+      crear_referencia(117)
+    end
+    if (particions.porta_ferratge_llauto == true)
+      crear_referencia(118)
+    end
+    if (particions.porta_ferratge_acer_llautonat == true)
+      crear_referencia(119)
+    end
+    if (particions.porta_ferratge_acer_niquelat == true)
+      crear_referencia(120)
+    end
+    if (particions.porta_ferratge_acer_inoxidable == true)
+      crear_referencia(121)
+    end
+    if (particions.barana_ferro_forjat == true || particions.barana_perfils_acer == true || particions.barana_perfils_alumini == true || particions.barana_fusta == true || particions.barana_pvc == true || particions.barana_vidre_laminat == true || particions.barana_metacrilat == true)
+      crear_referencia(122)
+      crear_referencia(123)
     end
 
     sanejament = Sanejament.where(:edifici_id => @edifici.id).last
