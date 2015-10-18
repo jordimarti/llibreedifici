@@ -15,6 +15,11 @@ es:
             email:
               taken: "Este correo electrónico ya está registrado"
               invalid: "Esta dirección de correo electrónico no es válida"
+              blank: "Es necesario escribir el correo electrónico"
+            first_name:
+              blank: "Es necesario escribir el nombre"
+            last_name:
+              blank: "Es necesario escribir los apellidos"
         edifici:
           attributes:
             nom_edifici:

@@ -15,6 +15,11 @@ ca:
             email:
               taken: "Aquest correu electrònic ja està registrat"
               invalid: "Aquesta adreça de correu electrònic no és vàlida"
+              blank: "Cal escriure el correu electrònic"
+            first_name:
+              blank: "Cal escriure el nom"
+            last_name:
+              blank: "Cal escriure els cognoms"
         edifici:
           attributes:
             nom_edifici:
