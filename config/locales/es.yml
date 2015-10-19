@@ -649,8 +649,8 @@ es:
         clima_pn_major_70_recuperador: "Pn > 70 kW"
       ga:
         instalacio_gas: "Acometida a red de distribución canalizada de gas para uso doméstico"
-        diposit_aire_lliure: "Dipósito de gas propano al aire libre"
-        diposit_enterrat: "Dipósito de gas propano enterrado"
+        diposit_aire_lliure: "Depósito de gas propano al aire libre"
+        diposit_enterrat: "Depósito de gas propano enterrado"
       ventilacio:
         habitatge_natural_conductes: "Natural por conductos"
         habitatge_natural_obertures: "Natural por aperturas"
