@@ -15,6 +15,17 @@ class Edifici < ActiveRecord::Base
 	has_many :colaboradors
 	has_many :coordinadors
 
+	has_many :llicencies
+	has_many :declaracions
+	has_many :regim_propietats
+	has_many :regim_especials
+	has_many :carregues
+	has_many :entitats
+	has_many :garantia_promotors
+	has_many :garantia_constructors
+	has_many :garantia_instalacions
+	has_many :energia_certificats
+
 	has_many :sistemes
 	has_one :fonamentacio
 	has_one :estructura

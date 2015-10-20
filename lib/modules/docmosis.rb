@@ -201,6 +201,136 @@ module Docmosis
     return llistat_subcontractistes
   end
 
+  # Dades administratives i jurídiques
+
+  def items_llicencies
+    llistat_llicencies = Array.new
+    @edifici.llicencies.each do |llicencia|
+      llistat_llicencies << {
+        "classe"=>"#{llicencia.classe}",
+        "data_llicencia"=>"#{llicencia.data_llicencia}"
+      }
+    end
+    llistat_llicencies.to_json
+    return llistat_llicencies
+  end
+
+  def items_declaracions
+    llistat_declaracions = Array.new
+    @edifici.declaracions.each do |declaracio|
+      llistat_declaracions << {
+        "notari"=>"#{declaracio.notari}",
+        "n_protocol"=>"#{declaracio.n_protocol}",
+        "data_declaracio"="#{declaracio.data_declaracio}"
+      }
+    end
+    llistat_declaracions.to_json
+    return llistat_declaracions
+  end
+
+  def items_regim_propietats
+    llistat_regim_propietats = Array.new
+    @edifici.regim_propietats.each do |regim_propietat|
+      llistat_regim_propietats << {
+        "tipus_regim_propietat"=>"#{regim_propietat.tipus_regim_propietat}",
+        "document_escriptura"=>"#{regim_propietat.document_escriptura}"
+      }
+    end
+    llistat_regim_propietats.to_json
+    return llistat_regim_propietats
+  end
+
+  def items_regim_especials
+    llistat_regim_especials = Array.new
+    @edifici.regim_especials.each do |regim_especial|
+      llistat_regim_especials << {
+        "tipus_regim_especial"=>"#{regim_especial.tipus_regim_especial}",
+        "referencia_document"=>"#{regim_especial.referencia_document}"
+      }
+    end
+    llistat_regim_especials.to_json
+    return llistat_regim_especials
+  end
+
+  def items_carregues
+    llistat_carregues = Array.new
+    @edifici.carregues.each do |carrega|
+      llistat_carregues << {
+        "tipus_carrega"=>"#{carrega.tipus_carrega}",
+        "document_carrega"=>"#{carrega.document_carrega}"
+      }
+    end
+    llistat_carregues.to_json
+    return llistat_carregues
+  end
+
+  def items_entitats
+    llistat_entitats = Array.new
+    @edifici.entitats.each do |entitat|
+      llistat_entitats << {
+        "nom_entitat"=>"#{entitat.nom_entitat}",
+        "superficie"=>"#{entitat.superficie}",
+        "destinacio"=>"#{entitat.destinacio}",
+        "quota"=>"#{entitat.quota}"
+      }
+    end
+    llistat_entitats.to_json
+    return llistat_entitats
+  end
+
+  def items_garantia_promotors
+    llistat_garantia_promotors = Array.new
+    @edifici.garantia_promotors.each do |garantia_promotor|
+      llistat_garantia_promotors << {
+        "venciment"=>"#{garantia_promotor.venciment}",
+        "tipus"=>"#{garantia_promotor.tipus}",
+        "referencia"=>"#{garantia_promotor.referencia}"
+      }
+    end
+    llistat_garantia_promotors.to_json
+    return llistat_garantia_promotors
+  end
+
+  def items_garantia_constructors
+    llistat_garantia_constructors = Array.new
+    @edifici.garantia_constructors.each do |garantia_constructor|
+      llistat_garantia_constructors << {
+        "venciment"=>"#{garantia_constructor.venciment}",
+        "tipus"=>"#{garantia_constructor.tipus}",
+        "referencia"=>"#{garantia_constructor.referencia}"
+      }
+    end
+    llistat_garantia_constructors.to_json
+    return llistat_garantia_constructors
+  end
+
+  def items_garantia_instalacions
+    llistat_garantia_instalacions = Array.new
+    @edifici.garantia_instalacions.each do |garantia_instalacio|
+      llistat_garantia_instalacions << {
+        "venciment"=>"#{garantia_instalacio.venciment}",
+        "tipus"=>"#{garantia_instalacio.tipus}",
+        "instalacio"=>"#{garantia_instalacio.instalacio}",
+        "empresa"=>"#{garantia_instalacio.empresa}"
+      }
+    end
+    llistat_garantia_instalacions.to_json
+    return llistat_garantia_instalacions
+  end
+
+  def items_energia_certificats
+    llistat_energia_certificats = Array.new
+    @edifici.energia_certificats.each do |energia_certificat|
+      llistat_energia_certificats << {
+        "numero_registre"=>"#{energia_certificat.numero_registre}",
+        "vigencia"=>"#{energia_certificat.vigencia}",
+        "qualificacio_energetica"=>"#{energia_certificat.qualificacio_energetica}",
+        "consum_energia_primaria"=>"#{energia_certificat.consum_energia_primaria}",
+        "emissions_co2"="#{energia_certificat.emissions_co2}"
+      }
+  end
+
+
   # Sistemes
   # Primer comprovem si hem de posar o no cada un dels sistemes, comprovant si el sistema té operacions associades
   
@@ -371,6 +501,16 @@ module Docmosis
         'llistat_entitat_controls' => items_entitat_control,
         'llistat_subministradors' => items_subministrador,
         'llistat_subcontractistes' => items_subcontractista,
+        'llicencies' => items_llicencies,
+        'declaracions' => items_declaracions,
+        'regim_propietats' => items_regim_propietats,
+        'regim_especials' => items_regim_especials,
+        'carregues' => items_carregues,
+        'entitats' => items_entitats,
+        'garantia_promotors' => items_garantia_promotors,
+        'garantia_constructors' => items_garantia_constructors,
+        'garantia_instalacions' => items_garantia_instalacions,
+        'energia_certificats' => items_energia_certificats,
         'sistema_fonamentacio' => comprovacio_sistema('fonamentacio'),
         'elements_fonamentacio' => descripcio_constructiva(Fonamentacio),
         'llistat_fonamentacio' => items_sistemes('fonamentacio'),
