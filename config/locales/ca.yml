@@ -261,7 +261,7 @@ ca:
         data_declaracio: "Data"
       regim_propietat:
         tipus_regim_propietat: "Tipus"
-        document_escriptura: "Escriptura de divisió i estatuts"
+        document_escriptura: "Escriptura, divisió i estatuts"
       regim_especial:
         tipus_regim_especial: "Tipus"
         referencia_document: "Referència del document acreditatiu"
@@ -807,6 +807,7 @@ ca:
       entitat: "Entitat de control"
       subministrador: "Subministrador de productes"
       industrial: "Subcontractista principal"
+      colaborador: "Col·laborador"
       titol_promotor: "PROMOTOR"
       titol_projectista: "PROJECTISTA"
       titol_constructor: "CONSTRUCTOR"
