@@ -221,7 +221,7 @@ module Docmosis
       llistat_declaracions << {
         "notari"=>"#{declaracio.notari}",
         "n_protocol"=>"#{declaracio.n_protocol}",
-        "data_declaracio"="#{declaracio.data_declaracio}"
+        "data_declaracio"=>"#{declaracio.data_declaracio}"
       }
     end
     llistat_declaracions.to_json
@@ -326,8 +326,11 @@ module Docmosis
         "vigencia"=>"#{energia_certificat.vigencia}",
         "qualificacio_energetica"=>"#{energia_certificat.qualificacio_energetica}",
         "consum_energia_primaria"=>"#{energia_certificat.consum_energia_primaria}",
-        "emissions_co2"="#{energia_certificat.emissions_co2}"
+        "emissions_co2"=>"#{energia_certificat.emissions_co2}"
       }
+    end
+    llistat_energia_certificats.to_json
+    return llistat_energia_certificats
   end
 
 
