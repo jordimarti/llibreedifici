@@ -21,6 +21,11 @@ class ReferenciesController < ApplicationController
         referencia.destroy
       end
     end
+    referencia_calendaris = ReferenciaCalendari.where(:edifici_id => @edifici.id)
+    referencia_calendaris.each do |ref_cal|
+      ref_cal.destroy
+    end
+
 
     fonamentacio = Fonamentacio.where(:edifici_id => @edifici.id).last
     if (fonamentacio.sabates_paredat == true || fonamentacio.sabates_aillades == true || fonamentacio.sabates_continues == true || fonamentacio.llosa == true || fonamentacio.formigo == true || fonamentacio.formigo_armat == true || fonamentacio.pilons == true || fonamentacio.pantalles == true) 
@@ -818,6 +823,9 @@ class ReferenciesController < ApplicationController
       crear_referencia(418)
     end
 
+    # Creem el calendari d'operacions
+    crear_calendari
+
     redirect_to action: "index"
   end
 
@@ -830,6 +838,31 @@ class ReferenciesController < ApplicationController
     referencia.edifici_id = @edifici.id
     referencia.creat_usuari = false
     referencia.save
+  end
+
+  def crear_calendari
+    referencies = Referencia.where(:edifici_id => @edifici.id)
+    any_inici = Time.now.year + 1
+    any_fi = any_inici + 20
+    referencies.each do |referencia|
+      operacio = Operacio.find(referencia.operacio_id)
+      # Comprovo no posar operacions massa freqüents, així apareixeran les operacions que siguin dos cops l'any o menys.
+      if operacio.periodicitat > 0.4
+        any = any_inici
+        while any < any_fi do
+          referencia_calendari = ReferenciaCalendari.new
+          referencia_calendari.edifici_id = @edifici.id
+          referencia_calendari.operacio_id = referencia.operacio_id
+          referencia_calendari.any = any
+          referencia_calendari.save
+          any = any + operacio.periodicitat
+        end
+      end
+    end
+  end
+
+  def calendari
+    @referencia_calendaris = ReferenciaCalendari.where(:edifici_id => @edifici.id)
   end
 
   # GET /referencies/1

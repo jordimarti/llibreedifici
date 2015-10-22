@@ -1,0 +1,55 @@
+<div class="background-seccio">
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="titol-seccio">
+        <%= t('.titol_operacions') %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="medium-12 columns">
+      <div class="container-operacions-sistema">
+        <div class="row">
+          <div class="medium-6 columns">
+            <%= link_to t('.actualitzar_llistat'), crear_llistat_path, :class => 'button radius small' %>
+            <p><%= t('.text_actualitzar_llistat') %></p>
+          </div>
+          <div class="medium-6 columns">
+            <%= link_to t('.calendari_operacions'), crear_llistat_path, :class => 'button radius small' %>
+            <p><%= t('.text_calendari') %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="medium-12 columns">
+      <div class="container-any">
+        <div class="titol-any">
+          2016
+        </div>
+        <div class="operacions-any">
+          <table class="taula-operacions">
+            <% referencies_any = @referencia_calendaris.where(:any => 2016) %>
+            <% referencies_any.each do |referencia| %>
+              <div class="item-referencia-calendari">
+                <% operacio = Operacio.find(referencia.operacio_id) %>
+                <tr>
+                  <% if params[:locale] == 'ca' %> 
+                    <td><%= operacio.descripcio_ca %></td>
+                  <% elsif params[:locale] == 'es' %>
+                    <td><%= operacio.descripcio_es %></td>
+                  <% end %>
+                </tr>
+              </div>
+            <% end %>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

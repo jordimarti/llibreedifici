@@ -754,6 +754,19 @@ ca:
         documents_acreditatius_ajuts: "Documents acreditatius dels ajuts i beneficis atorgats a l'edifici"
         documents_justificacio_operacions: "Documents de justificació de la realització d'operacions de reparació, manteniment i rehabilitació"
         declaracions_ce_ascensors: "Declaracions CE que reconeixen la conformitat dels ascensors instal·lats"
+      checklist_existent_plurifamiliar:
+        iite: "Informe d’inspecció tècnica obligatòria (IITE)"
+        document_lliurament_iite: "Document acreditatiu del lliurament a l’Administració de les dades bàsiques de la IITE"
+        comunicat_ens_local: "El comunicat a l’ens local del municipi al qual pertany l’edifici en cas de situació de risc per a les persones"
+        programa_rehabilitacio: "Programa de rehabilitació que adopti les mesures correctores"
+        certificat_final_obra: "Certificats de final d’obra de totes les obres que s’executin en l’edifici"
+        certificat_aptitud: "Certificat d’aptitud"
+        certificacio_energetica: "Certificat d’eficiència energètica de l’edifici"
+        instruccions_us: "Instruccions o recomanacions d'ús i manteniment de l’edifici i les seves instal·lacions"
+        documents_justificatius_operacions: "Documents que justifiquin la realització d’operacions de reparació, manteniment i rehabilitació de caràcter obligatori, així com la identificació de les empreses o professionals que les han realitzades i les garanties que s’han donat"
+        pressupostos_obres: "Pressupostos i contractes d’obres, manteniments i honoraris professionals"
+        certificats_instalacions_comunes: "Certificats d’inscripció en el Registre d’instal·lacions tècniques de seguretat industrial de Catalunya de les instal·lacions comunes de l’edifici de baixa tensió, gasos combustibles, instal·lacions petrolíferes, instal·lacions tèrmiques i d’ascensors que s’hagin realitzat"
+        certificats_inspeccions_tecniques: "Certificats d’inspeccions tècniques de les instal·lacions comunes sotmeses a reglamentació de seguretat industrial"
   devise:
     sessions:
       new:
@@ -1227,6 +1240,12 @@ ca:
       text_arxiu: "Selecciona els apartats que han d'aparèixer a l'Arxiu de documents"
       guardar: "Guardar"
   checklist_nou_unifamiliars:
+    edit:
+      titol_configuracio_document: "Configuració del document"
+    form:
+      text_arxiu: "Selecciona els apartats que han d'aparèixer a l'Arxiu de documents"
+      guardar: "Guardar"
+  checklist_existent_plurifamiliars:
     edit:
       titol_configuracio_document: "Configuració del document"
     form:

@@ -99,6 +99,7 @@
 							</div>
 						</div>
 					</div>
+					<% if @edifici.tipus_edifici == 'nou_plurifamiliar' || @edifici.tipus_edifici == 'nou_unifamiliar' %> 
 					<div class="medium-6 columns">
 						<div class="dades-container">
 							<div class="dades-title">
@@ -120,7 +121,9 @@
 							</div>
 						</div>
 					</div>
+					<% end %>
 				</div>
+				<% if @edifici.tipus_edifici == 'nou_plurifamiliar' || @edifici.tipus_edifici == 'existent_plurifamiliar' %>
 				<div class="row">
 					<div class="medium-6 columns">
 						<div class="dades-container">
@@ -161,6 +164,7 @@
 						</div>
 					</div>
 				</div>
+				<% end %>
 				<div class="row">
 					<div class="medium-6 columns">
 						<div class="dades-container">
@@ -179,6 +183,7 @@
 							</div>
 						</div>
 					</div>
+					<% if @edifici.tipus_edifici == 'nou_plurifamiliar' || @edifici.tipus_edifici == 'existent_plurifamiliar' %>
 					<div class="medium-6 columns">
 						<div class="dades-container">
 							<div class="dades-title">
@@ -196,6 +201,7 @@
 							</div>
 						</div>
 					</div>
+					<% end %>
 				</div>
 				<div class="row">
 					<div class="medium-6 columns">

@@ -7,9 +7,22 @@ class DocumentsController < ApplicationController
     @submenu_actiu = 'documents'
   end
 
-  def docmosis_edifici_nou
+  def docmosis_edifici_nou_plurifamiliar
     # Mètode dins del mòdul Docmosis
-    edifici_nou
+    edifici_nou('plurifamiliar')
+  end
+
+  def docmosis_edifici_nou_unifamiliar
+    edifici_nou('unifamiliar')
+  end
+
+  def docmosis_manual_edifici_nou
+    # Mètode dins del mòdul Docmosis
+    manual_edifici_nou
+  end
+
+  def docmosis_edifici_existent
+    edifici_existent
   end
 
   def docmosis_old

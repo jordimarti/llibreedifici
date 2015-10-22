@@ -346,8 +346,32 @@ module Docmosis
     end
   end
 
+  def comprovacio_sistema_manual(sistema)
+    referencies = Referencia.where(:edifici_id => @edifici.id, :sistema => sistema, :manual_habitatge => true)
+    if referencies.count > 0
+      return true
+    else
+      return false
+    end
+  end
+
   def items_sistemes(sistema)
     referencies = Referencia.where(:edifici_id => @edifici.id, :sistema => sistema)
+    llistat_operacions = Array.new
+    referencies.each do |referencia|
+      operacio = Operacio.find(referencia.operacio_id)
+      llistat_operacions << {
+        "descripcio"=>"#{operacio.descripcio_ca}",
+        "periodicitat"=>"#{operacio.periodicitat_text_ca}",
+        "responsable"=>"#{operacio.responsable_ca}"
+      }
+    end
+    llistat_operacions.to_json
+    return llistat_operacions
+  end
+
+  def items_sistemes_manual(sistema)
+    referencies = Referencia.where(:edifici_id => @edifici.id, :sistema => sistema, :manual_habitatge => true)
     llistat_operacions = Array.new
     referencies.each do |referencia|
       operacio = Operacio.find(referencia.operacio_id)
@@ -435,17 +459,39 @@ module Docmosis
     return llistat_apartats
   end
 
+  def items_arxiu_existents
+    checklist = ChecklistExistentPlurifamiliar.where(:edifici_id => @edifici.id).last
+    llistat_apartats = Array.new
+    llistat_apartats << {
+      "iite" => checklist.iite,
+      "document_lliurament_iite" => checklist.document_lliurament_iite,
+      "comunicat_ens_local" => checklist.comunicat_ens_local,
+      "programa_rehabilitacio" => checklist.programa_rehabilitacio,
+      "certificat_final_obra" => checklist.certificat_final_obra,
+      "certificat_aptitud" => checklist.certificat_aptitud,
+      "certificacio_energetica" => checklist.certificacio_energetica,
+      "instruccions_us" => checklist.instruccions_us,
+      "documents_justificatius_operacions" => checklist.documents_justificatius_operacions,
+      "pressupostos_obres" => checklist.pressupostos_obres,
+      "certificats_instalacions_comunes" => checklist.certificats_instalacions_comunes,
+      "certificats_inspeccions_tecniques" => checklist.certificats_inspeccions_tecniques
+    }
+    llistat_apartats.to_json
+    return llistat_apartats
+  end
 
-
-  def edifici_nou
+  def edifici_nou(tipus_edifici)
     # RESTFul service URL
     $DWS_RENDER_URL = "https://dws2.docmosis.com/services/rs/render"
     # Your account key
     $ACCESS_KEY = ENV['DOCMOSIS_ACCESS_KEY']
 
     # The template to use
-    # NOTE that it has to be defined in your account with the same name specified here
-    $TEMPLATE = "llibreedifici/nou.docx" # Change with your actual template name
+    if tipus_edifici == 'unifamiliar'
+      $TEMPLATE = "llibreedifici/nou_unifamiliar.docx" 
+    else
+      $TEMPLATE = "llibreedifici/nou.docx"
+    end
 
     # The output file name
     $OUTPUT='LlibreEdifici.docx';
@@ -461,6 +507,8 @@ module Docmosis
     poblacio = @edifici.identificacio.poblacio_edifici
     provincia = @edifici.identificacio.provincia_edifici
     referencia_cadastral = @edifici.identificacio.ref_cadastral
+    any_inici_construccio = @edifici.identificacio.any_inici_construccio
+    any_fi_construccio = @edifici.identificacio.any_fi_construccio
 
     # Imatges
     imatge_facana = @edifici.identificacio.foto_facana.url(:original)
@@ -491,6 +539,8 @@ module Docmosis
         'poblacio_edifici' => poblacio,
         'provincia_edifici' => provincia,
         'referencia_cadastral' => referencia_cadastral,
+        'any_inici_construccio' => any_inici_construccio,
+        'any_fi_construccio' => any_fi_construccio,
         'foto_facana' => "<img src='#{imatge_facana}' style='width:#{dimensions_facana.width}; height:#{dimensions_facana.height}'/>",
         'planol_emplacament' => "<img src='#{imatge_emplacament}' style='width:#{dimensions_emplacament.width}; height:#{dimensions_emplacament.height}'/>",
         'llistat_promotors' => items_promotor,
@@ -581,4 +631,251 @@ module Docmosis
     }
  
 	end
+
+  def manual_edifici_nou
+    # RESTFul service URL
+    $DWS_RENDER_URL = "https://dws2.docmosis.com/services/rs/render"
+    # Your account key
+    $ACCESS_KEY = ENV['DOCMOSIS_ACCESS_KEY']
+
+    # The template to use
+    # NOTE that it has to be defined in your account with the same name specified here
+    $TEMPLATE = "llibreedifici/manual.docx" # Change with your actual template name
+
+    # The output file name
+    $OUTPUT='ManualLlibreEdifici.docx';
+
+    # Aquí les dades de l'edifici per generar el document
+    # Adreça de l'edifici
+    if @edifici.identificacio.bloc_edifici.blank?
+      adreca = @edifici.identificacio.tipus_via_edifici.to_s + ' ' + @edifici.identificacio.via_edifici.to_s + ' ' + @edifici.identificacio.numero_edifici.to_s
+    else
+      adreca = @edifici.identificacio.tipus_via_edifici.to_s + ' ' + @edifici.identificacio.via_edifici.to_s + ' ' + @edifici.identificacio.numero_edifici.to_s + ', bloc ' + @edifici.identificacio.bloc_edifici.to_s
+    end
+    codi_postal = @edifici.identificacio.cp_edifici
+    poblacio = @edifici.identificacio.poblacio_edifici
+    provincia = @edifici.identificacio.provincia_edifici
+
+    # Set the web proxy to use from the environment variable.
+    # The settings for proxy are site-dependent so you may need to
+    # adjust this
+    RestClient.proxy = ENV['http_proxy'];
+
+    RestClient.post($DWS_RENDER_URL,
+    {
+      'accessKey' => $ACCESS_KEY,
+      'templateName' => $TEMPLATE,
+      'outputName' => $OUTPUT,
+      'data' => {
+        'adreca' => adreca,
+        'codi_postal' => codi_postal,
+        'poblacio' => poblacio,
+        'provincia' => provincia,
+        'sistema_estructura' => comprovacio_sistema_manual('estructura'),
+        'elements_estructura' => descripcio_constructiva(Estructura),
+        'llistat_estructura' => items_sistemes_manual('estructura'),
+        'sistema_tancaments' => comprovacio_sistema_manual('tancaments'),
+        'elements_tancaments' => descripcio_constructiva(TancamentsVertical),
+        'llistat_tancaments' => items_sistemes_manual('tancaments'),
+        'sistema_coberta' => comprovacio_sistema_manual('cobertes'),
+        'elements_coberta' => descripcio_constructiva(Coberta),
+        'llistat_coberta' => items_sistemes_manual('cobertes'),
+        'comprovacio_coberta_plana' => comprovacio_coberta_plana,
+        'comprovacio_coberta_inclinada' => comprovacio_coberta_inclinada,
+        'comprovacio_lluernes' => comprovacio_lluernes,
+        'sistema_particions' => comprovacio_sistema_manual('particions'),
+        'elements_particions' => descripcio_constructiva(Particio),
+        'llistat_particions' => items_sistemes_manual('particions'),
+        'sistema_sanejament' => comprovacio_sistema_manual('sanejament'),
+        'elements_sanejament' => descripcio_constructiva(Sanejament),
+        'llistat_sanejament' => items_sistemes_manual('sanejament'),
+        'sistema_aigua' => comprovacio_sistema_manual('aigua'),
+        'elements_aigua' => descripcio_constructiva(Aigua),
+        'llistat_aigua' => items_sistemes_manual('aigua'),
+        'sistema_electricitat' => comprovacio_sistema_manual('electricitat'),
+        'elements_electricitat' => descripcio_constructiva(Electricitat),
+        'llistat_electricitat' => items_sistemes_manual('electricitat'),
+        'sistema_climatitzacio' => comprovacio_sistema_manual('climatitzacio'),
+        'elements_climatitzacio' => descripcio_constructiva(Climatitzacio),
+        'llistat_climatitzacio' => items_sistemes_manual('climatitzacio'),
+        'sistema_gas' => comprovacio_sistema_manual('gas'),
+        'elements_gas' => descripcio_constructiva(Ga),
+        'llistat_gas' => items_sistemes_manual('gas'),
+        'sistema_ventilacio' => comprovacio_sistema_manual('ventilacio'),
+        'elements_ventilacio' => descripcio_constructiva(Ventilacio),
+        'llistat_ventilacio' => items_sistemes_manual('ventilacio'),
+        'sistema_incendis' => comprovacio_sistema_manual('incendis'),
+        'elements_incendis' => descripcio_constructiva(Incendi),
+        'llistat_incendis' => items_sistemes_manual('incendis'),
+        'sistema_telecomunicacions' => comprovacio_sistema_manual('telecomunicacions'),
+        'elements_telecomunicacions' => descripcio_constructiva(Telecomunicacio),
+        'llistat_telecomunicacions' => items_sistemes_manual('telecomunicacions')
+      }
+    }.to_json, :content_type => :json) {|response, request, result, &block|
+      case response.code
+      when 200
+        File.open($OUTPUT,"wb"){|f|f.syswrite(response.body)}
+        #puts "\"#{$OUTPUT}\" created"
+        send_file $OUTPUT, filename: "#{@edifici.nom_edifici}_manual.docx", disposition: 'attachment'
+      else
+        # 4XX errors - client errors - something needs to be corrected in the request
+        # 5XX errors - server side errors - possibly worth a retry
+
+        # show error response (details)
+        puts "Error response:\n\n#{response.code} #{response}\n\n"
+        response.return!(request, result, &block)
+      end
+    }
+ 
+  end
+
+  def edifici_existent
+    # RESTFul service URL
+    $DWS_RENDER_URL = "https://dws2.docmosis.com/services/rs/render"
+    # Your account key
+    $ACCESS_KEY = ENV['DOCMOSIS_ACCESS_KEY']
+
+    # The template to use
+    $TEMPLATE = "llibreedifici/existent.docx"
+
+    # The output file name
+    $OUTPUT='LlibreEdificiExistent.docx';
+
+    # Aquí les dades de l'edifici per generar el document
+    # Adreça de l'edifici
+    if @edifici.identificacio.bloc_edifici.blank?
+      adreca = @edifici.identificacio.tipus_via_edifici.to_s + ' ' + @edifici.identificacio.via_edifici.to_s + ' ' + @edifici.identificacio.numero_edifici.to_s
+    else
+      adreca = @edifici.identificacio.tipus_via_edifici.to_s + ' ' + @edifici.identificacio.via_edifici.to_s + ' ' + @edifici.identificacio.numero_edifici.to_s + ', bloc ' + @edifici.identificacio.bloc_edifici.to_s
+    end
+    codi_postal = @edifici.identificacio.cp_edifici
+    poblacio = @edifici.identificacio.poblacio_edifici
+    provincia = @edifici.identificacio.provincia_edifici
+    referencia_cadastral = @edifici.identificacio.ref_cadastral
+    origen_any_construccio = @edifici.identificacio.origen_any_construccio
+    any_fi_construccio = @edifici.identificacio.any_fi_construccio
+
+    # Imatges
+    imatge_facana = @edifici.identificacio.foto_facana.url(:original)
+    dimensions_facana = Paperclip::Geometry.from_file(imatge_facana)
+
+    imatge_emplacament = @edifici.identificacio.planol_emplacament.url(:original)
+    dimensions_emplacament = Paperclip::Geometry.from_file(imatge_emplacament)
+
+    
+
+    # Set the web proxy to use from the environment variable.
+    # The settings for proxy are site-dependent so you may need to
+    # adjust this
+    RestClient.proxy = ENV['http_proxy'];
+
+    RestClient.post($DWS_RENDER_URL,
+    {
+      'accessKey' => $ACCESS_KEY,
+      'templateName' => $TEMPLATE,
+      'outputName' => $OUTPUT,
+      'data' => {
+        'adreca' => adreca,
+        'codi_postal' => codi_postal,
+        'poblacio' => poblacio,
+        'provincia' => provincia,
+        'adreca_edifici' => adreca,
+        'codi_postal_edifici' => codi_postal,
+        'poblacio_edifici' => poblacio,
+        'provincia_edifici' => provincia,
+        'referencia_cadastral' => referencia_cadastral,
+        'origen_any_construccio' => origen_any_construccio,
+        'any_fi_construccio' => any_fi_construccio,
+        'foto_facana' => "<img src='#{imatge_facana}' style='width:#{dimensions_facana.width}; height:#{dimensions_facana.height}'/>",
+        'planol_emplacament' => "<img src='#{imatge_emplacament}' style='width:#{dimensions_emplacament.width}; height:#{dimensions_emplacament.height}'/>",
+        'llistat_promotors' => items_promotor,
+        'llistat_projectistes' => items_projectista,
+        'llistat_colaboradors' => items_colaborador,
+        'llistat_constructors' => items_constructor,
+        'llistat_directors' => items_director,
+        'llistat_directors_execucio' => items_director_execucio,
+        'llistat_coordinadors' => items_coordinador,
+        'llistat_laboratoris' => items_laboratori,
+        'llistat_entitat_controls' => items_entitat_control,
+        'llistat_subministradors' => items_subministrador,
+        'llistat_subcontractistes' => items_subcontractista,
+        'llicencies' => items_llicencies,
+        'declaracions' => items_declaracions,
+        'regim_propietats' => items_regim_propietats,
+        'regim_especials' => items_regim_especials,
+        'carregues' => items_carregues,
+        'entitats' => items_entitats,
+        'garantia_promotors' => items_garantia_promotors,
+        'garantia_constructors' => items_garantia_constructors,
+        'garantia_instalacions' => items_garantia_instalacions,
+        'energia_certificats' => items_energia_certificats,
+        'sistema_fonamentacio' => comprovacio_sistema('fonamentacio'),
+        'elements_fonamentacio' => descripcio_constructiva(Fonamentacio),
+        'llistat_fonamentacio' => items_sistemes('fonamentacio'),
+        'sistema_estructura' => comprovacio_sistema('estructura'),
+        'elements_estructura' => descripcio_constructiva(Estructura),
+        'llistat_estructura' => items_sistemes('estructura'),
+        'sistema_tancaments' => comprovacio_sistema('tancaments'),
+        'elements_tancaments' => descripcio_constructiva(TancamentsVertical),
+        'llistat_tancaments' => items_sistemes('tancaments'),
+        'sistema_coberta' => comprovacio_sistema('cobertes'),
+        'elements_coberta' => descripcio_constructiva(Coberta),
+        'llistat_coberta' => items_sistemes('cobertes'),
+        'comprovacio_coberta_plana' => comprovacio_coberta_plana,
+        'comprovacio_coberta_inclinada' => comprovacio_coberta_inclinada,
+        'comprovacio_lluernes' => comprovacio_lluernes,
+        'sistema_particions' => comprovacio_sistema('particions'),
+        'elements_particions' => descripcio_constructiva(Particio),
+        'llistat_particions' => items_sistemes('particions'),
+        'sistema_sanejament' => comprovacio_sistema('sanejament'),
+        'elements_sanejament' => descripcio_constructiva(Sanejament),
+        'llistat_sanejament' => items_sistemes('sanejament'),
+        'sistema_aigua' => comprovacio_sistema('aigua'),
+        'elements_aigua' => descripcio_constructiva(Aigua),
+        'llistat_aigua' => items_sistemes('aigua'),
+        'sistema_electricitat' => comprovacio_sistema('electricitat'),
+        'elements_electricitat' => descripcio_constructiva(Electricitat),
+        'llistat_electricitat' => items_sistemes('electricitat'),
+        'sistema_climatitzacio' => comprovacio_sistema('climatitzacio'),
+        'elements_climatitzacio' => descripcio_constructiva(Climatitzacio),
+        'llistat_climatitzacio' => items_sistemes('climatitzacio'),
+        'sistema_gas' => comprovacio_sistema('gas'),
+        'elements_gas' => descripcio_constructiva(Ga),
+        'llistat_gas' => items_sistemes('gas'),
+        'sistema_ventilacio' => comprovacio_sistema('ventilacio'),
+        'elements_ventilacio' => descripcio_constructiva(Ventilacio),
+        'llistat_ventilacio' => items_sistemes('ventilacio'),
+        'sistema_incendis' => comprovacio_sistema('incendis'),
+        'elements_incendis' => descripcio_constructiva(Incendi),
+        'llistat_incendis' => items_sistemes('incendis'),
+        'sistema_ascensors' => comprovacio_sistema('ascensors'),
+        'elements_ascensors' => descripcio_constructiva(Ascensor),
+        'llistat_ascensors' => items_sistemes('ascensors'),
+        'sistema_telecomunicacions' => comprovacio_sistema('telecomunicacions'),
+        'elements_telecomunicacions' => descripcio_constructiva(Telecomunicacio),
+        'llistat_telecomunicacions' => items_sistemes('telecomunicacions'),
+        'sistema_especials' => comprovacio_sistema('especials'),
+        'elements_especials' => descripcio_constructiva(Especial),
+        'llistat_especials' => items_sistemes('especials'),
+        'arxiu_documents' => items_arxiu_existents
+      }
+    }.to_json, :content_type => :json) {|response, request, result, &block|
+      case response.code
+      when 200
+        File.open($OUTPUT,"wb"){|f|f.syswrite(response.body)}
+        #puts "\"#{$OUTPUT}\" created"
+        send_file $OUTPUT, filename: "#{@edifici.nom_edifici}.docx", disposition: 'attachment'
+      else
+        # 4XX errors - client errors - something needs to be corrected in the request
+        # 5XX errors - server side errors - possibly worth a retry
+
+        # show error response (details)
+        puts "Error response:\n\n#{response.code} #{response}\n\n"
+        response.return!(request, result, &block)
+      end
+    }
+ 
+  end
+
+
 end

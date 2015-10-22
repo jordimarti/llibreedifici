@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Edifici:</strong>
+  <%= @referencia_calendari.edifici_id %>
+</p>
+
+<p>
+  <strong>Operacio:</strong>
+  <%= @referencia_calendari.operacio_id %>
+</p>
+
+<p>
+  <strong>Any:</strong>
+  <%= @referencia_calendari.any %>
+</p>
+
+<%= link_to 'Edit', edit_referencia_calendari_path(@referencia_calendari) %> |
+<%= link_to 'Back', referencia_calendaris_path %>

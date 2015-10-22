@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Referencia Calendaris</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Edifici</th>
+      <th>Operacio</th>
+      <th>Any</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @referencia_calendaris.each do |referencia_calendari| %>
+      <tr>
+        <td><%= referencia_calendari.edifici_id %></td>
+        <td><%= referencia_calendari.operacio_id %></td>
+        <td><%= referencia_calendari.any %></td>
+        <td><%= link_to 'Show', referencia_calendari %></td>
+        <td><%= link_to 'Edit', edit_referencia_calendari_path(referencia_calendari) %></td>
+        <td><%= link_to 'Destroy', referencia_calendari, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Referencia calendari', new_referencia_calendari_path %>

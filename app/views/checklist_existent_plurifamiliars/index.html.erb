@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Checklist Existent Plurifamiliars</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Edifici</th>
+      <th>Iite</th>
+      <th>Document lliurament iite</th>
+      <th>Comunicat ens local</th>
+      <th>Programa rehabilitacio</th>
+      <th>Certificat final obra</th>
+      <th>Certificat aptitud</th>
+      <th>Certificacio energetica</th>
+      <th>Instruccions us</th>
+      <th>Documents justificatius operacions</th>
+      <th>Pressupostos obres</th>
+      <th>Certificats instalacions comunes</th>
+      <th>Certificats inspeccions tecniques</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @checklist_existent_plurifamiliars.each do |checklist_existent_plurifamiliar| %>
+      <tr>
+        <td><%= checklist_existent_plurifamiliar.edifici_id %></td>
+        <td><%= checklist_existent_plurifamiliar.iite %></td>
+        <td><%= checklist_existent_plurifamiliar.document_lliurament_iite %></td>
+        <td><%= checklist_existent_plurifamiliar.comunicat_ens_local %></td>
+        <td><%= checklist_existent_plurifamiliar.programa_rehabilitacio %></td>
+        <td><%= checklist_existent_plurifamiliar.certificat_final_obra %></td>
+        <td><%= checklist_existent_plurifamiliar.certificat_aptitud %></td>
+        <td><%= checklist_existent_plurifamiliar.certificacio_energetica %></td>
+        <td><%= checklist_existent_plurifamiliar.instruccions_us %></td>
+        <td><%= checklist_existent_plurifamiliar.documents_justificatius_operacions %></td>
+        <td><%= checklist_existent_plurifamiliar.pressupostos_obres %></td>
+        <td><%= checklist_existent_plurifamiliar.certificats_instalacions_comunes %></td>
+        <td><%= checklist_existent_plurifamiliar.certificats_inspeccions_tecniques %></td>
+        <td><%= link_to 'Show', checklist_existent_plurifamiliar %></td>
+        <td><%= link_to 'Edit', edit_checklist_existent_plurifamiliar_path(checklist_existent_plurifamiliar) %></td>
+        <td><%= link_to 'Destroy', checklist_existent_plurifamiliar, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Checklist existent plurifamiliar', new_checklist_existent_plurifamiliar_path %>

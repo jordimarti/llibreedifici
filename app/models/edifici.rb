@@ -42,10 +42,14 @@ class Edifici < ActiveRecord::Base
 	has_one :ascensor
 	has_one :telecomunicacio
 	has_one :especial
+
 	has_many :elements
 	has_many :referencies
+	has_many :referencia_calendaris
+
 	has_one :checklist_nou_plurifamiliar
 	has_one :checklist_nou_unifamiliar
+	has_one :checklist_existent_plurifamiliar
 
 	validates :nom_edifici, :presence => true
 	validates :tipus_edifici, :presence => true

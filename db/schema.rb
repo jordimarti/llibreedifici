@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151008154914) do
+ActiveRecord::Schema.define(version: 20151022215347) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,6 +72,24 @@ ActiveRecord::Schema.define(version: 20151008154914) do
     t.boolean  "declaracions_ce_ascensors"
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
+  end
+
+  create_table "checklist_existent_plurifamiliars", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.boolean  "iite",                               default: true
+    t.boolean  "document_lliurament_iite",           default: true
+    t.boolean  "comunicat_ens_local",                default: true
+    t.boolean  "programa_rehabilitacio",             default: true
+    t.boolean  "certificat_final_obra",              default: true
+    t.boolean  "certificat_aptitud",                 default: true
+    t.boolean  "certificacio_energetica",            default: true
+    t.boolean  "instruccions_us",                    default: true
+    t.boolean  "documents_justificatius_operacions", default: true
+    t.boolean  "pressupostos_obres",                 default: true
+    t.boolean  "certificats_instalacions_comunes",   default: true
+    t.boolean  "certificats_inspeccions_tecniques",  default: true
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
   end
 
   create_table "checklist_nou_plurifamiliars", force: :cascade do |t|
@@ -705,6 +723,14 @@ ActiveRecord::Schema.define(version: 20151008154914) do
     t.string   "web"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+  end
+
+  create_table "referencia_calendaris", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.integer  "operacio_id"
+    t.integer  "any"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "referencies", force: :cascade do |t|

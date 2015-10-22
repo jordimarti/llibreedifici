@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   
   
   
+  
+  
   resources :element_predefinits
   resources :operacions
   resources :sistemes
@@ -14,13 +16,17 @@ Rails.application.routes.draw do
   get 'edificis/:edifici_id/documents', to: 'documents#index', :as => :documents
   get 'edificis/:edifici_id/documents/prova_zip', to: 'documents#prova_zip', :as => :prova_zip
   get 'edificis/:edifici_id/documents/docmosis', to: 'documents#docmosis', :as => :docmosis
-  get 'edificis/:edifici_id/documents/docmosis_edifici_nou', to: 'documents#docmosis_edifici_nou', :as => :docmosis_edifici_nou
+  get 'edificis/:edifici_id/documents/docmosis_edifici_nou_plurifamiliar', to: 'documents#docmosis_edifici_nou_plurifamiliar', :as => :docmosis_edifici_nou_plurifamiliar
+  get 'edificis/:edifici_id/documents/docmosis_edifici_nou_unifamiliar', to: 'documents#docmosis_edifici_nou_unifamiliar', :as => :docmosis_edifici_nou_unifamiliar
+  get 'edificis/:edifici_id/documents/docmosis_manual_edifici_nou', to: 'documents#docmosis_manual_edifici_nou', :as => :docmosis_manual_edifici_nou
+  get 'edificis/:edifici_id/documents/docmosis_edifici_existent', to: 'documents#docmosis_edifici_existent', :as => :docmosis_edifici_existent
   get 'edificis/:edifici_id/documents/nou(.:format)', to: 'documents#nou', :as => :nou
   get 'edificis/:edifici_id/documents/manual_habitatge(.:format)', to: 'documents#manual_habitatge', :as => :manual_habitatge
   get 'edificis/:edifici_id/documents/existents(.:format)', to: 'documents#existents', :as => :existents
 
   get 'edificis/:edifici_id/sistemes/afegir_sistema', to: 'sistemes#afegir_sistema', :as => :afegir_sistema
   get 'edificis/:edifici_id/referencies/crear_llistat', to: 'referencies#crear_llistat', :as => :crear_llistat
+  get 'edificis/:edifici_id/referencies/calendari', to: 'referencies#calendari', :as => :calendari
   
   resources :edificis do
     resources :identificacions
@@ -53,6 +59,7 @@ Rails.application.routes.draw do
     resources :elements
     resources :checklist_nou_plurifamiliars
     resources :checklist_nou_unifamiliars
+    resources :checklist_existent_plurifamiliars
     resources :entitats
     resources :carregues
     resources :regim_especials
@@ -65,6 +72,7 @@ Rails.application.routes.draw do
     resources :colaboradors
     resources :garantia_constructors
     resources :energia_certificats
+    resources :referencia_calendaris
   end
   
   
