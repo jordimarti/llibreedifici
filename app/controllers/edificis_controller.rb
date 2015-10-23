@@ -250,6 +250,11 @@ class EdificisController < ApplicationController
     nova_checklist_nou_unifamiliar = @checklist_nou_unifamiliar.dup
     nova_checklist_nou_unifamiliar.edifici_id = id_nou_edifici
     nova_checklist_nou_unifamiliar.save
+    #Checklist existent plurifamiliar
+    @checklist_existent_plurifamiliar = ChecklistExistentPlurifamiliar.where(:edifici_id => id_edifici).last
+    nova_checklist_existent_plurifamiliar = @checklist_existent_plurifamiliar.dup
+    nova_checklist_existent_plurifamiliar.edifici_id = id_nou_edifici
+    nova_checklist_existent_plurifamiliar.save
     #Promotors
     promotors = Promotor.where(:edifici_id => id_edifici)
     promotors.each do |promotor|
