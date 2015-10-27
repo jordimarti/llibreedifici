@@ -46,6 +46,7 @@ module Docmosis
         "rao_social_colaborador"=>"#{colaborador.rao_social_colaborador}",
         "nif_colaborador"=>"#{colaborador.nif_colaborador}",
         "ambit_colaboracio"=>"#{colaborador.ambit_colaboracio}",
+        "projecte_parcial"=>"#{colaborador.projecte_parcial}",
         "telefon_colaborador"=>"#{colaborador.telefon}",
         "email_colaborador"=>"#{colaborador.email}",
         "web_colaborador"=>"#{colaborador.web}"

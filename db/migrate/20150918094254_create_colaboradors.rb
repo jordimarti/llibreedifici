@@ -7,6 +7,7 @@ class CreateColaboradors < ActiveRecord::Migration
       t.string :rao_social_colaborador
       t.string :nif_colaborador
       t.string :ambit_colaboracio
+      t.string :projecte_parcial
       t.string :telefon
       t.string :email
       t.string :web

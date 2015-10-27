@@ -241,6 +241,7 @@ es:
         rao_social_colaborador: "Razón social"
         nif_colaborador: "NIF/CIF"
         ambit_colaboracio: "Ámbito de la colaboración"
+        projecte_parcial: "Proyecto parcial"
         telefon: "Teléfono"
         email: "Correo electrónico"
         web: "Web"
