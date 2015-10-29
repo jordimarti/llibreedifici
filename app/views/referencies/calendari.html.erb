@@ -32,7 +32,7 @@
         </div>
         <div class="operacions-any">
           <table class="taula-operacions">
-            <% referencies_any = @referencia_calendaris.where(:any => 2016) %>
+            <% referencies_any = @referencies_calendari.where(:any => 2016) %>
             <% referencies_any.each do |referencia| %>
               <div class="item-referencia-calendari">
                 <% operacio = Operacio.find(referencia.operacio_id) %>

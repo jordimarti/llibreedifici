@@ -861,9 +861,7 @@ class ReferenciesController < ApplicationController
     end
   end
 
-  def calendari
-    @referencia_calendaris = ReferenciaCalendari.where(:edifici_id => @edifici.id)
-  end
+
 
   # GET /referencies/1
   # GET /referencies/1.json

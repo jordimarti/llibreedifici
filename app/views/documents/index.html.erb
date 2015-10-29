@@ -39,11 +39,15 @@
 		<div class="medium-12 columns">
 			<div class="container-document">
 				<div class="row">
-					<div class="medium-4 columns">
-						<%= image_tag('document_configuracio.png', :alt => t('.configurar_document'), :class => 'imatge-document') %>
-						<a href="documents/nou_manteniment.docx" class="button small radius"><%= t('.generar_manual_manteniment') %></a>
-						<p><%= t('.text_generar_manual_manteniment') %></p>
-						
+					<div class="medium-6 columns">
+						<%= image_tag('document_manteniment.png', :alt => t('.generar_manual_manteniment'), :class => 'imatge-document') %>
+						<a href="documents/manual_manteniment.docx" class="button small radius"><%= t('.generar_manual_manteniment') %></a>
+						<p><%= t('.text_generar_manual_manteniment') %></p>	
+					</div>
+					<div class="medium-6 columns">
+						<%= image_tag('document_calendari.png', :alt => t('.generar_calendari'), :class => 'imatge-document') %>
+						<a href="documents/calendari_manteniment.docx" class="button small radius"><%= t('.generar_calendari') %></a>
+						<p><%= t('.text_generar_calendari') %></p>	
 					</div>
 				</div>
 			</div>
@@ -72,6 +76,24 @@
 			</div>
 		</div>
 	</div>
+	<div class="row">
+		<div class="medium-12 columns">
+			<div class="container-document">
+				<div class="row">
+					<div class="medium-6 columns">
+						<%= image_tag('document_manteniment.png', :alt => t('.generar_manual_manteniment'), :class => 'imatge-document') %>
+						<a href="documents/manual_manteniment.docx" class="button small radius"><%= t('.generar_manual_manteniment') %></a>
+						<p><%= t('.text_generar_manual_manteniment') %></p>	
+					</div>
+					<div class="medium-6 columns">
+						<%= image_tag('document_calendari.png', :alt => t('.generar_calendari'), :class => 'imatge-document') %>
+						<a href="documents/calendari_manteniment.docx" class="button small radius"><%= t('.generar_calendari') %></a>
+						<p><%= t('.text_generar_calendari') %></p>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<% end %>
 
 	<% if @edifici.tipus_edifici == 'existent_plurifamiliar' || @edifici.tipus_edifici == 'existent_unifamiliar' %>
@@ -90,6 +112,24 @@
 						<%= link_to t('.generar_llibre'), docmosis_edifici_existent_path(@edifici.id), :class=> "button small radius" %>
 						<p><%= t('.text_generar_llibre') %></p>
 						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="medium-12 columns">
+			<div class="container-document">
+				<div class="row">
+					<div class="medium-6 columns">
+						<%= image_tag('document_manteniment.png', :alt => t('.generar_manual_manteniment'), :class => 'imatge-document') %>
+						<a href="documents/manual_manteniment.docx" class="button small radius"><%= t('.generar_manual_manteniment') %></a>
+						<p><%= t('.text_generar_manual_manteniment') %></p>	
+					</div>
+					<div class="medium-6 columns">
+						<%= image_tag('document_calendari.png', :alt => t('.generar_calendari'), :class => 'imatge-document') %>
+						<a href="documents/calendari_manteniment.docx" class="button small radius"><%= t('.generar_calendari') %></a>
+						<p><%= t('.text_generar_calendari') %></p>	
 					</div>
 				</div>
 			</div>
