@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get 'edificis/:edifici_id/documents/docmosis_manual_edifici_nou', to: 'documents#docmosis_manual_edifici_nou', :as => :docmosis_manual_edifici_nou
   get 'edificis/:edifici_id/documents/docmosis_edifici_existent', to: 'documents#docmosis_edifici_existent', :as => :docmosis_edifici_existent
   get 'edificis/:edifici_id/documents/nou(.:format)', to: 'documents#nou', :as => :nou
+  get 'edificis/:edifici_id/documents/nou_manteniment(.:format)', to: 'documents#nou_manteniment', :as => :nou_manteniment
   get 'edificis/:edifici_id/documents/manual_habitatge(.:format)', to: 'documents#manual_habitatge', :as => :manual_habitatge
   get 'edificis/:edifici_id/documents/existents(.:format)', to: 'documents#existents', :as => :existents
 

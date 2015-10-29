@@ -1,6 +1,7 @@
 class DocumentsController < ApplicationController
   before_action :set_edifici
   include Docmosis
+  include DocxGenerator
   layout 'edifici'
 
   def index
@@ -85,6 +86,126 @@ class DocumentsController < ApplicationController
         end
     }
  
+  end
+
+  def nou_manteniment
+    respond_to do |format|
+      format.docx do
+        doc = DocxReplace::Doc.new("#{Rails.root}/lib/docx_templates/nou_mantenim.docx", "#{Rails.root}/tmp")
+        text_manteniment = ''
+        existeix_sistema = comprovacio_sistema('fonamentacio')
+        if existeix_sistema == true
+          text_manteniment = text_manteniment + titol('Fonamentació')
+          text_manteniment = text_manteniment + descripcio(Fonamentacio)
+          text_manteniment = text_manteniment + instruccions('fonamentacio')
+          text_manteniment = text_manteniment + operacions('fonamentacio')
+        end
+        existeix_sistema = comprovacio_sistema('estructura')
+        if existeix_sistema == true
+          text_manteniment = text_manteniment + titol('Estructura')
+          text_manteniment = text_manteniment + descripcio(Estructura)
+          text_manteniment = text_manteniment + instruccions('estructura')
+          text_manteniment = text_manteniment + operacions('estructura')
+        end
+        existeix_sistema = comprovacio_sistema('tancaments')
+        if existeix_sistema == true
+          text_manteniment = text_manteniment + titol('Tancaments verticals')
+          text_manteniment = text_manteniment + descripcio(TancamentsVertical)
+          text_manteniment = text_manteniment + instruccions('tancaments')
+          text_manteniment = text_manteniment + operacions('tancaments')
+        end
+        existeix_sistema = comprovacio_sistema('cobertes')
+        if existeix_sistema == true
+          text_manteniment = text_manteniment + titol('Cobertes')
+          text_manteniment = text_manteniment + descripcio(Coberta)
+          text_manteniment = text_manteniment + instruccions('cobertes')
+          text_manteniment = text_manteniment + operacions('cobertes')
+        end
+        existeix_sistema = comprovacio_sistema('particions')
+        if existeix_sistema == true
+          text_manteniment = text_manteniment + titol('Particions i acabats')
+          text_manteniment = text_manteniment + descripcio(Particio)
+          text_manteniment = text_manteniment + instruccions('particions')
+          text_manteniment = text_manteniment + operacions('particions')
+        end
+        existeix_sistema = comprovacio_sistema('sanejament')
+        if existeix_sistema == true
+          text_manteniment = text_manteniment + titol('Sanejament')
+          text_manteniment = text_manteniment + descripcio(Sanejament)
+          text_manteniment = text_manteniment + instruccions('sanejament')
+          text_manteniment = text_manteniment + operacions('sanejament')
+        end
+        existeix_sistema = comprovacio_sistema('aigua')
+        if existeix_sistema == true
+          text_manteniment = text_manteniment + titol('Subministrament d\'aigua')
+          text_manteniment = text_manteniment + descripcio(Aigua)
+          text_manteniment = text_manteniment + instruccions('aigua')
+          text_manteniment = text_manteniment + operacions('aigua')
+        end
+        existeix_sistema = comprovacio_sistema('electricitat')
+        if existeix_sistema == true
+          text_manteniment = text_manteniment + titol('Instal·lació elèctrica')
+          text_manteniment = text_manteniment + descripcio(Electricitat)
+          text_manteniment = text_manteniment + instruccions('electricitat')
+          text_manteniment = text_manteniment + operacions('electricitat')
+        end
+        existeix_sistema = comprovacio_sistema('climatitzacio')
+        if existeix_sistema == true
+          text_manteniment = text_manteniment + titol('ACS, calefacció i refrigeració')
+          text_manteniment = text_manteniment + descripcio(Climatitzacio)
+          text_manteniment = text_manteniment + instruccions('climatitzacio')
+          text_manteniment = text_manteniment + operacions('climatitzacio')
+        end
+        existeix_sistema = comprovacio_sistema('gas')
+        if existeix_sistema == true
+          text_manteniment = text_manteniment + titol('Instal·lació de gas')
+          text_manteniment = text_manteniment + descripcio(Ga)
+          text_manteniment = text_manteniment + instruccions('gas')
+          text_manteniment = text_manteniment + operacions('gas')
+        end
+        existeix_sistema = comprovacio_sistema('ventilacio')
+        if existeix_sistema == true
+          text_manteniment = text_manteniment + titol('Ventilació')
+          text_manteniment = text_manteniment + descripcio(Ventilacio)
+          text_manteniment = text_manteniment + instruccions('ventilacio')
+          text_manteniment = text_manteniment + operacions('ventilacio')
+        end
+        existeix_sistema = comprovacio_sistema('incendis')
+        if existeix_sistema == true
+          text_manteniment = text_manteniment + titol('Protecció contra incendis')
+          text_manteniment = text_manteniment + descripcio(Incendi)
+          text_manteniment = text_manteniment + instruccions('incendis')
+          text_manteniment = text_manteniment + operacions('incendis')
+        end
+        existeix_sistema = comprovacio_sistema('ascensor')
+        if existeix_sistema == true
+          text_manteniment = text_manteniment + titol('Ascensors')
+          text_manteniment = text_manteniment + descripcio(Ascensor)
+          text_manteniment = text_manteniment + instruccions('ascensor')
+          text_manteniment = text_manteniment + operacions('ascensor')
+        end
+        existeix_sistema = comprovacio_sistema('telecomunicacions')
+        if existeix_sistema == true
+          text_manteniment = text_manteniment + titol('Instal·lació de telecomunicacions')
+          text_manteniment = text_manteniment + descripcio(Telecomunicacio)
+          text_manteniment = text_manteniment + instruccions('telecomunicacions')
+          text_manteniment = text_manteniment + operacions('telecomunicacions')
+        end
+        existeix_sistema = comprovacio_sistema('especials')
+        if existeix_sistema == true
+          text_manteniment = text_manteniment + titol('Instal·lacions especials')
+          text_manteniment = text_manteniment + descripcio(Especial)
+          text_manteniment = text_manteniment + instruccions('especials')
+          text_manteniment = text_manteniment + operacions('especials')
+        end
+        doc.replace("$text_manteniment$", text_manteniment)
+
+        tmp_file = Tempfile.new('word_tempate', "#{Rails.root}/tmp")
+        doc.commit(tmp_file.path)
+
+        send_file tmp_file.path, filename: "manual_manteniment.docx", disposition: 'attachment'
+      end
+    end
   end
 
   def nou
@@ -230,10 +351,10 @@ class DocumentsController < ApplicationController
           elements_fonamentacio = elements_fonamentacio + llista('Sabates de paredat')
           existeix_fonamentacio = true
         end 
-        if @edifici.fonamentacio.sabates_formigo == true
-          elements_fonamentacio = elements_fonamentacio + llista('Sabates o rases de formigó')
-          existeix_fonamentacio = true
-        end 
+        #if @edifici.fonamentacio.sabates_formigo == true
+        #  elements_fonamentacio = elements_fonamentacio + llista('Sabates o rases de formigó')
+        #  existeix_fonamentacio = true
+        #end 
         if @edifici.fonamentacio.llosa == true
           elements_fonamentacio = elements_fonamentacio + llista('Llosa de formigó')
           existeix_fonamentacio = true
@@ -434,116 +555,116 @@ class DocumentsController < ApplicationController
         doc.replace("$estructura$", word_estructura)
           
         # Tancaments verticals
-        # Fem servir igualment el mètode llista que es fa servir en els altres casos, però si hi ha cambra d'aire l'afegim utilitzant el mètode llista tancaments
-        def llista_tancaments(element_llista)
-          if @edifici.tancaments_vertical.cambra_aire_facana == true
-            text_tancaments = element_llista + ' i cambra d\'aire'
-            llista(text_tancaments)
-          else
-            llista(element_llista)
-          end
-        end
-        elements_tancaments = ''
-        existeix_tancaments = false
-        if @edifici.tancaments_vertical.acabat_vist_paredat == true
-          elements_tancaments = elements_tancaments + llista_tancaments('Parets de paredat amb acabat vist')
-          existeix_tancaments = true
-        end
-        if @edifici.tancaments_vertical.acabat_vist_carreus == true
-          elements_tancaments = elements_tancaments + llista_tancaments('Parets de carreus amb acabat vist')
-          existeix_tancaments = true
-        end
-        if @edifici.tancaments_vertical.acabat_vist_fabrica_mao == true
-          elements_tancaments = elements_tancaments + llista_tancaments('Parets de fàbrica de maons amb acabat vist')
-          existeix_tancaments = true
-        end
-        if @edifici.tancaments_vertical.acabat_vist_fabrica_bloc_ceramic == true
-          elements_tancaments = elements_tancaments + llista_tancaments('Parets de bloc ceràmic amb acabat vist')
-          existeix_tancaments = true
-        end
-        if @edifici.tancaments_vertical.acabat_vist_bloc_formigo == true
-          elements_tancaments = elements_tancaments + llista_tancaments('Parets de bloc de formigó amb acabat vist')
-          existeix_tancaments = true
-        end
-        if @edifici.tancaments_vertical.acabat_vist_panell_formigo == true
-          elements_tancaments = elements_tancaments + llista_tancaments('Parets de panells de formigó amb acabat vist')
-          existeix_tancaments = true
-        end
-        if @edifici.tancaments_vertical.acabat_vist_panell_metalic_sandwich == true
-          elements_tancaments = elements_tancaments + llista_tancaments('Parets de panells metàl·lics o de tipus sandwich amb acabat vist')
-          existeix_tancaments = true
-        end
-        if @edifici.tancaments_vertical.acabat_revestit_arrebossat_pintat == true
-          elements_tancaments = elements_tancaments + llista_tancaments('Parets amb acabat revestit arrebossat i pintat')
-          existeix_tancaments = true
-        end
-        if @edifici.tancaments_vertical.acabat_revestit_estucat == true
-          elements_tancaments = elements_tancaments + llista_tancaments('Parets amb acabat revestit estucat')
-          existeix_tancaments = true
-        end
-        if @edifici.tancaments_vertical.acabat_revestit_morter_monocapa == true
-          elements_tancaments = elements_tancaments + llista_tancaments('Parets amb revestiment de morter monocapa')
-          existeix_tancaments = true
-        end
-        if @edifici.tancaments_vertical.acabat_revestit_aplacat_ceramic == true
-          elements_tancaments = elements_tancaments + llista_tancaments('Parets amb revestiment d\'aplacat ceràmic')
-          existeix_tancaments = true
-        end
-        if @edifici.tancaments_vertical.acabat_revestit_aplacat_pedra == true
-          elements_tancaments = elements_tancaments + llista_tancaments('Parets amb revestiment d\'aplacat de pedra')
-          existeix_tancaments = true
-        end
-        if @edifici.tancaments_vertical.acabat_revestit_xapa_metalica == true
-          elements_tancaments = elements_tancaments + llista_tancaments('Parets amb revestiment de xapa metàl·lica')
-          existeix_tancaments = true
-        end
-        if @edifici.tancaments_vertical.acabat_revestit_xapa_metalica == true
-          elements_tancaments = elements_tancaments + llista_tancaments('Parets amb revestiment de xapa metàl·lica')
-          existeix_tancaments = true
-        end
-        if @edifici.tancaments_vertical.fusteria_fusta == true
-          elements_tancaments = elements_tancaments + llista('Fusteries de fusta')
-          existeix_tancaments = true
-        end
-        if @edifici.tancaments_vertical.fusteria_acer == true
-          elements_tancaments = elements_tancaments + llista('Fusteries d\'acer')
-          existeix_tancaments = true
-        end
-        if @edifici.tancaments_vertical.fusteria_alumini == true
-          elements_tancaments = elements_tancaments + llista('Fusteries d\'alumini')
-          existeix_tancaments = true
-        end
-        if @edifici.tancaments_vertical.fusteria_pvc == true
-          elements_tancaments = elements_tancaments + llista('Fusteries de PVC')
-          existeix_tancaments = true
-        end
-        if @edifici.tancaments_vertical.vidre_simple == true
-          elements_tancaments = elements_tancaments + llista('Fusteries amb vidre senzill')
-          existeix_tancaments = true
-        end
-        if @edifici.tancaments_vertical.vidre_doble == true
-          elements_tancaments = elements_tancaments + llista('Fusteries amb vidre doble')
-          existeix_tancaments = true
-        end
-        if @edifici.tancaments_vertical.vidre_triple == true
-          elements_tancaments = elements_tancaments + llista('Fusteries amb vidre triple')
-          existeix_tancaments = true
-        end
-        if @edifici.tancaments_vertical.vidre_baix_emissiu == true
-          elements_tancaments = elements_tancaments + llista('Vidre amb capa baix emissiva')
-          existeix_tancaments = true
-        end
-        if @edifici.tancaments_vertical.vidre_control_solar == true
-          elements_tancaments = elements_tancaments + llista('Vidre amb capa de control solar')
-          existeix_tancaments = true
-        end
-
-        if existeix_tancaments == true || elements_extres('tancaments') != ''
-          word_tancaments = '<w:p w14:paraId="2EF68265" w14:textId="77777777" w:rsidR="00500DE7" w:rsidRDefault="00BB14EB"><w:pPr><w:rPr><w:b/><w:lang w:val="es-ES"/></w:rPr></w:pPr><w:r><w:rPr><w:b/><w:lang w:val="es-ES"/></w:rPr><w:t>Tancaments verticals</w:t></w:r></w:p>' + elements_tancaments + elements_extres('tancaments')
-        else
-          word_tancaments = ''
-        end
-        doc.replace("$tancaments_verticals$", word_tancaments)
+#        # Fem servir igualment el mètode llista que es fa servir en els altres casos, però si hi ha cambra d'aire l'afegim utilitzant el mètode llista tancaments
+#        def llista_tancaments(element_llista)
+#          if @edifici.tancaments_vertical.cambra_aire_facana == true
+#            text_tancaments = element_llista + ' i cambra d\'aire'
+#            llista(text_tancaments)
+#          else
+#            llista(element_llista)
+#          end
+#        end
+#        elements_tancaments = ''
+#        existeix_tancaments = false
+#        if @edifici.tancaments_vertical.acabat_vist_paredat == true
+#          elements_tancaments = elements_tancaments + llista_tancaments('Parets de paredat amb acabat vist')
+#          existeix_tancaments = true
+#        end
+#        if @edifici.tancaments_vertical.acabat_vist_carreus == true
+#          elements_tancaments = elements_tancaments + llista_tancaments('Parets de carreus amb acabat vist')
+#          existeix_tancaments = true
+#        end
+#        if @edifici.tancaments_vertical.acabat_vist_fabrica_mao == true
+#          elements_tancaments = elements_tancaments + llista_tancaments('Parets de fàbrica de maons amb acabat vist')
+#          existeix_tancaments = true
+#        end
+#        if @edifici.tancaments_vertical.acabat_vist_fabrica_bloc_ceramic == true
+#          elements_tancaments = elements_tancaments + llista_tancaments('Parets de bloc ceràmic amb acabat vist')
+#          existeix_tancaments = true
+#        end
+#        if @edifici.tancaments_vertical.acabat_vist_bloc_formigo == true
+#          elements_tancaments = elements_tancaments + llista_tancaments('Parets de bloc de formigó amb acabat vist')
+#          existeix_tancaments = true
+#        end
+#        if @edifici.tancaments_vertical.acabat_vist_panell_formigo == true
+#          elements_tancaments = elements_tancaments + llista_tancaments('Parets de panells de formigó amb acabat vist')
+#          existeix_tancaments = true
+#        end
+#        if @edifici.tancaments_vertical.acabat_vist_panell_metalic_sandwich == true
+#          elements_tancaments = elements_tancaments + llista_tancaments('Parets de panells metàl·lics o de tipus sandwich amb acabat vist')
+#          existeix_tancaments = true
+#        end
+#        if @edifici.tancaments_vertical.acabat_revestit_arrebossat_pintat == true
+#          elements_tancaments = elements_tancaments + llista_tancaments('Parets amb acabat revestit arrebossat i pintat')
+#          existeix_tancaments = true
+#        end
+#        if @edifici.tancaments_vertical.acabat_revestit_estucat == true
+#          elements_tancaments = elements_tancaments + llista_tancaments('Parets amb acabat revestit estucat')
+#          existeix_tancaments = true
+#        end
+#        if @edifici.tancaments_vertical.acabat_revestit_morter_monocapa == true
+#          elements_tancaments = elements_tancaments + llista_tancaments('Parets amb revestiment de morter monocapa')
+#          existeix_tancaments = true
+#        end
+#        if @edifici.tancaments_vertical.acabat_revestit_aplacat_ceramic == true
+#          elements_tancaments = elements_tancaments + llista_tancaments('Parets amb revestiment d\'aplacat ceràmic')
+#          existeix_tancaments = true
+#        end
+#        if @edifici.tancaments_vertical.acabat_revestit_aplacat_pedra == true
+#          elements_tancaments = elements_tancaments + llista_tancaments('Parets amb revestiment d\'aplacat de pedra')
+#          existeix_tancaments = true
+#        end
+#        if @edifici.tancaments_vertical.acabat_revestit_xapa_metalica == true
+#          elements_tancaments = elements_tancaments + llista_tancaments('Parets amb revestiment de xapa metàl·lica')
+#          existeix_tancaments = true
+#        end
+#        if @edifici.tancaments_vertical.acabat_revestit_xapa_metalica == true
+#          elements_tancaments = elements_tancaments + llista_tancaments('Parets amb revestiment de xapa metàl·lica')
+#          existeix_tancaments = true
+#        end
+#        if @edifici.tancaments_vertical.fusteria_fusta == true
+#          elements_tancaments = elements_tancaments + llista('Fusteries de fusta')
+#          existeix_tancaments = true
+#        end
+#        if @edifici.tancaments_vertical.fusteria_acer == true
+#          elements_tancaments = elements_tancaments + llista('Fusteries d\'acer')
+#          existeix_tancaments = true
+#        end
+#        if @edifici.tancaments_vertical.fusteria_alumini == true
+#          elements_tancaments = elements_tancaments + llista('Fusteries d\'alumini')
+#          existeix_tancaments = true
+#        end
+#        if @edifici.tancaments_vertical.fusteria_pvc == true
+#          elements_tancaments = elements_tancaments + llista('Fusteries de PVC')
+#          existeix_tancaments = true
+#        end
+#        if @edifici.tancaments_vertical.vidre_simple == true
+#          elements_tancaments = elements_tancaments + llista('Fusteries amb vidre senzill')
+#          existeix_tancaments = true
+#        end
+#        if @edifici.tancaments_vertical.vidre_doble == true
+#          elements_tancaments = elements_tancaments + llista('Fusteries amb vidre doble')
+#          existeix_tancaments = true
+#        end
+#        if @edifici.tancaments_vertical.vidre_triple == true
+#          elements_tancaments = elements_tancaments + llista('Fusteries amb vidre triple')
+#          existeix_tancaments = true
+#        end
+#        if @edifici.tancaments_vertical.vidre_baix_emissiu == true
+#          elements_tancaments = elements_tancaments + llista('Vidre amb capa baix emissiva')
+#          existeix_tancaments = true
+#        end
+#        if @edifici.tancaments_vertical.vidre_control_solar == true
+#          elements_tancaments = elements_tancaments + llista('Vidre amb capa de control solar')
+#          existeix_tancaments = true
+#        end
+#
+#        if existeix_tancaments == true || elements_extres('tancaments') != ''
+#          word_tancaments = '<w:p w14:paraId="2EF68265" w14:textId="77777777" w:rsidR="00500DE7" w:rsidRDefault="00BB14EB"><w:pPr><w:rPr><w:b/><w:lang w:val="es-ES"/></w:rPr></w:pPr><w:r><w:rPr><w:b/><w:lang w:val="es-ES"/></w:rPr><w:t>Tancaments verticals</w:t></w:r></w:p>' + elements_tancaments + elements_extres('tancaments')
+#        else
+#          word_tancaments = ''
+#        end
+#        doc.replace("$tancaments_verticals$", word_tancaments)
 
         # Coberta
         def llista_terrat(element_terrat)
