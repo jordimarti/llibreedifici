@@ -26,6 +26,15 @@ class DocumentsController < ApplicationController
     edifici_existent
   end
 
+  def doc_pdf
+    kit = PDFKit.new('http://llibreedifici.herokuapp.com/edificis/1/referencies?locale=ca')
+
+    #tmp_file = Tempfile.new('pdf_template', "#{Rails.root}/tmp")
+    file = kit.to_file(Rails.root + 'tmp/' + 'demo.pdf')
+
+    send_file file, filename: "document.pdf", disposition: 'attachment'
+  end
+
   def manual_manteniment
     respond_to do |format|
       format.docx do
