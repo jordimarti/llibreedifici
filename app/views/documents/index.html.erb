@@ -53,6 +53,32 @@
 			</div>
 		</div>
 	</div>
+	<div class="row">
+		<div class="medium-12 columns">
+			<div class="container-document">
+				<div class="row">
+					<div class="medium-4 columns">
+						<%= image_tag('document_configuracio.png', :alt => t('.configurar_document'), :class => 'imatge-document') %>
+						<%= link_to t('.configurar_document'), edit_edifici_checklist_nou_plurifamiliar_path(@edifici.id, @edifici.checklist_nou_plurifamiliar.id), :class=> "button small radius" %>
+						<p><%= t('.text_configurar_document') %></p>
+						
+					</div>
+					<div class="medium-4 columns">
+						<%= image_tag('document_llibre.png', :alt => t('.generar_llibre'), :class => 'imatge-document') %>
+						<a href="documents/llibre_nou.docx" class="button small radius"><%= t('.generar_llibre') %></a>
+						<p><%= t('.text_generar_llibre') %></p>
+						
+					</div>
+					<div class="medium-4 columns">
+						<%= image_tag('document_manual.png', :alt => t('.generar_manual'), :class => 'imatge-document') %>
+						<%= link_to t('.generar_manual'), docmosis_manual_edifici_nou_path(@edifici.id), :class=> "button small radius" %>
+						<p><%= t('.text_generar_manual') %></p>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<% end %>
 
 	<% if @edifici.tipus_edifici == 'nou_unifamiliar' %>
