@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   get 'edificis/:edifici_id/documents/manual_manteniment(.:format)', to: 'documents#manual_manteniment', :as => :manual_manteniment
   get 'edificis/:edifici_id/documents/calendari_manteniment(.:format)', to: 'documents#calendari_manteniment', :as => :calendari_manteniment
   get 'edificis/:edifici_id/documents/manual_habitatge(.:format)', to: 'documents#manual_habitatge', :as => :manual_habitatge
-  get 'edificis/:edifici_id/documents/existents(.:format)', to: 'documents#existents', :as => :existents
+  get 'edificis/:edifici_id/documents/llibre_existent(.:format)', to: 'documents#llibre_existent', :as => :llibre_existent
 
   get 'edificis/:edifici_id/sistemes/afegir_sistema', to: 'sistemes#afegir_sistema', :as => :afegir_sistema
   get 'edificis/:edifici_id/referencies/crear_llistat', to: 'referencies#crear_llistat', :as => :crear_llistat

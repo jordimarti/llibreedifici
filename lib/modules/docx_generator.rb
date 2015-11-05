@@ -482,5 +482,48 @@ module DocxGenerator
     return word_titols_arxiu
   end
 
+  def arxiu_documents_edifici_existent
+    arxiu = ChecklistExistentPlurifamiliar.where(:edifici_id => @edifici.id).last
+    word_titols_arxiu = ''
+
+    def titol_apartat_arxiu(text_titol)
+      return '<w:p w14:paraId="3E0880B3" w14:textId="77777777" w:rsidP="004F63F9" w:rsidR="004F63F9" w:rsidRDefault="004F63F9"><w:pPr><w:pStyle w:val="Heading1"/></w:pPr><w:bookmarkStart w:id="0" w:name="_Toc297976137"/><w:bookmarkStart w:id="1" w:name="_Toc424303768"/><w:bookmarkStart w:id="2" w:name="_Toc424303850"/><w:r><w:t>' + text_titol + '</w:t></w:r><w:bookmarkEnd w:id="0"/><w:bookmarkEnd w:id="1"/><w:bookmarkEnd w:id="2"/></w:p><w:p w14:paraId="673E3807" w14:textId="77777777" w:rsidR="004F63F9" w:rsidRDefault="004F63F9"><w:r><w:br w:type="page"/></w:r></w:p>'
+    end
+
+    if arxiu.iite == true
+      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Informe d’inspecció tècnica obligatòria (IITE)")
+    end
+    if arxiu.document_lliurament_iite == true
+      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Document acreditatiu del lliurament a l’Administració de les dades bàsiques de la IITE")
+    end
+    if arxiu.comunicat_ens_local == true
+      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("El comunicat a l’ens local del municipi al qual pertany l’edifici en cas de situació de risc per a les persones")
+    end
+    if arxiu.programa_rehabilitacio == true
+      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Programa de rehabilitació que adopti les mesures correctores")
+    end
+    if arxiu.certificat_final_obra == true
+      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Certificats de final d’obra de totes les obres que s’executin en l’edifici")
+    end
+    if arxiu.certificat_aptitud == true
+      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Certificat d’aptitud")
+    end
+    if arxiu.certificacio_energetica == true
+      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Certificat d’eficiència energètica de l’edifici")
+    end
+    if arxiu.documents_justificatius_operacions == true
+      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Documents que justifiquin la realització d’operacions de reparació, manteniment i rehabilitació de caràcter obligatori, així com la identificació de les empreses o professionals que les han realitzades i les garanties que s’han donat")
+    end
+    if arxiu.pressupostos_obres == true
+      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Pressupostos i contractes d’obres, manteniments i honoraris professionals")
+    end
+    if arxiu.certificats_instalacions_comunes == true
+      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Certificats d’inscripció en el Registre d’instal·lacions tècniques de seguretat industrial de Catalunya de les instal·lacions comunes de l’edifici de baixa tensió, gasos combustibles, instal·lacions petrolíferes, instal·lacions tèrmiques i d’ascensors que s’hagin realitzat")
+    end
+    if arxiu.certificats_inspeccions_tecniques == true
+      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Certificats d’inspeccions tècniques de les instal·lacions comunes sotmeses a reglamentació de seguretat industrial")
+    end
+  end
+
 
 end

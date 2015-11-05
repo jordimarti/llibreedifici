@@ -90,7 +90,7 @@ class DocumentsController < ApplicationController
         tmp_file = Tempfile.new('word_tempate', "#{Rails.root}/tmp")
         doc.commit(tmp_file.path)
 
-        send_file tmp_file.path, filename: "llibrenou.docx", disposition: 'attachment'
+        send_file tmp_file.path, filename: "#{@edifici.nom_edifici}.docx", disposition: 'attachment'
       end
     end
   end
@@ -119,7 +119,39 @@ class DocumentsController < ApplicationController
         tmp_file = Tempfile.new('word_tempate', "#{Rails.root}/tmp")
         doc.commit(tmp_file.path)
 
-        send_file tmp_file.path, filename: "manual_habitatge.docx", disposition: 'attachment'
+        send_file tmp_file.path, filename: "manual_habitatge_#{@edifici.nom_edifici}.docx", disposition: 'attachment'
+      end
+    end
+  end
+
+  def llibre_existent
+    respond_to do |format|
+      format.docx do
+        doc = DocxReplace::Doc.new("#{Rails.root}/lib/docx_templates/existents.docx", "#{Rails.root}/tmp")
+        if @edifici.identificacio.bloc_edifici.blank?
+          adreca = @edifici.identificacio.tipus_via_edifici.to_s + ' ' + @edifici.identificacio.via_edifici.to_s + ' ' + @edifici.identificacio.numero_edifici.to_s
+        else
+          adreca = @edifici.identificacio.tipus_via_edifici.to_s + ' ' + @edifici.identificacio.via_edifici.to_s + ' ' + @edifici.identificacio.numero_edifici.to_s + ', bloc ' + @edifici.identificacio.bloc_edifici.to_s
+        end
+        doc.replace("$adreca$", adreca)
+        doc.replace("$adreca_edifici$", adreca)
+        doc.replace("$codi_postal$", @edifici.identificacio.cp_edifici)
+        doc.replace("$codi_postal_edifici$", @edifici.identificacio.cp_edifici)
+        doc.replace("$poblacio$", @edifici.identificacio.poblacio_edifici)
+        doc.replace("$poblacio_edifici$", @edifici.identificacio.poblacio_edifici)
+        doc.replace("$provincia$", @edifici.identificacio.provincia_edifici)
+        doc.replace("$provincia_edifici$", @edifici.identificacio.provincia_edifici)
+        doc.replace("$referencia_cadastral$", @edifici.identificacio.ref_cadastral)
+        doc.replace("$any_inici_construccio$", @edifici.identificacio.any_inici_construccio)
+        doc.replace("$any_fi_construccio$", @edifici.identificacio.any_fi_construccio)
+        doc.replace("$word_agents$", text_agents)
+        doc.replace("$word_dades$", text_dades)
+        doc.replace("$word_manual_manteniment$", text_manual_manteniment)
+        doc.replace("$titol_apartat_arxiu$", arxiu_documents_edifici_existent)
+        tmp_file = Tempfile.new('word_tempate', "#{Rails.root}/tmp")
+        doc.commit(tmp_file.path)
+
+        send_file tmp_file.path, filename: "#{@edifici.nom_edifici}.docx", disposition: 'attachment'
       end
     end
   end
