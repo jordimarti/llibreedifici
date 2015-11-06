@@ -13,3 +13,9 @@
 	max-width: 100px;
 	margin-bottom: 20px;
 }
+
+// Vista impressió PDF
+
+p.final {
+	page-break-after: always;
+}

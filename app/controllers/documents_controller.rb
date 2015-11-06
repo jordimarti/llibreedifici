@@ -2,7 +2,7 @@ class DocumentsController < ApplicationController
   before_action :set_edifici
   include Docmosis
   include DocxGenerator
-  layout 'edifici'
+  layout 'edifici', :only => 'index'
 
   def index
     @submenu_actiu = 'documents'
@@ -27,12 +27,16 @@ class DocumentsController < ApplicationController
   end
 
   def doc_pdf
-    kit = PDFKit.new('http://llibreedifici.herokuapp.com/edificis/1/referencies?locale=ca')
+    kit = PDFKit.new('http://llibreedifici.herokuapp.com/edificis/1/documents/vista_pdf_edifici_nou?locale=ca')
 
     #tmp_file = Tempfile.new('pdf_template', "#{Rails.root}/tmp")
     file = kit.to_file(Rails.root + 'tmp/' + 'demo.pdf')
 
     send_file file, filename: "document.pdf", disposition: 'attachment'
+  end
+
+  def vista_pdf_edifici_nou
+
   end
 
   def manual_manteniment
