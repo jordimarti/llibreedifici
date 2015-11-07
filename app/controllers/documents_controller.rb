@@ -2,7 +2,7 @@ class DocumentsController < ApplicationController
   before_action :set_edifici
   include Docmosis
   include DocxGenerator
-  layout 'edifici', :only => :index
+  layout 'edifici', except: [:vista_pdf_edifici_nou, :doc_pdf]
   layout 'pdf', only: [:vista_pdf_edifici_nou, :doc_pdf]
 
   def index

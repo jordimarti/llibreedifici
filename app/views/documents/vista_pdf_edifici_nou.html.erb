@@ -1,5 +1,45 @@
-<h1>Llibre de l'edifici</h1>
+<h1 class="titol-document">LLIBRE DE L'EDIFICI</h1>
 
-<p class="salt-pagina">Aquí els primers continguts genials</p>
+<% if @edifici.identificacio.bloc_edifici.blank?
+    adreca = @edifici.identificacio.tipus_via_edifici.to_s + ' ' + @edifici.identificacio.via_edifici.to_s + ' ' + @edifici.identificacio.numero_edifici.to_s
+  else
+    adreca = @edifici.identificacio.tipus_via_edifici.to_s + ' ' + @edifici.identificacio.via_edifici.to_s + ' ' + @edifici.identificacio.numero_edifici.to_s + ', bloc ' + @edifici.identificacio.bloc_edifici.to_s
+  end
+  %>
+<p class="dades-portada salt-pagina"><%= adreca %><br/><%= @edifici.identificacio.cp_edifici %>, <%= @edifici.identificacio.poblacio_edifici %><br/><%= @edifici.identificacio.provincia_edifici %></p>
 
-<p>Aquí els continguts de la pàgina següent</p>
+<p class="titol-seccio salt-pagina">QUADERN DE REGISTRE</p>
+
+<p class="subtitol-seccio">Dades inicials de l'edifici</p>
+<p class="titol-apartat">Dades d'identificació</p>
+<table class="taula-dades">
+  <tbody>
+    <tr>
+      <td><span class="titol-taula">Adreça:</span><br/>Jacint Verdaguer</td>
+    </tr>
+  </tbody>
+</table>
+<table class="taula-dades">
+  <tbody>
+    <tr>
+      <td><span class="titol-taula">Codi postal:</span><br/>08026</td>
+      <td><span class="titol-taula">Municipi:</span><br/>Barcelona</td>
+      <td><span class="titol-taula">Província:</span><br/>Barcelona</td>
+    </tr>
+ 	</tbody>
+</table>
+<table class="taula-dades">
+  <tbody>   
+    <tr>
+      <td><span class="titol-taula">Referència cadastral:</span><br/>02830492304802934</td>
+    </tr>
+  </tbody>
+</table>
+<table class="taula-dades">
+  <tbody>
+    <tr>
+      <td><span class="titol-taula">Any d'inici de la construcció:</span><br/>2014</td>
+      <td><span class="titol-taula">Any de finalització de la construcció:</span><br/>2015</td>
+    </tr>
+   </tbody>
+</table>
