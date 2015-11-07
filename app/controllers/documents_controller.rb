@@ -28,7 +28,7 @@ class DocumentsController < ApplicationController
   end
 
   def doc_pdf
-    kit = PDFKit.new('http://localhost:3000/edificis/1/documents/vista_pdf_edifici_nou?locale=ca')
+    kit = PDFKit.new('http://llibreedifici.herokuapp.com/edificis/1/documents/vista_pdf_edifici_nou?locale=ca')
 
     #tmp_file = Tempfile.new('pdf_template', "#{Rails.root}/tmp")
     file = kit.to_file(Rails.root + 'tmp/' + 'demo.pdf')
