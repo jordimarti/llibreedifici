@@ -2,8 +2,8 @@ class DocumentsController < ApplicationController
   before_action :set_edifici
   include Docmosis
   include DocxGenerator
-  layout 'edifici', except: [:vista_pdf_edifici_nou, :doc_pdf]
-  layout 'pdf', only: [:vista_pdf_edifici_nou, :doc_pdf]
+  layout 'edifici'
+  #layout 'pdf', only: [:vista_pdf_edifici_nou, :doc_pdf]
 
   def index
     @submenu_actiu = 'documents'
@@ -37,7 +37,7 @@ class DocumentsController < ApplicationController
   end
 
   def vista_pdf_edifici_nou
-
+    render :layout => 'pdf'
   end
 
   def manual_manteniment

@@ -46,12 +46,15 @@
    </tbody>
 </table>
 
+<div class="espaiador"></div>
 <p class="titol-taula">Fotografia de la façana:</p>
-<%= image_tag @edifici.identificacio.foto_facana.url(:medium) %>
+<%= image_tag @edifici.identificacio.foto_facana.url(:original) %>
 <div class="salt-pagina"></div>
 
 <p class="titol-taula">Plànol d'emplaçament:</p>
-<%= image_tag @edifici.identificacio.planol_emplacament.url(:medium) %>
+<%= image_tag @edifici.identificacio.planol_emplacament.url(:original) %>
 <div class="salt-pagina"></div>
+
+<p class="titol-apartat-document">Agents de l'edificació</p>
 
 
