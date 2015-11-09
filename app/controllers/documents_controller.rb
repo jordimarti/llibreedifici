@@ -2,6 +2,7 @@ class DocumentsController < ApplicationController
   before_action :set_edifici
   include Docmosis
   include DocxGenerator
+  include PdfGenerator
   layout 'edifici'
   #layout 'pdf', only: [:vista_pdf_edifici_nou, :doc_pdf]
 
@@ -37,6 +38,7 @@ class DocumentsController < ApplicationController
   end
 
   def vista_pdf_edifici_nou
+    @text_manual_manteniment = text_manteniment_pdf.html_safe
     render :layout => 'pdf'
   end
 
