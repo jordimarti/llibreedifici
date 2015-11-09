@@ -419,7 +419,7 @@ module DocxGenerator
   end
 
 
-  def arxiu_documents_edifici_nou
+  def esword_arxiu_documents_edifici_nou
     if @edifici.tipus_edifici == 'nou_plurifamiliar'
       arxiu = ChecklistNouPlurifamiliar.where(:edifici_id => @edifici.id).last
     elsif @edifici.tipus_edifici == 'nou_unifamiliar'
@@ -489,7 +489,7 @@ module DocxGenerator
     return word_titols_arxiu
   end
 
-  def arxiu_documents_edifici_existent
+  def esword_arxiu_documents_edifici_existent
     arxiu = ChecklistExistentPlurifamiliar.where(:edifici_id => @edifici.id).last
     word_titols_arxiu = ''
 

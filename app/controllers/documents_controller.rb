@@ -25,7 +25,7 @@ class DocumentsController < ApplicationController
 
   def vista_pdf_edifici_nou
     @text_manual_manteniment = text_manteniment_pdf.html_safe
-    @titols_arxiu = arxiu_documents_edifici_nou_pdf.html_safe
+    @titols_arxiu = espdf_arxiu_documents_edifici_nou.html_safe
     render :layout => 'pdf'
   end
 
@@ -36,7 +36,7 @@ class DocumentsController < ApplicationController
 
   def vista_pdf_edifici_existent
     @text_manual_manteniment = text_manteniment_pdf.html_safe
-    @titols_arxiu = arxiu_documents_edifici_existent_pdf.html_safe
+    @titols_arxiu = espdf_arxiu_documents_edifici_existent.html_safe
     render :layout => 'pdf'
   end
 
@@ -76,7 +76,7 @@ class DocumentsController < ApplicationController
         doc.replace("$word_agents$", text_agents)
         doc.replace("$word_dades$", text_dades)
         doc.replace("$word_manual_manteniment$", text_manual_manteniment)
-        doc.replace("$titols_arxiu_documents$", arxiu_documents_edifici_nou)
+        doc.replace("$titols_arxiu_documents$", esword_arxiu_documents_edifici_nou)
         tmp_file = Tempfile.new('word_tempate', "#{Rails.root}/tmp")
         doc.commit(tmp_file.path)
 
@@ -137,7 +137,7 @@ class DocumentsController < ApplicationController
         doc.replace("$word_agents$", text_agents)
         doc.replace("$word_dades$", text_dades)
         doc.replace("$word_manual_manteniment$", text_manual_manteniment)
-        doc.replace("$titol_apartat_arxiu$", arxiu_documents_edifici_existent)
+        doc.replace("$titol_apartat_arxiu$", esword_arxiu_documents_edifici_existent)
         tmp_file = Tempfile.new('word_tempate', "#{Rails.root}/tmp")
         doc.commit(tmp_file.path)
 
