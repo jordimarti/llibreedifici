@@ -348,7 +348,7 @@ module PdfGenerator
     word_titols_arxiu = ''
 
     def titol_apartat_arxiu(text_titol)
-      return '<p class="subtitol-seccio-document">' + text_titol + '</p>'
+      return '<p class="subtitol-seccio-document">' + text_titol + '</p><div class="salt-pagina"></div>'
     end
 
     if arxiu.llicencies_preceptives == true
@@ -408,7 +408,7 @@ module PdfGenerator
     word_titols_arxiu = ''
 
     def titol_apartat_arxiu(text_titol)
-      return '<p class="subtitol-seccio-document">' + text_titol + '</p>'
+      return '<p class="subtitol-seccio-document">' + text_titol + '</p><div class="salt-pagina"></div>'
     end
 
     if arxiu.iite == true
