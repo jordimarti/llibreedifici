@@ -1,6 +1,5 @@
 class DocumentsController < ApplicationController
   before_action :set_edifici
-  include Docmosis
   include DocxGenerator
   include PdfGenerator
   layout 'edifici'
@@ -10,32 +9,18 @@ class DocumentsController < ApplicationController
     @submenu_actiu = 'documents'
   end
 
-  def docmosis_edifici_nou_plurifamiliar
-    # Mètode dins del mòdul Docmosis
-    edifici_nou('plurifamiliar')
-  end
-
-  def docmosis_edifici_nou_unifamiliar
-    edifici_nou('unifamiliar')
-  end
-
-  def docmosis_manual_edifici_nou
-    # Mètode dins del mòdul Docmosis
-    manual_edifici_nou
-  end
-
-  def docmosis_edifici_existent
-    edifici_existent
-  end
-
-  def doc_pdf
-    #kit = PDFKit.new('http://llibreedifici.herokuapp.com/edificis/1/documents/vista_pdf_edifici_nou?locale=ca')
+  def llibre_nou_pdf
     url_edifici = 'http://llibreedifici.herokuapp.com/edificis/' + @edifici.id.to_s + '/documents/vista_pdf_edifici_nou?locale=ca'
     kit = PDFKit.new(url_edifici)
-    #tmp_file = Tempfile.new('pdf_template', "#{Rails.root}/tmp")
     file = kit.to_file(Rails.root + 'tmp/' + 'demo.pdf')
-
     send_file file, filename: "#{@edifici.nom_edifici}.pdf", disposition: 'attachment'
+  end
+
+  def manual_habitatge_pdf
+    url_edifici = 'http://llibreedifici.herokuapp.com/edificis/' + @edifici.id.to_s + '/documents/vista_pdf_manual_habitatge?locale=ca'
+    kit = PDFKit.new(url_edifici)
+    file = kit.to_file(Rails.root + 'tmp/' + 'demo.pdf')
+    send_file file, filename: "#{@edifici.nom_edifici}_manual_habitatge.pdf", disposition: 'attachment'
   end
 
   def vista_pdf_edifici_nou
@@ -47,21 +32,6 @@ class DocumentsController < ApplicationController
   def vista_pdf_manual_habitatge
     @text_manual_manteniment = text_manual_habitatge_pdf.html_safe
     render :layout => 'pdf'
-  end
-
-  def manual_manteniment
-    respond_to do |format|
-      format.docx do
-        doc = DocxReplace::Doc.new("#{Rails.root}/lib/docx_templates/manual_manteniment.docx", "#{Rails.root}/tmp")
-        
-        doc.replace("$text_manteniment$", text_manual_manteniment)
-
-        tmp_file = Tempfile.new('word_tempate', "#{Rails.root}/tmp")
-        doc.commit(tmp_file.path)
-
-        send_file tmp_file.path, filename: "manual_manteniment.docx", disposition: 'attachment'
-      end
-    end
   end
 
   def calendari_manteniment
