@@ -102,7 +102,7 @@ module DocxGenerator
 
   def calendari
     any_inici = Time.now.year + 1
-    any_fi = any_inici + 20
+    any_fi = any_inici + 10
     any = any_inici
     llistat_operacions = ''
     until any == any_fi  do
