@@ -16,14 +16,15 @@ Rails.application.routes.draw do
   get 'edificis/:edifici_id/documents', to: 'documents#index', :as => :documents
   get 'edificis/:edifici_id/documents/llibre_nou_pdf', to: 'documents#llibre_nou_pdf', :as => :llibre_nou_pdf
   get 'edificis/:edifici_id/documents/manual_habitatge_pdf', to: 'documents#manual_habitatge_pdf', :as => :manual_habitatge_pdf
+  get 'edificis/:edifici_id/documents/llibre_existent_pdf', to: 'documents#llibre_existent_pdf', :as => :llibre_existent_pdf
   get 'edificis/:edifici_id/documents/nou(.:format)', to: 'documents#nou', :as => :nou
   get 'edificis/:edifici_id/documents/llibre_nou(.:format)', to: 'documents#llibre_nou', :as => :llibre_nou
-  get 'edificis/:edifici_id/documents/manual_manteniment(.:format)', to: 'documents#manual_manteniment', :as => :manual_manteniment
   get 'edificis/:edifici_id/documents/calendari_manteniment(.:format)', to: 'documents#calendari_manteniment', :as => :calendari_manteniment
   get 'edificis/:edifici_id/documents/manual_habitatge(.:format)', to: 'documents#manual_habitatge', :as => :manual_habitatge
   get 'edificis/:edifici_id/documents/llibre_existent(.:format)', to: 'documents#llibre_existent', :as => :llibre_existent
   get 'edificis/:edifici_id/documents/vista_pdf_edifici_nou', to: 'documents#vista_pdf_edifici_nou', :as => :vista_pdf_edifici_nou
   get 'edificis/:edifici_id/documents/vista_pdf_manual_habitatge', to: 'documents#vista_pdf_manual_habitatge', :as => :vista_pdf_manual_habitatge
+  get 'edificis/:edifici_id/documents/vista_pdf_edifici_existent', to: 'documents#vista_pdf_edifici_existent', :as => :vista_pdf_edifici_existent
 
   get 'edificis/:edifici_id/sistemes/afegir_sistema', to: 'sistemes#afegir_sistema', :as => :afegir_sistema
   get 'edificis/:edifici_id/referencies/crear_llistat', to: 'referencies#crear_llistat', :as => :crear_llistat

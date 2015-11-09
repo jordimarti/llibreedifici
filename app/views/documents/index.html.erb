@@ -61,15 +61,17 @@
 				<div class="row">
 					<div class="medium-6 columns">
 						<%= image_tag('document_configuracio.png', :alt => t('.configurar_document'), :class => 'imatge-document') %>
+						<br/>
 						<%= link_to t('.configurar_document'), edit_edifici_checklist_nou_unifamiliar_path(@edifici.id, @edifici.checklist_nou_unifamiliar.id), :class=> "button small radius" %>
 						<p><%= t('.text_configurar_document_unifamiliar') %></p>
 						
 					</div>
 					<div class="medium-6 columns end">
 						<%= image_tag('document_llibre.png', :alt => t('.generar_llibre'), :class => 'imatge-document') %>
-						<a href="documents/llibre_nou.docx" class="button small radius"><%= t('.generar_llibre') %></a>
+						<br/>
+						<a href="documents/llibre_nou_pdf?locale=ca" class="button small radius"><%= t('.generar_llibre_pdf') %></a>
+						<a href="documents/llibre_nou.docx" class="button small radius"><%= t('.generar_llibre_word') %></a>
 						<p><%= t('.text_generar_llibre') %></p>
-						
 					</div>
 				</div>
 			</div>
@@ -79,11 +81,6 @@
 		<div class="medium-12 columns">
 			<div class="container-document">
 				<div class="row">
-					<div class="medium-6 columns">
-						<%= image_tag('document_manteniment.png', :alt => t('.generar_manual_manteniment'), :class => 'imatge-document') %>
-						<a href="documents/manual_manteniment.docx" class="button small radius"><%= t('.generar_manual_manteniment') %></a>
-						<p><%= t('.text_generar_manual_manteniment') %></p>	
-					</div>
 					<div class="medium-6 columns">
 						<%= image_tag('document_calendari.png', :alt => t('.generar_calendari'), :class => 'imatge-document') %>
 						<a href="documents/calendari_manteniment.docx" class="button small radius"><%= t('.generar_calendari') %></a>
@@ -102,13 +99,16 @@
 				<div class="row">
 					<div class="medium-6 columns">
 						<%= image_tag('document_configuracio.png', :alt => t('.configurar_document'), :class => 'imatge-document') %>
+						<br/>
 						<%= link_to t('.configurar_document'), edit_edifici_checklist_existent_plurifamiliar_path(@edifici.id, @edifici.checklist_existent_plurifamiliar.id), :class=> "button small radius" %>
 						<p><%= t('.text_configurar_document') %></p>
 						
 					</div>
 					<div class="medium-6 columns end">
 						<%= image_tag('document_llibre.png', :alt => t('.generar_llibre'), :class => 'imatge-document') %>
-						<a href="documents/llibre_existent.docx" class="button small radius"><%= t('.generar_llibre') %></a>
+						<br/>
+						<a href="documents/llibre_existent_pdf?locale=ca" class="button small radius"><%= t('.generar_llibre_pdf') %></a>
+						<a href="documents/llibre_existent.docx" class="button small radius"><%= t('.generar_llibre_word') %></a>
 						<p><%= t('.text_generar_llibre') %></p>
 						
 					</div>

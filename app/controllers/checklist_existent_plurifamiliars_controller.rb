@@ -21,6 +21,7 @@ class ChecklistExistentPlurifamiliarsController < ApplicationController
 
   # GET /checklist_existent_plurifamiliars/1/edit
   def edit
+    @submenu_actiu = 'documents'
   end
 
   # POST /checklist_existent_plurifamiliars

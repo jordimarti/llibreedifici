@@ -34,6 +34,12 @@ class DocumentsController < ApplicationController
     render :layout => 'pdf'
   end
 
+  def vista_pdf_edifici_existent
+    @text_manual_manteniment = text_manteniment_pdf.html_safe
+    @titols_arxiu = arxiu_documents_edifici_existent_pdf.html_safe
+    render :layout => 'pdf'
+  end
+
   def calendari_manteniment
     respond_to do |format|
       format.docx do

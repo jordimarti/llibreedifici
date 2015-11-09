@@ -21,7 +21,9 @@
               <%= f.input :documents_justificatius_operacions %>
               <%= f.input :pressupostos_obres %>
               <%= f.input :certificats_instalacions_comunes %>
-              <%= f.input :certificats_inspeccions_tecniques %>
+              <% if @edifici.tipus_edifici == 'existent_plurifamiliar' %>
+                <%= f.input :certificats_inspeccions_tecniques %>
+              <% end %>
             </div>
           </div>
           
