@@ -447,7 +447,7 @@ module DocxGenerator
       word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Documents acreditatius de garantia")
     end
     if @edifici.tipus_edifici == 'nou_plurifamiliar'
-      if arxiu.documents_garantia_parts_comunes == true && @edifici.tipus_edifici == 'nou_plurifamiliar'
+      if arxiu.documents_garantia_parts_comunes == true
         word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Documents de garantia d'instal·lacions de parts comunes")
       end
     end
@@ -458,10 +458,10 @@ module DocxGenerator
       word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Pòlisses d'assegurances")
     end
     if @edifici.tipus_edifici == 'nou_plurifamiliar'
-      if arxiu.escriptura_propietat_horitzontal == true && @edifici.tipus_edifici == 'nou_plurifamiliar'
+      if arxiu.escriptura_propietat_horitzontal == true
         word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Escriptura de divisió en règim de propietat horitzontal")
       end
-      if arxiu.estatus_comunitat == true && @edifici.tipus_edifici == 'nou_plurifamiliar'
+      if arxiu.estatus_comunitat == true
         word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Estatuts de la comunitat de propietaris")
       end
     end
@@ -478,7 +478,7 @@ module DocxGenerator
       word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Documents de justificació de la realització d'operacions de reparació, manteniment i rehabilitació")
     end
     if @edifici.tipus_edifici == 'nou_plurifamiliar'
-      if arxiu.certificat_final_obra_instalacions == true && @edifici.tipus_edifici == 'nou_plurifamiliar'
+      if arxiu.certificat_final_obra_instalacions == true
         word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Certificats final d’obra de les instal·lacions comunes de baixa tensió, gasos combustibles, productes petrolífers o instal·lacions tèrmiques")
       end
     end

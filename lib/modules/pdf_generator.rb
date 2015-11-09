@@ -457,21 +457,25 @@ module PdfGenerator
     if arxiu.documents_garantia == true
       word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Documents acreditatius de garantia")
     end
-    if arxiu.documents_garantia_parts_comunes == true && @edifici.tipus_edifici == 'nou_plurifamiliar'
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Documents de garantia d'instal·lacions de parts comunes")
-    end
+    if @edifici.tipus_edifici == 'nou_plurifamiliar'
+	    if arxiu.documents_garantia_parts_comunes == true
+	      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Documents de garantia d'instal·lacions de parts comunes")
+	    end
+	  end
     if arxiu.certificacio_energetica == true
       word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Certificació energètica")
     end
     if arxiu.polissa_assegurances == true
       word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Pòlisses d'assegurances")
     end
-    if arxiu.escriptura_propietat_horitzontal == true && @edifici.tipus_edifici == 'nou_plurifamiliar'
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Escriptura de divisió en règim de propietat horitzontal")
-    end
-    if arxiu.estatus_comunitat == true && @edifici.tipus_edifici == 'nou_plurifamiliar'
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Estatuts de la comunitat de propietaris")
-    end
+    if @edifici.tipus_edifici == 'nou_plurifamiliar'
+	    if arxiu.escriptura_propietat_horitzontal == true
+	      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Escriptura de divisió en règim de propietat horitzontal")
+	    end
+	    if arxiu.estatus_comunitat == true
+	      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Estatuts de la comunitat de propietaris")
+	    end
+	  end
     if arxiu.cedules_regims_juridics == true
       word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Cèdules de declaració de règims jurídics especials o qualificacions d'habitatges protegits")
     end
@@ -484,9 +488,11 @@ module PdfGenerator
     if arxiu.documents_justificacio_operacions == true
       word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Documents de justificació de la realització d'operacions de reparació, manteniment i rehabilitació")
     end
-    if arxiu.certificat_final_obra_instalacions == true && @edifici.tipus_edifici == 'nou_plurifamiliar'
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Certificats final d’obra de les instal·lacions comunes de baixa tensió, gasos combustibles, productes petrolífers o instal·lacions tèrmiques")
-    end
+    if @edifici.tipus_edifici == 'nou_plurifamiliar'
+	    if arxiu.certificat_final_obra_instalacions == true
+	      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Certificats final d’obra de les instal·lacions comunes de baixa tensió, gasos combustibles, productes petrolífers o instal·lacions tèrmiques")
+	    end
+	  end
     if arxiu.declaracions_ce_ascensors == true
       word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Declaracions CE que reconeixen la conformitat dels ascensors instal·lats")
     end
