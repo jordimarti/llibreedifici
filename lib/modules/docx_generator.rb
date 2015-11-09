@@ -523,6 +523,8 @@ module DocxGenerator
     if arxiu.certificats_inspeccions_tecniques == true
       word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Certificats d’inspeccions tècniques de les instal·lacions comunes sotmeses a reglamentació de seguretat industrial")
     end
+
+    return word_titols_arxiu
   end
 
 

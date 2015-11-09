@@ -39,6 +39,7 @@ class DocumentsController < ApplicationController
 
   def vista_pdf_edifici_nou
     @text_manual_manteniment = text_manteniment_pdf.html_safe
+    @titols_arxiu = arxiu_documents_edifici_nou.html_safe
     render :layout => 'pdf'
   end
 
