@@ -54,13 +54,17 @@ h1.titol-document {
 
 .taula-dades {
 	border: none;
-	border-top: 1px solid #CCCCCC;
+	border-bottom: 1px solid #CCCCCC;
 	width: 100%;
 	margin-bottom: 0px;
 }
 
 .titol-taula {
 	font-weight: bold;
+}
+
+.taula-dos-columnes {
+	width: 50%;
 }
 
 .espaiador {
