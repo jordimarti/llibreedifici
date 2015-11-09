@@ -1,5 +1,7 @@
 <h1 class="titol-document">LLIBRE DE L'EDIFICI</h1>
+<h2 class="subtitol-document">MANUAL DE L'HABITATGE</h2>
 <div class="separacio-gran"></div>
+
 <% if @edifici.identificacio.bloc_edifici.blank?
     adreca = @edifici.identificacio.tipus_via_edifici.to_s + ' ' + @edifici.identificacio.via_edifici.to_s + ' ' + @edifici.identificacio.numero_edifici.to_s
   else
@@ -9,90 +11,18 @@
 <p class="dades-portada"><%= adreca %><br/><%= @edifici.identificacio.cp_edifici %>, <%= @edifici.identificacio.poblacio_edifici %><br/><%= @edifici.identificacio.provincia_edifici %></p>
 <div class="salt-pagina"></div>
 
-<p class="titol-seccio-document">QUADERN DE REGISTRE</p>
+<p class="titol-seccio-document">PLÀNOLS</p>
 <div class="salt-pagina"></div>
 
-<p class="subtitol-seccio-document">Dades inicials de l'edifici</p>
-<p class="titol-apartat-document">Dades d'identificació</p>
-<table class="taula-dades">
-  <tbody>
-    <tr>
-      <td><span class="titol-taula">Adreça:</span><br/><%= adreca %></td>
-    </tr>
-  </tbody>
-</table>
-<table class="taula-dades">
-  <tbody>
-    <tr>
-      <td><span class="titol-taula">Codi postal:</span><br/><%= @edifici.identificacio.cp_edifici %></td>
-      <td><span class="titol-taula">Municipi:</span><br/><%= @edifici.identificacio.poblacio_edifici %></td>
-      <td><span class="titol-taula">Província:</span><br/><%= @edifici.identificacio.provincia_edifici %></td>
-    </tr>
- 	</tbody>
-</table>
-<table class="taula-dades">
-  <tbody>   
-    <tr>
-      <td><span class="titol-taula">Referència cadastral:</span><br/><%= @edifici.identificacio.ref_cadastral %></td>
-    </tr>
-  </tbody>
-</table>
-<table class="taula-dades">
-  <tbody>
-    <tr>
-      <td><span class="titol-taula">Any d'inici de la construcció:</span><br/><%= @edifici.identificacio.any_inici_construccio %></td>
-      <td><span class="titol-taula">Any de finalització de la construcció:</span><br/><%= @edifici.identificacio.any_fi_construccio %></td>
-    </tr>
-   </tbody>
-</table>
-
-<div class="salt-pagina"></div>
-<p class="titol-taula">Fotografia de la façana:</p>
-<%= image_tag @edifici.identificacio.foto_facana.url(:original) %>
-
-<div class="salt-pagina"></div>
-<p class="titol-taula">Plànol d'emplaçament:</p>
-<%= image_tag @edifici.identificacio.planol_emplacament.url(:original) %>
+<p class="subtitol-seccio-document">Plànol de l'habitatge</p>
+<p>Un plànol a escala mínima 1:50 de l’habitatge amb l’especificació de la seva superfície útil i construïda i amb els mesuraments acreditats per tècnics competents. Si hi ha annexos, els mesuraments han de ser diferenciats. Hi han de figurar grafiats els punts de tall dels serveis de què disposa l’habitatge i els esquemes de pas de les instal·lacions. </p>
 <div class="salt-pagina"></div>
 
-<p class="titol-apartat-document">Agents de l'edificació</p>
-
-<%= render 'agents' %>
-
-<div class="salt-pagina"></div>
-<p class="titol-apartat-document">Dades administratives i jurídiques</p>
-
-<%= render 'dades' %>
-
+<p class="subtitol-seccio-document">Plànols dels elements privatius</p>
+<p>Plànols a escala mínima 1:100 de les plantes on estiguin els elements privatius, com garatges, trasters o altres dependències vinculades a l’habitatge.</p>
 <div class="salt-pagina"></div>
 
-<p class="subtitol-seccio-document">Registre d'incidències</p>
-<p>El registre d’incidències és l’apartat on cal deixar constància de totes les incidències que afecten a l’edifici.  La primera incidència ha de ser l’acte de lliurament del llibre de l’edifici. La segona incidència ha de ser el nomenament del tècnic competent responsable del manteniment de l’edifici segon l’indicat en el Codi Tècnic de l’Edificació.</p>
-<div class="salt-pagina"></div>
-
-<p class="subtitol-seccio-document">Registre d'operacions de manteniment</p>
-<p>Totes les operacions de manteniment i reparació que es realitzin a l’edifici al llarg de la seva vida útil han de quedar reflectides en el registre d’operacions de manteniment.</p>
-<p>Cada registre ha d’incloure la data de realització de cada operació i les dades de l’empresa que porti a terme l’operació de manteniment. Els registres han d’estar signats per la propietat o per la persona que es delegui per a aquesta finalitat i s’han de realitzar dins el termini d’un mes després de que s’hagi portat a terme l’operació. Els documents a que es fa referència en aquest apartat han de quedar arxivats a l’Arxiu de documents.</p>
-<div class="salt-pagina"></div>
-
-<p class="titol-seccio-document">DOCUMENT D'ESPECIFICACIONS TÈCNIQUES</p>
-
-<p>El Document d'Especificacions Tècniques recull els documents següents:
-<ul>
-	<li>Els plànols del projecte de l'edifici amb la incorporació de les seves modificacions aprovades per la direcció facultativa.</li>
-	<li>Esquemes de xarxa d’instal·lacions i sistemes de seguretat</li>
-	<li>El Manual d'Ús i Manteniment de l'edifici</li>
-</ul>
-</p>
-<div class="salt-pagina"></div>
-
-<p class="subtitol-seccio-document">Plànols de l'edifici</p>
-<div class="salt-pagina"></div>
-
-<p class="subtitol-seccio-document">Esquemes de xarxes d’instal·lacions i sistemes de seguretat</p>
-<div class="salt-pagina"></div>
-
-<p class="subtitol-seccio-document">Instruccions d'ús i manteniment</p>
+<p class="titol-seccio-document">INSTRUCCIONS D'ÚS I MANTENIMENT DE L'HABITATGE</p>
 <p class="titol-apartat-document">El manteniment</p>
 
 <p>Les cases, tant en el seu conjunt com per a cadascun dels seus components, han de tenir un ús i un manteniment adequats. És per aquest motiu, que els seus propietaris i usuaris han de conèixer les seves característiques i les de les diferents parts. Una casa en bon estat ha de ser:
@@ -122,8 +52,6 @@
 <div class="espaiador"></div>
 <%= @text_manual_manteniment %>
 
-<div class="salt-pagina"></div>
-<p class="subtitol-seccio-document">Documents de substitució, modificació o ampliació del DET per incidències produïdes</p>
 <div class="salt-pagina"></div>
 
 <p class="subtitol-seccio-document">Recomanacions per emergències</p>
@@ -214,32 +142,8 @@
 <li>No s’han de fer servir els ascensors.</li>
 </ul>
 
-
 <div class="salt-pagina"></div>
-<p class="titol-seccio-document">ARXIU DE DOCUMENTS</p>
+<p class="titol-seccio-document">GARANTIES I MANUALS DE FUNCIONAMENT</p>
+<p>El manual de l’habitatge ha de contenir les garanties dels equips individuals de l’habitatge i també els manuals de funcionament d’aquests equips. </p>
 
-<p>L’arxiu de documents consta d’una carpeta i d'una relació de tots els documents que s’hi guarden. Aquests seran els següents:</p>
-<ul>
-<li>Llicències preceptives </li>
-<li>Certificat de final d’obra </li>
-<li>Acta de recepció definitiva de l’obra</li>
-<li>Escriptura pública de declaració d’obra nova</li>
-<li>Documents acreditatius de garantia</li>
-<li>Documents de garantia d’instal·lacions de parts comunes</li>
-<li>Certificació energètica</li>
-<li>Pòlisses d’assegurances</li>
-<li>Escriptura de divisió en règim de propietat horitzontal</li>
-<li>Estatuts de la comunitat de propietaris</li>
-<li>Cèdules de declaració de règims jurídics especials o qualificacions d’habitatges protegits</li>
-<li>Càrregues reals existents</li>
-<li>Documents acreditatius dels ajuts i beneficis atorgats a l’edifici</li>
-<li>Documents de justificació de la realització d’operacions de reparació, manteniment i rehabilitació</li>
-<li>Certificats de final d’obra de les instal·lacions comunes de baixa tensió, gasos combustibles, productes petrolífers o instal·lacions tèrmiques</li>
-<li>Declaracions CE que reconeixen la conformitat dels ascensors instal·lats</li>
-<li>Els documents que substitueixin, modifiquin o ampliïn especificacions del Document d’Especificacions Tècniques, resultat d’incidències produïdes</li>
-</ul>
 
-<p>El propietari de l’edifici o, en el seu cas, el president de la Comunitat de Propietaris són els responsables de mantenir al dia l’Arxiu de Documents. Cada nova incorporació estarà autentificada i signada per ells, i s’especificarà al registre, indicant el tipus de document i la data d’incorporació. La incorporació de documents que sigui d’obligació arxivar, s’ha de fer dins del mes següent a la seva obtenció.</p>
-<div class="salt-pagina"></div>
-
-<%= @titols_arxiu %>

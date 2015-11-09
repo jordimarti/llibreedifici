@@ -224,7 +224,22 @@ module PdfGenerator
     llistat_operacions = ''
     referencies.each do |referencia|
       operacio = Operacio.find(referencia.operacio_id)
-      llistat_operacions = llistat_operacions + '<w:tbl><w:tblPr><w:tblW w:w="9010" w:type="dxa"/><w:tblLayout w:type="fixed"/><w:tblLook w:val="0000" w:firstRow="0" w:lastRow="0" w:firstColumn="0" w:lastColumn="0" w:noHBand="0" w:noVBand="0"/></w:tblPr><w:tblGrid><w:gridCol w:w="4505"/><w:gridCol w:w="4505"/></w:tblGrid><w:tr w:rsidR="003A630F" w14:paraId="53F99655" w14:textId="77777777" w:rsidTr="00F84E17"><w:tc><w:tcPr><w:tcW w:w="4505" w:type="dxa"/><w:gridSpan w:val="2"/><w:tcMar><w:top w:w="0" w:type="dxa"/><w:left w:w="108" w:type="dxa"/><w:bottom w:w="0" w:type="dxa"/><w:right w:w="108" w:type="dxa"/></w:tcMar></w:tcPr><w:p w14:paraId="7B455DF9" w14:textId="77777777" w:rsidR="003A630F" w:rsidRDefault="003A630F" w:rsidP="00F84E17"><w:pPr><w:pStyle w:val="titoltaula"/><w:tabs><w:tab w:val="num" w:pos="0"/></w:tabs></w:pPr><w:r><w:t>Descripció:</w:t></w:r></w:p><w:p w14:paraId="2F330954" w14:textId="77777777" w:rsidR="003A630F" w:rsidRDefault="003A630F" w:rsidP="00F84E17"><w:pPr><w:pStyle w:val="normaltaula"/><w:tabs><w:tab w:val="num" w:pos="0"/></w:tabs></w:pPr><w:r><w:t>' + operacio.descripcio_ca + '</w:t></w:r></w:p></w:tc></w:tr><w:tr w:rsidR="003A630F" w14:paraId="46317B0F" w14:textId="77777777" w:rsidTr="00F84E17"><w:tc><w:tcPr><w:tcW w:w="4505" w:type="dxa"/><w:tcBorders><w:top w:val="single" w:sz="4" w:space="0" w:color="BFBFBF"/><w:bottom w:val="single" w:sz="4" w:space="0" w:color="000000"/></w:tcBorders><w:tcMar><w:top w:w="0" w:type="dxa"/><w:left w:w="108" w:type="dxa"/><w:bottom w:w="0" w:type="dxa"/><w:right w:w="108" w:type="dxa"/></w:tcMar></w:tcPr><w:p w14:paraId="29092B46" w14:textId="77777777" w:rsidR="003A630F" w:rsidRDefault="003A630F" w:rsidP="00F84E17"><w:pPr><w:pStyle w:val="titoltaula"/><w:tabs><w:tab w:val="num" w:pos="0"/></w:tabs></w:pPr><w:r><w:t>Periodicitat:</w:t></w:r></w:p><w:p w14:paraId="5FCDE196" w14:textId="77777777" w:rsidR="003A630F" w:rsidRDefault="003A630F" w:rsidP="00F84E17"><w:pPr><w:pStyle w:val="normaltaula"/><w:tabs><w:tab w:val="num" w:pos="0"/></w:tabs></w:pPr><w:r><w:t>' + operacio.periodicitat_text_ca + '</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4505" w:type="dxa"/><w:tcBorders><w:top w:val="single" w:sz="4" w:space="0" w:color="BFBFBF"/><w:bottom w:val="single" w:sz="4" w:space="0" w:color="000000"/></w:tcBorders><w:tcMar><w:top w:w="0" w:type="dxa"/><w:left w:w="108" w:type="dxa"/><w:bottom w:w="0" w:type="dxa"/><w:right w:w="108" w:type="dxa"/></w:tcMar></w:tcPr><w:p w14:paraId="78542A6E" w14:textId="77777777" w:rsidR="003A630F" w:rsidRDefault="003A630F" w:rsidP="00F84E17"><w:pPr><w:pStyle w:val="titoltaula"/><w:tabs><w:tab w:val="num" w:pos="0"/></w:tabs></w:pPr><w:r><w:t>Responsable:</w:t></w:r></w:p><w:p w14:paraId="4FECB03A" w14:textId="77777777" w:rsidR="003A630F" w:rsidRDefault="003A630F" w:rsidP="00F84E17"><w:pPr><w:pStyle w:val="normaltaula"/><w:tabs><w:tab w:val="num" w:pos="0"/></w:tabs></w:pPr><w:r><w:t>' + operacio.responsable_ca + '</w:t></w:r></w:p></w:tc></w:tr></w:tbl><w:p w14:paraId="734ACE0E" w14:textId="77777777" w:rsidR="00500DE7" w:rsidRDefault="00500DE7"><w:bookmarkStart w:id="0" w:name="_GoBack"/><w:bookmarkEnd w:id="0"/></w:p>'
+      llistat_operacions = llistat_operacions + '
+      <table class="taula-dades">
+			  <tbody>
+			    <tr>
+			      <td><span class="titol-taula">Descripció:</span><br/>' + operacio.descripcio_ca + '</td>
+			    </tr>
+			  </tbody>
+			</table>
+			<table class="taula-dades-final">
+				<tbody>
+			    <tr>
+			    	<td class="taula-dos-columnes"><span class="titol-taula">Periodicitat:</span><br/>' + operacio.periodicitat_text_ca + '</td>
+			      <td class="taula-dos-columnes"><span class="titol-taula">Responsable:</span><br/>' + operacio.responsable_ca + '</td>
+			    </tr>
+			  </tbody>
+			</table>'
     end
     return llistat_operacions
   end
@@ -338,6 +353,82 @@ module PdfGenerator
 	  end
 	  return text_manteniment
   end
+
+  def text_manual_habitatge_pdf
+    text_manteniment = ''
+    existeix_sistema = comprovacio_sistema_manual('estructura')
+    if existeix_sistema == true
+      text_manteniment = text_manteniment + titol_pdf('Estructura')
+      text_manteniment = text_manteniment + descripcio_pdf(Estructura)
+      text_manteniment = text_manteniment + instruccions_pdf('estructura')
+      text_manteniment = text_manteniment + operacions_manual_habitatge_pdf('estructura')
+    end
+    existeix_sistema = comprovacio_sistema_manual('tancaments')
+    if existeix_sistema == true
+      text_manteniment = text_manteniment + titol_pdf('Tancaments verticals')
+      text_manteniment = text_manteniment + descripcio_pdf(TancamentsVertical)
+      text_manteniment = text_manteniment + instruccions_pdf('tancaments')
+      text_manteniment = text_manteniment + operacions_manual_habitatge_pdf('tancaments')
+    end
+    existeix_sistema = comprovacio_sistema_manual('cobertes')
+    if existeix_sistema == true
+      text_manteniment = text_manteniment + titol_pdf('Terrats i terrasses')
+      text_manteniment = text_manteniment + descripcio_pdf(Coberta)
+      text_manteniment = text_manteniment + instruccions_pdf('cobertes')
+      text_manteniment = text_manteniment + operacions_manual_habitatge_pdf('cobertes')
+    end
+    existeix_sistema = comprovacio_sistema_manual('particions')
+    if existeix_sistema == true
+      text_manteniment = text_manteniment + titol_pdf('Particions i acabats')
+      text_manteniment = text_manteniment + descripcio_pdf(Particio)
+      text_manteniment = text_manteniment + instruccions_pdf('particions')
+      text_manteniment = text_manteniment + operacions_manual_habitatge_pdf('particions')
+    end
+    existeix_sistema = comprovacio_sistema_manual('sanejament')
+    if existeix_sistema == true
+      text_manteniment = text_manteniment + titol_pdf('Sanejament')
+      text_manteniment = text_manteniment + descripcio_pdf(Sanejament)
+      text_manteniment = text_manteniment + instruccions_pdf('sanejament')
+      text_manteniment = text_manteniment + operacions_manual_habitatge_pdf('sanejament')
+    end
+    existeix_sistema = comprovacio_sistema_manual('aigua')
+    if existeix_sistema == true
+      text_manteniment = text_manteniment + titol_pdf('Subministrament d\'aigua')
+      text_manteniment = text_manteniment + descripcio_pdf(Aigua)
+      text_manteniment = text_manteniment + instruccions_pdf('aigua')
+      text_manteniment = text_manteniment + operacions_manual_habitatge_pdf('aigua')
+    end
+    existeix_sistema = comprovacio_sistema_manual('electricitat')
+    if existeix_sistema == true
+      text_manteniment = text_manteniment + titol_pdf('Instal·lació elèctrica')
+      text_manteniment = text_manteniment + descripcio_pdf(Electricitat)
+      text_manteniment = text_manteniment + instruccions_pdf('electricitat')
+      text_manteniment = text_manteniment + operacions_manual_habitatge_pdf('electricitat')
+    end
+    existeix_sistema = comprovacio_sistema_manual('climatitzacio')
+    if existeix_sistema == true
+      text_manteniment = text_manteniment + titol_pdf('ACS, calefacció i refrigeració')
+      text_manteniment = text_manteniment + descripcio_pdf(Climatitzacio)
+      text_manteniment = text_manteniment + instruccions_pdf('climatitzacio')
+      text_manteniment = text_manteniment + operacions_manual_habitatge_pdf('climatitzacio')
+    end
+    existeix_sistema = comprovacio_sistema_manual('gas')
+    if existeix_sistema == true
+      text_manteniment = text_manteniment + titol_pdf('Instal·lació de gas')
+      text_manteniment = text_manteniment + descripcio_pdf(Ga)
+      text_manteniment = text_manteniment + instruccions_pdf('gas')
+      text_manteniment = text_manteniment + operacions_manual_habitatge_pdf('gas')
+    end
+    existeix_sistema = comprovacio_sistema_manual('ventilacio')
+    if existeix_sistema == true
+      text_manteniment = text_manteniment + titol_pdf('Ventilació')
+      text_manteniment = text_manteniment + descripcio_pdf(Ventilacio)
+      text_manteniment = text_manteniment + instruccions_pdf('ventilacio')
+      text_manteniment = text_manteniment + operacions_manual_habitatge_pdf('ventilacio')
+    end
+    return text_manteniment
+  end
+
 
   def arxiu_documents_edifici_nou_pdf
     if @edifici.tipus_edifici == 'nou_plurifamiliar'
