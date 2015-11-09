@@ -418,6 +418,7 @@ module DocxGenerator
     return text_manteniment
   end
 
+
   def arxiu_documents_edifici_nou
     if @edifici.tipus_edifici == 'nou_plurifamiliar'
       arxiu = ChecklistNouPlurifamiliar.where(:edifici_id => @edifici.id).last
@@ -478,7 +479,7 @@ module DocxGenerator
     if arxiu.declaracions_ce_ascensors == true
       word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Declaracions CE que reconeixen la conformitat dels ascensors instal·lats")
     end
-    
+
     return word_titols_arxiu
   end
 

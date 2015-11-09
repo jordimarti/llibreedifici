@@ -539,5 +539,4 @@ module PdfGenerator
     return word_titols_arxiu
   end
 
-
 end
