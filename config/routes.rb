@@ -14,13 +14,8 @@ Rails.application.routes.draw do
   get 'edificis/:edifici_id/agents', to: 'agents#index', :as => :agents
   get 'edificis/:edifici_id/dades', to: 'dades#index', :as => :dades
   get 'edificis/:edifici_id/documents', to: 'documents#index', :as => :documents
-  get 'edificis/:edifici_id/documents/prova_zip', to: 'documents#prova_zip', :as => :prova_zip
-  get 'edificis/:edifici_id/documents/docmosis', to: 'documents#docmosis', :as => :docmosis
-  get 'edificis/:edifici_id/documents/docmosis_edifici_nou_plurifamiliar', to: 'documents#docmosis_edifici_nou_plurifamiliar', :as => :docmosis_edifici_nou_plurifamiliar
-  get 'edificis/:edifici_id/documents/docmosis_edifici_nou_unifamiliar', to: 'documents#docmosis_edifici_nou_unifamiliar', :as => :docmosis_edifici_nou_unifamiliar
-  get 'edificis/:edifici_id/documents/docmosis_manual_edifici_nou', to: 'documents#docmosis_manual_edifici_nou', :as => :docmosis_manual_edifici_nou
-  get 'edificis/:edifici_id/documents/docmosis_edifici_existent', to: 'documents#docmosis_edifici_existent', :as => :docmosis_edifici_existent
-  get 'edificis/:edifici_id/documents/doc_pdf', to: 'documents#doc_pdf', :as => :doc_pdf
+  get 'edificis/:edifici_id/documents/llibre_nou_pdf', to: 'documents#llibre_nou_pdf', :as => :llibre_nou_pdf
+  get 'edificis/:edifici_id/documents/manual_habitatge_pdf', to: 'documents#manual_habitatge_pdf', :as => :manual_habitatge_pdf
   get 'edificis/:edifici_id/documents/nou(.:format)', to: 'documents#nou', :as => :nou
   get 'edificis/:edifici_id/documents/llibre_nou(.:format)', to: 'documents#llibre_nou', :as => :llibre_nou
   get 'edificis/:edifici_id/documents/manual_manteniment(.:format)', to: 'documents#manual_manteniment', :as => :manual_manteniment
