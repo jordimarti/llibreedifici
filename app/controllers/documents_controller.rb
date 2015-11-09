@@ -70,7 +70,7 @@ class DocumentsController < ApplicationController
         doc.replace("$word_agents$", text_agents)
         doc.replace("$word_dades$", text_dades)
         doc.replace("$word_manual_manteniment$", text_manual_manteniment)
-        doc.replace("$titol_apartat_arxiu$", arxiu_documents_edifici_nou)
+        #doc.replace("$titol_apartat_arxiu$", arxiu_documents_edifici_nou)
         tmp_file = Tempfile.new('word_tempate', "#{Rails.root}/tmp")
         doc.commit(tmp_file.path)
 
