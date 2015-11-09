@@ -339,7 +339,7 @@ module PdfGenerator
 	  return text_manteniment
   end
 
-  def arxiu_documents_edifici_nou
+  def arxiu_documents_edifici_nou_pdf
     if @edifici.tipus_edifici == 'nou_plurifamiliar'
       arxiu = ChecklistNouPlurifamiliar.where(:edifici_id => @edifici.id).last
     elsif @edifici.tipus_edifici == 'nou_unifamiliar'
@@ -403,7 +403,7 @@ module PdfGenerator
     return word_titols_arxiu
   end
 
-  def arxiu_documents_edifici_existent
+  def arxiu_documents_edifici_existent_pdf
     arxiu = ChecklistExistentPlurifamiliar.where(:edifici_id => @edifici.id).last
     word_titols_arxiu = ''
 
