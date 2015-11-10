@@ -23,6 +23,13 @@ class DocumentsController < ApplicationController
     send_file file, filename: "#{@edifici.nom_edifici}_manual_habitatge.pdf", disposition: 'attachment'
   end
 
+  def llibre_existent_pdf
+    url_edifici = 'http://llibreedifici.herokuapp.com/edificis/' + @edifici.id.to_s + '/documents/vista_pdf_edifici_existent?locale=ca'
+    kit = PDFKit.new(url_edifici)
+    file = kit.to_file(Rails.root + 'tmp/' + 'demo.pdf')
+    send_file file, filename: "#{@edifici.nom_edifici}.pdf", disposition: 'attachment'
+  end
+
   def vista_pdf_edifici_nou
     @text_manual_manteniment = text_manteniment_pdf.html_safe
     @titols_arxiu = espdf_arxiu_documents_edifici_nou.html_safe
