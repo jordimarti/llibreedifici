@@ -436,113 +436,113 @@ module PdfGenerator
     elsif @edifici.tipus_edifici == 'nou_unifamiliar'
       arxiu = ChecklistNouUnifamiliar.where(:edifici_id => @edifici.id).last
     end
-    word_titols_arxiu = ''
+    pdf_titols_arxiu = ''
 
     def titol_apartat_arxiu(text_titol)
       return '<p class="subtitol-seccio-document">' + text_titol + '</p><div class="salt-pagina"></div>'
     end
 
     if arxiu.llicencies_preceptives == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Llicències preceptives")
+      pdf_titols_arxiu = pdf_titols_arxiu + titol_apartat_arxiu("Llicències preceptives")
     end
     if arxiu.certificat_final_obra == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Certificat final d'obra")
+      pdf_titols_arxiu = pdf_titols_arxiu + titol_apartat_arxiu("Certificat final d'obra")
     end
     if arxiu.acta_recepcio_obra == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Acta de recepció definitiva de l'obra")
+      pdf_titols_arxiu = pdf_titols_arxiu + titol_apartat_arxiu("Acta de recepció definitiva de l'obra")
     end
     if arxiu.escriptura_publica == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Escriptura pública de declaració d'obra nova")
+      pdf_titols_arxiu = pdf_titols_arxiu + titol_apartat_arxiu("Escriptura pública de declaració d'obra nova")
     end
     if arxiu.documents_garantia == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Documents acreditatius de garantia")
+      pdf_titols_arxiu = pdf_titols_arxiu + titol_apartat_arxiu("Documents acreditatius de garantia")
     end
     if @edifici.tipus_edifici == 'nou_plurifamiliar'
 	    if arxiu.documents_garantia_parts_comunes == true
-	      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Documents de garantia d'instal·lacions de parts comunes")
+	      pdf_titols_arxiu = pdf_titols_arxiu + titol_apartat_arxiu("Documents de garantia d'instal·lacions de parts comunes")
 	    end
 	  end
     if arxiu.certificacio_energetica == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Certificació energètica")
+      pdf_titols_arxiu = pdf_titols_arxiu + titol_apartat_arxiu("Certificació energètica")
     end
     if arxiu.polissa_assegurances == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Pòlisses d'assegurances")
+      pdf_titols_arxiu = pdf_titols_arxiu + titol_apartat_arxiu("Pòlisses d'assegurances")
     end
     if @edifici.tipus_edifici == 'nou_plurifamiliar'
 	    if arxiu.escriptura_propietat_horitzontal == true
-	      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Escriptura de divisió en règim de propietat horitzontal")
+	      pdf_titols_arxiu = pdf_titols_arxiu + titol_apartat_arxiu("Escriptura de divisió en règim de propietat horitzontal")
 	    end
 	    if arxiu.estatus_comunitat == true
-	      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Estatuts de la comunitat de propietaris")
+	      pdf_titols_arxiu = pdf_titols_arxiu + titol_apartat_arxiu("Estatuts de la comunitat de propietaris")
 	    end
 	  end
     if arxiu.cedules_regims_juridics == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Cèdules de declaració de règims jurídics especials o qualificacions d'habitatges protegits")
+      pdf_titols_arxiu = pdf_titols_arxiu + titol_apartat_arxiu("Cèdules de declaració de règims jurídics especials o qualificacions d'habitatges protegits")
     end
     if arxiu.carregues_reals == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Càrregues reals existents")
+      pdf_titols_arxiu = pdf_titols_arxiu + titol_apartat_arxiu("Càrregues reals existents")
     end
     if arxiu.documents_acreditatius_ajuts == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Documents acreditatius dels ajuts i beneficis atorgats a l'edifici")
+      pdf_titols_arxiu = pdf_titols_arxiu + titol_apartat_arxiu("Documents acreditatius dels ajuts i beneficis atorgats a l'edifici")
     end
     if arxiu.documents_justificacio_operacions == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Documents de justificació de la realització d'operacions de reparació, manteniment i rehabilitació")
+      pdf_titols_arxiu = pdf_titols_arxiu + titol_apartat_arxiu("Documents de justificació de la realització d'operacions de reparació, manteniment i rehabilitació")
     end
     if @edifici.tipus_edifici == 'nou_plurifamiliar'
 	    if arxiu.certificat_final_obra_instalacions == true
-	      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Certificats final d’obra de les instal·lacions comunes de baixa tensió, gasos combustibles, productes petrolífers o instal·lacions tèrmiques")
+	      pdf_titols_arxiu = pdf_titols_arxiu + titol_apartat_arxiu("Certificats final d’obra de les instal·lacions comunes de baixa tensió, gasos combustibles, productes petrolífers o instal·lacions tèrmiques")
 	    end
 	  end
     if arxiu.declaracions_ce_ascensors == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Declaracions CE que reconeixen la conformitat dels ascensors instal·lats")
+      pdf_titols_arxiu = pdf_titols_arxiu + titol_apartat_arxiu("Declaracions CE que reconeixen la conformitat dels ascensors instal·lats")
     end
 
-    return word_titols_arxiu
+    return pdf_titols_arxiu
   end
 
   def espdf_arxiu_documents_edifici_existent
     arxiu = ChecklistExistentPlurifamiliar.where(:edifici_id => @edifici.id).last
-    word_titols_arxiu = ''
+    pdf_titols_arxiu = ''
 
     def titol_apartat_arxiu(text_titol)
       return '<p class="subtitol-seccio-document">' + text_titol + '</p><div class="salt-pagina"></div>'
     end
 
     if arxiu.iite == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Informe d’inspecció tècnica obligatòria (IITE)")
+      pdf_titols_arxiu = pdf_titols_arxiu + titol_apartat_arxiu("Informe d’inspecció tècnica obligatòria (IITE)")
     end
     if arxiu.document_lliurament_iite == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Document acreditatiu del lliurament a l’Administració de les dades bàsiques de la IITE")
+      pdf_titols_arxiu = pdf_titols_arxiu + titol_apartat_arxiu("Document acreditatiu del lliurament a l’Administració de les dades bàsiques de la IITE")
     end
     if arxiu.comunicat_ens_local == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("El comunicat a l’ens local del municipi al qual pertany l’edifici en cas de situació de risc per a les persones")
+      pdf_titols_arxiu = pdf_titols_arxiu + titol_apartat_arxiu("El comunicat a l’ens local del municipi al qual pertany l’edifici en cas de situació de risc per a les persones")
     end
     if arxiu.programa_rehabilitacio == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Programa de rehabilitació que adopti les mesures correctores")
+      pdf_titols_arxiu = pdf_titols_arxiu + titol_apartat_arxiu("Programa de rehabilitació que adopti les mesures correctores")
     end
     if arxiu.certificat_final_obra == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Certificats de final d’obra de totes les obres que s’executin en l’edifici")
+      pdf_titols_arxiu = pdf_titols_arxiu + titol_apartat_arxiu("Certificats de final d’obra de totes les obres que s’executin en l’edifici")
     end
     if arxiu.certificat_aptitud == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Certificat d’aptitud")
+      pdf_titols_arxiu = pdf_titols_arxiu + titol_apartat_arxiu("Certificat d’aptitud")
     end
     if arxiu.certificacio_energetica == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Certificat d’eficiència energètica de l’edifici")
+      pdf_titols_arxiu = pdf_titols_arxiu + titol_apartat_arxiu("Certificat d’eficiència energètica de l’edifici")
     end
     if arxiu.documents_justificatius_operacions == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Documents que justifiquin la realització d’operacions de reparació, manteniment i rehabilitació de caràcter obligatori, així com la identificació de les empreses o professionals que les han realitzades i les garanties que s’han donat")
+      pdf_titols_arxiu = pdf_titols_arxiu + titol_apartat_arxiu("Documents que justifiquin la realització d’operacions de reparació, manteniment i rehabilitació de caràcter obligatori, així com la identificació de les empreses o professionals que les han realitzades i les garanties que s’han donat")
     end
     if arxiu.pressupostos_obres == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Pressupostos i contractes d’obres, manteniments i honoraris professionals")
+      pdf_titols_arxiu = pdf_titols_arxiu + titol_apartat_arxiu("Pressupostos i contractes d’obres, manteniments i honoraris professionals")
     end
     if arxiu.certificats_instalacions_comunes == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Certificats d’inscripció en el Registre d’instal·lacions tècniques de seguretat industrial de Catalunya de les instal·lacions comunes de l’edifici de baixa tensió, gasos combustibles, instal·lacions petrolíferes, instal·lacions tèrmiques i d’ascensors que s’hagin realitzat")
+      pdf_titols_arxiu = pdf_titols_arxiu + titol_apartat_arxiu("Certificats d’inscripció en el Registre d’instal·lacions tècniques de seguretat industrial de Catalunya de les instal·lacions comunes de l’edifici de baixa tensió, gasos combustibles, instal·lacions petrolíferes, instal·lacions tèrmiques i d’ascensors que s’hagin realitzat")
     end
     if arxiu.certificats_inspeccions_tecniques == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Certificats d’inspeccions tècniques de les instal·lacions comunes sotmeses a reglamentació de seguretat industrial")
+      pdf_titols_arxiu = pdf_titols_arxiu + titol_apartat_arxiu("Certificats d’inspeccions tècniques de les instal·lacions comunes sotmeses a reglamentació de seguretat industrial")
     end
 
-    return word_titols_arxiu
+    return pdf_titols_arxiu
   end
 
 end

@@ -427,63 +427,63 @@ module DocxGenerator
     end
     word_titols_arxiu = ''
 
-    def titol_apartat_arxiu(text_titol)
+    def esword_titol_apartat_arxiu(text_titol)
       return '<w:p w14:paraId="3E0880B3" w14:textId="77777777" w:rsidP="004F63F9" w:rsidR="004F63F9" w:rsidRDefault="004F63F9"><w:pPr><w:pStyle w:val="Heading1"/></w:pPr><w:bookmarkStart w:id="0" w:name="_Toc297976137"/><w:bookmarkStart w:id="1" w:name="_Toc424303768"/><w:bookmarkStart w:id="2" w:name="_Toc424303850"/><w:r><w:t>' + text_titol + '</w:t></w:r><w:bookmarkEnd w:id="0"/><w:bookmarkEnd w:id="1"/><w:bookmarkEnd w:id="2"/></w:p><w:p w14:paraId="673E3807" w14:textId="77777777" w:rsidR="004F63F9" w:rsidRDefault="004F63F9"><w:r><w:br w:type="page"/></w:r></w:p>'
     end
 
     if arxiu.llicencies_preceptives == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Llicències preceptives")
+      word_titols_arxiu = word_titols_arxiu + esword_titol_apartat_arxiu("Llicències preceptives")
     end
     if arxiu.certificat_final_obra == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Certificat final d'obra")
+      word_titols_arxiu = word_titols_arxiu + esword_titol_apartat_arxiu("Certificat final d'obra")
     end
     if arxiu.acta_recepcio_obra == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Acta de recepció definitiva de l'obra")
+      word_titols_arxiu = word_titols_arxiu + esword_titol_apartat_arxiu("Acta de recepció definitiva de l'obra")
     end
     if arxiu.escriptura_publica == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Escriptura pública de declaració d'obra nova")
+      word_titols_arxiu = word_titols_arxiu + esword_titol_apartat_arxiu("Escriptura pública de declaració d'obra nova")
     end
     if arxiu.documents_garantia == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Documents acreditatius de garantia")
+      word_titols_arxiu = word_titols_arxiu + esword_titol_apartat_arxiu("Documents acreditatius de garantia")
     end
     if @edifici.tipus_edifici == 'nou_plurifamiliar'
       if arxiu.documents_garantia_parts_comunes == true
-        word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Documents de garantia d'instal·lacions de parts comunes")
+        word_titols_arxiu = word_titols_arxiu + esword_titol_apartat_arxiu("Documents de garantia d'instal·lacions de parts comunes")
       end
     end
     if arxiu.certificacio_energetica == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Certificació energètica")
+      word_titols_arxiu = word_titols_arxiu + esword_titol_apartat_arxiu("Certificació energètica")
     end
     if arxiu.polissa_assegurances == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Pòlisses d'assegurances")
+      word_titols_arxiu = word_titols_arxiu + esword_titol_apartat_arxiu("Pòlisses d'assegurances")
     end
     if @edifici.tipus_edifici == 'nou_plurifamiliar'
       if arxiu.escriptura_propietat_horitzontal == true
-        word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Escriptura de divisió en règim de propietat horitzontal")
+        word_titols_arxiu = word_titols_arxiu + esword_titol_apartat_arxiu("Escriptura de divisió en règim de propietat horitzontal")
       end
       if arxiu.estatus_comunitat == true
-        word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Estatuts de la comunitat de propietaris")
+        word_titols_arxiu = word_titols_arxiu + esword_titol_apartat_arxiu("Estatuts de la comunitat de propietaris")
       end
     end
     if arxiu.cedules_regims_juridics == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Cèdules de declaració de règims jurídics especials o qualificacions d'habitatges protegits")
+      word_titols_arxiu = word_titols_arxiu + esword_titol_apartat_arxiu("Cèdules de declaració de règims jurídics especials o qualificacions d'habitatges protegits")
     end
     if arxiu.carregues_reals == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Càrregues reals existents")
+      word_titols_arxiu = word_titols_arxiu + esword_titol_apartat_arxiu("Càrregues reals existents")
     end
     if arxiu.documents_acreditatius_ajuts == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Documents acreditatius dels ajuts i beneficis atorgats a l'edifici")
+      word_titols_arxiu = word_titols_arxiu + esword_titol_apartat_arxiu("Documents acreditatius dels ajuts i beneficis atorgats a l'edifici")
     end
     if arxiu.documents_justificacio_operacions == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Documents de justificació de la realització d'operacions de reparació, manteniment i rehabilitació")
+      word_titols_arxiu = word_titols_arxiu + esword_titol_apartat_arxiu("Documents de justificació de la realització d'operacions de reparació, manteniment i rehabilitació")
     end
     if @edifici.tipus_edifici == 'nou_plurifamiliar'
       if arxiu.certificat_final_obra_instalacions == true
-        word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Certificats final d’obra de les instal·lacions comunes de baixa tensió, gasos combustibles, productes petrolífers o instal·lacions tèrmiques")
+        word_titols_arxiu = word_titols_arxiu + esword_titol_apartat_arxiu("Certificats final d’obra de les instal·lacions comunes de baixa tensió, gasos combustibles, productes petrolífers o instal·lacions tèrmiques")
       end
     end
     if arxiu.declaracions_ce_ascensors == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Declaracions CE que reconeixen la conformitat dels ascensors instal·lats")
+      word_titols_arxiu = word_titols_arxiu + esword_titol_apartat_arxiu("Declaracions CE que reconeixen la conformitat dels ascensors instal·lats")
     end
 
     return word_titols_arxiu
@@ -493,42 +493,42 @@ module DocxGenerator
     arxiu = ChecklistExistentPlurifamiliar.where(:edifici_id => @edifici.id).last
     word_titols_arxiu = ''
 
-    def titol_apartat_arxiu(text_titol)
+    def esword_titol_apartat_arxiu(text_titol)
       return '<w:p w14:paraId="3E0880B3" w14:textId="77777777" w:rsidP="004F63F9" w:rsidR="004F63F9" w:rsidRDefault="004F63F9"><w:pPr><w:pStyle w:val="Heading1"/></w:pPr><w:bookmarkStart w:id="0" w:name="_Toc297976137"/><w:bookmarkStart w:id="1" w:name="_Toc424303768"/><w:bookmarkStart w:id="2" w:name="_Toc424303850"/><w:r><w:t>' + text_titol + '</w:t></w:r><w:bookmarkEnd w:id="0"/><w:bookmarkEnd w:id="1"/><w:bookmarkEnd w:id="2"/></w:p><w:p w14:paraId="673E3807" w14:textId="77777777" w:rsidR="004F63F9" w:rsidRDefault="004F63F9"><w:r><w:br w:type="page"/></w:r></w:p>'
     end
 
     if arxiu.iite == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Informe d’inspecció tècnica obligatòria (IITE)")
+      word_titols_arxiu = word_titols_arxiu + esword_titol_apartat_arxiu("Informe d’inspecció tècnica obligatòria (IITE)")
     end
     if arxiu.document_lliurament_iite == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Document acreditatiu del lliurament a l’Administració de les dades bàsiques de la IITE")
+      word_titols_arxiu = word_titols_arxiu + esword_titol_apartat_arxiu("Document acreditatiu del lliurament a l’Administració de les dades bàsiques de la IITE")
     end
     if arxiu.comunicat_ens_local == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("El comunicat a l’ens local del municipi al qual pertany l’edifici en cas de situació de risc per a les persones")
+      word_titols_arxiu = word_titols_arxiu + esword_titol_apartat_arxiu("El comunicat a l’ens local del municipi al qual pertany l’edifici en cas de situació de risc per a les persones")
     end
     if arxiu.programa_rehabilitacio == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Programa de rehabilitació que adopti les mesures correctores")
+      word_titols_arxiu = word_titols_arxiu + esword_titol_apartat_arxiu("Programa de rehabilitació que adopti les mesures correctores")
     end
     if arxiu.certificat_final_obra == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Certificats de final d’obra de totes les obres que s’executin en l’edifici")
+      word_titols_arxiu = word_titols_arxiu + esword_titol_apartat_arxiu("Certificats de final d’obra de totes les obres que s’executin en l’edifici")
     end
     if arxiu.certificat_aptitud == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Certificat d’aptitud")
+      word_titols_arxiu = word_titols_arxiu + esword_titol_apartat_arxiu("Certificat d’aptitud")
     end
     if arxiu.certificacio_energetica == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Certificat d’eficiència energètica de l’edifici")
+      word_titols_arxiu = word_titols_arxiu + esword_titol_apartat_arxiu("Certificat d’eficiència energètica de l’edifici")
     end
     if arxiu.documents_justificatius_operacions == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Documents que justifiquin la realització d’operacions de reparació, manteniment i rehabilitació de caràcter obligatori, així com la identificació de les empreses o professionals que les han realitzades i les garanties que s’han donat")
+      word_titols_arxiu = word_titols_arxiu + esword_titol_apartat_arxiu("Documents que justifiquin la realització d’operacions de reparació, manteniment i rehabilitació de caràcter obligatori, així com la identificació de les empreses o professionals que les han realitzades i les garanties que s’han donat")
     end
     if arxiu.pressupostos_obres == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Pressupostos i contractes d’obres, manteniments i honoraris professionals")
+      word_titols_arxiu = word_titols_arxiu + esword_titol_apartat_arxiu("Pressupostos i contractes d’obres, manteniments i honoraris professionals")
     end
     if arxiu.certificats_instalacions_comunes == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Certificats d’inscripció en el Registre d’instal·lacions tècniques de seguretat industrial de Catalunya de les instal·lacions comunes de l’edifici de baixa tensió, gasos combustibles, instal·lacions petrolíferes, instal·lacions tèrmiques i d’ascensors que s’hagin realitzat")
+      word_titols_arxiu = word_titols_arxiu + esword_titol_apartat_arxiu("Certificats d’inscripció en el Registre d’instal·lacions tècniques de seguretat industrial de Catalunya de les instal·lacions comunes de l’edifici de baixa tensió, gasos combustibles, instal·lacions petrolíferes, instal·lacions tèrmiques i d’ascensors que s’hagin realitzat")
     end
     if arxiu.certificats_inspeccions_tecniques == true
-      word_titols_arxiu = word_titols_arxiu + titol_apartat_arxiu("Certificats d’inspeccions tècniques de les instal·lacions comunes sotmeses a reglamentació de seguretat industrial")
+      word_titols_arxiu = word_titols_arxiu + esword_titol_apartat_arxiu("Certificats d’inspeccions tècniques de les instal·lacions comunes sotmeses a reglamentació de seguretat industrial")
     end
 
     return word_titols_arxiu
