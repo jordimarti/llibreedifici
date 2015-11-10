@@ -1267,7 +1267,7 @@ es:
       generar_manual_manteniment: "Generar el Manual de uso y mantenimiento"
       generar_calendari: "Generar el Calendario de mantenimiento"
       text_configurar_document: "Antes de generar el documento podéis configurar cuáles son los apartados que deben aparecer en el Archivo de documentos. Por ejemplo si se trata de un edificio de propiedad vertical no debe aparecer el apartado de la escritura de división en régimen de propiedad horizontal."
-      text_generar_llibre: "Cuando pulséis el botón 'Generar el Libro del edificio' en breves instantes se generará el documento en formato .docx y se iniciará la descarga."
+      text_generar_llibre: "Cuando pulséis el botón 'Generar el Libro del edificio' en breves instantes se generará el documento en formato .pdf o .docx, según la opción seleccionada, y se iniciará la descarga."
       text_generar_manual: "En los edificios plurifamiliares de nueva construcción hay que crear el Manual de la vivienda. Este documento está destinado a los diferentes propietarios para que puedan conocer, de manera individualizada, los datos que corresponden a su vivienda."
       text_configurar_document_unifamiliar: "Antes de generar el documento podéis configurar cuáles son los apartados que deben aparecer en el Archivo de documentos."
       text_generar_manual_manteniment: "El Manual de uso y mantenimiento especifica las instrucciones de uso y las operaciones de mantenimiento necesarias para alargar la vida del edificio."
