@@ -58,6 +58,10 @@
    </tbody>
 </table>
 
+<div class="espaiador"></div>
+<p class="titol-taula">Observacions:</p>
+<p><%= @edifici.identificacio.observacions %></p>
+
 <div class="salt-pagina"></div>
 <p class="titol-taula">Fotografia de la façana:</p>
 <%= image_tag @edifici.identificacio.foto_facana.url(:original) %>

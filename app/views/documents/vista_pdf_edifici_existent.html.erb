@@ -52,11 +52,15 @@
 <table class="taula-dades">
   <tbody>
     <tr>
-      <td><span class="titol-taula">Any d'inici de la construcció:</span><br/><%= @edifici.identificacio.any_inici_construccio %></td>
       <td><span class="titol-taula">Any de finalització de la construcció:</span><br/><%= @edifici.identificacio.any_fi_construccio %></td>
+      <td><span class="titol-taula">Font de l'any de construcció:</span><br/><%= @edifici.identificacio.origen_any_construccio %></td>
     </tr>
    </tbody>
 </table>
+
+<div class="espaiador"></div>
+<p class="titol-taula">Observacions:</p>
+<p><%= @edifici.identificacio.observacions %></p>
 
 <div class="salt-pagina"></div>
 <p class="titol-taula">Fotografia de la façana:</p>
