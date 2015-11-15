@@ -293,6 +293,14 @@ es:
         qualificacio_energetica: "Calificación energética"
         consum_energia_primaria: "Consumo de energía primaria (kWh/a)"
         emissions_co2: "Emisiones de CO2 (kg/m2a)"
+      aptitud_certificat:
+        numero_expedient: "Número de expediente"
+        codi_informe: "Código del informe"
+        data_ite: "Fecha ITE"
+        certificat_aptitud: "Certificado de aptitud"
+        data_programa: "Fecha del programa"
+        necessitat_verificacions_tecniques: "Es necesario realizar verificaciones técnicas"
+        periodicitat_verificacions_tecniques: "Periodicidad de las verificaciones técnicas"
       fonamentacio:
         mur_pedra: "Muro de piedra"
         mur_fabrica_mao: "Muro de fábrica de ladrillo"
@@ -762,8 +770,8 @@ es:
         programa_rehabilitacio: "Programa de rehabilitació que adopti les mesures correctores"
         certificat_final_obra: "Certificats de final d’obra de totes les obres que s’executin en l’edifici"
         certificat_aptitud: "Certificat d’aptitud"
-        certificacio_energetica: "Certificat d’eficiència energètica de l’edifici"
-        instruccions_us: "Instruccions o recomanacions d’ús i manteniment de l’edifici i les seves instal·lacions"
+        certificacio_energetica: "Certificat d’eficiència energètica de l’edifici"
+        instruccions_us: "Instruccions o recomanacions d’ús i manteniment de l’edifici i les seves instal·lacions"
         documents_justificatius_operacions: "Documents que justifiquin la realització d’operacions de reparació, manteniment i rehabilitació de caràcter obligatori, així com la identificació de les empreses o professionals que les han realitzades i les garanties que s’han donat"
         pressupostos_obres: "Pressupostos i contractes d’obres, manteniments i honoraris professionals"
         certificats_instalacions_comunes: "Certificats d’inscripció en el Registre d’instal·lacions tècniques de seguretat industrial de Catalunya de les instal·lacions comunes de l’edifici de baixa tensió, gasos combustibles, instal·lacions petrolíferes, instal·lacions tèrmiques i d’ascensors que s’hagin realitzat"
@@ -910,6 +918,9 @@ es:
       titol_energia_certificat: "CERTIFICACIÓN ENERGÉTICA"
       afegir_energia_certificat: "Añadir certificación energética"
       energia_certificat: "Certificación energética"
+      titol_aptitud_certificat: "CERTIFICADO DE APTITUD"
+      afegir_aptitud_certificat: "Añadir certificado de aptitud"
+      aptitud_certificat: "Certificado de aptitud"
   llicencies:
     form:
       guardar: "Guardar"
@@ -940,6 +951,9 @@ es:
     form:
       guardar: "Guardar"
   energia_certificats:
+    form:
+      guardar: "Guardar"
+  aptitud_certificats:
     form:
       guardar: "Guardar"
   fonamentacions:

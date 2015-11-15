@@ -1,0 +1,16 @@
+<% @aptitud_certificats.each do |aptitud_certificat| %>
+	<div class="dades-item">
+		
+		
+	  <%= link_to edifici_aptitud_certificat_path(@edifici, aptitud_certificat), remote: true, method: :delete,  data: { confirm: 'Segur que vols eliminar?' } do %>
+		  <div class="dades-eliminar right">
+		  	<span class="icon-cancel icones-icomoon"></span>
+		  </div>
+		<% end %>
+		<%= link_to edit_edifici_aptitud_certificat_path(@edifici, aptitud_certificat), remote: true do %>
+	    <div class="dades-editar">
+	    	<%= aptitud_certificat.numero_expedient %>
+	    </div>
+	  <% end %>
+	</div>
+<% end %>

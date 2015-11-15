@@ -1,0 +1,2 @@
+module AptitudCertificatsHelper
+end

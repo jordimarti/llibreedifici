@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  edifici_id: 1
+  numero_expedient: MyString
+  codi_informe: MyString
+  data_ite: MyString
+  certificat_aptitud: MyString
+  data_programa: MyString
+  necessitat_verificacions_tecniques: false
+  periodicitat_verificacions_tecniques: MyString
+
+two:
+  edifici_id: 1
+  numero_expedient: MyString
+  codi_informe: MyString
+  data_ite: MyString
+  certificat_aptitud: MyString
+  data_programa: MyString
+  necessitat_verificacions_tecniques: false
+  periodicitat_verificacions_tecniques: MyString

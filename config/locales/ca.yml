@@ -293,6 +293,14 @@ ca:
         qualificacio_energetica: "Qualificació energètica"
         consum_energia_primaria: "Consum d'energia primària (kWh/a)"
         emissions_co2: "Emissions de CO2 (kg/m2a)"
+      aptitud_certificat:
+        numero_expedient: "Número d'expedient"
+        codi_informe: "Codi de l'informe"
+        data_ite: "Data ITE"
+        certificat_aptitud: "Certificat d'aptitud"
+        data_programa: "Data del programa"
+        necessitat_verificacions_tecniques: "És necessari fer verificacions tècniques"
+        periodicitat_verificacions_tecniques: "Periodicitat de les verificacions tècniques"
       fonamentacio:
         mur_pedra: "Mur de pedra"
         mur_fabrica_mao: "Mur de fàbrica de maó"
@@ -762,7 +770,7 @@ ca:
         programa_rehabilitacio: "Programa de rehabilitació que adopti les mesures correctores"
         certificat_final_obra: "Certificats de final d’obra de totes les obres que s’executin en l’edifici"
         certificat_aptitud: "Certificat d’aptitud"
-        certificacio_energetica: "Certificat d’eficiència energètica de l’edifici"
+        certificacio_energetica: "Certificat d’eficiència energètica de l’edifici"
         instruccions_us: "Instruccions o recomanacions d'ús i manteniment de l’edifici i les seves instal·lacions"
         documents_justificatius_operacions: "Documents que justifiquin la realització d’operacions de reparació, manteniment i rehabilitació de caràcter obligatori, així com la identificació de les empreses o professionals que les han realitzades i les garanties que s’han donat"
         pressupostos_obres: "Pressupostos i contractes d’obres, manteniments i honoraris professionals"
@@ -910,6 +918,9 @@ ca:
       titol_energia_certificat: "CERTIFICACIÓ ENERGÈTICA"
       afegir_energia_certificat: "Afegir certificació energètica"
       energia_certificat: "Certificació energètica"
+      titol_aptitud_certificat: "CERTIFICAT D'APTITUD"
+      afegir_aptitud_certificat: "Afegir certificat d'aptitud"
+      aptitud_certificat: "Certificat d'aptitud"
   llicencies:
     form:
       guardar: "Guardar"
@@ -940,6 +951,9 @@ ca:
     form:
       guardar: "Guardar"
   energia_certificats:
+    form:
+      guardar: "Guardar"
+  aptitud_certificats:
     form:
       guardar: "Guardar"
   fonamentacions:

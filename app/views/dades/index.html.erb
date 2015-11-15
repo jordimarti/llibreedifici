@@ -68,6 +68,13 @@
   <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 </div>
 
+<div id="modal-aptitud-certificat" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <h3 id="modalTitle"><%= t('.aptitud_certificat') %></h3>
+  <div id="formulari-aptitud-certificat" class="formulari-dades">
+  </div>
+  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+
 
 
 <div class="background-seccio">
@@ -275,6 +282,27 @@
 						</div>
 					</div>
 				</div>
+				<% if @edifici.tipus_edifici == 'existent_plurifamiliar' || @edifici.tipus_edifici == 'existent_unifamiliar' %> 
+				<div class="row">
+					<div class="medium-6 columns">
+						<div class="dades-container">
+							<div class="dades-title">
+								<%= t('.titol_aptitud_certificat') %>
+							</div>
+							<div id="aptitud-certificats">
+								<%= render  :partial => '/aptitud_certificats/llistat_aptitud_certificats' %>
+							</div>
+							<div class="dades-footer">
+								<div class="dades-footer-link right">
+									<%= link_to (new_edifici_aptitud_certificat_path), remote: true do %>
+										<span class="suma">+</span> <%= t('.afegir_aptitud_certificat') %>
+									<% end %>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<% end %>
 			</div>
 		</div>
 	</div>

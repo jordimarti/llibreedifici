@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151022215347) do
+ActiveRecord::Schema.define(version: 20151115214420) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,19 @@ ActiveRecord::Schema.define(version: 20151022215347) do
     t.boolean  "muntants_ferro"
     t.boolean  "muntants_coure"
     t.boolean  "muntants_plastic"
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+  end
+
+  create_table "aptitud_certificats", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.string   "numero_expedient"
+    t.string   "codi_informe"
+    t.string   "data_ite"
+    t.string   "certificat_aptitud"
+    t.string   "data_programa"
+    t.boolean  "necessitat_verificacions_tecniques"
+    t.string   "periodicitat_verificacions_tecniques"
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
   end

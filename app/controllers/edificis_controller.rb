@@ -374,6 +374,27 @@ class EdificisController < ApplicationController
       nou_garantia_instalacio.edifici_id = id_nou_edifici
       nou_garantia_instalacio.save
     end
+    #Garanties dels constructors
+    garantia_constructors = GarantiaConstructor.where(:edifici_id => id_edifici)
+    garantia_constructors.each do |garantia_constructor|
+      nou_garantia_constructor = garantia_constructor.dup
+      nou_garantia_constructor.edifici_id = id_nou_edifici
+      nou_garantia_constructor.save
+    end
+    #Certificació energètica
+    energia_certificats = EnergiaCertificat.where(:edifici_id => id_edifici)
+    energia_certificats.each do |energia_certificat|
+      nou_energia_certificat = energia_certificat.dup
+      nou_energia_certificat.edifici_id = id_nou_edifici
+      nou_energia_certificat.save
+    end
+    #Certificat d'aptitud
+    aptitud_certificats = AptitudCertificat.where(:edifici_id => id_edifici)
+    aptitud_certificats.each do |aptitud_certificat|
+      nou_aptitud_certificat = aptitud_certificat.dup
+      nou_aptitud_certificat.edifici_id = id_nou_edifici
+      nou_aptitud_certificat.save
+    end
     #Referencies
     referencies = Referencia.where(:edifici_id => id_edifici)
     referencies.each do |referencia|

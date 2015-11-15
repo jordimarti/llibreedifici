@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   
   
   
+  
   resources :element_predefinits
   resources :operacions
   resources :sistemes
@@ -75,6 +76,7 @@ Rails.application.routes.draw do
     resources :garantia_constructors
     resources :energia_certificats
     resources :referencia_calendaris
+    resources :aptitud_certificats
   end
   
   
