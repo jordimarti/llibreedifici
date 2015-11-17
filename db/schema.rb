@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151115214420) do
+ActiveRecord::Schema.define(version: 20151117163620) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20151115214420) do
     t.string   "data_ite"
     t.string   "certificat_aptitud"
     t.string   "data_programa"
-    t.boolean  "necessitat_verificacions_tecniques"
+    t.string   "necessitat_verificacions_tecniques"
     t.string   "periodicitat_verificacions_tecniques"
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
@@ -554,6 +554,14 @@ ActiveRecord::Schema.define(version: 20151115214420) do
     t.string   "foto_facana_content_type"
     t.integer  "foto_facana_file_size"
     t.datetime "foto_facana_updated_at"
+  end
+
+  create_table "iites", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.string   "referencia"
+    t.string   "data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "incendis", force: :cascade do |t|

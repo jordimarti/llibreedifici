@@ -7,7 +7,7 @@ class CreateAptitudCertificats < ActiveRecord::Migration
       t.string :data_ite
       t.string :certificat_aptitud
       t.string :data_programa
-      t.boolean :necessitat_verificacions_tecniques
+      t.string :necessitat_verificacions_tecniques
       t.string :periodicitat_verificacions_tecniques
 
       t.timestamps null: false

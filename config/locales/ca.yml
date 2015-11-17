@@ -293,6 +293,9 @@ ca:
         qualificacio_energetica: "Qualificació energètica"
         consum_energia_primaria: "Consum d'energia primària (kWh/a)"
         emissions_co2: "Emissions de CO2 (kg/m2a)"
+      iite:
+        referencia: "Referència"
+        data: "Data"
       aptitud_certificat:
         numero_expedient: "Número d'expedient"
         codi_informe: "Codi de l'informe"
@@ -918,6 +921,9 @@ ca:
       titol_energia_certificat: "CERTIFICACIÓ ENERGÈTICA"
       afegir_energia_certificat: "Afegir certificació energètica"
       energia_certificat: "Certificació energètica"
+      titol_iite: "IITE"
+      afegir_iite: "Afegir IITE"
+      iite: "IITE"
       titol_aptitud_certificat: "CERTIFICAT D'APTITUD"
       afegir_aptitud_certificat: "Afegir certificat d'aptitud"
       aptitud_certificat: "Certificat d'aptitud"
@@ -951,6 +957,9 @@ ca:
     form:
       guardar: "Guardar"
   energia_certificats:
+    form:
+      guardar: "Guardar"
+  iites:
     form:
       guardar: "Guardar"
   aptitud_certificats:

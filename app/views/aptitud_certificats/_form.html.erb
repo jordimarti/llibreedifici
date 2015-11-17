@@ -27,7 +27,7 @@
 
     <div class="row">
       <div class="large-4 columns">
-        <%= f.input :necessitat_verificacions_tecniques %>
+        <%= f.input :necessitat_verificacions_tecniques, collection: ['Sí', 'No'] %>
       </div>
       <div class="large-4 columns end">
         <%= f.input :periodicitat_verificacions_tecniques %>

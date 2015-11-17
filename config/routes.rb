@@ -1,11 +1,4 @@
 Rails.application.routes.draw do
-
-  
-  
-  
-  
-  
-  
   
   
   resources :element_predefinits
@@ -77,6 +70,7 @@ Rails.application.routes.draw do
     resources :energia_certificats
     resources :referencia_calendaris
     resources :aptitud_certificats
+    resources :iites
   end
   
   
