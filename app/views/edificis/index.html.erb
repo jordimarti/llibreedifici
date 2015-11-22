@@ -34,6 +34,10 @@
                     <%= t('.nou_edifici') %>
                   <% end %>
 
+                  <%= link_to import_path, :class => "button small radius" do %>
+                    <%= t('.importar') %>
+                  <% end %>
+
                 </div>
                 <div class="medium-9 columns">
                   <div class="projectes-existents-container">
@@ -72,6 +76,12 @@
                               <div class="boto-item-llistat-edificis right">
                                 <%= link_to duplicate_path(edifici.id) do %>
                                   <span class="icon-copy icones-icomoon" title="Duplicar"></span>
+                                <% end %>
+                              </div>
+
+                              <div class="boto-item-llistat-edificis right">
+                                <%= link_to export_path(edifici.id) do %>
+                                  <span class="icon-download icones-icomoon" title="Exportar"></span>
                                 <% end %>
                               </div>
 

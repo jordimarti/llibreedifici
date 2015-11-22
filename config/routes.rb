@@ -23,6 +23,9 @@ Rails.application.routes.draw do
   get 'edificis/:edifici_id/sistemes/afegir_sistema', to: 'sistemes#afegir_sistema', :as => :afegir_sistema
   get 'edificis/:edifici_id/referencies/crear_llistat', to: 'referencies#crear_llistat', :as => :crear_llistat
   get 'edificis/:edifici_id/referencies/calendari', to: 'referencies#calendari', :as => :calendari
+
+  get 'edificis/:id/export', to: 'edificis#export', :as => :export
+  get 'edificis/import', to: 'edificis#import', :as => :import
   
   resources :edificis do
     resources :identificacions

@@ -404,6 +404,17 @@ class EdificisController < ApplicationController
     end
   end
 
+  def export
+    edifici = Edifici.find(params[:id])
+    #data = render_to_string(:json => edifici, :include => [:fonamentacio, :estructura])
+    data = edifici.as_json(:include => [:fonamentacio, :estructura])
+    send_data data, :type => 'application/json; header=present', :disposition => "attachment; filename=edifici.json"
+  end
+
+  def import
+    
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_edifici
