@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   
+  resources :importats
   resources :element_predefinits
   resources :operacions
   resources :sistemes
@@ -25,7 +26,6 @@ Rails.application.routes.draw do
   get 'edificis/:edifici_id/referencies/calendari', to: 'referencies#calendari', :as => :calendari
 
   get 'edificis/:id/export', to: 'edificis#export', :as => :export
-  get 'edificis/import', to: 'edificis#import', :as => :import
   
   resources :edificis do
     resources :identificacions

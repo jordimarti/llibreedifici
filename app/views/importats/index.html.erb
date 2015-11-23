@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Importats</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Edifici</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @importats.each do |importat| %>
+      <tr>
+        <td><%= importat.edifici_id %></td>
+        <td><%= link_to 'Show', importat %></td>
+        <td><%= link_to 'Edit', edit_importat_path(importat) %></td>
+        <td><%= link_to 'Destroy', importat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Importat', new_importat_path %>

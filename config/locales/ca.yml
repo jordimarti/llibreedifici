@@ -107,6 +107,7 @@ ca:
       nou_edifici: "Crear un projecte nou"
       no_projectes: "Encara no has creat cap projecte."
       eliminar: "Estàs segur que vols eliminar aquest projecte?"
+      importar: "Importar un projecte"
     new:
       nou_edifici: "Crear un projecte nou"
       tornar_projectes: "Tornar als projectes"
@@ -132,6 +133,8 @@ ca:
       edifici:
         nom_edifici: "Nom de l'edifici"
         tipus_edifici: "Tipus d'edifici"
+      importat:
+        arxiu: "Arxiu"
       identificacio:
         tipus_via_edifici: "Tipus de via"
         via_edifici: "Nom de la via"
@@ -812,6 +815,11 @@ ca:
         change_password_text2: "Si ecara no t'has registrat, pots"
         create_account: "crear un compte aquí"
         send_instructions: "Enviar les instruccions"
+  importats:
+    new:
+      importar_edifici: "Importar edifici"
+    form:
+      importar: "Importar" 
   identificacions:
     edit:
       titol_identificacio: "Identificació"

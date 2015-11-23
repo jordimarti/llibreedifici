@@ -137,6 +137,105 @@ class EdificisController < ApplicationController
   # DELETE /edificis/1
   # DELETE /edificis/1.json
   def destroy
+    # Abans d'eliminar l'edifici eliminem els nested resources
+    @edifici.identificacio.destroy
+    @edifici.fonamentacio.destroy
+    @edifici.estructura.destroy
+    @edifici.tancaments_vertical.destroy
+    @edifici.coberta.destroy
+    @edifici.particio.destroy
+    @edifici.sanejament.destroy
+    @edifici.aigua.destroy
+    @edifici.electricitat.destroy
+    @edifici.climatitzacio.destroy
+    @edifici.ga.destroy
+    @edifici.ventilacio.destroy
+    @edifici.incendi.destroy
+    @edifici.ascensor.destroy
+    @edifici.telecomunicacio.destroy
+    @edifici.especial.destroy
+    @edifici.checklist_nou_plurifamiliar.destroy
+    @edifici.checklist_nou_unifamiliar.destroy
+    @edifici.checklist_existent_plurifamiliar.destroy
+    @edifici.promotors.each do |promotor|
+      promotor.destroy
+    end
+    @edifici.projectistes.each do |projectista|
+      projectista.destroy
+    end
+    @edifici.constructors.each do |constructor|
+      constructor.destroy
+    end
+    @edifici.directors.each do |director|
+      director.destroy
+    end
+    @edifici.execucio_directors.each do |execucio_director|
+      execucio_director.destroy
+    end
+    @edifici.laboratoris.each do |laboratori|
+      laboratori.destroy
+    end
+    @edifici.entitat_controls.each do |entitat_control|
+      entitat_control.destroy
+    end
+    @edifici.subministradors.each do |subministrador|
+      subministrador.destroy
+    end
+    @edifici.industrials.each do |industrial|
+      industrial.destroy
+    end
+    @edifici.colaboradors.each do |colaborador|
+      colaborador.destroy
+    end
+    @edifici.coordinadors.each do |coordinador|
+      coordinador.destroy
+    end
+    @edifici.llicencies.each do |llicencia|
+      llicencia.destroy
+    end
+    @edifici.declaracions.each do |declaracio|
+      declaracio.destroy
+    end
+    @edifici.regim_propietats.each do |regim_propietat|
+      regim_propietat.destroy
+    end
+    @edifici.regim_especials.each do |regim_especial|
+      regim_especial.destroy
+    end
+    @edifici.carregues.each do |carrega|
+      carrega.destroy
+    end
+    @edifici.entitats.each do |entitat|
+      entitat.destroy
+    end
+    @edifici.garantia_promotors.each do |garantia_promotor|
+      garantia_promotor.destroy
+    end
+    @edifici.garantia_constructors.each do |garantia_constructor|
+      garantia_constructor.destroy
+    end
+    @edifici.garantia_instalacions.each do |garantia_instalacio|
+      garantia_instalacio.destroy
+    end
+    @edifici.energia_certificats.each do |energia_certificat|
+      energia_certificat.destroy
+    end
+    @edifici.aptitud_certificats.each do |aptitud_certificat|
+      aptitud_certificat.destroy
+    end
+    @edifici.iites.each do |iite|
+      iite.destroy
+    end
+    @edifici.elements.each do |element|
+      element.destroy
+    end
+    @edifici.referencies.each do |referencia|
+      referencia.destroy
+    end
+    @edifici.referencia_calendaris.each do |referencia_calendari|
+      referencia_calendari.destroy
+    end
+
     @edifici.destroy
     respond_to do |format|
       format.html { redirect_to edificis_url }
@@ -407,12 +506,12 @@ class EdificisController < ApplicationController
   def export
     edifici = Edifici.find(params[:id])
     #data = render_to_string(:json => edifici, :include => [:fonamentacio, :estructura])
-    data = edifici.as_json(:include => [:fonamentacio, :estructura])
-    send_data data, :type => 'application/json; header=present', :disposition => "attachment; filename=edifici.json"
+    data = edifici.to_json(:include => [:identificacio, :fonamentacio, :estructura, :tancaments_vertical, :coberta, :particio, :sanejament, :aigua, :electricitat, :climatitzacio, :ga, :ventilacio, :incendi, :ascensor, :telecomunicacio, :especial, :checklist_nou_plurifamiliar, :checklist_nou_unifamiliar, :checklist_existent_plurifamiliar, :promotors, :projectistes, :constructors, :directors, :execucio_directors, :laboratoris, :entitat_controls, :subministradors, :industrials, :colaboradors, :coordinadors, :llicencies, :declaracions, :regim_propietats, :regim_especials, :carregues, :entitats, :garantia_promotors, :garantia_constructors, :garantia_instalacions, :energia_certificats, :aptitud_certificats, :iites, :elements, :referencies, :referencia_calendaris])
+    send_data data, :type => 'application/json; header=present', :disposition => "attachment; filename=#{edifici.nom_edifici}.json"
   end
 
   def import
-    
+
   end
 
   private
