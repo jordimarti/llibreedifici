@@ -1,14 +1,31 @@
-<div class="authform">
-  <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
-    <h3>Change your password</h3>
-    <%= devise_error_messages! %>
-    <%= f.hidden_field :reset_password_token %>
-    <div class="form-group">
-      <%= f.label :password, 'New password' %>
-        <%= f.password_field :password, autofocus: true, autocomplete: 'off', class: 'form-control' %>
-      <%= f.label :password_confirmation, 'Confirm new password' %>
-        <%= f.password_field :password_confirmation, autocomplete: 'off', class: 'form-control' %>
+<div class="sessions-container session-background-image">
+  <div class="row">
+    <div class="medium-6 medium-offset-3 columns">
+      <div class="session-form-container">
+        <div class="session-title">
+          <span class="login-title"><%= t('.change_password_title') %></span>
+        </div>
+
+        <div class="session-form">
+
+          <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+            <%= f.error_notification %>
+
+            <%= f.input :reset_password_token, as: :hidden %>
+            <%= f.full_error :reset_password_token %>
+
+            <div class="form-inputs">
+              <%= f.input :password, label: t('.nova_contrasenya'), required: true, autofocus: true, error_html: { class: 'error'} %>
+              <%= f.input :password_confirmation, label: t('.confirma_nova_contrasenya'), required: true, error_html: { class: 'error'} %>
+            </div>
+
+            <div class="form-actions session-form-button">
+              <%= f.button :submit, t('.change_password'), :class => 'button small radius right botodreta' %>
+            </div>
+          <% end %>
+
+        </div>
+      </div>
     </div>
-     <%= f.submit 'Change my Password', :class => 'button right' %>
-  <% end %>
+  </div>
 </div>
