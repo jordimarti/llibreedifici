@@ -11,6 +11,7 @@ class DocumentsController < ApplicationController
 
   def llibre_nou_pdf
     url_edifici = 'http://llibreedifici.herokuapp.com/edificis/' + @edifici.id.to_s + '/documents/vista_pdf_edifici_nou?locale=ca'
+    url_footer = 'http://llibreedifici.herokuapp.com/edificis/' + @edifici.id.to_s + '/documents/vista_pdf_footer?locale=ca'
     kit = PDFKit.new(url_edifici)
     file = kit.to_file(Rails.root + 'tmp/' + 'demo.pdf')
     send_file file, filename: "#{@edifici.nom_edifici}.pdf", disposition: 'attachment'

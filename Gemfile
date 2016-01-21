@@ -48,6 +48,7 @@ gem 'aws-sdk', '< 2.0'
 gem 'pdfkit', '~> 0.8.2'
 gem 'wkhtmltopdf-binary'
 gem 'gibbon'
+gem 'httparty'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
