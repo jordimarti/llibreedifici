@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get 'edificis/:edifici_id/documents/vista_pdf_edifici_nou', to: 'documents#vista_pdf_edifici_nou', :as => :vista_pdf_edifici_nou
   get 'edificis/:edifici_id/documents/vista_pdf_manual_habitatge', to: 'documents#vista_pdf_manual_habitatge', :as => :vista_pdf_manual_habitatge
   get 'edificis/:edifici_id/documents/vista_pdf_edifici_existent', to: 'documents#vista_pdf_edifici_existent', :as => :vista_pdf_edifici_existent
+  get 'edificis/:edifici_id/documents/vista_pdf_footer', to: 'documents#vista_pdf_footer', :as => :vista_pdf_footer
 
   get 'edificis/:edifici_id/sistemes/afegir_sistema', to: 'sistemes#afegir_sistema', :as => :afegir_sistema
   get 'edificis/:edifici_id/referencies/crear_llistat', to: 'referencies#crear_llistat', :as => :crear_llistat
