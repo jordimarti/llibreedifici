@@ -48,6 +48,10 @@ class DocumentsController < ApplicationController
     render :layout => 'pdf'
   end
 
+  def vista_pdf_footer
+    render :layout => 'pdf_footer'
+  end
+
   def calendari_manteniment
     respond_to do |format|
       format.docx do
