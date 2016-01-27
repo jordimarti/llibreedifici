@@ -1,5 +1,5 @@
 <%= simple_form_for(@operacio) do |f| %>
-  <%= f.error_notification %>
+  
 
   <div class="form-inputs">
     <%= f.input :sistema, :as => :hidden, :input_html => { :value => params[:sistema] } %>
@@ -13,6 +13,7 @@
         </div>
         <div class="medium-6 columns">
           <%= f.input :periodicitat_text_ca %>
+          <%= f.input :periodicitat %>
           <%= f.input :responsable_ca %>
           <%= f.input :document_referencia %>
         </div>
@@ -23,6 +24,7 @@
         </div>
         <div class="medium-6 columns">
           <%= f.input :periodicitat_text_es %>
+          <%= f.input :periodicitat %>
           <%= f.input :responsable_es %>
           <%= f.input :document_referencia %>
         </div>

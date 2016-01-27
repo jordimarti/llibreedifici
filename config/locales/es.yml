@@ -30,6 +30,10 @@ es:
           attributes:
             foto_facana_content_type:
               invalid: "El tipo de archivo no es válido. Utilizad imágenes en format JPG o PNG."
+        operacio:
+          attributes:
+            periodicitat:
+              blank: "Se debe definir la periodicidad en años"
   layouts:
     navigation:
       titol: "Libro del edificio"
@@ -731,9 +735,9 @@ es:
       operacio:
         descripcio_ca: "Descripción"
         descripcio_es: "Descripción"
-        periodicitat: "Periodicidad"
-        periodicitat_text_ca: "Periodicidad"
-        periodicitat_text_es: "Periodicidad"
+        periodicitat: "Periodicidad (en años)"
+        periodicitat_text_ca: "Periodicidad (texto)"
+        periodicitat_text_es: "Periodicidad (texto)"
         responsable_ca: "Responsable"
         responsable_es: "Responsable"
         document_referencia: "Documento de referencia"

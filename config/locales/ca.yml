@@ -30,6 +30,10 @@ ca:
           attributes:
             foto_facana_content_type:
               invalid: "El tipus d'arxiu no és vàlid. Utilitzeu imatges en format JPG o PNG."
+        operacio:
+          attributes:
+            periodicitat:
+              blank: "Cal definir la periodicitat en anys"
   layouts:
     navigation:
       titol: "Llibre de l'edifici"
@@ -731,8 +735,8 @@ ca:
       operacio:
         descripcio_ca: "Descripció"
         descripcio_es: "Descripció"
-        periodicitat: "Periodicitat"
-        periodicitat_text_ca: "Periodicitat"
+        periodicitat: "Periodicitat (en anys)"
+        periodicitat_text_ca: "Periodicitat (text)"
         periodicitat_text_es: "Periodicitat"
         responsable_ca: "Responsable"
         responsable_es: "Responsable"
