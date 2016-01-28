@@ -50,11 +50,11 @@ class DocumentsController < ApplicationController
   end
 
   def vista_pdf_header
-    render :layout => false
+    render :layout => 'pdf'
   end
 
   def vista_pdf_footer
-    render :layout => false
+    render :layout => 'pdf'
   end
 
   def calendari_manteniment

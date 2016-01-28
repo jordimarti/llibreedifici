@@ -74,7 +74,21 @@
         </div>
       </div>
 
+      <hr/>
+
+      <div class="row">
+        <div class="medium-6 columns">
+          <%= f.input :nom_empresa %>
+          <%= f.input :adreca_empresa %>
+        </div>
+        <div class="medium-6 columns">
+          <%= f.input :logo_empresa, as: :file %>
+          <%= image_tag @edifici.identificacio.logo_empresa.url(:thumb) %>
+        </div>
+      </div>
     </div>
+
+
 
     <div class="row">
       <div class="medium-12 columns">

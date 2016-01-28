@@ -544,6 +544,8 @@ ActiveRecord::Schema.define(version: 20151122110146) do
     t.integer  "any_fi_construccio"
     t.string   "origen_any_construccio"
     t.text     "observacions"
+    t.string   "nom_empresa"
+    t.string   "adreca_empresa"
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.string   "planol_emplacament_file_name"
@@ -554,6 +556,10 @@ ActiveRecord::Schema.define(version: 20151122110146) do
     t.string   "foto_facana_content_type"
     t.integer  "foto_facana_file_size"
     t.datetime "foto_facana_updated_at"
+    t.string   "logo_empresa_file_name"
+    t.string   "logo_empresa_content_type"
+    t.integer  "logo_empresa_file_size"
+    t.datetime "logo_empresa_updated_at"
   end
 
   create_table "iites", force: :cascade do |t|

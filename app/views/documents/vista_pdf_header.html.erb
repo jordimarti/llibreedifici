@@ -1,1 +1,8 @@
-Header
+<div class="row">
+	<div class="medium-3 columns">
+		<%= image_tag @edifici.identificacio.logo_empresa.url(:thumb) %>
+	</div>
+	<div class="medium-9 columns">
+		<%= @edifici.identificacio.via_edifici %>
+	</div>
+</div>
