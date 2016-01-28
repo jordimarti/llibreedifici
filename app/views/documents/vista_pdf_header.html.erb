@@ -1,6 +1,8 @@
-<div class="logo-empresa" style="float:left;">
-	<%= image_tag @edifici.identificacio.logo_empresa.url(:thumb) %>
-</div>
-<div class="via-edifici" style="float:right; color:#999999;">
-	<%= @edifici.identificacio.via_edifici %>
+<div style="height: 80px;">
+	<div class="logo-empresa" style="float:left;">
+		<%= image_tag @edifici.identificacio.logo_empresa.url(:thumb) %>
+	</div>
+	<div class="via-edifici" style="float:right; color:#999999;">
+		<%= @edifici.identificacio.via_edifici %>
+	</div>
 </div>
