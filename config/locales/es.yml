@@ -156,6 +156,9 @@ es:
         observacions: "Observaciones"
         foto_facana: "Foto de la fachada"
         planol_emplacament: "Plano de emplazamiento"
+        nom_empresa: "Nombre"
+        adreca_empresa: "Dirección"
+        logo_empresa: "Logo"
       promotor:
         nom_promotor: "Nombre"
         nif_promotor: "NIF/CIF"
@@ -843,8 +846,9 @@ es:
   identificacions:
     edit:
       titol_identificacio: "Identificación"
-      titol_dades: "DATOS DE IDENTIFICACIÓN DE LA CONSTRUCCIÓN" 
     form:
+      titol_dades: "DATOS DE IDENTIFICACIÓN DE LA CONSTRUCCIÓN"
+      titol_empresa: "DATOS DE IDENTIFICACIÓN DE LA EMPRESA O PROFESIONAL"
       guardar: "Guardar"
     update:
       guardat_ok: "Los datos se han guardado correctamente"

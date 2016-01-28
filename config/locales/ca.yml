@@ -156,6 +156,9 @@ ca:
         observacions: "Observacions"
         foto_facana: "Foto de la façana"
         planol_emplacament: "Plànol d'emplaçament"
+        nom_empresa: "Nom"
+        adreca_empresa: "Adreça"
+        logo_empresa: "Logo"
       promotor:
         nom_promotor: "Nom"
         nif_promotor: "NIF/CIF"
