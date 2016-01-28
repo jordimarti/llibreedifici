@@ -843,8 +843,9 @@ ca:
   identificacions:
     edit:
       titol_identificacio: "Identificació"
-      titol_dades: "DADES D'IDENTIFICACIÓ DE LA CONSTRUCCIÓ" 
     form:
+      titol_dades: "DADES D'IDENTIFICACIÓ DE LA CONSTRUCCIÓ"
+      titol_empresa: "DADES D'IDENTIFICACIÓ DE L'EMPRESA O PROFESSIONAL"
       guardar: "Guardar"
     update:
       guardat_ok: "Les dades s'han guardat correctament"

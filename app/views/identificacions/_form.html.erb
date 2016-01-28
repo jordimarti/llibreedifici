@@ -3,6 +3,10 @@
   <%= f.error_notification %>
 
     <div class="form-inputs">
+      <div class="identificacio-title">
+        <span class="title"><%= t('.titol_dades') %></span>
+      </div>
+
       <div class="row">
         <div class="medium-2 columns">
           <%= f.input :tipus_via_edifici, collection: ['Avinguda', 'Carrer', 'Carretera', 'Passeig', 'Passatge', 'Plaça', 'Rambla', 'Ronda'] %>
@@ -75,6 +79,10 @@
       </div>
 
       <hr/>
+
+      <div class="identificacio-title">
+        <span class="title"><%= t('.titol_empresa') %></span>
+      </div>
 
       <div class="row">
         <div class="medium-6 columns">
