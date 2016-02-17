@@ -49,6 +49,7 @@ gem 'pdfkit', '~> 0.8.2'
 gem 'wkhtmltopdf-binary'
 gem 'gibbon'
 gem 'httparty'
+gem 'puma'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -67,7 +68,6 @@ group :development do
 end
 
 group :production do
-  gem 'puma'
   gem 'rails_12factor'
 end
 
