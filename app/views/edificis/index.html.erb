@@ -41,9 +41,6 @@
                     <%= link_to new_edifici_path, :class => "button small radius projectes-button" do %>
                       <%= t('.nou_edifici') %>
                     <% end %>
-                    <%= link_to new_importat_path, :class => "button small radius projectes-button" do %>
-                      <%= t('.importar') %>
-                    <% end %>
                   <% end %>
 
                   
@@ -80,18 +77,6 @@
                               <div class="boto-item-llistat-edificis right">
                                 <%= link_to edifici, method: :delete, data: { confirm: t('.eliminar') } do %>
                                   <span class="icon-cancel icones-icomoon" title="Eliminar"></span>                     
-                                <% end %>
-                              </div>
-
-                              <div class="boto-item-llistat-edificis right">
-                                <%= link_to duplicate_path(edifici.id) do %>
-                                  <span class="icon-copy icones-icomoon" title="Duplicar"></span>
-                                <% end %>
-                              </div>
-
-                              <div class="boto-item-llistat-edificis right">
-                                <%= link_to export_path(edifici.id) do %>
-                                  <span class="icon-download icones-icomoon" title="Descarregar"></span>
                                 <% end %>
                               </div>
 
