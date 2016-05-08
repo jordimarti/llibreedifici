@@ -71,6 +71,8 @@
                                 tipus_edifici = "Edifici existent plurifamiliar"
                               when "existent_unifamiliar"
                                 tipus_edifici = "Edifici existent unifamiliar"
+                              when "nou_terciari"
+                                tipus_edifici = "Edifici nou terciari"
                               end %>
                               <span class="tipus-llistat-edificis"><%= tipus_edifici %></span> <span class="data-llistat-edificis">(<%= edifici.created_at.day.to_s %>-<%= edifici.created_at.month.to_s %>-<%= edifici.created_at.year.to_s %>)</span>
 
