@@ -124,11 +124,24 @@ ca:
       tornar_projectes: "Tornar als projectes"
       no_editar_tipologia: "No es pot canviar la tipologia de l'edifici ni la referència cadastral."
       guardar: "Guardar"
+    validate_user_nif:
+      titol: "Validar el NIF"
+      explicacio: "Per crear un projecte cal realitzar un pagament de 37,50€."
+      explicacio2: "Per generar la factura comprovarem si el Col·legi d'Aparelladors, Arquitectes Tècnics i Enginyers d'Edificació de Barcelona ja disposa de les teves dades."
+      explicacio3: "Utilitzarem el NIF que has especificat en el registre d'usuari per fer aquesta comprovació. Si no estàs registrat/da hauràs d'omplir un formulari amb les teves dades personals."
+      comprovar_nif: "Comprovar NIF"
+      text_canviar_nif: "Si creus que has introduït un NIF incorrecte el pots modificar:"
+      link_canviar_nif: "Canviar NIF"
     form:
       atencio_ref_cadastral: "Atenció a l'escriure la referència cadastral i seleccionar el tipus d'edifici: aquests valors ja no es podran modificar!"
       guardar: "Guardar"
     quadern_nou_plurifamiliar:
       dades_identificacio: "Dades d'identificació de la construcció"
+  info_usuaris:
+    new:
+      titol: "Dades de facturació"
+    form:
+      guardar: "Continuar"
   simple_form:
     labels:
       user:

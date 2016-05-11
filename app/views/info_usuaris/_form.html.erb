@@ -1,0 +1,42 @@
+<%= simple_form_for(@info_usuari) do |f| %>
+  <%= f.error_notification %>
+  <div class="row">
+    <div class="medium-12 columns">
+      
+        <div class="form-inputs">
+          <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id } %>
+          <div class="row">
+            <div class="medium-6 columns">
+              <%= f.input :nom %>
+              <%= f.input :cognoms %>
+              <%= f.input :adreca %>
+              <%= f.input :codi_postal %>
+              <%= f.input :poblacio %>
+              <%= f.input :provincia %>
+              <%= f.input :pais %>
+              <%= f.input :nif %>
+            </div>
+            <div class="medium-6 columns">
+              <%= f.input :telefon_fix %>
+              <%= f.input :telefon_mobil %>
+              <%= f.input :fax %>
+              <%= f.input :num_premaat %>
+              <%= f.input :num_musaat %>
+              <%= f.input :sexe %>
+              <%= f.input :any_naixement %>
+              <%= f.input :web %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="medium-12 columns">
+            <div class="form-actions">
+              <%= f.button :submit, t('.guardar'), :class => 'button small radius right botodreta' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+<% end %>

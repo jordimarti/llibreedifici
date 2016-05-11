@@ -32,13 +32,18 @@ class EdificisController < ApplicationController
         #Aquí creem els objectes complementaris a l'edifici (dades_edifici, checklist...)
         create_complements(@edifici.id)
 
-        format.html { redirect_to edificis_path }
+        format.html { redirect_to validate_user_nif_path(@edifici.id) }
         format.json { render :show, status: :created, location: @edifici }
       else
         format.html { render :new }
         format.json { render json: @edifici.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  # Es comprova si l'usuari està registrat a IRIS amb el NIF. Si no és així se li mostra formulari de registre.
+  def validate_user_nif
+    @edifici = Edifici.find(params[:edifici_id])
   end
 
   def create_complements(edifici_id)

@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Info Usuaris</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Nom</th>
+      <th>Cognoms</th>
+      <th>Adreca</th>
+      <th>Codi postal</th>
+      <th>Poblacio</th>
+      <th>Provincia</th>
+      <th>Pais</th>
+      <th>Telefon fix</th>
+      <th>Telefon mobil</th>
+      <th>Fax</th>
+      <th>Num premaat</th>
+      <th>Num musaat</th>
+      <th>Sexe</th>
+      <th>Any naixement</th>
+      <th>Nif</th>
+      <th>Web</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @info_usuaris.each do |info_usuari| %>
+      <tr>
+        <td><%= info_usuari.user_id %></td>
+        <td><%= info_usuari.nom %></td>
+        <td><%= info_usuari.cognoms %></td>
+        <td><%= info_usuari.adreca %></td>
+        <td><%= info_usuari.codi_postal %></td>
+        <td><%= info_usuari.poblacio %></td>
+        <td><%= info_usuari.provincia %></td>
+        <td><%= info_usuari.pais %></td>
+        <td><%= info_usuari.telefon_fix %></td>
+        <td><%= info_usuari.telefon_mobil %></td>
+        <td><%= info_usuari.fax %></td>
+        <td><%= info_usuari.num_premaat %></td>
+        <td><%= info_usuari.num_musaat %></td>
+        <td><%= info_usuari.sexe %></td>
+        <td><%= info_usuari.any_naixement %></td>
+        <td><%= info_usuari.nif %></td>
+        <td><%= info_usuari.web %></td>
+        <td><%= link_to 'Show', info_usuari %></td>
+        <td><%= link_to 'Edit', edit_info_usuari_path(info_usuari) %></td>
+        <td><%= link_to 'Destroy', info_usuari, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Info usuari', new_info_usuari_path %>
