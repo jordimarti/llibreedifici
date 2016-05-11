@@ -287,6 +287,7 @@ ActiveRecord::Schema.define(version: 20151122110146) do
     t.integer  "user_id"
     t.string   "nom_edifici"
     t.string   "tipus_edifici"
+    t.string   "ref_cadastral"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
@@ -516,7 +517,6 @@ ActiveRecord::Schema.define(version: 20151122110146) do
     t.string   "cp_edifici"
     t.string   "poblacio_edifici"
     t.string   "provincia_edifici"
-    t.string   "ref_cadastral"
     t.integer  "any_inici_construccio"
     t.integer  "any_fi_construccio"
     t.string   "origen_any_construccio"
@@ -937,6 +937,7 @@ ActiveRecord::Schema.define(version: 20151122110146) do
     t.datetime "updated_at"
     t.string   "first_name"
     t.string   "last_name"
+    t.string   "nif"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

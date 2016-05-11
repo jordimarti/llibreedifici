@@ -7,6 +7,10 @@ class User < ActiveRecord::Base
   has_many :edificis
 	#after_create :subscribe
 
+	validates :first_name, :presence => true
+	validates :last_name, :presence => true
+	validates :nif, :presence => true
+
   def name
   	[first_name, last_name].compact.join(' ')
   end

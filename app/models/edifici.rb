@@ -55,5 +55,6 @@ class Edifici < ActiveRecord::Base
 
 	validates :nom_edifici, :presence => true
 	validates :tipus_edifici, :presence => true
+	validates :ref_cadastral, :presence => true
 
 end

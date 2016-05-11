@@ -36,7 +36,8 @@
 
       <div class="row">
         <div class="medium-6 columns">
-          <%= f.input :ref_cadastral %>
+          Referència cadastral: <br/>
+          <%= @edifici.ref_cadastral %>
         </div>
         <div class="medium-6 columns">
           <% if (@edifici.tipus_edifici == 'nou_plurifamiliar' || @edifici.tipus_edifici == 'nou_unifamiliar' || @edifici.tipus_edifici == 'nou_terciari') %>

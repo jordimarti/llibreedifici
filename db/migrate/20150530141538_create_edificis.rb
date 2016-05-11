@@ -4,6 +4,7 @@ class CreateEdificis < ActiveRecord::Migration
       t.integer :user_id
       t.string :nom_edifici
       t.string :tipus_edifici
+      t.string :ref_cadastral
 
       t.timestamps null: false
     end

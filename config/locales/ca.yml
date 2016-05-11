@@ -20,10 +20,14 @@ ca:
               blank: "Cal escriure el nom"
             last_name:
               blank: "Cal escriure els cognoms"
+            nif:
+              blank: "Cal escriure el NIF"
         edifici:
           attributes:
             nom_edifici:
               blank: "Cal assignar un nom a l'edifici"
+            ref_cadastral:
+              blank: "Cal escriure la referència cadastral"
             tipus_edifici:
               blank: "Cal definir el tipus d'edifici"
         identificacio:
@@ -118,9 +122,10 @@ ca:
     edit:
       editar_edifici: "Editar el nom de l'edifici"
       tornar_projectes: "Tornar als projectes"
-      no_editar_tipologia: "No es pot canviar la tipologia de l'edifici. Si has de fer aquest canvi caldrà eliminar aquest projecte i crear-ne un de nou."
+      no_editar_tipologia: "No es pot canviar la tipologia de l'edifici ni la referència cadastral."
       guardar: "Guardar"
     form:
+      atencio_ref_cadastral: "Atenció a l'escriure la referència cadastral i seleccionar el tipus d'edifici: aquests valors ja no es podran modificar!"
       guardar: "Guardar"
     quadern_nou_plurifamiliar:
       dades_identificacio: "Dades d'identificació de la construcció"
@@ -129,6 +134,7 @@ ca:
       user:
         first_name: 'Nom'
         last_name: 'Cognoms'
+        nif: 'NIF'
         email: 'Correu electrònic'
         password: 'Contrasenya'
         password_confirmation: 'Confirmació de contrasenya'
@@ -136,6 +142,7 @@ ca:
         remember_me: "Recorda'm"
       edifici:
         nom_edifici: "Nom de l'edifici"
+        ref_cadastral: "Referència cadastral"
         tipus_edifici: "Tipus d'edifici"
       importat:
         arxiu: "Arxiu"
@@ -148,7 +155,6 @@ ca:
         cp_edifici: "Codi postal"
         poblacio_edifici: "Població"
         provincia_edifici: "Província"
-        ref_cadastral: "Referència cadastral"
         us_edifici: "Tipologia"
         any_inici_construccio: "Any inici construcció"
         any_fi_construccio: "Any fi construcció"

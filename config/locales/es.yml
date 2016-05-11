@@ -20,10 +20,14 @@ es:
               blank: "Es necesario escribir el nombre"
             last_name:
               blank: "Es necesario escribir los apellidos"
+            nif:
+              blank: "Es necesario escribir el NIF"
         edifici:
           attributes:
             nom_edifici:
               blank: "Se debe asignar un nombre al edificio"
+            ref_cadastral:
+              blank: "Se debe escribir la referencia catastral"
             tipus_edifici:
               blank: "Se debe definir el tipo de edificio"
         identificacio:
@@ -118,9 +122,10 @@ es:
     edit:
       editar_edifici: "Editar el nombre del edificio"
       tornar_projectes: "Volver a los proyectos"
-      no_editar_tipologia: "No se puede cambiar la tipología del edificio. Si tienes que hacer este cambio deberás eliminar este proyecto y crear uno nuevo."
+      no_editar_tipologia: "No se puede cambiar la tipología del edificio ni la referencia catastral."
       guardar: "Guardar"
     form:
+      atencio_ref_cadastral: "Atención al escribir la referencia catastral y elegir el tipo de edificio: estos valores ya no se podrán modificar!"
       guardar: "Guardar"
     quadern_nou_plurifamiliar:
       dades_identificacio: "Datos de identificación de la construcción"
@@ -129,6 +134,7 @@ es:
       user:
         first_name: 'Nombre'
         last_name: 'Apellidos'
+        nif: 'NIF'
         email: 'Correo electrónico'
         password: 'Contraseña'
         password_confirmation: 'Confirmación de contraseña'
@@ -136,6 +142,7 @@ es:
         remember_me: "Recuérdame"
       edifici:
         nom_edifici: "Nombre del edificio"
+        ref_cadastral: "Referencia catastral"
         tipus_edifici: "Tipo de edificio"
       importat:
         arxiu: "Archivo"
@@ -148,7 +155,6 @@ es:
         cp_edifici: "Código postal"
         poblacio_edifici: "Población"
         provincia_edifici: "Provincia"
-        ref_cadastral: "Referencia catastral"
         us_edifici: "Tipología"
         any_inici_construccio: "Año inicio construcción"
         any_fi_construccio: "Año fin construcción"
