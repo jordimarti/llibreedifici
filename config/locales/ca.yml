@@ -713,6 +713,9 @@ ca:
         garatge_mecanica_conductes: "Mecànica per conductes"
         garatge_mecanica_obertures: "Mecànica per obertures"
         garatge_mecanica_control: "Mecànica amb sistema de control"
+        terciari_monozona: "Sistema de ventilació monozona"
+        terciari_multizona: "Sistema de ventilació multizona"
+        terciari_hibrid: "Sistema híbrid de ventilació natural/mecànica"
       incendi:
         alarma_automatica: "Sistema automàtic de detecció i alarma d’incendis"
         alarma_manual: "Sistema manual d’alarma d’incendis"
