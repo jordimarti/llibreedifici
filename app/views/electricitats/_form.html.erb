@@ -20,6 +20,49 @@
       </div>
     <% end %>
 
+    <% if @edifici.tipus_edifici == "nou_terciari" %>
+    <div class="row">
+      <div class="medium-6 columns">
+        <div class="titol-subsistema"><%= t('.caracteristiques_generals') %></div>
+        <%= f.input :mes_100k %>
+        <%= f.input :connexio_terra %>
+        <%= f.input :centre_transformacio %>
+        <%= f.input :fotovoltaica %>
+      </div>
+      <div class="medium-6 columns">
+        <div class="titol-subsistema"><%= t('.comptadors') %></div>
+        <%= f.input :comptador_unic %>
+        <%= f.input :comptadors_individuals_locals %>
+        <%= f.input :comptadors_centralitzats %>
+      </div>
+    </div>
+
+    <hr class="form-divider">
+    
+    <div class="row">
+      <div class="medium-12 columns">
+        <div class="titol-subsistema"><%= t('.iluminacio') %></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-6 columns">
+        <%= f.input :terciari_ilum_incandescent %>
+        <%= f.input :terciari_ilum_halogena %>
+        <%= f.input :terciari_ilum_fluorescent %>
+        <%= f.input :terciari_ilum_vapor_mercuri %>
+        <%= f.input :terciari_ilum_halogenurs %>
+      </div>
+      <div class="medium-6 columns">
+        <%= f.input :terciari_ilum_sodi_baixa_pressio %>
+        <%= f.input :terciari_ilum_sodi_alta_pressio %>
+        <%= f.input :terciari_ilum_induccio %>
+        <%= f.input :terciari_ilum_led %>
+      </div>
+    </div>
+
+    <% else %>
+
     <div class="row">
       <div class="medium-6 columns">
         <div class="titol-subsistema"><%= t('.caracteristiques_generals') %></div>
@@ -36,6 +79,8 @@
         <%= f.input :comptadors_centralitzats %>
       </div>
     </div>
+
+    <% end %>
   </div>
 
   <div class="row">

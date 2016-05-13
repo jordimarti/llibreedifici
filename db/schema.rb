@@ -302,6 +302,16 @@ ActiveRecord::Schema.define(version: 20160511101559) do
     t.boolean  "comptador_unic"
     t.boolean  "comptadors_individuals_habitatge"
     t.boolean  "comptadors_centralitzats"
+    t.boolean  "terciari_ilum_incandescent"
+    t.boolean  "terciari_ilum_halogena"
+    t.boolean  "terciari_ilum_fluorescent"
+    t.boolean  "terciari_ilum_vapor_mercuri"
+    t.boolean  "terciari_ilum_halogenurs"
+    t.boolean  "terciari_ilum_sodi_baixa_pressio"
+    t.boolean  "terciari_ilum_sodi_alta_pressio"
+    t.boolean  "terciari_ilum_induccio"
+    t.boolean  "terciari_ilum_led"
+    t.boolean  "comptadors_individuals_locals"
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
   end

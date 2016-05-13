@@ -669,6 +669,16 @@ es:
         comptador_unic: "Contador único para todo el edificio"
         comptadors_individuals_habitatge: "Contadores individuales por vivienda/local"
         comptadors_individuals_centralitzats: "Contadores individuales centralizados"
+        comptadors_individuals_locals: "Contadores individuales para cada local"
+        terciari_ilum_incandescent: "Lámparas incandescentes"
+        terciari_ilum_halogena: "Lámparas halógenas"
+        terciari_ilum_fluorescent: "Lámparas fluorescentes"
+        terciari_ilum_vapor_mercuri: "Lámparas de vapor de mercurio"
+        terciari_ilum_halogenurs: "Lámparas de halogenuros metálicos"
+        terciari_ilum_sodi_baixa_pressio: "Lámparas de sodio de baja presión"
+        terciari_ilum_sodi_alta_pressio: "Lámparas de sodio de alta presión"
+        terciari_ilum_induccio: "Lámparas de inducción"
+        terciari_ilum_led: "Lámparas LED"
       climatitzacio:
         escalfador_pn_menor_24: "Pn ≤ 24,4 kW"
         escalfador_pn_24_70: "24,4 kW < Pn ≤ 70 kW"
@@ -1178,6 +1188,7 @@ es:
       titol_electricitat: "INSTALACIÓN ELÉCTRICA"
       caracteristiques_generals: "Características generales"
       comptadors: "Contadores"
+      iluminacio: "Iluminación"
   climatitzacions:
     edit:
       titol_sistemes: "Descripción constructiva del edificio"

@@ -82,6 +82,6 @@ class ElectricitatsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def electricitat_params
-      params.require(:electricitat).permit(:edifici_id, :enllumenat_comunitari, :mes_100k, :connexio_terra, :centre_transformacio, :fotovoltaica, :comptador_unic, :comptadors_individuals_habitatge, :comptadors_centralitzats)
+      params.require(:electricitat).permit(:edifici_id, :enllumenat_comunitari, :mes_100k, :connexio_terra, :centre_transformacio, :fotovoltaica, :comptador_unic, :comptadors_individuals_habitatge, :comptadors_centralitzats, :terciari_ilum_incandescent, :terciari_ilum_halogena, :terciari_ilum_fluorescent, :terciari_ilum_vapor_mercuri, :terciari_ilum_halogenurs, :terciari_ilum_sodi_baixa_pressio, :terciari_ilum_sodi_alta_pressio, :terciari_ilum_induccio, :terciari_ilum_led, :comptadors_individuals_locals)
     end
 end
