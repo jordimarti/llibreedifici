@@ -405,6 +405,20 @@ class ReferenciesController < ApplicationController
     if (electricitat.comptador_unic == true || electricitat.comptadors_individuals_habitatge == true || electricitat.comptadors_centralitzats == true)
       crear_referencia(137)
     end
+    # Generem les operacions de manteniment d'il·luminació en terciari en tots els casos. Sempre hi ha il·luminació.
+    if @edifici.tipus_edifici == "nou_terciari"
+      crear_referencia(536)
+      crear_referencia(537)
+      crear_referencia(538)
+      crear_referencia(539)
+      crear_referencia(540)
+      crear_referencia(541)
+      crear_referencia(542)
+      crear_referencia(543)
+      crear_referencia(544)
+      crear_referencia(545)
+      crear_referencia(546)
+    end
 
     gas = Ga.where(:edifici_id => @edifici.id).last
     if (gas.instalacio_gas == true)
