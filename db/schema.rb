@@ -987,6 +987,9 @@ ActiveRecord::Schema.define(version: 20160511101559) do
     t.boolean  "garatge_mecanica_conductes"
     t.boolean  "garatge_mecanica_obertures"
     t.boolean  "garatge_mecanica_control"
+    t.boolean  "terciari_monozona"
+    t.boolean  "terciari_multizona"
+    t.boolean  "terciari_hibrid"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
   end

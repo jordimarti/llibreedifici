@@ -727,97 +727,109 @@ class ReferenciesController < ApplicationController
     end
 
     ventilacio = Ventilacio.where(:edifici_id => @edifici.id).last
-    if (ventilacio.habitatge_natural_conductes == true)
-      crear_referencia(272)
-      crear_referencia(273)
+      if @edifici.tipus_edifici != "nou_terciari"
+      if (ventilacio.habitatge_natural_conductes == true)
+        crear_referencia(272)
+        crear_referencia(273)
+      end
+      if (ventilacio.habitatge_natural_obertures == true)
+        crear_referencia(274)
+      end
+      if (ventilacio.habitatge_mecanica_conductes == true)
+        crear_referencia(275)
+        crear_referencia(276)
+        crear_referencia(277)
+        crear_referencia(278)
+        crear_referencia(279)
+        crear_referencia(280)
+      end
+      if (ventilacio.habitatge_mecanica_obertures == true)
+        crear_referencia(281)
+        crear_referencia(282)
+        crear_referencia(283)
+      end
+      if (ventilacio.habitatge_mecanica_control == true)
+        crear_referencia(284)
+      end
+      if (ventilacio.traster_natural_conductes == true)
+        crear_referencia(285)
+        crear_referencia(286)
+      end
+      if (ventilacio.traster_natural_obertures == true)
+        crear_referencia(287)
+      end
+      if (ventilacio.traster_mecanica_conductes == true)
+        crear_referencia(288)
+        crear_referencia(289)
+        crear_referencia(290)
+        crear_referencia(291)
+        crear_referencia(292)
+        crear_referencia(293)
+      end
+      if (ventilacio.traster_mecanica_obertures == true)
+        crear_referencia(294)
+        crear_referencia(295)
+        crear_referencia(296)
+      end
+      if (ventilacio.traster_mecanica_control == true)
+        crear_referencia(297)
+      end
+      if (ventilacio.magatzem_natural_conductes == true)
+        crear_referencia(298)
+        crear_referencia(299)
+      end
+      if (ventilacio.magatzem_natural_obertures == true)
+        crear_referencia(300)
+      end
+      if (ventilacio.magatzem_mecanica_conductes == true)
+        crear_referencia(301)
+        crear_referencia(302)
+        crear_referencia(303)
+        crear_referencia(304)
+        crear_referencia(305)
+        crear_referencia(306)
+      end
+      if (ventilacio.magatzem_mecanica_obertures == true)
+        crear_referencia(307)
+        crear_referencia(308)
+        crear_referencia(309)
+      end
+      if (ventilacio.magatzem_mecanica_control == true)
+        crear_referencia(310)
+      end
+      if (ventilacio.garatge_natural_conductes == true)
+        crear_referencia(311)
+        crear_referencia(312)
+      end
+      if (ventilacio.garatge_natural_obertures == true)
+        crear_referencia(313)
+      end
+      if (ventilacio.garatge_mecanica_conductes == true)
+        crear_referencia(314)
+        crear_referencia(315)
+        crear_referencia(316)
+        crear_referencia(317)
+        crear_referencia(318)
+        crear_referencia(319)
+      end
+      if (ventilacio.garatge_mecanica_obertures == true)
+        crear_referencia(320)
+        crear_referencia(321)
+        crear_referencia(322)
+      end
+      if (ventilacio.garatge_mecanica_control == true)
+        crear_referencia(323)
+      end
     end
-    if (ventilacio.habitatge_natural_obertures == true)
-      crear_referencia(274)
-    end
-    if (ventilacio.habitatge_mecanica_conductes == true)
-      crear_referencia(275)
-      crear_referencia(276)
-      crear_referencia(277)
-      crear_referencia(278)
-      crear_referencia(279)
-      crear_referencia(280)
-    end
-    if (ventilacio.habitatge_mecanica_obertures == true)
-      crear_referencia(281)
-      crear_referencia(282)
-      crear_referencia(283)
-    end
-    if (ventilacio.habitatge_mecanica_control == true)
-      crear_referencia(284)
-    end
-    if (ventilacio.traster_natural_conductes == true)
-      crear_referencia(285)
-      crear_referencia(286)
-    end
-    if (ventilacio.traster_natural_obertures == true)
-      crear_referencia(287)
-    end
-    if (ventilacio.traster_mecanica_conductes == true)
-      crear_referencia(288)
-      crear_referencia(289)
-      crear_referencia(290)
-      crear_referencia(291)
-      crear_referencia(292)
-      crear_referencia(293)
-    end
-    if (ventilacio.traster_mecanica_obertures == true)
-      crear_referencia(294)
-      crear_referencia(295)
-      crear_referencia(296)
-    end
-    if (ventilacio.traster_mecanica_control == true)
-      crear_referencia(297)
-    end
-    if (ventilacio.magatzem_natural_conductes == true)
-      crear_referencia(298)
-      crear_referencia(299)
-    end
-    if (ventilacio.magatzem_natural_obertures == true)
-      crear_referencia(300)
-    end
-    if (ventilacio.magatzem_mecanica_conductes == true)
-      crear_referencia(301)
-      crear_referencia(302)
-      crear_referencia(303)
-      crear_referencia(304)
-      crear_referencia(305)
-      crear_referencia(306)
-    end
-    if (ventilacio.magatzem_mecanica_obertures == true)
-      crear_referencia(307)
-      crear_referencia(308)
-      crear_referencia(309)
-    end
-    if (ventilacio.magatzem_mecanica_control == true)
-      crear_referencia(310)
-    end
-    if (ventilacio.garatge_natural_conductes == true)
-      crear_referencia(311)
-      crear_referencia(312)
-    end
-    if (ventilacio.garatge_natural_obertures == true)
-      crear_referencia(313)
-    end
-    if (ventilacio.garatge_mecanica_conductes == true)
-      crear_referencia(314)
-      crear_referencia(315)
-      crear_referencia(316)
-      crear_referencia(317)
-      crear_referencia(318)
-      crear_referencia(319)
-    end
-    if (ventilacio.garatge_mecanica_obertures == true)
-      crear_referencia(320)
-      crear_referencia(321)
-      crear_referencia(322)
-    end
-    if (ventilacio.garatge_mecanica_control == true)
-      crear_referencia(323)
+    if @edifici.tipus_edifici == "nou_terciari"
+      if (ventilacio.terciari_monozona == true || ventilacio.terciari_multizona == true || ventilacio.terciari_hibrid == true)
+        crear_referencia(530)
+        crear_referencia(531)
+        crear_referencia(532)
+        crear_referencia(533)
+        crear_referencia(534)
+        crear_referencia(535)
+      end
     end
 
     incendis = Incendi.where(:edifici_id => @edifici.id).last

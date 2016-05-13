@@ -22,6 +22,9 @@ class CreateVentilacions < ActiveRecord::Migration
       t.boolean :garatge_mecanica_conductes
       t.boolean :garatge_mecanica_obertures
       t.boolean :garatge_mecanica_control
+      t.boolean :terciari_monozona
+      t.boolean :terciari_multizona
+      t.boolean :terciari_hibrid
 
       t.timestamps null: false
     end
