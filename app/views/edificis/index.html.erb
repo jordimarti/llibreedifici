@@ -32,16 +32,11 @@
             <div class="projectes-container">
               <div class="row">
                 <div class="medium-3 columns">
-                  <% if @edificis.count >= 5 %>
-                    <div data-alert class="alert-box alert">No podeu crear més projectes</div>
-                    <p>Com a màxim es poden crear 5 projectes. Si voleu crear un projecte nou haureu d'eliminar un projecte existent.</p>
-                    <p>Recordeu que podeu descarregar els projectes al vostre ordinador i importar-los de nou més endavant per continuar-hi treballant.</p>
-                    
-                  <% else %>
+                  
                     <%= link_to new_edifici_path, :class => "button small radius projectes-button" do %>
                       <%= t('.nou_edifici') %>
                     <% end %>
-                  <% end %>
+                  
 
                   
 
