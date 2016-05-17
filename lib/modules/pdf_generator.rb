@@ -24,11 +24,9 @@ module PdfGenerator
   def instruccions_pdf(sistema)
   	case sistema
   	when 'fonamentacio'
-  		return '<div class="indivisible"><p class="apartat-sistema">Instruccions d’ús:</p>
+  		return '<p class="apartat-sistema">Instruccions d’ús:</p>
 <p>Cal evitar qualsevol tipus de canvi en el sistema de càrrega de les diferents parts de l’edifici. Si desitgeu introduir modificacions o qualsevol canvi d’ús dins l’edifici consulteu al vostre Tècnic de Capçalera.</p>
-
 <p>Les lesions (esquerdes, desploms) als fonaments no són apreciables directament i es detecten a partir de les que apareixen a d’altres elements constructius (parets, sostres, etc.). En aquests casos, fa falta que el Tècnic de Capçalera faci un informe sobre les lesions detectades, en determini la gravetat i, si escau, la necessitat d’intervenció.</p>
-</div>
 <p>Les alteracions d’importància efectuades als terrenys propers, com ara: noves construccions, realització de pous, túnels, vies, carreteres o reblerts de terres poden afectar la fonamentació de l’edifici. Si durant la realització dels treballs es detecten lesions, s’hauran d’estudiar i, si és el cas, es podrà exigir la seva reparació.</p>
 <p>Els corrents subterranis d’aigua natural i les fuites de conduccions d’aigua o de desguassos poden ser causa d’alteracions del terreny i de descalçaments de la fonamentació. Aquests descalçaments poden produir un assentament de la zona afectada, que pot transformar-se en deterioraments importants a la resta de l’estructura. Per aquest motiu, és primordial eliminar ràpidament qualsevol tipus d’humitat que provingui del subsòl. </p>
 <p>Després de pluges fortes s’observaran les possibles humitats i el bon funcionament de les perforacions de drenatge i desguàs.</p> 
