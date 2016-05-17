@@ -44,6 +44,10 @@ class EdificisController < ApplicationController
   # Es comprova si l'usuari està registrat a IRIS amb el NIF. Si no és així se li mostra formulari de registre.
   def validate_user_nif
     @edifici = Edifici.find(params[:edifici_id])
+    client = Savon.client(wsdl: "http://isis.apabcn.cat/LibroEdificio/wsUsuariosSap.asmx?wsdl")
+    resposta = client.call(:comprueba_usuario, message: { nif: current_user.nif })
+    dades = resposta.to_hash
+    @comprovacio_nif = dades[:comprueba_usuario_response][:comprueba_usuario_result]
   end
 
   def create_complements(edifici_id)

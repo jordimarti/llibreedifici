@@ -48,7 +48,7 @@ gem 'aws-sdk', '< 2.0'
 gem 'pdfkit', '~> 0.8.2'
 gem 'wkhtmltopdf-binary'
 gem 'gibbon'
-gem 'httparty'
+gem 'savon'
 gem 'puma'
 
 group :development, :test do
