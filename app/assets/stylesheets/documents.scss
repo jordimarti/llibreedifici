@@ -25,6 +25,10 @@
 	page-break-after: always;
 }
 
+.indivisible {
+	page-break-inside: avoid;
+}
+
 h1.titol-document {
 	font-family: "Calibri", Helvetica, Roboto, Arial, sans-serif;
 	font-size: 44px;
