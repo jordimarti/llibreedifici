@@ -1,5 +1,6 @@
 class InfoUsuarisController < ApplicationController
   before_action :set_info_usuari, only: [:show, :edit, :update, :destroy]
+  before_action :set_edifici
 
   # GET /info_usuaris
   # GET /info_usuaris.json
@@ -71,8 +72,12 @@ class InfoUsuarisController < ApplicationController
       @info_usuari = InfoUsuari.find(params[:id])
     end
 
+    def set_edifici
+      @edifici = Edifici.find(params[:edifici_id])
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def info_usuari_params
-      params.require(:info_usuari).permit(:user_id, :nom, :cognoms, :adreca, :codi_postal, :poblacio, :provincia, :pais, :telefon_fix, :telefon_mobil, :fax, :num_premaat, :num_musaat, :sexe, :any_naixement, :nif, :web)
+      params.require(:info_usuari).permit(:user_id, :edifici_id, :nom, :cognoms, :adreca, :codi_postal, :poblacio, :provincia, :pais, :telefon_fix, :telefon_mobil, :fax, :num_premaat, :num_musaat, :sexe, :any_naixement, :nif, :web)
     end
 end

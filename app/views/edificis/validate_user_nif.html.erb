@@ -7,10 +7,13 @@
 	      </div>
 	      <div class="projectes-form-container">
 	      	<p><%= t('.explicacio') %></p>
+	      	<div class="preu-llibre">
+
+	      	</div>
 	      	<p><%= t('.explicacio2') %></p>
 	      	<p><%= t('.explicacio3') %></p>
 	      	<p>NIF: <%= current_user.nif %></p>
-	      	<p><%= link_to t('.comprovar_nif'), new_info_usuari_path, class: "button small radius" %></p>
+	      	<p><%= link_to t('.comprovar_nif'), new_edifici_info_usuari_path, class: "button small radius" %></p>
 	      	<p><%= t('.text_canviar_nif') %> <%= link_to t('.link_canviar_nif'), edit_user_registration_path %></p>
 	      </div>
 	    </div>

@@ -2,6 +2,7 @@ class CreateInfoUsuaris < ActiveRecord::Migration
   def change
     create_table :info_usuaris do |t|
       t.integer :user_id
+      t.integer :edifici_id
       t.string :nom
       t.string :cognoms
       t.string :adreca

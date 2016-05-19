@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  edifici_id: 1
+  numorder: 1
+  import: 
+  codi_retorn: MyString
+  codi_autoritzacio: MyString
+
+two:
+  user_id: 1
+  edifici_id: 1
+  numorder: 1
+  import: 
+  codi_retorn: MyString
+  codi_autoritzacio: MyString

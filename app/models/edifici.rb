@@ -53,6 +53,9 @@ class Edifici < ActiveRecord::Base
 	has_one :checklist_nou_unifamiliar
 	has_one :checklist_existent_plurifamiliar
 
+	has_one :info_usuari
+	has_one :pagament
+
 	validates :nom_edifici, :presence => true
 	validates :tipus_edifici, :presence => true
 	validates :ref_cadastral, :presence => true

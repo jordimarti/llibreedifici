@@ -126,7 +126,7 @@ es:
       guardar: "Guardar"
     validate_user_nif:
       titol: "Validar el NIF"
-      explicacio: "Para crear un proyecto debes realizar un pago de 37,50€."
+      explicacio: "Para crear un proyecto debes realizar un pago de 42,96€ (35,50€ + IVA)."
       explicacio2: "Para generar la factura comprobaremos si el Col·legi d'Aparelladors, Arquitectes Tècnics i Enginyers d'Edificació de Barcelona ya dispone de tus datos."
       explicacio3: "Utilizaremos el NIF que has especificado en el registro de usuario para hacer esta comprobación. Si no estás registrado/a deberás rellenar un formulario con tus datos personales."
       comprovar_nif: "Comprobar NIF"
