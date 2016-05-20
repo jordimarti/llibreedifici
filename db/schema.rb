@@ -64,6 +64,29 @@ ActiveRecord::Schema.define(version: 20160518070642) do
     t.datetime "updated_at",       null: false
   end
 
+  create_table "checklist_edifici_nou_plurifamiliars", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.boolean  "llicencies_preceptives"
+    t.boolean  "certificat_final_obra"
+    t.boolean  "acta_recepcio_obra"
+    t.boolean  "escriptura_publica"
+    t.boolean  "documents_garantia"
+    t.boolean  "documents_garantia_parts_comunes"
+    t.boolean  "certificacio_energetica"
+    t.boolean  "polissa_assegurances"
+    t.boolean  "escriptura_propietat_horitzontal"
+    t.boolean  "estatus_comunitat"
+    t.boolean  "cedules_regims_juridics"
+    t.boolean  "carregues_reals"
+    t.boolean  "documents_complementaris"
+    t.boolean  "documents_acreditatius_ajuts"
+    t.boolean  "documents_justificacio_operacions"
+    t.boolean  "certificat_final_obra_instalacions"
+    t.boolean  "declaracions_ce_ascensors"
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+  end
+
   create_table "checklist_existent_plurifamiliars", force: :cascade do |t|
     t.integer  "edifici_id"
     t.boolean  "iite",                               default: true
@@ -302,16 +325,6 @@ ActiveRecord::Schema.define(version: 20160518070642) do
     t.boolean  "comptador_unic"
     t.boolean  "comptadors_individuals_habitatge"
     t.boolean  "comptadors_centralitzats"
-    t.boolean  "terciari_ilum_incandescent"
-    t.boolean  "terciari_ilum_halogena"
-    t.boolean  "terciari_ilum_fluorescent"
-    t.boolean  "terciari_ilum_vapor_mercuri"
-    t.boolean  "terciari_ilum_halogenurs"
-    t.boolean  "terciari_ilum_sodi_baixa_pressio"
-    t.boolean  "terciari_ilum_sodi_alta_pressio"
-    t.boolean  "terciari_ilum_induccio"
-    t.boolean  "terciari_ilum_led"
-    t.boolean  "comptadors_individuals_locals"
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
   end
@@ -599,7 +612,6 @@ ActiveRecord::Schema.define(version: 20160518070642) do
 
   create_table "info_usuaris", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "edifici_id"
     t.string   "nom"
     t.string   "cognoms"
     t.string   "adreca"
@@ -1009,9 +1021,6 @@ ActiveRecord::Schema.define(version: 20160518070642) do
     t.boolean  "garatge_mecanica_conductes"
     t.boolean  "garatge_mecanica_obertures"
     t.boolean  "garatge_mecanica_control"
-    t.boolean  "terciari_monozona"
-    t.boolean  "terciari_multizona"
-    t.boolean  "terciari_hibrid"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
   end
