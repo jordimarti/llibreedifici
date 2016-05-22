@@ -49,6 +49,7 @@ gem 'pdfkit', '~> 0.8.2'
 gem 'wkhtmltopdf-binary'
 gem 'gibbon'
 gem 'savon'
+gem 'httparty'
 gem 'puma'
 
 group :development, :test do

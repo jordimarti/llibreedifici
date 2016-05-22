@@ -1,13 +1,9 @@
-<%= simple_form_for(@pagament) do |f| %>
+<%= simple_form_for([@edifici, @pagament]) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :user_id %>
-    <%= f.input :edifici_id %>
-    <%= f.input :numorder %>
-    <%= f.input :import %>
-    <%= f.input :codi_retorn %>
-    <%= f.input :codi_autoritzacio %>
+    <%= f.input :edifici_id, :as => :hidden, :input_html => { :value => @edifici.id } %>
+
   </div>
 
   <div class="form-actions">

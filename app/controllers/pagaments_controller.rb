@@ -1,5 +1,8 @@
 class PagamentsController < ApplicationController
+  # Posem skip pq vindrà d'un servidor extern i no hi haurà authenticity token
+  skip_before_filter :verify_authenticity_token
   before_action :set_pagament, only: [:show, :edit, :update, :destroy]
+  before_action :set_edifici
 
   # GET /pagaments
   # GET /pagaments.json
@@ -29,7 +32,7 @@ class PagamentsController < ApplicationController
     @pagament.numorder = numorder()
     @pagament.import = "42,96"
     titular = current_user.name
-    url_pagament = 'http://isis.apabcn.cat/LibroEdificio/pagoVisa.aspx?titular=' + titular + '&importe=' + @pagament.import + '&numorder=' + @pagament.numorder + '&descripcion=llibreedifici'
+    url_pagament = 'http://isis.apabcn.cat/LibroEdificio/pagoVisa.aspx?titular=' + titular + '&importe=' + @pagament.import + '&numorder=' + @pagament.numorder.to_s + '&descripcion=llibreedifici'
 
     respond_to do |format|
       if @pagament.save
@@ -55,8 +58,9 @@ class PagamentsController < ApplicationController
   # PATCH/PUT /pagaments/1
   # PATCH/PUT /pagaments/1.json
   def update
+    pagament = Pagament.where(:numorder => params[:numorder])
     respond_to do |format|
-      if @pagament.update(pagament_params)
+      if pagament.update(pagament_params)
         format.html { redirect_to @pagament, notice: 'Pagament was successfully updated.' }
         format.json { render :show, status: :ok, location: @pagament }
       else
@@ -82,8 +86,12 @@ class PagamentsController < ApplicationController
       @pagament = Pagament.find(params[:id])
     end
 
+    def set_edifici
+      @edifici = Edifici.find(params[:edifici_id])
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def pagament_params
-      params.require(:pagament).permit(:user_id, :edifici_id, :numorder, :import, :codi_retorn, :codi_autoritzacio)
+      params.require(:pagament).permit(:user_id, :edifici_id, :numorder, :import, :resultado, :autorizacion)
     end
 end

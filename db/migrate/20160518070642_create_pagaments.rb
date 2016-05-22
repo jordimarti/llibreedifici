@@ -3,10 +3,10 @@ class CreatePagaments < ActiveRecord::Migration
     create_table :pagaments do |t|
       t.integer :user_id
       t.integer :edifici_id
-      t.integer :numorder
+      t.bigint :numorder
       t.string :import
-      t.string :codi_retorn
-      t.string :codi_autoritzacio
+      t.string :resultado
+      t.string :autorizacion
 
       t.timestamps null: false
     end
