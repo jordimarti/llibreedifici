@@ -37,8 +37,7 @@
                       <%= t('.nou_edifici') %>
                     <% end %>
                   
-
-                  
+                    
 
                 </div>
                 <div class="medium-9 columns">
@@ -49,13 +48,36 @@
                     <% else %>
                       <div class="llistat-edificis">
                         <% @edificis.each do |edifici| %>
+                          <% dades_pagament = Pagament.where(edifici_id: edifici.id).last %>
+                          <% if dades_pagament != nil 
+                              if dades_pagament.pagat == true
+                                pagat = true
+                              else
+                                pagat = false
+                              end
+                            else
+                              pagat = false
+                            end
+                          %>
                           <div class="item-llistat-edificis">
-                            <div class="imatge-item-llistat-edificis">
-                              <%= link_to image_tag(edifici.identificacio.foto_facana.url(:thumb)), edit_edifici_identificacio_path(edifici.id, edifici.identificacio.id) %>
-                                
-                            </div>
-                            <div class="text-item-llistat-edificis">
-                              <%= link_to(edifici.nom_edifici, edit_edifici_identificacio_path(edifici.id, edifici.identificacio.id), :class => 'link-item-edifici') %>
+                            
+                            <% if pagat == true %>
+                              <div class="imatge-item-llistat-edificis">
+                                <%= link_to image_tag(edifici.identificacio.foto_facana.url(:thumb)), edit_edifici_identificacio_path(edifici.id, edifici.identificacio.id) %>
+                                  
+                              </div>
+                              <div class="text-item-llistat-edificis">
+                                <%= link_to(edifici.nom_edifici, edit_edifici_identificacio_path(edifici.id, edifici.identificacio.id), :class => 'link-item-edifici') %> 
+                            
+                            <% else %>
+                              <div class="imatge-item-llistat-edificis">
+                                <%= image_tag(edifici.identificacio.foto_facana.url(:thumb)) %>
+                                  
+                              </div>
+                              <div class="text-item-llistat-edificis">
+                                <%= link_to(edifici.nom_edifici, validate_user_nif_path(edifici.id), :class => 'link-item-edifici') %> (<%= t('.no_pagat') %>)
+                            <% end %>
+
                               <br>
                               <% case edifici.tipus_edifici 
                               when "nou_plurifamiliar" 

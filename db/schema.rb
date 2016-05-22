@@ -663,6 +663,7 @@ ActiveRecord::Schema.define(version: 20160518070642) do
     t.string   "import"
     t.string   "resultado"
     t.string   "autorizacion"
+    t.boolean  "pagat"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end

@@ -116,6 +116,7 @@ ca:
       no_projectes: "Encara no has creat cap projecte."
       eliminar: "Estàs segur que vols eliminar aquest projecte?"
       importar: "Importar un projecte"
+      no_pagat: "Pendent de pagament"
     new:
       nou_edifici: "Crear un projecte nou"
       tornar_projectes: "Tornar als projectes"

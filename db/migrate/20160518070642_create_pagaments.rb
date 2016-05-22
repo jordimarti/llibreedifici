@@ -7,6 +7,7 @@ class CreatePagaments < ActiveRecord::Migration
       t.string :import
       t.string :resultado
       t.string :autorizacion
+      t.boolean :pagat
 
       t.timestamps null: false
     end

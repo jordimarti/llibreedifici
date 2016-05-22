@@ -31,6 +31,7 @@ class PagamentsController < ApplicationController
     @pagament.user_id = current_user.id
     @pagament.numorder = numorder()
     @pagament.import = "42,96"
+    @pagament.pagat = false
     titular = current_user.name
     url_pagament = 'http://isis.apabcn.cat/LibroEdificio/pagoVisa.aspx?titular=' + titular + '&importe=' + @pagament.import + '&numorder=' + @pagament.numorder.to_s + '&descripcion=llibreedifici'
 
@@ -57,16 +58,31 @@ class PagamentsController < ApplicationController
 
   # PATCH/PUT /pagaments/1
   # PATCH/PUT /pagaments/1.json
-  def update
-    pagament = Pagament.where(:numorder => params[:numorder])
-    respond_to do |format|
-      if pagament.update(pagament_params)
-        format.html { redirect_to @pagament, notice: 'Pagament was successfully updated.' }
-        format.json { render :show, status: :ok, location: @pagament }
+  #def update
+  #  pagament = Pagament.where(:numorder => params[:numorder])
+  #  respond_to do |format|
+  #    if pagament.update(pagament_params)
+  #      format.html { redirect_to @pagament, notice: 'Pagament was successfully updated.' }
+  #      format.json { render :show, status: :ok, location: @pagament }
+  #    else
+  #      format.html { render :edit }
+  #      format.json { render json: @pagament.errors, status: :unprocessable_entity }
+  #    end
+  #  end
+  #end
+
+  def update_pagament                  
+    pagament = Pagament.where(:numorder => params[:numorder]).last
+    if pagament != nil
+      if pagament.numorder != nil
+        pagament.update(pagament_params)
+        pagament.pagat = true
       else
-        format.html { render :edit }
-        format.json { render json: @pagament.errors, status: :unprocessable_entity }
+        pagament.pagat = false
       end
+      pagament.save
+      @info_pagament = pagament
+      render json: pagament
     end
   end
 
@@ -92,6 +108,6 @@ class PagamentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pagament_params
-      params.require(:pagament).permit(:user_id, :edifici_id, :numorder, :import, :resultado, :autorizacion)
+      params.require(:pagament).permit(:user_id, :edifici_id, :numorder, :import, :resultado, :autorizacion, :pagat)
     end
 end

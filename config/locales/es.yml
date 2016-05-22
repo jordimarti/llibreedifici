@@ -116,6 +116,7 @@ es:
       no_projectes: "Aún no has creado ningún proyecto."
       eliminar: "Estás seguro de que quieres eliminar este proyecto?"
       importar: "Importar un proyecto"
+      no_pagat: "Pendiente de pago"
     new:
       nou_edifici: "Crear un proyecto nuevo"
       tornar_projectes: "Volver a los proyectos"
