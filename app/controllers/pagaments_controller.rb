@@ -2,7 +2,7 @@ class PagamentsController < ApplicationController
   # Posem skip pq vindrà d'un servidor extern i no hi haurà authenticity token
   skip_before_filter :verify_authenticity_token
   before_action :set_pagament, only: [:show, :edit, :update, :destroy]
-  before_action :set_edifici
+  before_action :set_edifici, only: [:index, :show, :new, :edit, :create, :destroy]
 
   # GET /pagaments
   # GET /pagaments.json
