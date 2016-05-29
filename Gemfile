@@ -50,6 +50,8 @@ gem 'wkhtmltopdf-binary'
 gem 'gibbon'
 gem 'savon'
 gem 'httparty'
+gem 'faraday'
+gem 'faraday_middleware'
 gem 'puma'
 
 group :development, :test do

@@ -79,6 +79,8 @@ GEM
     execjs (2.6.0)
     faraday (0.9.2)
       multipart-post (>= 1.2, < 3)
+    faraday_middleware (0.10.0)
+      faraday (>= 0.7.4, < 0.10)
     foundation-rails (5.5.3.2)
       railties (>= 3.1.0)
       sass (>= 3.3.0, < 3.5)
@@ -261,6 +263,8 @@ DEPENDENCIES
   devise
   devise-i18n
   docx_replace
+  faraday
+  faraday_middleware
   foundation-rails
   gibbon
   httparty
