@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :edificis
-	#after_create :subscribe
+	after_create :subscribe
 
 	validates :first_name, :presence => true
 	validates :last_name, :presence => true
@@ -15,17 +15,10 @@ class User < ActiveRecord::Base
   	[first_name, last_name].compact.join(' ')
   end
 
-  #def subscribe
-	#  mailchimp = Gibbon::Request.new(api_key: Rails.application.secrets.mailchimp_api_key)
-	#  list_id = Rails.application.secrets.mailchimp_list_id
-	#  result = mailchimp.lists(list_id).members.create(
-	#    body: {
-	#      email_address: self.email,
-	#      status: 'subscribed'
-	#  })
-	#  Rails.logger.info("Subscribed #{self.email} to MailChimp") if result
-	#rescue Gibbon::MailChimpError => e
-	#  Rails.logger.info("MailChimp subscribe failed for #{self.email}: " + e.message)
-	#end
+  def subscribe
+  	gibbon = Gibbon::Request.new(api_key: Rails.application.secrets.mailchimp_api_key)
+  	list_id = Rails.application.secrets.mailchimp_list_id
+  	gibbon.lists(list_id).members.create(body: {email_address: self.email, status: "subscribed", merge_fields: {FNAME: self.first_name, LNAME: self.last_name}})
+  end
   
 end
