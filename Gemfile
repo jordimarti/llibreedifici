@@ -50,9 +50,8 @@ gem 'wkhtmltopdf-binary'
 gem 'gibbon'
 gem 'savon'
 gem 'httparty'
-gem 'faraday'
-gem 'faraday_middleware'
 gem 'puma'
+gem 'mandrill-api', '~> 1.0', '>= 1.0.53'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

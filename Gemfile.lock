@@ -76,11 +76,10 @@ GEM
     domain_name (0.5.25)
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
+    excon (0.49.0)
     execjs (2.6.0)
     faraday (0.9.2)
       multipart-post (>= 1.2, < 3)
-    faraday_middleware (0.10.0)
-      faraday (>= 0.7.4, < 0.10)
     foundation-rails (5.5.3.2)
       railties (>= 3.1.0)
       sass (>= 3.3.0, < 3.5)
@@ -123,6 +122,9 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    mandrill-api (1.0.53)
+      excon (>= 0.16.0, < 1.0)
+      json (>= 1.7.7, < 2.0)
     mime-types (2.99)
     mimemagic (0.3.0)
     mini_portile (0.6.2)
@@ -263,8 +265,6 @@ DEPENDENCIES
   devise
   devise-i18n
   docx_replace
-  faraday
-  faraday_middleware
   foundation-rails
   gibbon
   httparty
@@ -272,6 +272,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
+  mandrill-api (~> 1.0, >= 1.0.53)
   paperclip (~> 4.2)
   pdfkit (~> 0.8.2)
   pg
