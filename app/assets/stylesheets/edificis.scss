@@ -43,7 +43,25 @@
 }
 
 .preu-llibre {
-	height: 200px;
-	width: 200px;
-	background-color: #0033CC;
+	margin-bottom: 30px;
+}
+
+.imatge-llibre {
+	width: 100px;
+	padding-right: 20px;
+}
+
+.requadre-preu {
+	border: 1px solid #999999;
+	background-color: #999999;
+	color: #ffffff;
+	font-size: 1.3em;
+	padding: 10px;
+	width: 120px;
+	text-align: center;
+	margin-top: 30px;
+}
+
+.comprovacio-nif {
+	text-align: center;
 }

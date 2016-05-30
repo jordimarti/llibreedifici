@@ -8,17 +8,27 @@
 	      <div class="projectes-form-container">
 	      	<p><%= t('.explicacio') %></p>
 	      	<div class="preu-llibre">
-
+	      		<div class="row">
+	      			<div class="medium-6 columns">
+	      				<%= image_tag('document_llibre.png', :alt => t('.imatge_llibre'), :class => 'imatge-llibre right') %>
+	      			</div>
+	      			<div class="medium-6 columns">
+			      		<div class="requadre-preu">
+			      			42,96 €
+			      		</div>
+			      	</div>
+			      </div>
 	      	</div>
 	      	<p><%= t('.explicacio2') %></p>
-	      	<p><%= t('.explicacio3') %></p>
+	      	
 	      	<p>NIF: <%= current_user.nif %></p>
-	      	<p><%= link_to t('.comprovar_nif'), new_edifici_info_usuari_path, class: "button small radius" %></p>
+	      	<div class="comprovacio-nif">
+	      		<%= link_to t('.comprovar_nif'), new_edifici_info_usuari_path, class: "button small radius" %>
+	      	</div>
 	      	<p><%= t('.text_canviar_nif') %> <%= link_to t('.link_canviar_nif'), edit_user_registration_path %></p>
 	      </div>
 	    </div>
 			<%= link_to t('.tornar_projectes'), edificis_path %>
-			Resultat: <%= @comprovacio_nif %>
 		</div>
 	</div>
 </div>

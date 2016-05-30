@@ -136,6 +136,8 @@ ca:
       comprovar_nif: "Comprovar NIF"
       text_canviar_nif: "Si creus que has introduït un NIF incorrecte el pots modificar:"
       link_canviar_nif: "Canviar NIF"
+      imatge_llibre: "Preu llibre edifici"
+      tornar_projectes: "Tornar a projectes"
     form:
       atencio_ref_cadastral: "Atenció a l'escriure la referència cadastral i seleccionar el tipus d'edifici: aquests valors ja no es podran modificar!"
       guardar: "Guardar"
