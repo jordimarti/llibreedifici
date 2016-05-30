@@ -34,8 +34,8 @@ class PagamentsController < ApplicationController
     @pagament.import = "42,96"
     @pagament.pagat = false
     titular = current_user.name
-    url_pagament = 'http://isis.apabcn.cat/LibroEdificio/pagoVisa.aspx?titular=Titular&importe=' + @pagament.import + '&numorder=' + @pagament.numorder.to_s + '&descripcion=llibreedifici'
-    
+    url_pagament = 'http://isis.apabcn.cat/LibroEdificio/pagoVisa.aspx?titular=Titular&importe=' + @pagament.import + '&numorder=' + @pagament.numorder.to_s + '&descripcion=llibreedifici&url=http://llibreedifici.apabcn.cat/pagaments/update_pagament'
+    #http://isis.apabcn.cat/LibroEdificio/pagoVisa.aspx?titular=Titular&importe=42,96&numorder=110000000101&descripcion=llibreedifici&url=http://llibreedifici.apabcn.cat/pagaments/update_pagament
     respond_to do |format|
       if @pagament.save
         format.html { redirect_to url_pagament }
@@ -53,7 +53,7 @@ class PagamentsController < ApplicationController
       numorder = ultim_pagament.numorder + 1
       return numorder
     else
-      return 110000000101
+      return 110000000102
     end   
   end
 
