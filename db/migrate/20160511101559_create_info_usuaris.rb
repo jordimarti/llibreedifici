@@ -4,21 +4,18 @@ class CreateInfoUsuaris < ActiveRecord::Migration
       t.integer :user_id
       t.integer :edifici_id
       t.string :nom
-      t.string :cognoms
-      t.string :adreca
-      t.string :codi_postal
+      t.string :nif
       t.string :poblacio
       t.string :provincia
+      t.string :codi_postal
+      t.string :adreca
+      t.string :email
+      t.string :numclient
+      t.string :escolegiat
+      t.string :nom_juridic
+      t.string :cif
       t.string :pais
-      t.string :telefon_fix
-      t.string :telefon_mobil
-      t.string :fax
-      t.string :num_premaat
-      t.string :num_musaat
-      t.string :sexe
-      t.string :any_naixement
-      t.string :nif
-      t.string :web
+      t.string :tipus_client
 
       t.timestamps null: false
     end

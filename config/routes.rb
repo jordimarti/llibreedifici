@@ -28,12 +28,11 @@ Rails.application.routes.draw do
   get 'edificis/:edifici_id/sistemes/afegir_sistema', to: 'sistemes#afegir_sistema', :as => :afegir_sistema
   get 'edificis/:edifici_id/referencies/crear_llistat', to: 'referencies#crear_llistat', :as => :crear_llistat
   get 'edificis/:edifici_id/referencies/calendari', to: 'referencies#calendari', :as => :calendari
-  get 'edificis/:edifici_id/validate_user_nif', to: 'edificis#validate_user_nif', :as => :validate_user_nif
+  get 'edificis/:edifici_id/info_usuaris/validate_user_nif', to: 'info_usuaris#validate_user_nif', :as => :validate_user_nif
+  get 'edificis/:edifici_id/info_usuaris/new_personal', to: 'info_usuaris#new_personal', :as => :new_personal
 
-  get 'edificis/:edifici_id/info_usuaris/payment_gateway', to: 'info_usuaris#payment_gateway', :as => :payment_gateway
   get 'pagaments/update_pagament', to: 'pagaments#update_pagament', :as => :update_pagament
   get 'edificis/:edifici_id/crear_pagament', to: 'pagaments#crear_pagament', :as => :crear_pagament 
-  #get 'info_usuaris/:edifici_id/new', to: 'info_usuaris#new', :as => :new
 
   get 'edificis/:id/export', to: 'edificis#export', :as => :export
   

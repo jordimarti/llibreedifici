@@ -128,16 +128,6 @@ ca:
       tornar_projectes: "Tornar als projectes"
       no_editar_tipologia: "No es pot canviar la tipologia de l'edifici ni la referència cadastral."
       guardar: "Guardar"
-    validate_user_nif:
-      titol: "Validar el NIF"
-      explicacio: "Per crear un projecte cal realitzar un pagament de 42,96€ (35,50€ + IVA)."
-      explicacio2: "Per generar la factura comprovarem si el Col·legi d'Aparelladors, Arquitectes Tècnics i Enginyers d'Edificació de Barcelona ja disposa de les teves dades."
-      explicacio3: "Utilitzarem el NIF que has especificat en el registre d'usuari per fer aquesta comprovació. Si no estàs registrat/da hauràs d'omplir un formulari amb les teves dades personals."
-      comprovar_nif: "Comprovar NIF"
-      text_canviar_nif: "Si creus que has introduït un NIF incorrecte el pots modificar:"
-      link_canviar_nif: "Canviar NIF"
-      imatge_llibre: "Preu llibre edifici"
-      tornar_projectes: "Tornar a projectes"
     form:
       atencio_ref_cadastral: "Atenció a l'escriure la referència cadastral i seleccionar el tipus d'edifici: aquests valors ja no es podran modificar!"
       guardar: "Guardar"
@@ -146,6 +136,17 @@ ca:
   info_usuaris:
     new:
       titol: "Dades de facturació"
+    validate_user_nif:
+      titol: "Pagament del projecte"
+      explicacio: "Per crear un projecte cal realitzar un pagament de 42,96€ (35,50€ + IVA)."
+      explicacio2: "Selecciona si voldràs una factura al teu nom o a nom d'empresa."
+      factura_personal: "Factura personal"
+      factura_empresa: "Factura empresa"
+      imatge_llibre: "Preu llibre edifici"
+      tornar_projectes: "Tornar a projectes"
+    new_personal:
+      titol: "Dades de facturació"
+      guardar: "Guardar i procedir al pagament"
     form:
       guardar: "Continuar"
   simple_form:
@@ -827,6 +828,14 @@ ca:
         pressupostos_obres: "Pressupostos i contractes d’obres, manteniments i honoraris professionals"
         certificats_instalacions_comunes: "Certificats d’inscripció en el Registre d’instal·lacions tècniques de seguretat industrial de Catalunya de les instal·lacions comunes de l’edifici de baixa tensió, gasos combustibles, instal·lacions petrolíferes, instal·lacions tèrmiques i d’ascensors que s’hagin realitzat"
         certificats_inspeccions_tecniques: "Certificats d’inspeccions tècniques de les instal·lacions comunes sotmeses a reglamentació de seguretat industrial"
+      info_usuari:
+        nom: "Nom"
+        nif: "NIF"
+        adreca: "Adreça"
+        poblacio: "Població"
+        provincia: "Província"
+        codi_postal: "Codi postal"
+        email: "Correu electrònic"
   devise:
     sessions:
       new:

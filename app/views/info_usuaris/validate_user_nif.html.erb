@@ -19,13 +19,24 @@
 			      	</div>
 			      </div>
 	      	</div>
+
+	      	<hr>
+
 	      	<p><%= t('.explicacio2') %></p>
 	      	
-	      	<p>NIF: <%= current_user.nif %></p>
-	      	<div class="comprovacio-nif">
-	      		<%= link_to t('.comprovar_nif'), new_edifici_info_usuari_path, class: "button small radius" %>
-	      	</div>
-	      	<p><%= t('.text_canviar_nif') %> <%= link_to t('.link_canviar_nif'), edit_user_registration_path %></p>
+	      	<div class="row">
+	      		<div class="medium-6 columns">
+			      	<div class="comprovacio-nif">
+			      		<%= link_to t('.factura_personal'), new_personal_path, class: "button small radius" %>
+			      	</div>
+			      </div>
+			      <div class="medium-6 columns">
+			      	<div class="comprovacio-nif">
+			      		<%= link_to t('.factura_empresa'), new_edifici_info_usuari_path, class: "button small radius" %>
+			      	</div>
+			      </div>
+			    </div>
+	      	
 	      </div>
 	    </div>
 			<%= link_to t('.tornar_projectes'), edificis_path %>

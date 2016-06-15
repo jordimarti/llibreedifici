@@ -18,6 +18,36 @@ class InfoUsuarisController < ApplicationController
     @info_usuari = InfoUsuari.new
   end
 
+  def new_personal
+    @info_usuari = InfoUsuari.new
+    @edifici = Edifici.find(params[:edifici_id])
+    client = Savon.client(wsdl: "http://isis.apabcn.cat/LibroEdificio/wsfacturasSap.asmx?wsdl")
+    resposta = client.call(:get_usuario, message: { nif: current_user.nif })
+    dades = resposta.to_hash
+    @nom = dades[:get_usuario_response][:param_usuario][:nombre]
+    @nif = dades[:get_usuario_response][:param_usuario][:nif]
+    @poblacio = dades[:get_usuario_response][:param_usuario][:poblacion]
+    @provincia = dades[:get_usuario_response][:param_usuario][:provincia]
+    @codi_postal = dades[:get_usuario_response][:param_usuario][:codpostal]
+    @adreca = dades[:get_usuario_response][:param_usuario][:direccion]
+    @email = dades[:get_usuario_response][:param_usuario][:email]
+    @numclient = dades[:get_usuario_response][:param_usuario][:numcliente]
+    @escolegiat = dades[:get_usuario_response][:param_usuario][:escolegiado]
+  end
+
+  def new_empresa
+    @info_usuari = InfoUsuari.new
+  end
+
+  # Es comprova si l'usuari està registrat a IRIS amb el NIF. Si no és així se li mostra formulari de registre.
+  def validate_user_nif
+    #@edifici = Edifici.find(params[:edifici_id])
+    #client = Savon.client(wsdl: "http://isis.apabcn.cat/LibroEdificio/wsUsuariosSap.asmx?wsdl")
+    #resposta = client.call(:comprueba_usuario, message: { nif: current_user.nif })
+    #dades = resposta.to_hash
+    #@comprovacio_nif = dades[:comprueba_usuario_response][:comprueba_usuario_result]
+  end
+
   # GET /info_usuaris/1/edit
   def edit
   end
@@ -78,6 +108,6 @@ class InfoUsuarisController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def info_usuari_params
-      params.require(:info_usuari).permit(:user_id, :edifici_id, :nom, :cognoms, :adreca, :codi_postal, :poblacio, :provincia, :pais, :telefon_fix, :telefon_mobil, :fax, :num_premaat, :num_musaat, :sexe, :any_naixement, :nif, :web)
+      params.require(:info_usuari).permit(:user_id, :edifici_id, :nom, :nif, :poblacio, :provincia, :codi_postal, :adreca, :email, :numclient, :escolegiat, :nom_juridic, :cif, :pais, :tipus_client)
     end
 end
