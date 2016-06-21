@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160518070642) do
+ActiveRecord::Schema.define(version: 20160620210445) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -331,6 +331,22 @@ ActiveRecord::Schema.define(version: 20160518070642) do
     t.string   "sistema_element"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+  end
+
+  create_table "empresa_factures", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "edifici_id"
+    t.string   "nom_juridic"
+    t.string   "adreca"
+    t.string   "poblacio"
+    t.string   "provincia"
+    t.string   "pais"
+    t.string   "codi_postal"
+    t.string   "email"
+    t.string   "tipus_client"
+    t.string   "nif"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "energia_certificats", force: :cascade do |t|
@@ -984,6 +1000,23 @@ ActiveRecord::Schema.define(version: 20160518070642) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "usuari_factures", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "edifici_id"
+    t.string   "nom"
+    t.string   "adreca"
+    t.string   "poblacio"
+    t.string   "provincia"
+    t.string   "pais"
+    t.string   "codi_postal"
+    t.string   "email"
+    t.string   "num_client"
+    t.boolean  "colegiat"
+    t.string   "nif"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "ventilacions", force: :cascade do |t|
     t.integer  "edifici_id"

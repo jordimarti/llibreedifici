@@ -32,7 +32,7 @@ class EdificisController < ApplicationController
         #Aquí creem els objectes complementaris a l'edifici (dades_edifici, checklist...)
         create_complements(@edifici.id)
 
-        format.html { redirect_to validate_user_nif_path(@edifici.id) }
+        format.html { redirect_to validar_dades_path(@edifici.id) }
         format.json { render :show, status: :created, location: @edifici }
       else
         format.html { render :new }

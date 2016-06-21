@@ -1,7 +1,24 @@
-<h1>Resposta</h1>
-<% if @info_pagament != nil %>
-	<%= @info_pagament.numorder %>
-	<%= @info_pagament.pagat %>
-	<%= @info_pagament.resultado %>
-	<%= @info_pagament.autorizacion %>
-<% end %>
+<div class="projectes-background">
+	<div class="row">
+		<div class="medium-12 columns">
+	    <div class="projectes-external-container">
+	      <div class="projectes-title-container">
+	        <span class="projectes-title">Llibre de l'edifici</span>
+	      </div>
+	      <div class="projectes-form-container">
+					<% if @info_pagament != nil %>
+	
+						<% if @info_pagament.pagat == true %>
+							<p>El pagament s'ha efectuat correctament. Ja podeu començar a editar el llibre de l'edifici.</p>
+							<%= link_to "Projectes", edificis_path %>
+						<% else %>
+							<p>Hi ha hagut un problema amb el pagament. Torneu a intentar-ho o poseu-vos en contacte amb l'àrea tècnica del CAATEEB.</p>
+						<% end %>
+						
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

@@ -75,7 +75,7 @@
                                   
                               </div>
                               <div class="text-item-llistat-edificis">
-                                <%= link_to(edifici.nom_edifici, validate_user_nif_path(edifici.id), :class => 'link-item-edifici') %> (<%= t('.no_pagat') %>)
+                                <%= link_to(edifici.nom_edifici, validar_dades_path(edifici.id), :class => 'link-item-edifici') %> (<%= t('.no_pagat') %>)
                             <% end %>
 
                               <br>

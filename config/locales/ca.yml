@@ -149,6 +149,47 @@ ca:
       guardar: "Guardar i procedir al pagament"
     form:
       guardar: "Continuar"
+  pagaments:
+    validar_dades:
+      titol: "Pagament del projecte"
+      explicacio: "Per crear un projecte cal realitzar un pagament de 42,96€ (35,50€ + IVA)."
+      explicacio2: "Selecciona si voldràs una factura al teu nom o a nom d'empresa."
+      factura_personal: "Factura personal"
+      factura_empresa: "Factura empresa"
+      imatge_llibre: "Preu llibre edifici"
+      tornar_projectes: "Tornar a projectes"
+  usuari_factures:
+    show:
+      titol: "Dades de facturació"
+      nom: "Nom"
+      adreca: "Adreça"
+      provincia: "Província"
+      email: "Correu electrònic"
+      nif: "NIF"
+      poblacio: "Població"
+      codi_postal: "Codi postal"
+      explicacio: "Si voleu modificar les dades de facturació haureu d'accedir a l'"
+      procedir_pagament: "Procedir al pagament"
+    edit:
+      titol: "Dades de facturació"
+    form:
+      guardar: "Guardar"
+  empresa_factures:
+    show:
+      titol: "Dades de facturació"
+      nom_juridic: "Nom"
+      adreca: "Adreça"
+      provincia: "Província"
+      email: "Correu electrònic"
+      nif: "NIF"
+      poblacio: "Població"
+      codi_postal: "Codi postal"
+      explicacio: "Si voleu modificar les dades de facturació haureu d'accedir a l'"
+      procedir_pagament: "Procedir al pagament"
+    edit:
+      titol: "Dades de facturació"
+    form:
+      guardar: "Guardar"
   simple_form:
     labels:
       user:
@@ -836,6 +877,22 @@ ca:
         provincia: "Província"
         codi_postal: "Codi postal"
         email: "Correu electrònic"
+      usuari_factura:
+        nom: "Nom"
+        adreca: "Adreça"
+        provincia: "Província"
+        email: "Correu electrònic"
+        nif: "NIF persona"
+        poblacio: "Població"
+        codi_postal: "Codi postal"
+      empresa_factura:
+        nom_juridic: "Nom empresa"
+        adreca: "Adreça"
+        provincia: "Província"
+        email: "Correu electrònic"
+        nif: "NIF empresa"
+        poblacio: "Població"
+        codi_postal: "Codi postal"
   devise:
     sessions:
       new:

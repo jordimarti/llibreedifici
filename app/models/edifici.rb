@@ -55,6 +55,8 @@ class Edifici < ActiveRecord::Base
 
 	has_one :info_usuari
 	has_one :pagament
+	has_many :usuari_factures
+	has_many :empresa_factures
 
 	validates :nom_edifici, :presence => true
 	validates :tipus_edifici, :presence => true

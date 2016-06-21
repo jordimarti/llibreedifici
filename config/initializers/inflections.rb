@@ -34,4 +34,5 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'instalacio', 'instalacions'
   inflect.irregular 'observacio', 'observacions'
   inflect.irregular 'particio', 'particions'
+  inflect.irregular 'factura', 'factures'
 end
