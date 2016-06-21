@@ -60,7 +60,7 @@ class PagamentsController < ApplicationController
       numorder = ultim_pagament.numorder + 1
       return numorder
     else
-      return 110000000104
+      return 110000000204
     end   
   end
 
