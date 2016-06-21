@@ -100,13 +100,23 @@ class PagamentsController < ApplicationController
     factura_usuari = UsuariFactura.where(edifici_id: pagament.edifici_id).last
     factura_empresa = EmpresaFactura.where(edifici_id: pagament.edifici_id).last
     client = Savon.client(wsdl: "http://isis.apabcn.cat/LibroEdificio/wsfacturasSap.asmx?wsdl")
-    if factura_usuari.updated_at > factura_empresa.updated_at
+    if factura_usuari != nil && factura_empresa != nil
+      if factura_usuari.updated_at > factura_empresa.updated_at
+        factura = factura_usuari
+        resposta = client.call(:create_fact_usuario, message: { nombre: factura.nom, nif: factura.nif, poblacion: '19', provincia: '08', codpostal: factura.codi_postal, direccion: factura.adreca, email: factura.email, numcliente: factura.num_client, escolegiado: factura.colegiat })
+      else
+        factura = factura_empresa
+        resposta = client.call(:create_factura_empresa, message: { nombre_juridico: factura.nom_juridic, cif: factura.nif, poblacion: '19', provincia: '08', codpostal: factura.codi_postal, direccion: factura.adreca, email: factura.email, pais: factura.pais, tipocliente: factura.tipus_client })
+      end
+    end
+    if factura_usuari != nil && factura_empresa == nil
       factura = factura_usuari
       resposta = client.call(:create_fact_usuario, message: { nombre: factura.nom, nif: factura.nif, poblacion: '19', provincia: '08', codpostal: factura.codi_postal, direccion: factura.adreca, email: factura.email, numcliente: factura.num_client, escolegiado: factura.colegiat })
-    else
+    end
+    if factura_usuari == nil && factura_empresa != nil
       factura = factura_empresa
       resposta = client.call(:create_factura_empresa, message: { nombre_juridico: factura.nom_juridic, cif: factura.nif, poblacion: '19', provincia: '08', codpostal: factura.codi_postal, direccion: factura.adreca, email: factura.email, pais: factura.pais, tipocliente: factura.tipus_client })
-    end
+    end  
     dades = resposta.to_hash
     resultat = dades[:create_factura_empresa_response][:create_factura_empresa_result]
     if resultat == "0"
