@@ -86,7 +86,7 @@ class PagamentsController < ApplicationController
         pagament.resultado = params[:resultado]
         pagament.autorizacion = params[:autorizacion]
         pagament.pagat = true
-        envia_factura(pagament) 
+        @resultat_enviament = envia_factura(pagament) 
       else
         pagament.pagat = false
       end
@@ -103,27 +103,33 @@ class PagamentsController < ApplicationController
     if factura_usuari != nil && factura_empresa != nil
       if factura_usuari.updated_at > factura_empresa.updated_at
         factura = factura_usuari
-        resposta = client.call(:create_fact_usuario, message: { 'ParamUsuario' => { nombre: factura.nom, nif: factura.nif, poblacion: '19', provincia: '08', codpostal: factura.codi_postal, direccion: factura.adreca, pais: "ES", email: factura.email, numcliente: factura.num_client, escolegiado: factura.colegiat }})
       else
         factura = factura_empresa
-        resposta = client.call(:create_factura_empresa, message: { 'ParamEmpresa' => { nombre_juridico: factura.nom_juridic, cif: factura.nif, poblacion: '19', provincia: '08', codpostal: factura.codi_postal, direccion: factura.adreca, email: factura.email, pais: factura.pais, tipocliente: factura.tipus_client }})
       end
     end
     if factura_usuari != nil && factura_empresa == nil
       factura = factura_usuari
-      resposta = client.call(:create_fact_usuario, message: { 'ParamUsuario' => { nombre: factura.nom, nif: factura.nif, poblacion: '19', provincia: '08', codpostal: factura.codi_postal, direccion: factura.adreca, email: factura.email, numcliente: factura.num_client, escolegiado: factura.colegiat }})
     end
     if factura_usuari == nil && factura_empresa != nil
       factura = factura_empresa
-      resposta = client.call(:create_factura_empresa, message: { 'ParamEmpresa' => { nombre_juridico: factura.nom_juridic, cif: factura.nif, poblacion: '19', provincia: '08', codpostal: factura.codi_postal, direccion: factura.adreca, email: factura.email, pais: factura.pais, tipocliente: factura.tipus_client }})
     end  
 
-    dades = resposta.to_hash
-    resultat = dades[:create_factura_empresa_response][:create_factura_empresa_result]
-    if resultat == "0"
-      redirect_to edificis_path
+    if factura == factura_usuari
+      resposta = client.call(:create_fact_usuario, message: { 'ParamUsuario' => { nombre: factura.nom, nif: factura.nif, poblacion: '19', provincia: '08', codpostal: factura.codi_postal, direccion: factura.adreca, pais: "ES", email: factura.email, numcliente: factura.num_client, escolegiado: factura.colegiat }})
+      dades = resposta.to_hash
+      resultat = dades[:create_fact_usuario_response][:create_fact_usuario_result]
     else 
-      redirect_to error_factura_path
+      resposta = client.call(:create_factura_empresa, message: { 'ParamEmpresa' => { nombre_juridico: factura.nom_juridic, cif: factura.nif, poblacion: '19', provincia: '08', codpostal: factura.codi_postal, direccion: factura.adreca, email: factura.email, pais: factura.pais, tipocliente: factura.tipus_client }})
+      dades = resposta.to_hash
+      resultat = dades[:create_factura_empresa_response][:create_factura_empresa_result]
+    end
+
+    if resultat == "0"
+      #redirect_to edificis_path
+      return true
+    else 
+      #redirect_to error_factura_path
+      return false
     end
   end
 
