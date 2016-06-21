@@ -86,7 +86,7 @@ class PagamentsController < ApplicationController
         pagament.resultado = params[:resultado]
         pagament.autorizacion = params[:autorizacion]
         pagament.pagat = true
-        envia_factura(pagament) 
+        #envia_factura(pagament) 
       else
         pagament.pagat = false
       end
