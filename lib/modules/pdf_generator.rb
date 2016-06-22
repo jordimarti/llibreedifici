@@ -17,7 +17,7 @@ module PdfGenerator
       end
     end
     #Tanquem el llistat
-    llistat_elements = llistat_elements + '</ul><div class="espaiador"></div>'
+    llistat_elements = llistat_elements + '</ul><div class="salt-pagina"></div>'
     return llistat_elements
   end
 
@@ -30,7 +30,8 @@ module PdfGenerator
 <p>Les alteracions d’importància efectuades als terrenys propers, com ara: noves construccions, realització de pous, túnels, vies, carreteres o reblerts de terres poden afectar la fonamentació de l’edifici. Si durant la realització dels treballs es detecten lesions, s’hauran d’estudiar i, si és el cas, es podrà exigir la seva reparació.</p>
 <p>Els corrents subterranis d’aigua natural i les fuites de conduccions d’aigua o de desguassos poden ser causa d’alteracions del terreny i de descalçaments de la fonamentació. Aquests descalçaments poden produir un assentament de la zona afectada, que pot transformar-se en deterioraments importants a la resta de l’estructura. Per aquest motiu, és primordial eliminar ràpidament qualsevol tipus d’humitat que provingui del subsòl. </p>
 <p>Després de pluges fortes s’observaran les possibles humitats i el bon funcionament de les perforacions de drenatge i desguàs.</p> 
-'
+<div class="salt-pagina"></div>'
+
   	when 'estructura'
   		return '<p class="apartat-sistema">Instruccions d’ús:</p>
 <p>Les humitats persistents als elements estructurals tenen un efecte nefast sobre la conservació de l’estructura. Cal reparar-les immediatament.</p>
@@ -44,7 +45,8 @@ module PdfGenerator
 <li>Taques d\'òxid en elements metàl·lics. </li>
 </ul>
 </p>
-'
+<div class="salt-pagina"></div>'
+
   	when 'tancaments'
   		return '<p class="apartat-sistema">Instruccions d’ús:</p>
 <p>Les façanes separen l’habitatge de l’ambient exterior, per aquest motiu, han de complir importants exigències d’aïllament respecte del fred o la calor, el soroll, l’entrada d’aire i d’humitat, la resistència, la seguretat al robatori, etc.</p>
@@ -64,7 +66,8 @@ module PdfGenerator
 <p>Per a les reposicions dels elements que tinguin una durada més curta que la pròpia façana (junts, proteccions, etc.) o dels tancaments de vidre, s\'utilitzaran productes idèntics als existents o de característiques equivalents que no alterin les seves prestacions inicials.</p>
 <p>Els despreniments d\'elements de la façana, són un risc, tant pels usuaris com pels vianants. </p>
 <p>És responsabilitat de l\'usuari, que, quan hi hagi símptomes de degradacions, bufats i/o elements trencats a les façanes, avisar ràpidament als responsables de manteniment de l\'edifici perquè es prenguin les mesures oportunes. En cas de perill imminent cal avisar al Servei de Bombers.</p>
-'
+<div class="salt-pagina"></div>'
+
   	when 'cobertes'
   		return '<p class="apartat-sistema">Instruccions d’ús:</p>
 <p>Cobertes planes:</p>
@@ -84,7 +87,8 @@ module PdfGenerator
 <p>Lluernes i claraboies:</p>
 <p>Les claraboies i lluernes s’han de netejar amb assiduïtat, ja que en cas d’embrutar-se redueixen considerablement la quantitat de llum que deixen passar.</p>
 <p>Per la seva situació dins l’edifici, han d’extremar-se les mesures de seguretat en el moment de netejar-les per tal d’evitar accidents. </p>
-'
+<div class="salt-pagina"></div>'
+
   	when 'particions'
   		return ''
   	when 'sanejament'
@@ -96,7 +100,8 @@ module PdfGenerator
 <p>Per desembussar els conductes no es poden utilitzar àcids o productes que perjudiquin els desguassos. S\'utilitzaran sempre detergents biodegradables per tal d\'evitar la creació d\'escumes que petrifiquin dins dels sifons i dels pericons de l\'edifici. Tampoc s\'abocaran aigües que continguin olis, colorants permanents o substàncies tòxiques. Com a exemple, un litre d\'oli mineral contamina 10.000 litres d\'aigua.</p>
 <p>Qualsevol modificació a la instal·lació o a les condicions d\'ús que puguin alterar el normal funcionament serà feta mitjançant un estudi previ i sota la direcció del vostre Tècnic de Capçalera.</p>
 <p>Les possibles fuites es localitzaran i repararan al més aviat possible. </p>
-'	
+<div class="salt-pagina"></div>'
+
   	when 'aigua'
   		return '<p class="apartat-sistema">Instruccions d’ús:</p>
 <p>Responsabilitats:</p>
@@ -110,7 +115,8 @@ module PdfGenerator
 <p>En cas de baixes temperatures, s’ha de deixar córrer l’aigua per les canonades per tal d’evitar que es geli l’aigua al seu interior.</p>
 <p>El correcte funcionament de la xarxa d’aigua calenta és un dels factors que influeixen més decididament en l’estalvi d’energia, per aquest motiu ha de ser objecte d’una atenció més gran per obtenir un rendiment energètic òptim.</p>
 <p>A la revisió general s’ha de comprovar l’estat de l’aïllament i la senyalització de la xarxa d’aigua, l’estanquitat de les unions i els junts, i el correcte funcionament de les claus de pas i vàlvules, i cal verificar la possibilitat de tancament total o parcial de la xarxa.</p>
-'
+<div class="salt-pagina"></div>'
+
   	when 'electricitat'
   		return '<p class="apartat-sistema">Instruccions d’ús:</p>
 <p>La instal·lació elèctrica està formada pel comptador, per la derivació individual, pel quadre general de comandament i protecció i pels circuits de distribució interior. Al mateix temps, el quadre general de comandament i protecció està format per un interruptor de control de potència (ICP), un interruptor diferencial (ID) i els petits interruptors automàtics (PIA).</p>
@@ -128,7 +134,8 @@ module PdfGenerator
 <p>És recomanable tancar l’interruptor de control de potència (ICP) de l’habitatge en cas d’absència prolongada. Si es deixa el frigorífic en funcionament, no és possible desconnectar l’interruptor de control de potència, però sí tancar els petits interruptors automàtics d’altres circuits.</p>
 <p>Periòdicament, és recomanable prémer el botó de prova del diferencial (ID), el qual ha de desconnectar tota la instal·lació. Si no la desconnecta, el quadre no ofereix protecció i caldrà avisar l’instal·lador.</p>
 <p>Per netejar els llums i les plaques dels mecanismes elèctrics s’ha de desconnectar la instal·lació elèctrica. S’han de netejar amb un drap lleugerament humit amb aigua i detergent. L’electricitat es connectarà un cop s’hagin assecat les plaques.</p>
-'
+<div class="salt-pagina"></div>'
+
   	when 'climatitzacio'
   		return '<p class="apartat-sistema">Instruccions d’ús:</p>
 <p>S’han de llegir i seguir les instruccions de la instal·lació abans de posar-la en funcionament per primera vegada.</p>
@@ -136,7 +143,8 @@ module PdfGenerator
 <p>Cal informar al personal de manteniment si es detecten fuites d’aigua en els aparells emissors o en les conduccions i es procedirà a la seva reparació immediata. Si és el cas s’avisarà del fet a la Propietat.</p>
 <p>Els aparells emissors de calor no han de tapar-se amb cap moble o objecte.</p>
 <p>Després d’una fuita de gas, no es pot encendre la calefacció fins que l’instal·lador l’hagi revisada.</p>
-'
+<div class="salt-pagina"></div>'
+
   	when 'gas'
   		return '<p class="apartat-sistema">Instruccions d’ús:</p>
 <p>El grau de perillositat de les instal·lacions de gas combustible és superior a qualsevol altra. Per aquesta raó s’extremaran les mesures de seguretat. Qualsevol intervenció sobre la instal·lació o sobre els aparells de consum ha d’estar feta per una empresa especialitzada.</p>
@@ -151,7 +159,8 @@ module PdfGenerator
 <p>Els tubs de gas no s\'han de fer servir per a les preses de terra dels aparells elèctrics ni tampoc per a penjar-hi objectes.</p>
 <p>La cambra de comptadors només serà accessible al porter, al vigilant, o al personal de la companyia subministradora i al de manteniment. S’ha de vigilar que tant les reixes de ventilació com l’accés a la cambra no quedin obstruïts.</p>
 <p>Si es detecta una fuita de gas no s’ha d’obrir cap llum ni accionar interruptors o connectar aparells elèctrics. La connexió o desconnexió d’aparells elèctrics pot provocar guspires que a la seva vegada poden provocar la deflagració del gas acumulat. Tampoc es poden fer servir encenedors ni encendre llumins. En aquests casos s’intentarà tancar la clau de pas del gas i a continuació es ventilarà el recinte a on s’ha produït la fuga obrint portes i finestres de bat a bat. Finalment s’ha d’avisar de l’avaria a una empresa instal·ladora autoritzada o bé al servei d’urgències de l‘empresa subministradora perquè localitzi l’avaria.</p>
-'
+<div class="salt-pagina"></div>'
+
   	when 'ventilacio'
   		return '<p class="apartat-sistema">Instruccions d’ús:</p>
 <p>S’han de ventilar els espais interiors per evitar humitats de condensació, especialment si la calefacció és d\'estufes de gas butà. La ventilació s\'ha de fer preferentment en hores de sol, i per espai de 20 o 30 minuts.</p>
@@ -159,7 +168,8 @@ module PdfGenerator
 <p>En cas d’augmentar l’aïllament tèrmic de forma puntual sense reduir la humitat ambiental, la condensació es produirà en un altre punt fred provocant deterioraments dels revestiments.</p>
 <p>No és permès de connectar extractors a conductes d\'evacuació de gasos de calderes de calefacció.</p>
 <p>Cal llegir i seguir les instruccions dels aparells d’extracció mecànica.</p>
-'
+<div class="salt-pagina"></div>'
+
   	when 'incendis'
   		return '<p class="apartat-sistema">Instruccions d’ús:</p>
 <p>Les instruccions d’ús dels components de la instal·lació figuren en els mateixos aparells. Tots els components de la instal·lació han d’estar al seu lloc i a l’abast. No s’han d’ocultar.</p>
@@ -168,7 +178,8 @@ module PdfGenerator
 <p>En cas d’incendi:</p>
 <p>Si es produeix un conat d’incendi, cal avisar els bombers i als ocupants de l’immoble immediatament. Durant els primers minuts d’inici del foc, és possible intentar controlar-lo amb els mitjans de què disposi l’edifici (mànegues, extintors). En aquest cas sempre han d’actuar dues persones amb un extintor cadascuna o amb una mànega atacant al foc. Mai s’ha d’actuar sol. Si passats uns instants no s’ha dominat el foc, s’aconsella evacuar l’edifici seguint el pla previst d’evacuació de l’immoble.</p>
 <p>Si en algun conat d’incendi s’ha produït una descàrrega parcial o total d’un extintor, s’han desenrotllat mànegues o s’han accionat polsadors de disparadors d’alarma, cal fer-ho saber al conserge o al personal de manteniment de l’edifici perquè duguin a terme les revisions escaients i restableixin l’estat normal de la instal·lació.</p>
-'
+<div class="salt-pagina"></div>'
+
   	when 'ascensor'
   		return '<p class="apartat-sistema">Instruccions d’ús:</p>
 <p>Els ascensors no poden ser utilitzats per nens que no vagin acompanyats de persones adultes.</p>
@@ -181,7 +192,8 @@ module PdfGenerator
 <p>Si alguna persona queda atrapada a l’interior de la cabina a causa d’una avaria, és fonamental no perdre la calma. Cal prémer el timbre d’alarma de la botonera de cabina o comunicar el fet per telèfon, si se’n disposa d’un. Mai s’ha d’intentar obrir les portes manualment per a sortir de la cabina.</p>
 <p>Si l’avaria és un tall de subministrament elèctric, la cabina s’aturarà i s’encendrà el llum d’emergència. Cal recordar que en aquest supòsit l’ascensor és completament segur. Si en cas d’avaria no funciona el timbre d’alarma, cal cridar periòdicament perquè se sàpiga la presència d’una persona en la cabina. Cap persona atrapada a l’interior d’una cabina ha d’intentar sortir-ne forçant les portes, i encara menys quan l’ascensor s’hagi aturat entre dues plantes.</p>
 <p>Les persones que estan fora de l’ascensor no han de manipular cap mecanisme ni cap porta. Es limitaran a avisar a la empresa de manteniment o, en un cas greu, als bombers. Si és possible, convé informar del que passa a la persona atrapada vigilant que mantingui la calma.</p>
-'
+<div class="salt-pagina"></div>'
+
   	when 'telecomunicacions'
   		return ''
   	when 'especials'
