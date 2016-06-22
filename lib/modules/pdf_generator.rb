@@ -1,7 +1,7 @@
 module PdfGenerator
 
 	def titol_pdf(sistema)
-  	text_titol = '<p class="titol-sistema">' + sistema + '</p>'
+  	text_titol = '<div class="salt-pagina"></div><p class="titol-sistema">' + sistema + '</p>'
   	return text_titol
   end
 
