@@ -85,8 +85,12 @@ class PagamentsController < ApplicationController
       if pagament.numorder != nil
         pagament.resultado = params[:resultado]
         pagament.autorizacion = params[:autorizacion]
-        pagament.pagat = true
-        @resultat_enviament = envia_factura(pagament) 
+        if pagament.resultado == '0000'
+          pagament.pagat = true
+          @resultat_enviament = envia_factura(pagament) 
+        else
+          pagament.pagat = false
+        end
       else
         pagament.pagat = false
       end
