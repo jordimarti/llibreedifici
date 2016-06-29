@@ -38,11 +38,21 @@ Rails.application.configure do
   #}
   # ActionMailer Config
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-  config.action_mailer.default_options = {from: 'no-reply@example.com'}
-  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_options = {from: 'no-reply@apabcn.cat'}
+  #config.action_mailer.delivery_method = :sendmail
   config.action_mailer.raise_delivery_errors = true
   # Send email in development mode?
   config.action_mailer.perform_deliveries = true
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    port:                 587,
+    domain:               'gmail.com',
+    user_name:            'jordimarti007@gmail.com',
+    password:             '36531630v',
+    authentication:       'plain',
+    enable_starttls_auto: true  }
 
 
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,

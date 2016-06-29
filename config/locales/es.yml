@@ -42,7 +42,7 @@ es:
     navigation:
       titol: "Libro del edificio"
       projectes: "Proyectos"
-      tutorial: "Tutorial"
+      tutorials: "Tutoriales"
       register: "Registrarse"
       sign_in: "Iniciar sesión"
       account_configuration: "Configuración de la cuenta"

@@ -42,7 +42,7 @@ ca:
     navigation:
       titol: "Llibre de l'edifici"
       projectes: "Projectes"
-      tutorial: "Tutorial"
+      tutorials: "Tutorials"
       register: "Registrar-se"
       sign_in: "Iniciar sessió"
       account_configuration: "Configuració del compte"
