@@ -11,7 +11,7 @@ class DadesController < ApplicationController
     @regim_propietats = RegimPropietat.where(:edifici_id => params[:edifici_id])
     @regim_especials = RegimEspecial.where(:edifici_id => params[:edifici_id])
     @carregues = Carrega.where(:edifici_id => params[:edifici_id])
-    @entitats = Entitat.where(:edifici_id => params[:edifici_id])
+    @entitats = Entitat.where(:edifici_id => params[:edifici_id]).order(nom_entitat: :asc)
     @garantia_promotors = GarantiaPromotor.where(:edifici_id => params[:edifici_id])
     @garantia_instalacions = GarantiaInstalacio.where(:edifici_id => params[:edifici_id])
     @garantia_constructors = GarantiaConstructor.where(:edifici_id => params[:edifici_id])

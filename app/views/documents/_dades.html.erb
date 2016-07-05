@@ -70,7 +70,7 @@
 	<div class="espaiador"></div>
 <% end %>
 
-<% @edifici.entitats.each do |entitat| %>
+<% @edifici.entitats.order(nom_entitat: :asc).each do |entitat| %>
 	<p class="titol-taula">ENTITATS JURÍDIQUES:</p>
 	<table class="taula-dades">
 	  <tbody>
