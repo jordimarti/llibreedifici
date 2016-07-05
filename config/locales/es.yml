@@ -348,7 +348,7 @@ es:
         document_carrega: "Referencia del documento acreditativo"
       entitat:
         nom_entitat: "Nombre"
-        superficie: "Superficie"
+        superficie: "Superficie (m2)"
         destinacio: "Destinación"
         quota: "Cuota (%)"
       garantia_promotor:
