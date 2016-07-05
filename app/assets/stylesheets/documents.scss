@@ -70,6 +70,7 @@ h2.subtitol-document {
 	border-bottom: 1px solid #CCCCCC;
 	width: 100%;
 	margin-bottom: 0px;
+	page-break-inside: avoid;
 }
 
 .taula-dades-final {
@@ -81,6 +82,7 @@ h2.subtitol-document {
 
 .titol-taula {
 	font-weight: bold;
+	page-break-after: avoid;
 }
 
 .taula-dos-columnes {
