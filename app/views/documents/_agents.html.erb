@@ -1,46 +1,48 @@
 <% @edifici.promotors.each do |promotor| %>
-	<p class="titol-taula">PROMOTOR:</p>
-	<table class="taula-dades">
-	  <tbody>
-	    <tr>
-	      <td class="taula-dos-columnes"><span class="titol-taula">Nom:</span><br/><%= promotor.nom_promotor %></td>
-	      <td class="taula-dos-columnes"><span class="titol-taula">NIF o CIF:</span><br/><%= promotor.nif_promotor %></td>
-	    </tr>
-	  </tbody>
-	</table>
-	<table class="taula-dades">
-	  <tbody>
-	    <tr>
-	      <td class="taula-dos-columnes"><span class="titol-taula">Adreça:</span><br/><%= promotor.adreca_promotor %></td>
-	      <td class="taula-dos-columnes"><span class="titol-taula">Codi postal:</span><br/><%= promotor.cp_promotor %></td>
-	    </tr>
-	  </tbody>
-	</table>
-	<table class="taula-dades">
-	  <tbody>
-	    <tr>
-	      <td class="taula-dos-columnes"><span class="titol-taula">Població:</span><br/><%= promotor.poblacio_promotor %></td>
-	      <td class="taula-dos-columnes"><span class="titol-taula">Província:</span><br/><%= promotor.provincia_promotor %></td>
-	    </tr>
-	  </tbody>
-	</table>
-	<table class="taula-dades">
-	  <tbody>
-	    <tr>
-	      <td class="taula-dos-columnes"><span class="titol-taula">País:</span><br/><%= promotor.pais_promotor %></td>
-	      <td class="taula-dos-columnes"><span class="titol-taula">Telèfon:</span><br/><%= promotor.telefon %></td>
-	    </tr>
-	  </tbody>
-	</table>
-	<table class="taula-dades">
-	  <tbody>
-	    <tr>
-	      <td class="taula-dos-columnes"><span class="titol-taula">Correu electrònic:</span><br/><%= promotor.email %></td>
-	      <td class="taula-dos-columnes"><span class="titol-taula">Web:</span><br/><%= promotor.web %></td>
-	    </tr>
-	  </tbody>
-	</table>
-	<div class="espaiador"></div>
+	<div class="taula-container">
+		<p class="titol-taula">PROMOTOR:</p>
+		<table class="taula-dades">
+		  <tbody>
+		    <tr>
+		      <td class="taula-dos-columnes"><span class="titol-taula">Nom:</span><br/><%= promotor.nom_promotor %></td>
+		      <td class="taula-dos-columnes"><span class="titol-taula">NIF o CIF:</span><br/><%= promotor.nif_promotor %></td>
+		    </tr>
+		  </tbody>
+		</table>
+		<table class="taula-dades">
+		  <tbody>
+		    <tr>
+		      <td class="taula-dos-columnes"><span class="titol-taula">Adreça:</span><br/><%= promotor.adreca_promotor %></td>
+		      <td class="taula-dos-columnes"><span class="titol-taula">Codi postal:</span><br/><%= promotor.cp_promotor %></td>
+		    </tr>
+		  </tbody>
+		</table>
+		<table class="taula-dades">
+		  <tbody>
+		    <tr>
+		      <td class="taula-dos-columnes"><span class="titol-taula">Població:</span><br/><%= promotor.poblacio_promotor %></td>
+		      <td class="taula-dos-columnes"><span class="titol-taula">Província:</span><br/><%= promotor.provincia_promotor %></td>
+		    </tr>
+		  </tbody>
+		</table>
+		<table class="taula-dades">
+		  <tbody>
+		    <tr>
+		      <td class="taula-dos-columnes"><span class="titol-taula">País:</span><br/><%= promotor.pais_promotor %></td>
+		      <td class="taula-dos-columnes"><span class="titol-taula">Telèfon:</span><br/><%= promotor.telefon %></td>
+		    </tr>
+		  </tbody>
+		</table>
+		<table class="taula-dades">
+		  <tbody>
+		    <tr>
+		      <td class="taula-dos-columnes"><span class="titol-taula">Correu electrònic:</span><br/><%= promotor.email %></td>
+		      <td class="taula-dos-columnes"><span class="titol-taula">Web:</span><br/><%= promotor.web %></td>
+		    </tr>
+		  </tbody>
+		</table>
+		<div class="espaiador"></div>
+	</div>
 <% end %>
 
 <% @edifici.projectistes.each do |projectista| %>

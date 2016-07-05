@@ -65,12 +65,15 @@ h2.subtitol-document {
 	font-size: 1.3em;
 }
 
+.taula-container {
+	page-break-inside: avoid;
+}
+
 .taula-dades {
 	border: none;
 	border-bottom: 1px solid #CCCCCC;
 	width: 100%;
 	margin-bottom: 0px;
-	page-break-inside: avoid;
 }
 
 .taula-dades-final {
