@@ -87,7 +87,6 @@ class PagamentsController < ApplicationController
         pagament.autorizacion = params[:autorizacion]
         if pagament.resultado == '0000'
           pagament.pagat = true
-          @resultat_enviament = envia_factura(pagament) 
         else
           pagament.pagat = false
         end
@@ -95,6 +94,10 @@ class PagamentsController < ApplicationController
         pagament.pagat = false
       end
       pagament.save
+      # Una vegada s'ha fet el pagament i s'ha actualitzat la base de dades s'envia la factura
+      if pagament.pagat == true
+        @resultat_enviament = envia_factura(pagament) 
+      end
       @info_pagament = pagament
     end
   end
