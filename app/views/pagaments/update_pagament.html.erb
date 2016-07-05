@@ -15,6 +15,9 @@
 							<p>Hi ha hagut un problema amb el pagament. Torneu a intentar-ho o poseu-vos en contacte amb l'àrea tècnica del CAATEEB.</p>
 						<% end %>
 						
+						<% if @resultat_enviament == false %>
+							<p>S'ha produït un error al generar la factura. Poseu-vos en contacte amb l'àrea tècnica del CAATEEB.</p>
+						<% end %>
 					<% end %>
 				</div>
 			</div>
