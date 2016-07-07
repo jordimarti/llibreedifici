@@ -64,6 +64,15 @@ class PagamentsController < ApplicationController
     end   
   end
 
+  def numorder2
+    codi_factura = '058'
+    numero_projecte = 1
+    numero_projecte_convertit = sprintf '%07d', numero_projecte
+    intent = 1
+    numero_intent = sprintf '%02d', intent
+    final = factura + numero_projecte_convertit + numero_intent
+  end
+
   # PATCH/PUT /pagaments/1
   # PATCH/PUT /pagaments/1.json
   #def update
