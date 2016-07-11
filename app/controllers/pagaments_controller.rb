@@ -37,7 +37,7 @@ class PagamentsController < ApplicationController
     @pagament = Pagament.new()
     @pagament.user_id = current_user.id
     @pagament.edifici_id = params[:edifici_id]
-    @pagament.numorder = numorder()
+    @pagament.numorder = numorder(params[:edifici_id])
     @pagament.import = "42,96"
     @pagament.pagat = false
     titular = current_user.name
@@ -54,23 +54,14 @@ class PagamentsController < ApplicationController
     end
   end
 
-  def numorder
-    ultim_pagament = Pagament.last
-    if ultim_pagament
-      numorder = ultim_pagament.numorder + 1
-      return numorder
-    else
-      return 110000000204
-    end   
-  end
-
-  def numorder2
+  def numorder(edifici_id)
     codi_factura = '058'
-    numero_projecte = 1
-    numero_projecte_convertit = sprintf '%07d', numero_projecte
-    intent = 1
+    projecte = edifici_id
+    numero_projecte = sprintf '%07d', projecte
+    intent = Pagament.where(edifici_id: edifici_id).count + 1
     numero_intent = sprintf '%02d', intent
-    final = factura + numero_projecte_convertit + numero_intent
+    final = codi_factura + numero_projecte + numero_intent
+    return final
   end
 
   # PATCH/PUT /pagaments/1
@@ -131,11 +122,11 @@ class PagamentsController < ApplicationController
     end  
 
     if factura == factura_usuari
-      resposta = client.call(:create_fact_usuario, message: { 'ParamUsuario' => { nombre: factura.nom, nif: factura.nif, poblacion: '19', provincia: '08', codpostal: factura.codi_postal, direccion: factura.adreca, pais: "ES", email: factura.email, numcliente: factura.num_client, escolegiado: factura.colegiat }})
+      resposta = client.call(:create_fact_usuario, message: { 'ParamUsuario' => { nombre: factura.nom, nif: factura.nif, poblacion: '19', provincia: '08', codpostal: factura.codi_postal, direccion: factura.adreca, pais: "ES", email: factura.email, numcliente: factura.num_client, escolegiado: factura.colegiat }, 'ParamOtrosDatos' => { referenciapago: pagament.numorder }})
       dades = resposta.to_hash
       resultat = dades[:create_fact_usuario_response][:create_fact_usuario_result]
     else 
-      resposta = client.call(:create_factura_empresa, message: { 'ParamEmpresa' => { nombre_juridico: factura.nom_juridic, cif: factura.nif, poblacion: '19', provincia: '08', codpostal: factura.codi_postal, direccion: factura.adreca, email: factura.email, pais: factura.pais, tipocliente: factura.tipus_client }})
+      resposta = client.call(:create_factura_empresa, message: { 'ParamEmpresa' => { nombre_juridico: factura.nom_juridic, cif: factura.nif, poblacion: '19', provincia: '08', codpostal: factura.codi_postal, direccion: factura.adreca, email: factura.email, pais: factura.pais, tipocliente: factura.tipus_client }, 'ParamOtrosDatos' => { referenciapago: pagament.numorder }})
       dades = resposta.to_hash
       resultat = dades[:create_factura_empresa_response][:create_factura_empresa_result]
     end
