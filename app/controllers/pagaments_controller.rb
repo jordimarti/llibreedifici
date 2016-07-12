@@ -126,7 +126,7 @@ class PagamentsController < ApplicationController
       dades = resposta.to_hash
       resultat = dades[:create_fact_usuario_response][:create_fact_usuario_result]
     else 
-      resposta = client.call(:create_factura_empresa, message: { 'ParamEmpresa' => { nombre_juridico: factura.nom_juridic, cif: factura.nif, poblacion: '19', provincia: '08', codpostal: factura.codi_postal, direccion: factura.adreca, email: factura.email, pais: factura.pais, tipocliente: factura.tipus_client }, 'ParamOtrosDatos' => { referenciapago: pagament.numorder }})
+      resposta = client.call(:create_factura_empresa, message: { 'ParamEmpresa' => { 'NombreJuridico' => factura.nom_juridic, 'CIF' => factura.nif, poblacion: '19', provincia: '08', codpostal: factura.codi_postal, direccion: factura.adreca, email: factura.email, pais: factura.pais, tipocliente: factura.tipus_client }, 'ParamOtrosDatos' => { referenciapago: pagament.numorder }})
       dades = resposta.to_hash
       resultat = dades[:create_factura_empresa_response][:create_factura_empresa_result]
     end
