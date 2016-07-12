@@ -122,11 +122,16 @@ class PagamentsController < ApplicationController
     end  
 
     if factura == factura_usuari
-      resposta = client.call(:create_fact_usuario, message: { 'ParamUsuario' => { nombre: factura.nom, nif: factura.nif, poblacion: '19', provincia: '08', codpostal: factura.codi_postal, direccion: factura.adreca, pais: "ES", email: factura.email, numcliente: factura.num_client, escolegiado: factura.colegiat }, 'ParamOtrosDatos' => { referenciapago: pagament.numorder }})
+      puts "Seleccionat: factura usuari"
+      resposta = client.call(:create_fact_usuario, message: { 'ParamUsuario' => { nombre: factura.nom, nif: factura.nif, poblacion: '19', provincia: '08', codpostal: factura.codi_postal, direccion: factura.adreca, pais: 'ES', email: factura.email, numcliente: factura.num_client, escolegiado: factura.colegiat }, 'ParamOtrosDatos' => { referenciapago: pagament.numorder }})
       dades = resposta.to_hash
       resultat = dades[:create_fact_usuario_response][:create_fact_usuario_result]
     else 
-      resposta = client.call(:create_factura_empresa, message: { 'ParamEmpresa' => { 'NombreJuridico' => factura.nom_juridic, 'CIF' => factura.nif, poblacion: '19', provincia: '08', codpostal: factura.codi_postal, direccion: factura.adreca, email: factura.email, pais: factura.pais, tipocliente: factura.tipus_client }, 'ParamOtrosDatos' => { referenciapago: pagament.numorder }})
+      puts "Seleccionat: factura empresa"
+      puts "NombreJuridico: #{factura.nom_juridic}"
+      puts "CIF: #{factura.nif}"
+      puts "email: #{factura.email}"
+      resposta = client.call(:create_factura_empresa, message: { 'ParamEmpresa' => { 'NombreJuridico' => factura.nom_juridic, 'CIF' => factura.nif, poblacion: '19', provincia: '08', codpostal: factura.codi_postal, direccion: factura.adreca, email: factura.email, pais: 'ES', tipocliente: '' }, 'ParamOtrosDatos' => { referenciapago: pagament.numorder }})
       dades = resposta.to_hash
       resultat = dades[:create_factura_empresa_response][:create_factura_empresa_result]
     end
@@ -136,6 +141,7 @@ class PagamentsController < ApplicationController
       return true
     else 
       #redirect_to error_factura_path
+      puts "Resultat: #{resultat}"
       return false
     end
   end
