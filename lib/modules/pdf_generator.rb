@@ -212,6 +212,7 @@ module PdfGenerator
     referencies.each do |referencia|
       operacio = Operacio.find(referencia.operacio_id)
       llistat_operacions = llistat_operacions + '
+      <div class="taula-container">
       <table class="taula-dades">
 			  <tbody>
 			    <tr>
@@ -226,7 +227,8 @@ module PdfGenerator
 			      <td class="taula-dos-columnes"><span class="titol-taula">Responsable:</span><br/>' + operacio.responsable_ca + '</td>
 			    </tr>
 			  </tbody>
-			</table>'			     
+			</table>
+      </div>'			     
     end
     return llistat_operacions
   end
@@ -237,6 +239,7 @@ module PdfGenerator
     referencies.each do |referencia|
       operacio = Operacio.find(referencia.operacio_id)
       llistat_operacions = llistat_operacions + '
+      <div class="taula-container">
       <table class="taula-dades">
 			  <tbody>
 			    <tr>
@@ -251,7 +254,8 @@ module PdfGenerator
 			      <td class="taula-dos-columnes"><span class="titol-taula">Responsable:</span><br/>' + operacio.responsable_ca + '</td>
 			    </tr>
 			  </tbody>
-			</table>'
+			</table>
+      </div>'
     end
     return llistat_operacions
   end
