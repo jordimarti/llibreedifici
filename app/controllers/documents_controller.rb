@@ -13,7 +13,7 @@ class DocumentsController < ApplicationController
     url_edifici = 'http://llibreedifici.herokuapp.com/edificis/' + @edifici.id.to_s + '/documents/vista_pdf_edifici_nou?locale=ca'
     url_header = 'http://llibreedifici.herokuapp.com/edificis/' + @edifici.id.to_s + '/documents/vista_pdf_header?locale=ca'
     url_footer = 'http://llibreedifici.herokuapp.com/edificis/' + @edifici.id.to_s + '/documents/vista_pdf_footer?locale=ca'
-    kit = PDFKit.new(url_edifici, :header_html => url_header, :footer_html => url_footer, :header_spacing => 5, :footer_spacing => 5, :margin_top => '0.7in', :margin_bottom => '1.3in')
+    kit = PDFKit.new(url_edifici, :header_html => url_header, :footer_html => url_footer, :header_spacing => 5, :footer_spacing => 5, :margin_top => '1.0in', :margin_bottom => '1.3in')
     file = kit.to_file(Rails.root + 'tmp/' + 'demo.pdf')
     send_file file, filename: "#{@edifici.nom_edifici}.pdf", disposition: 'attachment'
   end
@@ -22,7 +22,7 @@ class DocumentsController < ApplicationController
     url_edifici = 'http://llibreedifici.herokuapp.com/edificis/' + @edifici.id.to_s + '/documents/vista_pdf_manual_habitatge?locale=ca'
     url_header = 'http://llibreedifici.herokuapp.com/edificis/' + @edifici.id.to_s + '/documents/vista_pdf_header?locale=ca'
     url_footer = 'http://llibreedifici.herokuapp.com/edificis/' + @edifici.id.to_s + '/documents/vista_pdf_footer?locale=ca'
-    kit = PDFKit.new(url_edifici, :header_html => url_header, :footer_html => url_footer, :header_spacing => 5, :footer_spacing => 5, :margin_top => '0.7in', :margin_bottom => '1.3in')
+    kit = PDFKit.new(url_edifici, :header_html => url_header, :footer_html => url_footer, :header_spacing => 5, :footer_spacing => 5, :margin_top => '1.0in', :margin_bottom => '1.3in')
     file = kit.to_file(Rails.root + 'tmp/' + 'demo.pdf')
     send_file file, filename: "#{@edifici.nom_edifici}_manual_habitatge.pdf", disposition: 'attachment'
   end
@@ -31,7 +31,7 @@ class DocumentsController < ApplicationController
     url_edifici = 'http://llibreedifici.herokuapp.com/edificis/' + @edifici.id.to_s + '/documents/vista_pdf_edifici_existent?locale=ca'
     url_header = 'http://llibreedifici.herokuapp.com/edificis/' + @edifici.id.to_s + '/documents/vista_pdf_header?locale=ca'
     url_footer = 'http://llibreedifici.herokuapp.com/edificis/' + @edifici.id.to_s + '/documents/vista_pdf_footer?locale=ca'
-    kit = PDFKit.new(url_edifici, :header_html => url_header, :footer_html => url_footer, :header_spacing => 5, :footer_spacing => 5, :margin_top => '0.7in', :margin_bottom => '1.3in')
+    kit = PDFKit.new(url_edifici, :header_html => url_header, :footer_html => url_footer, :header_spacing => 5, :footer_spacing => 5, :margin_top => '1.0in', :margin_bottom => '1.3in')
     file = kit.to_file(Rails.root + 'tmp/' + 'demo.pdf')
     send_file file, filename: "#{@edifici.nom_edifici}.pdf", disposition: 'attachment'
   end
