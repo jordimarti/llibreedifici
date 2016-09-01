@@ -96,7 +96,14 @@ class PagamentsController < ApplicationController
       pagament.save
       # Una vegada s'ha fet el pagament i s'ha actualitzat la base de dades s'envia la factura
       if pagament.pagat == true
-        @resultat_enviament = envia_factura(pagament) 
+        # Comprovem si ja s'ha enviat una factura
+        if pagament.factura_enviada != true
+          # Enviem la factura
+          @resultat_enviament = envia_factura(pagament) 
+          # Especifiquem que s'ha enviat una factura per evitar duplicats de factures si s'executa de nou update_pagament
+          pagament.factura_enviada = true
+          pagament.save
+        end
       end
       @info_pagament = pagament
     end
@@ -172,6 +179,6 @@ class PagamentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pagament_params
-      params.require(:pagament).permit(:user_id, :edifici_id, :numorder, :import, :resultado, :autorizacion, :pagat)
+      params.require(:pagament).permit(:user_id, :edifici_id, :numorder, :import, :resultado, :autorizacion, :pagat, :factura_enviada)
     end
 end
