@@ -98,11 +98,11 @@ class PagamentsController < ApplicationController
       if pagament.pagat == true
         # Comprovem si ja s'ha enviat una factura
         if pagament.factura_enviada != true
-          # Enviem la factura
-          @resultat_enviament = envia_factura(pagament) 
           # Especifiquem que s'ha enviat una factura per evitar duplicats de factures si s'executa de nou update_pagament
           pagament.factura_enviada = true
           pagament.save
+          # Enviem la factura
+          @resultat_enviament = envia_factura(pagament) 
         end
       end
       @info_pagament = pagament
