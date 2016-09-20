@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
   
   
-  
-  
-  
   resources :importats
   resources :element_predefinits
   resources :operacions
@@ -90,6 +87,9 @@ Rails.application.routes.draw do
     resources :pagaments
     resources :empresa_factures
     resources :usuari_factures
+    resources :signatura_llibres
+    resources :signatura_instruccions
+    resources :signatura_promotors
   end
   
   

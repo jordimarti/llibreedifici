@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Edifici:</strong>
+  <%= @signatura_llibre.edifici_id %>
+</p>
+
+<p>
+  <strong>Autor llibre nom:</strong>
+  <%= @signatura_llibre.autor_llibre_nom %>
+</p>
+
+<p>
+  <strong>Autor llibre titulacio:</strong>
+  <%= @signatura_llibre.autor_llibre_titulacio %>
+</p>
+
+<%= link_to 'Edit', edit_signatura_llibre_path(@signatura_llibre) %> |
+<%= link_to 'Back', signatura_llibres_path %>

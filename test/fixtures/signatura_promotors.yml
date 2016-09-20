@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  edifici_id: 1
+  promotor_rao_social: MyString
+  promotor_nom_representant: MyString
+
+two:
+  edifici_id: 1
+  promotor_rao_social: MyString
+  promotor_nom_representant: MyString

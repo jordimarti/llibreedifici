@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160901161941) do
+ActiveRecord::Schema.define(version: 20160913145523) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -855,6 +855,30 @@ ActiveRecord::Schema.define(version: 20160901161941) do
     t.boolean  "colectors_pvc"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+  end
+
+  create_table "signatura_instruccions", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.string   "autor_instruccions_nom"
+    t.string   "autor_instruccions_titulacio"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
+  create_table "signatura_llibres", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.string   "autor_llibre_nom"
+    t.string   "autor_llibre_titulacio"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "signatura_promotors", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.string   "promotor_rao_social"
+    t.string   "promotor_nom_representant"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "sistemes", force: :cascade do |t|

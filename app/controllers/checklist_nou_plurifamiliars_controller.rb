@@ -22,6 +22,7 @@ class ChecklistNouPlurifamiliarsController < ApplicationController
   # GET /checklist_nou_plurifamiliars/1/edit
   def edit
     @submenu_actiu = 'documents'
+    @signatura_promotors = SignaturaPromotor.where(:edifici_id => params[:edifici_id])
   end
 
   # POST /checklist_nou_plurifamiliars

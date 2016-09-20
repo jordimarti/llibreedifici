@@ -1,0 +1,2 @@
+module SignaturaPromotorsHelper
+end

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  edifici_id: 1
+  autor_instruccions_nom: MyString
+  autor_instruccions_titulacio: MyString
+
+two:
+  edifici_id: 1
+  autor_instruccions_nom: MyString
+  autor_instruccions_titulacio: MyString

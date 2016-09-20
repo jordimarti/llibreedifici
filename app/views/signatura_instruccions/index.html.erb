@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Signatura Instruccions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Edifici</th>
+      <th>Autor instruccions nom</th>
+      <th>Autor instruccions titulacio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @signatura_instruccions.each do |signatura_instruccion| %>
+      <tr>
+        <td><%= signatura_instruccion.edifici_id %></td>
+        <td><%= signatura_instruccion.autor_instruccions_nom %></td>
+        <td><%= signatura_instruccion.autor_instruccions_titulacio %></td>
+        <td><%= link_to 'Show', signatura_instruccion %></td>
+        <td><%= link_to 'Edit', edit_signatura_instruccion_path(signatura_instruccion) %></td>
+        <td><%= link_to 'Destroy', signatura_instruccion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Signatura instruccion', new_signatura_instruccion_path %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Edifici:</strong>
+  <%= @signatura_instruccion.edifici_id %>
+</p>
+
+<p>
+  <strong>Autor instruccions nom:</strong>
+  <%= @signatura_instruccion.autor_instruccions_nom %>
+</p>
+
+<p>
+  <strong>Autor instruccions titulacio:</strong>
+  <%= @signatura_instruccion.autor_instruccions_titulacio %>
+</p>
+
+<%= link_to 'Edit', edit_signatura_instruccion_path(@signatura_instruccion) %> |
+<%= link_to 'Back', signatura_instruccions_path %>

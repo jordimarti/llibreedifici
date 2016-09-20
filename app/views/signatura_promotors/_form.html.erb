@@ -1,0 +1,13 @@
+<%= simple_form_for(@signatura_promotor) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :edifici_id %>
+    <%= f.input :promotor_rao_social %>
+    <%= f.input :promotor_nom_representant %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
