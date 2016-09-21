@@ -24,7 +24,11 @@ class DocumentsController < ApplicationController
   end
 
   def manual_habitatge_pdf
-    url_edifici = 'http://llibreedifici.herokuapp.com/edificis/' + @edifici.id.to_s + '/documents/vista_pdf_manual_habitatge?locale=ca'
+    if params[:locale] == 'ca'
+      url_edifici = 'http://llibreedifici.herokuapp.com/edificis/' + @edifici.id.to_s + '/documents/vista_pdf_manual_habitatge?locale=ca'
+    elsif params[:locale] == 'es'
+      url_edifici = 'http://llibreedifici.herokuapp.com/edificis/' + @edifici.id.to_s + '/documents/vista_pdf_manual_habitatge_es?locale=es'
+    end
     url_header = 'http://llibreedifici.herokuapp.com/edificis/' + @edifici.id.to_s + '/documents/vista_pdf_header?locale=ca'
     url_footer = 'http://llibreedifici.herokuapp.com/edificis/' + @edifici.id.to_s + '/documents/vista_pdf_footer?locale=ca'
     kit = PDFKit.new(url_edifici, :header_html => url_header, :footer_html => url_footer, :header_spacing => 5, :footer_spacing => 5, :margin_top => '1.0in', :margin_bottom => '1.3in')
@@ -33,7 +37,11 @@ class DocumentsController < ApplicationController
   end
 
   def llibre_existent_pdf
-    url_edifici = 'http://llibreedifici.herokuapp.com/edificis/' + @edifici.id.to_s + '/documents/vista_pdf_edifici_existent?locale=ca'
+    if params[:locale] == 'ca'
+      url_edifici = 'http://llibreedifici.herokuapp.com/edificis/' + @edifici.id.to_s + '/documents/vista_pdf_edifici_existent?locale=ca'
+    elsif params[:locale] == 'es'
+      url_edifici = 'http://llibreedifici.herokuapp.com/edificis/' + @edifici.id.to_s + '/documents/vista_pdf_edifici_existent_es?locale=es'
+    end
     url_header = 'http://llibreedifici.herokuapp.com/edificis/' + @edifici.id.to_s + '/documents/vista_pdf_header?locale=ca'
     url_footer = 'http://llibreedifici.herokuapp.com/edificis/' + @edifici.id.to_s + '/documents/vista_pdf_footer?locale=ca'
     kit = PDFKit.new(url_edifici, :header_html => url_header, :footer_html => url_footer, :header_spacing => 5, :footer_spacing => 5, :margin_top => '1.0in', :margin_bottom => '1.3in')
