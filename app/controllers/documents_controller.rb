@@ -2,6 +2,7 @@ class DocumentsController < ApplicationController
   before_action :set_edifici
   include DocxGenerator
   include PdfGenerator
+  include PdfGeneratorEs
   layout 'edifici'
   #layout 'pdf', only: [:vista_pdf_edifici_nou, :doc_pdf]
 
@@ -10,7 +11,11 @@ class DocumentsController < ApplicationController
   end
 
   def llibre_nou_pdf
-    url_edifici = 'http://llibreedifici.herokuapp.com/edificis/' + @edifici.id.to_s + '/documents/vista_pdf_edifici_nou?locale=ca'
+    if params[:locale] == 'ca'
+      url_edifici = 'http://llibreedifici.herokuapp.com/edificis/' + @edifici.id.to_s + '/documents/vista_pdf_edifici_nou?locale=ca'
+    elsif params[:locale] == 'es'
+      url_edifici = 'http://llibreedifici.herokuapp.com/edificis/' + @edifici.id.to_s + '/documents/vista_pdf_edifici_nou_es?locale=es'
+    end
     url_header = 'http://llibreedifici.herokuapp.com/edificis/' + @edifici.id.to_s + '/documents/vista_pdf_header?locale=ca'
     url_footer = 'http://llibreedifici.herokuapp.com/edificis/' + @edifici.id.to_s + '/documents/vista_pdf_footer?locale=ca'
     kit = PDFKit.new(url_edifici, :header_html => url_header, :footer_html => url_footer, :header_spacing => 5, :footer_spacing => 5, :margin_top => '1.0in', :margin_bottom => '1.3in')
@@ -42,14 +47,34 @@ class DocumentsController < ApplicationController
     render :layout => 'pdf'
   end
 
+  # Castellà
+  def vista_pdf_edifici_nou_es
+    @text_manual_manteniment = text_manteniment_pdf_es.html_safe
+    @titols_arxiu = espdf_arxiu_documents_edifici_nou_es.html_safe
+    render :layout => 'pdf'
+  end
+
   def vista_pdf_manual_habitatge
     @text_manual_manteniment = text_manual_habitatge_pdf.html_safe
+    render :layout => 'pdf'
+  end
+
+  # Castellà
+  def vista_pdf_manual_habitatge_es
+    @text_manual_manteniment = text_manual_habitatge_pdf_es.html_safe
     render :layout => 'pdf'
   end
 
   def vista_pdf_edifici_existent
     @text_manual_manteniment = text_manteniment_pdf.html_safe
     @titols_arxiu = espdf_arxiu_documents_edifici_existent.html_safe
+    render :layout => 'pdf'
+  end
+
+  #Castellà
+  def vista_pdf_edifici_existent_es
+    @text_manual_manteniment = text_manteniment_pdf_es.html_safe
+    @titols_arxiu = espdf_arxiu_documents_edifici_existent_es.html_safe
     render :layout => 'pdf'
   end
 

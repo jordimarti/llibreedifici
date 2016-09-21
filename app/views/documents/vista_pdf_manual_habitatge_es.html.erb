@@ -1,0 +1,150 @@
+<h1 class="titol-document">LIBRO DEL EDIFICIO</h1>
+<h2 class="subtitol-document">MANUAL DE LA VIVIENDA</h2>
+<div class="separacio-gran"></div>
+
+<% if @edifici.identificacio.bloc_edifici.blank?
+    adreca = @edifici.identificacio.tipus_via_edifici.to_s + ' ' + @edifici.identificacio.via_edifici.to_s + ' ' + @edifici.identificacio.numero_edifici.to_s
+  else
+    adreca = @edifici.identificacio.tipus_via_edifici.to_s + ' ' + @edifici.identificacio.via_edifici.to_s + ' ' + @edifici.identificacio.numero_edifici.to_s + ', bloc ' + @edifici.identificacio.bloc_edifici.to_s
+  end
+  %>
+<p class="dades-portada"><%= adreca %><br/><%= @edifici.identificacio.cp_edifici %>, <%= @edifici.identificacio.poblacio_edifici %><br/><%= @edifici.identificacio.provincia_edifici %></p>
+<div class="salt-pagina"></div>
+
+<p class="titol-seccio-document">PLANOS</p>
+<div class="salt-pagina"></div>
+
+<p class="subtitol-seccio-document">Plano de la vivienda</p>
+<p>Un plano a escala mínima 1:50 de la vivienda con la especificación de su superficie útil y construida y con las mediciones acreditadas por técnicos competentes. Si hay anexos, las mediciones deben ser diferenciados. Figurarán grafiados los puntos de corte de los servicios de que dispone la vivienda y los esquemas de paso de las instalaciones.</p>
+<div class="salt-pagina"></div>
+
+<p class="subtitol-seccio-document">Planos de los elementos privativos</p>
+<p>Planos a escala mínima 1:100 de las plantas donde estén los elementos privativos, como garajes, trasteros u otras dependencias vinculadas a la vivienda.</p>
+<div class="salt-pagina"></div>
+
+<p class="titol-seccio-document">INSTRUCCIONES DE USO Y MANTENIMIENTO DE LA VIVIENDA</p>
+<p class="titol-apartat-document">El mantenimiento</p>
+
+<p>Las casas, tanto en su conjunto como para cada uno de sus componentes, deben tener un uso y un mantenimiento adecuados. Es por este motivo, que sus propietarios y usuarios deben conocer sus características y las de las diferentes partes. Una casa en buen estado debe ser:
+<ul>
+<li>Segura. La casa nos proporciona seguridad, pero los edificios, a medida que envejecen presentan peligros: el simple accidente doméstico, el escape de gas, la descarga eléctrica o el desprendimiento de una parte de la fachada. Si tenemos la casa en buen estado eliminamos los peligros y aumentamos nuestra seguridad.</li>
+<li>Durable y económica. Si la casa está en buen estado dura más, envejece más dignamente y podemos disfrutar muchos más años. Al mismo tiempo, con un mantenimiento periódico, evitamos los fuertes gastos que debemos efectuar si, de repente, hay que hacer reparaciones importantes originadas por un pequeño problema que se ha ido agravando con el tiempo. Tener la casa en buen estado nos sale a cuenta.</li>
+<li>Ecológica. El aislamiento térmico y el buen funcionamiento de las instalaciones (electricidad, gas, calefacción, aire acondicionado, etc.) permiten un importante ahorro energético. Si los aparatos funcionan bien, no gastamos más energía de lo que hay y respetamos el medio ambiente. Una casa en buen estado es ecológica.</li>
+<li>Confortable. Podemos disfrutar de una casa con las máximas prestaciones de todas sus partes e instalaciones. Podemos conseguir un nivel óptimo de confort con una temperatura y humedad adecuadas, un buen aislamiento de los sonidos y una iluminación y ventilación óptimas. Una casa en buen estado nos proporciona calidad de vida.</li>
+<li>Agradable. Una casa en buen estado tiene mejor aspecto y hace más agradables las calles de nuestro pueblo o ciudad.</li>
+</ul>
+</p>
+
+<p>Nuestros edificios son complejos. Se han construido para dar respuesta a las necesidades de la vida diaria. Cada parte tiene una misión específica y debe cumplir siempre.</p>
+
+<p>A. La Estructura. Soporta el peso de la casa. Tiene elementos horizontales (techos), verticales (pilares o paredes maestras) y enterrados (cimientos). Los techos (el suelo que pisamos) aguantan su propio peso, el de los tabiques, los pavimentos, los muebles y las personas. Los pilares o paredes de carga aguantan los techos y llevan los pesos a los fundamentos y al terreno.</p>
+
+<p>B. Las Fachadas. Nos protegen del calor, el frío, el viento, la lluvia y los ruidos. Proporcionan intimidad, y, al mismo tiempo, nos relacionan con el exterior mediante las ventanas y los balcones.</p>
+
+<p>C. La Cubierta. Al igual que la fachada, protege de los agentes atmosféricos y aísla de las temperaturas extremas. Hay dos tipos de cubierta: las planas o las azoteas, y las inclinadas o tejados.</p>
+
+<p>D. Las Paredes Interiores. Dividen la casa en diferentes espacios, donde hacemos nuestras actividades (dormir, cocinar, descansar, comer, lavar). Las paredes que sólo tienen función divisoria denominan tabiques. En cambio, las que soportan peso denominan paredes maestras.</p>
+
+<p>E. Los Acabados. Dan calidad y confort a los espacios interiores. Habitualmente el usuario podrá introducir los cambios o variaciones que desee.</p>
+
+<p>F. Las Instalaciones. Son el equipamiento y la maquinaria que introduce la energía dentro del edificio y la distribuye.</p>
+
+<div class="espaiador"></div>
+<%= @text_manual_manteniment %>
+
+<div class="salt-pagina"></div>
+
+<p class="subtitol-seccio-document">Recomendaciones por emergencias</p>
+<p class="titol-apartat-document">Acciones en caso de incendio</p>
+<ul>
+<li>Si encuentra fuego en una habitación, no se debe abrir la ventana, hay que cerrar la puerta y, si es posible, mojarla por fuera.</li>
+<li>Se deben avisar a los ocupantes del edificio.</li>
+<li>Hay que avisar a los bomberos.</li>
+<li>Si hay instalación de gas se debe procurar cerrar la llave de paso. Si hay bombonas de butano o cualquier otro producto inflamable, se debe intentar alejarlos de la zona del incendio.</li>
+<li>Si la situación es extrema y la evacuación difícil, se deben cerrar todas las puertas entre vosotros y el humo. Hay que tapar todas las posibles entradas de humo con ropa y almohadas, puestos en las rendijas de las puertas.</li>
+<li>Mójese si tiene agua. Busque una habitación sin fuego, con ventana al exterior y, si se puede, hay abra un poco, siempre con la puerta cerrada.</li>
+</ul>
+<p>Evacuación en caso de incendio:</p>
+<ul>
+<li>Si el incendio es en un piso por encima de su, por regla general se puede proceder a la evacuación.</li>
+<li>Nunca se debe utilizar el ascensor.</li>
+<li>Si el fuego se exterior a la vivienda y en la escalera hay humo, hay que salir de la vivienda, se han de cubrir las rendijas de la puerta con trapos mojados, abrir la ventana y dar señales de presencia.</li>
+<li>Si se intenta salir de un lugar, hay que tantear las puertas con la mano para ver si son calientes. En caso afirmativo no se abrirán.</li>
+<li>No hay que saltar por la ventana ni descolgarse con sábanas o mantas.</li>
+<li>Cuando se evacua el edificio no se deben coger pertenencias y menos volver a entrar a buscar.</li>
+<li>Si la vía de escape pasa por lugares donde hay humo, hay que agacharse y caminar a cuatro patas. En las zonas bajas hay más oxígeno y menos gases tóxicos. Hay que retener la respiración y cerrar los ojos lo más posible.</li>
+<li>Salvo casos en que sea imposible salir, la evacuación se hará siempre hacia abajo, nunca hacia arriba.</li>
+</ul>
+
+<div class="espaiador"></div>
+<p class="titol-apartat-document">Acciones en caso de fuga de agua</p>
+<ul>
+<li>Se debe cerrar la llave de paso del agua. Si la fuga tiene lugar antes de la llave de paso, entonces se tiene que cerrar el grifo a la salida del contador del agua. Si la fuga se localiza antes del contador, entonces debe cerrarse a llave de paso general del edificio y comunicar la avería a la compañía suministradora.</li>
+<li>Se debe desconectar la instalación eléctrica.</li>
+<li>Se recogerá el agua lo antes posible, evitando embalses que podrían afectar a elementos del edificio.</li>
+<li>Procurar moverse con cuidado para evitar caídas.</li>
+</ul>
+
+<div class="espaiador"></div>
+<p class="titol-apartat-document">Acciones en caso de fallo del suministro eléctrico</p>
+<ul>
+<li>Se debe cerrar el interruptor general de la vivienda o local.</li>
+<li>Se debe comunicar la avería a la compañía suministradora.</li>
+</ul>
+
+<div class="espaiador"></div>
+<p class="titol-apartat-document">Acciones en caso de ráfagas de viento</p>
+<ul>
+<li>Cerrar las puertas y las ventanas.</li>
+<li>Recoger y sujetar las persianas y ventanas. Se deben recoger los toldos.</li>
+<li>Retirar los lugares expuestos al viento las macetas y otros objetos que puedan caer en el exterior.</li>
+<li>Después del vendaval se debe comprobar que no hayan quedado objetos con riesgo de desprendimiento como tejas, antenas, etc.</li>
+</ul>
+
+<div class="salt-pagina"></div>
+<p class="titol-apartat-document">Acciones en caso de inundación</p>
+<ul>
+<li>Taponar las puertas que accedan a la calle.</li>
+<li>Desconectar la instalación eléctrica.</li>
+<li>No se debe frenar el paso del agua, ya que ésta se puede acumular y provocar daños estructurales en el edificio.</li>
+<li>Si la situación es extrema se ha de ocupar las partes altas del inmueble.</li>
+</ul>
+
+<div class="espaiador"></div>
+<p class="titol-apartat-document">Acciones en caso de gran nevada</p>
+<ul>
+<li>Comprovar que les ventilacions no quedin obturades.</li>
+<li>No se debe tirar la nieve de la cubierta en la calle. Hay que deshacer con sal o potasa.</li>
+<li>Se deben recoger los toldos.</li>
+</ul>
+
+<div class="espaiador"></div>
+<p class="titol-apartat-document">Acciones en caso de granizo</p>
+<ul>
+<li>Se debe evitar que los canelones y los sumideros queden obstruidos.</li>
+<li>Se deben recoger los toldos.</li>
+</ul>
+
+<div class="espaiador"></div>
+<p class="titol-apartat-document">Acciones en caso de tormenta</p>
+<ul>
+<li>Se deben cerrar puertas y ventanas.</li>
+<li>Recoger y sujetar las persianas y contraventanas.</li>
+<li>Se deben recoger los toldos.</li>
+<li>Cuando acabe la tormenta se revisará el pararrayos y comprobar las conexiones.</li>
+<li>Se debe desconectar los aparatos eléctricos y la antena de la televisión.</li>
+</ul>
+
+<div class="salt-pagina"></div>
+<p class="titol-apartat-document">Acciones en caso de movimientos en la estructura</p>
+<ul>
+<li>Mantenerse alejado de ventanas, cristales y objetos pesados que se puedan desprender.</li>
+<li>Protegerse debajo de los dinteles de las puertas o de algún muebles sólido como mesas o camas.</li>
+<li>No se debe usar los ascensores.</li>
+</ul>
+
+<div class="salt-pagina"></div>
+<p class="titol-seccio-document">GARANTÍAS Y MANUALES DE FUNCIONAMIENTO</p>
+<p>El manual de la vivienda debe contener las garantías de los equipos individuales de la vivienda y también los manuales de funcionamiento de estos equipos.</p>
+
+

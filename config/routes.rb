@@ -18,8 +18,11 @@ Rails.application.routes.draw do
   get 'edificis/:edifici_id/documents/manual_habitatge(.:format)', to: 'documents#manual_habitatge', :as => :manual_habitatge
   get 'edificis/:edifici_id/documents/llibre_existent(.:format)', to: 'documents#llibre_existent', :as => :llibre_existent
   get 'edificis/:edifici_id/documents/vista_pdf_edifici_nou', to: 'documents#vista_pdf_edifici_nou', :as => :vista_pdf_edifici_nou
+  get 'edificis/:edifici_id/documents/vista_pdf_edifici_nou_es', to: 'documents#vista_pdf_edifici_nou_es', :as => :vista_pdf_edifici_nou_es
   get 'edificis/:edifici_id/documents/vista_pdf_manual_habitatge', to: 'documents#vista_pdf_manual_habitatge', :as => :vista_pdf_manual_habitatge
+  get 'edificis/:edifici_id/documents/vista_pdf_manual_habitatge_es', to: 'documents#vista_pdf_manual_habitatge_es', :as => :vista_pdf_manual_habitatge_es
   get 'edificis/:edifici_id/documents/vista_pdf_edifici_existent', to: 'documents#vista_pdf_edifici_existent', :as => :vista_pdf_edifici_existent
+  get 'edificis/:edifici_id/documents/vista_pdf_edifici_existent_es', to: 'documents#vista_pdf_edifici_existent_es', :as => :vista_pdf_edifici_existent_es
   get 'edificis/:edifici_id/documents/vista_pdf_header', to: 'documents#vista_pdf_header', :as => :vista_pdf_header
   get 'edificis/:edifici_id/documents/vista_pdf_footer', to: 'documents#vista_pdf_footer', :as => :vista_pdf_footer
 

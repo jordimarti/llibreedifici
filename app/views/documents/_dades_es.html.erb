@@ -1,0 +1,205 @@
+<% @edifici.llicencies.each do |llicencia| %>
+	<div class="taula-container">
+		<p class="titol-taula">LICENCIAS:</p>
+		<table class="taula-dades">
+		  <tbody>
+		    <tr>
+		      <td class="taula-dos-columnes"><span class="titol-taula">Clase:</span><br/><%= llicencia.Clase %></td>
+		      <td class="taula-dos-columnes"><span class="titol-taula">Fecha:</span><br/><%= llicencia.data_llicencia %></td>
+		    </tr>
+		  </tbody>
+		</table>
+		<div class="espaiador"></div>
+	</div>
+<% end %>
+
+<% @edifici.declaracions.each do |declaracio| %>
+	<div class="taula-container">
+		<p class="titol-taula">DECLARACIÓN DE OBRA NUEVA:</p>
+		<table class="taula-dades">
+		  <tbody>
+		    <tr>
+		      <td><span class="titol-taula">Notario:</span><br/><%= declaracio.notari %></td>
+		    </tr>
+		  </tbody>
+		</table>
+		<table class="taula-dades">
+		  <tbody>
+		    <tr>
+		      <td class="taula-dos-columnes"><span class="titol-taula">Número de protocolo:</span><br/><%= declaracio.n_protocol %></td>
+		      <td class="taula-dos-columnes"><span class="titol-taula">Fecha:</span><br/><%= declaracio.data_declaracio %></td>
+		    </tr>
+		  </tbody>
+		</table>
+		<div class="espaiador"></div>
+	</div>
+<% end %>
+
+<% @edifici.regim_propietats.each do |regim_propietat| %>
+	<div class="taula-container">
+		<p class="titol-taula">RÉGIMEN DE PROPIEDAD:</p>
+		<table class="taula-dades">
+		  <tbody>
+		    <tr>
+		      <td class="taula-dos-columnes"><span class="titol-taula">Tipo:</span><br/><%= regim_propietat.tipus_regim_propietat %></td>
+		      <td class="taula-dos-columnes"><span class="titol-taula">Escritura, división y estatutos:</span><br/><%= regim_propietat.document_escriptura %></td>
+		    </tr>
+		  </tbody>
+		</table>
+		<div class="espaiador"></div>
+	</div>
+<% end %>
+
+<% @edifici.regim_especials.each do |regim_especial| %>
+	<div class="taula-container">
+		<p class="titol-taula">REGÍMENES ESPECIALES:</p>
+		<table class="taula-dades">
+		  <tbody>
+		    <tr>
+		      <td class="taula-dos-columnes"><span class="titol-taula">Tipo:</span><br/><%= regim_especial.tipus_regim_especial %></td>
+		      <td class="taula-dos-columnes"><span class="titol-taula">Referencia del documento acreditativo:</span><br/><%= regim_especial.referencia_document %></td>
+		    </tr>
+		  </tbody>
+		</table>
+		<div class="espaiador"></div>
+	</div>
+<% end %>
+
+<% @edifici.carregues.each do |carrega| %>
+	<div class="taula-container">
+		<p class="titol-taula">CARGAS REALES:</p>
+		<table class="taula-dades">
+		  <tbody>
+		    <tr>
+		      <td class="taula-dos-columnes"><span class="titol-taula">Tipo:</span><br/><%= carrega.tipus_carrega %></td>
+		      <td class="taula-dos-columnes"><span class="titol-taula">Referencia del documento acreditativo:</span><br/><%= carrega.document_carrega %></td>
+		    </tr>
+		  </tbody>
+		</table>
+		<div class="espaiador"></div>
+	</div>
+<% end %>
+
+<% @edifici.entitats.order(nom_entitat: :asc).each do |entitat| %>
+	<div class="taula-container">
+		<p class="titol-taula">ENTIDADES JURÍDICAS:</p>
+		<table class="taula-dades">
+		  <tbody>
+		    <tr>
+		      <td class="taula-dos-columnes"><span class="titol-taula">Nombre:</span><br/><%= entitat.nom_entitat %></td>
+		      <td class="taula-dos-columnes"><span class="titol-taula">Superfície (m<sup>2</sup>):</span><br/><%= entitat.superficie %></td>
+		    </tr>
+		  </tbody>
+		</table>
+		<table class="taula-dades">
+		  <tbody>
+		    <tr>
+		      <td class="taula-dos-columnes"><span class="titol-taula">Destinación:</span><br/><%= entitat.destinacio %></td>
+		      <td class="taula-dos-columnes"><span class="titol-taula">Cuota (%):</span><br/><%= entitat.quota %></td>
+		    </tr>
+		  </tbody>
+		</table>
+		<div class="espaiador"></div>
+	</div>
+<% end %>
+
+<% @edifici.garantia_promotors.each do |garantia_promotor| %>
+	<div class="taula-container">
+		<p class="titol-taula">GARANTÍAS DEL PROMOTOR:</p>
+		<table class="taula-dades">
+		  <tbody>
+		    <tr>
+		      <td class="taula-dos-columnes"><span class="titol-taula">Tipo:</span><br/><%= garantia_promotor.tipus %></td>
+		      <td class="taula-dos-columnes"><span class="titol-taula">Fecha de vencimiento:</span><br/><%= garantia_promotor.venciment %></td>
+		    </tr>
+		  </tbody>
+		</table>
+		<table class="taula-dades">
+		  <tbody>
+		    <tr>
+		      <td><span class="titol-taula">Referencia de la póliza u otro documento acreditativo del otorgamiento de la garantía:</span><br/><%= garantia_promotor.referencia %></td>
+		    </tr>
+		  </tbody>
+		</table>
+		<div class="espaiador"></div>
+	</div>
+<% end %>
+
+<% @edifici.garantia_constructors.each do |garantia_constructor| %>
+	<div class="taula-container">
+		<p class="titol-taula">GARANTÍAS DEL CONSTRUCTOR:</p>
+		<table class="taula-dades">
+		  <tbody>
+		    <tr>
+		      <td class="taula-dos-columnes"><span class="titol-taula">Tipo:</span><br/><%= garantia_constructor.tipus %></td>
+		      <td class="taula-dos-columnes"><span class="titol-taula">Fecha de vencimiento:</span><br/><%= garantia_constructor.venciment %></td>
+		    </tr>
+		  </tbody>
+		</table>
+		<table class="taula-dades">
+		  <tbody>
+		    <tr>
+		      <td><span class="titol-taula">Referencia de la póliza u otro documento acreditativo del otorgamiento de la garantía:</span><br/><%= garantia_constructor.referencia %></td>
+		    </tr>
+		  </tbody>
+		</table>
+		<div class="espaiador"></div>
+	</div>
+<% end %>
+
+<% @edifici.garantia_instalacions.each do |garantia_instalacio| %>
+	<div class="taula-container">
+		<p class="titol-taula">GARANTÍAS DE LAS INSTALACIONES:</p>
+		<table class="taula-dades">
+		  <tbody>
+		    <tr>
+		      <td class="taula-dos-columnes"><span class="titol-taula">Tipo:</span><br/><%= garantia_instalacio.tipus %></td>
+		      <td class="taula-dos-columnes"><span class="titol-taula">Fecha de vencimiento:</span><br/><%= garantia_instalacio.venciment %></td>
+		    </tr>
+		  </tbody>
+		</table>
+		<table class="taula-dades">
+		  <tbody>
+		    <tr>
+		      <td class="taula-dos-columnes"><span class="titol-taula">Instalación:</span><br/><%= garantia_instalacio.instalacio %></td>
+		      <td class="taula-dos-columnes"><span class="titol-taula">Nombre de la empresa garante:</span><br/><%= garantia_instalacio.empresa %></td>
+		    </tr>
+		  </tbody>
+		</table>
+		<div class="espaiador"></div>
+	</div>
+<% end %>
+
+<% @edifici.energia_certificats.each do |energia_certificat| %>
+	<div class="taula-container">
+		<p class="titol-taula">CERTIFICACIÓN DE EFICIENCIA ENERGÉTICA:</p>
+		<table class="taula-dades">
+		  <tbody>
+		    <tr>
+		      <td class="taula-dos-columnes"><span class="titol-taula">Número de registro:</span><br/><%= energia_certificat.numero_registre %></td>
+		      <td class="taula-dos-columnes"><span class="titol-taula">Fecha de finalización de la vigencia:</span><br/><%= energia_certificat.vigencia %></td>
+		    </tr>
+		  </tbody>
+		</table>
+		<table class="taula-dades">
+		  <tbody>
+		    <tr>
+		      <td class="taula-dos-columnes"><span class="titol-taula">Consumo de energía primaria (kWh/a):</span><br/><%= energia_certificat.consum_energia_primaria %></td>
+		      <td class="taula-dos-columnes"><span class="titol-taula">Emisiones de CO<sub>2</sub> (kg/m<sup>2</sup>a):</span><br/><%= energia_certificat.emissions_co2 %></td>
+		    </tr>
+		  </tbody>
+		</table>
+		<table class="taula-dades">
+		  <tbody>
+		    <tr>
+		      <td class="taula-dos-columnes"><span class="titol-taula">Cualificación energética:</span><br/><%= energia_certificat.qualificacio_energetica %></td>
+		      <td class="taula-dos-columnes"></td>
+		    </tr>
+		  </tbody>
+		</table>
+		<div class="espaiador"></div>
+	</div>
+<% end %>
+
+
+
