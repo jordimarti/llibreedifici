@@ -893,6 +893,15 @@ es:
         nif: "NIF empresa"
         poblacio: "Población"
         codi_postal: "Código postal"
+      signatura_promotor:
+        promotor_rao_social: "Razón social"
+        promotor_representant: "Nombre y apellidos del representante"
+      signatura_llibre:
+        autor_llibre_nom: "Nombre y apellidos"
+        autor_llibre_titulacio: "Titulación"
+      signatura_instruccion:
+        autor_instruccions_nom: "Nombre y apellidos"
+        autor_instruccions_titulacio: "Titulación"
   devise:
     sessions:
       new:
@@ -1397,6 +1406,12 @@ es:
   checklist_nou_plurifamiliars:
     edit:
       titol_configuracio_document: "Configuración del documento"
+      titol_signatura_promotor: "Firma del promotor"
+      titol_signatura_llibre: "Firma del autor del libro del edificio"
+      titol_signatura_instruccion: "Firma del autor de las instrucciones de uso y mantenimiento"
+      afegir_llibre: "Añadir autor"
+      afegir_instruccion: "Añadir autor"
+      afegir_promotor: "Añadir promotor"
     form:
       text_arxiu: "Selecciona los apartados que deben aparecer en el Archivo de documentos"
       guardar: "Guardar"
@@ -1430,3 +1445,12 @@ es:
       text_configurar_document_unifamiliar: "Antes de generar el documento podéis configurar cuáles son los apartados que deben aparecer en el Archivo de documentos."
       text_generar_manual_manteniment: "El Manual de uso y mantenimiento especifica las instrucciones de uso y las operaciones de mantenimiento necesarias para alargar la vida del edificio."
       text_generar_calendari: "El Calendario de mantenimiento detalla las operaciones de mantenimiento que es necesario realizar cada año, según la periodicidad de las operaciones indicadas en el Manual de uso y mantenimiento."
+  signatura_promotors:
+    form:
+      guardar: "Guardar"
+  signatura_llibres:
+    form:
+      guardar: "Guardar"
+  signatura_instruccions:
+    form:
+      guardar: "Guardar"

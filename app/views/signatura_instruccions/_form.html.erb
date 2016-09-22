@@ -1,13 +1,23 @@
-<%= simple_form_for(@signatura_instruccion) do |f| %>
+<%= simple_form_for([@edifici, @signatura_instruccion], remote: true) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :edifici_id %>
-    <%= f.input :autor_instruccions_nom %>
-    <%= f.input :autor_instruccions_titulacio %>
+    <%= f.input :edifici_id, :as => :hidden, :input_html => { :value => @edifici.id } %>
+    
+    <div class="row">
+      <div class="large-8 columns">
+		    <%= f.input :autor_instruccions_nom %>
+    		<%= f.input :autor_instruccions_titulacio %>
+      </div>
+    </div>
+
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <div class="row">
+      <div class="large-12 columns">
+        <%= f.button :submit, t('.guardar'), :class => 'button small radius right botodreta' %>
+      </div>
+    </div>
   </div>
 <% end %>

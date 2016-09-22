@@ -1,0 +1,17 @@
+
+<% @signatura_instruccions.each do |signatura_instruccion| %>
+	<div class="agents-item">
+		
+		
+	  <%= link_to edifici_signatura_instruccion_path(@edifici, signatura_instruccion), remote: true, method: :delete,  data: { confirm: 'Segur que vols eliminar?' } do %>
+		  <div class="agents-eliminar right">
+		  	<span class="icon-cancel icones-icomoon"></span>
+		  </div>
+		<% end %>
+		<%= link_to edit_edifici_signatura_instruccion_path(@edifici, signatura_instruccion), remote: true do %>
+	    <div class="agents-editar">
+	    	<%= signatura_instruccion.autor_instruccions_nom %>
+	    </div>
+	  <% end %>
+	</div>
+<% end %>

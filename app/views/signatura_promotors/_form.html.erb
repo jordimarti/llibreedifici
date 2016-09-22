@@ -1,13 +1,23 @@
-<%= simple_form_for(@signatura_promotor) do |f| %>
+<%= simple_form_for([@edifici, @signatura_promotor], remote: true) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :edifici_id %>
-    <%= f.input :promotor_rao_social %>
-    <%= f.input :promotor_nom_representant %>
+    <%= f.input :edifici_id, :as => :hidden, :input_html => { :value => @edifici.id } %>
+    
+    <div class="row">
+      <div class="large-8 columns">
+        <%= f.input :promotor_rao_social %>
+        <%= f.input :promotor_nom_representant %>
+      </div>
+    </div>
+
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <div class="row">
+      <div class="large-12 columns">
+        <%= f.button :submit, t('.guardar'), :class => 'button small radius right botodreta' %>
+      </div>
+    </div>
   </div>
 <% end %>
