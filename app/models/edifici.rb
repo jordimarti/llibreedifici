@@ -58,6 +58,10 @@ class Edifici < ActiveRecord::Base
 	has_many :usuari_factures
 	has_many :empresa_factures
 
+	has_many :signatura_promotors
+	has_many :signatura_llibres
+	has_many :signatura_instruccions
+
 	validates :nom_edifici, :presence => true
 	validates :tipus_edifici, :presence => true
 	validates :ref_cadastral, :presence => true

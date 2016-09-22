@@ -258,3 +258,61 @@
 <div class="salt-pagina"></div>
 
 <%= @titols_arxiu %>
+
+<div class="salt-pagina"></div>
+<h5 class="titol-signatura">El Promotor</h5>
+<hr class="linia-signatura">
+<p>
+  <% if @edifici.signatura_promotors.count == 0 %>
+    <span class="label-signatura">Raó social:</span><br/>
+    <span class="label-signatura">Nom i cognoms del representant:</span><br/>
+  <% end %>
+  <% @edifici.signatura_promotors.each do |signatura_promotor| %>
+    <span class="label-signatura">Raó social:</span> <%= signatura_promotor.promotor_rao_social %><br/>
+    <span class="label-signatura">Nom i cognoms del representant:</span> <%= signatura_promotor.promotor_nom_representant %><br/>
+  <% end %>
+  <span class="label-signatura">Data:</span> _________________ a ____ de ______________ de ________<br/>
+  <span class="label-signatura">Signatura:</span>
+</p>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<p>Aquest Llibre de l'Edifici no es considera formalitzat sense la signatura del Promotor</p>
+<br/>
+<h5 class="titol-signatura">Autor de les instruccions d'ús i manteniment de l'edifici i les seves instal·lacions</h5>
+<hr class="linia-signatura">
+<p>
+  <% if @edifici.signatura_instruccions.count == 0 %>
+    <span class="label-signatura">Nom i cognoms:</span><br/>
+    <span class="label-signatura">Titulació:</span><br/>
+  <% end %>
+  <% @edifici.signatura_instruccions.each do |signatura_instruccion| %>
+    <span class="label-signatura">Nom i cognoms:</span> <%= signatura_instruccion.autor_instruccions_nom %><br/>
+    <span class="label-signatura">Titulació:</span> <%= signatura_instruccion.autor_instruccions_titulacio %><br/>
+  <% end %>
+  <span class="label-signatura">Data:</span> _________________ a ____ de ______________ de ________<br/>
+  <span class="label-signatura">Signatura:</span>
+</p>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<h5 class="titol-signatura">Autor del llibre de l'edifici</h5>
+<hr class="linia-signatura">
+<p>
+  <% if @edifici.signatura_llibres.count == 0 %>
+    <span class="label-signatura">Nom i cognoms:</span><br/>
+    <span class="label-signatura">Titulació:</span><br/>
+  <% end %>
+  <% @edifici.signatura_llibres.each do |signatura_llibre| %>
+    <span class="label-signatura">Nom i cognoms:</span> <%= signatura_llibre.autor_llibre_nom %><br/>
+    <span class="label-signatura">Titulació:</span> <%= signatura_llibre.autor_llibre_titulacio %><br/>
+  <% end %>
+  <span class="label-signatura">Data:</span> _________________ a ____ de ______________ de ________<br/>
+  <span class="label-signatura">Signatura:</span>
+</p>
