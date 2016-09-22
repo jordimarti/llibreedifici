@@ -1422,6 +1422,16 @@ es:
   checklist_nou_unifamiliars:
     edit:
       titol_configuracio_document: "Configuración del documento"
+      text_configuracio_document: "Al final del documento se encuentra el apartado de firmas. Indica quién es el autor del libro del edificio y el promotor."
+      titol_signatura_promotor: "Firma del promotor"
+      titol_signatura_llibre: "Firma del autor del libro del edificio"
+      titol_signatura_instruccion: "Firma del autor de las instrucciones de uso y mantenimiento"
+      afegir_llibre: "Añadir autor"
+      afegir_instruccion: "Añadir autor"
+      afegir_promotor: "Añadir promotor"
+      signatura_promotor: "Firma del promotor"
+      signatura_llibre: "Firma del autor del libro del edificio"
+      signatura_instruccion: "Firma del autor de las instrucciones de uso y mantenimiento"
     form:
       text_arxiu: "Selecciona los apartados que deben aparecer en el Archivo de documentos"
       guardar: "Guardar"
