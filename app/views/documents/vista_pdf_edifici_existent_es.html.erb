@@ -231,3 +231,40 @@
 
 <%= @titols_arxiu %>
 
+<div class="salt-pagina"></div>
+
+<h5 class="titol-signatura">Autor de las instrucciones de uso y mantenimiento del edificio y sus instalaciones</h5>
+<hr class="linia-signatura">
+<p>
+  <% if @edifici.signatura_instruccions.count == 0 %>
+    <span class="label-signatura">Nombre y apellidos:</span><br/>
+    <span class="label-signatura">Titulación:</span><br/>
+  <% end %>
+  <% @edifici.signatura_instruccions.each do |signatura_instruccion| %>
+    <span class="label-signatura">Nombre y apellidos:</span> <%= signatura_instruccion.autor_instruccions_nom %><br/>
+    <span class="label-signatura">Titulación:</span> <%= signatura_instruccion.autor_instruccions_titulacio %><br/>
+  <% end %>
+  <span class="label-signatura">Fecha:</span> _________________ a ____ de ______________ de ________<br/>
+  <span class="label-signatura">Firma:</span>
+</p>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<h5 class="titol-signatura">Autor del libro del edificio</h5>
+<hr class="linia-signatura">
+<p>
+  <% if @edifici.signatura_llibres.count == 0 %>
+    <span class="label-signatura">Nombre y apellidos:</span><br/>
+    <span class="label-signatura">Titulación:</span><br/>
+  <% end %>
+  <% @edifici.signatura_llibres.each do |signatura_llibre| %>
+    <span class="label-signatura">Nombre y apellidos:</span> <%= signatura_llibre.autor_llibre_nom %><br/>
+    <span class="label-signatura">Titulación:</span> <%= signatura_llibre.autor_llibre_titulacio %><br/>
+  <% end %>
+  <span class="label-signatura">Fecha:</span> _________________ a ____ de ______________ de ________<br/>
+  <span class="label-signatura">Firma:</span>
+</p>
+
+
