@@ -22,6 +22,8 @@ class ChecklistExistentPlurifamiliarsController < ApplicationController
   # GET /checklist_existent_plurifamiliars/1/edit
   def edit
     @submenu_actiu = 'documents'
+    @signatura_llibres = SignaturaLlibre.where(:edifici_id => params[:edifici_id])
+    @signatura_instruccions = SignaturaInstruccion.where(:edifici_id => params[:edifici_id])
   end
 
   # POST /checklist_existent_plurifamiliars

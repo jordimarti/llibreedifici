@@ -1438,6 +1438,13 @@ ca:
   checklist_existent_plurifamiliars:
     edit:
       titol_configuracio_document: "Configuració del document"
+      text_configuracio_document: "Al final del document hi ha l'apartat de signatures. Indica qui és l'autor del llibre de l'edifici i les instruccions d'ús i manteniment."
+      titol_signatura_llibre: "Signatura de l'autor del llibre de l'edifici"
+      titol_signatura_instruccion: "Signatura de l'autor de les instruccions d'ús i manteniment"
+      afegir_llibre: "Afegir autor"
+      afegir_instruccion: "Afegir autor"
+      signatura_llibre: "Signatura de l'autor de llibre de l'edifici"
+      signatura_instruccion: "Signatura de l'autor de les instruccions d'ús i manteniment"
     form:
       text_arxiu: "Selecciona els apartats que han d'aparèixer a l'Arxiu de documents"
       guardar: "Guardar"
@@ -1453,10 +1460,9 @@ ca:
       generar_manual_pdf: "Generar el Manual de l'habitatge"
       generar_manual_manteniment: "Generar el Manual d'ús i manteniment"
       generar_calendari: "Generar el Calendari de manteniment"
-      text_configurar_document: "Abans de generar el document podeu configurar quins són els apartats que han d'aparèixer a l'Arxiu de documents. Per exemple si es tracta d'un edifici de propietat vertical no ha d'aparèixer l'apartat de l'escriptura de divisió en règim de propietat horitzontal."
+      text_configurar_document: "Abans de generar el document heu d'indicar qui signa el llibre de l'edifici i configurar quins són els apartats que han d'aparèixer a l'Arxiu de documents."
       text_generar_llibre: "Quan cliqueu el botó 'Generar el Llibre de l'edifici' en breus instants es generarà el document en format PDF i començarà la descàrrega."
       text_generar_manual: "En els edificis plurifamiliars de nova construcció cal crear el Manual de l'habitatge. Aquest document està destinat als diferents propietaris per a que puguin conèixer, de manera individualitzada, les dades que corresponen al seu habitatge."
-      text_configurar_document_unifamiliar: "Abans de generar el document podeu configurar quins són els apartats que han d'aparèixer a l'Arxiu de documents."
       text_generar_manual_manteniment: "El Manual d'ús i manteniment especifica les instruccions d'ús i les operacions de manteniment necessàries per allargar la vida de l'edifici."
       text_generar_calendari: "El Calendari de manteniment detalla les operacions de manteniment que cal fer cada any, segons la periodicitat de les operacions indicades al Manual d'ús i manteniment."
   signatura_promotors:
