@@ -97,7 +97,11 @@ class DocumentsController < ApplicationController
   def calendari_manteniment
     respond_to do |format|
       format.docx do
-        doc = DocxReplace::Doc.new("#{Rails.root}/lib/docx_templates/calendari.docx", "#{Rails.root}/tmp")
+        if params[:locale] == 'ca'
+          doc = DocxReplace::Doc.new("#{Rails.root}/lib/docx_templates/calendari.docx", "#{Rails.root}/tmp")
+        elsif params[:locale] == 'es'
+          doc = DocxReplace::Doc.new("#{Rails.root}/lib/docx_templates/calendari_es.docx", "#{Rails.root}/tmp")
+        end
         doc.replace("$calendari$", calendari)
         tmp_file = Tempfile.new('word_tempate', "#{Rails.root}/tmp")
         doc.commit(tmp_file.path)
