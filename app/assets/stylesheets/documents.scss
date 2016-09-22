@@ -102,6 +102,7 @@ h2.subtitol-document {
 
 h5.titol-signatura {
 	font-weight: bold;
+	font-size: 1em;
 }
 
 hr.linia-signatura {
@@ -110,6 +111,11 @@ hr.linia-signatura {
 }
 
 span.label-signatura {
-	font-size: 12px;
+	font-size: 0.9em;
 	font-weight: bold;
+}
+
+span.avis-signatura {
+	font-style: oblique;
+	font-size: 0.9em;
 }
