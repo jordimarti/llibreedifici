@@ -96,7 +96,11 @@
 				<div class="row">
 					<div class="medium-6 columns">
 						<%= image_tag('document_calendari.png', :alt => t('.generar_calendari'), :class => 'imatge-document') %>
-						<a href="documents/calendari_manteniment.docx" class="button small radius"><%= t('.generar_calendari') %></a>
+						<% if params[:locale] == 'ca' %>
+							<a href="documents/calendari_manteniment.docx?locale=ca" class="button small radius"><%= t('.generar_calendari') %></a>
+						<% elsif params[:locale] == 'es' %>
+							<a href="documents/calendari_manteniment.docx?locale=es" class="button small radius"><%= t('.generar_calendari') %></a>
+						<% end %>
 						<p><%= t('.text_generar_calendari') %></p>	
 					</div>
 				</div>
@@ -136,7 +140,11 @@
 				<div class="row">
 					<div class="medium-6 columns">
 						<%= image_tag('document_calendari.png', :alt => t('.generar_calendari'), :class => 'imatge-document') %>
-						<a href="documents/calendari_manteniment.docx" class="button small radius"><%= t('.generar_calendari') %></a>
+						<% if params[:locale] == 'ca' %>
+							<a href="documents/calendari_manteniment.docx?locale=ca" class="button small radius"><%= t('.generar_calendari') %></a>
+						<% elsif params[:locale] == 'es' %>
+							<a href="documents/calendari_manteniment.docx?locale=es" class="button small radius"><%= t('.generar_calendari') %></a>
+						<% end %>
 						<p><%= t('.text_generar_calendari') %></p>	
 						
 					</div>
@@ -180,7 +188,11 @@
 				<div class="row">
 					<div class="medium-6 columns">
 						<%= image_tag('document_calendari.png', :alt => t('.generar_calendari'), :class => 'imatge-document') %>
-						<a href="documents/calendari_manteniment.docx" class="button small radius"><%= t('.generar_calendari') %></a>
+						<% if params[:locale] == 'ca' %>
+							<a href="documents/calendari_manteniment.docx?locale=ca" class="button small radius"><%= t('.generar_calendari') %></a>
+						<% elsif params[:locale] == 'es' %>
+							<a href="documents/calendari_manteniment.docx?locale=es" class="button small radius"><%= t('.generar_calendari') %></a>
+						<% end %>
 						<p><%= t('.text_generar_calendari') %></p>	
 
 					</div>
