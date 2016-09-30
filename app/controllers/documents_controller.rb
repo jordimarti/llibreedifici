@@ -37,6 +37,8 @@ class DocumentsController < ApplicationController
   end
 
   def llibre_existent_pdf
+    # Comprovem si hi ha agents
+    @agents = hi_ha_agents()
     if params[:locale] == 'ca'
       url_edifici = 'http://llibreedifici.herokuapp.com/edificis/' + @edifici.id.to_s + '/documents/vista_pdf_edifici_existent?locale=ca'
     elsif params[:locale] == 'es'
@@ -108,6 +110,14 @@ class DocumentsController < ApplicationController
 
         send_file tmp_file.path, filename: "calendari_manteniment.docx", disposition: 'attachment'
       end
+    end
+  end
+
+  def hi_ha_agents
+    if @edifici.promotors.count != 0 && @edifici.projectistes.count != 0 && @edifici.colaboradors.count != 0 && @edifici.constructors.count != 0 && @edifici.directors.count != 0 && @edifici.execucio_directors.count != 0 && @edifici.coordinadors.count != 0 && @edifici.laboratoris.count != 0 && @edifici.entitat_controls.count != 0 && @edifici.subministradors.count != 0 && @edifici.industrials.count != 0
+      return false
+    else
+      return true
     end
   end
 

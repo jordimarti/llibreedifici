@@ -71,9 +71,10 @@
 <%= image_tag @edifici.identificacio.planol_emplacament.url(:original) %>
 <div class="salt-pagina"></div>
 
-<p class="titol-apartat-document">Agents de l'edificació</p>
-
-<%= render 'agents' %>
+<% if @agents == true %>
+  <p class="titol-apartat-document">Agents de l'edificació</p>
+  <%= render 'agents' %>
+<% end %>
 
 <div class="salt-pagina"></div>
 <p class="titol-apartat-document">Dades administratives i jurídiques</p>
