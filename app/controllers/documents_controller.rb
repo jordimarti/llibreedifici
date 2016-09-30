@@ -37,8 +37,6 @@ class DocumentsController < ApplicationController
   end
 
   def llibre_existent_pdf
-    # Comprovem si hi ha agents
-    @agents = hi_ha_agents()
     if params[:locale] == 'ca'
       url_edifici = 'http://llibreedifici.herokuapp.com/edificis/' + @edifici.id.to_s + '/documents/vista_pdf_edifici_existent?locale=ca'
     elsif params[:locale] == 'es'
@@ -76,6 +74,8 @@ class DocumentsController < ApplicationController
   end
 
   def vista_pdf_edifici_existent
+    # Comprovem si hi ha agents
+    @agents = hi_ha_agents()
     @text_manual_manteniment = text_manteniment_pdf.html_safe
     @titols_arxiu = espdf_arxiu_documents_edifici_existent.html_safe
     render :layout => 'pdf'
@@ -83,6 +83,8 @@ class DocumentsController < ApplicationController
 
   #Castellà
   def vista_pdf_edifici_existent_es
+    # Comprovem si hi ha agents
+    @agents = hi_ha_agents()
     @text_manual_manteniment = text_manteniment_pdf_es.html_safe
     @titols_arxiu = espdf_arxiu_documents_edifici_existent_es.html_safe
     render :layout => 'pdf'
@@ -114,7 +116,7 @@ class DocumentsController < ApplicationController
   end
 
   def hi_ha_agents
-    if @edifici.promotors.count != 0 && @edifici.projectistes.count != 0 && @edifici.colaboradors.count != 0 && @edifici.constructors.count != 0 && @edifici.directors.count != 0 && @edifici.execucio_directors.count != 0 && @edifici.coordinadors.count != 0 && @edifici.laboratoris.count != 0 && @edifici.entitat_controls.count != 0 && @edifici.subministradors.count != 0 && @edifici.industrials.count != 0
+    if @edifici.promotors.count == 0 && @edifici.projectistes.count == 0 && @edifici.colaboradors.count == 0 && @edifici.constructors.count == 0 && @edifici.directors.count == 0 && @edifici.execucio_directors.count == 0 && @edifici.coordinadors.count == 0 && @edifici.laboratoris.count == 0 && @edifici.entitat_controls.count == 0 && @edifici.subministradors.count == 0 && @edifici.industrials.count == 0
       return false
     else
       return true
