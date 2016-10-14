@@ -201,5 +201,20 @@
 	</div>
 <% end %>
 
+<% @edifici.iites.each do |iite| %>
+	<div class="taula-container">
+		<p class="titol-taula">Informe de la inspecció tècnica de l'edifici (IITE):</p>
+		<table class="taula-dades">
+		  <tbody>
+		    <tr>
+		      <td class="taula-dos-columnes"><span class="titol-taula">Referència:</span><br/><%= iite.referencia %></td>
+		      <td class="taula-dos-columnes"><span class="titol-taula">Data:</span><br/><%= iite.data %></td>
+		    </tr>
+		  </tbody>
+		</table>
+		<div class="espaiador"></div>
+	</div>
+<% end %>
+
 
 
