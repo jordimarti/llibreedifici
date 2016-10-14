@@ -5,7 +5,7 @@ module PdfGenerator
   	return text_titol
   end
 
-  def descripcio_pdf(sistema)
+  def descripcio_pdf(sistema, sistema_usuari)
   	sistema_seleccionat = sistema.where(:edifici_id => @edifici.id).last
     #Inici del llistat
     llistat_elements = '<p class="apartat-sistema">Descripció constructiva:</p><ul>'
@@ -15,6 +15,11 @@ module PdfGenerator
         #Afegim els elements del llistat
         llistat_elements = llistat_elements + '<li>' + element.descripcio_ca + '</li>'
       end
+    end
+    #Introduïm els elements definits per l'usuari
+    elements_usuari = Element.where(:edifici_id => @edifici.id, :sistema_element => sistema_usuari)
+    elements_usuari.each do |element_usuari|
+      llistat_elements = llistat_elements + '<li>' + element_usuari.nom_element + '</li>'
     end
     #Tanquem el llistat
     llistat_elements = llistat_elements + '</ul><div class="salt-pagina"></div>'
@@ -265,105 +270,105 @@ module PdfGenerator
 	  existeix_sistema = comprovacio_sistema('fonamentacio')
 	  if existeix_sistema == true
 	    text_manteniment = text_manteniment + titol_pdf('Fonamentació')
-	    text_manteniment = text_manteniment + descripcio_pdf(Fonamentacio)
+	    text_manteniment = text_manteniment + descripcio_pdf(Fonamentacio, 'fonamentacio')
 	    text_manteniment = text_manteniment + instruccions_pdf('fonamentacio')
 	    text_manteniment = text_manteniment + operacions_pdf('fonamentacio')
 	  end
 	  existeix_sistema = comprovacio_sistema('estructura')
 	  if existeix_sistema == true
 	    text_manteniment = text_manteniment + titol_pdf('Estructura')
-	    text_manteniment = text_manteniment + descripcio_pdf(Estructura)
+	    text_manteniment = text_manteniment + descripcio_pdf(Estructura, 'estructura')
 	    text_manteniment = text_manteniment + instruccions_pdf('estructura')
 	    text_manteniment = text_manteniment + operacions_pdf('estructura')
 	  end
 	  existeix_sistema = comprovacio_sistema('tancaments')
 	  if existeix_sistema == true
 	    text_manteniment = text_manteniment + titol_pdf('Tancaments verticals')
-	    text_manteniment = text_manteniment + descripcio_pdf(TancamentsVertical)
+	    text_manteniment = text_manteniment + descripcio_pdf(TancamentsVertical, 'tancaments')
 	    text_manteniment = text_manteniment + instruccions_pdf('tancaments')
 	    text_manteniment = text_manteniment + operacions_pdf('tancaments')
 	  end
 	  existeix_sistema = comprovacio_sistema('cobertes')
 	  if existeix_sistema == true
 	    text_manteniment = text_manteniment + titol_pdf('Cobertes')
-	    text_manteniment = text_manteniment + descripcio_pdf(Coberta)
+	    text_manteniment = text_manteniment + descripcio_pdf(Coberta, 'coberta')
 	    text_manteniment = text_manteniment + instruccions_pdf('cobertes')
 	    text_manteniment = text_manteniment + operacions_pdf('cobertes')
 	  end
 	  existeix_sistema = comprovacio_sistema('particions')
 	  if existeix_sistema == true
 	    text_manteniment = text_manteniment + titol_pdf('Particions i acabats')
-	    text_manteniment = text_manteniment + descripcio_pdf(Particio)
+	    text_manteniment = text_manteniment + descripcio_pdf(Particio, 'particions')
 	    text_manteniment = text_manteniment + instruccions_pdf('particions')
 	    text_manteniment = text_manteniment + operacions_pdf('particions')
 	  end
 	  existeix_sistema = comprovacio_sistema('sanejament')
 	  if existeix_sistema == true
 	    text_manteniment = text_manteniment + titol_pdf('Sanejament')
-	    text_manteniment = text_manteniment + descripcio_pdf(Sanejament)
+	    text_manteniment = text_manteniment + descripcio_pdf(Sanejament, 'sanejament')
 	    text_manteniment = text_manteniment + instruccions_pdf('sanejament')
 	    text_manteniment = text_manteniment + operacions_pdf('sanejament')
 	  end
 	  existeix_sistema = comprovacio_sistema('aigua')
 	  if existeix_sistema == true
 	    text_manteniment = text_manteniment + titol_pdf('Subministrament d\'aigua')
-	    text_manteniment = text_manteniment + descripcio_pdf(Aigua)
+	    text_manteniment = text_manteniment + descripcio_pdf(Aigua, 'aigua')
 	    text_manteniment = text_manteniment + instruccions_pdf('aigua')
 	    text_manteniment = text_manteniment + operacions_pdf('aigua')
 	  end
 	  existeix_sistema = comprovacio_sistema('electricitat')
 	  if existeix_sistema == true
 	    text_manteniment = text_manteniment + titol_pdf('Instal·lació elèctrica')
-	    text_manteniment = text_manteniment + descripcio_pdf(Electricitat)
+	    text_manteniment = text_manteniment + descripcio_pdf(Electricitat, 'electricitat')
 	    text_manteniment = text_manteniment + instruccions_pdf('electricitat')
 	    text_manteniment = text_manteniment + operacions_pdf('electricitat')
 	  end
 	  existeix_sistema = comprovacio_sistema('climatitzacio')
 	  if existeix_sistema == true
 	    text_manteniment = text_manteniment + titol_pdf('ACS, calefacció i refrigeració')
-	    text_manteniment = text_manteniment + descripcio_pdf(Climatitzacio)
+	    text_manteniment = text_manteniment + descripcio_pdf(Climatitzacio, 'climatitzacio')
 	    text_manteniment = text_manteniment + instruccions_pdf('climatitzacio')
 	    text_manteniment = text_manteniment + operacions_pdf('climatitzacio')
 	  end
 	  existeix_sistema = comprovacio_sistema('gas')
 	  if existeix_sistema == true
 	    text_manteniment = text_manteniment + titol_pdf('Instal·lació de gas')
-	    text_manteniment = text_manteniment + descripcio_pdf(Ga)
+	    text_manteniment = text_manteniment + descripcio_pdf(Ga, 'gas')
 	    text_manteniment = text_manteniment + instruccions_pdf('gas')
 	    text_manteniment = text_manteniment + operacions_pdf('gas')
 	  end
 	  existeix_sistema = comprovacio_sistema('ventilacio')
 	  if existeix_sistema == true
 	    text_manteniment = text_manteniment + titol_pdf('Ventilació')
-	    text_manteniment = text_manteniment + descripcio_pdf(Ventilacio)
+	    text_manteniment = text_manteniment + descripcio_pdf(Ventilacio, 'ventilacio')
 	    text_manteniment = text_manteniment + instruccions_pdf('ventilacio')
 	    text_manteniment = text_manteniment + operacions_pdf('ventilacio')
 	  end
 	  existeix_sistema = comprovacio_sistema('incendis')
 	  if existeix_sistema == true
 	    text_manteniment = text_manteniment + titol_pdf('Protecció contra incendis')
-	    text_manteniment = text_manteniment + descripcio_pdf(Incendi)
+	    text_manteniment = text_manteniment + descripcio_pdf(Incendi, 'incendis')
 	    text_manteniment = text_manteniment + instruccions_pdf('incendis')
 	    text_manteniment = text_manteniment + operacions_pdf('incendis')
 	  end
 	  existeix_sistema = comprovacio_sistema('ascensor')
 	  if existeix_sistema == true
 	    text_manteniment = text_manteniment + titol_pdf('Ascensors')
-	    text_manteniment = text_manteniment + descripcio_pdf(Ascensor)
+	    text_manteniment = text_manteniment + descripcio_pdf(Ascensor, 'ascensors')
 	    text_manteniment = text_manteniment + instruccions_pdf('ascensor')
 	    text_manteniment = text_manteniment + operacions_pdf('ascensor')
 	  end
 	  existeix_sistema = comprovacio_sistema('telecomunicacions')
 	  if existeix_sistema == true
 	    text_manteniment = text_manteniment + titol_pdf('Instal·lació de telecomunicacions')
-	    text_manteniment = text_manteniment + descripcio_pdf(Telecomunicacio)
+	    text_manteniment = text_manteniment + descripcio_pdf(Telecomunicacio, 'telecomunicacions')
 	    text_manteniment = text_manteniment + instruccions_pdf('telecomunicacions')
 	    text_manteniment = text_manteniment + operacions_pdf('telecomunicacions')
 	  end
 	  existeix_sistema = comprovacio_sistema('especials')
 	  if existeix_sistema == true
 	    text_manteniment = text_manteniment + titol_pdf('Instal·lacions especials')
-	    text_manteniment = text_manteniment + descripcio_pdf(Especial)
+	    text_manteniment = text_manteniment + descripcio_pdf(Especial, 'especials')
 	    text_manteniment = text_manteniment + instruccions_pdf('especials')
 	    text_manteniment = text_manteniment + operacions_pdf('especials')
 	  end
