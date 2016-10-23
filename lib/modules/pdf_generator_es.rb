@@ -5,7 +5,7 @@ module PdfGeneratorEs
   	return text_titol
   end
 
-  def descripcio_pdf_es(sistema)
+  def descripcio_pdf_es(sistema, sistema_usuari)
   	sistema_seleccionat = sistema.where(:edifici_id => @edifici.id).last
     #Inici del llistat
     llistat_elements = '<p class="apartat-sistema">Descripción constructiva:</p><ul>'
