@@ -48,7 +48,7 @@ class ChecklistNouTerciarisController < ApplicationController
   def update
     respond_to do |format|
       if @checklist_nou_terciari.update(checklist_nou_terciari_params)
-        format.html { redirect_to @checklist_nou_terciari, notice: 'Checklist nou terciari was successfully updated.' }
+        format.html { redirect_to documents_path(@edifici.id), notice: 'Checklist nou terciari was successfully updated.' }
         format.json { render :show, status: :ok, location: @checklist_nou_terciari }
       else
         format.html { render :edit }
