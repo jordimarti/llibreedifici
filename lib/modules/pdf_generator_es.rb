@@ -498,9 +498,9 @@ module PdfGeneratorEs
 	    if arxiu.estatus_comunitat == true
 	      pdf_titols_arxiu = pdf_titols_arxiu + titol_apartat_arxiu("Estatutos de la comunidad de propietarios")
 	    end
-	  end
-    if arxiu.cedules_regims_juridics == true
-      pdf_titols_arxiu = pdf_titols_arxiu + titol_apartat_arxiu("Cédulas de declaración de regímenes jurídicos especiales o calificaciones de viviendas protegidas")
+      if arxiu.cedules_regims_juridics == true
+        pdf_titols_arxiu = pdf_titols_arxiu + titol_apartat_arxiu("Cédulas de declaración de regímenes jurídicos especiales o calificaciones de viviendas protegidas")
+      end
     end
     if arxiu.carregues_reals == true
       pdf_titols_arxiu = pdf_titols_arxiu + titol_apartat_arxiu("Cargas reales existentes")

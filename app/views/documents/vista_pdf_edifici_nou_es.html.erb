@@ -241,21 +241,31 @@
 <li>Acta de recepción definitiva de la obra</li>
 <li>Escritura pública de declaración de obra nueva</li>
 <li>Documentos acreditativos de garantía</li>
-<li>Documentos de garantía de instalaciones de partes comunes</li>
+<% if @edifici.tipus_edifici == "nou_plurifamiliar" %>
+  <li>Documentos de garantía de instalaciones de partes comunes</li>
+<% end %>
 <li>Certificación energética</li>
 <li>Pólizas de seguros</li>
-<li>Escritura de división en régimen de propiedad horizontal</li>
-<li>Estatutos de la comunidad de propietarios</li>
-<li>Cédulas de declaración de regímenes jurídicos especiales o calificaciones de viviendas protegidas</li>
+<% if @edifici.tipus_edifici == "nou_plurifamiliar" %>
+  <li>Escritura de división en régimen de propiedad horizontal</li>
+  <li>Estatutos de la comunidad de propietarios</li>
+  <li>Cédulas de declaración de regímenes jurídicos especiales o calificaciones de viviendas protegidas</li>
+<% end %>
 <li>Cargas reales existentes</li>
 <li>Documentos acreditativos de las ayudas y beneficios otorgados en el edificio</li>
 <li>Documentos de justificación de la realización de operaciones de reparación, mantenimiento y rehabilitación</li>
-<li>Certificados de final de obra de las instalaciones comunes de baja tensión, gases combustibles, productos petrolíferos o instalaciones térmicas</li>
+<% if @edifici.tipus_edifici == "nou_plurifamiliar" %>
+  <li>Certificados de final de obra de las instalaciones comunes de baja tensión, gases combustibles, productos petrolíferos o instalaciones térmicas</li>
+<% end %>
 <li>Declaraciones CE que reconocen la conformidad de los ascensores instalados</li>
 <li>Los documentos que sustituyan, modifiquen o amplíen especificaciones del Documento de Especificaciones Técnicas, resultado de incidencias producidas</li>
 </ul>
 
-<p>El propietario del edificio o, en su caso, el presidente de la Comunidad de Propietarios son los responsables de mantener al día el Archivo de Documentos. Cada nueva incorporación estará autentificada y firmada por ellos, y se especificará en el registro, indicando el tipo de documento y la fecha de incorporación. La incorporación de documentos que sea de obligación archivar, debe hacerse dentro del mes siguiente a su obtención.</p>
+<% if @edifici.tipus_edifici == "nou_plurifamiliar" %>
+  <p>El propietario del edificio o, en su caso, el presidente de la Comunidad de Propietarios son los responsables de mantener al día el Archivo de Documentos. Cada nueva incorporación estará autentificada y firmada por ellos, y se especificará en el registro, indicando el tipo de documento y la fecha de incorporación. La incorporación de documentos que sea de obligación archivar, debe hacerse dentro del mes siguiente a su obtención.</p>
+<% else %>
+  <p>El propietario del edificio es el responsable de mantener al día el Archivo de Documentos. Cada nueva incorporación estará autentificada y firmada por él, y se especificará en el registro, indicando el tipo de documento y la fecha de incorporación. La incorporación de documentos que sea de obligación archivar, debe hacerse dentro del mes siguiente a su obtención.</p>
+<% end %>
 <div class="salt-pagina"></div>
 
 <%= @titols_arxiu %>
