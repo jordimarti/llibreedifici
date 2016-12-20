@@ -240,21 +240,31 @@
 <li>Acta de recepció definitiva de l’obra</li>
 <li>Escriptura pública de declaració d’obra nova</li>
 <li>Documents acreditatius de garantia</li>
-<li>Documents de garantia d’instal·lacions de parts comunes</li>
+<% if @edifici.tipus_edifici == "nou_plurifamiliar" %>
+  <li>Documents de garantia d’instal·lacions de parts comunes</li>
+<% end %>
 <li>Certificació energètica</li>
 <li>Pòlisses d’assegurances</li>
-<li>Escriptura de divisió en règim de propietat horitzontal</li>
-<li>Estatuts de la comunitat de propietaris</li>
-<li>Cèdules de declaració de règims jurídics especials o qualificacions d’habitatges protegits</li>
+<% if @edifici.tipus_edifici == "nou_plurifamiliar" %>
+  <li>Escriptura de divisió en règim de propietat horitzontal</li>
+  <li>Estatuts de la comunitat de propietaris</li>
+  <li>Cèdules de declaració de règims jurídics especials o qualificacions d’habitatges protegits</li>
+<% end %>
 <li>Càrregues reals existents</li>
 <li>Documents acreditatius dels ajuts i beneficis atorgats a l’edifici</li>
 <li>Documents de justificació de la realització d’operacions de reparació, manteniment i rehabilitació</li>
-<li>Certificats de final d’obra de les instal·lacions comunes de baixa tensió, gasos combustibles, productes petrolífers o instal·lacions tèrmiques</li>
+<% if @edifici.tipus_edifici == "nou_plurifamiliar" %>
+  <li>Certificats de final d’obra de les instal·lacions comunes de baixa tensió, gasos combustibles, productes petrolífers o instal·lacions tèrmiques</li>
+<% end %>
 <li>Declaracions CE que reconeixen la conformitat dels ascensors instal·lats</li>
 <li>Els documents que substitueixin, modifiquin o ampliïn especificacions del Document d’Especificacions Tècniques, resultat d’incidències produïdes</li>
 </ul>
 
-<p>El propietari de l’edifici o, en el seu cas, el president de la Comunitat de Propietaris són els responsables de mantenir al dia l’Arxiu de Documents. Cada nova incorporació estarà autentificada i signada per ells, i s’especificarà al registre, indicant el tipus de document i la data d’incorporació. La incorporació de documents que sigui d’obligació arxivar, s’ha de fer dins del mes següent a la seva obtenció.</p>
+<% if @edifici.tipus_edifici == "nou_plurifamiliar" %>
+  <p>El propietari de l’edifici o, en el seu cas, el president de la Comunitat de Propietaris són els responsables de mantenir al dia l’Arxiu de Documents. Cada nova incorporació estarà autentificada i signada per ells, i s’especificarà al registre, indicant el tipus de document i la data d’incorporació. La incorporació de documents que sigui d’obligació arxivar, s’ha de fer dins del mes següent a la seva obtenció.</p>
+<% else %>
+  <p>El propietari de l’edifici és el responsable de mantenir al dia l’Arxiu de Documents. Cada nova incorporació estarà autentificada i signada per ell, i s’especificarà al registre, indicant el tipus de document i la data d’incorporació. La incorporació de documents que sigui d’obligació arxivar, s’ha de fer dins del mes següent a la seva obtenció.</p>
+<% end %>
 <div class="salt-pagina"></div>
 
 <%= @titols_arxiu %>

@@ -842,6 +842,19 @@ es:
         documents_justificacio_operacions: "Documentos de justificación de la realización de operaciones de reparación, mantenimiento y rehabilitación"
         certificat_final_obra_instalacions: "Certificados de final de obra de las instalaciones comunes de baja tensión, gases combustibles, productos petrolíferos o instalaciones térmicas"
         declaracions_ce_ascensors: "Declaraciones CE que reconocen la conformidad de los ascensores instalados"
+      checklist_nou_terciari:
+        llicencies_preceptives: "Licencias preceptivas"
+        certificat_final_obra: "Certificado de final de obra"
+        acta_recepcio_obra: "Acta de recepción definitiva de la obra"
+        escriptura_publica: "Escritura pública de declaración de obra nueva"
+        documents_garantia: "Documentos acreditativos de garantía"
+        certificacio_energetica: "Certificación energética"
+        polissa_assegurances: "Pólizas de seguros"
+        carregues_reals: "Cargas reales existentes"
+        documents_complementaris: "Documentos complementarios"
+        documents_acreditatius_ajuts: "Documentos acreditativos de las ayudas y beneficios otorgados en el edificio"
+        documents_justificacio_operacions: "Documentos de justificación de la realización de operaciones de reparación, mantenimiento y rehabilitación"
+        declaracions_ce_ascensors: "Declaraciones CE que reconocen la conformidad de los ascensores instalados"
       checklist_nou_unifamiliar:
         llicencies_preceptives: "Licencias preceptivas"
         certificat_final_obra: "Certificado de final de obra"
@@ -1404,6 +1417,22 @@ es:
       actualitzar_llistat: "Actualizar listado"
       text_actualitzar_llistat: "Actualizad el listado de operaciones de mantenimiento cada vez que modifiquéis la descripción constructiva del edificio. Esta acción actualiza todas las operaciones creadas automáticamente, pero no afecta a las operaciones creadas manualmente."
   checklist_nou_plurifamiliars:
+    edit:
+      titol_configuracio_document: "Configuración del documento"
+      text_configuracio_document: "Al final del documento se encuentra el apartado de firmas. Indica quién es el autor del libro del edificio y el promotor."
+      titol_signatura_promotor: "Firma del promotor"
+      titol_signatura_llibre: "Firma del autor del libro del edificio"
+      titol_signatura_instruccion: "Firma del autor de las instrucciones de uso y mantenimiento"
+      afegir_llibre: "Añadir autor"
+      afegir_instruccion: "Añadir autor"
+      afegir_promotor: "Añadir promotor"
+      signatura_promotor: "Firma del promotor"
+      signatura_llibre: "Firma del autor del libro del edificio"
+      signatura_instruccion: "Firma del autor de las instrucciones de uso y mantenimiento"
+    form:
+      text_arxiu: "Selecciona los apartados que deben aparecer en el Archivo de documentos"
+      guardar: "Guardar"
+  checklist_nou_terciaris:
     edit:
       titol_configuracio_document: "Configuración del documento"
       text_configuracio_document: "Al final del documento se encuentra el apartado de firmas. Indica quién es el autor del libro del edificio y el promotor."

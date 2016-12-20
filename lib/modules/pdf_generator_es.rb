@@ -456,6 +456,8 @@ module PdfGeneratorEs
       arxiu = ChecklistNouPlurifamiliar.where(:edifici_id => @edifici.id).last
     elsif @edifici.tipus_edifici == 'nou_unifamiliar'
       arxiu = ChecklistNouUnifamiliar.where(:edifici_id => @edifici.id).last
+    elsif @edifici.tipus_edifici == 'nou_terciari'
+      arxiu = ChecklistNouTerciari.where(:edifici_id => @edifici.id).last
     end
     pdf_titols_arxiu = ''
 

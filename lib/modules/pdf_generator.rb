@@ -456,6 +456,8 @@ module PdfGenerator
       arxiu = ChecklistNouPlurifamiliar.where(:edifici_id => @edifici.id).last
     elsif @edifici.tipus_edifici == 'nou_unifamiliar'
       arxiu = ChecklistNouUnifamiliar.where(:edifici_id => @edifici.id).last
+    elsif @edifici.tipus_edifici == 'nou_terciari'
+      arxiu = ChecklistNouTerciari.where(:edifici_id => @edifici.id).last
     end
     pdf_titols_arxiu = ''
 
@@ -497,8 +499,10 @@ module PdfGenerator
 	      pdf_titols_arxiu = pdf_titols_arxiu + titol_apartat_arxiu("Estatuts de la comunitat de propietaris")
 	    end
 	  end
-    if arxiu.cedules_regims_juridics == true
-      pdf_titols_arxiu = pdf_titols_arxiu + titol_apartat_arxiu("Cèdules de declaració de règims jurídics especials o qualificacions d'habitatges protegits")
+    if @edifici.tipus_edifici == 'nou_plurifamiliar'
+      if arxiu.cedules_regims_juridics == true
+        pdf_titols_arxiu = pdf_titols_arxiu + titol_apartat_arxiu("Cèdules de declaració de règims jurídics especials o qualificacions d'habitatges protegits")
+      end
     end
     if arxiu.carregues_reals == true
       pdf_titols_arxiu = pdf_titols_arxiu + titol_apartat_arxiu("Càrregues reals existents")

@@ -1,0 +1,42 @@
+<%= simple_form_for [@edifici, @checklist_nou_terciari] do |f| %>
+  <%= f.error_notification %>
+  <div class="row">
+    <div class="medium-12 columns">
+      <div class="container-document">
+        <p><%= t('.text_arxiu') %>:</p>
+        <br>
+        <div class="form-inputs">
+          <%= f.input :edifici_id, :as => :hidden, :input_html => { :value => @edifici.id } %>
+          <div class="row">
+            <div class="medium-6 columns">
+              <%= f.input :llicencies_preceptives %>
+              <%= f.input :certificat_final_obra %>
+              <%= f.input :acta_recepcio_obra %>
+              <%= f.input :escriptura_publica %>
+              <%= f.input :documents_garantia %>
+              <%= f.input :certificacio_energetica %>
+            </div>
+            <div class="medium-6 columns">
+              <%= f.input :polissa_assegurances %>
+              <%= f.input :carregues_reals %>
+              <%= f.input :documents_acreditatius_ajuts %>
+              <%= f.input :documents_justificacio_operacions %>
+              <%= f.input :declaracions_ce_ascensors %>
+            </div>
+          </div>
+          
+          
+        </div>
+
+        <div class="row">
+          <div class="medium-12 columns">
+            <div class="form-actions">
+              <%= f.button :submit, t('.guardar'), :class => 'button small radius right botodreta' %>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+<% end %>

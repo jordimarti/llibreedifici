@@ -52,6 +52,7 @@ class Edifici < ActiveRecord::Base
 	has_one :checklist_nou_plurifamiliar
 	has_one :checklist_nou_unifamiliar
 	has_one :checklist_existent_plurifamiliar
+	has_one :checklist_nou_terciari
 
 	has_one :info_usuari
 	has_one :pagament

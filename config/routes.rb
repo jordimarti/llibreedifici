@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   
+  
   resources :importats
   resources :element_predefinits
   resources :operacions
@@ -71,6 +72,7 @@ Rails.application.routes.draw do
     resources :checklist_nou_plurifamiliars
     resources :checklist_nou_unifamiliars
     resources :checklist_existent_plurifamiliars
+    resources :checklist_nou_terciaris
     resources :entitats
     resources :carregues
     resources :regim_especials

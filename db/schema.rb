@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160913145523) do
+ActiveRecord::Schema.define(version: 20161220145520) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,29 +64,6 @@ ActiveRecord::Schema.define(version: 20160913145523) do
     t.datetime "updated_at",       null: false
   end
 
-  create_table "checklist_edifici_nou_plurifamiliars", force: :cascade do |t|
-    t.integer  "edifici_id"
-    t.boolean  "llicencies_preceptives"
-    t.boolean  "certificat_final_obra"
-    t.boolean  "acta_recepcio_obra"
-    t.boolean  "escriptura_publica"
-    t.boolean  "documents_garantia"
-    t.boolean  "documents_garantia_parts_comunes"
-    t.boolean  "certificacio_energetica"
-    t.boolean  "polissa_assegurances"
-    t.boolean  "escriptura_propietat_horitzontal"
-    t.boolean  "estatus_comunitat"
-    t.boolean  "cedules_regims_juridics"
-    t.boolean  "carregues_reals"
-    t.boolean  "documents_complementaris"
-    t.boolean  "documents_acreditatius_ajuts"
-    t.boolean  "documents_justificacio_operacions"
-    t.boolean  "certificat_final_obra_instalacions"
-    t.boolean  "declaracions_ce_ascensors"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
-  end
-
   create_table "checklist_existent_plurifamiliars", force: :cascade do |t|
     t.integer  "edifici_id"
     t.boolean  "iite",                               default: true
@@ -126,6 +103,24 @@ ActiveRecord::Schema.define(version: 20160913145523) do
     t.boolean  "declaracions_ce_ascensors",          default: true
     t.datetime "created_at",                                        null: false
     t.datetime "updated_at",                                        null: false
+  end
+
+  create_table "checklist_nou_terciaris", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.boolean  "llicencies_preceptives"
+    t.boolean  "certificat_final_obra"
+    t.boolean  "acta_recepcio_obra"
+    t.boolean  "escriptura_publica"
+    t.boolean  "documents_garantia"
+    t.boolean  "certificacio_energetica"
+    t.boolean  "polissa_assegurances"
+    t.boolean  "carregues_reals"
+    t.boolean  "documents_complementaris"
+    t.boolean  "documents_acreditatius_ajuts"
+    t.boolean  "documents_justificacio_operacions"
+    t.boolean  "declaracions_ce_ascensors"
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
   end
 
   create_table "checklist_nou_unifamiliars", force: :cascade do |t|

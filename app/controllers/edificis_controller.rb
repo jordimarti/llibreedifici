@@ -1,7 +1,6 @@
 class EdificisController < ApplicationController
   before_action :set_edifici, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!
-  #layout 'edifici', only: [:quadern_nou_plurifamiliar]
 
   # GET /edificis
   # GET /edificis.json
@@ -120,6 +119,10 @@ class EdificisController < ApplicationController
     @checklist_existent_plurifamiliar = ChecklistExistentPlurifamiliar.new
     @checklist_existent_plurifamiliar.edifici_id = edifici_id
     @checklist_existent_plurifamiliar.save
+    #Checklist nou terciari
+    @checklist_nou_terciari = ChecklistNouTerciari.new
+    @checklist_nou_terciari.edifici_id = edifici_id
+    @checklist_nou_terciari.save
   end
 
   # PATCH/PUT /edificis/1
@@ -159,6 +162,7 @@ class EdificisController < ApplicationController
     @edifici.checklist_nou_plurifamiliar.destroy
     @edifici.checklist_nou_unifamiliar.destroy
     @edifici.checklist_existent_plurifamiliar.destroy
+    @edifici.checklist_nou_terciari.destroy
     @edifici.promotors.each do |promotor|
       promotor.destroy
     end
