@@ -107,20 +107,20 @@ ActiveRecord::Schema.define(version: 20161220145520) do
 
   create_table "checklist_nou_terciaris", force: :cascade do |t|
     t.integer  "edifici_id"
-    t.boolean  "llicencies_preceptives"
-    t.boolean  "certificat_final_obra"
-    t.boolean  "acta_recepcio_obra"
-    t.boolean  "escriptura_publica"
-    t.boolean  "documents_garantia"
-    t.boolean  "certificacio_energetica"
-    t.boolean  "polissa_assegurances"
-    t.boolean  "carregues_reals"
-    t.boolean  "documents_complementaris"
-    t.boolean  "documents_acreditatius_ajuts"
-    t.boolean  "documents_justificacio_operacions"
-    t.boolean  "declaracions_ce_ascensors"
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
+    t.boolean  "llicencies_preceptives",            default: true
+    t.boolean  "certificat_final_obra",             default: true
+    t.boolean  "acta_recepcio_obra",                default: true
+    t.boolean  "escriptura_publica",                default: true
+    t.boolean  "documents_garantia",                default: true
+    t.boolean  "certificacio_energetica",           default: true
+    t.boolean  "polissa_assegurances",              default: true
+    t.boolean  "carregues_reals",                   default: true
+    t.boolean  "documents_complementaris",          default: true
+    t.boolean  "documents_acreditatius_ajuts",      default: true
+    t.boolean  "documents_justificacio_operacions", default: true
+    t.boolean  "declaracions_ce_ascensors",         default: true
+    t.datetime "created_at",                                       null: false
+    t.datetime "updated_at",                                       null: false
   end
 
   create_table "checklist_nou_unifamiliars", force: :cascade do |t|
