@@ -218,6 +218,42 @@ class DocumentsController < ApplicationController
     end
   end
 
+  def exporta_xml
+    @referencies = @edifici.referencies
+    #@operacions = Hash.new
+    #referencies.each do |ref|
+    #  op = Operacio.find(ref.operacio_id)
+    #  @operacions << op
+    #end
+    respond_to do |format|
+      format.xml do
+        builder = Nokogiri::XML::Builder.new(:encoding => 'UTF-8') do |xml|
+          xml.edifici {
+            xml.app "Llibre edifici"
+            xml.edifici_id @edifici.id
+            @referencies.each do |ref|
+              operacio = Operacio.find(ref.operacio_id)
+              xml.operacio {
+                xml.descripcio_ca operacio.descripcio_ca
+                xml.descripcio_es operacio.descripcio_es
+                xml.periodicitat operacio.periodicitat
+                xml.periodicitat_text_ca operacio.periodicitat_text_ca
+                xml.periodicitat_text_es operacio.periodicitat_text_es
+                xml.document_referencia operacio.document_referencia
+                xml.responsable_ca operacio.responsable_ca
+                xml.obligatorietat operacio.obligatorietat
+                xml.manual_habitatge operacio.manual_habitatge
+                xml.creat_usuari operacio.creat_usuari
+                xml.sistema operacio.sistema
+              }
+            end
+          }
+        end
+        send_data builder.to_xml, filename: "#{@edifici.nom_edifici}.xml"
+      end
+    end
+  end
+
   private
 
     def set_edifici

@@ -1489,11 +1489,13 @@ ca:
       generar_manual_pdf: "Generar el Manual de l'habitatge"
       generar_manual_manteniment: "Generar el Manual d'ús i manteniment"
       generar_calendari: "Generar el Calendari de manteniment"
+      exportar_operacions: "Exportar operacions"
       text_configurar_document: "Abans de generar el document heu d'indicar qui signa el llibre de l'edifici i configurar quins són els apartats que han d'aparèixer a l'Arxiu de documents."
       text_generar_llibre: "Quan cliqueu el botó 'Generar el Llibre de l'edifici' en breus instants es generarà el document en format PDF i començarà la descàrrega."
       text_generar_manual: "En els edificis plurifamiliars de nova construcció cal crear el Manual de l'habitatge. Aquest document està destinat als diferents propietaris per a que puguin conèixer, de manera individualitzada, les dades que corresponen al seu habitatge."
       text_generar_manual_manteniment: "El Manual d'ús i manteniment especifica les instruccions d'ús i les operacions de manteniment necessàries per allargar la vida de l'edifici."
       text_generar_calendari: "El Calendari de manteniment detalla les operacions de manteniment que cal fer cada any, segons la periodicitat de les operacions indicades al Manual d'ús i manteniment."
+      text_generar_xml: "Exporteu les operacions de manteniment en format XML."
   signatura_promotors:
     form:
       guardar: "Guardar"

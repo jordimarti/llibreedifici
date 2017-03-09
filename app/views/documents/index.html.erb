@@ -37,7 +37,6 @@
 							<a href="documents/manual_habitatge_pdf?locale=es" class="button small radius"><%= t('.generar_manual_pdf') %></a>
 						<% end %>
 						<p><%= t('.text_generar_manual') %></p>
-						
 					</div>
 				</div>
 			</div>
@@ -56,6 +55,11 @@
 						<% end %>
 						<p><%= t('.text_generar_calendari') %></p>	
 						
+					</div>
+					<div class="medium-6 columns">
+						<%= image_tag('document_xml.png', :alt => t('.exportar_operacions'), :class => 'imatge-document') %>
+						<%= link_to t('.exportar_operacions'), exporta_xml_path(:edifici_id => @edifici.id, :format => :xml), :class => 'button small radius'  %>
+						<p><%= t('.text_generar_xml') %></p>	
 					</div>
 				</div>
 			</div>
@@ -194,7 +198,6 @@
 							<a href="documents/calendari_manteniment.docx?locale=es" class="button small radius"><%= t('.generar_calendari') %></a>
 						<% end %>
 						<p><%= t('.text_generar_calendari') %></p>	
-
 					</div>
 				</div>
 			</div>

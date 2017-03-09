@@ -27,6 +27,8 @@ Rails.application.routes.draw do
   get 'edificis/:edifici_id/documents/vista_pdf_header', to: 'documents#vista_pdf_header', :as => :vista_pdf_header
   get 'edificis/:edifici_id/documents/vista_pdf_footer', to: 'documents#vista_pdf_footer', :as => :vista_pdf_footer
 
+  get 'edificis/:edifici_id/documents/exporta_xml', to: 'documents#exporta_xml', :as => :exporta_xml
+
   get 'edificis/:edifici_id/sistemes/afegir_sistema', to: 'sistemes#afegir_sistema', :as => :afegir_sistema
   get 'edificis/:edifici_id/referencies/crear_llistat', to: 'referencies#crear_llistat', :as => :crear_llistat
   get 'edificis/:edifici_id/referencies/calendari', to: 'referencies#calendari', :as => :calendari
