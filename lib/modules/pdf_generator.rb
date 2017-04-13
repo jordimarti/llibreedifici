@@ -21,6 +21,28 @@ module PdfGenerator
     elements_usuari.each do |element_usuari|
       llistat_elements = llistat_elements + '<li>' + element_usuari.nom_element + '</li>'
     end
+    #A estructura hi ha les sobrecàrregues
+    if sistema_usuari == 'estructura' && @edifici.estructura.sobrecarregues_habitatges != nil
+      llistat_elements = llistat_elements + '<li>Sobrecàrregues admissibles en habitatges: ' + @edifici.estructura.sobrecarregues_habitatges.to_s + ' kg/m<sup>2</sup></li>'
+    end
+    if sistema_usuari == 'estructura' && @edifici.estructura.sobrecarregues_zones_comuns != nil
+      llistat_elements = llistat_elements + '<li>Sobrecàrregues admissibles en zones comuns: ' + @edifici.estructura.sobrecarregues_zones_comuns.to_s + ' kg/m<sup>2</sup></li>'
+    end
+    if sistema_usuari == 'estructura' && @edifici.estructura.sobrecarregues_coberta_inclinada != nil
+      llistat_elements = llistat_elements + '<li>Sobrecàrregues admissibles en coberta inclinada: ' + @edifici.estructura.sobrecarregues_coberta_inclinada.to_s + ' kg/m<sup>2</sup></li>'
+    end
+    if sistema_usuari == 'estructura' && @edifici.estructura.sobrecarregues_coberta_plana != nil
+      llistat_elements = llistat_elements + '<li>Sobrecàrregues admissibles en coberta plana: ' + @edifici.estructura.sobrecarregues_coberta_plana.to_s + ' kg/m<sup>2</sup></li>'
+    end
+    if sistema_usuari == 'estructura' && @edifici.estructura.sobrecarregues_locals != nil
+      llistat_elements = llistat_elements + '<li>Sobrecàrregues admissibles en locals: ' + @edifici.estructura.sobrecarregues_locals.to_s + ' kg/m<sup>2</sup></li>'
+    end
+    if sistema_usuari == 'estructura' && @edifici.estructura.sobrecarregues_garatges != nil
+      llistat_elements = llistat_elements + '<li>Sobrecàrregues admissibles en garatges: ' + @edifici.estructura.sobrecarregues_garatges.to_s + ' kg/m<sup>2</sup></li>'
+    end
+    if sistema_usuari == 'estructura' && @edifici.estructura.sobrecarregues_trasters != nil
+      llistat_elements = llistat_elements + '<li>Sobrecàrregues admissibles en trasters: ' + @edifici.estructura.sobrecarregues_trasters.to_s + ' kg/m<sup>2</sup></li>'
+    end
     #Tanquem el llistat
     llistat_elements = llistat_elements + '</ul><div class="salt-pagina"></div>'
     return llistat_elements
