@@ -43,6 +43,13 @@ module PdfGenerator
     if sistema_usuari == 'estructura' && @edifici.estructura.sobrecarregues_trasters != nil
       llistat_elements = llistat_elements + '<li>Sobrecàrregues admissibles en trasters: ' + @edifici.estructura.sobrecarregues_trasters.to_s + ' kg/m<sup>2</sup></li>'
     end
+    #A tancaments hi ha les sobrecàrregues
+    if sistema_usuari == 'tancaments' && @edifici.tancaments_vertical.sobrecarrega_repartida_balco != nil
+      llistat_elements = llistat_elements + '<li>Sobrecàrrega repartida del balcó: ' + @edifici.tancaments_vertical.sobrecarrega_repartida_balco.to_s + ' kg/m<sup>2</sup></li>'
+    end
+    if sistema_usuari == 'tancaments' && @edifici.tancaments_vertical.sobrecarrega_linial_vora_balco != nil
+      llistat_elements = llistat_elements + '<li>Sobrecàrrega linial actuant en la vora de la balconada: ' + @edifici.tancaments_vertical.sobrecarrega_linial_vora_balco.to_s + ' kg/m<sup>2</sup></li>'
+    end
     #Tanquem el llistat
     llistat_elements = llistat_elements + '</ul><div class="salt-pagina"></div>'
     return llistat_elements
