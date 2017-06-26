@@ -38,6 +38,16 @@ es:
           attributes:
             periodicitat:
               blank: "Se debe definir la periodicidad en años"
+        usuari_factura:
+          attributes:
+            nif:
+              invalid: "El formato del NIF debe ser 00000000X"
+              blank: "Es necesario escribir el NIF"
+        empresa_factura:
+          attributes:
+            nif:
+              invalid: "El formato del NIF debe ser 00000000X"
+              blank: "Es necesario escribir el NIF"
   layouts:
     navigation:
       titol: "Libro del edificio"

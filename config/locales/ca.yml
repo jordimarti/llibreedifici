@@ -38,6 +38,16 @@ ca:
           attributes:
             periodicitat:
               blank: "Cal definir la periodicitat en anys"
+        usuari_factura:
+          attributes:
+            nif:
+              invalid: "El format del NIF ha de ser 00000000X"
+              blank: "Cal posar el NIF"
+        empresa_factura:
+          attributes:
+            nif:
+              invalid: "El format del NIF ha de ser 00000000X"
+              blank: "Cal posar el NIF"
   layouts:
     navigation:
       titol: "Llibre de l'edifici"
