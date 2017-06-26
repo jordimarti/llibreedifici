@@ -41,12 +41,12 @@ ca:
         usuari_factura:
           attributes:
             nif:
-              invalid: "El format del NIF ha de ser 00000000X"
+              invalid: "El format del NIF ha de ser 00000000X, sense espais ni guions"
               blank: "Cal posar el NIF"
         empresa_factura:
           attributes:
             nif:
-              invalid: "El format del NIF ha de ser 00000000X"
+              invalid: "El format del NIF ha de ser 00000000X, sense espais ni guions"
               blank: "Cal posar el NIF d'empresa"
   layouts:
     navigation:

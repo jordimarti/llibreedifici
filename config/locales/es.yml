@@ -41,12 +41,12 @@ es:
         usuari_factura:
           attributes:
             nif:
-              invalid: "El formato del NIF debe ser 00000000X"
+              invalid: "El formato del NIF debe ser 00000000X, sin espacios ni guiones"
               blank: "Es necesario escribir el NIF"
         empresa_factura:
           attributes:
             nif:
-              invalid: "El formato del NIF debe ser 00000000X"
+              invalid: "El formato del NIF debe ser 00000000X, sin espacios ni guiones"
               blank: "Es necesario escribir el NIF de empresa"
   layouts:
     navigation:
