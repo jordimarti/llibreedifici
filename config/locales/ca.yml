@@ -165,6 +165,7 @@ ca:
       titol: "Pagament del projecte"
       explicacio: "Per crear un projecte cal realitzar un pagament de 42,96€ (35,50€ + IVA)."
       explicacio2: "Selecciona si voldràs una factura al teu nom o a nom d'empresa."
+      explicacio3: "Escriu el NIF sense espais o guions (-)."
       factura_personal: "Factura personal"
       factura_empresa: "Factura empresa"
       imatge_llibre: "Preu llibre edifici"
