@@ -47,7 +47,7 @@ es:
           attributes:
             nif:
               invalid: "El formato del NIF debe ser 00000000X"
-              blank: "Es necesario escribir el NIF"
+              blank: "Es necesario escribir el NIF de empresa"
   layouts:
     navigation:
       titol: "Libro del edificio"
@@ -150,6 +150,7 @@ es:
       titol: "Pago del proyecto"
       explicacio: "Para crear un proyecto debes realizar un pago de 42,96€ (35,50€ + IVA)."
       explicacio2: "Selecciona si quieres una factura a tu nombre o a nombre de empresa."
+      explicacio3: "Escribe el NIF sin espacios ni guiones (-)"
       factura_personal: "Factura personal"
       factura_empresa: "Factura empresa"
       imatge_llibre: "Precio libro edificio"

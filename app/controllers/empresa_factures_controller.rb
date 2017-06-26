@@ -26,6 +26,12 @@ class EmpresaFacturesController < ApplicationController
   # POST /empresa_factures.json
   def create
     @empresa_factura = EmpresaFactura.new(empresa_factura_params)
+    if @empresa_factura.save
+
+    else
+      redirect_to validar_dades_path(@edifici.id), flash: { error: @empresa_factura.errors.messages }
+      return
+    end
     # Guardem el NIF introduït
     nou_nif = @empresa_factura.nif
     # Comprovem si existeix l'empresa a la base de dades
