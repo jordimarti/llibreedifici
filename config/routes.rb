@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :element_predefinits
   resources :operacions
   resources :sistemes
+  get 'edificis/llistat_edificis', to: 'edificis#llistat_edificis', :as => :llistat_edificis
   get 'edificis/:id/duplicate', to: 'edificis#duplicate', :as => :duplicate
   get 'edificis/:edifici_id/agents', to: 'agents#index', :as => :agents
   get 'edificis/:edifici_id/dades', to: 'dades#index', :as => :dades

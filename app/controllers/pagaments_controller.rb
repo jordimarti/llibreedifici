@@ -7,7 +7,7 @@ class PagamentsController < ApplicationController
   # GET /pagaments
   # GET /pagaments.json
   def index
-    @pagaments = Pagament.all
+    @pagaments = Pagament.where(pagat: true)
   end
 
   # GET /pagaments/1

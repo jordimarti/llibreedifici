@@ -9,8 +9,8 @@
       <th>Edifici</th>
       <th>Numorder</th>
       <th>Import</th>
-      <th>Codi retorn</th>
-      <th>Codi autoritzacio</th>
+      <th>Pagat</th>
+      <th>Data</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,11 +22,8 @@
         <td><%= pagament.edifici_id %></td>
         <td><%= pagament.numorder %></td>
         <td><%= pagament.import %></td>
-        <td><%= pagament.codi_retorn %></td>
-        <td><%= pagament.codi_autoritzacio %></td>
-        <td><%= link_to 'Show', pagament %></td>
-        <td><%= link_to 'Edit', edit_pagament_path(pagament) %></td>
-        <td><%= link_to 'Destroy', pagament, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= pagament.pagat %></td>
+        <td><%= pagament.created_at %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +31,3 @@
 
 <br>
 
-<%= link_to 'New Pagament', new_pagament_path %>

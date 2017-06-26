@@ -40,6 +40,10 @@ class EdificisController < ApplicationController
     end
   end
 
+  def llistat_edificis
+    @edificis = Edifici.all
+  end
+
   
 
   def create_complements(edifici_id)
