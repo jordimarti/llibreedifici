@@ -48,6 +48,7 @@ class UsuariFacturesController < ApplicationController
     @usuari_factura.email = dades[:get_usuario_response][:param_usuario][:email]
     @usuari_factura.num_client = dades[:get_usuario_response][:param_usuario][:numcliente]
     @usuari_factura.colegiat = dades[:get_usuario_response][:param_usuario][:escolegiado]
+    @usuari_factura.save
     if @usuari_factura.nif
       redirect_to edifici_usuari_factura_path(id: @usuari_factura.id)
     else
