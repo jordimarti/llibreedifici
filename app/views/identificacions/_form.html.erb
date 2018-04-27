@@ -1,3 +1,13 @@
+<% 
+if I18n.locale == :es
+  tipus_via = ['Avenida', 'Calle', 'Carretera', 'Paseo', 'Pasaje', 'Plaza', 'Rambla', 'Ronda']
+  origen = ['Cadastro', 'Archivo administrativo', 'Documentación propiedad']
+else
+  tipus_via = ['Avinguda', 'Carrer', 'Carretera', 'Passeig', 'Passatge', 'Plaça', 'Rambla', 'Ronda']
+  origen = ['Cadastre', 'Arxiu administratiu', 'Documentació propietat']
+end 
+%>
+
 <%= simple_form_for [@edifici, @identificacio], :html => { :multipart => true } do |f| %>
 
   <%= f.error_notification %>
@@ -9,7 +19,7 @@
 
       <div class="row">
         <div class="medium-2 columns">
-          <%= f.input :tipus_via_edifici, collection: ['Avinguda', 'Carrer', 'Carretera', 'Passeig', 'Passatge', 'Plaça', 'Rambla', 'Ronda'] %>
+          <%= f.input :tipus_via_edifici, collection: tipus_via %>
         </div>
         <div class="medium-6 columns">
           <%= f.input :via_edifici %>
@@ -55,7 +65,7 @@
                 <%= f.input :any_fi_construccio %>
               </div>
               <div class="medium-6 columns end">
-                <%= f.input :origen_any_construccio, collection: ['Cadastre', 'Arxiu administratiu', 'Documentació propietat'] %>
+                <%= f.input :origen_any_construccio, collection: origen %>
               </div>
             </div>
           <% end %>
