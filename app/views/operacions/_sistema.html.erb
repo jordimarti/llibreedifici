@@ -55,12 +55,28 @@
               <% operacio = Operacio.find(referencia.operacio_id) %>
               <tr>
                 <% if params[:locale] == 'ca' %> 
-                  <td><%= operacio.descripcio_ca %></td>
+                  <td>
+                  <% if operacio.creat_usuari == true %>
+                    <%= link_to edit_operacio_path(operacio) do %>
+                      <%= operacio.descripcio_ca %>
+                    <% end %>
+                  <% else %>
+                    <%= operacio.descripcio_ca %>
+                  <% end %>
+                  </td>
                   <td><%= operacio.periodicitat_text_ca %></td>
                   <td><%= operacio.document_referencia %></td>
                   <td><%= operacio.responsable_ca %></td>
                 <% elsif params[:locale] == 'es' %>
-                  <td><%= operacio.descripcio_es %></td>
+                  <td>
+                  <% if operacio.creat_usuari == true %>
+                    <%= link_to edit_operacio_path(operacio) do %>
+                      <%= operacio.descripcio_es %>
+                    <% end %>
+                  <% else %>
+                    <%= operacio.descripcio_es %>
+                  <% end %>
+                  </td>
                   <td><%= operacio.periodicitat_text_es %></td>
                   <td><%= operacio.document_referencia %></td>
                   <td><%= operacio.responsable_es %></td>

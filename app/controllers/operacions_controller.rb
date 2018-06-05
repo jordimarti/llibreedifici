@@ -78,7 +78,9 @@ class OperacionsController < ApplicationController
   def update
     respond_to do |format|
       if @operacio.update(operacio_params)
-        format.html { redirect_to @operacio, notice: 'Operacio was successfully updated.' }
+        referencia = Referencia.where(operacio_id: @operacio.id).last
+        edifici_id = referencia.edifici_id
+        format.html { redirect_to edifici_referencies_path(:edifici_id => edifici_id) }
         format.json { render :show, status: :ok, location: @operacio }
       else
         format.html { render :edit }
