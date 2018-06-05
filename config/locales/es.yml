@@ -1420,6 +1420,8 @@ es:
       responsable: "Responsable"
     new:
       titol_nova_operacio: "Nueva operación de mantenimiento"
+    edit:
+      editar_operacio: "Editar operación de mantenimiento"
     form:
       guardar: "Guardar"
   referencies:

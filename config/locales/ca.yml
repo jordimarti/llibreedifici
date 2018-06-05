@@ -1420,6 +1420,8 @@ ca:
       responsable: "Responsable"
     new:
       titol_nova_operacio: "Nova operació de manteniment"
+    edit:
+      editar_operacio: "Editar operació de manteniment"
     form:
       guardar: "Guardar"
   referencies:
