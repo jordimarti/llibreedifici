@@ -38,6 +38,10 @@ ca:
           attributes:
             periodicitat:
               blank: "Cal definir la periodicitat en anys"
+            periodicitat_text_ca:
+              blank: "Cal escriure la periodicitat en text, per exemple 5 anys"
+            descripcio_ca:
+              blank: "Cal escriure una descripció de l'operació de manteniment"
         usuari_factura:
           attributes:
             nif:

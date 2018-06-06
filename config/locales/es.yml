@@ -38,6 +38,10 @@ es:
           attributes:
             periodicitat:
               blank: "Se debe definir la periodicidad en años"
+            periodicitat_text_es:
+              blank: "Es necesario escribir la periodicidad en texto, por ejemplo 5 años"
+            descripcio_es:
+              blank: "Es necesario escribir una descripción de la operación de mantenimiento"
         usuari_factura:
           attributes:
             nif:
