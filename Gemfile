@@ -52,6 +52,7 @@ gem 'savon'
 gem 'httparty'
 gem 'puma'
 gem 'mandrill-api', '~> 1.0', '>= 1.0.53'
+gem 'sprockets', '~> 3.7.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
