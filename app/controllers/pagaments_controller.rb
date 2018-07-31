@@ -39,7 +39,7 @@ class PagamentsController < ApplicationController
     @pagament.edifici_id = params[:edifici_id]
     @pagament.numorder = numorder(params[:edifici_id])
     @pagament.import = "42,96"
-    @pagament.pagat = false
+    @pagament.pagat = true
     titular = current_user.name
     url_pagament = 'http://isis.apabcn.cat/LibroEdificio/pagoVisa.aspx?titular=' + titular + '&importe=' + @pagament.import + '&numorder=' + @pagament.numorder.to_s + '&descripcion=llibreedifici&urlresponse=http://llibreedifici.apabcn.cat/pagaments/update_pagament'
     #http://isis.apabcn.cat/LibroEdificio/pagoVisa.aspx?titular=Titular&importe=42,96&numorden=110000000101&descripcion=llibreedifici&urlresponse=http://llibreedifici.apabcn.cat/pagaments/update_pagament
