@@ -159,7 +159,7 @@ class PagamentsController < ApplicationController
 
   def llistat_pagaments
     if user_signed_in?
-      if current_user.id == 1
+      if current_user.id == 1 || current_user.id == 1608
         @pagaments = Pagament.order(created_at: :desc).first(100)
       else
         redirect_to home_permisos_path
