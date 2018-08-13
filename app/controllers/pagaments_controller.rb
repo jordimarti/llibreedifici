@@ -157,6 +157,24 @@ class PagamentsController < ApplicationController
 
   end
 
+  def llistat_pagaments
+    if user_signed_in?
+      if current_user.id == 1
+        @pagaments = Pagament.order(created_at: :desc).first(100)
+      else
+        redirect_to home_permisos_path
+      end
+    else
+      redirect_to home_permisos_path
+    end
+  end
+
+  def detall_pagament
+    @pagament = Pagament.find(params[:id])
+    @usuari_factura = UsuariFactura.where(edifici_id: @pagament.edifici_id).last
+    @empresa_factura = EmpresaFactura.where(edifici_id: @pagament.edifici_id).last
+  end
+
   # DELETE /pagaments/1
   # DELETE /pagaments/1.json
   def destroy

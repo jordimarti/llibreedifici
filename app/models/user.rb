@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :edificis
+  has_many :pagaments
 	after_create :subscribe
 
 	validates :first_name, :presence => true

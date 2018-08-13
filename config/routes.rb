@@ -104,7 +104,8 @@ Rails.application.routes.draw do
   devise_for :users
   
   
-  
+  get 'pagaments/llistat_pagaments'
+  get 'pagaments/detall_pagament'
   
   
   
