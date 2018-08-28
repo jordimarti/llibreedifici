@@ -58,6 +58,69 @@
    </tbody>
 </table>
 
+<table class="taula-dades">
+  <thead>
+    <th></th>
+    <th>Fecha</th>
+    <th>Número de expediente</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="titol-taula">Licencia municipal de obras</span></td>
+      <td><%= @edifici.identificacio.data_llicencia_municipal %></td>
+      <td><%= @edifici.identificacio.num_llicencia_municipal %></td>
+    </tr>
+    <tr>
+      <td><span class="titol-taula">Licencia de primera ocupación</span></td>
+      <td><%= @edifici.identificacio.data_llicencia_primera_ocupacio %></td>
+      <td><%= @edifici.identificacio.num_llicencia_primera_ocupacio %></td>
+    </tr>
+    <tr>
+      <td><span class="titol-taula">Licencia de actividades del párquing</span></td>
+      <td><%= @edifici.identificacio.data_llicencia_activitats_parquing %></td>
+      <td><%= @edifici.identificacio.num_llicencia_activitats_parquing %></td>
+    </tr>
+    <tr>
+      <td><span class="titol-taula">Calificación provisional VPO</span></td>
+      <td><%= @edifici.identificacio.data_qualificacio_provisional_vpo %></td>
+      <td><%= @edifici.identificacio.num_qualificacio_provisional_vpo %></td>
+    </tr>
+    <tr>
+      <td><span class="titol-taula">Calificación definitiva VPO</span></td>
+      <td><%= @edifici.identificacio.data_qualificacio_definitiva_vpo %></td>
+      <td><%= @edifici.identificacio.num_qualificacio_definitiva_vpo %></td>
+    </tr>
+    <tr>
+      <td><span class="titol-taula">Escrituras</span></td>
+      <td><%= @edifici.identificacio.data_escriptures %></td>
+      <td><%= @edifici.identificacio.num_protocol_escriptures %></td>
+    </tr>
+   </tbody>
+</table>
+
+<div class="salt-pagina"></div>
+<p>Inscripción registral de la declaración de obra nueva</p>
+<table class="taula-dades">
+  <thead>
+    <th>Fecha</th>
+    <th>Tomo</th>
+    <th>Folio</th>
+    <th>Libro</th>
+    <th>Núm. Finca</th>
+    <th>Registro</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @edifici.identificacio.data_declaracio_obra_nova %></td>
+      <td><%= @edifici.identificacio.tom_inscripcio_registral %></td>
+      <td><%= @edifici.identificacio.foli_inscripcio_registral %></td>
+      <td><%= @edifici.identificacio.llibre_inscripcio_registral %></td>
+      <td><%= @edifici.identificacio.finca_inscripcio_registral %></td>
+      <td><%= @edifici.identificacio.registre_de_inscripcio_registral %></td>
+    </tr>
+  </tbody>
+</table>
+
 <div class="espaiador"></div>
 <p class="titol-taula">Observaciones:</p>
 <p><%= @edifici.identificacio.observacions %></p>
