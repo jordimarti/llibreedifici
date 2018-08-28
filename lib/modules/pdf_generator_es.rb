@@ -240,7 +240,7 @@ module PdfGeneratorEs
     return '<w:p w14:paraId="1503826F" w14:textId="77777777" w:rsidR="0020580C" w:rsidRDefault="0020580C" w:rsidP="0020580C"><w:r><w:t xml:space="preserve">Els terrats i les </w:t></w:r><w:bookmarkStart w:id="0" w:name="_GoBack"/><w:bookmarkEnd w:id="0"/><w:r><w:t>terrasses</w:t></w:r><w:r><w:t xml:space="preserve"> s’han de mantenir netes i sense herbes, especialment les buneres, les canals i els aiguafons. És preferible no col·locar jardineres a prop dels desguassos o bé que estiguin elevades del sòl per permetre el pas de l’aigua.</w:t></w:r></w:p><w:p w14:paraId="42AFA036" w14:textId="77777777" w:rsidR="0020580C" w:rsidRDefault="0020580C" w:rsidP="0020580C"/><w:p w14:paraId="66A200D2" w14:textId="77777777" w:rsidR="0020580C" w:rsidRDefault="0020580C" w:rsidP="0020580C"><w:r><w:t>Aquest tipus de coberta només ha d’utilitzar-se per a l’ús a què hagi estat projectada. En aquest sentit, s’evitarà l’emmagatzematge de materials, mobles, etc., i l’abocament de productes químics agressius com ara olis, dissolvents o lleixiu.</w:t></w:r></w:p><w:p w14:paraId="700663E2" w14:textId="77777777" w:rsidR="0020580C" w:rsidRDefault="0020580C" w:rsidP="0020580C"/><w:p w14:paraId="4032CF03" w14:textId="77777777" w:rsidR="0020580C" w:rsidRDefault="0020580C" w:rsidP="0020580C"><w:r><w:t>Si a la coberta s’hi instal·len noves antenes, equips d’aire condicionat o, en general, aparells que requereixin ser fixats, la subjecció no ha d’afectar la impermeabilització.</w:t></w:r></w:p><w:p w14:paraId="783C6DF1" w14:textId="77777777" w:rsidR="0020580C" w:rsidRDefault="0020580C" w:rsidP="0020580C"/><w:p w14:paraId="4152BE2C" w14:textId="77777777" w:rsidR="0020580C" w:rsidRDefault="0020580C" w:rsidP="0020580C"><w:r><w:t xml:space="preserve">Tampoc no s’han d’utilitzar com a punts d’ancoratge de tensors, de baranes metàl·liques o d’obra, ni de conductes d’evacuació de fums existents, llevat que el Tècnic de Capçalera ho autoritzi. Si aquestes noves instal·lacions precisen d’un manteniment periòdic, es preveuran al seu entorn les proteccions adequades. </w:t></w:r></w:p><w:p w14:paraId="1E566F22" w14:textId="77777777" w:rsidR="0020580C" w:rsidRDefault="0020580C" w:rsidP="0020580C"/><w:p w14:paraId="74F23A53" w14:textId="77777777" w:rsidR="0020580C" w:rsidRDefault="0020580C" w:rsidP="0020580C"><w:r><w:t xml:space="preserve">En cas que s’observin humitats als pisos sota coberta, caldrà controlar-les, ja que poden tenir un efecte negatiu sobre els elements estructurals. </w:t></w:r></w:p><w:p w14:paraId="0BB46D3A" w14:textId="77777777" w:rsidR="0020580C" w:rsidRDefault="0020580C" w:rsidP="0020580C"/><w:p w14:paraId="23CF1347" w14:textId="77777777" w:rsidR="0020580C" w:rsidRDefault="0020580C" w:rsidP="0020580C"><w:r><w:t xml:space="preserve">Cal procurar, sempre que sigui possible, no caminar per sobre de les cobertes planes no transitables. Quan sigui necessari trepitjar-les s’ha d’anar amb molt de compte per no produir desperfectes. El personal d’inspecció, conservació o reparació estarà proveït de sabates de sola tova. </w:t></w:r></w:p><w:p w14:paraId="5A235007" w14:textId="77777777" w:rsidR="00500DE7" w:rsidRDefault="00500DE7"/>'
   end
 
-  def operacions_pdf_es(sistema)
+  def operacions_pdf_es_old(sistema)
     referencies = Referencia.where(:edifici_id => @edifici.id, :sistema => sistema)
     llistat_operacions = '<div class="espaiador"></div><p class="apartat-sistema">Instrucciones de mantenimiento:</p>'
     referencies.each do |referencia|
@@ -263,6 +263,43 @@ module PdfGeneratorEs
 			  </tbody>
 			</table>
       </div>'			     
+    end
+    return llistat_operacions
+  end
+
+  def operacions_pdf_es(sistema)
+    referencies = Referencia.where(:edifici_id => @edifici.id, :sistema => sistema)
+    llistat_operacions = '<div class="espaiador"></div><p class="apartat-sistema">Instrucciones de mantenimiento:</p>'
+    operacions = Array.new
+    referencies.each do |referencia|
+      operacio = Operacio.find(referencia.operacio_id)
+      operacions.push(operacio)
+    end
+
+    responsables = operacions.map(&:responsable_es)
+    responsables = responsables.uniq
+
+    responsables.each do |responsable|
+      llistat_operacions = llistat_operacions + '<div class="nom-responsable">' + responsable + '</div>
+      <div class="llistat-container">
+        <table class="taula-dades unstriped">
+          <thead>
+            <th>Periodicidad</th>
+            <th>Descripción</th>
+          <tbody>'
+      operacions.each do |operacio|
+        if operacio.responsable_es == responsable
+          llistat_operacions = llistat_operacions + '
+            <tr>
+              <td>' + operacio.periodicitat_text_es + '</td>
+              <td>' + operacio.descripcio_es + '</td>
+            </tr>'     
+        end
+      end
+      llistat_operacions = llistat_operacions + '
+          </tbody>
+        </table>
+      </div>'
     end
     return llistat_operacions
   end
