@@ -87,6 +87,64 @@
    </tbody>
 </table>
 
+<table class="taula-dades">
+  <tbody>
+    <tr>
+      <td><span class="titol-taula">Llicència municipal d'obres</span></td>
+      <td><span class="titol-taula">Data:</span> <%= @edifici.identificacio.data_llicencia_municipal %></td>
+      <td><span class="titol-taula">Número d'expedient:</span> <%= @edifici.identificacio.num_llicencia_municipal %></td>
+    </tr>
+    <tr>
+      <td><span class="titol-taula">Llicència primera ocupació</span></td>
+      <td><span class="titol-taula">Data:</span> <%= @edifici.identificacio.data_llicencia_primera_ocupacio %></td>
+      <td><span class="titol-taula">Número d'expedient:</span> <%= @edifici.identificacio.num_llicencia_primera_ocupacio %></td>
+    </tr>
+    <tr>
+      <td><span class="titol-taula">Llicència d'activitats del pàrquing</span></td>
+      <td><span class="titol-taula">Data:</span> <%= @edifici.identificacio.data_llicencia_activitats_parquing %></td>
+      <td><span class="titol-taula">Número d'expedient:</span> <%= @edifici.identificacio.num_llicencia_activitats_parquing %></td>
+    </tr>
+    <tr>
+      <td><span class="titol-taula">Qualificació provisional VPO</span></td>
+      <td><span class="titol-taula">Data:</span> <%= @edifici.identificacio.data_qualificacio_provisional_vpo %></td>
+      <td><span class="titol-taula">Número d'expedient:</span> <%= @edifici.identificacio.num_qualificacio_provisional_vpo %></td>
+    </tr>
+    <tr>
+      <td><span class="titol-taula">Qualificació definitiva VPO</span></td>
+      <td><span class="titol-taula">Data:</span> <%= @edifici.identificacio.data_qualificacio_definitiva_vpo %></td>
+      <td><span class="titol-taula">Número d'expedient:</span> <%= @edifici.identificacio.num_qualificacio_definitiva_vpo %></td>
+    </tr>
+    <tr>
+      <td><span class="titol-taula">Escriptures</span></td>
+      <td><span class="titol-taula">Data:</span> <%= @edifici.identificacio.data_escriptures %></td>
+      <td><span class="titol-taula">Número d'expedient:</span> <%= @edifici.identificacio.num_protocol_escriptures %></td>
+    </tr>
+   </tbody>
+</table>
+
+<p>Inscripció registral de la declaració d'obra nova</p>
+<table class="taula-dades">
+  <thead>
+    <th>Data</th>
+    <th>Tom</th>
+    <th>Foli</th>
+    <th>Llibre</th>
+    <th>Núm. Finca</th>
+    <th>Registre</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @edifici.identificacio.data_declaracio_obra_nova %></td>
+      <td><%= @edifici.identificacio.tom_inscripcio_registral %></td>
+      <td><%= @edifici.identificacio.foli_inscripcio_registral %></td>
+      <td><%= @edifici.identificacio.llibre_inscripcio_registral %></td>
+      <td><%= @edifici.identificacio.finca_inscripcio_registral %></td>
+      <td><%= @edifici.identificacio.registre_de_inscripcio_registral %></td>
+    </tr>
+  </tbody>
+</table>
+
+
 <div class="espaiador"></div>
 <p class="titol-taula">Observacions:</p>
 <p><%= @edifici.identificacio.observacions %></p>
