@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161220145520) do
+ActiveRecord::Schema.define(version: 20180827162057) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,29 +62,6 @@ ActiveRecord::Schema.define(version: 20161220145520) do
     t.string   "document_carrega"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-  end
-
-  create_table "checklist_edifici_nou_plurifamiliars", force: :cascade do |t|
-    t.integer  "edifici_id"
-    t.boolean  "llicencies_preceptives"
-    t.boolean  "certificat_final_obra"
-    t.boolean  "acta_recepcio_obra"
-    t.boolean  "escriptura_publica"
-    t.boolean  "documents_garantia"
-    t.boolean  "documents_garantia_parts_comunes"
-    t.boolean  "certificacio_energetica"
-    t.boolean  "polissa_assegurances"
-    t.boolean  "escriptura_propietat_horitzontal"
-    t.boolean  "estatus_comunitat"
-    t.boolean  "cedules_regims_juridics"
-    t.boolean  "carregues_reals"
-    t.boolean  "documents_complementaris"
-    t.boolean  "documents_acreditatius_ajuts"
-    t.boolean  "documents_justificacio_operacions"
-    t.boolean  "certificat_final_obra_instalacions"
-    t.boolean  "declaracions_ce_ascensors"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
   end
 
   create_table "checklist_existent_plurifamiliars", force: :cascade do |t|
@@ -590,8 +567,8 @@ ActiveRecord::Schema.define(version: 20161220145520) do
     t.text     "observacions"
     t.string   "nom_empresa"
     t.string   "adreca_empresa"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.string   "planol_emplacament_file_name"
     t.string   "planol_emplacament_content_type"
     t.integer  "planol_emplacament_file_size"
@@ -604,6 +581,30 @@ ActiveRecord::Schema.define(version: 20161220145520) do
     t.string   "logo_empresa_content_type"
     t.integer  "logo_empresa_file_size"
     t.datetime "logo_empresa_updated_at"
+    t.string   "data_llicencia_municipal"
+    t.string   "num_llicencia_municipal"
+    t.string   "data_finalitzacio_obres"
+    t.string   "visat_finalitzacio_obres"
+    t.string   "data_recepcio_definitiva"
+    t.string   "visat_recepcio_definitiva"
+    t.string   "data_llicencia_primera_ocupacio"
+    t.string   "num_llicencia_primera_ocupacio"
+    t.string   "data_llicencia_activitats_parquing"
+    t.string   "num_llicencia_activitats_parquing"
+    t.string   "data_qualificacio_provisional_vpo"
+    t.string   "num_qualificacio_provisional_vpo"
+    t.string   "data_qualificacio_definitiva_vpo"
+    t.string   "num_qualificacio_definitiva_vpo"
+    t.string   "nom_notari"
+    t.text     "adreca_notari"
+    t.string   "data_escriptures"
+    t.string   "num_protocol_escriptures"
+    t.string   "data_declaracio_obra_nova"
+    t.string   "tom_inscripcio_registral"
+    t.string   "foli_inscripcio_registral"
+    t.string   "llibre_inscripcio_registral"
+    t.string   "finca_inscripcio_registral"
+    t.string   "registre_de_inscripcio_registral"
   end
 
   create_table "iites", force: :cascade do |t|

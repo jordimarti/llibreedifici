@@ -73,7 +73,7 @@ h2.subtitol-document {
 	border: none;
 	border-bottom: 1px solid #CCCCCC;
 	width: 100%;
-	margin-bottom: 0px;
+	margin-bottom: 50px;
 }
 
 .taula-dades-final {
@@ -118,4 +118,9 @@ span.label-signatura {
 span.avis-signatura {
 	font-style: oblique;
 	font-size: 0.9em;
+}
+
+.nom-responsable {
+	font-weight: bold;
+	font-size: 1em;
 }

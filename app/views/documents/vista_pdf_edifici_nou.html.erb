@@ -21,7 +21,36 @@
 <p>El llibre de l’edifici ha d’estar a disposició de tots els copropietaris de l’edifici.</p>
 <div class="salt-pagina"></div>
 
-<p class="titol-seccio-document">QUADERN DE REGISTRE</p>
+<p class="titol-seccio-document">QUADERN DE REGISTRE DE DADES</p>
+<ol type="a">
+  <li>Dades inicials de l'edifici</li>
+  <ol type="1">
+    <li>Dades d'identificació de la construcció de l'edifici</li>
+    <li>Dades dels agents de l’edificació participants en el procés d’edificació</li>
+    <li>Dades referents a la llicència, la declaració d’obra nova i el règim jurídic de l’edifici</li>
+    <li>Dades referents a les garanties</li>
+    <li>Observacions</li>
+  </ol>
+  <li>Registre d'incidències</li>
+  <ol type="1">
+    <li>Acta de lliurament del llibre de l’edifici dels promotors als adquirents de l’edifici o al president de la comunitat</li>
+    <li>Els canvis de titularitat de la propietat i els canvis en els òrgans de la comunitat de propietaris</li>
+    <li>Les reformes, rehabilitacions i canvis d’ús</li>
+    <li>Dades que modifiquin o complementen les dades inicials de l’edifici</li>
+    <li>Ajuts i beneficis que s’atorguin a l’edifici</li>
+    <li>Assegurances contractades</li>
+    <li>Registre d’incidències</li>
+  </ol>
+  <li>Registre d’operacions de manteniment i reparacions</li>
+  <ol type="1">
+    <li>Operacions de manteniment i de revisió reglamentàriament</li>
+    <li>Operacions de reparació fetes per esmenar vicis i defectes de la construcció i les instal·lacions comunes</li>
+    <li>Obres de millora que es facin per adaptar els edificis a les exigències tecnològiques i de confort</li>
+    <li>Actuacions per garantir la cohesió social, l’accessibilitat, la sostenibilitat, l’ecoeficiència i la innovació</li>
+  </ol>
+</ol>
+
+
 <div class="salt-pagina"></div>
 
 <p class="subtitol-seccio-document">Dades inicials de l'edifici</p>
@@ -92,13 +121,18 @@
 
 <p class="titol-seccio-document">DOCUMENT D'ESPECIFICACIONS TÈCNIQUES</p>
 
-<p>El Document d'Especificacions Tècniques recull els documents següents:
-<ul>
-	<li>Els plànols del projecte de l'edifici amb la incorporació de les seves modificacions aprovades per la direcció facultativa.</li>
-	<li>Esquemes de xarxa d’instal·lacions i sistemes de seguretat</li>
-	<li>El Manual d'Ús i Manteniment de l'edifici</li>
-</ul>
+<p>Els documents d’especificacions tècniques de l’edifici (DET), elaborats i signats per la direcció d’obra, han d’incloure els punts següents: 
 </p>
+<ol type="a">
+  <li><strong>Plànols a escala</strong>, com a mínim 1:100, de les plantes, els alçats i les seccions de l’estat final de l’edifici, amb el detall exigit al projecte d’execució final.</li>
+  <li><strong>Plànols de la fonamentació i de l'estructura</strong>, com a mínim a escala 1:100, amb els corresponents detalls constructius. S’hi ha d’expressar també l’estat de càrregues considerat en el càlcul de l’estructura de l’edifici, el tipus de fonamentació i la tensió de treball considerada pel terreny.</li>
+  <li><strong>Esquemes de les xarxes d’instal·lacions</strong> i dels sistemes de seguretat existents, amb el detall propi que consta en el projecte d’execució final, tant les corresponents a cada habitatge com les comunitàries.</li>
+  <li><strong>Descripció dels productes, equips i sistemes</strong>, així com les solucions emprades en la construcció.</li>
+  <li><strong>Instruccions d’ús i manteniment de l’edifici i les seves instal·lacions</strong> amb èmfasi especial de l’estructura, la coberta, els tancaments exteriors, el sistema d’evacuació i les instal·lacions i els elements d’accessibilitat.</li>
+  <li><strong>Els documents que substitueixin, modifiquin o ampliïn el DET</strong> com a resultat d’incidències produïdes.</li>
+  <li><strong>Les recomanacions genèriques per a emergències en cas d’incendi</strong> fuita d’aigua, i fuita de gas, i també les específiques conforme als diferents equips, sistemes i instal·lacions de protecció contra incendis disponibles a l’edifici.</li>
+</ol>
+
 <div class="salt-pagina"></div>
 
 <p class="subtitol-seccio-document">Plànols de l'edifici</p>
@@ -233,31 +267,30 @@
 <div class="salt-pagina"></div>
 <p class="titol-seccio-document">ARXIU DE DOCUMENTS</p>
 
-<p>L’arxiu de documents consta d’una carpeta i d'una relació de tots els documents que s’hi guarden. Aquests seran els següents:</p>
+<p>A l’arxiu hi han de constar els documents següents:</p>
 <ul>
-<li>Llicències preceptives </li>
-<li>Certificat de final d’obra </li>
-<li>Acta de recepció definitiva de l’obra</li>
-<li>Escriptura pública de declaració d’obra nova</li>
-<li>Documents acreditatius de garantia</li>
+<li>Les llicències preceptives.</li>
+<li>El certificat de final d’obra i els seus annexos pertinents segons el CTE, inclosos les instal·lacions de l’edifici.</li>
+<li>L'acta de recepció definitiva de l’obra</li>
+<li>L’escriptura pública de declaració d’obra nova, d’acord amb la LOE.</li>
+<li>Els documents acreditatius de la garantia atorgada pels promotors que cobreixi la reparació dels defectes de la construcció i els danys que en deriven directament sobre l’habitatge.</li>
 <% if @edifici.tipus_edifici == "nou_plurifamiliar" %>
-  <li>Documents de garantia d’instal·lacions de parts comunes</li>
+  <li>Els documents de la garantia d’instal·lacions de les parts comunes de l’edifici.</li>
 <% end %>
-<li>Certificació energètica</li>
-<li>Pòlisses d’assegurances</li>
+<li>La certificació energètica de l’edifici de l’obra acabada.</li>
+<li>Les pòlisses d’assegurances que afectin la globalitat de l’edifici o les seves parts comunes.</li>
 <% if @edifici.tipus_edifici == "nou_plurifamiliar" %>
-  <li>Escriptura de divisió en règim de propietat horitzontal</li>
-  <li>Estatuts de la comunitat de propietaris</li>
-  <li>Cèdules de declaració de règims jurídics especials o qualificacions d’habitatges protegits</li>
+  <li>L’escriptura de divisió en règim de propietat horitzontal i els estatus de la comunitat de propietaris, si escau.</li>
+  <li>Les cèdules de declaració de règims jurídics especials o les qualificacions d’habitatges de protecció oficial.</li>
 <% end %>
-<li>Càrregues reals existents</li>
-<li>Documents acreditatius dels ajuts i beneficis atorgats a l’edifici</li>
-<li>Documents de justificació de la realització d’operacions de reparació, manteniment i rehabilitació</li>
+<li>Els documents on constin les càrregues reals existents en l’edifici, si escau.</li>
+<li>Els documents que complementin dades que hagin de figurar en el quadern de registres.</li>
+<li>Els documents acreditatius dels ajuts i beneficis atorgats a l’edifici.</li>
+<li>Els documents que justifiquin la realització d’operacions de reparació, manteniment i rehabilitació, obres de millora o de qualsevol altre tipus, de caràcter obligatori o voluntari.</li>
 <% if @edifici.tipus_edifici == "nou_plurifamiliar" %>
-  <li>Certificats de final d’obra de les instal·lacions comunes de baixa tensió, gasos combustibles, productes petrolífers o instal·lacions tèrmiques</li>
+  <li>o)  Els certificats final d’obra de les instal·lacions comunes de l’edifici de baixa tensió, gasos combustibles, productes petrolífers o instal·lacions tèrmiques realitzades.</li>
 <% end %>
-<li>Declaracions CE que reconeixen la conformitat dels ascensors instal·lats</li>
-<li>Els documents que substitueixin, modifiquin o ampliïn especificacions del Document d’Especificacions Tècniques, resultat d’incidències produïdes</li>
+<li>Les declaracions CE que reconeixen la conformitat dels ascensors instal·lats. Els documents que figurin a l’arxiu de documents han de ser originals o còpies reconegudes dels originals.</li>
 </ul>
 
 <% if @edifici.tipus_edifici == "nou_plurifamiliar" %>

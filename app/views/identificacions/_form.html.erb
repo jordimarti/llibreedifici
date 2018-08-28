@@ -105,6 +105,157 @@ end
           <%= image_tag @edifici.identificacio.logo_empresa.url(:thumb) %>
         </div>
       </div>
+
+      <hr/>
+
+      <div class="identificacio-title">
+        <span class="title"><%= t('.titol_dates_construccio') %></span>
+      </div>
+
+      <div class="identificacio-subtitle">
+        <span class="title"><%= t('.llicencia_municipal') %></span>
+      </div>
+
+      <div class="row">
+        <div class="medium-6 columns">
+          <%= f.input :data_llicencia_municipal %>
+        </div>
+        <div class="medium-6 columns">
+          <%= f.input :num_llicencia_municipal %>
+        </div>
+      </div>
+
+      <div class="identificacio-subtitle">
+        <span class="title"><%= t('.finalitzacio_obres') %></span>
+      </div>
+
+      <div class="row">
+        <div class="medium-6 columns">
+          <%= f.input :data_finalitzacio_obres %>
+        </div>
+        <div class="medium-6 columns">
+          <%= f.input :visat_finalitzacio_obres %>
+        </div>
+      </div>
+
+      <div class="identificacio-subtitle">
+        <span class="title"><%= t('.recepcio_definitiva') %></span>
+      </div>
+
+      <div class="row">
+        <div class="medium-6 columns">
+          <%= f.input :data_recepcio_definitiva %>
+        </div>
+        <div class="medium-6 columns">
+          <%= f.input :visat_recepcio_definitiva %>
+        </div>
+      </div>
+
+      <div class="identificacio-subtitle">
+        <span class="title"><%= t('.llicencia_primera_ocupacio') %></span>
+      </div>
+
+      <div class="row">
+        <div class="medium-6 columns">
+          <%= f.input :data_llicencia_primera_ocupacio %>
+        </div>
+        <div class="medium-6 columns">
+          <%= f.input :num_llicencia_primera_ocupacio %>
+        </div>
+      </div>
+
+      <div class="identificacio-subtitle">
+        <span class="title"><%= t('.llicencia_activitats_parquing') %></span>
+      </div>
+
+      <div class="row">
+        <div class="medium-6 columns">
+          <%= f.input :data_llicencia_activitats_parquing %>
+        </div>
+        <div class="medium-6 columns">
+          <%= f.input :num_llicencia_activitats_parquing %>
+        </div>
+      </div>
+
+      <div class="identificacio-subtitle">
+        <span class="title"><%= t('.qualificacio_provisional_vpo') %></span>
+      </div>
+
+      <div class="row">
+        <div class="medium-6 columns">
+          <%= f.input :data_qualificacio_provisional_vpo %>
+        </div>
+        <div class="medium-6 columns">
+          <%= f.input :num_qualificacio_provisional_vpo %>
+        </div>
+      </div>
+
+      <div class="identificacio-subtitle">
+        <span class="title"><%= t('.qualificacio_definitiva_vpo') %></span>
+      </div>
+
+      <div class="row">
+        <div class="medium-6 columns">
+          <%= f.input :data_qualificacio_definitiva_vpo %>
+        </div>
+        <div class="medium-6 columns">
+          <%= f.input :num_qualificacio_definitiva_vpo %>
+        </div>
+      </div>
+
+      <div class="identificacio-subtitle">
+        <span class="title"><%= t('.notari') %></span>
+      </div>
+
+      <div class="row">
+        <div class="medium-6 columns">
+          <%= f.input :nom_notari %>
+        </div>
+        <div class="medium-6 columns">
+          <%= f.input :adreca_notari %>
+        </div>
+      </div>
+
+      <div class="identificacio-subtitle">
+        <span class="title"><%= t('.escriptures') %></span>
+      </div>
+
+      <div class="row">
+        <div class="medium-6 columns">
+          <%= f.input :data_escriptures %>
+        </div>
+        <div class="medium-6 columns">
+          <%= f.input :num_protocol_escriptures %>
+        </div>
+      </div>
+
+      <div class="identificacio-subtitle">
+        <span class="title"><%= t('.declaracio_obra_nova') %></span>
+      </div>
+
+      <div class="row">
+        <div class="medium-2 columns">
+          <%= f.input :data_declaracio_obra_nova %>
+        </div>
+        <div class="medium-2 columns">
+          <%= f.input :tom_inscripcio_registral %>
+        </div>
+        <div class="medium-2 columns">
+          <%= f.input :foli_inscripcio_registral %>
+        </div>
+        <div class="medium-2 columns">
+          <%= f.input :llibre_inscripcio_registral %>
+        </div>
+        <div class="medium-2 columns">
+          <%= f.input :finca_inscripcio_registral %>
+        </div>
+        <div class="medium-2 columns">
+          <%= f.input :registre_de_inscripcio_registral %>
+        </div>
+      </div>
+
+
+
     </div>
 
 
