@@ -373,11 +373,23 @@ class ReferenciesController < ApplicationController
         crear_referencia(134)
       end
     end
+    crear_referencia(1859)
+    crear_referencia(1860)
+    crear_referencia(1861)
+    crear_referencia(1862)
+    crear_referencia(1863)
+    crear_referencia(1864)
+
 
     aigua = Aigua.where(:edifici_id => @edifici.id).last
     if (aigua.grup_pressio == true)
       crear_referencia(135)
     end
+    crear_referencia(1865)
+    crear_referencia(1866)
+    crear_referencia(1867)
+    crear_referencia(1868)
+    crear_referencia(1869)
 
     electricitat = Electricitat.where(:edifici_id => @edifici.id).last
     if (electricitat.enllumenat_comunitari == true)
