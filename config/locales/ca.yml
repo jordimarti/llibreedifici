@@ -47,11 +47,37 @@ ca:
             nif:
               invalid: "El format del NIF ha de ser 00000000X, sense espais ni guions"
               blank: "Cal posar el NIF"
+            email:
+              invalid: "Cal posar una adreça de correu electrònic vàlida"
+              blank: "Cal posar una adreça de correu electrònic vàlida"
+            nom:
+              blank: "Cal posar el nom"
+            adreca:
+              blank: "Cal posar l'adreça"
+            provincia:
+              blank: "Cal posar la província"
+            poblacio:
+              blank: "Cal posar la població"
+            codi_postal:
+              blank: "Cal posar el codi postal"
         empresa_factura:
           attributes:
             nif:
               invalid: "El format del NIF ha de ser 00000000X, sense espais ni guions"
               blank: "Cal posar el NIF d'empresa"
+            email:
+              invalid: "Cal posar una adreça de correu electrònic vàlida"
+              blank: "Cal posar una adreça de correu electrònic vàlida"
+            nom_juridic:
+              blank: "Cal posar el nom"
+            adreca:
+              blank: "Cal posar l'adreça"
+            provincia:
+              blank: "Cal posar la província"
+            poblacio:
+              blank: "Cal posar la població"
+            codi_postal:
+              blank: "Cal posar el codi postal"
   layouts:
     navigation:
       titol: "Llibre de l'edifici"

@@ -47,11 +47,37 @@ es:
             nif:
               invalid: "El formato del NIF debe ser 00000000X, sin espacios ni guiones"
               blank: "Es necesario escribir el NIF"
+            email:
+              invalid: "Es necesario poner una dirección de correo electrónico válida"
+              blank: "Es necesario poner una dirección de correo electrónico válida"
+            nom:
+              blank: "Es necesario poner el nombre"
+            adreca:
+              blank: "Es necesario poner la dirección"
+            provincia:
+              blank: "Es necesario poner la provincia"
+            poblacio:
+              blank: "Es necesario poner la población"
+            codi_postal:
+              blank: "Es necesario poner el código postal"
         empresa_factura:
           attributes:
             nif:
               invalid: "El formato del NIF debe ser 00000000X, sin espacios ni guiones"
               blank: "Es necesario escribir el NIF de empresa"
+            email:
+              invalid: "Es necesario poner una dirección de correo electrónico válida"
+              blank: "Es necesario poner una dirección de correo electrónico válida"
+            nom_juridic:
+              blank: "Es necesario poner el nombre"
+            adreca:
+              blank: "Es necesario poner la dirección"
+            provincia:
+              blank: "Es necesario poner la provincia"
+            poblacio:
+              blank: "Es necesario poner la población"
+            codi_postal:
+              blank: "Es necesario poner el código postal"
   layouts:
     navigation:
       titol: "Libro del edificio"

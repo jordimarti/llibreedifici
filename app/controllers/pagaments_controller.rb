@@ -39,7 +39,7 @@ class PagamentsController < ApplicationController
     @pagament.edifici_id = params[:edifici_id]
     @pagament.numorder = numorder(params[:edifici_id])
     @pagament.import = "42,96"
-    @pagament.pagat = true
+    @pagament.pagat = false
     titular = current_user.name
     url_pagament = 'http://isis.apabcn.cat/LibroEdificio/pagoVisa.aspx?titular=' + titular + '&importe=' + @pagament.import + '&numorder=' + @pagament.numorder.to_s + '&descripcion=llibreedifici&urlresponse=http://llibreedifici.apabcn.cat/pagaments/update_pagament'
     #http://isis.apabcn.cat/LibroEdificio/pagoVisa.aspx?titular=Titular&importe=42,96&numorden=110000000101&descripcion=llibreedifici&urlresponse=http://llibreedifici.apabcn.cat/pagaments/update_pagament
@@ -79,13 +79,30 @@ class PagamentsController < ApplicationController
   #  end
   #end
 
+  #Comprovem si el resultat del pagament és entre 0000 i 0099
+  def comprovar_resultat(resultat)
+    #Primer comprovem els dos dígits inicials, han de ser 00 per a que sigui correcte
+    numero_caracters = resultat.length
+    primer_valor = resultat.split(//).first(2).join
+    segon_valor = resultat.split(//).last(2).join
+    if numero_caracters == 4 && primer_valor == '00' && segon_valor.to_i < 100
+      return true
+    else
+      return false
+    end
+  end
+
   def update_pagament                  
     pagament = Pagament.where(:numorder => params[:numorden]).last
     if pagament != nil
       if pagament.numorder != nil
+        
+        #Comprovem si el resultat és vàlid
+        validacio_resultat = comprovar_resultat(params[:resultado])
+
         pagament.resultado = params[:resultado]
         pagament.autorizacion = params[:autorizacion]
-        if pagament.resultado == '0000'
+        if validacio_resultat == true
           pagament.pagat = true
         else
           pagament.pagat = false

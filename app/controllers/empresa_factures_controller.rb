@@ -26,7 +26,8 @@ class EmpresaFacturesController < ApplicationController
   # POST /empresa_factures.json
   def create
     @empresa_factura = EmpresaFactura.new(empresa_factura_params)
-    if @empresa_factura.save
+    #De moment anul·lo la validació al crear les dades de factura. Això és perquè primer es va a la pàgina de validació de dades, on l'usuari només ha de posar el NIF. Si tinc una validació d'altres camps com email no puc passar a la següent pàgina. Quan es faci l'update, en la confirmació de dades, sí que hi haurà validació de tots els camps, inclòs el NIF.
+    if @empresa_factura.save(validate: false)
 
     else
       redirect_to validar_dades_path(@edifici.id), flash: { error: @empresa_factura.errors.messages }
@@ -45,14 +46,15 @@ class EmpresaFacturesController < ApplicationController
     @empresa_factura.codi_postal = dades[:get_empresa_response][:param_empresa][:codpostal]
     @empresa_factura.adreca = dades[:get_empresa_response][:param_empresa][:direccion]
     @empresa_factura.pais = dades[:get_empresa_response][:param_empresa][:pais]
-    @empresa_factura.email = dades[:get_empresa_response][:param_empresa][:email]
+    #@empresa_factura.email = dades[:get_empresa_response][:param_empresa][:email]
+    @empresa_factura.email = current_user.email
     @empresa_factura.tipus_client = dades[:get_empresa_response][:param_empresa][:tipocliente]
-    @empresa_factura.save
+    @empresa_factura.save(validate: false)
     if @empresa_factura.nif
       redirect_to edifici_empresa_factura_path(id: @empresa_factura.id)
     else
       @empresa_factura.nif = nou_nif
-      @empresa_factura.save
+      @empresa_factura.save(validate: false)
       redirect_to edit_edifici_empresa_factura_path(id: @empresa_factura.id)
     end
   end
