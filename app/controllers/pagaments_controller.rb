@@ -160,6 +160,8 @@ class PagamentsController < ApplicationController
       resultat = dades[:create_factura_empresa_response][:create_factura_empresa_result]
     end
 
+    grava_resposta_factura(pagament.id, resultat)
+
     if resultat == "0"
       #redirect_to edificis_path
       return true
@@ -168,6 +170,12 @@ class PagamentsController < ApplicationController
       puts "Resultat: #{resultat}"
       return false
     end
+  end
+
+  def grava_resposta_factura(pagament_id, resultat)
+    pagament = Pagament.find(pagament_id)
+    pagament.resposta_factura = resultat
+    pagament.save
   end
 
   def error_factura
@@ -214,6 +222,6 @@ class PagamentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pagament_params
-      params.require(:pagament).permit(:user_id, :edifici_id, :numorder, :import, :resultado, :autorizacion, :pagat, :factura_enviada)
+      params.require(:pagament).permit(:user_id, :edifici_id, :numorder, :import, :resultado, :autorizacion, :pagat, :factura_enviada, :resposta_factura)
     end
 end

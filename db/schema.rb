@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180827162057) do
+ActiveRecord::Schema.define(version: 20180909082722) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -719,9 +719,10 @@ ActiveRecord::Schema.define(version: 20180827162057) do
     t.string   "resultado"
     t.string   "autorizacion"
     t.boolean  "pagat"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.boolean  "factura_enviada"
+    t.text     "resposta_factura"
   end
 
   create_table "particions", force: :cascade do |t|
