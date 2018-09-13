@@ -264,6 +264,8 @@ es:
         origen_any_construccio: "Fuente año construcción"
         observacions: "Observaciones"
         foto_facana: "Foto de la fachada"
+        foto_facana_2: "Foto 2 (opcional)"
+        foto_facana_3: "Foto 3 (opcional)"
         planol_emplacament: "Plano de emplazamiento"
         nom_empresa: "Nombre"
         adreca_empresa: "Dirección"

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180909082722) do
+ActiveRecord::Schema.define(version: 20180913205304) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -605,6 +605,14 @@ ActiveRecord::Schema.define(version: 20180909082722) do
     t.string   "llibre_inscripcio_registral"
     t.string   "finca_inscripcio_registral"
     t.string   "registre_de_inscripcio_registral"
+    t.string   "foto_facana_2_file_name"
+    t.string   "foto_facana_2_content_type"
+    t.integer  "foto_facana_2_file_size"
+    t.datetime "foto_facana_2_updated_at"
+    t.string   "foto_facana_3_file_name"
+    t.string   "foto_facana_3_content_type"
+    t.integer  "foto_facana_3_file_size"
+    t.datetime "foto_facana_3_updated_at"
   end
 
   create_table "iites", force: :cascade do |t|

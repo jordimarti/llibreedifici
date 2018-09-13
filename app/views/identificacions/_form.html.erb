@@ -82,6 +82,10 @@ end
         <div class="medium-6 columns">
           <%= f.input :foto_facana, as: :file %>
           <%= image_tag @edifici.identificacio.foto_facana.url(:medium) %>
+          <%= f.input :foto_facana_2, as: :file %>
+          <%= image_tag @edifici.identificacio.foto_facana_2.url(:medium) %>
+          <%= f.input :foto_facana_3, as: :file %>
+          <%= image_tag @edifici.identificacio.foto_facana_3.url(:medium) %>
         </div>
         <div class="medium-6 columns">
           <%= f.input :planol_emplacament, as: :file %>
