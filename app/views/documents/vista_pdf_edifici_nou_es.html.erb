@@ -127,7 +127,15 @@
 
 <div class="salt-pagina"></div>
 <p class="titol-taula">Fotografía de la fachada:</p>
-<%= image_tag @edifici.identificacio.foto_facana.url(:original) %>
+<%= image_tag @edifici.identificacio.foto_facana.url(:original), class: 'imatge-pdf' %>
+<% if @edifici.identificacio.foto_facana_2.exists? %>
+  <div class="espaiador"></div>
+  <%= image_tag @edifici.identificacio.foto_facana_2.url(:original), class: 'imatge-pdf' %>
+<% end %>
+<% if @edifici.identificacio.foto_facana_3.exists? %>
+  <div class="espaiador"></div>
+  <%= image_tag @edifici.identificacio.foto_facana_3.url(:original), class: 'imatge-pdf' %>
+<% end %>
 
 <div class="salt-pagina"></div>
 <p class="titol-taula">Plano de emplazamiento:</p>
