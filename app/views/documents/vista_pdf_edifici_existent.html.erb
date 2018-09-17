@@ -21,11 +21,43 @@
 <p>El llibre de l’edifici ha d’estar a disposició de tots els copropietaris de l’edifici.</p>
 <div class="salt-pagina"></div>
 
-<p class="titol-seccio-document">DADES D'IDENTIFICACIÓ DE L'EDIFICI</p>
+
+
+
+<p class="titol-seccio-document">QUADERN DE REGISTRE DE DADES</p>
+<ol type="a">
+  <li>Dades inicials de l'edifici</li>
+  <ol type="1">
+    <li>Dades d'identificació de la construcció de l'edifici</li>
+    <li>Dades dels agents de l’edificació participants en el procés d’edificació</li>
+    <li>Dades referents a la llicència i el règim jurídic de l’edifici</li>
+    <li>Dades referents a les garanties</li>
+    <li>Observacions</li>
+  </ol>
+  <li>Registre d'incidències</li>
+  <ol type="1">
+    <li>Acta de lliurament del llibre de l’edifici dels promotors als adquirents de l’edifici o al president de la comunitat</li>
+    <li>Els canvis de titularitat de la propietat i els canvis en els òrgans de la comunitat de propietaris</li>
+    <li>Les reformes, rehabilitacions i canvis d’ús</li>
+    <li>Dades que modifiquin o complementen les dades inicials de l’edifici</li>
+    <li>Ajuts i beneficis que s’atorguin a l’edifici</li>
+    <li>Assegurances contractades</li>
+    <li>Registre d’incidències</li>
+  </ol>
+  <li>Registre d’operacions de manteniment i reparacions</li>
+  <ol type="1">
+    <li>Operacions de manteniment i de revisió reglamentàriament</li>
+    <li>Operacions de reparació fetes per esmenar vicis i defectes de la construcció i les instal·lacions comunes</li>
+    <li>Obres de millora que es facin per adaptar els edificis a les exigències tecnològiques i de confort</li>
+    <li>Actuacions per garantir la cohesió social, l’accessibilitat, la sostenibilitat, l’ecoeficiència i la innovació</li>
+  </ol>
+</ol>
+
 <div class="salt-pagina"></div>
 
 <p class="subtitol-seccio-document">Dades inicials de l'edifici</p>
-<p class="titol-apartat-document">Dades d'identificació</p>
+<p class="titol-apartat-document">Dades d'identificació de la construcció de l'edifici</p>
+
 <table class="taula-dades">
   <tbody>
     <tr>
@@ -58,9 +90,7 @@
    </tbody>
 </table>
 
-<div class="espaiador"></div>
-<p class="titol-taula">Observacions:</p>
-<p><%= @edifici.identificacio.observacions %></p>
+
 
 <div class="salt-pagina"></div>
 <p class="titol-taula">Fotografia de la façana:</p>
@@ -80,19 +110,271 @@
 <div class="salt-pagina"></div>
 
 <% if @agents == true %>
-  <p class="titol-apartat-document">Agents de l'edificació</p>
+  <p class="titol-apartat-document">Dades dels agents de l’edificació participants en el procés d’edificació</p>
   <%= render 'agents' %>
   <div class="salt-pagina"></div>
 <% end %>
 
-
-<p class="titol-apartat-document">Dades administratives i jurídiques</p>
+<p class="titol-apartat-document">Dades referents a la llicència i el règim jurídic de l’edifici</p>
 
 <%= render 'dades' %>
 
 <div class="salt-pagina"></div>
+<p class="titol-apartat-document">Dades referents a les garanties</p>
 
-<p class="titol-seccio-document">INSTRUCCIONS D'ÚS I MANTENIMENT DE L'EDIFICI</p>
+<%= render 'garanties' %>
+
+
+<div class="salt-pagina"></div>
+
+<div class="espaiador"></div>
+<p class="titol-taula">Observacions:</p>
+<p><%= @edifici.identificacio.observacions %></p>
+
+<div class="salt-pagina"></div>
+
+
+<p class="subtitol-seccio-document">Registre d'incidències</p>
+<p>El propietari de l'edifici o, si n'hi ha, el president de la comunitat de propietaris, ha d'inscriure en aquest registre les incidències següents:
+  <ul>
+    <li>L’acta de lliurament del llibre de l’edifici dels promotors als adquirents de l’edifici o, si escau, al president o presidenta de la comunitat de propietaris.</li>
+    <li>Els canvis de titularitat de la propietat de l’edifici, si aquest és en règim de propietat vertical. Si està constituït en règim de propietat horitzontal, els canvis en els òrgans de la comunitat de propietaris.</li>
+    <li>Les reformes, les rehabilitacions i els canvis d’ús de destinació fets a l’edifici que afectin el seu estat original.</li>
+    <li>Totes aquelles que modifiquin les dades inicials que s’hagin consignat en el llibre de l’edifici, com també les que puguin complementar la informació facilitada pels promotors en el capítol de dades inicials.</li>
+    <li>Els ajuts i beneficis que s’atorguin a l’edifici, amb especificació de les seves característiques.</li>
+    <li>Les assegurances contractades que afectin la totalitat de l’edifici o les parts comunes.</li>
+    <li>En cada incidència s’haurà de fer un breu enunciat de l’assumpte tractat, la data i la seva descripció.</li>
+  </ul>
+</p>
+
+<p class="subtitol-petit-seccio-document">Inscripció d'incidències</p>
+<table class="taula-incidencies">
+  <thead>
+    <th class="cell-incidencies">Incidència</th>
+    <th class="cell-incidencies"></th>
+    <th class="cell-incidencies"></th>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cell-incidencies num-incidencies">Núm</td>
+      <td class="cell-incidencies assumpte-incidencies">Assumpte</td>
+      <td class="cell-incidencies data-incidencies">Data</td>
+    </tr>
+  </tbody>
+</table>
+<table class="taula-incidencies">
+  <thead>
+    <th class="cell-incidencies">Descripció</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cell-descripcio-incidencia"></td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="taula-incidencies">
+  <thead>
+    <th class="cell-incidencies">Incidència</th>
+    <th class="cell-incidencies"></th>
+    <th class="cell-incidencies"></th>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cell-incidencies num-incidencies">Núm</td>
+      <td class="cell-incidencies assumpte-incidencies">Assumpte</td>
+      <td class="cell-incidencies data-incidencies">Data</td>
+    </tr>
+  </tbody>
+</table>
+<table class="taula-incidencies">
+  <thead>
+    <th class="cell-incidencies">Descripció</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cell-descripcio-incidencia"></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="salt-pagina"></div>
+
+<table class="taula-incidencies">
+  <thead>
+    <th class="cell-incidencies">Incidència</th>
+    <th class="cell-incidencies"></th>
+    <th class="cell-incidencies"></th>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cell-incidencies num-incidencies">Núm</td>
+      <td class="cell-incidencies assumpte-incidencies">Assumpte</td>
+      <td class="cell-incidencies data-incidencies">Data</td>
+    </tr>
+  </tbody>
+</table>
+<table class="taula-incidencies">
+  <thead>
+    <th class="cell-incidencies">Descripció</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cell-descripcio-incidencia"></td>
+    </tr>
+  </tbody>
+</table>
+<table class="taula-incidencies">
+  <thead>
+    <th class="cell-incidencies">Incidència</th>
+    <th class="cell-incidencies"></th>
+    <th class="cell-incidencies"></th>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cell-incidencies num-incidencies">Núm</td>
+      <td class="cell-incidencies assumpte-incidencies">Assumpte</td>
+      <td class="cell-incidencies data-incidencies">Data</td>
+    </tr>
+  </tbody>
+</table>
+<table class="taula-incidencies">
+  <thead>
+    <th class="cell-incidencies">Descripció</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cell-descripcio-incidencia"></td>
+    </tr>
+  </tbody>
+</table>
+<table class="taula-incidencies">
+  <thead>
+    <th class="cell-incidencies">Incidència</th>
+    <th class="cell-incidencies"></th>
+    <th class="cell-incidencies"></th>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cell-incidencies num-incidencies">Núm</td>
+      <td class="cell-incidencies assumpte-incidencies">Assumpte</td>
+      <td class="cell-incidencies data-incidencies">Data</td>
+    </tr>
+  </tbody>
+</table>
+<table class="taula-incidencies">
+  <thead>
+    <th class="cell-incidencies">Descripció</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cell-descripcio-incidencia"></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="salt-pagina"></div>
+<p class="subtitol-seccio-document">Registre d'operacions de manteniment</p>
+
+<table class="taula-registre">
+  <thead>
+    <th class="cell-registre cell-principal">Descripció</th>
+    <th class="cell-registre">Data</th>
+    <th class="cell-registre">Realitzat per</th>
+    <th class="cell-registre">Signatura</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cell-registre cell-principal"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+    </tr>
+    <tr>
+      <td class="cell-registre cell-principal"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+    </tr>
+    <tr>
+      <td class="cell-registre cell-principal"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+    </tr>
+    <tr>
+      <td class="cell-registre cell-principal"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+    </tr>
+    <tr>
+      <td class="cell-registre cell-principal"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+    </tr>
+    <tr>
+      <td class="cell-registre cell-principal"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+    </tr>
+    <tr>
+      <td class="cell-registre cell-principal"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+    </tr>
+    <tr>
+      <td class="cell-registre cell-principal"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+    </tr>
+    <tr>
+      <td class="cell-registre cell-principal"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+    </tr>
+    <tr>
+      <td class="cell-registre cell-principal"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+    </tr>
+    <tr>
+      <td class="cell-registre cell-principal"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="salt-pagina"></div>
+
+<p class="titol-seccio-document">DOCUMENT D'ESPECIFICACIONS TÈCNIQUES</p>
+
+<p>Els documents d’especificacions tècniques de l’edifici (DET), elaborats i signats per la direcció d’obra, han d’incloure els punts següents: 
+</p>
+<ol type="a">
+  <li><strong>Plànols a escala</strong>, com a mínim 1:100, de les plantes, els alçats i les seccions de l’estat final de l’edifici, amb el detall exigit al projecte d’execució final.</li>
+  <li><strong>Plànols de la fonamentació i de l'estructura</strong>, com a mínim a escala 1:100, amb els corresponents detalls constructius. S’hi ha d’expressar també l’estat de càrregues considerat en el càlcul de l’estructura de l’edifici, el tipus de fonamentació i la tensió de treball considerada pel terreny.</li>
+  <li><strong>Esquemes de les xarxes d’instal·lacions</strong> i dels sistemes de seguretat existents, amb el detall propi que consta en el projecte d’execució final, tant les corresponents a cada habitatge com les comunitàries.</li>
+  <li><strong>Descripció dels productes, equips i sistemes</strong>, així com les solucions emprades en la construcció.</li>
+  <li><strong>Instruccions d’ús i manteniment de l’edifici i les seves instal·lacions</strong> amb èmfasi especial de l’estructura, la coberta, els tancaments exteriors, el sistema d’evacuació i les instal·lacions i els elements d’accessibilitat.</li>
+  <li><strong>Els documents que substitueixin, modifiquin o ampliïn el DET</strong> com a resultat d’incidències produïdes.</li>
+  <li><strong>Les recomanacions genèriques per a emergències en cas d’incendi</strong> fuita d’aigua, i fuita de gas, i també les específiques conforme als diferents equips, sistemes i instal·lacions de protecció contra incendis disponibles a l’edifici.</li>
+</ol>
+
+<div class="salt-pagina"></div>
+
+<p class="subtitol-seccio-document">Plànols de l'edifici</p>
+<div class="salt-pagina"></div>
+
+<p class="subtitol-seccio-document">Esquemes de xarxes d’instal·lacions i sistemes de seguretat</p>
 <div class="salt-pagina"></div>
 
 <p class="subtitol-seccio-document">Instruccions d'ús i manteniment</p>
@@ -126,7 +408,7 @@
 <%= @text_manual_manteniment %>
 
 <div class="salt-pagina"></div>
-<p class="subtitol-seccio-document">Documents de substitució, modificació o ampliació de les instruccions d'ús i manteniment per incidències produïdes</p>
+<p class="subtitol-seccio-document">Documents de substitució, modificació o ampliació del DET per incidències produïdes</p>
 <div class="salt-pagina"></div>
 
 <p class="subtitol-seccio-document">Recomanacions per emergències</p>
@@ -216,6 +498,7 @@
 <li>Protegir-se sota dels llindes de les portes o d’algun mobles sòlid com ara taules o llits.</li>
 <li>No s’han de fer servir els ascensors.</li>
 </ul>
+
 
 <div class="salt-pagina"></div>
 <p class="titol-seccio-document">ARXIU DE DOCUMENTS</p>
