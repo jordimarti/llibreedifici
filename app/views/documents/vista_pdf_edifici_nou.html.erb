@@ -54,7 +54,7 @@
 <div class="salt-pagina"></div>
 
 <p class="subtitol-seccio-document">Dades inicials de l'edifici</p>
-<p class="titol-apartat-document">Dades d'identificació</p>
+<p class="titol-apartat-document">Dades d'identificació de la construcció de l'edifici</p>
 <table class="taula-dades">
   <tbody>
     <tr>
@@ -151,9 +151,7 @@
 </table>
 
 
-<div class="espaiador"></div>
-<p class="titol-taula">Observacions:</p>
-<p><%= @edifici.identificacio.observacions %></p>
+
 
 <div class="salt-pagina"></div>
 <p class="titol-taula">Fotografia de la façana:</p>
@@ -172,22 +170,244 @@
 <%= image_tag @edifici.identificacio.planol_emplacament.url(:original) %>
 <div class="salt-pagina"></div>
 
-<p class="titol-apartat-document">Agents de l'edificació</p>
+<p class="titol-apartat-document">Dades dels agents de l’edificació participants en el procés d’edificació</p>
 
 <%= render 'agents' %>
 
 <div class="salt-pagina"></div>
-<p class="titol-apartat-document">Dades administratives i jurídiques</p>
+<p class="titol-apartat-document">Dades referents a la llicència, la declaració d’obra nova i el règim jurídic de l’edifici</p>
 
 <%= render 'dades' %>
 
 <div class="salt-pagina"></div>
+<p class="titol-apartat-document">Dades referents a les garanties</p>
 
-<p class="subtitol-seccio-document">Registre d'incidències</p>
+<%= render 'garanties' %>
 
 <div class="salt-pagina"></div>
 
+<p class="titol-apartat-document">Observacions</p>
+<p><%= @edifici.identificacio.observacions %></p>
+
+<div class="salt-pagina"></div>
+<p class="subtitol-seccio-document">Registre d'incidències</p>
+<p>El propietari de l'edifici o, si n'hi ha, el president de la comunitat de propietaris, ha d'inscriure en aquest registre les incidències següents:
+  <ul>
+    <li>L’acta de lliurament del llibre de l’edifici dels promotors als adquirents de l’edifici o, si escau, al president o presidenta de la comunitat de propietaris.</li>
+    <li>Els canvis de titularitat de la propietat de l’edifici, si aquest és en règim de propietat vertical. Si està constituït en règim de propietat horitzontal, els canvis en els òrgans de la comunitat de propietaris.</li>
+    <li>Les reformes, les rehabilitacions i els canvis d’ús de destinació fets a l’edifici que afectin el seu estat original.</li>
+    <li>Totes aquelles que modifiquin les dades inicials que s’hagin consignat en el llibre de l’edifici, com també les que pugin complementar la informació facilitada pels promotors en el capítol de dades inicials.</li>
+    <li>Els ajuts i beneficis que s’atorguin a l’edifici, amb especificació de les seves característiques.</li>
+    <li>Les assegurances contractades que afectin la totalitat de l’edifici o les parts comunes.</li>
+    <li>En cada incidència s’haurà de fer un breu enunciat de l’assumpte tractat, la data i la seva descripció.</li>
+  </ul>
+</p>
+
+<p class="subtitol-petit-seccio-document">Inscripció d'incidències</p>
+<table class="taula-incidencies">
+  <thead>
+    <th class="cell-incidencies">Incidència</th>
+    <th class="cell-incidencies"></th>
+    <th class="cell-incidencies"></th>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cell-incidencies num-incidencies">Núm</td>
+      <td class="cell-incidencies assumpte-incidencies">Assumpte</td>
+      <td class="cell-incidencies data-incidencies">Data</td>
+    </tr>
+  </tbody>
+</table>
+<table class="taula-incidencies">
+  <thead>
+    <th class="cell-incidencies">Descripció</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cell-descripcio-incidencia"></td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="taula-incidencies">
+  <thead>
+    <th class="cell-incidencies">Incidència</th>
+    <th class="cell-incidencies"></th>
+    <th class="cell-incidencies"></th>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cell-incidencies num-incidencies">Núm</td>
+      <td class="cell-incidencies assumpte-incidencies">Assumpte</td>
+      <td class="cell-incidencies data-incidencies">Data</td>
+    </tr>
+  </tbody>
+</table>
+<table class="taula-incidencies">
+  <thead>
+    <th class="cell-incidencies">Descripció</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cell-descripcio-incidencia"></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="salt-pagina"></div>
+
+<table class="taula-incidencies">
+  <thead>
+    <th class="cell-incidencies">Incidència</th>
+    <th class="cell-incidencies"></th>
+    <th class="cell-incidencies"></th>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cell-incidencies num-incidencies">Núm</td>
+      <td class="cell-incidencies assumpte-incidencies">Assumpte</td>
+      <td class="cell-incidencies data-incidencies">Data</td>
+    </tr>
+  </tbody>
+</table>
+<table class="taula-incidencies">
+  <thead>
+    <th class="cell-incidencies">Descripció</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cell-descripcio-incidencia"></td>
+    </tr>
+  </tbody>
+</table>
+<table class="taula-incidencies">
+  <thead>
+    <th class="cell-incidencies">Incidència</th>
+    <th class="cell-incidencies"></th>
+    <th class="cell-incidencies"></th>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cell-incidencies num-incidencies">Núm</td>
+      <td class="cell-incidencies assumpte-incidencies">Assumpte</td>
+      <td class="cell-incidencies data-incidencies">Data</td>
+    </tr>
+  </tbody>
+</table>
+<table class="taula-incidencies">
+  <thead>
+    <th class="cell-incidencies">Descripció</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cell-descripcio-incidencia"></td>
+    </tr>
+  </tbody>
+</table>
+<table class="taula-incidencies">
+  <thead>
+    <th class="cell-incidencies">Incidència</th>
+    <th class="cell-incidencies"></th>
+    <th class="cell-incidencies"></th>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cell-incidencies num-incidencies">Núm</td>
+      <td class="cell-incidencies assumpte-incidencies">Assumpte</td>
+      <td class="cell-incidencies data-incidencies">Data</td>
+    </tr>
+  </tbody>
+</table>
+<table class="taula-incidencies">
+  <thead>
+    <th class="cell-incidencies">Descripció</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cell-descripcio-incidencia"></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="salt-pagina"></div>
 <p class="subtitol-seccio-document">Registre d'operacions de manteniment</p>
+
+<table class="taula-registre">
+  <thead>
+    <th class="cell-registre cell-principal">Descripció</th>
+    <th class="cell-registre">Data</th>
+    <th class="cell-registre">Realitzat per</th>
+    <th class="cell-registre">Signatura</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cell-registre cell-principal"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+    </tr>
+    <tr>
+      <td class="cell-registre cell-principal"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+    </tr>
+    <tr>
+      <td class="cell-registre cell-principal"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+    </tr>
+    <tr>
+      <td class="cell-registre cell-principal"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+    </tr>
+    <tr>
+      <td class="cell-registre cell-principal"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+    </tr>
+    <tr>
+      <td class="cell-registre cell-principal"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+    </tr>
+    <tr>
+      <td class="cell-registre cell-principal"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+    </tr>
+    <tr>
+      <td class="cell-registre cell-principal"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+    </tr>
+    <tr>
+      <td class="cell-registre cell-principal"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+    </tr>
+    <tr>
+      <td class="cell-registre cell-principal"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+    </tr>
+    <tr>
+      <td class="cell-registre cell-principal"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+    </tr>
+  </tbody>
+</table>
 
 <div class="salt-pagina"></div>
 

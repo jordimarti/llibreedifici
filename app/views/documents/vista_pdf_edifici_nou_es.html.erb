@@ -22,10 +22,39 @@
 <div class="salt-pagina"></div>
 
 <p class="titol-seccio-document">CUADERNO DE REGISTRO</p>
+<ol type="a">
+  <li>Datos iniciales del edificio</li>
+  <ol type="1">
+    <li>Datos de identificación de la construcción del edificio</li>
+    <li>Datos de los agentes de la edificación participantes en el proceso de edificación</li>
+    <li>Datos referentes a la licencia, la declaración de obra nueva y el régimen jurídico del edificio</li>
+    <li>Datos referentes a las garantías</li>
+    <li>Observaciones</li>
+  </ol>
+  <li>Registro de incidencias</li>
+  <ol type="1">
+    <li>Acta de entrega del libro del edificio de los promotores a los adquirentes del edificio o al presidente de la comunidad</li>
+    <li>Los cambios de titularidad de la propiedad y los cambios en los órganos de la comunidad de propietarios</li>
+    <li>Las reformas, rehabilitaciones y cambios de uso</li>
+    <li>Datos que modifiquen o complementen los datos iniciales del edificio</li>
+    <li>Ayudas y beneficios que se otorguen al edificio</li>
+    <li>Seguros contratados</li>
+    <li>Registro de incidencias</li>
+  </ol>
+  <li>Registro de operaciones de mantenimiento y reparaciones</li>
+  <ol type="1">
+    <li>Operaciones de mantenimiento y de revisión reglamentariamente</li>
+    <li>Operaciones de reparación hechas para subsanar vicios y defectos de la construcción y las instalaciones comunes</li>
+    <li>Obras de mejora que se hagan para adaptar los edificios a las exigencias tecnológicas y de confort</li>
+    <li>Actuaciones para garantizar la cohesión social, la accesibilidad, la sostenibilidad, la ecoeficiencia y la innovación</li>
+  </ol>
+</ol>
+
+
 <div class="salt-pagina"></div>
 
 <p class="subtitol-seccio-document">Datos iniciales del edificio</p>
-<p class="titol-apartat-document">Datos de identificación</p>
+<p class="titol-apartat-document">Datos de identificación de la construcción del edificio</p>
 <table class="taula-dades">
   <tbody>
     <tr>
@@ -121,9 +150,6 @@
   </tbody>
 </table>
 
-<div class="espaiador"></div>
-<p class="titol-taula">Observaciones:</p>
-<p><%= @edifici.identificacio.observacions %></p>
 
 <div class="salt-pagina"></div>
 <p class="titol-taula">Fotografía de la fachada:</p>
@@ -142,22 +168,246 @@
 <%= image_tag @edifici.identificacio.planol_emplacament.url(:original) %>
 <div class="salt-pagina"></div>
 
-<p class="titol-apartat-document">Agentes de la edificación</p>
+<p class="titol-apartat-document">Datos de los agentes de la edificación participantes en el proceso de edificación</p>
 
 <%= render 'agents_es' %>
 
 <div class="salt-pagina"></div>
-<p class="titol-apartat-document">Datos administrativos y jurídicos</p>
+<p class="titol-apartat-document">Datos referentes a la licencia, la declaración de obra nueva y el régimen jurídico del edificio</p>
 
 <%= render 'dades_es' %>
 
 <div class="salt-pagina"></div>
+<p class="titol-apartat-document">Datos referentes a las garantías</p>
+
+<%= render 'garanties_es' %>
+
+<div class="salt-pagina"></div>
+<p class="titol-apartat-document">Observaciones</p>
+<p><%= @edifici.identificacio.observacions %></p>
+
+<div class="salt-pagina"></div>
 
 <p class="subtitol-seccio-document">Registro de incidencias</p>
+<p> El propietario del edificio o, en su defecto, el presidente de la comunidad de propietarios, debe inscribirse en este registro las siguientes incidencias:
+  <ul>
+    <li>El acta de entrega del libro del edificio de los promotores a los adquirentes del edificio o, en su caso, al Presidente de la comunidad de propietarios. </li>
+    <li>Los cambios de titularidad de la propiedad del edificio, si éste es en régimen de propiedad vertical. Si está constituido en régimen de propiedad horizontal, los cambios en los órganos de la comunidad de propietarios. </li>
+    <li>Las reformas, las rehabilitaciones y los cambios de uso de destino hechos en el edificio que afecten a su estado original. </li>
+    <li>Todas aquellas que modifiquen los datos iniciales que se hayan consignado en el libro del edificio, así como las que puedan complementar la información facilitada por los promotores en el capítulo de datos iniciales. </li>
+    <li>Las ayudas y beneficios que se otorguen en el edificio, con especificación de sus características. </li>
+    <li>Los seguros contratados que afecten a la totalidad del edificio o las partes comunes. </li>
+    <li>En cada incidencia se deberá hacer un breve enunciado del asunto tratado, la fecha y su descripción. </li>
+  </ul>
+</p>
+
+
+<p class="subtitol-petit-seccio-document">Inscripción de incidencias</p>
+<table class="taula-incidencies">
+  <thead>
+    <th class="cell-incidencies">Incidencia</th>
+    <th class="cell-incidencies"></th>
+    <th class="cell-incidencies"></th>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cell-incidencies num-incidencies">Núm</td>
+      <td class="cell-incidencies assumpte-incidencies">Asunto</td>
+      <td class="cell-incidencies data-incidencies">Fecha</td>
+    </tr>
+  </tbody>
+</table>
+<table class="taula-incidencies">
+  <thead>
+    <th class="cell-incidencies">Descripción</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cell-descripcio-incidencia"></td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="taula-incidencies">
+  <thead>
+    <th class="cell-incidencies">Incidencia</th>
+    <th class="cell-incidencies"></th>
+    <th class="cell-incidencies"></th>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cell-incidencies num-incidencies">Núm</td>
+      <td class="cell-incidencies assumpte-incidencies">Asunto</td>
+      <td class="cell-incidencies data-incidencies">Fecha</td>
+    </tr>
+  </tbody>
+</table>
+<table class="taula-incidencies">
+  <thead>
+    <th class="cell-incidencies">Descripción</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cell-descripcio-incidencia"></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="salt-pagina"></div>
+
+<table class="taula-incidencies">
+  <thead>
+    <th class="cell-incidencies">Incidencia</th>
+    <th class="cell-incidencies"></th>
+    <th class="cell-incidencies"></th>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cell-incidencies num-incidencies">Núm</td>
+      <td class="cell-incidencies assumpte-incidencies">Asunto</td>
+      <td class="cell-incidencies data-incidencies">Fecha</td>
+    </tr>
+  </tbody>
+</table>
+<table class="taula-incidencies">
+  <thead>
+    <th class="cell-incidencies">Descripción</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cell-descripcio-incidencia"></td>
+    </tr>
+  </tbody>
+</table>
+<table class="taula-incidencies">
+  <thead>
+    <th class="cell-incidencies">Incidencia</th>
+    <th class="cell-incidencies"></th>
+    <th class="cell-incidencies"></th>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cell-incidencies num-incidencies">Núm</td>
+      <td class="cell-incidencies assumpte-incidencies">Asunto</td>
+      <td class="cell-incidencies data-incidencies">Fecha</td>
+    </tr>
+  </tbody>
+</table>
+<table class="taula-incidencies">
+  <thead>
+    <th class="cell-incidencies">Descripción</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cell-descripcio-incidencia"></td>
+    </tr>
+  </tbody>
+</table>
+<table class="taula-incidencies">
+  <thead>
+    <th class="cell-incidencies">Incidencia</th>
+    <th class="cell-incidencies"></th>
+    <th class="cell-incidencies"></th>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cell-incidencies num-incidencies">Núm</td>
+      <td class="cell-incidencies assumpte-incidencies">Asunto</td>
+      <td class="cell-incidencies data-incidencies">Fecha</td>
+    </tr>
+  </tbody>
+</table>
+<table class="taula-incidencies">
+  <thead>
+    <th class="cell-incidencies">Descripción</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cell-descripcio-incidencia"></td>
+    </tr>
+  </tbody>
+</table>
 
 <div class="salt-pagina"></div>
 
 <p class="subtitol-seccio-document">Registro de operaciones de mantenimiento</p>
+
+<table class="taula-registre">
+  <thead>
+    <th class="cell-registre cell-principal">Descripción</th>
+    <th class="cell-registre">Fecha</th>
+    <th class="cell-registre">Realizado por</th>
+    <th class="cell-registre">Firma</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cell-registre cell-principal"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+    </tr>
+    <tr>
+      <td class="cell-registre cell-principal"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+    </tr>
+    <tr>
+      <td class="cell-registre cell-principal"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+    </tr>
+    <tr>
+      <td class="cell-registre cell-principal"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+    </tr>
+    <tr>
+      <td class="cell-registre cell-principal"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+    </tr>
+    <tr>
+      <td class="cell-registre cell-principal"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+    </tr>
+    <tr>
+      <td class="cell-registre cell-principal"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+    </tr>
+    <tr>
+      <td class="cell-registre cell-principal"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+    </tr>
+    <tr>
+      <td class="cell-registre cell-principal"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+    </tr>
+    <tr>
+      <td class="cell-registre cell-principal"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+    </tr>
+    <tr>
+      <td class="cell-registre cell-principal"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+      <td class="cell-registre"></td>
+    </tr>
+  </tbody>
+</table>
 
 <div class="salt-pagina"></div>
 

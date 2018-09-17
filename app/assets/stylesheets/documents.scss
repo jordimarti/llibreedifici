@@ -128,3 +128,51 @@ span.avis-signatura {
 .imatge-pdf {
 	max-width: 300px;
 }
+
+.subtitol-petit-seccio-document {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.taula-incidencies {
+	border: 0px;
+	width: 100%;
+}
+
+.cell-incidencies {
+	background-color: white;
+	padding-top: 0px;
+}
+
+.num-incidencies {
+	width: 20%;
+}
+
+.assumpte-indicencies {
+	width: 60%;
+}
+
+.data-incidencies {
+	width: 20%;
+}
+
+.cell-descripcio-incidencia {
+	height: 200px;
+	border-bottom: 1px solid #ccc;
+}
+
+.taula-registre {
+	border: none;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.cell-registre {
+	border: 1px solid #000;
+	background-color: white;
+	height: 30px;
+}
+
+.cell-principal {
+	width: 50%;
+}
