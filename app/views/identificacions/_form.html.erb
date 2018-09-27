@@ -51,14 +51,7 @@ end
         </div>
         <div class="medium-6 columns">
           <% if (@edifici.tipus_edifici == 'nou_plurifamiliar' || @edifici.tipus_edifici == 'nou_unifamiliar' || @edifici.tipus_edifici == 'nou_terciari') %>
-            <div class="row">
-              <div class="medium-6 columns">
-                <%= f.input :any_inici_construccio %>
-              </div>
-              <div class="medium-6 columns end">
-                <%= f.input :any_fi_construccio %>
-              </div>
-            </div>
+            <%= f.input :any_inici_construccio %>
           <% else %>
             <div class="row">
               <div class="medium-6 columns">
@@ -127,6 +120,32 @@ end
           </div>
           <div class="medium-6 columns">
             <%= f.input :num_llicencia_municipal %>
+          </div>
+        </div>
+
+        <div class="identificacio-subtitle">
+          <span class="title"><%= t('.finalitzacio_obres') %></span>
+        </div>
+
+        <div class="row">
+          <div class="medium-6 columns">
+            <%= f.input :data_finalitzacio_obres %>
+          </div>
+          <div class="medium-6 columns">
+            <%= f.input :visat_finalitzacio_obres %>
+          </div>
+        </div>
+
+        <div class="identificacio-subtitle">
+          <span class="title"><%= t('.recepcio_definitiva') %></span>
+        </div>
+
+        <div class="row">
+          <div class="medium-6 columns">
+            <%= f.input :data_recepcio_definitiva %>
+          </div>
+          <div class="medium-6 columns">
+            <%= f.input :visat_recepcio_definitiva %>
           </div>
         </div>
 
