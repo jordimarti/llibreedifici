@@ -238,31 +238,6 @@
   </tbody>
 </table>
 
-<table class="taula-incidencies">
-  <thead>
-    <th class="cell-incidencies">Incidencia</th>
-    <th class="cell-incidencies"></th>
-    <th class="cell-incidencies"></th>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="cell-incidencies num-incidencies">Núm</td>
-      <td class="cell-incidencies assumpte-incidencies">Asunto</td>
-      <td class="cell-incidencies data-incidencies">Fecha</td>
-    </tr>
-  </tbody>
-</table>
-<table class="taula-incidencies">
-  <thead>
-    <th class="cell-incidencies">Descripción</th>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="cell-descripcio-incidencia"></td>
-    </tr>
-  </tbody>
-</table>
-
 <div class="salt-pagina"></div>
 
 <table class="taula-incidencies">
@@ -469,6 +444,22 @@
 <%= @text_manual_manteniment %>
 
 <div class="salt-pagina"></div>
+<h5 class="titol-signatura">Autor de las instrucciones de uso y mantenimiento del edificio y sus instalaciones</h5>
+<hr class="linia-signatura">
+<p>
+  <% if @edifici.signatura_instruccions.count == 0 %>
+    <span class="label-signatura">Nombre y apellidos:</span><br/>
+    <span class="label-signatura">Titulación:</span><br/>
+  <% end %>
+  <% @edifici.signatura_instruccions.each do |signatura_instruccion| %>
+    <span class="label-signatura">Nombre y apellidos:</span> <%= signatura_instruccion.autor_instruccions_nom %><br/>
+    <span class="label-signatura">Titulación:</span> <%= signatura_instruccion.autor_instruccions_titulacio %><br/>
+  <% end %>
+  <span class="label-signatura">Fecha:</span> _________________ a ____ de ______________ de ________<br/>
+  <span class="label-signatura">Firma:</span>
+</p>
+
+<div class="salt-pagina"></div>
 <p class="subtitol-seccio-document">Documentos de sustitución, modificación o ampliación del DET por incidencias producidas</p>
 <div class="salt-pagina"></div>
 
@@ -623,20 +614,6 @@
 
 <p><span class="avis-signatura">Este Libro del Edificio no se considera formalizado sin la firma del Promotor</span></p>
 
-<h5 class="titol-signatura">Autor de las instrucciones de uso y mantenimiento del edificio y sus instalaciones</h5>
-<hr class="linia-signatura">
-<p>
-  <% if @edifici.signatura_instruccions.count == 0 %>
-    <span class="label-signatura">Nombre y apellidos:</span><br/>
-    <span class="label-signatura">Titulación:</span><br/>
-  <% end %>
-  <% @edifici.signatura_instruccions.each do |signatura_instruccion| %>
-    <span class="label-signatura">Nombre y apellidos:</span> <%= signatura_instruccion.autor_instruccions_nom %><br/>
-    <span class="label-signatura">Titulación:</span> <%= signatura_instruccion.autor_instruccions_titulacio %><br/>
-  <% end %>
-  <span class="label-signatura">Fecha:</span> _________________ a ____ de ______________ de ________<br/>
-  <span class="label-signatura">Firma:</span>
-</p>
 <br/>
 <br/>
 <br/>
@@ -651,7 +628,9 @@
   <% end %>
   <% @edifici.signatura_llibres.each do |signatura_llibre| %>
     <span class="label-signatura">Nombre y apellidos:</span> <%= signatura_llibre.autor_llibre_nom %><br/>
-    <span class="label-signatura">Titulación:</span> <%= signatura_llibre.autor_llibre_titulacio %><br/>
+    <% if signatura_llibre.autor_llibre_titulacio.present? %>
+      <span class="label-signatura">Titulación:</span> <%= signatura_llibre.autor_llibre_titulacio %><br/>
+    <% end %>
   <% end %>
   <span class="label-signatura">Fecha:</span> _________________ a ____ de ______________ de ________<br/>
   <span class="label-signatura">Firma:</span>
