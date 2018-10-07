@@ -7,7 +7,7 @@
 				</div>
 
 				<div class="projectes-form-container">
-
+					<% if params[:locale] == 'ca' %>
 					<div class="dades-container">
 						<div class="row">
 							<div class="medium-5 columns">
@@ -77,7 +77,80 @@
 							</div>
 						</div>
 					</div>
-					
+
+					<% else %>
+
+					<div class="dades-container">
+						<div class="row">
+							<div class="medium-5 columns">
+								<h4>1. Presentación de la aplicación</h4>
+								<p>En este vídeo mostramos el alcance de la aplicación y hacemos un resumen muy breve de su funcionamiento.</p>
+							</div>
+							<div class="medium-7 columns">
+								<div class="flex-video widescreen vimeo">
+								  <iframe src="http://player.vimeo.com/video/172720887" width="400" height="225" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="dades-container">
+						<div class="row">
+							<div class="medium-5 columns">
+								<h4>2. Registro y configuración de la cuenta</h4>
+								<p>En este vídeo mostramos el proceso a seguir para registrarse en la aplicación Libro del edificio y como configurar la cuenta de usuario.</p>
+							</div>		
+							<div class="medium-7 columns">
+								<div class="flex-video widescreen vimeo">
+								  <iframe src="http://player.vimeo.com/video/172720885" width="400" height="225" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="dades-container">
+						<div class="row">
+							<div class="medium-5 columns">
+								<h4>3. Creación de un nuevo proyecto</h4>
+								<p>En este vídeo mostramos el proceso a seguir para crear un nuevo proyecto. Como antes de editar un proyecto nuevo hay que hacer un pago, se muestran los pasos que se encontrará para realizar este pago y editar la información de facturación.</p>
+							</div>		
+							<div class="medium-7 columns">
+								<div class="flex-video widescreen vimeo">
+								  <iframe src="http://player.vimeo.com/video/172720893" width="400" height="225" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="dades-container">
+						<div class="row">
+							<div class="medium-5 columns">
+								<h4>4. Introducción de datos</h4>
+								<p>Una vez se ha creado y pagado un proyecto se puede empezar a introducir información. En este vídeo mostramos los diferentes apartados de la aplicación, por lo que sabréis qué información necesita para completar el libro del edificio.</p>
+							</div>		
+							<div class="medium-7 columns">
+								<div class="flex-video widescreen vimeo">
+								  <iframe src="http://player.vimeo.com/video/172720886" width="400" height="225" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="dades-container">
+						<div class="row">
+							<div class="medium-5 columns">
+								<h4>5. Operaciones de mantenimiento personalizadas</h4>
+								<p>La información que aparece en la aplicación del libro del edificio no siempre es suficiente para representar todos los casos. Es por ello que la aplicación permite introducir elementos y operaciones de mantenimiento definidas por el usuario.</p>
+							</div>		
+							<div class="medium-7 columns">
+								<div class="flex-video widescreen vimeo">
+								  <iframe src="http://player.vimeo.com/video/172720892" width="400" height="225" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<% end %>
 				</div>
 			</div>
 		</div>
