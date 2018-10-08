@@ -142,6 +142,8 @@ es:
       registrat: "Regístrate"
       inicia_sessio: "Inicia sesión"
       inici_aplicatiu: "Regístrate o inicia sesión para empezar a utilizar el aplicativo del Libro del edificio."
+    tutorial:
+      tutorials: "Tutoriales"
     permisos:
       titol_permisos: "Acceso denegado"
       text_permisos: "No tenéis los permisos necesarios para acceder a esta página"

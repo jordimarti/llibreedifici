@@ -142,6 +142,8 @@ ca:
       registrat: "Registra't"
       inicia_sessio: "Inicia sessió"
       inici_aplicatiu: "Registra't o inicia sessió per començar a utilitzar l'aplicatiu del Llibre de l'edifici."
+    tutorial:
+      tutorials: "Tutorials"
     permisos:
       titol_permisos: "Accés denegat"
       text_permisos: "No teniu els permisos necessaris per accedir a aquesta pàgina"
