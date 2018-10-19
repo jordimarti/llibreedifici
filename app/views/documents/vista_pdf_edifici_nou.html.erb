@@ -10,15 +10,24 @@
 <div class="salt-pagina"></div>
 
 <p class="titol-seccio-document">Introducció</p>
-<p>El Llibre de l’Edifici és la documentació completa que s’elabora al final de l’obra i que conté les dades principals de tot edifici destinat a habitatge. Consta dels documents següents:</p>
+<% if @edifici.tipus_edifici == "nou_terciari" %>
+  <p>El Llibre de l’Edifici és la documentació completa que s’elabora al final de l’obra i que conté les dades principals de l'edifici. Consta dels documents següents:</p>
+<% else %>
+  <p>El Llibre de l’Edifici és la documentació completa que s’elabora al final de l’obra i que conté les dades principals de tot edifici destinat a habitatge. Consta dels documents següents:</p>
+<% end %>
 <ul>
 <li>Quadern de Registre de Dades</li>
 <li>Document d’Especificacions Tècniques (DET)</li>
 <li>Manuals dels habitatges</li>
 <li>Arxiu de documents del qual formen part tots els documents relatius al quadern de registre i tots els documents d’especificacions tècniques</li>
 </ul>
-<p>A l’acte de transmissió de la propietat, l’adquirent de l’edifici o el president de la comunitat de propietaris ha de rebre el Llibre de l’Edifici. També són els responsables de tenir-lo al dia mitjançant les inscripcions oportunes en el Quadern de registre i l’Arxiu de documents. Totes les inscripcions en el Quadern de registre i les incorporacions a l’Arxiu de documents han d’estar signades pel propietari de l’edifici o pel president de la comunitat. Les inscripcions d’incidència de les operacions de manteniment en el Quadern de registre s’han de fer durant el mes posterior d’haver-se produït, a l'igual que la inclusió a l’Arxiu de documents de la documentació que correspongui.</p>
-<p>El llibre de l’edifici ha d’estar a disposició de tots els copropietaris de l’edifici.</p>
+<% if @edifici.tipus_edifici == "nou_terciari" %>
+  <p>A l’acte de transmissió de la propietat, l’adquirent de l’edifici ha de rebre el Llibre de l’Edifici. També és el responsable de tenir-lo al dia mitjançant les inscripcions oportunes en el Quadern de registre i l’Arxiu de documents. Totes les inscripcions en el Quadern de registre i les incorporacions a l’Arxiu de documents han d’estar signades pel propietari de l’edifici. Les inscripcions d’incidència de les operacions de manteniment en el Quadern de registre s’han de fer durant el mes posterior d’haver-se produït, a l'igual que la inclusió a l’Arxiu de documents de la documentació que correspongui.</p>
+  <p>El llibre de l’edifici ha d’estar a disposició de tots els copropietaris de l’edifici.</p>
+<% else %>
+  <p>A l’acte de transmissió de la propietat, l’adquirent de l’edifici o el president de la comunitat de propietaris ha de rebre el Llibre de l’Edifici. També són els responsables de tenir-lo al dia mitjançant les inscripcions oportunes en el Quadern de registre i l’Arxiu de documents. Totes les inscripcions en el Quadern de registre i les incorporacions a l’Arxiu de documents han d’estar signades pel propietari de l’edifici o pel president de la comunitat. Les inscripcions d’incidència de les operacions de manteniment en el Quadern de registre s’han de fer durant el mes posterior d’haver-se produït, a l'igual que la inclusió a l’Arxiu de documents de la documentació que correspongui.</p>
+  <p>El llibre de l’edifici ha d’estar a disposició de tots els copropietaris de l’edifici.</p>
+<% end %>
 <div class="salt-pagina"></div>
 
 <p class="titol-seccio-document">QUADERN DE REGISTRE DE DADES</p>
@@ -33,8 +42,13 @@
   </ol>
   <li>Registre d'incidències</li>
   <ol type="1">
-    <li>Acta de lliurament del llibre de l’edifici dels promotors als adquirents de l’edifici o al president de la comunitat</li>
-    <li>Els canvis de titularitat de la propietat i els canvis en els òrgans de la comunitat de propietaris</li>
+    <% if @edifici.tipus_edifici == "nou_terciari" %>
+      <li>Acta de lliurament del llibre de l’edifici dels promotors als adquirents de l’edifici</li>
+    <% else %>
+      <li>Acta de lliurament del llibre de l’edifici dels promotors als adquirents de l’edifici o al president de la comunitat</li>
+      <li>Els canvis de titularitat de la propietat i els canvis en els òrgans de la comunitat de propietaris</li>
+    <% end %>
+    
     <li>Les reformes, rehabilitacions i canvis d’ús</li>
     <li>Dades que modifiquin o complementen les dades inicials de l’edifici</li>
     <li>Ajuts i beneficis que s’atorguin a l’edifici</li>
@@ -119,16 +133,18 @@
       <td><%= @edifici.identificacio.data_llicencia_activitats_parquing %></td>
       <td><%= @edifici.identificacio.num_llicencia_activitats_parquing %></td>
     </tr>
-    <tr>
-      <td><span class="titol-taula">Qualificació provisional VPO</span></td>
-      <td><%= @edifici.identificacio.data_qualificacio_provisional_vpo %></td>
-      <td><%= @edifici.identificacio.num_qualificacio_provisional_vpo %></td>
-    </tr>
-    <tr>
-      <td><span class="titol-taula">Qualificació definitiva VPO</span></td>
-      <td><%= @edifici.identificacio.data_qualificacio_definitiva_vpo %></td>
-      <td><%= @edifici.identificacio.num_qualificacio_definitiva_vpo %></td>
-    </tr>
+    <% if @edifici.tipus_edifici != "nou_terciari" %>
+      <tr>
+        <td><span class="titol-taula">Qualificació provisional VPO</span></td>
+        <td><%= @edifici.identificacio.data_qualificacio_provisional_vpo %></td>
+        <td><%= @edifici.identificacio.num_qualificacio_provisional_vpo %></td>
+      </tr>
+      <tr>
+        <td><span class="titol-taula">Qualificació definitiva VPO</span></td>
+        <td><%= @edifici.identificacio.data_qualificacio_definitiva_vpo %></td>
+        <td><%= @edifici.identificacio.num_qualificacio_definitiva_vpo %></td>
+      </tr>
+    <% end %>
     <tr>
       <td><span class="titol-taula">Escriptures</span></td>
       <td><%= @edifici.identificacio.data_escriptures %></td>
@@ -566,7 +582,11 @@
 <li>El certificat de final d’obra i els seus annexos pertinents segons el CTE, inclosos les instal·lacions de l’edifici.</li>
 <li>L'acta de recepció definitiva de l’obra</li>
 <li>L’escriptura pública de declaració d’obra nova, d’acord amb la LOE.</li>
-<li>Els documents acreditatius de la garantia atorgada pels promotors que cobreixi la reparació dels defectes de la construcció i els danys que en deriven directament sobre l’habitatge.</li>
+<% if @edifici.tipus_edifici = "nou_terciari" %>
+  <li>Els documents acreditatius de la garantia atorgada pels promotors que cobreixi la reparació dels defectes de la construcció</li>
+<% else %>
+  <li>Els documents acreditatius de la garantia atorgada pels promotors que cobreixi la reparació dels defectes de la construcció i els danys que en deriven directament sobre l’habitatge.</li>
+<% end %>
 <% if @edifici.tipus_edifici == "nou_plurifamiliar" %>
   <li>Els documents de la garantia d’instal·lacions de les parts comunes de l’edifici.</li>
 <% end %>
@@ -581,7 +601,7 @@
 <li>Els documents acreditatius dels ajuts i beneficis atorgats a l’edifici.</li>
 <li>Els documents que justifiquin la realització d’operacions de reparació, manteniment i rehabilitació, obres de millora o de qualsevol altre tipus, de caràcter obligatori o voluntari.</li>
 <% if @edifici.tipus_edifici == "nou_plurifamiliar" %>
-  <li>o)  Els certificats final d’obra de les instal·lacions comunes de l’edifici de baixa tensió, gasos combustibles, productes petrolífers o instal·lacions tèrmiques realitzades.</li>
+  <li>Els certificats final d’obra de les instal·lacions comunes de l’edifici de baixa tensió, gasos combustibles, productes petrolífers o instal·lacions tèrmiques realitzades.</li>
 <% end %>
 <li>Les declaracions CE que reconeixen la conformitat dels ascensors instal·lats. Els documents que figurin a l’arxiu de documents han de ser originals o còpies reconegudes dels originals.</li>
 </ul>

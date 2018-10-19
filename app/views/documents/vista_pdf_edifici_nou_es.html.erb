@@ -10,15 +10,24 @@
 <div class="salt-pagina"></div>
 
 <p class="titol-seccio-document">Introducción</p>
-<p>El Libro del Edificio es la documentación completa que se elabora al final de la obra y que contiene los datos principales de todo edificio destinado a vivienda. Consta de los siguientes documentos:</p>
+<% if @edifici.tipus_edifici == "nou_terciari" %>
+  <p>El Libro del Edificio es la documentación completa que se elabora al final de la obra y que contiene los datos principales del edificio. Consta de los siguientes documentos:</p>
+<% else %>
+  <p>El Libro del Edificio es la documentación completa que se elabora al final de la obra y que contiene los datos principales de todo edificio destinado a vivienda. Consta de los siguientes documentos:</p>
+<% end %>
 <ul>
 <li>Cuaderno de Registro de Datos</li>
 <li>Documento de Especificaciones Técnicas (DET)</li>
 <li>Manuales de las viviendas</li>
 <li>Archivo de documentos del que forman parte todos los documentos relativos al cuaderno de registro y todos los documentos de especificaciones técnicas</li>
 </ul>
-<p>En el acto de transmisión de la propiedad, el adquirente del edificio o el presidente de la comunidad de propietarios debe recibir el Libro del Edificio. También son los responsables de tenerlo al día mediante las inscripciones oportunas en el Cuaderno de registro y el Archivo de documentos. Todas las inscripciones en el Cuaderno de registro y las incorporaciones en el Archivo de documentos deben estar firmadas por el propietario del edificio o por el presidente de la comunidad. Las inscripciones de incidencia de las operaciones de mantenimiento en el Cuaderno de registro se harán durante el mes posterior de haberse producido, al igual que la inclusión en el Archivo de documentos de la documentación que corresponda.</p>
-<p>El libro del edificio debe estar a disposición de todos los copropietarios del edificio.</p>
+<% if @edifici.tipus_edifici == "nou_terciari" %>
+  <p>En el acto de transmisión de la propiedad, el adquirente del edificio debe recibir el Libro del Edificio. También es el responsable de tenerlo al día mediante las inscripciones oportunas en el Cuaderno de registro y el Archivo de documentos. Todas las inscripciones en el Cuaderno de registro y las incorporaciones en el Archivo de documentos deben estar firmadas por el propietario del edificio o por el presidente de la comunidad. Las inscripciones de incidencia de las operaciones de mantenimiento en el Cuaderno de registro se harán durante el mes posterior de haberse producido, al igual que la inclusión en el Archivo de documentos de la documentación que corresponda.</p>
+  <p>El libro del edificio debe estar a disposición de todos los copropietarios del edificio.</p>
+<% else %>
+  <p>En el acto de transmisión de la propiedad, el adquirente del edificio o el presidente de la comunidad de propietarios debe recibir el Libro del Edificio. También son los responsables de tenerlo al día mediante las inscripciones oportunas en el Cuaderno de registro y el Archivo de documentos. Todas las inscripciones en el Cuaderno de registro y las incorporaciones en el Archivo de documentos deben estar firmadas por el propietario del edificio o por el presidente de la comunidad. Las inscripciones de incidencia de las operaciones de mantenimiento en el Cuaderno de registro se harán durante el mes posterior de haberse producido, al igual que la inclusión en el Archivo de documentos de la documentación que corresponda.</p>
+  <p>El libro del edificio debe estar a disposición de todos los copropietarios del edificio.</p>
+<% end %>
 <div class="salt-pagina"></div>
 
 <p class="titol-seccio-document">CUADERNO DE REGISTRO</p>
@@ -33,8 +42,13 @@
   </ol>
   <li>Registro de incidencias</li>
   <ol type="1">
-    <li>Acta de entrega del libro del edificio de los promotores a los adquirentes del edificio o al presidente de la comunidad</li>
-    <li>Los cambios de titularidad de la propiedad y los cambios en los órganos de la comunidad de propietarios</li>
+    <% if @edifici.tipus_edifici == "nou_terciari" %>
+      <li>Acta de entrega del libro del edificio de los promotores a los adquirentes del edificio</li>
+      <li>Los cambios de titularidad de la propiedad</li>
+    <% else %>
+      <li>Acta de entrega del libro del edificio de los promotores a los adquirentes del edificio o al presidente de la comunidad</li>
+      <li>Los cambios de titularidad de la propiedad y los cambios en los órganos de la comunidad de propietarios</li>
+    <% end %>
     <li>Las reformas, rehabilitaciones y cambios de uso</li>
     <li>Datos que modifiquen o complementen los datos iniciales del edificio</li>
     <li>Ayudas y beneficios que se otorguen al edificio</li>
@@ -559,10 +573,14 @@
 <p>El archivo de documentos consta de una carpeta y de una relación de todos los documentos que se guardan. Estos serán los siguientes:</p>
 <ul>
 <li>Licencias preceptivas </li>
-<li>Certificado de final de obra </li>
+<li>Certificado de final de obra y sus anejos pertinentes según el CTE, incluidas las instalaciones del edificio</li>
 <li>Acta de recepción definitiva de la obra</li>
-<li>Escritura pública de declaración de obra nueva</li>
-<li>Documentos acreditativos de garantía</li>
+<li>Escritura pública de declaración de obra nueva, de acuerdo con la LOE</li>
+<% if @edifici.tipus_edifici = "nou_terciari" %>
+  <li>Los documentos acreditativos de la garantía otorgada por los promotores que cubra la reparación de los defectos de la construcción</li>
+<% else %>
+  <li>Los documentos acreditativos de la garantía otorgada por los promotores que cubra la reparación de los defectos de la construcción y los daños que se deriven directamente sobre la vivienda</li>
+<% end %>
 <% if @edifici.tipus_edifici == "nou_plurifamiliar" %>
   <li>Documentos de garantía de instalaciones de partes comunes</li>
 <% end %>
