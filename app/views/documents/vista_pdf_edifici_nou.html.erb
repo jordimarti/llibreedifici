@@ -133,7 +133,7 @@
       <td><%= @edifici.identificacio.data_llicencia_activitats_parquing %></td>
       <td><%= @edifici.identificacio.num_llicencia_activitats_parquing %></td>
     </tr>
-    <% if @edifici.tipus_edifici != "nou_terciari" %>
+    <% if @edifici.tipus_edifici == "nou_plurifamiliar" %>
       <tr>
         <td><span class="titol-taula">Qualificació provisional VPO</span></td>
         <td><%= @edifici.identificacio.data_qualificacio_provisional_vpo %></td>

@@ -104,7 +104,7 @@ end
 
       <hr/>
 
-      <% if @edifici.tipus_edifici == 'nou_plurifamiliar' %>
+      <% if @edifici.tipus_edifici == 'nou_plurifamiliar' || @edifici.tipus_edifici == 'nou_unifamiliar' %>
 
         <div class="identificacio-title">
           <span class="title"><%= t('.titol_dates_construccio') %></span>
@@ -175,31 +175,35 @@ end
           </div>
         </div>
 
-        <div class="identificacio-subtitle">
-          <span class="title"><%= t('.qualificacio_provisional_vpo') %></span>
-        </div>
+        <% if @edifici.tipus_edifici == 'nou_plurifamiliar' %>
 
-        <div class="row">
-          <div class="medium-6 columns">
-            <%= f.input :data_qualificacio_provisional_vpo %>
+          <div class="identificacio-subtitle">
+            <span class="title"><%= t('.qualificacio_provisional_vpo') %></span>
           </div>
-          <div class="medium-6 columns">
-            <%= f.input :num_qualificacio_provisional_vpo %>
-          </div>
-        </div>
 
-        <div class="identificacio-subtitle">
-          <span class="title"><%= t('.qualificacio_definitiva_vpo') %></span>
-        </div>
+          <div class="row">
+            <div class="medium-6 columns">
+              <%= f.input :data_qualificacio_provisional_vpo %>
+            </div>
+            <div class="medium-6 columns">
+              <%= f.input :num_qualificacio_provisional_vpo %>
+            </div>
+          </div>
 
-        <div class="row">
-          <div class="medium-6 columns">
-            <%= f.input :data_qualificacio_definitiva_vpo %>
+          <div class="identificacio-subtitle">
+            <span class="title"><%= t('.qualificacio_definitiva_vpo') %></span>
           </div>
-          <div class="medium-6 columns">
-            <%= f.input :num_qualificacio_definitiva_vpo %>
+
+          <div class="row">
+            <div class="medium-6 columns">
+              <%= f.input :data_qualificacio_definitiva_vpo %>
+            </div>
+            <div class="medium-6 columns">
+              <%= f.input :num_qualificacio_definitiva_vpo %>
+            </div>
           </div>
-        </div>
+
+        <% end %>
 
         <div class="identificacio-subtitle">
           <span class="title"><%= t('.escriptures') %></span>
