@@ -414,7 +414,7 @@ class ReferenciesController < ApplicationController
       crear_referencia(147)
       crear_referencia(148)
     end
-    if (electricitat.comptador_unic == true || electricitat.comptadors_individuals_habitatge == true || electricitat.comptadors_centralitzats == true)
+    if (electricitat.comptador_unic == true || electricitat.comptadors_individuals_habitatge == true || electricitat.comptadors_centralitzats == true || electricitat.comptadors_individuals_locals == true)
       crear_referencia(137)
     end
     # Generem les operacions de manteniment d'il·luminació en terciari en tots els casos. Sempre hi ha il·luminació.

@@ -12,6 +12,9 @@ module PdfGenerator
     sistema_seleccionat.attributes.each_pair do |name, value|
       if (value == true)
         element = ElementPredefinit.where(:nom_element => name).last
+        puts "Element Predefinit"
+        puts element.id
+        puts element.nom_element
         #Afegim els elements del llistat
         llistat_elements = llistat_elements + '<li>' + element.descripcio_ca + '</li>'
       end
