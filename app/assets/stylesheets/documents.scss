@@ -52,17 +52,17 @@ h2.subtitol-document {
 }
 
 .titol-seccio-document {
-	font-size: 2em;
+	font-size: 1.4em;
 	font-weight: bold;
 }
 
 .subtitol-seccio-document {
-	font-size: 1.6em;
+	font-size: 1.2em;
 	font-weight: bold;
 }
 
 .titol-apartat-document {
-	font-size: 1.3em;
+	font-size: 1em;
 }
 
 .taula-container {
@@ -73,7 +73,7 @@ h2.subtitol-document {
 	border: none;
 	border-bottom: 1px solid #CCCCCC;
 	width: 100%;
-	margin-bottom: 20px;
+	margin-bottom: 8px;
 }
 
 .taula-dades-final {
@@ -176,4 +176,17 @@ span.avis-signatura {
 
 .cell-principal {
 	width: 50%;
+}
+
+ul, ol, dl {
+	font-size: 0.8rem;
+	line-height: 1.2;
+}
+
+.p-impressio {
+	font-size: 0.8em;
+}
+
+.li-impressio {
+	font-size: 0.8em;
 }
