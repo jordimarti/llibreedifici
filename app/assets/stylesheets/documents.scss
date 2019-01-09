@@ -63,6 +63,7 @@ h2.subtitol-document {
 
 .titol-apartat-document {
 	font-size: 1em;
+	margin-bottom: 0.9em;
 }
 
 .taula-container {
@@ -86,10 +87,13 @@ h2.subtitol-document {
 .titol-taula {
 	font-weight: bold;
 	page-break-after: avoid;
+	margin-bottom: 0px;
 }
 
 .taula-dos-columnes {
 	width: 50%;
+	font-size: 0.8em;
+	padding: 0.4em;
 }
 
 .espaiador {
@@ -126,7 +130,7 @@ span.avis-signatura {
 }
 
 .imatge-pdf {
-	max-width: 300px;
+	max-width: 600px;
 }
 
 .subtitol-petit-seccio-document {
@@ -185,8 +189,14 @@ ul, ol, dl {
 
 .p-impressio {
 	font-size: 0.8em;
+	margin-bottom: 0.8em;
 }
 
 .li-impressio {
 	font-size: 0.8em;
+}
+
+.td-impressio {
+	font-size: 0.8em;
+	padding: 0.4em;
 }
