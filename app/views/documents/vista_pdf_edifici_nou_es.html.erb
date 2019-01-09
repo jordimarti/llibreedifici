@@ -72,31 +72,31 @@
 <table class="taula-dades">
   <tbody>
     <tr>
-      <td><span class="titol-taula">Dirección:</span><br/><%= adreca %></td>
+      <td class="td-impressio"><span class="titol-taula">Dirección:</span><br/><%= adreca %></td>
     </tr>
   </tbody>
 </table>
 <table class="taula-dades">
   <tbody>
     <tr>
-      <td><span class="titol-taula">Código postal:</span><br/><%= @edifici.identificacio.cp_edifici %></td>
-      <td><span class="titol-taula">Municipio:</span><br/><%= @edifici.identificacio.poblacio_edifici %></td>
-      <td><span class="titol-taula">Provincia:</span><br/><%= @edifici.identificacio.provincia_edifici %></td>
+      <td class="td-impressio"><span class="titol-taula">Código postal:</span><br/><%= @edifici.identificacio.cp_edifici %></td>
+      <td class="td-impressio"><span class="titol-taula">Municipio:</span><br/><%= @edifici.identificacio.poblacio_edifici %></td>
+      <td class="td-impressio"><span class="titol-taula">Provincia:</span><br/><%= @edifici.identificacio.provincia_edifici %></td>
     </tr>
  	</tbody>
 </table>
 <table class="taula-dades">
   <tbody>   
     <tr>
-      <td><span class="titol-taula">Referencia catastral:</span><br/><%= @edifici.ref_cadastral %></td>
+      <td class="td-impressio"><span class="titol-taula">Referencia catastral:</span><br/><%= @edifici.ref_cadastral %></td>
     </tr>
   </tbody>
 </table>
 <table class="taula-dades">
   <tbody>
     <tr>
-      <td><span class="titol-taula">Año de inicio de la construcción:</span><br/><%= @edifici.identificacio.any_inici_construccio %></td>
-      <td><span class="titol-taula">Año de finalización de la construcción:</span><br/><%= @edifici.identificacio.any_fi_construccio %></td>
+      <td class="td-impressio"><span class="titol-taula">Año de inicio de la construcción:</span><br/><%= @edifici.identificacio.any_inici_construccio %></td>
+      <td class="td-impressio"><span class="titol-taula">Año de finalización de la construcción:</span><br/><%= @edifici.identificacio.any_fi_construccio %></td>
     </tr>
    </tbody>
 </table>
@@ -109,44 +109,44 @@
   </thead>
   <tbody>
     <tr>
-      <td><span class="titol-taula">Licencia municipal de obras</span></td>
-      <td><%= @edifici.identificacio.data_llicencia_municipal %></td>
-      <td><%= @edifici.identificacio.num_llicencia_municipal %></td>
+      <td class="td-impressio"><span class="titol-taula">Licencia municipal de obras</span></td>
+      <td class="td-impressio"><%= @edifici.identificacio.data_llicencia_municipal %></td>
+      <td class="td-impressio"><%= @edifici.identificacio.num_llicencia_municipal %></td>
     </tr>
     <tr>
-      <td><span class="titol-taula">Fecha de finalización de obras (CFO)</span></td>
-      <td><%= @edifici.identificacio.data_finalitzacio_obres %></td>
-      <td><%= @edifici.identificacio.visat_finalitzacio_obres %></td>
+      <td class="td-impressio"><span class="titol-taula">Fecha de finalización de obras (CFO)</span></td>
+      <td class="td-impressio"><%= @edifici.identificacio.data_finalitzacio_obres %></td>
+      <td class="td-impressio"><%= @edifici.identificacio.visat_finalitzacio_obres %></td>
     </tr>
     <tr>
-      <td><span class="titol-taula">Fecha de recepción definitiva de obras</span></td>
-      <td><%= @edifici.identificacio.data_recepcio_definitiva %></td>
-      <td><%= @edifici.identificacio.visat_recepcio_definitiva %></td>
+      <td class="td-impressio"><span class="titol-taula">Fecha de recepción definitiva de obras</span></td>
+      <td class="td-impressio"><%= @edifici.identificacio.data_recepcio_definitiva %></td>
+      <td class="td-impressio"><%= @edifici.identificacio.visat_recepcio_definitiva %></td>
     </tr>
     <tr>
-      <td><span class="titol-taula">Licencia de primera ocupación</span></td>
-      <td><%= @edifici.identificacio.data_llicencia_primera_ocupacio %></td>
-      <td><%= @edifici.identificacio.num_llicencia_primera_ocupacio %></td>
+      <td class="td-impressio"><span class="titol-taula">Licencia de primera ocupación</span></td>
+      <td class="td-impressio"><%= @edifici.identificacio.data_llicencia_primera_ocupacio %></td>
+      <td class="td-impressio"><%= @edifici.identificacio.num_llicencia_primera_ocupacio %></td>
     </tr>
     <tr>
-      <td><span class="titol-taula">Licencia de actividades del párquing</span></td>
-      <td><%= @edifici.identificacio.data_llicencia_activitats_parquing %></td>
-      <td><%= @edifici.identificacio.num_llicencia_activitats_parquing %></td>
+      <td class="td-impressio"><span class="titol-taula">Licencia de actividades del párquing</span></td>
+      <td class="td-impressio"><%= @edifici.identificacio.data_llicencia_activitats_parquing %></td>
+      <td class="td-impressio"><%= @edifici.identificacio.num_llicencia_activitats_parquing %></td>
     </tr>
     <tr>
-      <td><span class="titol-taula">Calificación provisional VPO</span></td>
-      <td><%= @edifici.identificacio.data_qualificacio_provisional_vpo %></td>
-      <td><%= @edifici.identificacio.num_qualificacio_provisional_vpo %></td>
+      <td class="td-impressio"><span class="titol-taula">Calificación provisional VPO</span></td>
+      <td class="td-impressio"><%= @edifici.identificacio.data_qualificacio_provisional_vpo %></td>
+      <td class="td-impressio"><%= @edifici.identificacio.num_qualificacio_provisional_vpo %></td>
     </tr>
     <tr>
-      <td><span class="titol-taula">Calificación definitiva VPO</span></td>
-      <td><%= @edifici.identificacio.data_qualificacio_definitiva_vpo %></td>
-      <td><%= @edifici.identificacio.num_qualificacio_definitiva_vpo %></td>
+      <td class="td-impressio"><span class="titol-taula">Calificación definitiva VPO</span></td>
+      <td class="td-impressio"><%= @edifici.identificacio.data_qualificacio_definitiva_vpo %></td>
+      <td class="td-impressio"><%= @edifici.identificacio.num_qualificacio_definitiva_vpo %></td>
     </tr>
     <tr>
-      <td><span class="titol-taula">Escrituras</span></td>
-      <td><%= @edifici.identificacio.data_escriptures %></td>
-      <td><%= @edifici.identificacio.num_protocol_escriptures %></td>
+      <td class="td-impressio"><span class="titol-taula">Escrituras</span></td>
+      <td class="td-impressio"><%= @edifici.identificacio.data_escriptures %></td>
+      <td class="td-impressio"><%= @edifici.identificacio.num_protocol_escriptures %></td>
     </tr>
    </tbody>
 </table>
@@ -164,12 +164,12 @@
   </thead>
   <tbody>
     <tr>
-      <td><%= @edifici.identificacio.data_declaracio_obra_nova %></td>
-      <td><%= @edifici.identificacio.tom_inscripcio_registral %></td>
-      <td><%= @edifici.identificacio.foli_inscripcio_registral %></td>
-      <td><%= @edifici.identificacio.llibre_inscripcio_registral %></td>
-      <td><%= @edifici.identificacio.finca_inscripcio_registral %></td>
-      <td><%= @edifici.identificacio.registre_de_inscripcio_registral %></td>
+      <td class="td-impressio"><%= @edifici.identificacio.data_declaracio_obra_nova %></td>
+      <td class="td-impressio"><%= @edifici.identificacio.tom_inscripcio_registral %></td>
+      <td class="td-impressio"><%= @edifici.identificacio.foli_inscripcio_registral %></td>
+      <td class="td-impressio"><%= @edifici.identificacio.llibre_inscripcio_registral %></td>
+      <td class="td-impressio"><%= @edifici.identificacio.finca_inscripcio_registral %></td>
+      <td class="td-impressio"><%= @edifici.identificacio.registre_de_inscripcio_registral %></td>
     </tr>
   </tbody>
 </table>
