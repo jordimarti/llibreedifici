@@ -95,10 +95,12 @@ end
       <div class="row">
         <div class="medium-6 columns">
           <%= f.input :nom_empresa %>
+          <%= f.input :adreca_empresa %>
           
         </div>
         <div class="medium-6 columns">
-          <%= f.input :adreca_empresa %>
+          <%= f.input :logo_empresa, as: :file %>
+          <%= image_tag @edifici.identificacio.logo_empresa.url(:thumb) %>
         </div>
       </div>
 
