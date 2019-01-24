@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  edifici_id: 1
+  data: MyString
+  tom: MyString
+  foli: MyString
+  llibre: MyString
+  numero_finca: MyString
+  registre: MyString
+
+two:
+  edifici_id: 1
+  data: MyString
+  tom: MyString
+  foli: MyString
+  llibre: MyString
+  numero_finca: MyString
+  registre: MyString

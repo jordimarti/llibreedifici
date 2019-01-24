@@ -30,7 +30,9 @@
 <% end %>
 <div class="salt-pagina"></div>
 
-<p class="titol-seccio-document">CUADERNO DE REGISTRO</p>
+<div class="container-titol-seccio-document">
+  <p class="titol-seccio-document">CUADERNO DE REGISTRO DE DATOS</p>
+</div>
 <ol type="a">
   <li class="li-impressio">Datos iniciales del edificio</li>
   <ol type="1">
@@ -163,14 +165,16 @@
     <th>Registro</th>
   </thead>
   <tbody>
-    <tr>
-      <td class="td-impressio"><%= @edifici.identificacio.data_declaracio_obra_nova %></td>
-      <td class="td-impressio"><%= @edifici.identificacio.tom_inscripcio_registral %></td>
-      <td class="td-impressio"><%= @edifici.identificacio.foli_inscripcio_registral %></td>
-      <td class="td-impressio"><%= @edifici.identificacio.llibre_inscripcio_registral %></td>
-      <td class="td-impressio"><%= @edifici.identificacio.finca_inscripcio_registral %></td>
-      <td class="td-impressio"><%= @edifici.identificacio.registre_de_inscripcio_registral %></td>
-    </tr>
+    <% @edifici.inscripcio_registrals.each do |inscripcio_registral| %>
+      <tr>
+        <td class="td-impressio"><%= inscripcio_registral.data %></td>
+        <td class="td-impressio"><%= inscripcio_registral.tom %></td>
+        <td class="td-impressio"><%= inscripcio_registral.foli %></td>
+        <td class="td-impressio"><%= inscripcio_registral.llibre %></td>
+        <td class="td-impressio"><%= inscripcio_registral.numero_finca %></td>
+        <td class="td-impressio"><%= inscripcio_registral.registre %></td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
 
@@ -331,6 +335,15 @@
 
 <p class="subtitol-seccio-document">Registro de operaciones de mantenimiento</p>
 
+<p>El registro de operaciones de mantenimiento y reparaciones está configurado para un registro de las operaciones y actuaciones siguientes:
+  <ol>
+    <li>Operaciones de mantenimiento y de revisión reglamentariamente</li>
+    <li>Operaciones de reparación hechas para subsanar vicios y defectos de la construcción y las instalaciones comunes</li>
+    <li>Obras de mejora que se hagan para adaptar los edificios a las exigencias tecnológicas y de confort</li>
+    <li>Actuaciones para garantizar la cohesión social, la accesibilidad, la sostenibilidad, la ecoeficiencia y la innovación</li>
+  </ol>
+</p>
+
 <table class="taula-registre">
   <thead>
     <th class="cell-registre cell-principal">Descripción</th>
@@ -410,7 +423,9 @@
 
 <div class="salt-pagina"></div>
 
-<p class="titol-seccio-document">DOCUMENTO DE ESPECIFICACIONES TÉCNICAS</p>
+<div class="container-titol-seccio-document">
+  <p class="titol-seccio-document">DOCUMENTO DE ESPECIFICACIONES TÉCNICAS</p>
+</div>
 
 <p class="p-impressio">El documento de especificaciones técnicas recoge los siguientes documentos:
 <ul>
@@ -566,11 +581,18 @@
 <li class="li-impressio">No se debe usar los ascensores.</li>
 </ul>
 
+<div class="salt-pagina"></div>
+<div class="container-titol-seccio-document">
+  <p class="titol-seccio-document">MANUAL DE LAS VIVIENDAS</p>
+</div>
 
 <div class="salt-pagina"></div>
-<p class="titol-seccio-document">ARCHIVO DE DOCUMENTOS</p>
+<div class="container-titol-seccio-document">
+  <p class="titol-seccio-document">ARCHIVO DE DOCUMENTOS</p>
+</div>
 
-<p class="p-impressio">El archivo de documentos consta de una carpeta y de una relación de todos los documentos que se guardan. Estos serán los siguientes:</p>
+<p class="p-impressio">El archivo de documentos debe estar configurado por los documentos relativos al cuaderno de registro y todos los documentos de especificaciones técnicas, tiene que contener los siguientes documentos:</p>
+
 <ul>
 <li class="li-impressio">Licencias preceptivas </li>
 <li class="li-impressio">Certificado de final de obra y sus anejos pertinentes según el CTE, incluidas las instalaciones del edificio</li>

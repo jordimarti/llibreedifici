@@ -27,6 +27,7 @@ class Edifici < ActiveRecord::Base
 	has_many :energia_certificats
 	has_many :aptitud_certificats
 	has_many :iites
+	has_many :inscripcio_registrals
 
 	has_many :sistemes
 	has_one :fonamentacio

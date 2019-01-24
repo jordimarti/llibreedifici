@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   
   
+  
   resources :importats
   resources :element_predefinits
   resources :operacions
@@ -98,6 +99,7 @@ Rails.application.routes.draw do
     resources :signatura_llibres
     resources :signatura_instruccions
     resources :signatura_promotors
+    resources :inscripcio_registrals
   end
   
   

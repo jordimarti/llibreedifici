@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180913205304) do
+ActiveRecord::Schema.define(version: 20190124123004) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -679,6 +679,18 @@ ActiveRecord::Schema.define(version: 20180913205304) do
     t.string   "cif"
     t.string   "pais"
     t.string   "tipus_client"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "inscripcio_registrals", force: :cascade do |t|
+    t.integer  "edifici_id"
+    t.string   "data"
+    t.string   "tom"
+    t.string   "foli"
+    t.string   "llibre"
+    t.string   "numero_finca"
+    t.string   "registre"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end

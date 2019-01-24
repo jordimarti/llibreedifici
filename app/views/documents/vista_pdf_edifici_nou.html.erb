@@ -30,7 +30,9 @@
 <% end %>
 <div class="salt-pagina"></div>
 
-<p class="titol-seccio-document">QUADERN DE REGISTRE DE DADES</p>
+<div class="container-titol-seccio-document">
+  <p class="titol-seccio-document">QUADERN DE REGISTRE DE DADES</p>
+</div>
 <ol type="a">
   <li class="li-impressio">Dades inicials de l'edifici</li>
   <ol type="1">
@@ -164,14 +166,16 @@
     <th>Registre</th>
   </thead>
   <tbody>
-    <tr>
-      <td class="td-impressio"><%= @edifici.identificacio.data_declaracio_obra_nova %></td>
-      <td class="td-impressio"><%= @edifici.identificacio.tom_inscripcio_registral %></td>
-      <td class="td-impressio"><%= @edifici.identificacio.foli_inscripcio_registral %></td>
-      <td class="td-impressio"><%= @edifici.identificacio.llibre_inscripcio_registral %></td>
-      <td class="td-impressio"><%= @edifici.identificacio.finca_inscripcio_registral %></td>
-      <td class="td-impressio"><%= @edifici.identificacio.registre_de_inscripcio_registral %></td>
-    </tr>
+    <% @edifici.inscripcio_registrals.each do |inscripcio_registral| %>
+      <tr>
+        <td class="td-impressio"><%= inscripcio_registral.data %></td>
+        <td class="td-impressio"><%= inscripcio_registral.tom %></td>
+        <td class="td-impressio"><%= inscripcio_registral.foli %></td>
+        <td class="td-impressio"><%= inscripcio_registral.llibre %></td>
+        <td class="td-impressio"><%= inscripcio_registral.numero_finca %></td>
+        <td class="td-impressio"><%= inscripcio_registral.registre %></td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
 
@@ -332,6 +336,15 @@
 <div class="salt-pagina"></div>
 <p class="subtitol-seccio-document">Registre d'operacions de manteniment</p>
 
+<p>El registre d'operacions de manteniment i reparacions està configurat per un registre de les operacions i actuacions següents:
+  <ol>
+    <li>Operacions de manteniment i de revisió reglamentària</li>
+    <li>Operacions de reparació fetes per esmenar vicis i defectes de la construcció i les instal·lacions comunes</li>
+    <li>Obres de millora que es facin per adaptar els edificis a les exigències tecnològiques i de confort</li>
+    <li>Actuacions per garantir la cohesió social, l'accessibilitat, la sostenibilitat, l'ecoeficiència i la innovació</li>
+  </ol>
+</p>
+
 <table class="taula-registre">
   <thead>
     <th class="cell-registre cell-principal">Descripció</th>
@@ -435,7 +448,9 @@
 
 <div class="salt-pagina"></div>
 
-<p class="titol-seccio-document">DOCUMENT D'ESPECIFICACIONS TÈCNIQUES</p>
+<div class="container-titol-seccio-document">
+  <p class="titol-seccio-document">DOCUMENT D'ESPECIFICACIONS TÈCNIQUES</p>
+</div>
 
 <p class="p-impressio">Els documents d’especificacions tècniques de l’edifici (DET), elaborats i signats per la direcció d’obra, han d’incloure els punts següents: 
 </p>
@@ -595,11 +610,17 @@
 <li class="li-impressio">No s’han de fer servir els ascensors.</li>
 </ul>
 
+<div class="salt-pagina"></div>
+<div class="container-titol-seccio-document">
+  <p class="titol-seccio-document">MANUAL DELS HABITATGES</p>
+</div>
 
 <div class="salt-pagina"></div>
-<p class="titol-seccio-document">ARXIU DE DOCUMENTS</p>
+<div class="container-titol-seccio-document">
+  <p class="titol-seccio-document">ARXIU DE DOCUMENTS</p>
+</div>
 
-<p class="p-impressio">A l’arxiu hi han de constar els documents següents:</p>
+<p class="p-impressio">L’arxiu de documents ha d’estar configurat pels documents relatius al quadern de registre i tots els documents d’especificacions tècniques, havent de contenir els següents documents:</p>
 <ul>
 <li class="li-impressio">Les llicències preceptives.</li>
 <li class="li-impressio">El certificat de final d’obra i els seus annexos pertinents segons el CTE, inclosos les instal·lacions de l’edifici.</li>

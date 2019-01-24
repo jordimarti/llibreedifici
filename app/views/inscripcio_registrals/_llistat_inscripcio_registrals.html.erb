@@ -1,0 +1,52 @@
+<% @inscripcio_registrals.each do |inscripcio_registral| %>
+	<div class="inscripcio-registral-item">
+		
+		<div class="row">
+
+			<div class="medium-2 columns">
+				<span class="strong"><%= t('.data') %></span><br/>
+				<%= link_to edit_edifici_inscripcio_registral_path(@edifici, inscripcio_registral), remote: true do %>
+			    <div class="inscripcio-registral-editar">
+			    	
+			    	<%= inscripcio_registral.data %>
+			    </div>
+			  <% end %>
+			</div>
+
+			<div class="medium-1 columns">
+	    	<span class="strong"><%= t('.tom') %></span><br/>
+	    	<%= inscripcio_registral.tom %>
+			</div>
+
+			<div class="medium-2 columns">
+	    	<span class="strong"><%= t('.foli') %></span><br/>
+	    	<%= inscripcio_registral.foli %>
+			</div>
+
+			<div class="medium-2 columns">
+	    	<span class="strong"><%= t('.llibre') %></span><br/>
+	    	<%= inscripcio_registral.llibre %>
+			</div>
+
+			<div class="medium-2 columns">
+	    	<span class="strong"><%= t('.numero_finca') %></span><br/>
+	    	<%= inscripcio_registral.numero_finca %>
+			</div>
+
+			<div class="medium-2 columns">
+	    	<span class="strong"><%= t('.registre') %></span><br/>
+	    	<%= inscripcio_registral.registre %>
+			</div>
+
+			<div class="medium-1 columns">
+	    	<%= link_to edifici_inscripcio_registral_path(@edifici, inscripcio_registral), remote: true, method: :delete,  data: { confirm: 'Segur que vols eliminar?' } do %>
+				  <br/>
+				  <span class="icon-cancel icones-icomoon"></span>
+				  
+				<% end %>
+			</div>
+
+		</div>
+
+	</div>
+<% end %>

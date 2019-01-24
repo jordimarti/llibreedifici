@@ -27,6 +27,7 @@ class IdentificacionsController < ApplicationController
       redirect_to root_path
     end
     @submenu_actiu = 'identificacio'
+    @inscripcio_registrals = InscripcioRegistral.where(:edifici_id => params[:edifici_id])
   end
 
   # POST /identificacions

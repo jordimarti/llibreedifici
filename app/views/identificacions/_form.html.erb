@@ -225,23 +225,15 @@ end
         </div>
 
         <div class="row">
-          <div class="medium-2 columns">
-            <%= f.input :data_declaracio_obra_nova %>
-          </div>
-          <div class="medium-2 columns">
-            <%= f.input :tom_inscripcio_registral %>
-          </div>
-          <div class="medium-2 columns">
-            <%= f.input :foli_inscripcio_registral %>
-          </div>
-          <div class="medium-2 columns">
-            <%= f.input :llibre_inscripcio_registral %>
-          </div>
-          <div class="medium-2 columns">
-            <%= f.input :finca_inscripcio_registral %>
-          </div>
-          <div class="medium-2 columns">
-            <%= f.input :registre_de_inscripcio_registral %>
+          <div class="medium-12 columns">
+            <div id="inscripcio-registral">
+              <%= render  :partial => '/inscripcio_registrals/llistat_inscripcio_registrals' %>
+            </div>
+            
+            <%= link_to (new_edifici_inscripcio_registral_path), remote: true do %>
+              <span class="suma">+</span> <%= t('.afegir_inscripcio_registral') %>
+            <% end %>
+              
           </div>
         </div>
 

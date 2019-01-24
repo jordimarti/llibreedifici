@@ -253,6 +253,276 @@ class EdificisController < ApplicationController
     end
   end
 
+  def duplicate
+    edifici = Edifici.find(params[:id])
+    nou_edifici = edifici.dup
+    nou_edifici.nom_edifici = nou_edifici.nom_edifici + " copia"
+    nou_edifici.save
+
+    identificacio = Identificacio.find(edifici)
+    nou_identificacio = identificacio.dup
+    nou_identificacio.edifici_id = nou_edifici.id
+    nou_identificacio.planol_emplacament.clear
+    nou_identificacio.foto_facana.clear
+    nou_identificacio.foto_facana_2.clear
+    nou_identificacio.foto_facana_3.clear
+    nou_identificacio.logo_empresa.clear
+    nou_identificacio.save
+
+    fonamentacio = Fonamentacio.find(edifici)
+    nou_fonamentacio = fonamentacio.dup
+    nou_fonamentacio.edifici_id = nou_edifici.id
+    nou_fonamentacio.save
+
+    estructura = Estructura.find(edifici)
+    nou_estructura = estructura.dup
+    nou_estructura.edifici_id = nou_edifici.id
+    nou_estructura.save
+
+    tancaments_vertical = TancamentsVertical.find(edifici)
+    nou_tancaments_vertical = tancaments_vertical.dup
+    nou_tancaments_vertical.edifici_id = nou_edifici.id
+    nou_tancaments_vertical.save
+
+    coberta = Coberta.find(edifici)
+    nou_coberta = coberta.dup
+    nou_coberta.edifici_id = nou_edifici.id
+    nou_coberta.save
+
+    particio = Particio.find(edifici)
+    nou_particio = particio.dup
+    nou_particio.edifici_id = nou_edifici.id
+    nou_particio.save
+
+    sanejament = Sanejament.find(edifici)
+    nou_sanejament = sanejament.dup
+    nou_sanejament.edifici_id = nou_edifici.id
+    nou_sanejament.save
+
+    aigua = Aigua.find(edifici)
+    nou_aigua = aigua.dup
+    nou_aigua.edifici_id = nou_edifici.id
+    nou_aigua.save
+
+    electricitat = Electricitat.find(edifici)
+    nou_electricitat = electricitat.dup
+    nou_electricitat.edifici_id = nou_edifici.id
+    nou_electricitat.save
+
+    climatitzacio = Climatitzacio.find(edifici)
+    nou_climatitzacio = climatitzacio.dup
+    nou_climatitzacio.edifici_id = nou_edifici.id
+    nou_climatitzacio.save
+
+    ga = Ga.find(edifici)
+    nou_ga = ga.dup
+    nou_ga.edifici_id = nou_edifici.id
+    nou_ga.save
+
+    ventilacio = Ventilacio.find(edifici)
+    nou_ventilacio = ventilacio.dup
+    nou_ventilacio.edifici_id = nou_edifici.id
+    nou_ventilacio.save
+
+    incendi = Incendi.find(edifici)
+    nou_incendi = incendi.dup
+    nou_incendi.edifici_id = nou_edifici.id
+    nou_incendi.save
+
+    ascensor = Ascensor.find(edifici)
+    nou_ascensor = ascensor.dup
+    nou_ascensor.edifici_id = nou_edifici.id
+    nou_ascensor.save
+
+    telecomunicacio = Telecomunicacio.find(edifici)
+    nou_telecomunicacio = telecomunicacio.dup
+    nou_telecomunicacio.edifici_id = nou_edifici.id
+    nou_telecomunicacio.save
+
+    especial = Especial.find(edifici)
+    nou_especial = especial.dup
+    nou_especial.edifici_id = nou_edifici.id
+    nou_especial.save
+
+    checklist_nou_plurifamiliar = ChecklistNouPlurifamiliar.find(edifici)
+    nou_checklist_nou_plurifamiliar = checklist_nou_plurifamiliar.dup
+    nou_checklist_nou_plurifamiliar.edifici_id = nou_edifici.id
+    nou_checklist_nou_plurifamiliar.save
+
+    checklist_nou_unifamiliar = ChecklistNouUnifamiliar.find(edifici)
+    nou_checklist_nou_unifamiliar = checklist_nou_unifamiliar.dup
+    nou_checklist_nou_unifamiliar.edifici_id = nou_edifici.id
+    nou_checklist_nou_unifamiliar.save
+
+    checklist_existent_plurifamiliar = ChecklistExistentPlurifamiliar.find(edifici)
+    nou_checklist_existent_plurifamiliar = checklist_existent_plurifamiliar.dup
+    nou_checklist_existent_plurifamiliar.edifici_id = nou_edifici.id
+    nou_checklist_existent_plurifamiliar.save
+
+    checklist_nou_terciari = ChecklistNouTerciari.find(edifici)
+    nou_checklist_nou_terciari = checklist_nou_terciari.dup
+    nou_checklist_nou_terciari.edifici_id = nou_edifici.id
+    nou_checklist_nou_terciari.save
+
+    edifici.promotors.each do |promotor|
+      nou_promotor = promotor.dup
+      nou_promotor.edifici_id = nou_edifici.id
+      nou_promotor.save
+    end
+
+    edifici.projectistes.each do |projectista|
+      nou_projectista = projectista.dup
+      nou_projectista.edifici_id = nou_edifici.id
+      nou_projectista.save
+    end
+
+    edifici.constructors.each do |constructor|
+      nou_constructor = constructor.dup
+      nou_constructor.edifici_id = nou_edifici.id
+      nou_constructor.save
+    end
+
+    edifici.directors.each do |director|
+      nou_director = director.dup
+      nou_director.edifici_id = nou_edifici.id
+      nou_director.save
+    end
+
+    edifici.execucio_directors.each do |execucio_director|
+      nou_execucio_director = execucio_director.dup
+      nou_execucio_director.edifici_id = nou_edifici.id
+      nou_execucio_director.save
+    end
+
+    edifici.laboratoris.each do |laboratori|
+      nou_laboratori = laboratori.dup
+      nou_laboratori.edifici_id = nou_edifici.id
+      nou_laboratori.save
+    end
+
+    edifici.entitat_controls.each do |entitat_control|
+      nou_entitat_control = entitat_control.dup
+      nou_entitat_control.edifici_id = nou_edifici.id
+      nou_entitat_control.save
+    end
+
+    edifici.subministradors.each do |subministrador|
+      nou_subministrador = subministrador.dup
+      nou_subministrador.edifici_id = nou_edifici.id
+      nou_subministrador.save
+    end
+
+    edifici.industrials.each do |industrial|
+      nou_industrial = industrial.dup
+      nou_industrial.edifici_id = nou_edifici.id
+      nou_industrial.save
+    end
+
+    edifici.colaboradors.each do |colaborador|
+      nou_colaborador = colaborador.dup
+      nou_colaborador.edifici_id = nou_edifici.id
+      nou_colaborador.save
+    end
+
+    edifici.coordinadors.each do |coordinador|
+      nou_coordinador = coordinador.dup
+      nou_coordinador.edifici_id = nou_edifici.id
+      nou_coordinador.save
+    end
+
+    edifici.llicencies.each do |llicencia|
+      nou_llicencia = llicencia.dup
+      nou_llicencia.edifici_id = nou_edifici.id
+      nou_llicencia.save
+    end
+
+    edifici.declaracions.each do |declaracio|
+      nou_declaracio = declaracio.dup
+      nou_declaracio.edifici_id = nou_edifici.id
+      nou_declaracio.save
+    end
+
+    edifici.regim_propietats.each do |regim_propietat|
+      nou_regim_propietat = regim_propietat.dup
+      nou_regim_propietat.edifici_id = nou_edifici.id
+      nou_regim_propietat.save
+    end
+
+    edifici.regim_especials.each do |regim_especial|
+      nou_regim_especial = regim_especial.dup
+      nou_regim_especial.edifici_id = nou_edifici.id
+      nou_regim_especial.save
+    end
+
+    edifici.carregues.each do |carrega|
+      nou_carrega = carrega.dup
+      nou_carrega.edifici_id = nou_edifici.id
+      nou_carrega.save
+    end
+
+    edifici.entitats.each do |entitat|
+      nou_entitat = entitat.dup
+      nou_entitat.edifici_id = nou_edifici.id
+      nou_entitat.save
+    end
+
+    edifici.garantia_promotors.each do |garantia_promotor|
+      nou_garantia_promotor = garantia_promotor.dup
+      nou_garantia_promotor.edifici_id = nou_edifici.id
+      nou_garantia_promotor.save
+    end
+
+    edifici.garantia_constructors.each do |garantia_constructor|
+      nou_garantia_constructor = garantia_constructor.dup
+      nou_garantia_constructor.edifici_id = nou_edifici.id
+      nou_garantia_constructor.save
+    end
+
+    edifici.garantia_instalacions.each do |garantia_instalacio|
+      nou_garantia_instalacio = garantia_instalacio.dup
+      nou_garantia_instalacio.edifici_id = nou_edifici.id
+      nou_garantia_instalacio.save
+    end
+
+    edifici.energia_certificats.each do |energia_certificat|
+      nou_energia_certificat = energia_certificat.dup
+      nou_energia_certificat.edifici_id = nou_edifici.id
+      nou_energia_certificat.save
+    end
+
+    edifici.aptitud_certificats.each do |aptitud_certificat|
+      nou_aptitud_certificat = aptitud_certificat.dup
+      nou_aptitud_certificat.edifici_id = nou_edifici.id
+      nou_aptitud_certificat.save
+    end
+
+    edifici.iites.each do |iite|
+      nou_iite = iite.dup
+      nou_iite.edifici_id = nou_edifici.id
+      nou_iite.save
+    end
+
+    edifici.elements.each do |element|
+      nou_element = element.dup
+      nou_element.edifici_id = nou_edifici.id
+      nou_element.save
+    end
+
+    edifici.referencies.each do |referencia|
+      nou_referencia = referencia.dup
+      nou_referencia.edifici_id = nou_edifici.id
+      nou_referencia.save
+    end
+
+    edifici.referencia_calendaris.each do |referencia_calendari|
+      nou_referencia_calendari = referencia_calendari.dup
+      nou_referencia_calendari.edifici_id = nou_edifici.id
+      nou_referencia_calendari.save
+    end
+
+    redirect_to edificis_url
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

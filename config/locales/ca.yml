@@ -1059,6 +1059,9 @@ ca:
       guardar: "Guardar"
     update:
       guardat_ok: "Les dades s'han guardat correctament"
+  inscripcio_registrals:
+    form:
+      guardar: "Guardar"
   agents:
     index:
       titol_agents: "Agents de l'edificació"
