@@ -296,6 +296,13 @@ es:
         llibre_inscripcio_registral: "Libro"
         finca_inscripcio_registral: "Núm. Finca"
         registre_de_inscripcio_registral: "Registro"
+      inscripcio_registral:
+        data: "Fecha"
+        tom: "Tomo"
+        foli: "Folio"
+        llibre: "Libro"
+        numero_finca: "Número finca"
+        registre: "Registro"
       promotor:
         nom_promotor: "Nombre"
         nif_promotor: "NIF/CIF"
@@ -1042,6 +1049,7 @@ es:
   identificacions:
     edit:
       titol_identificacio: "Identificación"
+      inscripcio_registral: "Inscripción registral obra nueva"
     form:
       titol_dades: "DATOS DE IDENTIFICACIÓN DE LA CONSTRUCCIÓN"
       titol_empresa: "DATOS DE IDENTIFICACIÓN DE LA EMPRESA O PROFESIONAL"
@@ -1056,9 +1064,20 @@ es:
       notari: "Notario"
       escriptures: "Escrituras"
       declaracio_obra_nova: "Inscripción registral de la declaración de obra nueva"
+      afegir_inscripcio_registral: "Añadir inscripción registral"
       guardar: "Guardar"
     update:
       guardat_ok: "Los datos se han guardado correctamente"
+  inscripcio_registrals:
+    form:
+      guardar: "Guardar"
+    llistat_inscripcio_registrals:
+      data: "Fecha"
+      tom: "Tomo"
+      foli: "Folio"
+      llibre: "Libro"
+      numero_finca: "Número finca"
+      registre: "Registro"
   agents:
     index:
       titol_agents: "Agentes de la edificación"
