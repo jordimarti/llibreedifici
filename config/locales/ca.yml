@@ -81,7 +81,7 @@ ca:
   layouts:
     navigation:
       titol: "Llibre de l'edifici"
-      projectes: "Projectes"
+      projects: "Llibres"
       tutorials: "Tutorials"
       register: "Registrar-se"
       sign_in: "Iniciar sessió"
@@ -154,20 +154,21 @@ ca:
       titol_avis: "Avís legal"
   edificis:
     index:
-      titol: "Projectes"
+      titol: "Llibres de l'edifici"
       projecte_nou: "Projecte nou:"
-      projectes_existents: "Projectes existents:"
-      nou_edifici: "Crear un projecte nou"
-      no_projectes: "Encara no has creat cap projecte."
-      eliminar: "Estàs segur que vols eliminar aquest projecte?"
-      importar: "Importar un projecte"
+      projectes_existents: "Llibres de l'edifici existents:"
+      crear_nou: "Crear un nou"
+      llibre_edifici: "Llibre de l'edifici"
+      no_projectes: "Encara no has creat cap Llibre de l'edifici."
+      eliminar: "Estàs segur que vols eliminar aquest Llibre de l'edifici?"
+      importar: "Importar un Llibre de l'edifici"
       no_pagat: "Pendent de pagament"
     new:
-      nou_edifici: "Crear un projecte nou"
-      tornar_projectes: "Tornar als projectes"
+      nou_edifici: "Crear un nou Llibre de l'edifici"
+      tornar_projectes: "Tornar als Llibres de l'edifici"
     edit:
       editar_edifici: "Editar el nom de l'edifici"
-      tornar_projectes: "Tornar als projectes"
+      tornar_projectes: "Tornar als Llibres de l'edifici"
       no_editar_tipologia: "No es pot canviar la tipologia de l'edifici ni la referència cadastral."
       guardar: "Guardar"
     form:
@@ -179,8 +180,8 @@ ca:
     new:
       titol: "Dades de facturació"
     validate_user_nif:
-      titol: "Pagament del projecte"
-      explicacio: "Per crear un projecte cal realitzar un pagament de 42,96€ (35,50€ + IVA)."
+      titol: "Pagament del Llibre de l'edifici"
+      explicacio: "Per crear un Llibre de l'edifici cal realitzar un pagament de 42,96€ (35,50€ + IVA)."
       explicacio2: "Selecciona si voldràs una factura al teu nom o a nom d'empresa."
       explicacio3: "Escriu el NIF sense espais o guions (-)."
       factura_personal: "Factura personal"
@@ -194,14 +195,14 @@ ca:
       guardar: "Continuar"
   pagaments:
     validar_dades:
-      titol: "Pagament del projecte"
-      explicacio: "Per crear un projecte cal realitzar un pagament de 42,96€ (35,50€ + IVA)."
+      titol: "Pagament del Llibre de l'edifici"
+      explicacio: "Per crear un Llibre de l'edifici cal realitzar un pagament de 42,96€ (35,50€ + IVA)."
       explicacio2: "Selecciona si voldràs una factura al teu nom o a nom d'empresa."
       explicacio3: "Escriu el NIF sense espais o guions (-)."
       factura_personal: "Factura personal"
       factura_empresa: "Factura empresa"
       imatge_llibre: "Preu llibre edifici"
-      tornar_projectes: "Tornar a projectes"
+      tornar_projectes: "Tornar a Llibres de l'edifici"
   usuari_factures:
     show:
       titol: "Dades de facturació"
