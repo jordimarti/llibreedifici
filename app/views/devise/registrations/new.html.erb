@@ -18,6 +18,8 @@
               <%= f.input :email, required: true, error_html: { class: 'error'} %>
               <%= f.input :password, required: true, error_html: { class: 'error'} %>
               <%= f.input :password_confirmation, required: true, error_html: { class: 'error'} %>
+              <%= f.input :role, :collection => [['Tècnic competent', 'tecnic'], ['Altres', 'altres']], required: true, error_html: { class: 'error'} %>
+              <p>Les instruccions d’ús i manteniment han d’estar signades per un tècnic competent. Per aquesta raó cal especificar en aquest moment quin tipus d’usuari està creant el llibre de l’edifici.</p>
             </div>
 
             <div class="form-actions session-form-button">

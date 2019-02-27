@@ -6,31 +6,44 @@
 </div>
 
 <div class="background-seccio">
-  <div class="row">
-    <div class="large-12 columns">
-      <div class="titol-seccio">
-        <%= t('.titol_operacions') %>
+  
+  <% if current_user.role == 'cambra' %>
+    <div class="row">
+      <div class="medium-12 columns">
+        <br/>
+        <div data-alert class="alert-box alert">
+          <%= t('.text_permisos') %>
+        </div>
       </div>
     </div>
-  </div>
+  <% else %>
 
-  <div class="row">
-    <div class="medium-12 columns">
-      <div class="container-operacions-sistema">
-        <div class="row">
-          <div class="medium-3 columns">
-            <%= link_to t('.actualitzar_llistat'), crear_llistat_path, :class => 'button radius small' %>
-          </div>
-          <div class="medium-9 columns">
-            <p><%= t('.text_actualitzar_llistat') %></p>
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="titol-seccio">
+          <%= t('.titol_operacions') %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-12 columns">
+        <div class="container-operacions-sistema">
+          <div class="row">
+            <div class="medium-3 columns">
+              <%= link_to t('.actualitzar_llistat'), crear_llistat_path, :class => 'button radius small' %>
+            </div>
+            <div class="medium-9 columns">
+              <p><%= t('.text_actualitzar_llistat') %></p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <%= render  partial: '/operacions/sistema', collection: @sistemes %>
+    <%= render  partial: '/operacions/sistema', collection: @sistemes %>
 
+  <% end %>
 </div>
 
 

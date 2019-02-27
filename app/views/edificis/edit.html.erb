@@ -11,6 +11,9 @@
 					  <div class="form-inputs">
 					    <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id } %>
 					    <%= f.input :nom_edifici %>
+					    <% if @edifici.creador = 'cambra' %>
+					    	<%= f.input :editor_nif %>
+					    <% end %>
 					  </div>
 					  	
 					  <div class="form-actions projectes-form-button">

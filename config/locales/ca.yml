@@ -87,6 +87,7 @@ ca:
       sign_in: "Iniciar sessió"
       account_configuration: "Configuració del compte"
       sign_out: "Tancar sessió"
+      cambra_projects: "Llibres Cambra"
     subheader:
       identificacio: "Identificació"
       agents: "Agents"
@@ -246,10 +247,12 @@ ca:
         password_confirmation: 'Confirmació de contrasenya'
         current_password: 'Contrasenya actual'
         remember_me: "Recorda'm"
+        role: "Tipus d'usuari"
       edifici:
         nom_edifici: "Nom de l'edifici"
         ref_cadastral: "Referència cadastral"
         tipus_edifici: "Tipus d'edifici"
+        editor_nif: "NIF del tècnic"
       importat:
         arxiu: "Arxiu"
       identificacio:
@@ -1005,6 +1008,7 @@ ca:
         register_title: "Crear un compte d'usuari"
         register_button: "Registra't"
         registration_needed: "És necessari registrar-se per poder utilitzar l'aplicatiu Llibre de l'edifici."
+        nota_tipus_usuari: "Les instruccions d’ús i manteniment han d’estar signades per un tècnic competent. Per aquesta raó cal especificar en aquest moment quin tipus d’usuari està creant el llibre de l’edifici."
         if_registered: "Si ja t'has registrat pots"
         login_here: "iniciar sessió aquí"
       edit:
@@ -1519,6 +1523,7 @@ ca:
       eliminar: "Segur que vols eliminar aquesta operació?"
       actualitzar_llistat: "Actualitzar llistat"
       text_actualitzar_llistat: "Actualitzeu el llistat d'operacions de manteniment cada vegada que modifiqueu la descripció constructiva de l'edifici. Aquesta acció actualitza totes les operacions creades automàticament, però no afecta a les operacions creades manualment."
+      text_permisos: "Aquest usuari no té els permisos necessaris per editar aquest apartat"
   checklist_nou_plurifamiliars:
     edit:
       titol_configuracio_document: "Configuració del document"

@@ -108,6 +108,7 @@ Rails.application.routes.draw do
   
   get 'pagaments/llistat_pagaments'
   get 'pagaments/detall_pagament'
+  get 'pagaments/cambra_projects'
   
   
   

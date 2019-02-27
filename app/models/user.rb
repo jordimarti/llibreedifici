@@ -6,11 +6,12 @@ class User < ActiveRecord::Base
 
   has_many :edificis
   has_many :pagaments
-	after_create :subscribe
+	#after_create :subscribe
 
 	validates :first_name, :presence => true
 	validates :last_name, :presence => true
 	validates :nif, :presence => true
+  validates :role, :presence => true
 
   def name
   	[first_name, last_name].compact.join(' ')

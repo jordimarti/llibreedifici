@@ -25,6 +25,9 @@
         <li class="has-dropdown">
           <a href="#"><%= current_user.email %></a>
           <ul class="dropdown">
+            <% if current_user.role == 'admin' %>
+              <li><%= link_to t('.cambra_projects'), pagaments_cambra_projects_path(any: Date.today.year) %></li>
+            <% end %>
             <li><%= link_to t('.account_configuration'), edit_user_registration_path %></li>
             <li><%= link_to t('.sign_out'), destroy_user_session_path, method: :delete %></li>
           </ul>

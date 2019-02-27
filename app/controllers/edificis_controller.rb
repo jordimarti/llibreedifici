@@ -6,6 +6,7 @@ class EdificisController < ApplicationController
   # GET /edificis.json
   def index
     @edificis = Edifici.where(user_id: current_user.id).order(created_at: :desc)
+    @edificis_editor = Edifici.where(editor_nif: current_user.nif).order(created_at: :desc)
   end
 
   # GET /edificis/1
@@ -26,13 +27,20 @@ class EdificisController < ApplicationController
   # POST /edificis.json
   def create
     @edifici = Edifici.new(edifici_params)
+    if current_user.role = 'cambra'
+      @edifici.creador = 'cambra'
+    end
     respond_to do |format|
       if @edifici.save
         #Aquí creem els objectes complementaris a l'edifici (dades_edifici, checklist...)
         create_complements(@edifici.id)
 
-        format.html { redirect_to validar_dades_path(@edifici.id) }
-        format.json { render :show, status: :created, location: @edifici }
+        if current_user.role = 'cambra'
+          format.html { redirect_to edificis_path }
+        else
+          format.html { redirect_to validar_dades_path(@edifici.id) }
+          format.json { render :show, status: :created, location: @edifici }
+        end
       else
         format.html { render :new }
         format.json { render json: @edifici.errors, status: :unprocessable_entity }
@@ -532,6 +540,6 @@ class EdificisController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def edifici_params
-      params.require(:edifici).permit(:user_id, :nom_edifici, :tipus_edifici, :ref_cadastral)
+      params.require(:edifici).permit(:user_id, :nom_edifici, :tipus_edifici, :ref_cadastral, :creador, :editor_correu, :editor_nif)
     end
 end

@@ -6,6 +6,9 @@
     <p><%= t('.atencio_ref_cadastral') %></p>
     <%= f.input :ref_cadastral %>
     <%= f.input :tipus_edifici, :collection => [['Edifici nou plurifamiliar', 'nou_plurifamiliar'],['Edifici nou unifamiliar', 'nou_unifamiliar'], ['Edifici existent plurifamiliar', 'existent_plurifamiliar'], ['Edifici existent unifamiliar', 'existent_unifamiliar'], ['Edifici nou terciari', 'nou_terciari']] %>
+    <% if current_user.role == 'cambra' %>
+      <%= f.input :editor_nif %>
+    <% end %>
   </div>
 
   <div class="form-actions projectes-form-button">

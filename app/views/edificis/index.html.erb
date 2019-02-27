@@ -56,7 +56,11 @@
                                 pagat = false
                               end
                             else
-                              pagat = false
+                              if edifici.creador = 'cambra'
+                                pagat = true
+                              else
+                                pagat = false
+                              end
                             end
                           %>
                           <div class="item-llistat-edificis">
@@ -92,18 +96,20 @@
                                 tipus_edifici = "Edifici nou terciari"
                               end %>
                               <span class="tipus-llistat-edificis"><%= tipus_edifici %></span> <span class="data-llistat-edificis">(<%= edifici.created_at.day.to_s %>-<%= edifici.created_at.month.to_s %>-<%= edifici.created_at.year.to_s %>)</span>
-
+                              
                               <div class="boto-item-llistat-edificis right">
                                 <%= link_to edifici, method: :delete, data: { confirm: t('.eliminar') } do %>
                                   <span class="icon-cancel icones-icomoon" title="Eliminar"></span>                     
                                 <% end %>
                               </div>
-
-                              <div class="boto-item-llistat-edificis right">
-                                <%= link_to duplicate_path(edifici, edifici.id) do %>
-                                  <span class="icon-copy icones-icomoon" title="Duplicar"></span>
-                                <% end %>
-                              </div>
+                              
+                              <% if edifici.creador != 'cambra' %>
+                                <div class="boto-item-llistat-edificis right">
+                                  <%= link_to duplicate_path(edifici, edifici.id) do %>
+                                    <span class="icon-copy icones-icomoon" title="Duplicar"></span>
+                                  <% end %>
+                                </div>
+                              <% end %>
 
                               <div class="boto-item-llistat-edificis right">
                                 <%= link_to edit_edifici_path(edifici) do %>
@@ -119,6 +125,37 @@
 
                     <% end %>
                   </div>
+                  <% if @edificis_editor.count == 0 %>
+                      
+                  <% else %>
+                    <div class="projectes-existents-container projectes-cambra">
+                      <h4>Cambra de la Propietat de Terrassa</h4>
+                      <% @edificis_editor.each do |edifici| %>
+                        <div class="item-llistat-edificis">
+                          <div class="imatge-item-llistat-edificis">
+                            <%= link_to image_tag(edifici.identificacio.foto_facana.url(:thumb)), edit_edifici_identificacio_path(edifici.id, edifici.identificacio.id) %>
+                          </div>
+                          <div class="text-item-llistat-edificis">
+                            <%= link_to(edifici.nom_edifici, edit_edifici_identificacio_path(edifici.id, edifici.identificacio.id), :class => 'link-item-edifici') %>
+                            <br>
+                            <% case edifici.tipus_edifici 
+                            when "nou_plurifamiliar" 
+                              tipus_edifici = "Edifici nou plurifamiliar"
+                            when "nou_unifamiliar"
+                              tipus_edifici = "Edifici nou unifamiliar"
+                            when "existent_plurifamiliar"
+                              tipus_edifici = "Edifici existent plurifamiliar"
+                            when "existent_unifamiliar"
+                              tipus_edifici = "Edifici existent unifamiliar"
+                            when "nou_terciari"
+                              tipus_edifici = "Edifici nou terciari"
+                            end %>
+                            <span class="tipus-llistat-edificis"><%= tipus_edifici %></span> <span class="data-llistat-edificis">(<%= edifici.created_at.day.to_s %>-<%= edifici.created_at.month.to_s %>-<%= edifici.created_at.year.to_s %>)</span>
+                          </div>
+                        </div>
+                      <% end %>
+                    </div>
+                  <% end %>
                 </div>
               </div>
             </div>
