@@ -37,7 +37,8 @@ class UsuariFacturesController < ApplicationController
     # Guardem el NIF introduït per si no és el de l'usuari
     nou_nif = @usuari_factura.nif
     # Comprovem si existeix l'usuari a la base de dades
-    client = Savon.client(wsdl: "http://isis.apabcn.cat/LibroEdificio/wsfacturasSap.asmx?wsdl")
+    #client = Savon.client(wsdl: "http://isis.apabcn.cat/LibroEdificio/wsfacturasSap.asmx?wsdl")
+    client = Savon.client(wsdl: "https://partial-caateebcn-partial.cs82.force.com/bookpurchase/services/Soap/class/BookPurchaseService")
     resposta = client.call(:get_usuario, message: { nif: @usuari_factura.nif })
     dades = resposta.to_hash
     @usuari_factura.nom = dades[:get_usuario_response][:param_usuario][:nombre]

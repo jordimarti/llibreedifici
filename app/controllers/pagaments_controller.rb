@@ -130,7 +130,8 @@ class PagamentsController < ApplicationController
     # Comprovem si l'última factura d'aquest edifici és d'usuari o d'empresa
     factura_usuari = UsuariFactura.where(edifici_id: pagament.edifici_id).last
     factura_empresa = EmpresaFactura.where(edifici_id: pagament.edifici_id).last
-    client = Savon.client(wsdl: "http://isis.apabcn.cat/LibroEdificio/wsfacturasSap.asmx?wsdl")
+    #client = Savon.client(wsdl: "http://isis.apabcn.cat/LibroEdificio/wsfacturasSap.asmx?wsdl")
+    client = Savon.client(wsdl: "https://partial-caateebcn-partial.cs82.force.com/bookpurchase/services/Soap/class/BookPurchaseService")
     if factura_usuari != nil && factura_empresa != nil
       if factura_usuari.updated_at > factura_empresa.updated_at
         factura = factura_usuari
