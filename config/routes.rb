@@ -40,8 +40,9 @@ Rails.application.routes.draw do
   get 'edificis/:edifici_id/pagaments/validar_dades', to: 'pagaments#validar_dades', :as => :validar_dades 
   get 'pagaments/update_pagament', to: 'pagaments#update_pagament', :as => :update_pagament
   get 'edificis/:edifici_id/crear_pagament', to: 'pagaments#crear_pagament', :as => :crear_pagament 
+  # 'edificis/:edifici_id/send_request', to: 'pagaments#send_request', :as => :send_request 
   get 'edificis/:edifici_id/pagaments/error_factura', to: 'pagaments#error_factura', :as => :error_factura 
-
+  get 'edificis/:edifici_id/pagaments/error_pagament', to: 'pagaments#error_pagament', :as => :error_pagament 
   get 'edificis/:edifici_id/usuari_factures/mostra_dades', to: 'usuari_factures#mostra_dades', :as => :mostra_dades
   
   resources :edificis do

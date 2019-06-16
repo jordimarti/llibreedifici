@@ -23,8 +23,42 @@ class UsuariFacturesController < ApplicationController
 
   end
 
-  # POST /usuari_factures
-  # POST /usuari_factures.json
+  #def create_old
+  #  @usuari_factura = UsuariFactura.new(usuari_factura_params)
+  #  #De moment anul·lo la validació al crear les dades de factura. Això és perquè primer es va a la pàgina de validació de dades, on l'usuari només ha de posar el NIF. Si tinc una validació d'altres camps com email no puc passar a la següent pàgina. Quan es faci l'update, en la confirmació de dades, sí que hi haurà validació de tots els camps, inclòs el NIF.
+  #  if @usuari_factura.save(validate: false)
+  #
+  #  else
+  #    redirect_to validar_dades_path(@edifici.id), flash: { error: @usuari_factura.errors.messages }
+  #    return
+  #  end
+  #  # Guardem el NIF introduït per si no és el de l'usuari
+  #  nou_nif = @usuari_factura.nif
+  #  # Comprovem si existeix l'usuari a la base de dades
+  #  #client = Savon.client(wsdl: "http://isis.apabcn.cat/LibroEdificio/wsfacturasSap.asmx?wsdl")
+  #  client = Savon.client(wsdl: "https://partial-caateebcn-partial.cs82.force.com/bookpurchase/services/Soap/class/BookPurchaseService")
+  #  resposta = client.call(:get_usuario, message: { nif: @usuari_factura.nif })
+  #  dades = resposta.to_hash
+  #  @usuari_factura.nom = dades[:get_usuario_response][:param_usuario][:nombre]
+  #  @usuari_factura.nif = dades[:get_usuario_response][:param_usuario][:nif]
+  #  @usuari_factura.poblacio = dades[:get_usuario_response][:param_usuario][:poblacion]
+  #  @usuari_factura.provincia = dades[:get_usuario_response][:param_usuario][:provincia]
+  #  @usuari_factura.codi_postal = dades[:get_usuario_response][:param_usuario][:codpostal]
+  #  @usuari_factura.adreca = dades[:get_usuario_response][:param_usuario][:direccion]
+  #  #@usuari_factura.email = dades[:get_usuario_response][:param_usuario][:email]
+  #  @usuari_factura.email = current_user.email
+  #  @usuari_factura.num_client = dades[:get_usuario_response][:param_usuario][:numcliente]
+  #  @usuari_factura.colegiat = dades[:get_usuario_response][:param_usuario][:escolegiado]
+  #  @usuari_factura.save(validate: false)
+  #  if @usuari_factura.nif
+  #    redirect_to edifici_usuari_factura_path(id: @usuari_factura.id)
+  #  else
+  #    @usuari_factura.nif = nou_nif
+  #    @usuari_factura.save(validate: false)
+  #    redirect_to edit_edifici_usuari_factura_path(id: @usuari_factura.id)
+  #  end
+  #end
+
   def create
     @usuari_factura = UsuariFactura.new(usuari_factura_params)
     #De moment anul·lo la validació al crear les dades de factura. Això és perquè primer es va a la pàgina de validació de dades, on l'usuari només ha de posar el NIF. Si tinc una validació d'altres camps com email no puc passar a la següent pàgina. Quan es faci l'update, en la confirmació de dades, sí que hi haurà validació de tots els camps, inclòs el NIF.
@@ -37,20 +71,19 @@ class UsuariFacturesController < ApplicationController
     # Guardem el NIF introduït per si no és el de l'usuari
     nou_nif = @usuari_factura.nif
     # Comprovem si existeix l'usuari a la base de dades
-    #client = Savon.client(wsdl: "http://isis.apabcn.cat/LibroEdificio/wsfacturasSap.asmx?wsdl")
-    client = Savon.client(wsdl: "https://partial-caateebcn-partial.cs82.force.com/bookpurchase/services/Soap/class/BookPurchaseService")
-    resposta = client.call(:get_usuario, message: { nif: @usuari_factura.nif })
+    endpoint = 'https://partial-caateebcn-partial.cs82.force.com/bookpurchase/services/apexrest/books?document=' + nou_nif
+    resposta = HTTParty.get(endpoint)
     dades = resposta.to_hash
-    @usuari_factura.nom = dades[:get_usuario_response][:param_usuario][:nombre]
-    @usuari_factura.nif = dades[:get_usuario_response][:param_usuario][:nif]
-    @usuari_factura.poblacio = dades[:get_usuario_response][:param_usuario][:poblacion]
-    @usuari_factura.provincia = dades[:get_usuario_response][:param_usuario][:provincia]
-    @usuari_factura.codi_postal = dades[:get_usuario_response][:param_usuario][:codpostal]
-    @usuari_factura.adreca = dades[:get_usuario_response][:param_usuario][:direccion]
-    #@usuari_factura.email = dades[:get_usuario_response][:param_usuario][:email]
+    @usuari_factura.nom = dades['nombre']
+    @usuari_factura.nif = dades['nif']
+    @usuari_factura.poblacio = dades['poblacion']
+    @usuari_factura.provincia = dades['provincia']
+    @usuari_factura.codi_postal = dades['codpostal']
+    @usuari_factura.adreca = dades['direccion']
+    #@usuari_factura.email = dades['email']
     @usuari_factura.email = current_user.email
-    @usuari_factura.num_client = dades[:get_usuario_response][:param_usuario][:numcliente]
-    @usuari_factura.colegiat = dades[:get_usuario_response][:param_usuario][:escolegiado]
+    @usuari_factura.num_client = dades['numcliente']
+    @usuari_factura.colegiat = dades['escolegiado']
     @usuari_factura.save(validate: false)
     if @usuari_factura.nif
       redirect_to edifici_usuari_factura_path(id: @usuari_factura.id)
