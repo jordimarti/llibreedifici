@@ -57,7 +57,8 @@ class PagamentsController < ApplicationController
     @pagament.user_id = current_user.id
     @pagament.edifici_id = params[:edifici_id]
     @pagament.numorder = numorder(params[:edifici_id])
-    @pagament.import = "42.96"
+    #@pagament.import = "42.96"
+    @pagament.import = "1"
     @pagament.pagat = false
     titular = current_user.name
     #endpoint = 'https://partial-caateebcn-partial.cs82.force.com/bookpurchase/apex/creditcardservice?importe=' + @pagament.import + '&titular=' + URI.escape(titular) + '&descripcion=llibreedifici&idProducto=' + params[:edifici_id] + '&urlresponse=http%3A%2F%2Flocalhost:3000%2Fpagaments%2Fupdate_pagament%3FpagoVisaResult%3Dvalue1%26numorder%3Dvalue2&urlresponseko=http%3A%2F%2Flocalhost:3000%2Fpagaments%2Ferror_factura'
@@ -67,7 +68,7 @@ class PagamentsController < ApplicationController
     url_resposta_error = "http%3A%2F%2Flocalhost:3000%2Fpagaments%2Ferror_pagament"
     args = {"importe" => @pagament.import, "titular" => URI.escape(titular), "descripcion" => "llibreedifici", "idProducto" => params[:edifici_id], "urlresponse" => url_resposta_correcta, "urlresponseint" => url_resposta_error}
     
-    urlstring = 'https://partial-caateebcn-partial.cs82.force.com/bookpurchase/services/apexrest/creditcard'
+    urlstring = 'https://apabcn.secure.force.com/bookpurchase/services/apexrest/creditcard'
     #urlstring = URI.parse('https://enngarvpspmm.x.pipedream.net')
     #uri = URI.parse("https://partial-caateebcn-partial.cs82.force.com/bookpurchase/services/apexrest/creditcard")
 
@@ -95,6 +96,8 @@ class PagamentsController < ApplicationController
       #puts resposta.headers.inspect
       puts '-----------------'
       dades = resposta.to_hash
+      @pagament.numorden = dades['numorden']
+      @pagament.save
       htmlstring = dades['pagoVisaResult']
       htmlstring.slice!(0, 9)
       htmlstring = 3.times do htmlstring.chop! end
@@ -146,33 +149,16 @@ class PagamentsController < ApplicationController
     pagament = Pagament.where(:numorder => params[:numorder]).last
     if pagament != nil
       if pagament.numorder != nil
-        
-        #Comprovem si el resultat és vàlid
-        validacio_resultat = comprovar_resultat(params[:resultado])
-
-        pagament.resultado = params[:resultado]
-        pagament.autorizacion = params[:autorizacion]
-        if validacio_resultat == true
-          pagament.pagat = true
-        else
-          pagament.pagat = false
-        end
-      else
-        pagament.pagat = false
-      end
-      pagament.save
-      # Una vegada s'ha fet el pagament i s'ha actualitzat la base de dades s'envia la factura
-      if pagament.pagat == true
-        # Comprovem si ja s'ha enviat una factura
+        pagament.pagat = true
         if pagament.factura_enviada != true
           # Especifiquem que s'ha enviat una factura per evitar duplicats de factures si s'executa de nou update_pagament
           pagament.factura_enviada = true
           pagament.save
           # Enviem la factura
           @resultat_enviament = envia_factura(pagament) 
+          @info_pagament = pagament
         end
       end
-      @info_pagament = pagament
     end
   end
 
@@ -181,7 +167,9 @@ class PagamentsController < ApplicationController
     factura_usuari = UsuariFactura.where(edifici_id: pagament.edifici_id).last
     factura_empresa = EmpresaFactura.where(edifici_id: pagament.edifici_id).last
     #client = Savon.client(wsdl: "http://isis.apabcn.cat/LibroEdificio/wsfacturasSap.asmx?wsdl")
-    client = Savon.client(wsdl: "https://partial-caateebcn-partial.cs82.force.com/bookpurchase/services/Soap/class/BookPurchaseService")
+    #client = Savon.client(wsdl: "https://partial-caateebcn-partial.cs82.force.com/bookpurchase/services/Soap/class/BookPurchaseService")
+    urlstring = 'https://apabcn.secure.force.com/bookpurchase/services/apexrest/books'
+
     if factura_usuari != nil && factura_empresa != nil
       if factura_usuari.updated_at > factura_empresa.updated_at
         factura = factura_usuari
@@ -198,34 +186,39 @@ class PagamentsController < ApplicationController
 
     if factura == factura_usuari
       puts "Seleccionat: factura usuari"
-      resposta = client.call(:create_fact_usuario, message: { 'ParamUsuario' => { nombre: factura.nom, nif: factura.nif, poblacion: '19', provincia: '08', codpostal: factura.codi_postal, direccion: factura.adreca, pais: 'ES', email: factura.email, numcliente: factura.num_client, escolegiado: factura.colegiat }, 'ParamOtrosDatos' => { referenciapago: pagament.numorder }})
+      args = {"ParamUsuario" => { nombre: factura.nom, nif: factura.nif, poblacion: '19', provincia: '08', codpostal: factura.codi_postal, direccion: factura.adreca, pais: 'ES', email: factura.email, numcliente: factura.num_client, escolegiado: factura.colegiat, solicitante: '' }, 'ParamOtrosDatos' => { referenciapago: pagament.numorden }}
+      resposta = HTTParty.post(urlstring, body: args.to_json, headers: { 'Content-Type' => 'application/json' })
       dades = resposta.to_hash
-      resultat = dades[:create_fact_usuario_response][:create_fact_usuario_result]
+      resultat = dades['resultado']
+      numfactura = dades['numfactura']
     else 
       puts "Seleccionat: factura empresa"
       puts "NombreJuridico: #{factura.nom_juridic}"
       puts "CIF: #{factura.nif}"
       puts "email: #{factura.email}"
-      resposta = client.call(:create_factura_empresa, message: { 'ParamEmpresa' => { 'NombreJuridico' => factura.nom_juridic, 'CIF' => factura.nif, poblacion: '19', provincia: '08', codpostal: factura.codi_postal, direccion: factura.adreca, email: factura.email, pais: 'ES', tipocliente: '' }, 'ParamOtrosDatos' => { referenciapago: pagament.numorder }})
+      #resposta = client.call(:create_factura_empresa, message: { 'ParamEmpresa' => { 'NombreJuridico' => factura.nom_juridic, 'CIF' => factura.nif, poblacion: '19', provincia: '08', codpostal: factura.codi_postal, direccion: factura.adreca, email: factura.email, pais: 'ES', tipocliente: '' }, 'ParamOtrosDatos' => { referenciapago: pagament.numorder }})
+      args = {"ParamEmpresa" => { codpostal: factura.codi_postal, direccion: factura.adreca, cif: factura.nif, nombrejuridico: factura.nom_juridic, pais: 'ES', poblacion: '19', provincia: '08', solicitante: '', email: factura.email, tipocliente: ''}, 'ParamOtrosDatos' => { referenciapago: pagament.numorden }}
+      resposta = HTTParty.post(urlstring, body: args.to_json, headers: { 'Content-Type' => 'application/json' })
       dades = resposta.to_hash
-      resultat = dades[:create_factura_empresa_response][:create_factura_empresa_result]
+      resultat = dades['resultado']
+      numfactura = dades['numfactura']
     end
 
-    grava_resposta_factura(pagament.id, resultat)
+    grava_resposta_factura(pagament.id, resultat, numfactura)
 
     if resultat == "0"
       #redirect_to edificis_path
       return true
     else 
       #redirect_to error_factura_path
-      puts "Resultat: #{resultat}"
       return false
     end
   end
 
-  def grava_resposta_factura(pagament_id, resultat)
+  def grava_resposta_factura(pagament_id, resultat, numfactura)
     pagament = Pagament.find(pagament_id)
     pagament.resposta_factura = resultat
+    pagament.num_factura_sap = numfactura
     pagament.save
   end
 
@@ -293,6 +286,6 @@ class PagamentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pagament_params
-      params.require(:pagament).permit(:user_id, :edifici_id, :numorder, :import, :resultado, :autorizacion, :pagat, :factura_enviada, :resposta_factura)
+      params.require(:pagament).permit(:user_id, :edifici_id, :numorder, :numorden, :import, :resultado, :autorizacion, :pagat, :factura_enviada, :resposta_factura, :num_factura_sap)
     end
 end

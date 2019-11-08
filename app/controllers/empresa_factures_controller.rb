@@ -36,19 +36,19 @@ class EmpresaFacturesController < ApplicationController
     # Guardem el NIF introduït
     nou_nif = @empresa_factura.nif
     # Comprovem si existeix l'empresa a la base de dades
-    client = Savon.client(wsdl: "http://isis.apabcn.cat/LibroEdificio/wsfacturasSap.asmx?wsdl")
-    resposta = client.call(:get_empresa, message: { cif: @empresa_factura.nif })
+    endpoint = 'https://apabcn.secure.force.com/bookpurchase/services/apexrest/books?document=' + nou_nif
+    resposta = HTTParty.get(endpoint)
     dades = resposta.to_hash
-    @empresa_factura.nom_juridic = dades[:get_empresa_response][:param_empresa][:nombre_juridico]
-    @empresa_factura.nif = dades[:get_empresa_response][:param_empresa][:cif]
-    @empresa_factura.poblacio = dades[:get_empresa_response][:param_empresa][:poblacion]
-    @empresa_factura.provincia = dades[:get_empresa_response][:param_empresa][:provincia]
-    @empresa_factura.codi_postal = dades[:get_empresa_response][:param_empresa][:codpostal]
-    @empresa_factura.adreca = dades[:get_empresa_response][:param_empresa][:direccion]
-    @empresa_factura.pais = dades[:get_empresa_response][:param_empresa][:pais]
+    @empresa_factura.nom_juridic = dades['NombreJuridico']
+    @empresa_factura.nif = dades['cif']
+    @empresa_factura.poblacio = dades['poblacion']
+    @empresa_factura.provincia = dades['provincia']
+    @empresa_factura.codi_postal = dades['codpostal']
+    @empresa_factura.adreca = dades['direccion']
+    @empresa_factura.pais = dades['pais']
     #@empresa_factura.email = dades[:get_empresa_response][:param_empresa][:email]
     @empresa_factura.email = current_user.email
-    @empresa_factura.tipus_client = dades[:get_empresa_response][:param_empresa][:tipocliente]
+    @empresa_factura.tipus_client = dades['tipocliente']
     @empresa_factura.save(validate: false)
     if @empresa_factura.nif
       redirect_to edifici_empresa_factura_path(id: @empresa_factura.id)

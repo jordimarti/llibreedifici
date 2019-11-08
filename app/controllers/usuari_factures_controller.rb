@@ -71,7 +71,7 @@ class UsuariFacturesController < ApplicationController
     # Guardem el NIF introduït per si no és el de l'usuari
     nou_nif = @usuari_factura.nif
     # Comprovem si existeix l'usuari a la base de dades
-    endpoint = 'https://partial-caateebcn-partial.cs82.force.com/bookpurchase/services/apexrest/books?document=' + nou_nif
+    endpoint = 'https://apabcn.secure.force.com/bookpurchase/services/apexrest/books?document=' + nou_nif
     resposta = HTTParty.get(endpoint)
     dades = resposta.to_hash
     @usuari_factura.nom = dades['nombre']
