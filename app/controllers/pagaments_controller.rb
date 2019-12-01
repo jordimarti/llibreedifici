@@ -57,15 +57,14 @@ class PagamentsController < ApplicationController
     @pagament.user_id = current_user.id
     @pagament.edifici_id = params[:edifici_id]
     @pagament.numorder = numorder(params[:edifici_id])
-    #@pagament.import = "42.96"
-    @pagament.import = "1"
+    @pagament.import = "42.96"
     @pagament.pagat = false
     titular = current_user.name
     #endpoint = 'https://partial-caateebcn-partial.cs82.force.com/bookpurchase/apex/creditcardservice?importe=' + @pagament.import + '&titular=' + URI.escape(titular) + '&descripcion=llibreedifici&idProducto=' + params[:edifici_id] + '&urlresponse=http%3A%2F%2Flocalhost:3000%2Fpagaments%2Fupdate_pagament%3FpagoVisaResult%3Dvalue1%26numorder%3Dvalue2&urlresponseko=http%3A%2F%2Flocalhost:3000%2Fpagaments%2Ferror_factura'
     #url = URI.parse('https://partial-caateebcn-partial.cs82.force.com/bookpurchase/services/apexrest/creditcard')
     #url = URI.parse('https://enngarvpspmm.x.pipedream.net')
-    url_resposta_correcta = "http%3A%2F%2Flocalhost:3000%2Fpagaments%2Fupdate_pagament%3FpagoVisaResult%3Dvalue1%26numorder%3D" + @pagament.numorder
-    url_resposta_error = "http%3A%2F%2Flocalhost:3000%2Fpagaments%2Ferror_pagament"
+    url_resposta_correcta = "http%3A%2F%2Fllibreedifici.apabcn.cat%2Fpagaments%2Fupdate_pagament%3FpagoVisaResult%3Dvalue1%26numorder%3D" + @pagament.numorder
+    url_resposta_error = "http%3A%2F%2Fllibreedifici.apabcn.cat%2Fpagaments%2Ferror_pagament"
     args = {"importe" => @pagament.import, "titular" => URI.escape(titular), "descripcion" => "llibreedifici", "idProducto" => params[:edifici_id], "urlresponse" => url_resposta_correcta, "urlresponseint" => url_resposta_error}
     
     urlstring = 'https://apabcn.secure.force.com/bookpurchase/services/apexrest/creditcard'

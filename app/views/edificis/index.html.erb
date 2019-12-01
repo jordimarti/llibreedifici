@@ -97,8 +97,9 @@
                               end %>
                               <span class="tipus-llistat-edificis"><%= tipus_edifici %></span> <span class="data-llistat-edificis">(<%= edifici.created_at.day.to_s %>-<%= edifici.created_at.month.to_s %>-<%= edifici.created_at.year.to_s %>)</span>
                               
+                              
                               <div class="boto-item-llistat-edificis right">
-                                <%= link_to edifici, method: :delete, data: { confirm: t('.eliminar') } do %>
+                                <%= link_to amagar_path(edifici), data: { confirm: t('.eliminar') } do %>
                                   <span class="icon-cancel icones-icomoon" title="Eliminar"></span>                     
                                 <% end %>
                               </div>
@@ -110,6 +111,7 @@
                                   <% end %>
                                 </div>
                               <% end %>
+                              
 
                               <div class="boto-item-llistat-edificis right">
                                 <%= link_to edit_edifici_path(edifici) do %>

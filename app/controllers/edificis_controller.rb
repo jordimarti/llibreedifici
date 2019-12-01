@@ -261,6 +261,13 @@ class EdificisController < ApplicationController
     end
   end
 
+  def amagar
+    edifici = Edifici.find(params[:id])
+    edifici.user_id = 1
+    edifici.save
+    redirect_to edificis_path
+  end
+
   def duplicate
     edifici = Edifici.find(params[:id])
     nou_edifici = edifici.dup
