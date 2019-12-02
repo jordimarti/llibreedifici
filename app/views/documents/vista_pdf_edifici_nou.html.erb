@@ -572,6 +572,8 @@
   <% if @edifici.signatura_instruccions.count == 0 %>
     <span class="label-signatura">Nom i cognoms:</span><br/>
     <span class="label-signatura">Titulació:</span><br/>
+    <span class="label-signatura">Data:</span><br/>
+    <span class="label-signatura">Signatura:</span>
   <% end %>
   <% @edifici.signatura_instruccions.each do |signatura_instruccion| %>
     <span class="label-signatura">Nom i cognoms:</span> <%= signatura_instruccion.autor_instruccions_nom %><br/>
@@ -730,6 +732,8 @@
   <% if @edifici.signatura_promotors.count == 0 %>
     <span class="label-signatura">Raó social:</span><br/>
     <span class="label-signatura">Nom i cognoms del representant:</span><br/>
+    <span class="label-signatura">Data:</span><br/>
+    <span class="label-signatura">Signatura:</span>
   <% end %>
   <% @edifici.signatura_promotors.each do |signatura_promotor| %>
     <span class="label-signatura">Raó social:</span> <%= signatura_promotor.promotor_rao_social %><br/>
@@ -757,6 +761,8 @@
   <% if @edifici.signatura_llibres.count == 0 %>
     <span class="label-signatura">Nom i cognoms:</span><br/>
     <span class="label-signatura">Titulació:</span><br/>
+    <span class="label-signatura">Data:</span><br/>
+    <span class="label-signatura">Signatura:</span>
   <% end %>
   <% @edifici.signatura_llibres.each do |signatura_llibre| %>
     <span class="label-signatura">Nom i cognoms:</span> <%= signatura_llibre.autor_llibre_nom %><br/>

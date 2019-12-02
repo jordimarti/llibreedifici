@@ -475,6 +475,8 @@
   <% if @edifici.signatura_instruccions.count == 0 %>
     <span class="label-signatura">Nombre y apellidos:</span><br/>
     <span class="label-signatura">Titulación:</span><br/>
+    <span class="label-signatura">Fecha:</span><br/>
+    <span class="label-signatura">Firma:</span>
   <% end %>
   <% @edifici.signatura_instruccions.each do |signatura_instruccion| %>
     <span class="label-signatura">Nombre y apellidos:</span> <%= signatura_instruccion.autor_instruccions_nom %><br/>
@@ -614,6 +616,8 @@
   <% if @edifici.signatura_llibres.count == 0 %>
     <span class="label-signatura">Nombre y apellidos:</span><br/>
     <span class="label-signatura">Titulación:</span><br/>
+    <span class="label-signatura">Fecha:</span><br/>
+    <span class="label-signatura">Firma:</span>
   <% end %>
   <% @edifici.signatura_llibres.each do |signatura_llibre| %>
     <span class="label-signatura">Nombre y apellidos:</span> <%= signatura_llibre.autor_llibre_nom %><br/>
