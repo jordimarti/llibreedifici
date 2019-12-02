@@ -5,9 +5,32 @@
     <%= f.input :edifici_id, :as => :hidden, :input_html => { :value => @edifici.id } %>
     
     <div class="row">
-      <div class="large-8 columns">
-		    <%= f.input :autor_llibre_nom %>
-		    <%= f.input :autor_llibre_titulacio %>
+      <div class="large-6 columns">
+        <%= f.input :autor_llibre_nom %>
+      </div>
+      <div class="large-6 columns">
+        <%= f.input :autor_llibre_titulacio %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-12 columns">
+        <h5><%= t('.signatura') %></h5>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-5 columns">
+        <%= f.input :poblacio_signatura %>
+      </div>
+      <div class="medium-2 columns">
+        <%= f.input :dia_signatura %>
+      </div>
+      <div class="medium-3 columns">
+        <%= f.input :mes_signatura, collection: [t('.gener'), t('.febrer'), t('.marc'), t('.abril'), t('.maig'), t('.juny'), t('.juliol'), t('.agost'), t('.setembre'), t('.octubre'), t('.novembre'), t('.desembre')] %>
+      </div>
+      <div class="medium-2 columns">
+        <%= f.input :any_signatura %>
       </div>
     </div>
 

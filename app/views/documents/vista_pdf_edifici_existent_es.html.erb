@@ -480,7 +480,7 @@
     <span class="label-signatura">Nombre y apellidos:</span> <%= signatura_instruccion.autor_instruccions_nom %><br/>
     <span class="label-signatura">Titulación:</span> <%= signatura_instruccion.autor_instruccions_titulacio %><br/>
   <% end %>
-  <span class="label-signatura">Fecha:</span> _________________ a ____ de ______________ de ________<br/>
+  <span class="label-signatura">Fecha:</span> <%= signatura_instruccion.poblacio_signatura %> a <%= signatura_instruccion.dia_signatura %> de <%= signatura_instruccion.mes_signatura %> de <%= signatura_instruccion.any_signatura %><br/>
   <span class="label-signatura">Firma:</span>
 </p>
 
@@ -620,7 +620,7 @@
       <span class="label-signatura">Titulación:</span> <%= signatura_llibre.autor_llibre_titulacio %><br/>
     <% end %>
   <% end %>
-  <span class="label-signatura">Fecha:</span> _________________ a ____ de ______________ de ________<br/>
+  <span class="label-signatura">Fecha:</span> <%= signatura_llibre.poblacio_signatura %> a <%= signatura_llibre.dia_signatura %> de <%= signatura_llibre.mes_signatura %> de <%= signatura_llibre.any_signatura %><br/>
   <span class="label-signatura">Firma:</span>
 </p>
 

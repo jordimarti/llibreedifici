@@ -51,6 +51,6 @@ class SignaturaInstruccionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def signatura_instruccion_params
-      params.require(:signatura_instruccion).permit(:edifici_id, :autor_instruccions_nom, :autor_instruccions_titulacio)
+      params.require(:signatura_instruccion).permit(:edifici_id, :autor_instruccions_nom, :autor_instruccions_titulacio, :poblacio_signatura, :dia_signatura, :mes_signatura, :any_signatura)
     end
 end

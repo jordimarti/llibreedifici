@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190617111108) do
+ActiveRecord::Schema.define(version: 20191202123958) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -931,6 +931,10 @@ ActiveRecord::Schema.define(version: 20190617111108) do
     t.string   "autor_instruccions_titulacio"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+    t.string   "poblacio_signatura"
+    t.string   "dia_signatura"
+    t.string   "mes_signatura"
+    t.string   "any_signatura"
   end
 
   create_table "signatura_llibres", force: :cascade do |t|
@@ -939,6 +943,10 @@ ActiveRecord::Schema.define(version: 20190617111108) do
     t.string   "autor_llibre_titulacio"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.string   "poblacio_signatura"
+    t.string   "dia_signatura"
+    t.string   "mes_signatura"
+    t.string   "any_signatura"
   end
 
   create_table "signatura_promotors", force: :cascade do |t|
@@ -947,6 +955,10 @@ ActiveRecord::Schema.define(version: 20190617111108) do
     t.string   "promotor_nom_representant"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.string   "poblacio_signatura"
+    t.string   "dia_signatura"
+    t.string   "mes_signatura"
+    t.string   "any_signatura"
   end
 
   create_table "sistemes", force: :cascade do |t|

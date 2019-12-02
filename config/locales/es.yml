@@ -990,12 +990,24 @@ es:
       signatura_promotor:
         promotor_rao_social: "Razón social"
         promotor_representant: "Nombre y apellidos del representante"
+        poblacio_signatura: "Población"
+        dia_signatura: "Día"
+        mes_signatura: "Mes"
+        any_signatura: "Año"
       signatura_llibre:
         autor_llibre_nom: "Nombre y apellidos"
         autor_llibre_titulacio: "Titulación"
+        poblacio_signatura: "Población"
+        dia_signatura: "Día"
+        mes_signatura: "Mes"
+        any_signatura: "Año"
       signatura_instruccion:
         autor_instruccions_nom: "Nombre y apellidos"
         autor_instruccions_titulacio: "Titulación"
+        poblacio_signatura: "Población"
+        dia_signatura: "Día"
+        mes_signatura: "Mes"
+        any_signatura: "Año"
   devise:
     sessions:
       new:
@@ -1607,9 +1619,48 @@ es:
   signatura_promotors:
     form:
       guardar: "Guardar"
+      signatura: "Fecha de la firma"
+      gener: "enero"
+      febrer: "febrero"
+      marc: "marzo"
+      abril: "abril"
+      maig: "mayo"
+      juny: "junio"
+      juliol: "julio"
+      agost: "agosto"
+      setembre: "septiembre"
+      octubre: "octubre"
+      novembre: "noviembre"
+      desembre: "diciembre"
   signatura_llibres:
     form:
       guardar: "Guardar"
+      signatura: "Fecha de la firma"
+      gener: "enero"
+      febrer: "febrero"
+      marc: "marzo"
+      abril: "abril"
+      maig: "mayo"
+      juny: "junio"
+      juliol: "julio"
+      agost: "agosto"
+      setembre: "septiembre"
+      octubre: "octubre"
+      novembre: "noviembre"
+      desembre: "diciembre"
   signatura_instruccions:
     form:
       guardar: "Guardar"
+      signatura: "Fecha de la firma"
+      gener: "enero"
+      febrer: "febrero"
+      marc: "marzo"
+      abril: "abril"
+      maig: "mayo"
+      juny: "junio"
+      juliol: "julio"
+      agost: "agosto"
+      setembre: "septiembre"
+      octubre: "octubre"
+      novembre: "noviembre"
+      desembre: "diciembre"

@@ -51,6 +51,6 @@ class SignaturaPromotorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def signatura_promotor_params
-      params.require(:signatura_promotor).permit(:edifici_id, :promotor_rao_social, :promotor_nom_representant)
+      params.require(:signatura_promotor).permit(:edifici_id, :promotor_rao_social, :promotor_nom_representant, :poblacio_signatura, :dia_signatura, :mes_signatura, :any_signatura)
     end
 end

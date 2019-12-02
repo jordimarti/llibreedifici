@@ -51,6 +51,6 @@ class SignaturaLlibresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def signatura_llibre_params
-      params.require(:signatura_llibre).permit(:edifici_id, :autor_llibre_nom, :autor_llibre_titulacio)
+      params.require(:signatura_llibre).permit(:edifici_id, :autor_llibre_nom, :autor_llibre_titulacio, :poblacio_signatura, :dia_signatura, :mes_signatura, :any_signatura)
     end
 end

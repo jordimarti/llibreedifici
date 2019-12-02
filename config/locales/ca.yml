@@ -990,12 +990,24 @@ ca:
       signatura_promotor:
         promotor_rao_social: "Raó social"
         promotor_nom_representant: "Nom i cognoms del representant"
+        poblacio_signatura: "Població"
+        dia_signatura: "Dia"
+        mes_signatura: "Mes"
+        any_signatura: "Any"
       signatura_llibre:
         autor_llibre_nom: "Nom i cognoms"
         autor_llibre_titulacio: "Titulació"
+        poblacio_signatura: "Població"
+        dia_signatura: "Dia"
+        mes_signatura: "Mes"
+        any_signatura: "Any"
       signatura_instruccion:
         autor_instruccions_nom: "Nom i cognoms"
         autor_instruccions_titulacio: "Titulació"
+        poblacio_signatura: "Població"
+        dia_signatura: "Dia"
+        mes_signatura: "Mes"
+        any_signatura: "Any"
   devise:
     sessions:
       new:
@@ -1607,9 +1619,48 @@ ca:
   signatura_promotors:
     form:
       guardar: "Guardar"
+      signatura: "Data de la signatura"
+      gener: "gener"
+      febrer: "febrer"
+      marc: "març"
+      abril: "abril"
+      maig: "maig"
+      juny: "juny"
+      juliol: "juliol"
+      agost: "agost"
+      setembre: "setembre"
+      octubre: "octubre"
+      novembre: "novembre"
+      desembre: "desembre"
   signatura_llibres:
     form:
       guardar: "Guardar"
+      signatura: "Data de la signatura"
+      gener: "gener"
+      febrer: "febrer"
+      marc: "març"
+      abril: "abril"
+      maig: "maig"
+      juny: "juny"
+      juliol: "juliol"
+      agost: "agost"
+      setembre: "setembre"
+      octubre: "octubre"
+      novembre: "novembre"
+      desembre: "desembre"
   signatura_instruccions:
     form:
       guardar: "Guardar"
+      signatura: "Data de la signatura"
+      gener: "gener"
+      febrer: "febrer"
+      marc: "març"
+      abril: "abril"
+      maig: "maig"
+      juny: "juny"
+      juliol: "juliol"
+      agost: "agost"
+      setembre: "setembre"
+      octubre: "octubre"
+      novembre: "novembre"
+      desembre: "desembre"
