@@ -57,7 +57,17 @@ class PagamentsController < ApplicationController
     @pagament.user_id = current_user.id
     @pagament.edifici_id = params[:edifici_id]
     @pagament.numorder = numorder(params[:edifici_id])
-    @pagament.import = "42.96"
+    #Comprovem si és col·legiat per decidir preu
+    factura = UsuariFactura.where(edifici_id: params[:edifici_id]).last
+    if factura != nil
+      if factura.colegiat == true
+        @pagament.import = "42.96"
+      else
+        @pagament.import = "47.19"
+      end
+    else
+      @pagament.import = "47.19"
+    end
     @pagament.pagat = false
     titular = current_user.name
     #endpoint = 'https://partial-caateebcn-partial.cs82.force.com/bookpurchase/apex/creditcardservice?importe=' + @pagament.import + '&titular=' + URI.escape(titular) + '&descripcion=llibreedifici&idProducto=' + params[:edifici_id] + '&urlresponse=http%3A%2F%2Flocalhost:3000%2Fpagaments%2Fupdate_pagament%3FpagoVisaResult%3Dvalue1%26numorder%3Dvalue2&urlresponseko=http%3A%2F%2Flocalhost:3000%2Fpagaments%2Ferror_factura'

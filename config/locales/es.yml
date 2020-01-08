@@ -183,6 +183,7 @@ es:
     validate_user_nif:
       titol: "Pago del Libro del edificio"
       explicacio: "Para crear un Libro del edificio debes realizar un pago de 42,96€ (35,50€ + IVA)."
+      preu_no_colegiats: "El precio para no colegiados es 47,19€ (39€ + IVA)."
       explicacio2: "Selecciona si quieres una factura a tu nombre o a nombre de empresa."
       explicacio3: "Escribe el NIF sin espacios ni guiones (-)"
       factura_personal: "Factura personal"
@@ -198,6 +199,7 @@ es:
     validar_dades:
       titol: "Pago del Libro del edificio"
       explicacio: "Para crear un Libro del edificio debes realizar un pago de 42,96€ (35,50€ + IVA)."
+      preu_no_colegiats: "El precio para no colegiados es 47,19€ (39€ + IVA)."
       explicacio2: "Selecciona si quieres una factura a tu nombre o a nombre de empresa."
       explicacio3: "Escribe el NIF sin espacios ni guiones (-)"
       factura_personal: "Factura personal"

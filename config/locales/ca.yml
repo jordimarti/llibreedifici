@@ -183,6 +183,7 @@ ca:
     validate_user_nif:
       titol: "Pagament del Llibre de l'edifici"
       explicacio: "Per crear un Llibre de l'edifici cal realitzar un pagament de 42,96€ (35,50€ + IVA)."
+      preu_no_colegiats: "El preu per a no col·legiats és 47,19€ (39€ + IVA)."
       explicacio2: "Selecciona si voldràs una factura al teu nom o a nom d'empresa."
       explicacio3: "Escriu el NIF sense espais o guions (-)."
       factura_personal: "Factura personal"
@@ -198,6 +199,7 @@ ca:
     validar_dades:
       titol: "Pagament del Llibre de l'edifici"
       explicacio: "Per crear un Llibre de l'edifici cal realitzar un pagament de 42,96€ (35,50€ + IVA)."
+      preu_no_colegiats: "El preu per a no col·legiats és 47,19€ (39€ + IVA)."
       explicacio2: "Selecciona si voldràs una factura al teu nom o a nom d'empresa."
       explicacio3: "Escriu el NIF sense espais o guions (-)."
       factura_personal: "Factura personal"
