@@ -61,6 +61,9 @@ class OperacionsController < ApplicationController
         referencia.edifici_id = referencia_params[:edifici_id]
         referencia.operacio_id = @operacio.id
         referencia.sistema = @operacio.sistema
+        if comprovacio_operacio_manual_usuari(@operacio) == true
+          referencia.manual_habitatge = true
+        end
         referencia.creat_usuari = true
         referencia.save
 
@@ -70,6 +73,15 @@ class OperacionsController < ApplicationController
         format.html { render :new }
         format.json { render json: @operacio.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  # Comprovem si l'operació creada per l'usuari fa referència a l'usuari de l'edifici i per tant ha d'aparèixer al manual de l'habitatge
+  def comprovacio_operacio_manual_usuari(operacio)
+    if operacio.responsable_ca == "usuari" || operacio.responsable_ca == "Usuari" || operacio.responsable_ca == "USUARI" || operacio.responsable_es == "usuario" || operacio.responsable_es == "Usuario" || operacio.responsable_es == "USUARIO"
+      return true
+    else
+      return false
     end
   end
 
