@@ -42,7 +42,7 @@ gem 'jquery-turbolinks'
 gem "paperclip", "~> 4.2"
 gem 'icomoon-rails'
 gem 'docx_replace'
-gem 'rubyzip', '~> 1.1.7'
+gem 'rubyzip', '~> 1.3.0'
 gem 'rest-client', '~> 1.8.0'
 gem 'aws-sdk', '< 2.0'
 gem 'pdfkit', '~> 0.8.2'
