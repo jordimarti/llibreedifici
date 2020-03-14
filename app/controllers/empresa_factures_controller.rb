@@ -49,6 +49,7 @@ class EmpresaFacturesController < ApplicationController
     #@empresa_factura.email = dades[:get_empresa_response][:param_empresa][:email]
     @empresa_factura.email = current_user.email
     @empresa_factura.tipus_client = dades['tipocliente']
+    @empresa_factura.numclient = dades['numcliente']
     @empresa_factura.save(validate: false)
     if @empresa_factura.nif
       redirect_to edifici_empresa_factura_path(id: @empresa_factura.id)

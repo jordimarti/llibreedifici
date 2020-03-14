@@ -57,17 +57,7 @@ class PagamentsController < ApplicationController
     @pagament.user_id = current_user.id
     @pagament.edifici_id = params[:edifici_id]
     @pagament.numorder = numorder(params[:edifici_id])
-    #Comprovem si és col·legiat per decidir preu
-    factura = UsuariFactura.where(edifici_id: params[:edifici_id]).last
-    if factura != nil
-      if factura.colegiat == true
-        @pagament.import = "42.96"
-      else
-        @pagament.import = "47.19"
-      end
-    else
-      @pagament.import = "47.19"
-    end
+    @pagament.import = preu(params[:edifici_id])
     @pagament.pagat = false
     titular = current_user.name
     #endpoint = 'https://partial-caateebcn-partial.cs82.force.com/bookpurchase/apex/creditcardservice?importe=' + @pagament.import + '&titular=' + URI.escape(titular) + '&descripcion=llibreedifici&idProducto=' + params[:edifici_id] + '&urlresponse=http%3A%2F%2Flocalhost:3000%2Fpagaments%2Fupdate_pagament%3FpagoVisaResult%3Dvalue1%26numorder%3Dvalue2&urlresponseko=http%3A%2F%2Flocalhost:3000%2Fpagaments%2Ferror_factura'
@@ -115,6 +105,42 @@ class PagamentsController < ApplicationController
     end
   end
 
+  def preu(edifici_id)
+    #Comprovem si hi ha factura d'usuari i empresa i seleccionem quin tipus de factura fem
+    factura_usuari = UsuariFactura.where(edifici_id: edifici_id).last
+    factura_empresa = EmpresaFactura.where(edifici_id: edifici_id).last
+    if factura_usuari == nil
+      if factura_empresa == nil
+        return "no_factura"
+      else
+        tipus_factura = "empresa"
+      end
+    elsif factura_usuari != nil && factura_empresa != nil
+      #Comprovem si l'última factura és per usuari o empresa en el cas que n'hi hagi dues
+      if factura_usuari.created_at < factura_empresa.created_at
+        tipus_factura = "empresa"
+      else
+        tipus_factura = "usuari"
+      end
+    else
+      tipus_factura = "usuari"
+    end
+    puts "tipus:"
+    puts tipus_factura
+    if tipus_factura == "usuari"
+      if factura_usuari.colegiat == true
+        return "42.96"
+      else
+        return "47.19"
+      end
+    else
+      if factura_empresa.numclient > "19999" && factura_empresa.numclient < "30000"
+        return "42.96"
+      else
+        return "47.19"
+      end
+    end
+  end
 
   def numorder(edifici_id)
     codi_factura = '058'
