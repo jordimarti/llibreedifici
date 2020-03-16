@@ -125,8 +125,7 @@ class PagamentsController < ApplicationController
     else
       tipus_factura = "usuari"
     end
-    puts "tipus:"
-    puts tipus_factura
+    
     if tipus_factura == "usuari"
       if factura_usuari.colegiat == true
         return "42.96"
@@ -258,6 +257,7 @@ class PagamentsController < ApplicationController
   end
 
   def error_factura
+    redirect_to edificis_path
   end
 
   def error_pagament
