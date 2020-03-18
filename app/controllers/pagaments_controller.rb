@@ -133,8 +133,13 @@ class PagamentsController < ApplicationController
         return "47.19"
       end
     else
-      if factura_empresa.numclient > "19999" && factura_empresa.numclient < "30000"
-        return "42.96"
+      #Comprovem si té número de client, que podria ser nil
+      if factura_empresa.numclient != nil
+        if factura_empresa.numclient > "19999" && factura_empresa.numclient < "30000"
+          return "42.96"
+        else
+          return "47.19"
+        end
       else
         return "47.19"
       end
